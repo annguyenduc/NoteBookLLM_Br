@@ -1,6 +1,6 @@
 # NotebookLM MCP Server for Antigravity
 
-This repository contains the configuration and workflows to set up the **NotebookLM MCP Server** for use with **Antigravity** (and other MCP clients).
+This repository contains the configuration and workflows to set up the **NotebookLM MCP Server** for use with **Antigravity**, **Opencode** (and other MCP clients).
 
 It specifically addresses and fixes the "invalid trailing data" error caused by the startup banner of the `notebooklm-mcp-server` package.
 
