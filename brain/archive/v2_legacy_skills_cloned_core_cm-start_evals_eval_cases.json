@@ -1,0 +1,12 @@
+[
+  {
+    "id": "start_01_discovery",
+    "prompt": "/cm-start Tạo ứng dụng quản lý lớp học bằng React.",
+    "expected_outcome": "Thực hiện chuỗi: Load Memory → Index Codebase → Detect Complexity (L2/L3) → Propose Plan.",
+    "assertions": [
+      "Tạo skeleton.md để hiểu codebase hiện tại",
+      "Đề xuất Level L2 cho project React quy mô vừa",
+      "Gợi ý chạy project-bootstrap nếu là project trắng"
+    ]
+  }
+]

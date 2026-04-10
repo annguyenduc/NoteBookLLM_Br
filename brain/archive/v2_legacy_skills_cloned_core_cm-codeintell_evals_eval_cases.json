@@ -1,0 +1,30 @@
+[
+  {
+    "id": "intell_01_skeleton",
+    "prompt": "I need to understand this project. Generate a skeleton index.",
+    "expected_outcome": "Chạy script index-codebase.sh và tạo file .cm/skeleton.md.",
+    "assertions": [
+      "Có đề xuất chạy 'bash scripts/index-codebase.sh'",
+      "Giải thích mục đích của Skeleton Index (Layer 0)",
+      "Đề cập đến việc nén token (Compression)"
+    ]
+  },
+  {
+    "id": "intell_02_graph",
+    "prompt": "What calls the 'login' function in this codebase?",
+    "expected_outcome": "Sử dụng công cụ codegraph_callers thay vì grep.",
+    "assertions": [
+      "Sử dụng tool 'codegraph_callers'",
+      "Không yêu cầu grep toàn bộ thư mục src/"
+    ]
+  },
+  {
+    "id": "intell_03_architecture",
+    "prompt": "Show me the big picture architecture of this app.",
+    "expected_outcome": "Tạo hoặc hiển thị sơ đồ Mermaid (Layer 2).",
+    "assertions": [
+      "Có tạo khối Mermaid diagram",
+      "Sơ đồ phân chia theo subgraph (Frontend, Backend, Infra)"
+    ]
+  }
+]

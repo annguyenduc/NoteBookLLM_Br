@@ -1,0 +1,32 @@
+[
+  {
+    "id": "unit_01_ecosystems",
+    "prompt": "Unit plan 4 tuần về ecosystems lớp 6",
+    "expected_outcome": "Unit plan 4 tuần theo Backward Design với Big Idea rõ ràng.",
+    "assertions": [
+      "Có chứa tiêu đề 'STAGE 1'",
+      "Có chứa tiêu đề 'STAGE 2'",
+      "Có chứa tiêu đề 'STAGE 3'",
+      "Có chứa 'Essential Questions'",
+      "Có bảng Sequence tổng quan đủ 4 tuần"
+    ]
+  },
+  {
+    "id": "unit_02_math_data",
+    "prompt": "Kế hoạch chuỗi 3 tuần tích hợp Toán-Khoa học lớp 8 chủ đề data & statistics",
+    "expected_outcome": "Chuỗi bài học tích hợp liên môn.",
+    "assertions": [
+      "Có bảng 'LIÊN KẾT LIÊN MÔN' chứa Toán và Khoa học",
+      "Stage 2 có Performance Task mô tả dự án thực tế"
+    ]
+  },
+  {
+    "id": "unit_03_energy",
+    "prompt": "Unit STEAM 5 tuần về renewable energy cho lớp 10",
+    "expected_outcome": "Unit chuyên sâu về năng lượng tái tạo.",
+    "assertions": [
+      "Có ít nhất 2 Enduring Understandings",
+      "Stage 3 mô tả bài học Hook & Diagnostic ở tuần 1"
+    ]
+  }
+]

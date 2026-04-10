@@ -1,0 +1,32 @@
+[
+  {
+    "id": "exec_01_mode_selection",
+    "prompt": "I have a plan with 5 independent tasks. I want them done fast.",
+    "expected_outcome": "Đề xuất Mode E: TRIZ-Parallel kèm theo giải thích về tính độc lập.",
+    "assertions": [
+      "Đề xuất sử dụng TRIZ-Parallel (Mode E)",
+      "Giải thích về việc Segmentation theo file-dependency",
+      "Đề cập đến Quality Gates cho từng agent"
+    ]
+  },
+  {
+    "id": "exec_02_preflight",
+    "prompt": "Start executing the plan to refactor the payment module.",
+    "expected_outcome": "Kích hoạt Pre-flight audit để kiểm tra skill và code intelligence.",
+    "assertions": [
+      "Có bước 'Skill Coverage Audit'",
+      "Kiểm tra 'Code Intelligence Context' (cm-codeintell)",
+      "Cảnh báo nếu thay đổi có phạm vi lớn (>10 files)"
+    ]
+  },
+  {
+    "id": "exec_03_batch",
+    "prompt": "Execute the first 3 tasks of the plan.",
+    "expected_outcome": "Sử dụng Mode A (Batch) và báo cáo kết quả sau mỗi lô.",
+    "assertions": [
+      "Xác định thực thi theo lô (Batch of 3 tasks)",
+      "Yêu cầu báo cáo kết quả (Verification) sau khi xong lô",
+      "Cập nhật task status sang 'in_progress'"
+    ]
+  }
+]

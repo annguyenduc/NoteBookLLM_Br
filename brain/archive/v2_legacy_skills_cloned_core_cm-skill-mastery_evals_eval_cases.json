@@ -1,0 +1,21 @@
+[
+  {
+    "id": "mastery_01_invoke",
+    "prompt": "I want to refactor the login function. How should I start?",
+    "expected_outcome": "Kích hoạt cm-planning trước khi làm bất cứ việc gì khác.",
+    "assertions": [
+      "Có bước kiểm tra skill trước khi thực hiện (Rule: Invoke BEFORE action)",
+      "Đề xuất sử dụng cm-planning hoặc cm-debugging nếu là lỗi"
+    ]
+  },
+  {
+    "id": "mastery_02_discovery",
+    "prompt": "I need a skill to handle AWS Lambda deployment, but I don't see one in the kit.",
+    "expected_outcome": "Sử dụng 'npx skills find' để tìm kiếm skill ngoại vi.",
+    "assertions": [
+      "Sử dụng lệnh 'npx skills find \"lambda\"'",
+      "Hỏi ý kiến người dùng trước khi cài đặt",
+      "Ghi log vào .cm-skills-log.json"
+    ]
+  }
+]

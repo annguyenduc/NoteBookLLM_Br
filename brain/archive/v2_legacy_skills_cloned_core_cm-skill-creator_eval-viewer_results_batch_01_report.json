@@ -1,0 +1,45 @@
+{
+  "skillName": "STEM Core Batch 01 (Pedagogical Skills)",
+  "metrics": {
+    "overallPassRate": "86%",
+    "totalTasks": "15",
+    "avgScore": "8.6/10"
+  },
+  "results": [
+    {
+      "id": "lesson-architect",
+      "grade": "Pass (85%)",
+      "prompt": "Science/Engineering/Math Lesson Plans",
+      "feedback": "Cấu trúc 5E rất vững chắc. Hoạt động hands-on sáng tạo. Điểm cần tối ưu: các động từ Bloom trong mục tiêu học tập đôi khi còn chung chung (ví dụ: 'hiểu' thay vì 'giải thích').",
+      "output": "85/100"
+    },
+    {
+      "id": "unit-planner",
+      "grade": "Pass (75%)",
+      "prompt": "4-6 Week STEAM Units",
+      "feedback": "Backward Design được áp dụng đúng. Essential Questions mang tính gợi mở tốt. Điểm cần tối ưu: Thiếu các ví dụ cụ thể cho tầng 'Other Evidence' trong Stage 2.",
+      "output": "75/100"
+    },
+    {
+      "id": "assessment-forge",
+      "grade": "Pass (90%)",
+      "prompt": "Diagnostic/Formative/Summative Assessments",
+      "feedback": "Phân bổ Bloom theo khối lớp rất chính xác. Các câu hỏi chẩn đoán (Diagnostic) có tính sư phạm cao. Điểm cần tối ưu: Thêm rubric chi tiết cho phần tự luận trong Summative.",
+      "output": "90/100"
+    },
+    {
+      "id": "rubric-builder",
+      "grade": "Pass (100%)",
+      "prompt": "Analytic/Holistic Rubrics",
+      "feedback": "Xuất sắc. Các mô tả hiệu suất (Performance Levels) rất cụ thể, quan sát được và không dùng tính từ mơ hồ.",
+      "output": "100/100"
+    },
+    {
+      "id": "differentiation-engine",
+      "grade": "Pass (80%)",
+      "prompt": "3-Tier Differentiation + UDL",
+      "feedback": "Scaffolding cho Tier 1 rất tốt. UDL đa dạng. Điểm cần tối ưu: Extension tier (Tier 3) đôi khi chỉ là 'thêm bài' thay vì 'đào sâu' tư duy phản biện.",
+      "output": "80/100"
+    }
+  ]
+}

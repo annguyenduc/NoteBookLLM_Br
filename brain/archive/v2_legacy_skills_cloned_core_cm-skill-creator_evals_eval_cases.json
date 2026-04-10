@@ -1,0 +1,22 @@
+[
+  {
+    "id": "creator_01_init",
+    "prompt": "Tôi muốn tạo một skill mới về 'Dạy Robotics cho trẻ 6 tuổi'.",
+    "expected_outcome": "Khởi tạo cấu trúc dự án (SKILL.md + evals) và hỏi mục tiêu cốt lõi.",
+    "assertions": [
+      "Hỏi mục tiêu cốt lõi của kỹ năng",
+      "Sử dụng scripts/run_eval.py để khởi tạo cấu trúc",
+      "Tạo ra ít nhất 3 eval cases ban đầu"
+    ]
+  },
+  {
+    "id": "creator_02_optimize",
+    "prompt": "Skill 'lesson-architect' bị user báo là phần 'Explore' quá ngắn. Hãy tối ưu nó.",
+    "expected_outcome": "Sử dụng Analyzer sub-agent để đề xuất thay đổi cho SKILL.md.",
+    "assertions": [
+      "Kích hoạt Sub-agent Analyzer hoặc công cụ tương đương",
+      "Đề xuất bổ sung hướng dẫn chi tiết cho phần 'Explore'",
+      "Cập nhật SKILL.md và chạy lại Eval"
+    ]
+  }
+]

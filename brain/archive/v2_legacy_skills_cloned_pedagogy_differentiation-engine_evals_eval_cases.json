@@ -1,0 +1,32 @@
+[
+  {
+    "id": "diff_01_math",
+    "prompt": "Phân hóa bài tập về phương trình bậc 2 cho lớp 9",
+    "expected_outcome": "3 phiên bản bài tập phương trình bậc 2 với đầy đủ hỗ trợ và mở rộng.",
+    "assertions": [
+      "Có chứa tiêu đề 'TIER 1 — SCAFFOLD'",
+      "Có chứa tiêu đề 'TIER 3 — EXTENSION'",
+      "Tier 1 có chứa Sentence starters",
+      "Có mục UDL VARIATIONS"
+    ]
+  },
+  {
+    "id": "diff_02_cells",
+    "prompt": "Tạo 3 phiên bản bài đọc về tế bào cho các mức độ khác nhau lớp 6",
+    "expected_outcome": "Nội dung bài đọc được đơn giản hóa hoặc nâng cao theo tier.",
+    "assertions": [
+      "Tier 1 có Graph organizer hoặc Word bank",
+      "Tier 3 có Cross-disciplinary connection",
+      "Action & Expression có ít nhất 4 lựa chọn khác nhau"
+    ]
+  },
+  {
+    "id": "diff_03_newton",
+    "prompt": "Extension task cho học sinh nhanh xong bài về Newton's Laws",
+    "expected_outcome": "Nhiệm vụ nâng cao tập trung vào Tier 3.",
+    "assertions": [
+      "Câu hỏi thuộc cấp độ Evaluate hoặc Create",
+      "Có liên kết thực tế phức tạp"
+    ]
+  }
+]

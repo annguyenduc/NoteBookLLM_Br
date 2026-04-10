@@ -1,0 +1,32 @@
+[
+  {
+    "id": "forge_01_create",
+    "prompt": "Tạo skill mới chuyên về 'Thiết kế bài tập STEM cho học sinh khiếm thị' (IEP) sử dụng skill-forge.",
+    "expected_outcome": "Thực hiện đủ 4 bước (Research, Draft, Review, Register). File mới phải đúng cấu trúc YAML frontmatter.",
+    "assertions": [
+      "Có bước Research kiểm tra framework sư phạm (ví dụ UDL)",
+      "Tạo file SKILL.md với đầy đủ YAML frontmatter (name, description, version)",
+      "Đăng ký skill vào gemini-extension.json"
+    ]
+  },
+  {
+    "id": "forge_02_upgrade",
+    "prompt": "Nâng cấp skill lesson-architect vì giáo viên phản hồi là phần 'Engage' còn chưa đủ hấp dẫn.",
+    "expected_outcome": "Đọc learnings.md, phân tích lỗi và cập nhật template/quy tắc trong lesson-architect/SKILL.md, bump version.",
+    "assertions": [
+      "Có bước đọc learnings.md hoặc corrections liên quan",
+      "Cập nhật nội dung trong lesson-architect/SKILL.md",
+      "BUMP version (ví dụ từ 1.0.0 lên 1.1.0)"
+    ]
+  },
+  {
+    "id": "forge_03_audit",
+    "prompt": "skill-forge audit — kiểm tra toàn bộ bộ skills.",
+    "expected_outcome": "Tạo báo cáo 'STEAM K-12 Skills Audit Report' với checklist chi tiết cho các skill.",
+    "assertions": [
+      "Báo cáo có tiêu đề '# STEAM K-12 Skills Audit Report'",
+      "Có bảng tổng quan (Tổng số skills, tình trạng fix, gaps)",
+      "Có bảng Verdict (✅ Giữ nguyên / 🔧 Cần fix...)"
+    ]
+  }
+]

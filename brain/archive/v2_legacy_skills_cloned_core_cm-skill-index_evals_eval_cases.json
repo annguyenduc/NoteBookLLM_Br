@@ -1,0 +1,21 @@
+[
+  {
+    "id": "index_01_progressive",
+    "prompt": "I need to find a skill for 'conversion tracking' but I don't want to load all files.",
+    "expected_outcome": "Quét Layer 1 (Index) để tìm 'cm-ads-tracker' hoặc 'cro-methodology'.",
+    "assertions": [
+      "Xác định skill phù hợp từ bảng Layer 1 (Swarm mapping)",
+      "Giải thích tại sao chọn skill đó dựa trên Layer 1 summary",
+      "Tiết kiệm token bằng cách không load full SKILL.md ngay lập tức"
+    ]
+  },
+  {
+    "id": "index_02_discovery",
+    "prompt": "Tìm skill về 'React Native' không có trong kit.",
+    "expected_outcome": "Kiểm tra Community Skills Registry và đề xuất lệnh cài đặt.",
+    "assertions": [
+      "Tìm thấy 'react-native-best-practices' trong registry",
+      "Đề xuất lệnh 'npx skills add ... --skill react-native-best-practices'"
+    ]
+  }
+]

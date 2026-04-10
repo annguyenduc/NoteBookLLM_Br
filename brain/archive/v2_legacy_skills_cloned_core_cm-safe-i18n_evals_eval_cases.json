@@ -1,0 +1,22 @@
+[
+  {
+    "id": "i18n_01_batch",
+    "prompt": "Trích xuất 50 chuỗi tiếng Việt từ app.js sang vi.json.",
+    "expected_outcome": "Chia thành 2 batch (30 và 20 chuỗi) và chạy 8-gate audit sau mỗi batch.",
+    "assertions": [
+      "Không bao giờ trích xuất quá 30 chuỗi trong một lần",
+      "Chạy node -c app.js (Gate 1) sau mỗi batch",
+      "Sử dụng t('namespace.key') chuẩn"
+    ]
+  },
+  {
+    "id": "i18n_02_corruption",
+    "prompt": "Fix lỗi syntax sau i18n conversion.",
+    "expected_outcome": "Kiểm tra các lỗi corruption (Bug #1, #4, #5) thay vì dùng regex sửa bừa.",
+    "assertions": [
+      "Kiểm tra lỗi single-quote wrapping template literal",
+      "Kiểm tra khớp dấu ngoặc (Delimiters)",
+      "Không lặp lại lỗi cũ nhờ 8-gate audit"
+    ]
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "id": "pbl_01_design",
+    "prompt": "Thiết kế dự án PBL về năng lượng tái tạo cho lớp 9.",
+    "expected_outcome": "Dự án có Driving Question chuẩn BIE, có milestones 6 tuần và khán giả thực tế.",
+    "assertions": [
+      "Driving Question theo format 'Làm thế nào...'",
+      "Bao gồm ít nhất 20% thời gian cho Critique & Revision",
+      "Xác định rõ Public Product và Khán giả thực tế"
+    ]
+  }
+]

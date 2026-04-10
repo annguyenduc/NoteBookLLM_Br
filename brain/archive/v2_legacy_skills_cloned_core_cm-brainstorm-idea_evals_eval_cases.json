@@ -1,0 +1,12 @@
+[
+  {
+    "id": "brainstorm_01_analysis",
+    "prompt": "Chúng ta nên thêm tính năng gì cho app Robot này?",
+    "expected_outcome": "Chạy 9 Windows analysis (TRIZ) và đề xuất 2-3 option khác biệt.",
+    "assertions": [
+      "Scan codebase để hiểu trạng thái hiện tại (Phase 1)",
+      "Sử dụng ma trận 9 ô (Past/Present/Future x System levels)",
+      "Chấm điểm các option theo Tech/Product/Design/Business"
+    ]
+  }
+]

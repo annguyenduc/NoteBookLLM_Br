@@ -1,0 +1,22 @@
+[
+  {
+    "id": "ux_01_dashboard",
+    "prompt": "Thiết kế UI cho trang quản lý học sinh (Dashboard).",
+    "expected_outcome": "Áp dụng Fitts Law, Hick's Law và Miller's Law.",
+    "assertions": [
+      "Touch target tối thiểu 44px",
+      "Sử dụng Progressive Disclosure cho các setting nâng cao",
+      "Bao gồm Skeleton Loader và Empty State trong code"
+    ]
+  },
+  {
+    "id": "ux_02_i18n",
+    "prompt": "Làm thế nào để thiết kế UI hỗ trợ cả tiếng Việt và tiếng Thái?",
+    "expected_outcome": "Đề xuất font Noto Sans/Sarabun và sử dụng min-width cho container.",
+    "assertions": [
+      "Cảnh báo về độ dài chuỗi tiếng Thái (30-40% longer)",
+      "Sử dụng toLocaleDateString(userLocale)",
+      "Kiểm tra font diacritic cho tiếng Việt"
+    ]
+  }
+]

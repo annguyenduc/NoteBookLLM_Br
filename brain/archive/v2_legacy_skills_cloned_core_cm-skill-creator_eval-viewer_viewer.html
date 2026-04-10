@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eval Viewer - Antigravity Kit</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card: #1e293b;
+            --text: #f8fafc;
+            --primary: #38bdf8;
+            --success: #22c55e;
+            --fail: #ef4444;
+            --accent: #818cf8;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 2rem;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .metric-card {
+            background: var(--card);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #334155;
+        }
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        .test-case {
+            background: var(--card);
+            margin-bottom: 1.5rem;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #334155;
+        }
+        .test-header {
+            background: #2d3748;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .test-content {
+            padding: 1.5rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        .side {
+            background: #0f172a;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid #334155;
+        }
+        .label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #94a3b8;
+            margin-bottom: 0.5rem;
+        }
+        .status-pass { color: var(--success); font-weight: bold; }
+        .status-fail { color: var(--fail); font-weight: bold; }
+        code { font-family: 'Fira Code', monospace; white-space: pre-wrap; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>¿ Eval Viewer - Skills 2.0</h1>
+        <div id="skill-name">Skill: Loading...</div>
+    </div>
+
+    <div class="metrics" id="summary-metrics">
+        <!-- Metrics will be injected here -->
+    </div>
+
+    <div id="test-results">
+        <!-- Test cases will be injected here -->
+    </div>
+
+    <script>
+        /*__EMBEDDED_DATA__*/
+        // Mock data for development if EMBEDDED_DATA is not defined
+        const data = typeof EMBEDDED_DATA !== 'undefined' ? EMBEDDED_DATA : {
+            skillName: "YouTube to Newsletter",
+            metrics: {
+                passRate: "80%",
+                avgTokens: "12,450",
+                avgTime: "14.2s"
+            },
+            results: [
+                {
+                    id: 1,
+                    prompt: "Convert https://youtube.com/watch?v=123 to newsletter",
+                    expected: "Should include 3 key takeaways",
+                    output: "Here are the 3 key takeaways from the video...",
+                    grade: "Pass",
+                    feedback: "Meets all criteria."
+                }
+            ]
+        };
+
+        document.getElementById('skill-name').innerText = `Skill: ${data.skillName}`;
+        
+        const metricsHtml = Object.entries(data.metrics).map(([key, value]) => `
+            <div class="metric-card">
+                <div class="label">${key}</div>
+                <div class="metric-value">${value}</div>
+            </div>
+        `).join('');
+        document.getElementById('summary-metrics').innerHTML = metricsHtml;
+
+        const resultsHtml = data.results.map(res => `
+            <div class="test-case">
+                <div class="test-header">
+                    <span>Test Case #${res.id}</span>
+                    <span class="status-${res.grade.toLowerCase()}">${res.grade}</span>
+                </div>
+                <div class="test-content">
+                    <div class="side">
+                        <div class="label">Input Prompt</div>
+                        <code>${res.prompt}</code>
+                    </div>
+                    <div class="side">
+                        <div class="label">Output / Feedback</div>
+                        <div>${res.feedback}</div>
+                        <hr style="border-color: #334155">
+                        <code>${res.output}</code>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+        document.getElementById('test-results').innerHTML = resultsHtml;
+    </script>
+</body>
+</html>

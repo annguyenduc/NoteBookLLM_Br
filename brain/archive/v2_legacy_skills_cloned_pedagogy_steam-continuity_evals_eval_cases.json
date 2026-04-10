@@ -1,0 +1,12 @@
+[
+  {
+    "id": "steam_continuity_01_profile",
+    "prompt": "Người dùng nói: 'Tôi là giáo viên cấp 2, thường dạy theo 5E'.",
+    "expected_outcome": "Cập nhật profile.md với level 6-8 và framework 5E.",
+    "assertions": [
+      "Không hỏi lại thông tin này ở phiên sau",
+      "Áp dụng 5E mặc định cho các yêu cầu lesson plan tiếp theo",
+      "Ghi nhận 'Preference Learned' vào preferences.md"
+    ]
+  }
+]

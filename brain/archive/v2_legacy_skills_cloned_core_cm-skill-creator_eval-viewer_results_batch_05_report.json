@@ -1,0 +1,38 @@
+{
+  "batchName": "Batch 05: Design & UX Swarm",
+  "auditDate": "2026-03-27",
+  "summary": "Bộ skill Design rất chuyên sâu, mang tính học thuật và thực tiễn cao. Cần tối ưu hóa việc liên kết giữa các skill sư phạm và tăng cường tính thẩm mỹ hiện đại (Dark Mode, Mobile-First).",
+  "results": [
+    {
+      "skill": "project-based-learning",
+      "score": 90,
+      "findings": "Thiếu liên kết trực tiếp với các skill đánh giá và phân hóa.",
+      "action": "Cập nhật phần Integration với rubric-builder và differentiation-engine."
+    },
+    {
+      "skill": "cm-ux-master",
+      "score": 95,
+      "findings": "Rất đầy đủ. Cần thêm nguyên tắc Mobile-First cho ứng dụng giáo dục.",
+      "action": "Thêm Directive 7: Mobile-First for Education."
+    },
+    {
+      "skill": "cm-jtbd",
+      "score": 85,
+      "findings": "Framework chuẩn nhưng cần bổ sung context cụ thể cho sư phạm (Jobs of Teachers/Students).",
+      "action": "Thêm section 'Pedagogical JTBD Segments'."
+    },
+    {
+      "skill": "cm-ui-preview",
+      "score": 90,
+      "findings": "Cần đảm bảo AI luôn tạo concept Dark Mode theo quy ước của Kit.",
+      "action": "Thêm 'Always include Dark Mode' vào Step 3."
+    },
+    {
+      "skill": "cm-brainstorm-idea",
+      "score": 95,
+      "findings": "9 Windows cực tốt. Cần thêm tiêu chí 'Bền vững/Bảo trì' vào ma trận chấm điểm.",
+      "action": "Cập nhật Scoring Matrix."
+    }
+  ],
+  "overallVerdict": "Batch 05 là linh hồn của tính trải nghiệm tốt. Sẵn sàng tối ưu."
+}

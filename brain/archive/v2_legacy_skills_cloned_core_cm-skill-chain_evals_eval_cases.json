@@ -1,0 +1,21 @@
+[
+  {
+    "id": "chain_01_auto",
+    "prompt": "I want to build a new feature from scratch and deploy it to production.",
+    "expected_outcome": "Gợi ý sử dụng chain 'feature-development' (6 steps).",
+    "assertions": [
+      "Xác định task khớp với workflow 'feature-development'",
+      "Liệt kê các bước trong chain (brainstorm -> planning... -> deploy)",
+      "Sử dụng 'chain start feature-development'"
+    ]
+  },
+  {
+    "id": "chain_02_advance",
+    "prompt": "I finished the planning step for the new feature. What's next in the chain?",
+    "expected_outcome": "Sử dụng 'chain advance' để chuyển sang bước tdd.",
+    "assertions": [
+      "Sử dụng lệnh 'chain advance <id> \"summary\"'",
+      "Xác định bước tiếp theo là 'tdd'"
+    ]
+  }
+]

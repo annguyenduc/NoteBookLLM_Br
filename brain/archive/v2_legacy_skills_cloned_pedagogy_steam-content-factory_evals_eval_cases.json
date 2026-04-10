@@ -1,0 +1,22 @@
+[
+  {
+    "id": "steam_content_01_worksheet",
+    "prompt": "Tạo 3 worksheet về phân số cho lớp 4.",
+    "expected_outcome": "Tạo 3 file worksheet theo template, có mục tiêu đo lường được và có phần 'Suy nghĩ sâu hơn'.",
+    "assertions": [
+      "Bao gồm đủ 4 phần (Warm up, Kiến thức, Áp dụng, Suy nghĩ sâu)",
+      "Mỗi worksheet tập trung vào một chủ đề con khác nhau",
+      "Luôn đính kèm Answer Key"
+    ]
+  },
+  {
+    "id": "steam_content_02_lab",
+    "prompt": "Thiết kế quy trình thí nghiệm đo độ pH trong đất cho lớp 8.",
+    "expected_outcome": "Tạo file Lab Procedure với cảnh báo an toàn rõ ràng và giả thuyết của học sinh.",
+    "assertions": [
+      "Bao gồm phần ⚠️ AN TOÀN ở đầu",
+      "Có bảng thu thập dữ liệu",
+      "Mục tiêu bài học bắt đầu bằng động từ hành động (Bloom)"
+    ]
+  }
+]

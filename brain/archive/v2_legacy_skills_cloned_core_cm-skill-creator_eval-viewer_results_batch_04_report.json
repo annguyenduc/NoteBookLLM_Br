@@ -1,0 +1,50 @@
+{
+  "batchName": "Batch 04: Content Factory & Production",
+  "auditDate": "2026-03-27",
+  "summary": "Bộ skill sản xuất nội dung rất mạnh mẽ và chuyên nghiệp. Các điểm tối ưu chính tập trung vào việc đảm bảo tính tự động hóa (automation) song hành với quy tắc an toàn (safety/SEO).",
+  "results": [
+    {
+      "skill": "steam-content-factory",
+      "score": 95,
+      "findings": "Template rất chuẩn. Cần nhấn mạnh việc tạo Answer Key là bắt buộc để hỗ trợ GV.",
+      "action": "Thêm alert [!TIP] về Answer Key."
+    },
+    {
+      "skill": "cm-content-factory",
+      "score": 90,
+      "findings": "Quy trình Discovery Phase 0 là bắt buộc nhưng dễ bị AI bỏ qua nếu vội.",
+      "action": "Thêm alert [!CAUTION] 'Phase 0 is Mandatory'."
+    },
+    {
+      "skill": "cm-auto-publisher",
+      "score": 85,
+      "findings": "Media SEO là điểm cộng. Cần quy chuẩn hóa tên file ảnh thành kebab-case.",
+      "action": "Cập nhật Quy tắc Phase 2."
+    },
+    {
+      "skill": "math-renderer",
+      "score": 100,
+      "findings": "Đơn giản và hiệu quả. Đã có đủ hướng dẫn transformer.py.",
+      "action": "None"
+    },
+    {
+      "skill": "cm-readit",
+      "score": 95,
+      "findings": "Đã cover các bug khó của Chrome TTS. Cần thêm quy tắc 'Bắt buộc User kích hoạt' (Anti-autoplay).",
+      "action": "Thêm Iron Law về User Initiation."
+    },
+    {
+      "skill": "cm-dockit",
+      "score": 90,
+      "findings": "Hệ thống intake form 11 câu hỏi rất tốt. Cần hướng dẫn AI gợi ý scope phù hợp (tech/knowledge) thay vì luôn chọn 'all'.",
+      "action": "Thêm lưu ý vào Step 1."
+    },
+    {
+      "skill": "cm-safe-i18n",
+      "score": 95,
+      "findings": "8-gate audit là tiêu chuẩn vàng. Cần làm script check parity trong ví dụ trở nên linh hoạt hơn.",
+      "action": "Cập nhật Phase 4 Script."
+    }
+  ],
+  "overallVerdict": "Batch 04 đạt yêu cầu sản xuất chất lượng cao. Sẵn sàng tối ưu."
+}

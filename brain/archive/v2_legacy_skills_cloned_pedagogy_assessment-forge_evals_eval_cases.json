@@ -1,0 +1,34 @@
+[
+  {
+    "id": "eval_01_physics",
+    "prompt": "Tạo bài kiểm tra 45 phút môn Vật lý lớp 9 chủ đề điện học",
+    "expected_outcome": "Đề kiểm tra 3 phần với phân bố Bloom phù hợp lớp 9 (10% Remember, 15% Understand, etc.).",
+    "assertions": [
+      "Có chứa tiêu đề 'PHẦN 1 — KIẾN THỨC'",
+      "Có chứa tiêu đề 'PHẦN 2 — HIỂU & ÁP DỤNG'",
+      "Có chứa tiêu đề 'PHẦN 3 — PHÂN TÍCH & VẬN DỤNG'",
+      "Mục 'ĐÁP ÁN & HƯỚNG DẪN CHẤM' đầy đủ",
+      "Có phần 'MISCONCEPTIONS CẦN CHÚ Ý'"
+    ]
+  },
+  {
+    "id": "eval_02_photosynthesis",
+    "prompt": "Exit ticket cho bài photosynthesis lớp 6",
+    "expected_outcome": "Exit ticket ngắn gọn, có câu hỏi về objective chính và feedback học sinh.",
+    "assertions": [
+      "Có câu hỏi 'Điều em hiểu rõ nhất hôm nay'",
+      "Có câu hỏi 'Điều em còn thắc mắc'",
+      "Nội dung phù hợp lớp 6"
+    ]
+  },
+  {
+    "id": "eval_03_fractions",
+    "prompt": "Diagnostic assessment trước khi dạy unit fractions lớp 4",
+    "expected_outcome": "Bộ câu hỏi chẩn đoán không chấm điểm.",
+    "assertions": [
+      "Có câu hỏi khai thác kiến thức cũ (Activate prior knowledge)",
+      "Có câu hỏi phát hiện hiểu sai (Misconception probe)",
+      "Hướng dẫn ghi rõ 'không có đúng/sai'"
+    ]
+  }
+]

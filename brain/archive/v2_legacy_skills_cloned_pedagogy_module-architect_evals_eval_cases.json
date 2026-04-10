@@ -1,0 +1,35 @@
+[
+  {
+    "id": "lesson_01_magnets",
+    "prompt": "Tạo bài học khoa học lớp 4 về nam châm, 45 phút",
+    "expected_outcome": "Bài học 5E hoàn chỉnh về nam châm với hoạt động khám phá thực hành.",
+    "assertions": [
+      "Có chứa tiêu đề 'ENGAGE'",
+      "Có chứa tiêu đề 'EXPLORE'",
+      "Có chứa tiêu đề 'EXPLAIN'",
+      "Có chứa tiêu đề 'ELABORATE'",
+      "Có chứa tiêu đề 'EVALUATE'",
+      "Mục tiêu học tập có sử nhất 3 cấp độ Bloom",
+      "Giai đoạn EXPLORE có hoạt động hands-on (thí nghiệm/quan sát)"
+    ]
+  },
+  {
+    "id": "lesson_02_bridges",
+    "prompt": "Lesson plan Engineering lớp 10: thiết kế cầu chịu tải",
+    "expected_outcome": "Bài học 5E chuyên sâu về kỹ thuật xây dựng cầu.",
+    "assertions": [
+      "Có ít nhất 2 yếu tố STEAM (ví dụ: Engineering + Physics)",
+      "Giai đoạn ELABORATE có kết nối thực tế hoặc liên môn",
+      "Có phần PHÂN HÓA (Differentiation) đủ 3 nhóm"
+    ]
+  },
+  {
+    "id": "lesson_03_math_functions",
+    "prompt": "Giáo án toán lớp 8 chủ đề hàm số bậc nhất",
+    "expected_outcome": "Giáo án toán theo mô hình 5E.",
+    "assertions": [
+      "Mục tiêu học tập viết đúng format 'Sau bài học, học sinh có thể...'",
+      "Khối lượng thời gian mỗi giai đoạn hợp lý (tổng 45-90 phút)"
+    ]
+  }
+]

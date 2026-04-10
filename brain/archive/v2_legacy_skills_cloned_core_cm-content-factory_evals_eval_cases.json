@@ -1,0 +1,22 @@
+[
+  {
+    "id": "cm_content_01_discovery",
+    "prompt": "Tôi muốn xây dựng blog về 'Dạy lập trình Scratch cho trẻ em'. Hãy bắt đầu.",
+    "expected_outcome": "Hỏi 5 nhóm câu hỏi Phase 0 Discovery (Niche, Reference, Data, Goals, Deploy).",
+    "assertions": [
+      "Không bắt đầu viết ngay lập tức",
+      "Hỏi về USP và Tone of Voice",
+      "Yêu cầu thông tin deploy (Cloudflare)"
+    ]
+  },
+  {
+    "id": "cm_content_02_writing",
+    "prompt": "Viết một bài blog về 'Lợi ích của Scratch' dựa trên StoryBrand.",
+    "expected_outcome": "Bài viết có Hero là học sinh/phụ huynh và Guide là trung tâm/giáo viên.",
+    "assertions": [
+      "Áp dụng SB7 framework (Problem, Guide, Plan, CTA)",
+      "Sử dụng ít nhất 2 Cialdini weapons (Social Proof, Authority)",
+      "Kiểm tra SEO (Title, Meta, H1-H3)"
+    ]
+  }
+]

@@ -8,6 +8,8 @@ Workflow này sẽ tự động cài đặt và cấu hình NotebookLM MCP Serve
 
 ## Bước 1: Cài đặt package notebooklm-mcp-server
 
+**@devops** thực hiện cài đặt:
+
 // turbo
 ```bash
 pip install notebooklm-mcp-server
@@ -15,9 +17,7 @@ pip install notebooklm-mcp-server
 
 ## Bước 2: Tạo Wrapper Script để sửa lỗi Banner
 
-NotebookLM MCP Server mặc định in ra một banner ASCII art khi khởi động, điều này làm hỏng giao thức JSON-RPC của MCP. Chúng ta cần tạo một script Python để lọc bỏ banner này.
-
-Tạo file `d:\antigravity\notebooklm\run_mcp.py`:
+**@engineer** tạo script Python tại `d:\NoteBookLLM_Br\scripts\mcp\run_mcp.py` để lọc bỏ banner:
 
 // turbo
 ```python
@@ -61,19 +61,19 @@ Bạn có thể sử dụng tool `write_to_file` để tạo file này.
 
 ## Bước 3: Thêm cấu hình MCP Server vào Antigravity
 
-Cập nhật file cấu hình MCP tại `C:\Users\Administrator\.gemini\antigravity\mcp_config.json` để sử dụng wrapper script vừa tạo.
+**@devops** cập nhật file cấu hình MCP tại `C:\Users\anngu\.gemini\antigravity\mcp_config.json`:
 
 // turbo
 ```json
 {
   "mcpServers": {
     "notebooklm-mcp-server": {
-      "command": "python",
+      "command": "d:\\NoteBookLLM_Br\\.venv\\Scripts\\python.exe",
       "args": [
         "-u",
         "-W",
         "ignore",
-        "d:\\antigravity\\notebooklm\\run_mcp.py"
+        "d:\\NoteBookLLM_Br\\scripts\\mcp\\run_mcp.py"
       ],
       "env": {
         "PYTHONUNBUFFERED": "1",
@@ -119,13 +119,13 @@ notebooklm-mcp-auth
 
 ## Bước 7: Xác nhận cài đặt thành công
 
-Sau khi reload, kiểm tra xem NotebookLM MCP server đã được load thành công bằng cách sử dụng các công cụ NotebookLM trong Antigravity (ví dụ: hỏi về danh sách notebooks).
+**@librarian** kiểm tra xem NotebookLM MCP server đã được load thành công bằng cách sử dụng các công cụ NotebookLM trong Antigravity (ví dụ: hỏi về danh sách notebooks).
 
 ---
 
 ## Thông tin thêm
 
 - **Package**: `notebooklm-mcp-server`
-- **Wrapper Script**: `d:\antigravity\notebooklm\run_mcp.py`
-- **Config file**: `C:\Users\Administrator\.gemini\antigravity\mcp_config.json`
+- **Wrapper Script**: `d:\NoteBookLLM_Br\scripts\mcp\run_mcp.py`
+- **Config file**: `C:\Users\anngu\.gemini\antigravity\mcp_config.json`
 - **Auth command**: `notebooklm-mcp-auth`

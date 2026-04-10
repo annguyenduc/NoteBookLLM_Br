@@ -1,0 +1,12 @@
+[
+  {
+    "id": "publisher_01_payload",
+    "prompt": "Publish bài viết 'Top 10 AI Tools' lên site.",
+    "expected_outcome": "Tạo payload JSON đầy đủ thông tin media và site_id.",
+    "assertions": [
+      "Bao gồm media array với SEO friendly filenames",
+      "Sử dụng site_id 'cody-master'",
+      "Không cố gắng download ảnh trực tiếp bằng bash"
+    ]
+  }
+]

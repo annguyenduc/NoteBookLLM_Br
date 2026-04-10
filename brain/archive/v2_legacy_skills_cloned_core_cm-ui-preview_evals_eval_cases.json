@@ -1,0 +1,12 @@
+[
+  {
+    "id": "ui_preview_01_stitch",
+    "prompt": "Tạo preview cho trang đăng ký khóa học.",
+    "expected_outcome": "Follow 5 bước Preflight → Extraction → Enhancement → Stitch → Finalization.",
+    "assertions": [
+      "Không gửi prompt mơ hồ trực tiếp cho Stitch",
+      "Sử dụng DESIGN.md hoặc MASTER.md làm source of truth",
+      "Yêu cầu User Confirm/Edit/Skip sau khi có link"
+    ]
+  }
+]

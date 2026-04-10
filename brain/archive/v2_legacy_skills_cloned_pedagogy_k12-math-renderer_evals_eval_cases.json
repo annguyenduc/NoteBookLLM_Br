@@ -1,0 +1,12 @@
+[
+  {
+    "id": "math_01_render",
+    "prompt": "Render latex: $E = mc^2$ và $\\sum_{i=1}^{n} i = \\frac{n(n+1)}{2}$.",
+    "expected_outcome": "Sử dụng scripts/transformer.py để tạo file HTML preview.",
+    "assertions": [
+      "Lưu vào docs/exports/math_preview.md trước khi transform",
+      "Chạy lệnh với flag --html",
+      "Đảm bảo nhúng MathJax trong output"
+    ]
+  }
+]
