@@ -40,6 +40,16 @@
 - **Cơ chế**: Cung cấp bối cảnh đa tầng (System, User, Tool output) để AI có hệ quy chiếu chính xác.
 - **Kỹ thuật "Big Context"**: Nạp toàn bộ tài liệu liên quan vào context (như dự án Antigravity đang làm) để AI không bị ảo giác khi trả lời về hệ thống phức tạp.
 
+### 🥇 Kỹ thuật nâng cao: Tree of Thoughts (ToT)
+- **Cơ chế**: AI tạo ra nhiều nhánh suy luận, tự đánh giá và chọn đường đi tối ưu.
+- **Ứng dụng**: Lập kế hoạch chiến lược.
+
+### 🥇 Kỹ thuật nâng cao: ReAct (Reason + Act)
+- **Cơ chế**: Kết hợp suy luận (Reasoning) với hành động (Acting). Nền tảng cho AI Agent.
+
+> [!NOTE]
+> **Phân biệt CREATE vs Few-Shot**: **CREATE** là khung cấu trúc. **Few-Shot** là kỹ thuật ví dụ để AI bắt chước logic.
+
 ---
 
 ## 🏗️ 3. Framework "AI as a Tutor" (Gia sư thông minh)

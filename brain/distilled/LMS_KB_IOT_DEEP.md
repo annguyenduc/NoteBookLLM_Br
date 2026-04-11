@@ -1,6 +1,13 @@
+---
+title: LMS Deep Knowledge - Internet of Things (IoT)
+type: knowledge_base
+category: IoT
+tags: [Wi-Fi, Dashboard, Sensor, YoloBit]
+last_updated: 2026-04-10
+---
+
 # ⚡ LMS Deep Knowledge: Module IoT & Tự động hóa
 
-> **Mô tả**: Tổng hợp tri thức chuyên sâu CHỈ từ các bộ đề Arduino, YoloBit.
 > **Kiểm định bởi**: @auditor (AG-SWARM-006)
 > **Trạng thái**: ĐÃ CHUẨN HÓA TRÍCH DẪN (Verify bởi @pm v6.2)
 
@@ -29,10 +36,12 @@ Hệ thống tập trung vào việc giám sát và điều khiển qua Internet
 ## 🛠️ 3. Linh kiện & Giao tiếp (Sensors & Actuators)
 
 - **Cảm biến (Input)**:
-    - **Siêu âm (HC-SR04)**: Đo khoảng cách (2cm - vô hạn). Gồm 2 đầu: Trig (phát) và Echo (thu). `[Nguồn: Arduino_M2]`
+    - **Cảm biến Siêu âm (HC-SR04)**: Đo khoảng cách bằng sóng âm. Khoảng cách đo chính xác trong khoảng **2cm - 400cm**. Ngoài khoảng này dữ liệu sẽ không chính xác hoặc bằng 0.
+    - **Joystick**: Cần 2 chân Analog (X, Y) và 1 chân Digital (Button). Giá trị nghỉ là ~512. Trục X/Y thay đổi từ 0 đến 1023.
     - **DHT11/DHT20**: Đo nhiệt độ và độ ẩm không khí. Cần đợi cập nhật mỗi 2 giây. `[Nguồn: Arduino_M2/YoloBit_01]`
     - **PIR**: Phát hiện chuyển động của vật thể phát bức xạ hồng ngoại (con người). `[Nguồn: YoloBit_01]`
 - **Cơ cấu chấp hành (Output)**:
+    - **Đèn LED**: Linh kiện phát quang 1 chiều. Cách nhận biết cực dễ nhất: **Chân dài là cực Dương (+)**, **Chân ngắn là cực Âm (-)**. Nếu chân đã bị cắt bằng nhau, nhìn vào bên trong: bản cực lớn là điện cực (-) âm.
     - **LCD 1602**: Hiển thị văn bản. Dùng module I2C (4 chân: GND, VCC, SDA, SCL). SDA nối A4, SCL nối A5 trên Arduino. `[Nguồn: Arduino_M2]`
     - **Servo (MG90S)**: Động cơ quay góc (0-180 độ). Dây Cam (Tín hiệu), Đỏ (5V), Nâu (GND). `[Nguồn: Arduino_M1]`
     - **L298**: Mạch cầu H điều khiển động cơ DC (động cơ vàng/bơm). `[Nguồn: Arduino_M2/Joystick]`

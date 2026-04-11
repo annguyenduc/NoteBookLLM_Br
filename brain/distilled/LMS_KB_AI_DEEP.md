@@ -1,6 +1,13 @@
+---
+title: LMS Deep Knowledge - Trí tuệ Nhân tạo (A.I)
+type: knowledge_base
+category: AI
+tags: [Machine-Learning, Dataset, Model, Scratch-AI]
+last_updated: 2026-04-10
+---
+
 # 🤖 LMS Deep Knowledge: Module Trí tuệ Nhân tạo (A.I)
 
-> **Mô tả**: Tổng hợp tri thức chuyên sâu CHỈ từ các bộ đề AI Tiểu học và THCS.
 > **Kiểm định bởi**: @auditor (AG-SWARM-006)
 > **Trạng thái**: ĐÃ LÀM SẠCH (Loại bỏ 100% kiến thức ngoại lai)
 

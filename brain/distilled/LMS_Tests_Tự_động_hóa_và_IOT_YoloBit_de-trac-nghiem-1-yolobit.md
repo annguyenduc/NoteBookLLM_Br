@@ -14,14 +14,10 @@ Vận hành Yolo:Bit:
 - Giao diện lập trình và các khối lệnh lập trình
 - Lập trình Yolo:Bit trên OhStem app
 - Các thao tác với khối lệnh và chuyển đổi ngôn ngữ lập trình
-- Lưu trữ và chia sẻ dự án | 1,2,7
+- Lưu trữ và chia sẻ dự án | 1, 2, 3, 4, 5, 6, 7 | 8, 11, 12, 13
+Văn hóa lập trình:
+- Các nhóm lệnh lập trình | 9, 10 | 
 
-3,4,5,6
-
-9,10 | 11,12,13
-
-
-8
 Yolo:Bit với các linh kiện:
 - Mạch mở rộng
 - Đèn chiếu sáng RGB
@@ -31,27 +27,9 @@ Yolo:Bit với các linh kiện:
 - Cảm biến ánh sáng
 - Cảm biến PIR
 - Cảm biến nhiệt độ, độ ẩm DHT20
-- Cảm biến siêu âm | 14,15,16
-17,18,19
-20,21
+- Cảm biến siêu âm | 14, 22, 23 | 15, 16, 17, 18, 19, 20, 21, 24, 25, 26, 27, 28
 
-
- 22,23
- 23
- 23 | 25,27
-25,27,28
-27
-27
-25,27
-27,28
-26,27
-24,25,27
-Kết nối vạn vật với Yolo:Bit
-- Hệ thống IoT của Ohstem server
-- Bảng điều khiển IoT
-- Các nhóm lệnh lập trình
-- Điều khiển thiết bị từ Bảng điều khiển
-- Gửi dữ liệu từ cảm biến lên Bảng điều khiển |  | 29,30
+Kết nối vạn vật với Yolo:Bit (IOT) | | 29, 30
 
 Câu 1 (Nhận biết)
 Nối tên với các bộ phận tương ứng.
@@ -169,14 +147,14 @@ Câu 14 (Nhận biết)
 - B/ Số 2
 - C/ Số 3
 - D/ Số 4
-Câu 15 (Nhận biết)
+Câu 15 (Thông hiểu)
 Đâu là vị trí dãy cổng GVS?
 ![Visual](media/de-trac-nghiem-1-yolobit/rId25.png)
 - A/ Số 3
 - B/ Số 1
 - C/ Số 2
 - D/ Số 4
-Câu 16 (Nhận biết)
+Câu 16 (Thông hiểu)
 Dùng dây nào để kết nối module đèn LED với mạch mở rộng?
 - A/ Dây kết nối Grove
 - B/ Dây jumper M-M

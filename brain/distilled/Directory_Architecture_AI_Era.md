@@ -19,13 +19,13 @@ Trong kỷ nguyên AI, khi số lượng tệp tin có thể tăng lên hàng ng
 
 ### 2. Phân tách Vòng đời (Lifecycle Separation)
 Ngăn chặn ổ đĩa biến thành "bãi rác" bằng ranh giới cứng:
-- **WIP (Work In Progress)**: Chứa tệp đang thay đổi liên tục. Sử dụng thư mục `SPRINTS/` hoặc `Drafts/`.
+- **WIP (Work In Progress)**: Chứa tệp đang thay đổi liên tục. Sử dụng thư mục `sprints/` hoặc `drafts/`.
 - **SSOT (Single Source of Truth)**: Chỉ chứa tài liệu đã chốt (Final).
-- **Z_Archive**: Lưu trữ mọi thứ đã xong, không bao giờ xóa nhưng cũng không bao giờ làm nhiễu kết quả tìm kiếm hiện tại.
+- **Archive**: Lưu trữ mọi thứ đã xong tại thư mục `archive/`. Tuyệt đối không xóa nhưng cũng không để làm nhiễu kết quả tìm kiếm.
 
 ### 3. Chống phân mảnh quá sâu (Flatten the Hierarchy)
 - **Quy tắc Vàng**: Độ sâu tối đa là **3 cấp**.
-- **Giải pháp**: Nếu cần phân loại sâu hơn, hãy sử dụng **File Naming** và **Metadata** (YAML Frontmatter) thay vì tạo thêm folder lồng nhau. Việc này giúp AI Crawler scan dữ liệu nhanh hơn gấp nhiều lần.
+- **Giải pháp (Phẳng hóa Sơ đồ Tổ chức)**: Để tuân thủ Conway's Law mà không làm sâu cây thư mục, chúng ta "phẳng hóa" sơ đồ tổ chức. Ví dụ: Thay vì `Công_ty/Phòng_Ban/Dự_án/File.md`, hãy dùng `dự_án/File.md` và ghi `Department: [Tên Phòng Ban]` vào YAML Metadata. Việc này giúp AI Crawler scan dữ liệu nhanh hơn gấp nhiều lần.
 
 ### 4. Thân thiện với Máy móc (Machine-Readability)
 - **Naming**: Sử dụng `Snake_Case`, `PascalCase`, hoặc `kebab-case`. Không dùng dấu cách hoặc tiếng Việt có dấu trong tên file/folder.

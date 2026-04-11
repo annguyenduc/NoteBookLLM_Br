@@ -1,0 +1,6 @@
+- [ ] Khởi tạo Khung giảng dạy `AI_THPT_Prompt_Engineering_Map.md`.
+    - [ ] Thiết kế Lớp 10: Foundation & V-N-N (Tích hợp Toán/Văn/Anh).
+    - [ ] Thiết kế Lớp 11: Advanced Techniques (CREATE, CoT, Few-shot).
+    - [ ] Thiết kế Lớp 12: Integrated Systems (AI Agents, Second Brain).
+- [ ] Cập nhật `Education_AI_Handbook.md` với trọng tâm mới.
+- [ ] Thực hiện Audit tính nhất quán sư phạm (@auditor).

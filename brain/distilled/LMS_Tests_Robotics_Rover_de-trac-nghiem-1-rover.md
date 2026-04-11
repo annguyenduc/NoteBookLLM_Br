@@ -166,8 +166,8 @@ Phát biểu nào sau đây là đúng khi nói về remote điều khiển từ
 ![Visual](media/de-trac-nghiem-1-rover/rId35.png)
 - A/ Tín hiệu truyền từ remote đến robot là tia hồng ngoại
 - B/ Tín hiệu truyền từ remote đến robot là sóng siêu âm
-- C/ Trên robot có 4 cảm biến dò đường có thể nhận tín hiệu hồng ngoại từ remote, ký hiệu là S1, S2, S3, S4.
-- D/ Trên robot có 1 mắt nhận tín hiệu hồng ngoại từ remote đặt ở dưới cảm biến siêu âm của robot
+- C/ Trên robot Rover có các mắt dò line nằm ở dưới gầm để nhận biết vạch đen/nền trắng.
+- D/ Trên robot có 1 mắt nhận tín hiệu hồng ngoại (IR Receiver) để nhận tín hiệu từ remote, đặt ở mặt trước của robot.
 Câu 15 (Nhận biết)
 Phát biểu nào sau đây là đúng khi nói về app Gamepad của OhStem?
 (Nhiều đáp án)

@@ -7,21 +7,19 @@
 - **Công cụ giảng dạy**: Teachable Machine (Google), mBlock5 (Lập trình kéo thả), và các ứng dụng AI gia sư hỗ trợ học tập.
 - **Dự án mẫu**: Phân loại rác thải, nhận diện cử chỉ điều khiển đèn LED, và trò chơi AI đơn giản.
 
-## 2. 🏛️ Advanced AI & Embedded (High School)
-Tập trung vào giải quyết vấn đề thực tế (Problem-solving) và năng lực áp dụng sâu (**Knowledge Deepening** - UNESCO ICT CFT v3).
+## 2. 🏛️ Advanced AI & Prompt Mastery (High School)
+Tập trung vào giải quyết vấn đề thực tế (Problem-solving) và năng lực áp dụng sâu dựa trên sự cộng tác giữa Người và AI.
 
-- **Quy trình 3 giai đoạn (ML Pipeline)**: 
-    1. **Collect (Thu thập)**: Xây dựng Dataset đa dạng (Data Diversity) để tránh định kiến (Bias).
-    2. **Train (Huấn luyện)**: Sử dụng Teachable Machine hoặc ML4Kids để tạo mô hình.
-    3. **Model (Ứng dụng)**: Nhúng vào Scratch/Python để tạo sản phẩm hoàn chỉnh.
-- **Công cụ chuyên sâu**: Python (Yolo_UNO), `machinelearningforkids.co.uk`, và các mô hình LLM Studio.
-- **Ẩn dụ Sư phạm (Analogies)**:
-    - **Dữ liệu = Thực phẩm**: Nguyên liệu phải sạch và đa dạng thì món ăn (Model) mới ngon.
-    - **Huấn luyện = Ôn thi**: Tránh "học tủ" (Overfitting) để Model xử lý được các tình huống mới.
-- **Dự án Hackathon THPT**: 
-    - Nhận diện đeo khẩu trang (Cửa thông minh).
-    - Phân loại rác thải/Lá cây (IoT & AI).
-    - Chatbot hỗ trợ học tập (LLM).
+- **Khung giảng dạy chi tiết**: 👉 **[AI_THPT_Prompt_Engineering_Map.md](file:///d:/NoteBookLLM_Br/brain/distilled/AI_THPT_Prompt_Engineering_Map.md)**
+- **Trọng tâm kỹ thuật**: 
+    1. **Prompt Mastery**: Vận hành LLM (Gemini) qua các khung V-N-N và CREATE.
+    2. **Logic & Reasoning**: Sử dụng Chain-of-Thought (CoT) để giải quyết bài tập STEM đa hiệu.
+    3. **Personal Systems**: Xây dựng Second Brain và AI Agents hỗ trợ học tập.
+- **Tích hợp môn học**: Áp dụng AI trực tiếp vào Toán, Văn, Anh để tối ưu hóa hiệu suất học tập.
+- **Dự án mẫu**: 
+    - AI Tutor cá nhân hóa theo phương pháp Socratic.
+    - Hệ thống quản trị tri thức cá nhân (LOM Architecture).
+    - Chatbot chuyên biệt hỗ trợ ôn thi tốt nghiệp.
 
 ### Quy trình 48h AI Hackathon (SOP)
 Lộ trình tăng tốc để tạo ra sản phẩm AI hoàn chỉnh:

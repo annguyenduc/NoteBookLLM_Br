@@ -1,0 +1,5 @@
+- [x] Cập nhật `PEDAGOGICAL_MODEL_PRESETS["free"]` với các model OSS mạnh mẽ.
+- [x] Thiết lập sơ đồ dự phòng 3 tầng (Layered Fallback) trong `llm_client.py`.
+- [x] Xác nhận định danh `qw/qwen3-coder-plus` bằng ping thực tế.
+- [x] Cập nhật và tinh chỉnh [agents-index.md](file:///d:/NoteBookLLM_Br/brain/distilled/agents-index.md).
+- [x] Kiểm tra tích hợp Swarm v4.7 Supreme.

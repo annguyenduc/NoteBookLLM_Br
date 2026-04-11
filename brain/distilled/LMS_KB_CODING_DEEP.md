@@ -6,18 +6,38 @@
 
 ---
 
-## 🎨 1. Nền tảng Tynker
+## 👶 0. Scratch Junior (Dành cho Tiểu học đầu cấp)
 
-| Đặc điểm | Chi tiết Kỹ thuật (Theo LMS) | Trích dẫn nguồn |
-| :--- | :--- | :--- |
-| **Loại tài khoản** | Tynker có tài khoản giáo viên để tạo lớp học, Scratch (bản offline/online cơ bản) thì không. | [Tynker_01] |
-| **Tọa độ Stage** | Trục X: **-682 đến 682**; Trục Y: **-384 đến 384**. | [Tynker_01] |
-| **Chế độ xoay** | Có 3 chế độ: Rotate Freely (Xoay tự do), Do không rotate (Không xoay), Flip Horizontally (Lật ngang). | [Tynker_01] |
-| **Cấu trúc hàm** | Hàm là đoạn chương trình có tên, đầu vào và đầu ra; dùng để giải quyết vấn đề chuyên biệt. | [Tynker_01] |
+LMS tập trung vào việc làm quen với lập trình qua các biểu tượng (Icon) trực quan:
+- **Đặc trưng**: Không dùng chữ, các khối lệnh ghép theo hàng ngang.
+- **Sự kiện (Triggering Blocks)**: Bắt đầu bằng **Lá cờ vàng**, **Chạm vào nhân vật**, hoặc **Gửi tin nhắn màu**.
+- **Chương trình chạy song song**: Một nhân vật có thể có nhiều hàng code bắt đầu bằng cùng một sự kiện (ví dụ: Chạm vào nhân vật vừa nhảy vừa đổi màu).
+- **Mục tiêu**: Rèn luyện tư duy trình tự (Sequencing) và sáng tác truyện tương tác. `[Nguồn: Scratch_Jr_01]`
 
 ---
 
-## 🧩 2. Logic điều khiển & Sự kiện (Control & Events)
+## 🎨 1. Nền tảng Tynker
+
+| Đặc điểm | Scratch (mBlock) | Tynker |
+| :--- | :--- | :--- |
+| **Tài khoản** | Hỗ trợ **Teacher Accounts** để quản lý lớp học. | Thường dùng tài khoản cá nhân hoặc theo khóa học LMS. |
+| **Tọa độ (Stage)** | X: [-240, 240]; Y: [-180, 180]. Trục tọa độ chuẩn. | X: [-341, 341]; Y: [-192, 192]. Sân khấu rộng hơn. |
+| **Chế độ xoay** | Left-right, All around, Don't rotate. | Rotate Freely, Don't rotate, Flip Horizontally. |
+| **Khối của tôi** | **My Blocks**: Dùng để đóng gói code (Abstraction). | **Functions**: Tương tự My Blocks, giúp code gọn gàng. |
+
+---
+
+## 🏗️ 2. Các khối lệnh nâng cao (Advanced Blocks)
+
+- **Bản sao (Clones)**:
+    - `Create clone of [myself]`: Tạo một thực thể giống hệt nhân vật hiện tại.
+    - `When I start as a clone`: Quy định hành vi chỉ dành riêng cho bản sao.
+    - `Delete this clone`: Tự hủy bản sao để tiết kiệm bộ nhớ.
+- **Biến số (Variables)**: Lưu trữ dữ liệu. Có thể chọn "For this sprite only" (biến địa phương) hoặc "For all sprites" (biến toàn cục).
+
+---
+
+## 🧩 3. Logic điều khiển & Sự kiện (Control & Events)
 
 ### Cơ chế Vòng lặp:
 - **Forever (Liên tục)**: Chạy khối lệnh bên trong mãi mãi.
@@ -51,9 +71,10 @@
 
 ## 🚩 5. Lỗi thường gặp (Misconceptions)
 
-1. **Nhầm lẫn Vòng lặp**: Sử dụng `Repeat` thay vì `Forever` cho các hoạt động cần duy trì suốt trò chơi (VD: kiểm tra va chạm vật cản). `[Nguồn: Scratch_M1]`
-2. **Sai lệch Tọa độ**: Trong Tynker, nếu đặt nhân vật ở X=400 Y=400, nhân vật sẽ nằm ngoài biên dọc (Y max là 384). `[Nguồn: Tynker_01]`
+1. **Nhầm lẫn Vòng lặp**: Sử dụng `Repeat` thay vì `Forever` cho các hoạt động cần duy trì suốt trò chơi. `[Nguồn: Scratch_M1]`
+2. **Sai lệch Tọa độ**: Trong Tynker, nếu đặt nhân vật ở X=400 Y=400, nhân vật sẽ nằm ngoài biên (Y max 192/384 tùy bản). `[Nguồn: Tynker_01]`
 3. **Lỗi Biến số**: Quên không khởi tạo (Set) giá trị biến về 0 khi bắt đầu trò chơi (When flag clicked).
+4. **Clone Leak**: Tạo bản sao liên tục mà không có lệnh `Delete this clone`, dẫn đến Lag hoặc đứng chương trình (Giới hạn Scratch là 300 bản sao).
 
 ---
 *Tình trạng kiểm định: ĐÃ LÀM SẠCH 100% (Verify bởi @pm & @auditor v6.2)*

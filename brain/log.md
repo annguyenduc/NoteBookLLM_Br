@@ -36,3 +36,14 @@ Loại (Type):
 - [DONE] Mở rộng Scoped Access cho @designer và @profiler đọc xuyên suốt `brain/`.
 - [DONE] Chuẩn hóa Rule 11 (Absolute Sequence) cho quy trình sư phạm.
 - [DONE] Thiết lập Roadmap cho các phiên làm việc tiếp theo (Stress-test & Scaffolding).
+## [2026-04-11] upgrade | Triển khai 9Router Smart Fallback & Bug Fix
+- [DONE] Tích hợp cơ chế MODEL_FALLBACK_CHAINS trong `llm_client.py`.
+- [DONE] Fix Bug A: Khắc phục lỗi override model mặc định của `call_worker`.
+- [DONE] Fix Bug B: Thêm tham số `model` cho `call_pedagogical_agent` và agent wrappers.
+- [DONE] Triển khai logic phân loại lỗi (404/429/502) và tự động xử lý (Switch/Wait/Retry).
+- [DONE] Verify thành công khả năng kết nối qua Gateway 20128.
+## [2026-04-11] upgrade | Nâng cấp Free Tier Supreme v4.7 (Model Optimization)
+- [DONE] Chuyển đổi 100% sang model OSS hiệu năng cao (Llama 3.3 70B, Qwen 32B, Kimi 2.5).
+- [DONE] Thiết lập **Layered Fallback (3 tầng)**: Primary -> Tier Backup -> Last Resort.
+- [DONE] Xác nhận định danh chính xác cho model coder (`qw/qwen3-coder-plus`).
+- [DONE] Hoàn thiện [agents-index.md](file:///d:/NoteBookLLM_Br/brain/distilled/agents-index.md) làm chỉ mục năng lực AI.

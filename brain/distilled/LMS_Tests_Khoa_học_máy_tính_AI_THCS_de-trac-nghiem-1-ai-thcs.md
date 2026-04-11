@@ -312,11 +312,9 @@ Câu 30 (Thông hiểu)
 Cho một bộ dữ liệu như bảng sau:
 
 Class 1 | Class 2 | Class 3
- |  | 
- |  | 
- |  | 
- |  | 
- |  | 
+--- | --- | ---
+Hình ảnh Chai nước (Bottle) | Hình ảnh Bàn tay (Hand) | Hình ảnh Cái ly (Cup)
+... | ... | ...
 
 Hỏi khi sử dụng bộ dữ liệu trên để dạy cho máy học bằng Teachable Machine và khi sử dụng câu lệnh như sau, nhân vật sẽ nói gì ở kết quả cuối cùng ?
 ![Visual](media/de-trac-nghiem-1-ai-thcs/rId99.png)

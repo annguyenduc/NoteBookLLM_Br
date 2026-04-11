@@ -2,7 +2,7 @@
 
 > **Mục tiêu**: Thiết lập khung tham chiếu kỹ thuật để đánh giá năng lực giáo viên trong từng Module riêng biệt.
 > **Tiêu chuẩn**: UNESCO ICT CFT v3 & DNA Sư phạm Antigravity.
-> **Nền tảng chủ đạo**: Lập trình khối lệnh (Block-based coding) như **mBlock, Ohstem**.
+> **Nền tảng chủ đạo**: Lập trình khối lệnh (Block-based) như **mBlock, Ohstem** và lập trình văn bản (**Python/C++**).
 
 ---
 
@@ -14,7 +14,7 @@ Các môn học: AI Tiểu học, AI THCS, Python (mBlock).
 | :--- | :--- |
 | **L1: Literacy** | Hiểu khái niệm cơ bản về AI. Nhận diện các khối lệnh nhận diện khuôn mặt, giọng nói trong mBlock/Ohstem. |
 | **L2: Deepening** | Làm chủ quy trình huấn luyện mô hình (Teachable Machine/ML4Kids) và nhúng vào Blockly để xử lý dữ liệu. |
-| **L3: Creation** | **Chuyên gia**: Có khả năng tối ưu hóa logic rẽ nhánh phức tạp trong Blockly, xử lý sai số dữ liệu và thiết kế kịch bản Fail-safe. |
+| **L3: Creation** | **Chuyên gia**: Tối ưu logic rẽ nhánh phức tạp. Đối với **Python**: Khả năng nhúng thư viện AI, xử lý dữ liệu thô và tối ưu hóa mô hình thực tế. |
 
 ---
 
@@ -26,7 +26,7 @@ Các môn học: Scratch Jr, Scratch 1+2, Tynker, Python (mBlock).
 | :--- | :--- |
 | **L1: Literacy** | Sử dụng thành thạo các khối lệnh cơ bản (Xanh, Tím, Vàng). Hiểu logic tuần tự và vòng lặp đơn giản. |
 | **L2: Deepening** | Làm chủ Biến (Variables), Danh sách (Lists) và Hàm tùy chỉnh (My Blocks) trong môi trường Blockly. |
-| **L3: Creation** | **Chuyên gia**: Khả năng xây dựng thuật toán tối ưu bằng khối lệnh, tạo Extension hoặc tích hợp liên môi trường (Cloud variables). |
+| **L3: Creation** | **Chuyên gia**: Xây dựng thuật toán phức tạp. Đối với **Python**: Làm chủ cấu trúc dữ liệu nâng cao (Dict, Set), Class/Object và quản lý Library. |
 
 ---
 

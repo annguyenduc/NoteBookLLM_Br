@@ -8,9 +8,8 @@ Hệ thống quy tắc dựa trên nguyên tắc: **Phòng ngừa → Giáo dụ
 - **Kỳ vọng rõ ràng**: Thiết lập nội quy lớp học từ buổi đầu tiên. Đồng kiến tạo nội quy cùng học sinh để tăng tính tự giác.
 - **Củng cố tích cực**: Tập trung khen ngợi hành vi tốt thay vì chỉ trừng phạt lỗi sai.
 - **Hậu quả Logic**: Để học sinh trải nghiệm hậu quả tự nhiên của hành vi (ví dụ: làm đổ nước phải tự lau).
-- **Cool-down Time**: Sử dụng "thời gian yên tĩnh" để học sinh bình tĩnh trước khi xử lý mâu thuẫn.
-- **Giao trách nhiệm**: Phân công vai trò (Trưởng nhóm, Kỹ thuật, Thư ký) để học sinh cảm thấy có giá trị.
-- **Góc bình tĩnh (Calm Corner)**: Thiết lập không gian riêng để học sinh tự điều chỉnh cảm xúc trước khi thảo luận về lỗi sai.
+- **Điều chỉnh cảm xúc (Emotional Regulation)**: Thiết lập **Góc bình tĩnh (Calm Corner)** và quy trình **Cool-down Time** để học sinh tự làm chủ cảm xúc trước khi xử lý mâu thuẫn hoặc thảo luận về lỗi sai.
+- **Giao trách nhiệm (Empowerment)**: Khuyến khích học sinh **tự thỏa thuận** vai trò trong nhóm (Trưởng nhóm, Kỹ thuật, Thư ký). Giáo viên đóng vai trò cố vấn, tránh áp đặt vai trò cứng nhắc để tăng tính trách nhiệm.
 
 ## 2. 🧠 Phương pháp Tự học & Tư duy sâu
 Áp dụng để chuyển đổi từ "Học thụ động" sang "Chủ động kiến tạo":
@@ -50,12 +49,12 @@ Quy trình đảm bảo chất lượng học liệu:
 *Trích nguồn: NASA Jet Propulsion Laboratory (JPL) - Engineering Design Process.*
 
 Quy trình xoay vòng liên tục để giải quyết vấn đề kỹ thuật:
-- **Ask (Hỏi)**: Xác định vấn đề cốt lõi. Ai là người gặp vấn đề? Ràng buộc là gì?
-- **Imagine (Tưởng tượng)**: Đưa ra nhiều giải pháp khác nhau. Không phán xét ý tưởng trong giai đoạn này.
-- **Plan (Lập kế hoạch)**: Vẽ sơ đồ khối (Flowchart), sơ đồ dòng dữ liệu hoặc mô hình kiến trúc tri thức.
-- **Create (Chế tạo)**: Hiện thực hóa mô hình mẫu (Prototype) bằng phần cứng hoặc hệ thống prompt/config.
-- **Test (Thử nghiệm)**: Chạy thử hệ thống, kiểm tra lỗi (Troubleshooting) và so sánh với mục tiêu ban đầu.
-- **Improve (Cải tiến)**: Điều chỉnh dựa trên kết quả thử nghiệm. Lặp lại chu trình để tối ưu hóa.
+- **Ask (Hỏi)**: Xác định vấn đề cốt lõi. Ai bị ảnh hưởng? Ràng buộc về thời gian, vật tư là gì?
+- **Imagine (Tưởng tượng)**: Đưa ra mọi ý tưởng có thể. Vẽ sơ đồ tư duy (Mindmap) hoặc phác thảo nhanh.
+- **Plan (Lập kế hoạch)**: Vẽ sơ đồ khối (Flowchart), chọn vật tư tối ưu nhất từ danh sách tưởng tượng.
+- **Create (Chế tạo)**: Hiện thực hóa mô hình mẫu (Prototype). Dùng các vật liệu thay thế nếu cần.
+- **Test (Thử nghiệm)**: Chạy thử trong điều kiện giới hạn. Ghi nhận các điểm thất bại (Fail points).
+- **Improve (Cải tiến)**: Điều chỉnh dựa trên lỗi thực tế. Có thể quay lại bước Imagine nếu cần đại tu giải pháp.
 
 > [!TIP]
 > **Sư phạm lai (Hybrid)**: Theo Brunsell (2011), việc lồng ghép EDP vào bước *Elaborate* giúp học sinh chuyển đổi từ việc hiểu khái niệm (Inquiry) sang việc vận dụng để tạo ra sản phẩm thực tế (Engineering).
