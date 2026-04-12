@@ -18,7 +18,23 @@ Dự án vận hành theo mô hình Swarm với hệ thống Phân loại thông
 | **AG-SWARM-009** | **@profiler** | **Learner Profiler** | Xây dựng và cập nhật Trainer Profile (entry/intermediate/advanced), feed context cho @designer và @engineer. | 20k / 4k | < 40s |
 | **AG-SWARM-010** | **@creative** | **Creative Specialist** | Tạo case study, roleplay scenario, lesson plan mẫu cho giáo viên (Creative content). | 25k / 5k | < 60s |
 | **AG-SWARM-011** | **@healer** | **Maintenance** | Hàn gắn tri thức, sửa lỗi liên kết và phục hồi tính toàn vẹn hệ thống. | 10k / 2k | < 20s |
-
+## 🗂️ Cấu trúc Brain (Brain Architecture v4.1)
+ 
+```
+brain/
+├── raw/          ← Dữ liệu thô gốc. KHÔNG ai được sửa, chỉ được đọc.
+├── atoms/        ← Atomic notes có [[wikilinks]]. 1 file = 1 khái niệm.
+│                    Template: brain/atoms/ATOMS_TEMPLATE.md
+├── distilled/    ← Output cuối: Test bank (LMS_Tests_*.md) và KB đã verify.
+│                    CHỈ @librarian và @auditor được ghi vào đây sau khi verify.
+└── process/      ← Handoff files giữa agents. Vòng đời theo task.
+                     EXAM_Context_*, Trainer_Profile_*, Learning_Design_*, Eval_Report_*
+```
+**Quy tắc vàng:**
+- `raw/` → không ai sửa
+- `atoms/` → @scout tạo, @librarian verify, @auditor approve
+- `distilled/` → output đã verify, không phải nơi dump
+- `process/` → sống và chết theo pipeline task
 
 ## 🛠️ Lệnh điều khiển (Manus Commands)
 - `/scout` — Kích hoạt `@scout` nghiên cứu & Đánh giá độ khó (Difficulty Audit).
@@ -28,21 +44,36 @@ Dự án vận hành theo mô hình Swarm với hệ thống Phân loại thông
 - `/graphify` — Cập nhật hoặc truy vấn đồ thị kiến thức dự án (Structural Memory).
 - `/lint` — Kích hoạt `@librarian` chạy `scripts/brain_lint.py` để kiểm tra sức khỏe tri thức.
 - `/audit-tokens` — Kiểm tra ngân sách token của từng phiên làm việc (Warning mode).
-- `/scout-exam [module] [bloom_levels]` — Kích hoạt `@scout` nghiên cứu chuyên biệt cho ra đề kiểm tra. Output bắt buộc ghi vào `brain/distilled/EXAM_Context_[module].md` trước khi `@engineer` tiếp nhận.
-- `/audit-exam [file_đề]` — Kích hoạt `@auditor` đối soát ngược từng câu hỏi. Thứ tự ưu tiên: (1) `brain/distilled/EXAM_Context_*.md` → (2) `brain/distilled/` các file khác → (3) `brain/raw/` chỉ khi distilled không đủ. KHÔNG dùng general knowledge. Nếu không tìm thấy nguồn ở cả 3 tầng → ghi rõ `[KHÔNG TÌM THẤY NGUỒN]`, tuyệt đối không reconstruct.
-- `/profile [trainer_id] [level]` — Kích hoạt `@profiler` tạo hoặc cập nhật Trainer Profile. Output ghi vào `brain/distilled/Trainer_Profile_[id].md`. Level: `entry` / `intermediate` / `advanced`.
-- `/design [module] [trainer_level]` — Kích hoạt `@designer` thiết kế learning sequence cho module và level trainer cụ thể. Output ghi vào `brain/distilled/Learning_Design_[module].md`. Bắt buộc đọc Trainer Profile tương ứng trước.
-- `/evaluate [module] [kết_quả_file]` — Kích hoạt `@evaluator` phân tích kết quả đào tạo theo Kirkpatrick Level 1-4. Output ghi vào `brain/distilled/Eval_Report_[module].md` và `brain/log.md`.
+- `/scout-exam [module] [bloom_levels]` — Kích hoạt `@scout` nghiên cứu chuyên biệt cho ra đề kiểm tra. Output bắt buộc ghi vào `brain/process/EXAM_Context_[module].md` trước khi `@engineer` tiếp nhận.
+- `/audit-exam [file_đề]` — Kích hoạt `@auditor` đối soát ngược từng câu hỏi. Thứ tự ưu tiên: (1) `brain/process/EXAM_Context_*.md` → (2) `brain/distilled/` các file khác → (3) `brain/raw/` chỉ khi distilled không đủ. KHÔNG dùng general knowledge. Nếu không tìm thấy nguồn ở cả 3 tầng → ghi rõ `[KHÔNG TÌM THẤY NGUỒN]`, tuyệt đối không reconstruct.
+- `/profile [trainer_id] [level]` — Kích hoạt `@profiler` tạo hoặc cập nhật Trainer Profile. Output ghi vào `brain/process/Trainer_Profile_[id].md`. Level: `entry` / `intermediate` / `advanced`.
+- `/design [module] [trainer_level]` — Kích hoạt `@designer` thiết kế learning sequence cho module và level trainer cụ thể. Output ghi vào `brain/process/Learning_Design_[module].md`. Bắt buộc đọc Trainer Profile tương ứng trước.
+- `/evaluate [module] [kết_quả_file]` — Kích hoạt `@evaluator` phân tích kết quả đào tạo theo Kirkpatrick Level 1-4. Output ghi vào `brain/process/Eval_Report_[module].md` và `brain/log.md`.
 
 ## 📂 Phân quyền truy cập (Manus Scoped Access)
-- **@pm / @librarian / @scout**: Toàn quyền `brain/raw/`, `brain/distilled/`, `CONTINUITY.md`, `brain/log.md`.
-- **@engineer / @healer**: Toàn quyền `tools/`, `scripts/`, `src/`. Đọc `brain/distilled/EXAM_Context_*.md` và `brain/distilled/Learning_Design_*.md` khi thực thi tác vụ ra đề và tạo nội dung.
-- **@auditor**: Đọc toàn bộ `brain/raw/` và `brain/distilled/` (read-only). Ghi báo cáo Audit vào `brain/log.md`. Không có quyền ghi vào bất kỳ file nội dung nào.
-- **@designer**: Đọc xuyên suốt `brain/raw/` và `brain/distilled/`. Ghi `brain/distilled/Learning_Design_*.md`. Bắt buộc đọc `Trainer_Profile_*.md` trước khi thiết kế.
-- **@evaluator**: Đọc `brain/distilled/EXAM_Context_*.md`, `brain/distilled/Learning_Design_*.md`, `brain/distilled/Trainer_Profile_*.md`. Ghi `brain/distilled/Eval_Report_*.md` và `brain/log.md`.
-- **@profiler**: Đọc xuyên suốt `brain/raw/` và `brain/distilled/`. Ghi `brain/distilled/Trainer_Profile_*.md`.
-- **@creative**: Đọc `brain/distilled/`, ghi `docs/`, `res/`, `templates/`.
-- **@devops / @healer**: Toàn quyền hạ tầng, bảo trì tri thức (`scripts/maint_*`) và `archive/`.
+
+| Agent | Đọc | Ghi | Cấm tuyệt đối |
+|:---|:---|:---|:---|
+| **@pm** | Tất cả | `brain/process/`, `brain/log.md`, `CONTINUITY.md` | Ghi `brain/raw/` |
+| **@scout** | `brain/raw/`, `brain/process/` | `brain/atoms/` (draft), `brain/process/EXAM_Context_*.md` | Ghi `brain/distilled/` trực tiếp |
+| **@engineer** | `brain/process/`, `brain/distilled/` | `brain/process/` (output task) | Ghi `brain/atoms/`, `brain/raw/` |
+| **@librarian** | Tất cả | `brain/distilled/` (sau verify), `brain/log.md` | Overwrite `brain/log.md` |
+| **@auditor** | Tất cả (read-only) | `brain/log.md` (append only) | Ghi bất kỳ file nội dung nào |
+| **@designer** | `brain/raw/`, `brain/distilled/`, `brain/process/Trainer_Profile_*.md` | `brain/process/Learning_Design_*.md` | Bỏ qua Trainer_Profile |
+| **@evaluator** | `brain/process/`, `brain/distilled/` | `brain/process/Eval_Report_*.md`, `brain/log.md` | — |
+| **@profiler** | `brain/raw/`, `brain/distilled/` | `brain/process/Trainer_Profile_*.md` | — |
+| **@creative** | `brain/distilled/`, `brain/atoms/` | `docs/`, `res/`, `templates/` | Ghi `brain/` trực tiếp |
+| **@healer** | Tất cả | `brain/atoms/` (sửa links), `scripts/` | Xóa file không có backup |
+| **@devops** | Tất cả | `scripts/`, `tools/`, `libs/` | Ghi `brain/distilled/` |
+ 
+**Quy tắc ghi log bắt buộc:**
+Mọi hành động ghi file → append vào `brain/log.md` theo format:
+```
+## [YYYY-MM-DD HH:MM] <type> | <agent> | <mô tả ngắn>
+- File tạo/sửa: [đường dẫn]
+- Lý do: [1 câu]
+```
+ 
 
 ## ⚖️ Quy tắc Swarm v4.0 Supreme (Manus Standard)
 1. **Manus First**: Ưu tiên đọc `task_plan.md` trước khi thực hiện bất kỳ hành động nào.
@@ -82,13 +113,18 @@ Dự án vận hành theo mô hình Swarm với hệ thống Phân loại thông
     | Bước | Agent | Prerequisite file phải tồn tại |
     |---|---|---|
     | 1 | @profiler | Không cần |
-    | 2 | @designer | brain/distilled/Trainer_Profile_[id].md |
-    | 3 | @engineer | brain/distilled/Learning_Design_[module].md |
-    | 4 | @evaluator | brain/distilled/Eval_Report_[module].md |
+    | 2 | @designer | brain/process/Trainer_Profile_[id].md |
+    | 3 | @engineer | brain/process/Learning_Design_[module].md |
+    | 4 | @evaluator | brain/process/Eval_Report_[module].md |
     
     Nếu file prerequisite KHÔNG tồn tại → agent DỪNG ngay,
     báo @pm, KHÔNG tự tiếp tục.
-
+## 🔒 WRITE-PROTECT Rule (Bổ sung vào Rules)
+Rule 12 — RAW IS IMMUTABLE:
+- brain/raw/ là READ-ONLY với TẤT CẢ agents
+- Không agent nào được ghi, sửa, hoặc overwrite file trong raw/
+- Vi phạm Rule này → @healer rollback ngay, ghi incident vào log.md
+- CHỈ người dùng mới được thêm file mới vào raw/
 ## ✋ CHECKPOINT Protocol (Bắt buộc mọi agent)
 
 Trước khi thực hiện BẤT KỲ task nào, agent PHẢI trả lời chính xác các block sau:
