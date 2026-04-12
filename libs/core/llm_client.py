@@ -43,7 +43,7 @@ SMART_ROUTER_URL = os.getenv("SMART_ROUTER_URL", "http://localhost:20128/v1/chat
 SMART_ROUTER_KEY = os.getenv("NINEROUTER_API_KEY")
 SMART_ROUTER_MODEL = os.getenv(
     "SMART_ROUTER_MODEL",
-    "gc/gemini-3-flash-preview",
+    "ag/gemini-3-flash",
 )
 PEDAGOGICAL_MODEL_PRESET = os.getenv("PEDAGOGICAL_MODEL_PRESET", "free")
 USE_ROUTER = True
@@ -58,7 +58,7 @@ PEDAGOGICAL_MODEL_PRESETS: Dict[str, Dict[str, str]] = {
         "auditor": "groq/llama-3.3-70b-versatile",
     },
     "balanced": {
-        "profiler": "gc/gemini-3-flash-preview",
+        "profiler": "ag/gemini-3-flash",
         "designer": "groq/llama-3.3-70b-versatile",
         "engineer": "qw/qwen3-coder-plus",
         "evaluator": "groq/qwen/qwen3-32b",
@@ -100,8 +100,8 @@ MODEL_FALLBACK_CHAINS: Dict[str, List[str]] = {
     ],
 
     # Mặc định / Last Resort
-    "gc/gemini-3-flash-preview": [
-        "gc/gemini-3-flash-preview",
+    "ag/gemini-3-flash": [
+        "ag/gemini-3-flash",
         "groq/llama-3.3-70b-versatile",
     ],
 }
@@ -214,11 +214,29 @@ def _build_fallback_chain(model: str) -> List[str]:
     return MODEL_FALLBACK_CHAINS.get(model, [model, SMART_ROUTER_MODEL])
 
 
+def _write_execution_manifest(role: str, model: str, req_id: str) -> None:
+    """Ghi bằng chứng vật lý rằng agent đã được gọi."""
+    manifest_path = Path("storage/execution_manifest.jsonl")
+    manifest_path.parent.mkdir(parents=True, exist_ok=True)
+    entry = {
+        "ts": time.strftime("%Y-%m-%dT%H:%M:%S"),
+        "agent": role,
+        "model": model,
+        "request_id": req_id,
+    }
+    try:
+        with open(manifest_path, "a", encoding="utf-8") as f:
+            f.write(json.dumps(entry, ensure_ascii=False) + "\n")
+    except Exception as e:
+        logger.error(f"Không thể ghi execution manifest: {e}")
+
+
 def _call_9router_audit(
     messages: List[Dict[str, str]],
     temperature: float,
     max_tokens: int,
     requested_model: Optional[str] = None,
+    role: str = "unknown",
 ) -> Any:
     """Call 9Router và emit request metadata cho dashboard correlation."""
     effective_model = _resolve_router_model(requested_model)
@@ -236,8 +254,11 @@ def _call_9router_audit(
 
     response = requests.post(SMART_ROUTER_URL, headers=headers, json=payload, timeout=180)
     header_request_id = response.headers.get("x-request-id") or response.headers.get("request-id")
+    
+    # Lớp 1: Logging với Agent Role
     logger.info(
-        f"[9Router Audit] Status: {response.status_code} | Request ID: {header_request_id or 'N/A'} | Model Sent: {effective_model}"
+        f"[9Router Audit] Agent: {role:10} | Status: {response.status_code} "
+        f"| Request ID: {header_request_id or 'N/A'} | Model: {effective_model}"
     )
 
     if response.status_code != 200:
@@ -252,6 +273,10 @@ def _call_9router_audit(
         content = json_data["choices"][0]["message"]["content"]
         req_id = json_data.get("id") or header_request_id or "N/A"
         actual_model = json_data.get("model", effective_model)
+        
+        # Lớp 2: Ghi Execution Manifest
+        _write_execution_manifest(role, actual_model, req_id)
+        
         logger.info(f"  OK Request ID: {req_id} | Model Returned: {actual_model} | Status: OK")
         return content, actual_model
     except Exception as exc:
@@ -284,6 +309,7 @@ def _call_with_fallback(
     temperature: float,
     max_tokens: int,
     model: Optional[str] = None,
+    role: str = "unknown",
 ) -> Any:
     """
     Gọi 9Router với cơ chế fallback thông minh:
@@ -302,8 +328,8 @@ def _call_with_fallback(
         max_retries = 3
         while retry_count < max_retries:
             try:
-                logger.info(f"[Fallback] Trying model: {candidate} (attempt {retry_count + 1}/{max_retries})")
-                result = _call_9router_audit(messages, temperature, max_tokens, requested_model=candidate)
+                logger.info(f"[Fallback] Trying model: {candidate} (attempt {retry_count + 1}/{max_retries}) | Agent: {role}")
+                result = _call_9router_audit(messages, temperature, max_tokens, requested_model=candidate, role=role)
                 return result
             except Exception as exc:
                 action = _classify_error(exc)
@@ -342,7 +368,7 @@ def call_worker(
 ) -> str:
     start = time.time()
     try:
-        content, actual_model = _call_with_fallback(messages, temperature, max_tokens, model=model)
+        content, actual_model = _call_with_fallback(messages, temperature, max_tokens, model=model, role="worker")
         elapsed = time.time() - start
         logger.info(f"  Elapsed: {elapsed:.2f}s | Model Used: {actual_model}")
         return content.strip()
@@ -358,7 +384,7 @@ def call_validator(
     max_tokens: int = 500,
 ) -> tuple[str, str]:
     try:
-        content, actual_model = _call_with_fallback(messages, temperature, max_tokens, model=model)
+        content, actual_model = _call_with_fallback(messages, temperature, max_tokens, model=model, role="validator")
         return content.strip(), actual_model
     except Exception as exc:
         logger.warning(f"  Validator failed: {exc}")
@@ -384,7 +410,7 @@ def call_pedagogical_agent(
     normalized_role = _normalize_role(role)
     resolved_model = model if model else get_pedagogical_model(normalized_role, preset=preset)
     routed_messages = _with_system_prompt(normalized_role, messages)
-    content, actual_model = _call_with_fallback(routed_messages, temperature, max_tokens, model=resolved_model)
+    content, actual_model = _call_with_fallback(routed_messages, temperature, max_tokens, model=resolved_model, role=normalized_role)
     return _sanitize_pedagogical_output(content), actual_model
 
 
