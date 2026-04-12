@@ -47,3 +47,11 @@ Loại (Type):
 - [DONE] Thiết lập **Layered Fallback (3 tầng)**: Primary -> Tier Backup -> Last Resort.
 - [DONE] Xác nhận định danh chính xác cho model coder (`qw/qwen3-coder-plus`).
 - [DONE] Hoàn thiện [agents-index.md](file:///d:/NoteBookLLM_Br/brain/distilled/agents-index.md) làm chỉ mục năng lực AI.
+
+## [2026-04-12 14:42] - Pedagogical KB Standardized (LOM v4.4)
+- **Status**: Completed
+- **Action**: Restructured 657 files in rain/distilled/ to Absolute Flatness.
+- **Rules**: Applied Rule 10 (Provenance) and Rule 7 (Flatness).
+- **Prefixes**: LMS_ (Master/Admin), LMS_Tests_ (Assessments), CONV_Atoms_ (Conversational Knowledge).
+- **Verification**: Zero duplicates, 100% path existence in Master Source Index.
+- **Tools**: Automated via scripts/standardize_distilled.py.
