@@ -65,17 +65,47 @@ Dự án vận hành theo mô hình Swarm với hệ thống Phân loại thông
     `@engineer` chỉ được bắt đầu viết sau khi file này tồn tại.
 10. **Anti-Hallucination Reverse Tracing (Rule 10 - Absolute)**:
     Khi thực hiện bất kỳ tác vụ truy xuất ngược nào (reverse knowledge extraction), agent BẮT BUỘC phải:
-    a. Tuân thủ nghiêm ngặt [AUDITOR_Protocol.md](file:///d:/NoteBookLLM_Br/AUDITOR_Protocol.md) đặt tại Root level để tất cả agent (bao gồm `@engineer`) đều có thể tham chiếu.
-    b. Chỉ trích dẫn từ file có trong `brain/raw/` hoặc `brain/distilled/` — KHÔNG dùng general knowledge.
-    c. Với mỗi claim, ghi rõ: `📖 Nguồn: [tên file] — [dòng/section cụ thể]`
-    d. Nếu không tìm thấy nguồn trong hệ thống: → Ghi `[KHÔNG TÌM THẤY NGUỒN]` → Báo cáo cho `@auditor` → KHÔNG tự điền nội dung thay thế.
-    e. **@auditor** là agent duy nhất được phép thực hiện reverse tracing. `@scout`, `@engineer`, `@librarian` bị cấm tự ý thực hiện tác vụ này.
-11. **Pedagogical Pipeline (Rule 11 - Absolute Sequence)**: Mọi tác vụ tạo nội dung đào tạo cho Trainer KDI phải tuân thủ thứ tự **BẮT BUỘC**:
-    - `@profiler` → Xác định Trainer Profile (entry/intermediate/advanced) trước.
-    - `@designer` → Thiết kế Learning Design dựa trên Profile.
-    - `@engineer` → Tạo nội dung (đề, bài học, scenario) dựa trên Learning Design.
-    - `@evaluator` → Phân tích kết quả sau khi có feedback từ Trainer.
-    Tuyệt đối không bỏ qua bất kỳ bước nào trong pipeline này.
 
+    a. Tuân thủ nghiêm ngặt [AUDITOR_Protocol.md](file:///d:/NoteBookLLM_Br/AUDITOR_Protocol.md) đặt tại Root level để tất cả agent (bao gồm `@engineer`) đều có thể tham chiếu.
+
+    b. Chỉ trích dẫn từ file có trong `brain/raw/` hoặc `brain/distilled/` — KHÔNG dùng general knowledge.
+
+    c. Với mỗi claim, ghi rõ: `📖 Nguồn: [tên file] — [dòng/section cụ thể]`
+
+    d. Nếu không tìm thấy nguồn trong hệ thống: → Ghi `[KHÔNG TÌM THẤY NGUỒN]` → Báo cáo cho `@auditor` → KHÔNG tự điền nội dung thay thế.
+
+    e. **@auditor** là agent duy nhất được phép thực hiện reverse tracing. `@scout`, `@engineer`, `@librarian` bị cấm tự ý thực hiện tác vụ này.
+11. **Pedagogical Pipeline (Rule 11 - Absolute Sequence + Guard)**:
+    
+    TRƯỚC KHI chạy mỗi bước, agent PHẢI verify file prerequisite:
+    
+    | Bước | Agent | Prerequisite file phải tồn tại |
+    |---|---|---|
+    | 1 | @profiler | Không cần |
+    | 2 | @designer | brain/distilled/Trainer_Profile_[id].md |
+    | 3 | @engineer | brain/distilled/Learning_Design_[module].md |
+    | 4 | @evaluator | brain/distilled/Eval_Report_[module].md |
+    
+    Nếu file prerequisite KHÔNG tồn tại → agent DỪNG ngay,
+    báo @pm, KHÔNG tự tiếp tục.
+
+## ✋ CHECKPOINT Protocol (Bắt buộc mọi agent)
+
+Trước khi thực hiện BẤT KỲ task nào, agent PHẢI trả lời chính xác các block sau:
+```yaml
+CHECKPOINT:
+  agent: "@[tên agent]"
+  task: "[tên task cụ thể — không được viết chung chung]"
+  step: "[bước X / tổng Y bước trong pipeline]"
+  output_file: "[đường dẫn file sẽ tạo — VD: brain/distilled/EXAM_Context_M2.md]"
+  stop_condition: "[điều kiện dừng cụ thể — VD: sau khi tạo xong 5 atomic notes]"
+  prerequisites:
+    - file: "[tên file prerequisite 1]"
+      exists: "YES | NO"
+    - file: "[tên file prerequisite 2]"
+      exists: "YES | NO"
+  status: "READY | BLOCKED"
+  blocked_reason: "[để trống nếu READY — ghi lý do nếu BLOCKED]"
+```
 ---
 **Build**: Antigravity v4.0 | **Taxonomy**: AG-CORE-Series | **Status**: Operational | **Pattern**: LLM Wiki Supreme

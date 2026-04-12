@@ -2,6 +2,36 @@
 
 > **Goal**: Vận hành Hệ sinh thái Tri thức NotebookLM chuyên sâu cho giáo dục STEAM & AI. Hướng tới hệ thống Swarm Agent tự phục hồi (Self-healing) và tự học (Recursive Learning).
 
+## 🗺️ SESSION_CONTEXT (Điền trước mỗi phiên làm việc)
+    Ai điền: Người dùng điền trước khi gọi agent đầu tiên trong phiên.
+    Khi nào cập nhật: @pm append cập nhật vào brain/log.md sau mỗi bước hoàn thành.
+    Quy tắc: Agent đọc block này ĐẦU TIÊN trước khi đọc bất cứ thứ gì khác. 
+```yaml
+session:
+  date: "YYYY-MM-DD"
+  active_task: "[VD: Tạo đề kiểm tra Module M2.1]"
+  active_pipeline: "exam | design | scout | audit | split-kb"
+  current_step: "[VD: Bước 2/4 — @engineer viết đề]"
+  last_output: "[VD: brain/distilled/EXAM_Context_M2.md — đã tạo xong]"
+  next_expected: "[VD: brain/distilled/EXAM_M2_Draft.md]"
+  blocking_issues: "none | [mô tả vấn đề cụ thể]"
+  active_agent: "@[tên agent đang chạy]"
+  notes: "[ghi chú thêm nếu cần — để trống nếu không có]"
+```
+Ví dụ điền thực tế:
+
+```yaml
+session:
+  date: "2026-04-12"
+  active_task: "Split LMS_KB_IOT.md thành atomic notes"
+  active_pipeline: "split-kb"
+  current_step: "Bước 1/4 — @scout liệt kê tags"
+  last_output: "none"
+  next_expected: "brain/distilled/TAG_LIST_IOT.md"
+  blocking_issues: "none"
+  active_agent: "@scout"
+  notes: "Nguồn: brain/raw/LMS_KB_IOT.md"
+``` 
 ## 🗂️ Cấu trúc tri thức (Wiki Taxonomy)
 Các Knowledge Items (KIs) chính nằm tại `brain/distilled/`:
 - [[Pedagogical_Master_DNA]] — "Gen" sư phạm và Tri thức nền.
