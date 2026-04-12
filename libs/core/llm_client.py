@@ -58,8 +58,8 @@ PEDAGOGICAL_MODEL_PRESETS: Dict[str, Dict[str, str]] = {
         "auditor": "groq/llama-3.3-70b-versatile",
     },
     "balanced": {
-        "profiler": "ag/gemini-3-flash",
-        "designer": "groq/llama-3.3-70b-versatile",
+        "profiler": "groq/llama-3.3-70b-versatile",
+        "designer": "groq/qwen/qwen3-32b",
         "engineer": "qw/qwen3-coder-plus",
         "evaluator": "groq/qwen/qwen3-32b",
         "creative": "nvidia/moonshotai/kimi-k2.5",
@@ -362,7 +362,7 @@ def _call_with_fallback(
 
 def call_worker(
     messages: List[Dict[str, str]],
-    model: str = "gc/gemini-3-flash-preview",  # [FIX 1] Đổi từ "power-engine" → model ID thực để tránh bị resolve âm thầm
+    model: str = "ag/gemini-3-flash",  # [FIX 1] Đổi từ "power-engine" → model ID thực để tránh bị resolve âm thầm
     temperature: float = 0.3,
     max_tokens: int = 4000,
 ) -> str:
@@ -379,7 +379,7 @@ def call_worker(
 
 def call_validator(
     messages: List[Dict[str, str]],
-    model: str = "gc/gemini-3-flash-preview",  # [FIX 1] Đổi từ "main-engine"
+    model: str = "ag/gemini-3-flash",  # [FIX 1] Đổi từ "main-engine"
     temperature: float = 0.1,
     max_tokens: int = 500,
 ) -> tuple[str, str]:

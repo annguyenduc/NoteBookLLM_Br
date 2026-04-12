@@ -1,83 +1,148 @@
-# NotebookLM MCP Server for Antigravity
+# 🎓 build-peda — Pedagogical Swarm System for STEM Education
 
-This repository contains the configuration and workflows to set up the **NotebookLM MCP Server** for use with **Antigravity**, **Opencode** (and other MCP clients).
+> Hệ thống Swarm Agent tự động hoá quy trình thiết kế và sản xuất nội dung đào tạo STEM/AI cho giáo viên K-12, vận hành trên nền tảng LLM free-tier thông qua 9Router Gateway.
 
-It specifically addresses and fixes the "invalid trailing data" error caused by the startup banner of the `notebooklm-mcp-server` package.
+---
 
-## Features
+## 🎯 Mục tiêu dự án
 
-- **Automated Setup Workflow**: A comprehensive workflow (`.agent/workflows/setup-notebooklm-mcp.md`) to install and configure the server.
-- **Banner Suppression Fix**: Includes a wrapper script (`run_mcp.py`) that filters out the ASCII art banner from `stdout`, ensuring clean JSON-RPC communication.
-- **Antigravity Integration**: Ready-to-use configuration for Antigravity's `mcp_config.json`.
+1. **LLM Wiki Sư phạm** — Xây dựng kho tri thức sống (`brain/`) về đào tạo và giáo dục STEAM, tích lũy theo thời gian qua cơ chế Stream Ingest.
+2. **Swarm Agent đúng vai** — Mỗi agent (@profiler, @designer, @engineer, @creative, @evaluator, @auditor) được giao đúng model AI phù hợp năng lực, có fallback tự động khi gặp lỗi.
+3. **Sản xuất nội dung đào tạo** — Pipeline tự động tạo giáo án, slide, assignment cho một khoá học hoàn chỉnh, với cơ chế chunking để không vượt token limit của free tier.
 
-## Prerequisites
+---
 
-- Python 3.10+
-- `pip`
-- An active Google account with access to [NotebookLM](https://notebooklm.google.com/)
+## 🏗️ Kiến trúc hệ thống
 
-## Installation
+```
+build-peda/
+├── brain/
+│   ├── raw/          # Tài liệu gốc, chưa xử lý
+│   └── distilled/    # Tri thức đã tinh chế (Trainer Profile, Learning Design, Eval Report)
+├── libs/
+│   └── core/
+│       └── llm_client.py   # LLM gateway wrapper — 9Router + fallback chain
+├── scripts/          # Automation: ping, lint, graphify, chunked output
+├── templates/        # Template giáo án, slide, assignment
+├── docs/             # Output nội dung đào tạo đã hoàn thiện
+├── res/              # Tài nguyên tĩnh (hình ảnh, assets)
+├── tools/            # Tiện ích hỗ trợ
+├── AGENTS.md         # Registry Swarm Agent v4.0 Supreme
+├── CLAUDE.md         # Operational Memory (LOM) cho AI agent
+├── AUDITOR_Protocol.md  # Quy trình chống hallucination
+└── CONTINUITY.md     # Continuity log giữa các phiên làm việc
+```
 
-You can use the provided workflow in Antigravity or follow these manual steps:
+---
 
-1.  **Install the package**:
-    ```bash
-    pip install notebooklm-mcp-server
-    ```
+## 🤖 Swarm Agent Registry
 
-2.  **Clone this repository** (or copy the files) to your desired location (e.g., `d:\antigravity\notebooklm`).
+| Agent | Vai trò | Model chính | Fallback |
+| :--- | :--- | :--- | :--- |
+| **@profiler** | Phân tích năng lực trainer | `groq/llama-3.3-70b-versatile` | `groq/qwen/qwen3-32b` → `ag/gemini-3-flash` |
+| **@designer** | Thiết kế learning sequence | `groq/qwen/qwen3-32b` | `groq/llama-3.3-70b-versatile` → `ag/gemini-3-flash` |
+| **@engineer** | Tạo nội dung (giáo án, slide, bài tập) | `qw/qwen3-coder-plus` | `groq/qwen/qwen3-32b` → `ag/gemini-3-flash` |
+| **@creative** | Case study, roleplay, scenario | `nvidia/moonshotai/kimi-k2.5` | `groq/llama-3.3-70b-versatile` → `ag/gemini-3-flash` |
+| **@evaluator** | Đánh giá kết quả (Kirkpatrick) | `groq/qwen/qwen3-32b` | `groq/llama-3.3-70b-versatile` → `ag/gemini-3-flash` |
+| **@auditor** | Kiểm định tính xác thực | `groq/llama-3.3-70b-versatile` | `groq/qwen/qwen3-32b` → `ag/gemini-3-flash` |
+| **@pm** | Lập kế hoạch, điều phối | `ag/gemini-3-flash` | `groq/llama-3.3-70b-versatile` |
 
-3.  **Authenticate**:
-    ```bash
-    notebooklm-mcp-auth
-    ```
-    Follow the browser prompts to log in.
+---
 
-4.  **Configure Antigravity**:
-    Add the following to your `C:\Users\Administrator\.gemini\antigravity\mcp_config.json`:
+## 🔄 Pipeline Sư phạm (Rule 11 — Bắt buộc)
 
-    ```json
-    {
-      "mcpServers": {
-        "notebooklm-mcp-server": {
-          "command": "python",
-          "args": [
-            "-u",
-            "-W",
-            "ignore",
-            "d:\\antigravity\\notebooklm\\run_mcp.py"
-          ],
-          "env": {
-            "PYTHONUNBUFFERED": "1",
-            "PYTHONWARNINGS": "ignore"
-          }
-        }
-      }
-    }
-    ```
-    *Note: Adjust the path to `run_mcp.py` if you placed it elsewhere.*
+```
+@profiler → @designer → @engineer → @evaluator
+    ↑                                     ↓
+    └──────────── @auditor (kiểm định) ───┘
+```
 
-5.  **Reload Antigravity**:
-    Restart the application or reload the window (`Ctrl+Shift+P` -> `Developer: Reload Window`).
+Mọi tác vụ tạo nội dung đào tạo **bắt buộc** đi theo thứ tự này. Không bỏ qua bước nào.
 
-## Usage
+---
 
-Once configured, you can use Antigravity to interact with your NotebookLM notebooks.
+## 📦 Output Chunking — Tạo slide & assignment không vượt token limit
 
-- **List Notebooks**: Ask "List my notebooks"
-- **Query Notebooks**: Ask questions about your documents.
-- **Add Sources**: Add URLs or text to your notebooks.
+Để tránh 429 rate limit khi tạo nội dung dài, `@engineer` sử dụng chiến lược chunked output:
 
-## Troubleshooting
+| Loại nội dung | Chunk size | Số lần gọi API |
+| :--- | :--- | :--- |
+| Giáo án 90 phút | 1 call (~3k tokens) | 1 |
+| Slide deck 20 trang | 5 slides/call | 4 calls |
+| Assignment đầy đủ | Đề + Rubric + Key tách riêng | 3 calls |
+| Khoá học hoàn chỉnh | Theo module | N calls |
 
-### "Invalid trailing data" Error
-This error occurs when the server prints non-JSON text (like a banner) to `stdout`. The included `run_mcp.py` script fixes this by intercepting `stdout` and removing the banner. Ensure your config points to this script, not the module directly.
+Script: `scripts/chunked_engineer.py`
 
-### Authentication Issues
-If you see auth errors, try running `notebooklm-mcp-auth` again and ensure you complete the login process in the browser.
+---
 
-## Files
+## 🚀 Khởi động nhanh
 
-- `run_mcp.py`: Wrapper script to suppress the startup banner.
-- `.agent/workflows/setup-notebooklm-mcp.md`: Antigravity workflow for automated setup.
-- `list_notebooks.py`: Utility script to list notebooks (for testing).
+### 1. Cài đặt dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 2. Cấu hình môi trường
+```bash
+# Copy và điền API key
+cp .env.example .env
+# NINEROUTER_API_KEY=your_key
+# SMART_ROUTER_URL=http://localhost:20128/v1/chat/completions
+# PEDAGOGICAL_MODEL_PRESET=free
+```
+
+### 3. Kiểm tra gateway
+```bash
+python scripts/verify_9router.py
+python scripts/ping_free_tier.py  # Test tất cả model free
+```
+
+### 4. Chạy pipeline đầu tiên
+```bash
+python scripts/run_pipeline.py --module M2.1 --trainer-level entry
+```
+
+---
+
+## 🛠️ Lệnh thường dùng
+
+```bash
+# Kiểm định sức khỏe Wiki
+python scripts/brain_lint.py
+
+# Cập nhật đồ thị tri thức
+python scripts/graphify_bootstrap.py
+
+# Xem execution manifest (verify swarm đã chạy đúng)
+cat storage/execution_manifest.jsonl
+
+# Tạo slide theo chunk
+python scripts/chunked_engineer.py --output slide --module M2.1 --chunk-size 5
+```
+
+---
+
+## 📋 Quy tắc vận hành
+
+- **Anti-Hallucination**: Mọi claim phải có nguồn từ `brain/raw/` hoặc `brain/distilled/`. Xem `AUDITOR_Protocol.md`.
+- **Log-First**: Mọi thay đổi tri thức ghi vào `brain/log.md` (append only).
+- **Flat Hierarchy**: Thư mục tối đa 2 cấp từ root. Dùng underscore prefix thay vì thư mục con.
+- **Execution Manifest**: Mọi agent call ghi vào `storage/execution_manifest.jsonl` — bằng chứng vật lý chống hallucinate orchestration.
+
+---
+
+## 📊 Trạng thái dự án
+
+- [x] Swarm Agent Registry v4.0 Supreme
+- [x] LLM Client với fallback chain thông minh (404/429/502)
+- [x] Pedagogical Pipeline (Rule 11)
+- [x] Anti-Hallucination Protocol
+- [ ] Chunked Engineer Script
+- [ ] Ping Free Tier Script
+- [ ] Execution Manifest Integration
+- [ ] Brain content — Module M2.1 (ML for Kids)
+
+---
+
+*Framework: Antigravity v4.0 | Gateway: 9Router | Preset: Free Tier Supreme*

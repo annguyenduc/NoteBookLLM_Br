@@ -4,7 +4,7 @@ Tài liệu này đánh giá và phân loại năng lực của các model miễ
 
 ## 🚀 So sánh Chủ lực: Gemini 3 Flash vs. OSS Models
 
-| Đặc điểm | gc/gemini-3-flash-preview | groq/llama-3.3-70b | groq/qwen/qwen3-32b |
+| Đặc điểm | ag/gemini-3-flash | groq/llama-3.3-70b | groq/qwen/qwen3-32b |
 | :--- | :--- | :--- | :--- |
 | **Tốc độ** | Rất nhanh (4.0s) | Cực nhanh (2.4s) | Cực nhanh (2.2s) |
 | **Lý luận (Reasoning)** | Trung bình (Flash-tier) | **Cao (70B parameter)** | Khá (32B specialized) |
