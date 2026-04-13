@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini Express Hub - Toán 10</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-navy: #1a237e;
+            --accent-green: #2e7d32;
+            --bg-light: #f5f7fa;
+            --card-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-navy);
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        .instruction {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .prompt-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: var(--card-shadow);
+            border-left: 6px solid var(--primary-navy);
+        }
+        .prompt-title {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--primary-navy);
+        }
+        .prompt-content {
+            background: #f0f2f5;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            border: 1px dashed #ccc;
+        }
+        .copy-btn {
+            width: 100%;
+            background-color: var(--primary-navy);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .copy-btn:active {
+            transform: scale(0.98);
+        }
+        .copy-btn.success {
+            background-color: var(--accent-green);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🚀 Gemini Express Hub</h1>
+        <p class="instruction">Chạm để sao chép • Dán vào Gemini • Học Toán thần tốc</p>
+    </header>
+
+    <div class="container">
+        <!-- Ví dụ 1 -->
+        <div class="prompt-card">
+            <div class="prompt-title">🟢 Ôn tập: Phương trình Đường tròn</div>
+            <div class="prompt-content" id="prompt1">
+                [Role] Bạn là giáo viên dạy Toán 10. [Task] Hãy hướng dẫn mình cách xác định tâm I và bán kính R từ phương trình (x+1)^2 + (y-2)^2 = 9. [Context] Mình đang ôn tập cơ bản, hãy giải thích ngắn gọn công thức để mình dễ nhớ.
+            </div>
+            <button class="copy-btn" onclick="copyPrompt('prompt1', this)">
+                <span class="btn-text">SAO CHÉP PROMPT</span>
+            </button>
+        </div>
+
+        <!-- Ví dụ 2 -->
+        <div class="prompt-card">
+            <div class="prompt-title">🟡 Ôn tập: Đại số Tổ hợp</div>
+            <div class="prompt-content" id="prompt2">
+                [Role] Bạn là thầy giáo môn Toán HKII. [Task] Hãy hướng dẫn mình phương pháp 'buộc vật thể' (tie method) để giải bài toán xếp hàng có điều kiện: Xếp 3 học sinh nữ cạnh nhau. [Context] Chỉ ra lỗi sai phổ biến học sinh hay mắc.
+            </div>
+            <button class="copy-btn" onclick="copyPrompt('prompt2', this)">
+                <span class="btn-text">SAO CHÉP PROMPT</span>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function copyPrompt(elementId, btn) {
+            const text = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = btn.innerHTML;
+                btn.classList.add('success');
+                btn.innerHTML = '✅ ĐÃ SAO CHÉP!';
+                
+                setTimeout(() => {
+                    btn.classList.remove('success');
+                    btn.innerHTML = originalText;
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
