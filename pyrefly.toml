@@ -1,0 +1,26 @@
+[tool.pyrefly]
+# Loại trừ các thư mục khổng lồ khỏi quá trình kiểm tra lỗi (Diagnostics)
+exclude = [
+    "**/node_modules",
+    "**/.venv",
+    "brain/archive",
+    "brain/raw",
+    "graphify-out",
+    "storage",
+    "input",
+    "temp",
+    "tmp"
+]
+
+# Thêm đường dẫn thư viện vào search_paths để giải quyết lỗi "missing import"
+# mà không cần phải index sâu từng file cho việc báo lỗi.
+search_paths = [
+    ".venv/Lib/site-packages"
+]
+
+# Ưu tiên hiệu năng: Chỉ báo lỗi cho những file đang mở
+# Giúp RAM không bị tăng vọt khi bạn có hàng nghìn file trong dự án.
+diagnosticMode = "openFilesOnly"
+
+# Bật tính năng truyền tín hiệu chẩn đoán liên tục để có phản hồi nhanh
+streamDiagnostics = true

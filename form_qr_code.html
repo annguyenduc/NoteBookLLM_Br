@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mã QR Biểu mẫu Google</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <style>
+        :root {
+            --navy-blue: #0A192F;
+            --light-navy: #112240;
+            --slate: #8892B0;
+            --white: #E6F1FF;
+            --accent: #64FFDA;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: var(--navy-blue);
+            font-family: 'Montserrat', sans-serif;
+            color: var(--white);
+        }
+
+        .card {
+            background: var(--light-navy);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        p {
+            color: var(--slate);
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .qr-container {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            display: inline-block;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .qr-container:hover {
+            transform: scale(1.02);
+        }
+
+        canvas {
+            display: block;
+        }
+
+        .footer {
+            font-size: 0.8rem;
+            color: var(--slate);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.8rem 1.5rem;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: rgba(100, 255, 218, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Mã QR Biểu mẫu</h1>
+        <p>Quét mã bên dưới để truy cập Google Form nhanh chóng.</p>
+        
+        <div class="qr-container">
+            <canvas id="qr"></canvas>
+        </div>
+
+        <div class="footer">
+            <p>Link: https://forms.gle/kW5QFcaMW8SpjmyY9</p>
+            <a href="https://forms.gle/kW5QFcaMW8SpjmyY9" class="btn" target="_blank">Mở Biểu mẫu</a>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            var qr = new QRious({
+                element: document.getElementById('qr'),
+                value: 'https://forms.gle/kW5QFcaMW8SpjmyY9',
+                size: 250,
+                foreground: '#0A192F'
+            });
+        })();
+    </script>
+</body>
+</html>

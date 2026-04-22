@@ -1,0 +1,3442 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\__init__.py",
+      "source_location": "L1",
+      "id": "init",
+      "community": 24
+    },
+    {
+      "label": "diagnostic_env.py",
+      "file_type": "code",
+      "source_file": "libs\\core\\diagnostic_env.py",
+      "source_location": "L1",
+      "id": "diagnostic_env",
+      "community": 25
+    },
+    {
+      "label": "llm_client.py",
+      "file_type": "code",
+      "source_file": "libs\\core\\llm_client.py",
+      "source_location": "L1",
+      "id": "llm_client",
+      "community": 0
+    },
+    {
+      "label": "AllProvidersDownError",
+      "file_type": "code",
+      "source_file": "libs\\core\\llm_client.py",
+      "source_location": "L19",
+      "id": "llm_client_allprovidersdownerror",
+      "community": 0
+    },
+    {
+      "label": "Exception",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "exception",
+      "community": 0
+    },
+    {
+      "label": "_setup_litellm()",
+      "file_type": "code",
+      "source_file": "libs\\core\\llm_client.py",
+      "source_location": "L46",
+      "id": "llm_client_setup_litellm",
+      "community": 0
+    },
+    {
+      "label": "call_worker()",
+      "file_type": "code",
+      "source_file": "libs\\core\\llm_client.py",
+      "source_location": "L71",
+      "id": "llm_client_call_worker",
+      "community": 0
+    },
+    {
+      "label": "call_validator()",
+      "file_type": "code",
+      "source_file": "libs\\core\\llm_client.py",
+      "source_location": "L94",
+      "id": "llm_client_call_validator",
+      "community": 0
+    },
+    {
+      "label": "_call_with_retry()",
+      "file_type": "code",
+      "source_file": "libs\\core\\llm_client.py",
+      "source_location": "L126",
+      "id": "llm_client_call_with_retry",
+      "community": 0
+    },
+    {
+      "label": "LLM Client \u2014 Wrapper g\u1ecdi AI qua litellm v\u1edbi:\r   - Retry t\u1ef1 \u0111\u1ed9ng (tenacity + expo",
+      "file_type": "rationale",
+      "source_file": "libs\\core\\llm_client.py",
+      "source_location": "L1",
+      "id": "llm_client_rationale_1",
+      "community": 0
+    },
+    {
+      "label": "L\u1ed7i \u0111\u1ecbnh tuy\u1ebfn khi to\u00e0n b\u1ed9 h\u1ec7 th\u1ed1ng LLM (Proxy & Direct Fallbacks) \u0111\u1ec1u s\u1eadp ho\u1eb7c",
+      "file_type": "rationale",
+      "source_file": "libs\\core\\llm_client.py",
+      "source_location": "L20",
+      "id": "llm_client_rationale_20",
+      "community": 0
+    },
+    {
+      "label": "C\u1ea5u h\u00ecnh litellm \u0111\u1ec3 d\u00f9ng OpenRouter.",
+      "file_type": "rationale",
+      "source_file": "libs\\core\\llm_client.py",
+      "source_location": "L47",
+      "id": "llm_client_rationale_47",
+      "community": 0
+    },
+    {
+      "label": "G\u1ecdi worker model (Proxy Power/Main) \u0111\u1ec3 d\u1ecbch m\u1ed9t chunk.",
+      "file_type": "rationale",
+      "source_file": "libs\\core\\llm_client.py",
+      "source_location": "L77",
+      "id": "llm_client_rationale_77",
+      "community": 0
+    },
+    {
+      "label": "G\u1ecdi validator qua Proxy.",
+      "file_type": "rationale",
+      "source_file": "libs\\core\\llm_client.py",
+      "source_location": "L100",
+      "id": "llm_client_rationale_100",
+      "community": 0
+    },
+    {
+      "label": "G\u1ecdi Proxy Router (localhost:4000) v\u1edbi Cascade Fallback t\u1ef1 \u0111\u1ed9ng.",
+      "file_type": "rationale",
+      "source_file": "libs\\core\\llm_client.py",
+      "source_location": "L132",
+      "id": "llm_client_rationale_132",
+      "community": 0
+    },
+    {
+      "label": "llm_status.py",
+      "file_type": "code",
+      "source_file": "libs\\core\\llm_status.py",
+      "source_location": "L1",
+      "id": "llm_status",
+      "community": 15
+    },
+    {
+      "label": "check_openrouter_health()",
+      "file_type": "code",
+      "source_file": "libs\\core\\llm_status.py",
+      "source_location": "L10",
+      "id": "llm_status_check_openrouter_health",
+      "community": 15
+    },
+    {
+      "label": "Ki\u1ec3m tra xem IP c\u00f3 b\u1ecb kh\u00f3a (403) ho\u1eb7c h\u1ebft Quota (429) kh\u00f4ng.\r     \r     Returns:",
+      "file_type": "rationale",
+      "source_file": "libs\\core\\llm_status.py",
+      "source_location": "L11",
+      "id": "llm_status_rationale_11",
+      "community": 15
+    },
+    {
+      "label": "logger.py",
+      "file_type": "code",
+      "source_file": "libs\\core\\logger.py",
+      "source_location": "L1",
+      "id": "logger",
+      "community": 11
+    },
+    {
+      "label": "get_logger()",
+      "file_type": "code",
+      "source_file": "libs\\core\\logger.py",
+      "source_location": "L35",
+      "id": "logger_get_logger",
+      "community": 11
+    },
+    {
+      "label": "Logger to\u00e0n c\u1ee5c cho pipeline \u2014 d\u00f9ng Rich \u0111\u1ec3 hi\u1ec3n th\u1ecb m\u00e0u s\u1eafc \u0111\u1eb9p.\r \u0110\u1ed3ng th\u1eddi ghi",
+      "file_type": "rationale",
+      "source_file": "libs\\core\\logger.py",
+      "source_location": "L1",
+      "id": "logger_rationale_1",
+      "community": 11
+    },
+    {
+      "label": "T\u1ea1o v\u00e0 tr\u1ea3 v\u1ec1 logger chu\u1ea9n cho pipeline.\r \r     Args:\r         name: T\u00ean logger",
+      "file_type": "rationale",
+      "source_file": "libs\\core\\logger.py",
+      "source_location": "L36",
+      "id": "logger_rationale_36",
+      "community": 11
+    },
+    {
+      "label": "rate_limiter.py",
+      "file_type": "code",
+      "source_file": "libs\\core\\rate_limiter.py",
+      "source_location": "L1",
+      "id": "rate_limiter",
+      "community": 3
+    },
+    {
+      "label": "RateLimiter",
+      "file_type": "code",
+      "source_file": "libs\\core\\rate_limiter.py",
+      "source_location": "L14",
+      "id": "rate_limiter_ratelimiter",
+      "community": 3
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "libs\\core\\rate_limiter.py",
+      "source_location": "L22",
+      "id": "rate_limiter_ratelimiter_init",
+      "community": 3
+    },
+    {
+      "label": ".wait()",
+      "file_type": "code",
+      "source_file": "libs\\core\\rate_limiter.py",
+      "source_location": "L34",
+      "id": "rate_limiter_ratelimiter_wait",
+      "community": 3
+    },
+    {
+      "label": ".reset()",
+      "file_type": "code",
+      "source_file": "libs\\core\\rate_limiter.py",
+      "source_location": "L64",
+      "id": "rate_limiter_ratelimiter_reset",
+      "community": 3
+    },
+    {
+      "label": "ExponentialBackoff",
+      "file_type": "code",
+      "source_file": "libs\\core\\rate_limiter.py",
+      "source_location": "L70",
+      "id": "rate_limiter_exponentialbackoff",
+      "community": 0
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "libs\\core\\rate_limiter.py",
+      "source_location": "L78",
+      "id": "rate_limiter_exponentialbackoff_init",
+      "community": 0
+    },
+    {
+      "label": ".get_delay()",
+      "file_type": "code",
+      "source_file": "libs\\core\\rate_limiter.py",
+      "source_location": "L86",
+      "id": "rate_limiter_exponentialbackoff_get_delay",
+      "community": 0
+    },
+    {
+      "label": "get_limiter()",
+      "file_type": "code",
+      "source_file": "libs\\core\\rate_limiter.py",
+      "source_location": "L104",
+      "id": "rate_limiter_get_limiter",
+      "community": 3
+    },
+    {
+      "label": "Rate Limiter \u2014 Qu\u1ea3n l\u00fd delay gi\u1eefa c\u00e1c request \u0111\u1ec3 tr\u00e1nh b\u1ecb OpenRouter ch\u1eb7n.\r \r Gi",
+      "file_type": "rationale",
+      "source_file": "libs\\core\\rate_limiter.py",
+      "source_location": "L1",
+      "id": "rate_limiter_rationale_1",
+      "community": 3
+    },
+    {
+      "label": "Token bucket rate limiter \u0111\u01a1n gi\u1ea3n.\r \r     \u0110\u1ea3m b\u1ea3o kh\u00f4ng g\u1eedi qu\u00e1 N request trong",
+      "file_type": "rationale",
+      "source_file": "libs\\core\\rate_limiter.py",
+      "source_location": "L15",
+      "id": "rate_limiter_rationale_15",
+      "community": 3
+    },
+    {
+      "label": "G\u1ecdi tr\u01b0\u1edbc m\u1ed7i request AI.\r         T\u1ef1 \u0111\u1ed9ng sleep n\u1ebfu c\u1ea7n \u0111\u1ec3 tr\u00e1nh v\u01b0\u1ee3t rate limi",
+      "file_type": "rationale",
+      "source_file": "libs\\core\\rate_limiter.py",
+      "source_location": "L35",
+      "id": "rate_limiter_rationale_35",
+      "community": 3
+    },
+    {
+      "label": "Reset b\u1ed9 \u0111\u1ebfm (d\u00f9ng khi chuy\u1ec3n sang model m\u1edbi).",
+      "file_type": "rationale",
+      "source_file": "libs\\core\\rate_limiter.py",
+      "source_location": "L65",
+      "id": "rate_limiter_rationale_65",
+      "community": 3
+    },
+    {
+      "label": "T\u00ednh th\u1eddi gian ch\u1edd khi g\u1eb7p l\u1ed7i 429 Rate Limit.\r \r     C\u00f4ng th\u1ee9c: delay = base *",
+      "file_type": "rationale",
+      "source_file": "libs\\core\\rate_limiter.py",
+      "source_location": "L71",
+      "id": "rate_limiter_rationale_71",
+      "community": 0
+    },
+    {
+      "label": "Tr\u1ea3 v\u1ec1 s\u1ed1 gi\u00e2y c\u1ea7n \u0111\u1ee3i.\r \r         Args:\r             attempt: S\u1ed1 l\u1ea7n retry \u0111\u00e3 t",
+      "file_type": "rationale",
+      "source_file": "libs\\core\\rate_limiter.py",
+      "source_location": "L87",
+      "id": "rate_limiter_rationale_87",
+      "community": 0
+    },
+    {
+      "label": "Tr\u1ea3 v\u1ec1 RateLimiter singleton.",
+      "file_type": "rationale",
+      "source_file": "libs\\core\\rate_limiter.py",
+      "source_location": "L105",
+      "id": "rate_limiter_rationale_105",
+      "community": 3
+    },
+    {
+      "label": "schemas.py",
+      "file_type": "code",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L1",
+      "id": "schemas",
+      "community": 1
+    },
+    {
+      "label": "Meta",
+      "file_type": "code",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L17",
+      "id": "schemas_meta",
+      "community": 1
+    },
+    {
+      "label": "BaseModel",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "basemodel",
+      "community": 1
+    },
+    {
+      "label": "PipelineOutput",
+      "file_type": "code",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L27",
+      "id": "schemas_pipelineoutput",
+      "community": 1
+    },
+    {
+      "label": "ok()",
+      "file_type": "code",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L53",
+      "id": "schemas_ok",
+      "community": 1
+    },
+    {
+      "label": "fail()",
+      "file_type": "code",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L62",
+      "id": "schemas_fail",
+      "community": 1
+    },
+    {
+      "label": "TranslationChunk",
+      "file_type": "code",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L75",
+      "id": "schemas_translationchunk",
+      "community": 1
+    },
+    {
+      "label": "TranslatedChunk",
+      "file_type": "code",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L84",
+      "id": "schemas_translatedchunk",
+      "community": 1
+    },
+    {
+      "label": "ValidationResult",
+      "file_type": "code",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L95",
+      "id": "schemas_validationresult",
+      "community": 1
+    },
+    {
+      "label": "PipelineSummary",
+      "file_type": "code",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L102",
+      "id": "schemas_pipelinesummary",
+      "community": 1
+    },
+    {
+      "label": "Schemas Pydantic chu\u1ea9n cho to\u00e0n b\u1ed9 pipeline.\r M\u1ecdi b\u01b0\u1edbc x\u1eed l\u00fd \u0111\u1ec1u tr\u1ea3 v\u1ec1 Pipeline",
+      "file_type": "rationale",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L1",
+      "id": "schemas_rationale_1",
+      "community": 1
+    },
+    {
+      "label": "Metadata \u0111\u00ednh k\u00e8m theo m\u1ed7i k\u1ebft qu\u1ea3 x\u1eed l\u00fd.",
+      "file_type": "rationale",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L18",
+      "id": "schemas_rationale_18",
+      "community": 1
+    },
+    {
+      "label": "Schema chu\u1ea9n b\u1eaft bu\u1ed9c cho m\u1ecdi b\u01b0\u1edbc trong pipeline.\r \r     V\u00ed d\u1ee5 k\u1ebft qu\u1ea3 th\u00e0nh c\u00f4",
+      "file_type": "rationale",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L28",
+      "id": "schemas_rationale_28",
+      "community": 1
+    },
+    {
+      "label": "Factory method t\u1ea1o k\u1ebft qu\u1ea3 th\u00e0nh c\u00f4ng.",
+      "file_type": "rationale",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L54",
+      "id": "schemas_rationale_54",
+      "community": 26
+    },
+    {
+      "label": "Factory method t\u1ea1o k\u1ebft qu\u1ea3 l\u1ed7i.",
+      "file_type": "rationale",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L63",
+      "id": "schemas_rationale_63",
+      "community": 27
+    },
+    {
+      "label": "M\u1ed9t \u0111o\u1ea1n text \u0111\u00e3 \u0111\u01b0\u1ee3c chia nh\u1ecf \u2014 ch\u1edd d\u1ecbch \u1edf Step 3.",
+      "file_type": "rationale",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L76",
+      "id": "schemas_rationale_76",
+      "community": 1
+    },
+    {
+      "label": "K\u1ebft qu\u1ea3 d\u1ecbch \u0111\u00e3 ho\u00e0n ch\u1ec9nh c\u1ee7a m\u1ed9t chunk.",
+      "file_type": "rationale",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L85",
+      "id": "schemas_rationale_85",
+      "community": 1
+    },
+    {
+      "label": "K\u1ebft qu\u1ea3 ki\u1ec3m ch\u1ee9ng ch\u1ea5t l\u01b0\u1ee3ng d\u1ecbch t\u1eeb Step 5.",
+      "file_type": "rationale",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L96",
+      "id": "schemas_rationale_96",
+      "community": 1
+    },
+    {
+      "label": "B\u00e1o c\u00e1o t\u1ed5ng k\u1ebft sau khi x\u1eed l\u00fd xong m\u1ed9t file PDF.",
+      "file_type": "rationale",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L103",
+      "id": "schemas_rationale_103",
+      "community": 1
+    },
+    {
+      "label": "sync_manager.py",
+      "file_type": "code",
+      "source_file": "libs\\core\\sync_manager.py",
+      "source_location": "L1",
+      "id": "sync_manager",
+      "community": 2
+    },
+    {
+      "label": "SyncManager",
+      "file_type": "code",
+      "source_file": "libs\\core\\sync_manager.py",
+      "source_location": "L13",
+      "id": "sync_manager_syncmanager",
+      "community": 2
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "libs\\core\\sync_manager.py",
+      "source_location": "L17",
+      "id": "sync_manager_syncmanager_init",
+      "community": 2
+    },
+    {
+      "label": ".run()",
+      "file_type": "code",
+      "source_file": "libs\\core\\sync_manager.py",
+      "source_location": "L32",
+      "id": "sync_manager_syncmanager_run",
+      "community": 2
+    },
+    {
+      "label": "Qu\u1ea3n l\u00fd vi\u1ec7c \u0111\u1ed3ng b\u1ed9 v\u00e0 chu\u1ea9n b\u1ecb d\u1eef li\u1ec7u ng\u1eef c\u1ea3nh th\u00f4 t\u1eeb Gemini.",
+      "file_type": "rationale",
+      "source_file": "libs\\core\\sync_manager.py",
+      "source_location": "L14",
+      "id": "sync_manager_rationale_14",
+      "community": 2
+    },
+    {
+      "label": "test_router.py",
+      "file_type": "code",
+      "source_file": "libs\\core\\test_router.py",
+      "source_location": "L1",
+      "id": "test_router",
+      "community": 16
+    },
+    {
+      "label": "test_short_prompt()",
+      "file_type": "code",
+      "source_file": "libs\\core\\test_router.py",
+      "source_location": "L6",
+      "id": "test_router_test_short_prompt",
+      "community": 16
+    },
+    {
+      "label": "test_long_prompt()",
+      "file_type": "code",
+      "source_file": "libs\\core\\test_router.py",
+      "source_location": "L22",
+      "id": "test_router_test_long_prompt",
+      "community": 16
+    },
+    {
+      "label": "llm_discovery.py",
+      "file_type": "code",
+      "source_file": "libs\\core\\deprecated\\llm_discovery.py",
+      "source_location": "L1",
+      "id": "llm_discovery",
+      "community": 12
+    },
+    {
+      "label": "get_dynamic_free_workers()",
+      "file_type": "code",
+      "source_file": "libs\\core\\deprecated\\llm_discovery.py",
+      "source_location": "L26",
+      "id": "llm_discovery_get_dynamic_free_workers",
+      "community": 12
+    },
+    {
+      "label": "LLM Discovery Engine \u2014 T\u1ef1 \u0111\u1ed9ng t\u00ecm ki\u1ebfm v\u00e0 l\u1ecdc c\u00e1c model mi\u1ec5n ph\u00ed ch\u1ea5t l\u01b0\u1ee3ng cao",
+      "file_type": "rationale",
+      "source_file": "libs\\core\\deprecated\\llm_discovery.py",
+      "source_location": "L1",
+      "id": "llm_discovery_rationale_1",
+      "community": 12
+    },
+    {
+      "label": "L\u1ea5y danh s\u00e1ch c\u00e1c model mi\u1ec5n ph\u00ed ch\u1ea5t l\u01b0\u1ee3ng cao (>10B) t\u1eeb OpenRouter.\r     C\u00f3 c\u01a1",
+      "file_type": "rationale",
+      "source_file": "libs\\core\\deprecated\\llm_discovery.py",
+      "source_location": "L27",
+      "id": "llm_discovery_rationale_27",
+      "community": 12
+    },
+    {
+      "label": "gemini_mcp.py",
+      "file_type": "code",
+      "source_file": "libs\\mcp\\gemini_mcp.py",
+      "source_location": "L1",
+      "id": "gemini_mcp",
+      "community": 2
+    },
+    {
+      "label": "mcp_no_op_handler()",
+      "file_type": "code",
+      "source_file": "libs\\mcp\\gemini_mcp.py",
+      "source_location": "L19",
+      "id": "gemini_mcp_mcp_no_op_handler",
+      "community": 2
+    },
+    {
+      "label": "mcp_stderr_print()",
+      "file_type": "code",
+      "source_file": "libs\\mcp\\gemini_mcp.py",
+      "source_location": "L27",
+      "id": "gemini_mcp_mcp_stderr_print",
+      "community": 2
+    },
+    {
+      "label": "sync_gemini()",
+      "file_type": "code",
+      "source_file": "libs\\mcp\\gemini_mcp.py",
+      "source_location": "L59",
+      "id": "gemini_mcp_sync_gemini",
+      "community": 2
+    },
+    {
+      "label": "get_latest_context()",
+      "file_type": "code",
+      "source_file": "libs\\mcp\\gemini_mcp.py",
+      "source_location": "L77",
+      "id": "gemini_mcp_get_latest_context",
+      "community": 2
+    },
+    {
+      "label": "Th\u1ef1c hi\u1ec7n \u0111\u1ed3ng b\u1ed9 d\u1eef li\u1ec7u t\u1eeb Gemini (input/gemini_sync/) v\u00e0 t\u00f3m t\u1eaft ch\u00fang b\u1eb1ng A",
+      "file_type": "rationale",
+      "source_file": "libs\\mcp\\gemini_mcp.py",
+      "source_location": "L60",
+      "id": "gemini_mcp_rationale_60",
+      "community": 2
+    },
+    {
+      "label": "Tr\u1ea3 v\u1ec1 n\u1ed9i dung ng\u1eef c\u1ea3nh \u0111\u00e3 \u0111\u01b0\u1ee3c tinh l\u1ecdc m\u1edbi nh\u1ea5t.",
+      "file_type": "rationale",
+      "source_file": "libs\\mcp\\gemini_mcp.py",
+      "source_location": "L78",
+      "id": "gemini_mcp_rationale_78",
+      "community": 2
+    },
+    {
+      "label": "smart_irrigation.py",
+      "file_type": "code",
+      "source_file": "res\\code\\smart_irrigation.py",
+      "source_location": "L1",
+      "id": "smart_irrigation",
+      "community": 7
+    },
+    {
+      "label": "read_moisture()",
+      "file_type": "code",
+      "source_file": "res\\code\\smart_irrigation.py",
+      "source_location": "L26",
+      "id": "smart_irrigation_read_moisture",
+      "community": 7
+    },
+    {
+      "label": "start_irrigation()",
+      "file_type": "code",
+      "source_file": "res\\code\\smart_irrigation.py",
+      "source_location": "L34",
+      "id": "smart_irrigation_start_irrigation",
+      "community": 7
+    },
+    {
+      "label": "main_loop()",
+      "file_type": "code",
+      "source_file": "res\\code\\smart_irrigation.py",
+      "source_location": "L48",
+      "id": "smart_irrigation_main_loop",
+      "community": 7
+    },
+    {
+      "label": "\u0110\u1ecdc gi\u00e1 tr\u1ecb trung b\u00ecnh t\u1eeb c\u1ea3m bi\u1ebfn \u0111\u1ec3 ch\u1ed1ng nhi\u1ec5u.",
+      "file_type": "rationale",
+      "source_file": "res\\code\\smart_irrigation.py",
+      "source_location": "L27",
+      "id": "smart_irrigation_rationale_27",
+      "community": 7
+    },
+    {
+      "label": "Logic t\u01b0\u1edbi n\u01b0\u1edbc an to\u00e0n.",
+      "file_type": "rationale",
+      "source_file": "res\\code\\smart_irrigation.py",
+      "source_location": "L35",
+      "id": "smart_irrigation_rationale_35",
+      "community": 7
+    },
+    {
+      "label": "run_mcp.py",
+      "file_type": "code",
+      "source_file": "scripts\\mcp\\run_mcp.py",
+      "source_location": "L1",
+      "id": "run_mcp",
+      "community": 8
+    },
+    {
+      "label": "SimpleFilteredStdout",
+      "file_type": "code",
+      "source_file": "scripts\\mcp\\run_mcp.py",
+      "source_location": "L6",
+      "id": "run_mcp_simplefilteredstdout",
+      "community": 8
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "scripts\\mcp\\run_mcp.py",
+      "source_location": "L7",
+      "id": "run_mcp_simplefilteredstdout_init",
+      "community": 8
+    },
+    {
+      "label": ".write()",
+      "file_type": "code",
+      "source_file": "scripts\\mcp\\run_mcp.py",
+      "source_location": "L12",
+      "id": "run_mcp_simplefilteredstdout_write",
+      "community": 8
+    },
+    {
+      "label": ".flush()",
+      "file_type": "code",
+      "source_file": "scripts\\mcp\\run_mcp.py",
+      "source_location": "L20",
+      "id": "run_mcp_simplefilteredstdout_flush",
+      "community": 8
+    },
+    {
+      "label": ".__getattr__()",
+      "file_type": "code",
+      "source_file": "scripts\\mcp\\run_mcp.py",
+      "source_location": "L24",
+      "id": "run_mcp_simplefilteredstdout_getattr",
+      "community": 8
+    },
+    {
+      "label": "graphify_bootstrap.py",
+      "file_type": "code",
+      "source_file": "scripts\\setup\\graphify_bootstrap.py",
+      "source_location": "L1",
+      "id": "graphify_bootstrap",
+      "community": 20
+    },
+    {
+      "label": "bootstrap()",
+      "file_type": "code",
+      "source_file": "scripts\\setup\\graphify_bootstrap.py",
+      "source_location": "L13",
+      "id": "graphify_bootstrap_bootstrap",
+      "community": 20
+    },
+    {
+      "label": "list_notebooks.py",
+      "file_type": "code",
+      "source_file": "tools\\notebooks\\list_notebooks.py",
+      "source_location": "L1",
+      "id": "list_notebooks",
+      "community": 17
+    },
+    {
+      "label": "get_client()",
+      "file_type": "code",
+      "source_file": "tools\\notebooks\\list_notebooks.py",
+      "source_location": "L7",
+      "id": "list_notebooks_get_client",
+      "community": 17
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "tools\\notebooks\\list_notebooks.py",
+      "source_location": "L26",
+      "id": "list_notebooks_main",
+      "community": 17
+    },
+    {
+      "label": "analyze_markdown.py",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\analyze_markdown.py",
+      "source_location": "L1",
+      "id": "analyze_markdown",
+      "community": 21
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\analyze_markdown.py",
+      "source_location": "L10",
+      "id": "analyze_markdown_main",
+      "community": 21
+    },
+    {
+      "label": "atomic_distiller.py",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\atomic_distiller.py",
+      "source_location": "L1",
+      "id": "atomic_distiller",
+      "community": 9
+    },
+    {
+      "label": "slugify()",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\atomic_distiller.py",
+      "source_location": "L29",
+      "id": "atomic_distiller_slugify",
+      "community": 9
+    },
+    {
+      "label": "call_ai_with_cycler()",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\atomic_distiller.py",
+      "source_location": "L35",
+      "id": "atomic_distiller_call_ai_with_cycler",
+      "community": 9
+    },
+    {
+      "label": "process_single_conv()",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\atomic_distiller.py",
+      "source_location": "L63",
+      "id": "atomic_distiller_process_single_conv",
+      "community": 9
+    },
+    {
+      "label": "run_cycler_blitz()",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\atomic_distiller.py",
+      "source_location": "L80",
+      "id": "atomic_distiller_run_cycler_blitz",
+      "community": 9
+    },
+    {
+      "label": "batch_distiller.py",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\batch_distiller.py",
+      "source_location": "L1",
+      "id": "batch_distiller",
+      "community": 5
+    },
+    {
+      "label": "BatchContextDistiller",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\batch_distiller.py",
+      "source_location": "L17",
+      "id": "batch_distiller_batchcontextdistiller",
+      "community": 5
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\batch_distiller.py",
+      "source_location": "L22",
+      "id": "batch_distiller_batchcontextdistiller_init",
+      "community": 5
+    },
+    {
+      "label": ".distill_batches()",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\batch_distiller.py",
+      "source_location": "L35",
+      "id": "batch_distiller_batchcontextdistiller_distill_batches",
+      "community": 5
+    },
+    {
+      "label": ".process_single_chunk()",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\batch_distiller.py",
+      "source_location": "L57",
+      "id": "batch_distiller_batchcontextdistiller_process_single_chunk",
+      "community": 5
+    },
+    {
+      "label": "S\u1eed d\u1ee5ng AI \u0111\u1ec3 ch\u01b0ng c\u1ea5t d\u1ef1 li\u1ec7u th\u00f4 t\u1eeb file chunk th\u00e0nh c\u00e1c Knowledge Items r\u1ea3i",
+      "file_type": "rationale",
+      "source_file": "tools\\pipeline\\batch_distiller.py",
+      "source_location": "L18",
+      "id": "batch_distiller_rationale_18",
+      "community": 5
+    },
+    {
+      "label": "X\u1eed l\u00fd duy nh\u1ea5t m\u1ed9t file chunk. \u0110\u00e2y l\u00e0 worker function.",
+      "file_type": "rationale",
+      "source_file": "tools\\pipeline\\batch_distiller.py",
+      "source_location": "L58",
+      "id": "batch_distiller_rationale_58",
+      "community": 5
+    },
+    {
+      "label": "consolidator.py",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\consolidator.py",
+      "source_location": "L1",
+      "id": "consolidator",
+      "community": 4
+    },
+    {
+      "label": "BrainConsolidator",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\consolidator.py",
+      "source_location": "L15",
+      "id": "consolidator_brainconsolidator",
+      "community": 4
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\consolidator.py",
+      "source_location": "L16",
+      "id": "consolidator_brainconsolidator_init",
+      "community": 4
+    },
+    {
+      "label": ".get_all_kis()",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\consolidator.py",
+      "source_location": "L21",
+      "id": "consolidator_brainconsolidator_get_all_kis",
+      "community": 4
+    },
+    {
+      "label": ".extract_metadata()",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\consolidator.py",
+      "source_location": "L24",
+      "id": "consolidator_brainconsolidator_extract_metadata",
+      "community": 4
+    },
+    {
+      "label": ".group_kis_by_theme()",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\consolidator.py",
+      "source_location": "L34",
+      "id": "consolidator_brainconsolidator_group_kis_by_theme",
+      "community": 4
+    },
+    {
+      "label": ".consolidate_theme()",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\consolidator.py",
+      "source_location": "L59",
+      "id": "consolidator_brainconsolidator_consolidate_theme",
+      "community": 4
+    },
+    {
+      "label": ".run()",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\consolidator.py",
+      "source_location": "L93",
+      "id": "consolidator_brainconsolidator_run",
+      "community": 4
+    },
+    {
+      "label": "Tr\u00edch xu\u1ea5t Ch\u1ee7 \u0111\u1ec1 ch\u00ednh t\u1eeb file KI.",
+      "file_type": "rationale",
+      "source_file": "tools\\pipeline\\consolidator.py",
+      "source_location": "L25",
+      "id": "consolidator_rationale_25",
+      "community": 4
+    },
+    {
+      "label": "Gom nh\u00f3m KIs d\u1ef1a tr\u00ean t\u1eeb kh\u00f3a trong ch\u1ee7 \u0111\u1ec1.",
+      "file_type": "rationale",
+      "source_file": "tools\\pipeline\\consolidator.py",
+      "source_location": "L35",
+      "id": "consolidator_rationale_35",
+      "community": 4
+    },
+    {
+      "label": "G\u1ecdi Proxy Hub \u0111\u1ec3 t\u1ed5ng k\u1ebft m\u1ed9t nh\u00f3m KIs.",
+      "file_type": "rationale",
+      "source_file": "tools\\pipeline\\consolidator.py",
+      "source_location": "L60",
+      "id": "consolidator_rationale_60",
+      "community": 4
+    },
+    {
+      "label": "context_distiller.py",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\context_distiller.py",
+      "source_location": "L1",
+      "id": "context_distiller",
+      "community": 2
+    },
+    {
+      "label": "ContextDistiller",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\context_distiller.py",
+      "source_location": "L19",
+      "id": "context_distiller_contextdistiller",
+      "community": 2
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\context_distiller.py",
+      "source_location": "L23",
+      "id": "context_distiller_contextdistiller_init",
+      "community": 2
+    },
+    {
+      "label": ".distill()",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\context_distiller.py",
+      "source_location": "L33",
+      "id": "context_distiller_contextdistiller_distill",
+      "community": 2
+    },
+    {
+      "label": "S\u1eed d\u1ee5ng AI \u0111\u1ec3 ch\u01b0ng c\u1ea5t (summarize) d\u1eef li\u1ec7u th\u00f4 t\u1eeb Gemini th\u00e0nh ng\u1eef c\u1ea3nh tinh g\u1ecd",
+      "file_type": "rationale",
+      "source_file": "tools\\pipeline\\context_distiller.py",
+      "source_location": "L20",
+      "id": "context_distiller_rationale_20",
+      "community": 2
+    },
+    {
+      "label": "convert_chat_to_md.py",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\convert_chat_to_md.py",
+      "source_location": "L1",
+      "id": "convert_chat_to_md",
+      "community": 6
+    },
+    {
+      "label": "ChatToMarkdownConverter",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\convert_chat_to_md.py",
+      "source_location": "L5",
+      "id": "convert_chat_to_md_chattomarkdownconverter",
+      "community": 6
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\convert_chat_to_md.py",
+      "source_location": "L6",
+      "id": "convert_chat_to_md_chattomarkdownconverter_init",
+      "community": 6
+    },
+    {
+      "label": ".is_technical()",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\convert_chat_to_md.py",
+      "source_location": "L21",
+      "id": "convert_chat_to_md_chattomarkdownconverter_is_technical",
+      "community": 6
+    },
+    {
+      "label": ".get_conversation_messages()",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\convert_chat_to_md.py",
+      "source_location": "L27",
+      "id": "convert_chat_to_md_chattomarkdownconverter_get_conversation_messages",
+      "community": 6
+    },
+    {
+      "label": ".run()",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\convert_chat_to_md.py",
+      "source_location": "L65",
+      "id": "convert_chat_to_md_chattomarkdownconverter_run",
+      "community": 6
+    },
+    {
+      "label": ".save_part()",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\convert_chat_to_md.py",
+      "source_location": "L146",
+      "id": "convert_chat_to_md_chattomarkdownconverter_save_part",
+      "community": 6
+    },
+    {
+      "label": "debug_proxy.py",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\debug_proxy.py",
+      "source_location": "L1",
+      "id": "debug_proxy",
+      "community": 22
+    },
+    {
+      "label": "test_9router()",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\debug_proxy.py",
+      "source_location": "L7",
+      "id": "debug_proxy_test_9router",
+      "community": 22
+    },
+    {
+      "label": "debug_router_config.py",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\debug_router_config.py",
+      "source_location": "L1",
+      "id": "debug_router_config",
+      "community": 28
+    },
+    {
+      "label": "decode_activity.py",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\decode_activity.py",
+      "source_location": "L1",
+      "id": "decode_activity",
+      "community": 10
+    },
+    {
+      "label": "GeminiActivityDecoder",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\decode_activity.py",
+      "source_location": "L8",
+      "id": "decode_activity_geminiactivitydecoder",
+      "community": 10
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\decode_activity.py",
+      "source_location": "L9",
+      "id": "decode_activity_geminiactivitydecoder_init",
+      "community": 10
+    },
+    {
+      "label": ".decode_html_entities()",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\decode_activity.py",
+      "source_location": "L17",
+      "id": "decode_activity_geminiactivitydecoder_decode_html_entities",
+      "community": 10
+    },
+    {
+      "label": ".run()",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\decode_activity.py",
+      "source_location": "L20",
+      "id": "decode_activity_geminiactivitydecoder_run",
+      "community": 10
+    },
+    {
+      "label": "knowledge_sorter.py",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\knowledge_sorter.py",
+      "source_location": "L1",
+      "id": "knowledge_sorter",
+      "community": 13
+    },
+    {
+      "label": "ask_category()",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\knowledge_sorter.py",
+      "source_location": "L22",
+      "id": "knowledge_sorter_ask_category",
+      "community": 13
+    },
+    {
+      "label": "organize_file()",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\knowledge_sorter.py",
+      "source_location": "L41",
+      "id": "knowledge_sorter_organize_file",
+      "community": 13
+    },
+    {
+      "label": "run_continuous_sorter()",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\knowledge_sorter.py",
+      "source_location": "L61",
+      "id": "knowledge_sorter_run_continuous_sorter",
+      "community": 13
+    },
+    {
+      "label": "run_pipeline.py",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\run_pipeline.py",
+      "source_location": "L1",
+      "id": "run_pipeline",
+      "community": 18
+    },
+    {
+      "label": "run_step()",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\run_pipeline.py",
+      "source_location": "L14",
+      "id": "run_pipeline_run_step",
+      "community": 18
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\run_pipeline.py",
+      "source_location": "L30",
+      "id": "run_pipeline_main",
+      "community": 18
+    },
+    {
+      "label": "setup_fonts.py",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\setup_fonts.py",
+      "source_location": "L1",
+      "id": "setup_fonts",
+      "community": 14
+    },
+    {
+      "label": "download_font()",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\setup_fonts.py",
+      "source_location": "L24",
+      "id": "setup_fonts_download_font",
+      "community": 14
+    },
+    {
+      "label": "Script t\u1ea3i font DejaVu Sans h\u1ed7 tr\u1ee3 ti\u1ebfng Vi\u1ec7t v\u1ec1 th\u01b0 m\u1ee5c fonts/.\r Ch\u1ea1y m\u1ed9t l\u1ea7n t",
+      "file_type": "rationale",
+      "source_file": "tools\\pipeline\\setup_fonts.py",
+      "source_location": "L1",
+      "id": "setup_fonts_rationale_1",
+      "community": 14
+    },
+    {
+      "label": "T\u1ea3i font DejaVuSans.ttf v\u1ec1 th\u01b0 m\u1ee5c fonts/.",
+      "file_type": "rationale",
+      "source_file": "tools\\pipeline\\setup_fonts.py",
+      "source_location": "L25",
+      "id": "setup_fonts_rationale_25",
+      "community": 14
+    },
+    {
+      "label": "smart_splitter.py",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\smart_splitter.py",
+      "source_location": "L1",
+      "id": "smart_splitter",
+      "community": 19
+    },
+    {
+      "label": "split_markdown_into_parts()",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\smart_splitter.py",
+      "source_location": "L15",
+      "id": "smart_splitter_split_markdown_into_parts",
+      "community": 19
+    },
+    {
+      "label": "generate_summary()",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\smart_splitter.py",
+      "source_location": "L71",
+      "id": "smart_splitter_generate_summary",
+      "community": 19
+    },
+    {
+      "label": "test_9router_distillation.py",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\test_9router_distillation.py",
+      "source_location": "L1",
+      "id": "test_9router_distillation",
+      "community": 23
+    },
+    {
+      "label": "test_distillation()",
+      "file_type": "code",
+      "source_file": "tools\\pipeline\\test_9router_distillation.py",
+      "source_location": "L28",
+      "id": "test_9router_distillation_test_distillation",
+      "community": 23
+    },
+    {
+      "label": "AGENTS.md",
+      "file_type": "markdown",
+      "source_file": "AGENTS.md",
+      "source_location": "L1",
+      "community": 29,
+      "id": "AGENTS_md"
+    },
+    {
+      "label": "CLAUDE.md",
+      "file_type": "markdown",
+      "source_file": "CLAUDE.md",
+      "source_location": "L1",
+      "community": 30,
+      "id": "CLAUDE_md"
+    },
+    {
+      "label": "CONTINUITY.md",
+      "file_type": "markdown",
+      "source_file": "CONTINUITY.md",
+      "source_location": "L1",
+      "community": 31,
+      "id": "CONTINUITY_md"
+    },
+    {
+      "label": "progress.md",
+      "file_type": "markdown",
+      "source_file": "progress.md",
+      "source_location": "L1",
+      "community": 32,
+      "id": "progress_md"
+    },
+    {
+      "label": "README.md",
+      "file_type": "markdown",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "community": 33,
+      "id": "README_md"
+    },
+    {
+      "label": "optimized_context.md",
+      "file_type": "markdown",
+      "source_file": "brain\\optimized_context.md",
+      "source_location": "L1",
+      "community": 34,
+      "id": "brain_optimized_context_md"
+    },
+    {
+      "label": "AI_Agent_Performance_Optimization.md",
+      "file_type": "markdown",
+      "source_file": "brain\\distilled\\AI_Agent_Performance_Optimization.md",
+      "source_location": "L1",
+      "community": 35,
+      "id": "brain_distilled_AI_Agent_Performance_Optimization_md"
+    },
+    {
+      "label": "Claude_Code_Full_Course_2026.md",
+      "file_type": "markdown",
+      "source_file": "brain\\distilled\\Claude_Code_Full_Course_2026.md",
+      "source_location": "L1",
+      "community": 36,
+      "id": "brain_distilled_Claude_Code_Full_Course_2026_md"
+    },
+    {
+      "label": "DevOps_IT_Automation_Wiki.md",
+      "file_type": "markdown",
+      "source_file": "brain\\distilled\\DevOps_IT_Automation_Wiki.md",
+      "source_location": "L1",
+      "community": 37,
+      "id": "brain_distilled_DevOps_IT_Automation_Wiki_md"
+    },
+    {
+      "label": "Difficulty_Assessment_SOP.md",
+      "file_type": "markdown",
+      "source_file": "brain\\distilled\\Difficulty_Assessment_SOP.md",
+      "source_location": "L1",
+      "community": 38,
+      "id": "brain_distilled_Difficulty_Assessment_SOP_md"
+    },
+    {
+      "label": "ECC_CodyMaster_Hybrid_Philosophy.md",
+      "file_type": "markdown",
+      "source_file": "brain\\distilled\\ECC_CodyMaster_Hybrid_Philosophy.md",
+      "source_location": "L1",
+      "community": 39,
+      "id": "brain_distilled_ECC_CodyMaster_Hybrid_Philosophy_md"
+    },
+    {
+      "label": "Education_AI_Handbook.md",
+      "file_type": "markdown",
+      "source_file": "brain\\distilled\\Education_AI_Handbook.md",
+      "source_location": "L1",
+      "community": 40,
+      "id": "brain_distilled_Education_AI_Handbook_md"
+    },
+    {
+      "label": "Engineering_Robotics_Master.md",
+      "file_type": "markdown",
+      "source_file": "brain\\distilled\\Engineering_Robotics_Master.md",
+      "source_location": "L1",
+      "community": 41,
+      "id": "brain_distilled_Engineering_Robotics_Master_md"
+    },
+    {
+      "label": "Lesson_Plan_Templates.md",
+      "file_type": "markdown",
+      "source_file": "brain\\distilled\\Lesson_Plan_Templates.md",
+      "source_location": "L1",
+      "community": 42,
+      "id": "brain_distilled_Lesson_Plan_Templates_md"
+    },
+    {
+      "label": "Pedagogical_Master_DNA.md",
+      "file_type": "markdown",
+      "source_file": "brain\\distilled\\Pedagogical_Master_DNA.md",
+      "source_location": "L1",
+      "community": 43,
+      "id": "brain_distilled_Pedagogical_Master_DNA_md"
+    },
+    {
+      "label": "Prompt_Engineering_Master.md",
+      "file_type": "markdown",
+      "source_file": "brain\\distilled\\Prompt_Engineering_Master.md",
+      "source_location": "L1",
+      "community": 44,
+      "id": "brain_distilled_Prompt_Engineering_Master_md"
+    },
+    {
+      "label": "_index.md",
+      "file_type": "markdown",
+      "source_file": "brain\\distilled\\_index.md",
+      "source_location": "L1",
+      "community": 45,
+      "id": "brain_distilled__index_md"
+    },
+    {
+      "label": "Biology_Epidemiology_G11.md",
+      "file_type": "markdown",
+      "source_file": "brain\\lessons\\Biology_Epidemiology_G11.md",
+      "source_location": "L1",
+      "community": 46,
+      "id": "brain_lessons_Biology_Epidemiology_G11_md"
+    },
+    {
+      "label": "Building_AI_Brain_G10.md",
+      "file_type": "markdown",
+      "source_file": "brain\\lessons\\Building_AI_Brain_G10.md",
+      "source_location": "L1",
+      "community": 47,
+      "id": "brain_lessons_Building_AI_Brain_G10_md"
+    },
+    {
+      "label": "Math_Advanced_Geometry_G10.md",
+      "file_type": "markdown",
+      "source_file": "brain\\lessons\\Math_Advanced_Geometry_G10.md",
+      "source_location": "L1",
+      "community": 48,
+      "id": "brain_lessons_Math_Advanced_Geometry_G10_md"
+    },
+    {
+      "label": "Physics_Electromagnetism_G10.md",
+      "file_type": "markdown",
+      "source_file": "brain\\lessons\\Physics_Electromagnetism_G10.md",
+      "source_location": "L1",
+      "community": 49,
+      "id": "brain_lessons_Physics_Electromagnetism_G10_md"
+    },
+    {
+      "label": "mcp_maintenance.md",
+      "file_type": "markdown",
+      "source_file": "docs\\mcp_maintenance.md",
+      "source_location": "L1",
+      "community": 50,
+      "id": "docs_mcp_maintenance_md"
+    },
+    {
+      "label": "Antigravity_Obsidian_Memory_LOM.md",
+      "file_type": "markdown",
+      "source_file": "res\\Antigravity_Obsidian_Memory_LOM.md",
+      "source_location": "L1",
+      "community": 51,
+      "id": "res_Antigravity_Obsidian_Memory_LOM_md"
+    },
+    {
+      "label": "ToT_Irrigation_Rubric.md",
+      "file_type": "markdown",
+      "source_file": "res\\assessments\\ToT_Irrigation_Rubric.md",
+      "source_location": "L1",
+      "community": 52,
+      "id": "res_assessments_ToT_Irrigation_Rubric_md"
+    },
+    {
+      "label": "ToT_IoT_Smart_Irrigation.md",
+      "file_type": "markdown",
+      "source_file": "res\\lesson_plans\\ToT_IoT_Smart_Irrigation.md",
+      "source_location": "L1",
+      "community": 53,
+      "id": "res_lesson_plans_ToT_IoT_Smart_Irrigation_md"
+    },
+    {
+      "label": "ToT_Prompt_Engineering_G10.md",
+      "file_type": "markdown",
+      "source_file": "res\\lesson_plans\\ToT_Prompt_Engineering_G10.md",
+      "source_location": "L1",
+      "community": 54,
+      "id": "res_lesson_plans_ToT_Prompt_Engineering_G10_md"
+    },
+    {
+      "label": "Gemini_English_Coach_G10.md",
+      "file_type": "markdown",
+      "source_file": "res\\prompts\\Gemini_English_Coach_G10.md",
+      "source_location": "L1",
+      "community": 55,
+      "id": "res_prompts_Gemini_English_Coach_G10_md"
+    },
+    {
+      "label": "Gemini_History_Specialist_G10.md",
+      "file_type": "markdown",
+      "source_file": "res\\prompts\\Gemini_History_Specialist_G10.md",
+      "source_location": "L1",
+      "community": 56,
+      "id": "res_prompts_Gemini_History_Specialist_G10_md"
+    },
+    {
+      "label": "Gemini_Literature_Tutor_G10.md",
+      "file_type": "markdown",
+      "source_file": "res\\prompts\\Gemini_Literature_Tutor_G10.md",
+      "source_location": "L1",
+      "community": 57,
+      "id": "res_prompts_Gemini_Literature_Tutor_G10_md"
+    },
+    {
+      "label": "Gemini_Math_Tutor_G10.md",
+      "file_type": "markdown",
+      "source_file": "res\\prompts\\Gemini_Math_Tutor_G10.md",
+      "source_location": "L1",
+      "community": 58,
+      "id": "res_prompts_Gemini_Math_Tutor_G10_md"
+    },
+    {
+      "label": "Gemini_Physics_Tutor_G10.md",
+      "file_type": "markdown",
+      "source_file": "res\\prompts\\Gemini_Physics_Tutor_G10.md",
+      "source_location": "L1",
+      "community": 59,
+      "id": "res_prompts_Gemini_Physics_Tutor_G10_md"
+    },
+    {
+      "label": "Daily_Recap_Template.md",
+      "file_type": "markdown",
+      "source_file": "templates\\Daily_Recap_Template.md",
+      "source_location": "L1",
+      "community": 60,
+      "id": "templates_Daily_Recap_Template_md"
+    },
+    {
+      "label": "Note_Template.md",
+      "file_type": "markdown",
+      "source_file": "templates\\Note_Template.md",
+      "source_location": "L1",
+      "community": 61,
+      "id": "templates_Note_Template_md"
+    },
+    {
+      "label": "Wiki_Article_Template.md",
+      "file_type": "markdown",
+      "source_file": "templates\\Wiki_Article_Template.md",
+      "source_location": "L1",
+      "community": 62,
+      "id": "templates_Wiki_Article_Template_md"
+    },
+    {
+      "label": "README.md",
+      "file_type": "markdown",
+      "source_file": "tools\\README.md",
+      "source_location": "L1",
+      "community": 63,
+      "id": "tools_README_md"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\llm_client.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_src": "llm_client",
+      "_tgt": "llm_client_allprovidersdownerror",
+      "source": "llm_client",
+      "target": "llm_client_allprovidersdownerror",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\llm_client.py",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_src": "llm_client",
+      "_tgt": "llm_client_setup_litellm",
+      "source": "llm_client",
+      "target": "llm_client_setup_litellm",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\llm_client.py",
+      "source_location": "L71",
+      "weight": 1.0,
+      "_src": "llm_client",
+      "_tgt": "llm_client_call_worker",
+      "source": "llm_client",
+      "target": "llm_client_call_worker",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\llm_client.py",
+      "source_location": "L94",
+      "weight": 1.0,
+      "_src": "llm_client",
+      "_tgt": "llm_client_call_validator",
+      "source": "llm_client",
+      "target": "llm_client_call_validator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\llm_client.py",
+      "source_location": "L126",
+      "weight": 1.0,
+      "_src": "llm_client",
+      "_tgt": "llm_client_call_with_retry",
+      "source": "llm_client",
+      "target": "llm_client_call_with_retry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\llm_client.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_src": "llm_client_rationale_1",
+      "_tgt": "llm_client",
+      "source": "llm_client",
+      "target": "llm_client_rationale_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\llm_client.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_src": "llm_client_allprovidersdownerror",
+      "_tgt": "exception",
+      "source": "llm_client_allprovidersdownerror",
+      "target": "exception",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "libs\\core\\llm_client.py",
+      "source_location": "L92",
+      "weight": 0.8,
+      "_src": "llm_client_call_worker",
+      "_tgt": "llm_client_allprovidersdownerror",
+      "source": "llm_client_allprovidersdownerror",
+      "target": "llm_client_call_worker",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "libs\\core\\llm_client.py",
+      "source_location": "L111",
+      "weight": 0.8,
+      "_src": "llm_client_call_validator",
+      "_tgt": "llm_client_allprovidersdownerror",
+      "source": "llm_client_allprovidersdownerror",
+      "target": "llm_client_call_validator",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\llm_client.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_src": "llm_client_rationale_20",
+      "_tgt": "llm_client_allprovidersdownerror",
+      "source": "llm_client_allprovidersdownerror",
+      "target": "llm_client_rationale_20",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "libs\\core\\llm_client.py",
+      "source_location": "L33",
+      "weight": 0.8,
+      "_src": "llm_client_allprovidersdownerror",
+      "_tgt": "rate_limiter_exponentialbackoff",
+      "source": "llm_client_allprovidersdownerror",
+      "target": "rate_limiter_exponentialbackoff",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\llm_client.py",
+      "source_location": "L47",
+      "weight": 1.0,
+      "_src": "llm_client_rationale_47",
+      "_tgt": "llm_client_setup_litellm",
+      "source": "llm_client_setup_litellm",
+      "target": "llm_client_rationale_47",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "libs\\core\\llm_client.py",
+      "source_location": "L84",
+      "weight": 0.8,
+      "_src": "llm_client_call_worker",
+      "_tgt": "llm_client_call_with_retry",
+      "source": "llm_client_call_worker",
+      "target": "llm_client_call_with_retry",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\llm_client.py",
+      "source_location": "L77",
+      "weight": 1.0,
+      "_src": "llm_client_rationale_77",
+      "_tgt": "llm_client_call_worker",
+      "source": "llm_client_call_worker",
+      "target": "llm_client_rationale_77",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "libs\\core\\llm_client.py",
+      "source_location": "L105",
+      "weight": 0.8,
+      "_src": "llm_client_call_validator",
+      "_tgt": "llm_client_call_with_retry",
+      "source": "llm_client_call_validator",
+      "target": "llm_client_call_with_retry",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\llm_client.py",
+      "source_location": "L100",
+      "weight": 1.0,
+      "_src": "llm_client_rationale_100",
+      "_tgt": "llm_client_call_validator",
+      "source": "llm_client_call_validator",
+      "target": "llm_client_rationale_100",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\llm_client.py",
+      "source_location": "L132",
+      "weight": 1.0,
+      "_src": "llm_client_rationale_132",
+      "_tgt": "llm_client_call_with_retry",
+      "source": "llm_client_call_with_retry",
+      "target": "llm_client_rationale_132",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "libs\\core\\llm_client.py",
+      "source_location": "L33",
+      "weight": 0.8,
+      "_src": "llm_client_rationale_1",
+      "_tgt": "rate_limiter_exponentialbackoff",
+      "source": "llm_client_rationale_1",
+      "target": "rate_limiter_exponentialbackoff",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "libs\\core\\llm_client.py",
+      "source_location": "L33",
+      "weight": 0.8,
+      "_src": "llm_client_rationale_20",
+      "_tgt": "rate_limiter_exponentialbackoff",
+      "source": "llm_client_rationale_20",
+      "target": "rate_limiter_exponentialbackoff",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "libs\\core\\llm_client.py",
+      "source_location": "L33",
+      "weight": 0.8,
+      "_src": "llm_client_rationale_47",
+      "_tgt": "rate_limiter_exponentialbackoff",
+      "source": "llm_client_rationale_47",
+      "target": "rate_limiter_exponentialbackoff",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "libs\\core\\llm_client.py",
+      "source_location": "L33",
+      "weight": 0.8,
+      "_src": "llm_client_rationale_77",
+      "_tgt": "rate_limiter_exponentialbackoff",
+      "source": "llm_client_rationale_77",
+      "target": "rate_limiter_exponentialbackoff",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "libs\\core\\llm_client.py",
+      "source_location": "L33",
+      "weight": 0.8,
+      "_src": "llm_client_rationale_100",
+      "_tgt": "rate_limiter_exponentialbackoff",
+      "source": "llm_client_rationale_100",
+      "target": "rate_limiter_exponentialbackoff",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "libs\\core\\llm_client.py",
+      "source_location": "L33",
+      "weight": 0.8,
+      "_src": "llm_client_rationale_132",
+      "_tgt": "rate_limiter_exponentialbackoff",
+      "source": "llm_client_rationale_132",
+      "target": "rate_limiter_exponentialbackoff",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\llm_status.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "llm_status",
+      "_tgt": "llm_status_check_openrouter_health",
+      "source": "llm_status",
+      "target": "llm_status_check_openrouter_health",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\llm_status.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_src": "llm_status_rationale_11",
+      "_tgt": "llm_status_check_openrouter_health",
+      "source": "llm_status_check_openrouter_health",
+      "target": "llm_status_rationale_11",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\logger.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_src": "logger",
+      "_tgt": "logger_get_logger",
+      "source": "logger",
+      "target": "logger_get_logger",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\logger.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_src": "logger_rationale_1",
+      "_tgt": "logger",
+      "source": "logger",
+      "target": "logger_rationale_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\logger.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_src": "logger_rationale_36",
+      "_tgt": "logger_get_logger",
+      "source": "logger_get_logger",
+      "target": "logger_rationale_36",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\rate_limiter.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_src": "rate_limiter",
+      "_tgt": "rate_limiter_ratelimiter",
+      "source": "rate_limiter",
+      "target": "rate_limiter_ratelimiter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\rate_limiter.py",
+      "source_location": "L70",
+      "weight": 1.0,
+      "_src": "rate_limiter",
+      "_tgt": "rate_limiter_exponentialbackoff",
+      "source": "rate_limiter",
+      "target": "rate_limiter_exponentialbackoff",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\rate_limiter.py",
+      "source_location": "L104",
+      "weight": 1.0,
+      "_src": "rate_limiter",
+      "_tgt": "rate_limiter_get_limiter",
+      "source": "rate_limiter",
+      "target": "rate_limiter_get_limiter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\rate_limiter.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_src": "rate_limiter_rationale_1",
+      "_tgt": "rate_limiter",
+      "source": "rate_limiter",
+      "target": "rate_limiter_rationale_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\rate_limiter.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_src": "rate_limiter_ratelimiter",
+      "_tgt": "rate_limiter_ratelimiter_init",
+      "source": "rate_limiter_ratelimiter",
+      "target": "rate_limiter_ratelimiter_init",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\rate_limiter.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_src": "rate_limiter_ratelimiter",
+      "_tgt": "rate_limiter_ratelimiter_wait",
+      "source": "rate_limiter_ratelimiter",
+      "target": "rate_limiter_ratelimiter_wait",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\rate_limiter.py",
+      "source_location": "L64",
+      "weight": 1.0,
+      "_src": "rate_limiter_ratelimiter",
+      "_tgt": "rate_limiter_ratelimiter_reset",
+      "source": "rate_limiter_ratelimiter",
+      "target": "rate_limiter_ratelimiter_reset",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\rate_limiter.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_src": "rate_limiter_rationale_15",
+      "_tgt": "rate_limiter_ratelimiter",
+      "source": "rate_limiter_ratelimiter",
+      "target": "rate_limiter_rationale_15",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\rate_limiter.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_src": "rate_limiter_rationale_35",
+      "_tgt": "rate_limiter_ratelimiter_wait",
+      "source": "rate_limiter_ratelimiter_wait",
+      "target": "rate_limiter_rationale_35",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\rate_limiter.py",
+      "source_location": "L65",
+      "weight": 1.0,
+      "_src": "rate_limiter_rationale_65",
+      "_tgt": "rate_limiter_ratelimiter_reset",
+      "source": "rate_limiter_ratelimiter_reset",
+      "target": "rate_limiter_rationale_65",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\rate_limiter.py",
+      "source_location": "L78",
+      "weight": 1.0,
+      "_src": "rate_limiter_exponentialbackoff",
+      "_tgt": "rate_limiter_exponentialbackoff_init",
+      "source": "rate_limiter_exponentialbackoff",
+      "target": "rate_limiter_exponentialbackoff_init",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\rate_limiter.py",
+      "source_location": "L86",
+      "weight": 1.0,
+      "_src": "rate_limiter_exponentialbackoff",
+      "_tgt": "rate_limiter_exponentialbackoff_get_delay",
+      "source": "rate_limiter_exponentialbackoff",
+      "target": "rate_limiter_exponentialbackoff_get_delay",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\rate_limiter.py",
+      "source_location": "L71",
+      "weight": 1.0,
+      "_src": "rate_limiter_rationale_71",
+      "_tgt": "rate_limiter_exponentialbackoff",
+      "source": "rate_limiter_exponentialbackoff",
+      "target": "rate_limiter_rationale_71",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\rate_limiter.py",
+      "source_location": "L87",
+      "weight": 1.0,
+      "_src": "rate_limiter_rationale_87",
+      "_tgt": "rate_limiter_exponentialbackoff_get_delay",
+      "source": "rate_limiter_exponentialbackoff_get_delay",
+      "target": "rate_limiter_rationale_87",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\rate_limiter.py",
+      "source_location": "L105",
+      "weight": 1.0,
+      "_src": "rate_limiter_rationale_105",
+      "_tgt": "rate_limiter_get_limiter",
+      "source": "rate_limiter_get_limiter",
+      "target": "rate_limiter_rationale_105",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_src": "schemas",
+      "_tgt": "schemas_meta",
+      "source": "schemas",
+      "target": "schemas_meta",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_src": "schemas",
+      "_tgt": "schemas_pipelineoutput",
+      "source": "schemas",
+      "target": "schemas_pipelineoutput",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L53",
+      "weight": 1.0,
+      "_src": "schemas",
+      "_tgt": "schemas_ok",
+      "source": "schemas",
+      "target": "schemas_ok",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L62",
+      "weight": 1.0,
+      "_src": "schemas",
+      "_tgt": "schemas_fail",
+      "source": "schemas",
+      "target": "schemas_fail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L75",
+      "weight": 1.0,
+      "_src": "schemas",
+      "_tgt": "schemas_translationchunk",
+      "source": "schemas",
+      "target": "schemas_translationchunk",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L84",
+      "weight": 1.0,
+      "_src": "schemas",
+      "_tgt": "schemas_translatedchunk",
+      "source": "schemas",
+      "target": "schemas_translatedchunk",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L95",
+      "weight": 1.0,
+      "_src": "schemas",
+      "_tgt": "schemas_validationresult",
+      "source": "schemas",
+      "target": "schemas_validationresult",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L102",
+      "weight": 1.0,
+      "_src": "schemas",
+      "_tgt": "schemas_pipelinesummary",
+      "source": "schemas",
+      "target": "schemas_pipelinesummary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_src": "schemas_rationale_1",
+      "_tgt": "schemas",
+      "source": "schemas",
+      "target": "schemas_rationale_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_src": "schemas_meta",
+      "_tgt": "basemodel",
+      "source": "schemas_meta",
+      "target": "basemodel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L58",
+      "weight": 0.8,
+      "_src": "schemas_ok",
+      "_tgt": "schemas_meta",
+      "source": "schemas_meta",
+      "target": "schemas_ok",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L67",
+      "weight": 0.8,
+      "_src": "schemas_fail",
+      "_tgt": "schemas_meta",
+      "source": "schemas_meta",
+      "target": "schemas_fail",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_src": "schemas_rationale_18",
+      "_tgt": "schemas_meta",
+      "source": "schemas_meta",
+      "target": "schemas_rationale_18",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_src": "schemas_pipelineoutput",
+      "_tgt": "basemodel",
+      "source": "basemodel",
+      "target": "schemas_pipelineoutput",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L75",
+      "weight": 1.0,
+      "_src": "schemas_translationchunk",
+      "_tgt": "basemodel",
+      "source": "basemodel",
+      "target": "schemas_translationchunk",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L84",
+      "weight": 1.0,
+      "_src": "schemas_translatedchunk",
+      "_tgt": "basemodel",
+      "source": "basemodel",
+      "target": "schemas_translatedchunk",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L95",
+      "weight": 1.0,
+      "_src": "schemas_validationresult",
+      "_tgt": "basemodel",
+      "source": "basemodel",
+      "target": "schemas_validationresult",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L102",
+      "weight": 1.0,
+      "_src": "schemas_pipelinesummary",
+      "_tgt": "basemodel",
+      "source": "basemodel",
+      "target": "schemas_pipelinesummary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_src": "schemas_rationale_28",
+      "_tgt": "schemas_pipelineoutput",
+      "source": "schemas_pipelineoutput",
+      "target": "schemas_rationale_28",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L76",
+      "weight": 1.0,
+      "_src": "schemas_rationale_76",
+      "_tgt": "schemas_translationchunk",
+      "source": "schemas_translationchunk",
+      "target": "schemas_rationale_76",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L85",
+      "weight": 1.0,
+      "_src": "schemas_rationale_85",
+      "_tgt": "schemas_translatedchunk",
+      "source": "schemas_translatedchunk",
+      "target": "schemas_rationale_85",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L96",
+      "weight": 1.0,
+      "_src": "schemas_rationale_96",
+      "_tgt": "schemas_validationresult",
+      "source": "schemas_validationresult",
+      "target": "schemas_rationale_96",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\schemas.py",
+      "source_location": "L103",
+      "weight": 1.0,
+      "_src": "schemas_rationale_103",
+      "_tgt": "schemas_pipelinesummary",
+      "source": "schemas_pipelinesummary",
+      "target": "schemas_rationale_103",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\sync_manager.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_src": "sync_manager",
+      "_tgt": "sync_manager_syncmanager",
+      "source": "sync_manager",
+      "target": "sync_manager_syncmanager",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\sync_manager.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_src": "sync_manager_syncmanager",
+      "_tgt": "sync_manager_syncmanager_init",
+      "source": "sync_manager_syncmanager",
+      "target": "sync_manager_syncmanager_init",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\sync_manager.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_src": "sync_manager_syncmanager",
+      "_tgt": "sync_manager_syncmanager_run",
+      "source": "sync_manager_syncmanager",
+      "target": "sync_manager_syncmanager_run",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\sync_manager.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_src": "sync_manager_rationale_14",
+      "_tgt": "sync_manager_syncmanager",
+      "source": "sync_manager_syncmanager",
+      "target": "sync_manager_rationale_14",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "libs\\mcp\\gemini_mcp.py",
+      "source_location": "L50",
+      "weight": 0.8,
+      "_src": "gemini_mcp_rationale_60",
+      "_tgt": "sync_manager_syncmanager",
+      "source": "sync_manager_syncmanager",
+      "target": "gemini_mcp_rationale_60",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "libs\\mcp\\gemini_mcp.py",
+      "source_location": "L50",
+      "weight": 0.8,
+      "_src": "gemini_mcp_rationale_78",
+      "_tgt": "sync_manager_syncmanager",
+      "source": "sync_manager_syncmanager",
+      "target": "gemini_mcp_rationale_78",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\test_router.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "test_router",
+      "_tgt": "test_router_test_short_prompt",
+      "source": "test_router",
+      "target": "test_router_test_short_prompt",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\test_router.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_src": "test_router",
+      "_tgt": "test_router_test_long_prompt",
+      "source": "test_router",
+      "target": "test_router_test_long_prompt",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\deprecated\\llm_discovery.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_src": "llm_discovery",
+      "_tgt": "llm_discovery_get_dynamic_free_workers",
+      "source": "llm_discovery",
+      "target": "llm_discovery_get_dynamic_free_workers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\deprecated\\llm_discovery.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_src": "llm_discovery_rationale_1",
+      "_tgt": "llm_discovery",
+      "source": "llm_discovery",
+      "target": "llm_discovery_rationale_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\core\\deprecated\\llm_discovery.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_src": "llm_discovery_rationale_27",
+      "_tgt": "llm_discovery_get_dynamic_free_workers",
+      "source": "llm_discovery_get_dynamic_free_workers",
+      "target": "llm_discovery_rationale_27",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\mcp\\gemini_mcp.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_src": "gemini_mcp",
+      "_tgt": "gemini_mcp_mcp_no_op_handler",
+      "source": "gemini_mcp",
+      "target": "gemini_mcp_mcp_no_op_handler",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\mcp\\gemini_mcp.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_src": "gemini_mcp",
+      "_tgt": "gemini_mcp_mcp_stderr_print",
+      "source": "gemini_mcp",
+      "target": "gemini_mcp_mcp_stderr_print",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\mcp\\gemini_mcp.py",
+      "source_location": "L59",
+      "weight": 1.0,
+      "_src": "gemini_mcp",
+      "_tgt": "gemini_mcp_sync_gemini",
+      "source": "gemini_mcp",
+      "target": "gemini_mcp_sync_gemini",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\mcp\\gemini_mcp.py",
+      "source_location": "L77",
+      "weight": 1.0,
+      "_src": "gemini_mcp",
+      "_tgt": "gemini_mcp_get_latest_context",
+      "source": "gemini_mcp",
+      "target": "gemini_mcp_get_latest_context",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\mcp\\gemini_mcp.py",
+      "source_location": "L60",
+      "weight": 1.0,
+      "_src": "gemini_mcp_rationale_60",
+      "_tgt": "gemini_mcp_sync_gemini",
+      "source": "gemini_mcp_sync_gemini",
+      "target": "gemini_mcp_rationale_60",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "libs\\mcp\\gemini_mcp.py",
+      "source_location": "L78",
+      "weight": 1.0,
+      "_src": "gemini_mcp_rationale_78",
+      "_tgt": "gemini_mcp_get_latest_context",
+      "source": "gemini_mcp_get_latest_context",
+      "target": "gemini_mcp_rationale_78",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "libs\\mcp\\gemini_mcp.py",
+      "source_location": "L51",
+      "weight": 0.8,
+      "_src": "gemini_mcp_rationale_60",
+      "_tgt": "context_distiller_contextdistiller",
+      "source": "gemini_mcp_rationale_60",
+      "target": "context_distiller_contextdistiller",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "libs\\mcp\\gemini_mcp.py",
+      "source_location": "L51",
+      "weight": 0.8,
+      "_src": "gemini_mcp_rationale_78",
+      "_tgt": "context_distiller_contextdistiller",
+      "source": "gemini_mcp_rationale_78",
+      "target": "context_distiller_contextdistiller",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "res\\code\\smart_irrigation.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_src": "smart_irrigation",
+      "_tgt": "smart_irrigation_read_moisture",
+      "source": "smart_irrigation",
+      "target": "smart_irrigation_read_moisture",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "res\\code\\smart_irrigation.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_src": "smart_irrigation",
+      "_tgt": "smart_irrigation_start_irrigation",
+      "source": "smart_irrigation",
+      "target": "smart_irrigation_start_irrigation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "res\\code\\smart_irrigation.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "_src": "smart_irrigation",
+      "_tgt": "smart_irrigation_main_loop",
+      "source": "smart_irrigation",
+      "target": "smart_irrigation_main_loop",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "res\\code\\smart_irrigation.py",
+      "source_location": "L60",
+      "weight": 0.8,
+      "_src": "smart_irrigation_main_loop",
+      "_tgt": "smart_irrigation_read_moisture",
+      "source": "smart_irrigation_read_moisture",
+      "target": "smart_irrigation_main_loop",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "res\\code\\smart_irrigation.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_src": "smart_irrigation_rationale_27",
+      "_tgt": "smart_irrigation_read_moisture",
+      "source": "smart_irrigation_read_moisture",
+      "target": "smart_irrigation_rationale_27",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "res\\code\\smart_irrigation.py",
+      "source_location": "L64",
+      "weight": 0.8,
+      "_src": "smart_irrigation_main_loop",
+      "_tgt": "smart_irrigation_start_irrigation",
+      "source": "smart_irrigation_start_irrigation",
+      "target": "smart_irrigation_main_loop",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "res\\code\\smart_irrigation.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_src": "smart_irrigation_rationale_35",
+      "_tgt": "smart_irrigation_start_irrigation",
+      "source": "smart_irrigation_start_irrigation",
+      "target": "smart_irrigation_rationale_35",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\mcp\\run_mcp.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "run_mcp",
+      "_tgt": "run_mcp_simplefilteredstdout",
+      "source": "run_mcp",
+      "target": "run_mcp_simplefilteredstdout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\mcp\\run_mcp.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "run_mcp_simplefilteredstdout",
+      "_tgt": "run_mcp_simplefilteredstdout_init",
+      "source": "run_mcp_simplefilteredstdout",
+      "target": "run_mcp_simplefilteredstdout_init",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\mcp\\run_mcp.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_src": "run_mcp_simplefilteredstdout",
+      "_tgt": "run_mcp_simplefilteredstdout_write",
+      "source": "run_mcp_simplefilteredstdout",
+      "target": "run_mcp_simplefilteredstdout_write",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\mcp\\run_mcp.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_src": "run_mcp_simplefilteredstdout",
+      "_tgt": "run_mcp_simplefilteredstdout_flush",
+      "source": "run_mcp_simplefilteredstdout",
+      "target": "run_mcp_simplefilteredstdout_flush",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\mcp\\run_mcp.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_src": "run_mcp_simplefilteredstdout",
+      "_tgt": "run_mcp_simplefilteredstdout_getattr",
+      "source": "run_mcp_simplefilteredstdout",
+      "target": "run_mcp_simplefilteredstdout_getattr",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\setup\\graphify_bootstrap.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_src": "graphify_bootstrap",
+      "_tgt": "graphify_bootstrap_bootstrap",
+      "source": "graphify_bootstrap",
+      "target": "graphify_bootstrap_bootstrap",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\notebooks\\list_notebooks.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "list_notebooks",
+      "_tgt": "list_notebooks_get_client",
+      "source": "list_notebooks",
+      "target": "list_notebooks_get_client",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\notebooks\\list_notebooks.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_src": "list_notebooks",
+      "_tgt": "list_notebooks_main",
+      "source": "list_notebooks",
+      "target": "list_notebooks_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "tools\\notebooks\\list_notebooks.py",
+      "source_location": "L28",
+      "weight": 0.8,
+      "_src": "list_notebooks_main",
+      "_tgt": "list_notebooks_get_client",
+      "source": "list_notebooks_get_client",
+      "target": "list_notebooks_main",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\analyze_markdown.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "analyze_markdown",
+      "_tgt": "analyze_markdown_main",
+      "source": "analyze_markdown",
+      "target": "analyze_markdown_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\atomic_distiller.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_src": "atomic_distiller",
+      "_tgt": "atomic_distiller_slugify",
+      "source": "atomic_distiller",
+      "target": "atomic_distiller_slugify",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\atomic_distiller.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_src": "atomic_distiller",
+      "_tgt": "atomic_distiller_call_ai_with_cycler",
+      "source": "atomic_distiller",
+      "target": "atomic_distiller_call_ai_with_cycler",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\atomic_distiller.py",
+      "source_location": "L63",
+      "weight": 1.0,
+      "_src": "atomic_distiller",
+      "_tgt": "atomic_distiller_process_single_conv",
+      "source": "atomic_distiller",
+      "target": "atomic_distiller_process_single_conv",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\atomic_distiller.py",
+      "source_location": "L80",
+      "weight": 1.0,
+      "_src": "atomic_distiller",
+      "_tgt": "atomic_distiller_run_cycler_blitz",
+      "source": "atomic_distiller",
+      "target": "atomic_distiller_run_cycler_blitz",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "tools\\pipeline\\atomic_distiller.py",
+      "source_location": "L67",
+      "weight": 0.8,
+      "_src": "atomic_distiller_process_single_conv",
+      "_tgt": "atomic_distiller_slugify",
+      "source": "atomic_distiller_slugify",
+      "target": "atomic_distiller_process_single_conv",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "tools\\pipeline\\atomic_distiller.py",
+      "source_location": "L74",
+      "weight": 0.8,
+      "_src": "atomic_distiller_process_single_conv",
+      "_tgt": "atomic_distiller_call_ai_with_cycler",
+      "source": "atomic_distiller_call_ai_with_cycler",
+      "target": "atomic_distiller_process_single_conv",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\batch_distiller.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_src": "batch_distiller",
+      "_tgt": "batch_distiller_batchcontextdistiller",
+      "source": "batch_distiller",
+      "target": "batch_distiller_batchcontextdistiller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\batch_distiller.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_src": "batch_distiller_batchcontextdistiller",
+      "_tgt": "batch_distiller_batchcontextdistiller_init",
+      "source": "batch_distiller_batchcontextdistiller",
+      "target": "batch_distiller_batchcontextdistiller_init",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\batch_distiller.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_src": "batch_distiller_batchcontextdistiller",
+      "_tgt": "batch_distiller_batchcontextdistiller_distill_batches",
+      "source": "batch_distiller_batchcontextdistiller",
+      "target": "batch_distiller_batchcontextdistiller_distill_batches",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\batch_distiller.py",
+      "source_location": "L57",
+      "weight": 1.0,
+      "_src": "batch_distiller_batchcontextdistiller",
+      "_tgt": "batch_distiller_batchcontextdistiller_process_single_chunk",
+      "source": "batch_distiller_batchcontextdistiller",
+      "target": "batch_distiller_batchcontextdistiller_process_single_chunk",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\batch_distiller.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_src": "batch_distiller_rationale_18",
+      "_tgt": "batch_distiller_batchcontextdistiller",
+      "source": "batch_distiller_batchcontextdistiller",
+      "target": "batch_distiller_rationale_18",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\batch_distiller.py",
+      "source_location": "L58",
+      "weight": 1.0,
+      "_src": "batch_distiller_rationale_58",
+      "_tgt": "batch_distiller_batchcontextdistiller_process_single_chunk",
+      "source": "batch_distiller_batchcontextdistiller_process_single_chunk",
+      "target": "batch_distiller_rationale_58",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\consolidator.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_src": "consolidator",
+      "_tgt": "consolidator_brainconsolidator",
+      "source": "consolidator",
+      "target": "consolidator_brainconsolidator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\consolidator.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "consolidator_brainconsolidator",
+      "_tgt": "consolidator_brainconsolidator_init",
+      "source": "consolidator_brainconsolidator",
+      "target": "consolidator_brainconsolidator_init",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\consolidator.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_src": "consolidator_brainconsolidator",
+      "_tgt": "consolidator_brainconsolidator_get_all_kis",
+      "source": "consolidator_brainconsolidator",
+      "target": "consolidator_brainconsolidator_get_all_kis",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\consolidator.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_src": "consolidator_brainconsolidator",
+      "_tgt": "consolidator_brainconsolidator_extract_metadata",
+      "source": "consolidator_brainconsolidator",
+      "target": "consolidator_brainconsolidator_extract_metadata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\consolidator.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_src": "consolidator_brainconsolidator",
+      "_tgt": "consolidator_brainconsolidator_group_kis_by_theme",
+      "source": "consolidator_brainconsolidator",
+      "target": "consolidator_brainconsolidator_group_kis_by_theme",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\consolidator.py",
+      "source_location": "L59",
+      "weight": 1.0,
+      "_src": "consolidator_brainconsolidator",
+      "_tgt": "consolidator_brainconsolidator_consolidate_theme",
+      "source": "consolidator_brainconsolidator",
+      "target": "consolidator_brainconsolidator_consolidate_theme",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\consolidator.py",
+      "source_location": "L93",
+      "weight": 1.0,
+      "_src": "consolidator_brainconsolidator",
+      "_tgt": "consolidator_brainconsolidator_run",
+      "source": "consolidator_brainconsolidator",
+      "target": "consolidator_brainconsolidator_run",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "tools\\pipeline\\consolidator.py",
+      "source_location": "L94",
+      "weight": 0.8,
+      "_src": "consolidator_brainconsolidator_run",
+      "_tgt": "consolidator_brainconsolidator_get_all_kis",
+      "source": "consolidator_brainconsolidator_get_all_kis",
+      "target": "consolidator_brainconsolidator_run",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "tools\\pipeline\\consolidator.py",
+      "source_location": "L45",
+      "weight": 0.8,
+      "_src": "consolidator_brainconsolidator_group_kis_by_theme",
+      "_tgt": "consolidator_brainconsolidator_extract_metadata",
+      "source": "consolidator_brainconsolidator_extract_metadata",
+      "target": "consolidator_brainconsolidator_group_kis_by_theme",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\consolidator.py",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_src": "consolidator_rationale_25",
+      "_tgt": "consolidator_brainconsolidator_extract_metadata",
+      "source": "consolidator_brainconsolidator_extract_metadata",
+      "target": "consolidator_rationale_25",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "tools\\pipeline\\consolidator.py",
+      "source_location": "L97",
+      "weight": 0.8,
+      "_src": "consolidator_brainconsolidator_run",
+      "_tgt": "consolidator_brainconsolidator_group_kis_by_theme",
+      "source": "consolidator_brainconsolidator_group_kis_by_theme",
+      "target": "consolidator_brainconsolidator_run",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\consolidator.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_src": "consolidator_rationale_35",
+      "_tgt": "consolidator_brainconsolidator_group_kis_by_theme",
+      "source": "consolidator_brainconsolidator_group_kis_by_theme",
+      "target": "consolidator_rationale_35",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "tools\\pipeline\\consolidator.py",
+      "source_location": "L104",
+      "weight": 0.8,
+      "_src": "consolidator_brainconsolidator_run",
+      "_tgt": "consolidator_brainconsolidator_consolidate_theme",
+      "source": "consolidator_brainconsolidator_consolidate_theme",
+      "target": "consolidator_brainconsolidator_run",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\consolidator.py",
+      "source_location": "L60",
+      "weight": 1.0,
+      "_src": "consolidator_rationale_60",
+      "_tgt": "consolidator_brainconsolidator_consolidate_theme",
+      "source": "consolidator_brainconsolidator_consolidate_theme",
+      "target": "consolidator_rationale_60",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\context_distiller.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_src": "context_distiller",
+      "_tgt": "context_distiller_contextdistiller",
+      "source": "context_distiller",
+      "target": "context_distiller_contextdistiller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\context_distiller.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_src": "context_distiller_contextdistiller",
+      "_tgt": "context_distiller_contextdistiller_init",
+      "source": "context_distiller_contextdistiller",
+      "target": "context_distiller_contextdistiller_init",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\context_distiller.py",
+      "source_location": "L33",
+      "weight": 1.0,
+      "_src": "context_distiller_contextdistiller",
+      "_tgt": "context_distiller_contextdistiller_distill",
+      "source": "context_distiller_contextdistiller",
+      "target": "context_distiller_contextdistiller_distill",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\context_distiller.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_src": "context_distiller_rationale_20",
+      "_tgt": "context_distiller_contextdistiller",
+      "source": "context_distiller_contextdistiller",
+      "target": "context_distiller_rationale_20",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\convert_chat_to_md.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "convert_chat_to_md",
+      "_tgt": "convert_chat_to_md_chattomarkdownconverter",
+      "source": "convert_chat_to_md",
+      "target": "convert_chat_to_md_chattomarkdownconverter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\convert_chat_to_md.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "convert_chat_to_md_chattomarkdownconverter",
+      "_tgt": "convert_chat_to_md_chattomarkdownconverter_init",
+      "source": "convert_chat_to_md_chattomarkdownconverter",
+      "target": "convert_chat_to_md_chattomarkdownconverter_init",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\convert_chat_to_md.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_src": "convert_chat_to_md_chattomarkdownconverter",
+      "_tgt": "convert_chat_to_md_chattomarkdownconverter_is_technical",
+      "source": "convert_chat_to_md_chattomarkdownconverter",
+      "target": "convert_chat_to_md_chattomarkdownconverter_is_technical",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\convert_chat_to_md.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_src": "convert_chat_to_md_chattomarkdownconverter",
+      "_tgt": "convert_chat_to_md_chattomarkdownconverter_get_conversation_messages",
+      "source": "convert_chat_to_md_chattomarkdownconverter",
+      "target": "convert_chat_to_md_chattomarkdownconverter_get_conversation_messages",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\convert_chat_to_md.py",
+      "source_location": "L65",
+      "weight": 1.0,
+      "_src": "convert_chat_to_md_chattomarkdownconverter",
+      "_tgt": "convert_chat_to_md_chattomarkdownconverter_run",
+      "source": "convert_chat_to_md_chattomarkdownconverter",
+      "target": "convert_chat_to_md_chattomarkdownconverter_run",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\convert_chat_to_md.py",
+      "source_location": "L146",
+      "weight": 1.0,
+      "_src": "convert_chat_to_md_chattomarkdownconverter",
+      "_tgt": "convert_chat_to_md_chattomarkdownconverter_save_part",
+      "source": "convert_chat_to_md_chattomarkdownconverter",
+      "target": "convert_chat_to_md_chattomarkdownconverter_save_part",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "tools\\pipeline\\convert_chat_to_md.py",
+      "source_location": "L114",
+      "weight": 0.8,
+      "_src": "convert_chat_to_md_chattomarkdownconverter_run",
+      "_tgt": "convert_chat_to_md_chattomarkdownconverter_is_technical",
+      "source": "convert_chat_to_md_chattomarkdownconverter_is_technical",
+      "target": "convert_chat_to_md_chattomarkdownconverter_run",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "tools\\pipeline\\convert_chat_to_md.py",
+      "source_location": "L105",
+      "weight": 0.8,
+      "_src": "convert_chat_to_md_chattomarkdownconverter_run",
+      "_tgt": "convert_chat_to_md_chattomarkdownconverter_get_conversation_messages",
+      "source": "convert_chat_to_md_chattomarkdownconverter_get_conversation_messages",
+      "target": "convert_chat_to_md_chattomarkdownconverter_run",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "tools\\pipeline\\convert_chat_to_md.py",
+      "source_location": "L129",
+      "weight": 0.8,
+      "_src": "convert_chat_to_md_chattomarkdownconverter_run",
+      "_tgt": "convert_chat_to_md_chattomarkdownconverter_save_part",
+      "source": "convert_chat_to_md_chattomarkdownconverter_run",
+      "target": "convert_chat_to_md_chattomarkdownconverter_save_part",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\debug_proxy.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "debug_proxy",
+      "_tgt": "debug_proxy_test_9router",
+      "source": "debug_proxy",
+      "target": "debug_proxy_test_9router",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\decode_activity.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_src": "decode_activity",
+      "_tgt": "decode_activity_geminiactivitydecoder",
+      "source": "decode_activity",
+      "target": "decode_activity_geminiactivitydecoder",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\decode_activity.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_src": "decode_activity_geminiactivitydecoder",
+      "_tgt": "decode_activity_geminiactivitydecoder_init",
+      "source": "decode_activity_geminiactivitydecoder",
+      "target": "decode_activity_geminiactivitydecoder_init",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\decode_activity.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_src": "decode_activity_geminiactivitydecoder",
+      "_tgt": "decode_activity_geminiactivitydecoder_decode_html_entities",
+      "source": "decode_activity_geminiactivitydecoder",
+      "target": "decode_activity_geminiactivitydecoder_decode_html_entities",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\decode_activity.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_src": "decode_activity_geminiactivitydecoder",
+      "_tgt": "decode_activity_geminiactivitydecoder_run",
+      "source": "decode_activity_geminiactivitydecoder",
+      "target": "decode_activity_geminiactivitydecoder_run",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\knowledge_sorter.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_src": "knowledge_sorter",
+      "_tgt": "knowledge_sorter_ask_category",
+      "source": "knowledge_sorter",
+      "target": "knowledge_sorter_ask_category",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\knowledge_sorter.py",
+      "source_location": "L41",
+      "weight": 1.0,
+      "_src": "knowledge_sorter",
+      "_tgt": "knowledge_sorter_organize_file",
+      "source": "knowledge_sorter",
+      "target": "knowledge_sorter_organize_file",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\knowledge_sorter.py",
+      "source_location": "L61",
+      "weight": 1.0,
+      "_src": "knowledge_sorter",
+      "_tgt": "knowledge_sorter_run_continuous_sorter",
+      "source": "knowledge_sorter",
+      "target": "knowledge_sorter_run_continuous_sorter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "tools\\pipeline\\knowledge_sorter.py",
+      "source_location": "L54",
+      "weight": 0.8,
+      "_src": "knowledge_sorter_organize_file",
+      "_tgt": "knowledge_sorter_ask_category",
+      "source": "knowledge_sorter_ask_category",
+      "target": "knowledge_sorter_organize_file",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\run_pipeline.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_src": "run_pipeline",
+      "_tgt": "run_pipeline_run_step",
+      "source": "run_pipeline",
+      "target": "run_pipeline_run_step",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\run_pipeline.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_src": "run_pipeline",
+      "_tgt": "run_pipeline_main",
+      "source": "run_pipeline",
+      "target": "run_pipeline_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "tools\\pipeline\\run_pipeline.py",
+      "source_location": "L36",
+      "weight": 0.8,
+      "_src": "run_pipeline_main",
+      "_tgt": "run_pipeline_run_step",
+      "source": "run_pipeline_run_step",
+      "target": "run_pipeline_main",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\setup_fonts.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_src": "setup_fonts",
+      "_tgt": "setup_fonts_download_font",
+      "source": "setup_fonts",
+      "target": "setup_fonts_download_font",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\setup_fonts.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_src": "setup_fonts_rationale_1",
+      "_tgt": "setup_fonts",
+      "source": "setup_fonts",
+      "target": "setup_fonts_rationale_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\setup_fonts.py",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_src": "setup_fonts_rationale_25",
+      "_tgt": "setup_fonts_download_font",
+      "source": "setup_fonts_download_font",
+      "target": "setup_fonts_rationale_25",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\smart_splitter.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_src": "smart_splitter",
+      "_tgt": "smart_splitter_split_markdown_into_parts",
+      "source": "smart_splitter",
+      "target": "smart_splitter_split_markdown_into_parts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\smart_splitter.py",
+      "source_location": "L71",
+      "weight": 1.0,
+      "_src": "smart_splitter",
+      "_tgt": "smart_splitter_generate_summary",
+      "source": "smart_splitter",
+      "target": "smart_splitter_generate_summary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "source_file": "tools\\pipeline\\smart_splitter.py",
+      "source_location": "L58",
+      "weight": 0.8,
+      "_src": "smart_splitter_split_markdown_into_parts",
+      "_tgt": "smart_splitter_generate_summary",
+      "source": "smart_splitter_split_markdown_into_parts",
+      "target": "smart_splitter_generate_summary",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tools\\pipeline\\test_9router_distillation.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_src": "test_9router_distillation",
+      "_tgt": "test_9router_distillation_test_distillation",
+      "source": "test_9router_distillation",
+      "target": "test_9router_distillation_test_distillation",
+      "confidence_score": 1.0
+    }
+  ],
+  "hyperedges": []
+}

@@ -1,0 +1,30 @@
+# .graphifyignore
+# Loại bỏ triệt để noise để đồ thị chỉ tập trung vào tri thức cốt lõi
+
+# Thư mục dữ liệu cũ/rác
+brain/archive/
+brain/raw/
+archive/
+temp/
+tmp/
+out/
+dist/
+
+# Môi trường & IDE
+.venv/
+node_modules/
+__pycache__/
+.git/
+.vscode/
+.gemini/
+
+# Output của chính graphify
+graphify-out/
+storage/
+input/
+
+# Loại trừ các file log hoặc binary không cần thiết
+*.log
+*.bin
+*.pyc
+*.exe

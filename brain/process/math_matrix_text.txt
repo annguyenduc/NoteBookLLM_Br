@@ -1,0 +1,142 @@
+NỘI DUNG KIỂM TRA HỌC KỲ 2 MÔN TOÁN
+NĂM HỌC 2025 – 2026
+1) KHỐI 10: Gồm các nội dung sau
+Đại Số Hình học
+- Dấu của tam thức bậc hai.
+- Giải bất phương trình bậc hai một ẩn.
+- Phương trình quy về phương trình bậc hai.
+- Quy tắc cộng, quy tắc nhân.
+- Hoán vị, chỉnh hợp, tổ hợp.
+- Nhị thức Newton.
+- Không gian mẫu, biến cố.
+- Xác suất.
+- Tọa độ của vectơ.
+- Đường thẳng trong mặt phẳng tọa độ.
+- Phương trình đường tròn, phương trình tiếp
+tuyến.
+- Elip – Hypebol – Parabol.
+MA TRẬN
+NỘI DUNG
+CÂU HỎI
+TRẮC NGHIỆM ĐÚNG SAI TỰ LUẬN
+Dấu của tam thức bậc hai
+01TN
+CÂU 1. ĐSGiải bất phương trình bậc hai một ẩn
+Phương trình quy về phương trình
+bậc hai 02TN
+Quy tắc cộng - Quy tắc nhân 03TN
+04TN
+CÂU 2. ĐS
+Hoán vị, chỉnh hợp, tổ hợp
+Nhị thức Newton
+05TN
+06TN
+CÂU 1. TL
+Đường thẳng trong mặt phẳng tọa độ 07TN
+08TN
+09TN
+10TN
+CÂU 3. ĐS
+CÂU 2. TL
+CÂU 3. TL
+Đường tròn trong mặt phẳng tọa độ
+Ba đường Conic
+Không gian mẫu, biến cố 11TN
+12TN
+CÂU 4. ĐS
+Xác suất
+2) KHỐI 11: Gồm các nội dung sau
+Đại Số Hình học
+- Phép tính lũy thừa.
+- Phép tính logarit.
+- Hàm số mũ. Hàm số logarit.
+- Phương trình, bất phương trình mũ và
+logarit.
+- Đạo hàm
+- Các quy tắc đạo hàm (cấp 1, cấp 2).
+- Xác suất: biến cố giao, biến cố hợp, các
+quy tắc tính xác suất.
+- Hai đường thẳng vuông góc.
+- Đường thẳng vuông góc với mặt phẳng.
+- Hai mặt phẳng vuông góc.
+- Góc giữa hai đường thẳng, đường thẳng và
+mặt phẳng, góc giữa hai mặt phẳng, góc
+nhị diện.
+- Khoảng cách (khoảng cách điểm đến mặt,
+đường đến mặt song song, hai mặt song
+song, khoảng cách hai đường chéo nhau,
+thể tích chóp, lăng trụ, hộp).
+MA TRẬN
+NỘI DUNG
+CÂU HỎI
+TRẮC NGHIỆM ĐÚNG SAI TỰ LUẬN
+Phép tính lũy thừa.
+01TN
+02TN
+CÂU 1. ĐS
+Phép tính logarit.
+Hàm số mũ. Hàm số logarit.
+Phương trình, bất phương trình mũ và
+logarit.
+Đạo hàm 03TN
+CÂU 2. ĐS
+CÂU 1. TL
+CÂU 2. TLCác quy tắc tính đạo hàm 04TN
+Biến cố giao và quy tắc nhân xác suất 05TN
+CÂU 3. ĐS
+Biến cố hợp và quy tắc cộng xác suất 06TN
+Hai đường vuông góc 07TN
+CÂU 4. ĐS
+CÂU 3. TL
+Đường thẳng vuông góc với mặt phẳng.
+Hai mặt phẳng vuông góc
+Góc giữa đường thẳng và mặt phẳng.
+Góc nhị diện
+08TN
+09TN
+Khoảng cách điểm đến mặt, đường đến
+mặt song song, hai mặt song song 10TN
+Khoảng cách hai đường chéo nhau
+Thể tích chóp 11TN
+Thể tích lăng trụ 12TN
+3) KHỐI 12: Gồm các nội dung sau
+Đại Số Hình học
+- Nguyên hàm
+- Tích phân
+- Ứng dụng hình học của tích phân
+- Xác suất có điều kiện
+- Công thức xác suất toàn phần và công
+thức Bayes
+- Oxyz
+- Phương trình mặt phẳng
+- Phương trình đường thẳng
+- Phương trình mặt cầu
+MA TRẬN
+NỘI DUNG
+CÂU HỎI
+TRẮC
+NGHIỆM ĐÚNG SAI TRẢ LỜI NGẮN
+Nguyên hàm
+01TN
+02TN
+CÂU 1. ĐS
+CÂU 1 - TLN
+CÂU 2 - TLN
+CÂU 3 - TLN
+Tích phân
+03TN
+04TN
+Ứng dụng hình học của tích phân
+05TN
+06TN
+Oxyz 07TN
+CÂU 2. ĐS
+CÂU 3. ĐS
+CÂU 4 - TLN
+CÂU 5 - TLN
+Phương trình mặt phẳng 08TN
+Phương trình đường thẳng 09TN
+Phương trình mặt cầu 10TN
+Xác suất có điều kiện 11TN
+CÂU 4. ĐS CÂU 6 - TLNCông thức xác suất toàn phần và
+công thức Bayes 12TN
