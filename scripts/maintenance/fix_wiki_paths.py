@@ -4,7 +4,7 @@ import re
 def fix_paths(root_dir):
     # Các pattern cần thay thế
     replacements = {
-        r'brain/atoms/': 'brain/wiki/',
+        r'brain/atoms/': '3-resources/wiki/',
         r'atoms/': 'wiki/',
         r'Total atoms:': 'Total wiki pages:',
         r'Tổng atoms:': 'Tổng wiki pages:',

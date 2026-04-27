@@ -1,0 +1,28 @@
+---
+file_id: "IOT_Arduino_MCQ_De3_Q21"
+title: "Câu 21 (Thông hiểu)"
+category: "Atomic Question"
+prefix: "MCQ"
+tags: ['IOT', 'Arduino', 'Thông hiểu']
+source: "`Đề 3 Trắc nghiệm - Arduino M1,2.docx`"
+level: "Thông hiểu"
+answer: "A/"
+status: "draft"
+created: "2026-04-27"
+---
+
+# [MCQ] Câu 21 (Thông hiểu)
+
+## ❓ Câu hỏi
+Giáo viên đưa ra yêu cầu lập trình cho cảm biến hồng ngoại như sau: Khi phát hiện vật cản thì cho đèn Led được nối với chân D8 sáng, còn không có vật cản thì cho đèn Led đó tắt. Hỏi đoạn chương trình nào dưới đây cho kết quả đúng với yêu cầu của giáo viên, biết chân DO của cảm biến được nối với chân D7.
+
+## 📝 Đáp án lựa chọn
+- **A/ (Đáp án)** B.
+  ![Image](../assets/ASSET_IOT_AI_Arduino_De3_rId35.png)
+  ![Image](../assets/ASSET_IOT_Arduino_De1_rId32.png)
+- **C/** D.
+  ![Image](../assets/ASSET_IOT_AI_Arduino_De3_rId37.png)
+  ![Image](../assets/ASSET_IOT_AI_Arduino_De3_rId38.png)
+
+## 🔗 Liên kết tư duy
+- [Rule 14] Đã mở file nguồn `3-resources/raw/Tổng hợp đề kiểm tra LMS/Tự động hóa và IOT/.../Đề 3 Trắc nghiệm - Arduino M1,2.docx` và xác nhận fact.

@@ -20,7 +20,7 @@ python scripts/brain_lint.py
 ```
 
 Nếu script chưa tồn tại, @healer thực hiện thủ công:
-- Lấy danh sách tất cả trang từ `brain/WIKI_INDEX.md`.
+- Lấy danh sách tất cả trang từ `3-resources/WIKI_INDEX.md`.
 - Với mỗi trang, tìm xem có trang nào khác chứa `[[Tên_trang]]` không.
 - Báo cáo danh sách trang có 0 inbound links.
 
@@ -57,7 +57,7 @@ Sau khi hoàn thành, @pm tạo báo cáo theo format:
 - Tổng sức khỏe: [HEALTHY / WARNING / CRITICAL]
 ```
 
-Append vào `brain/log.md` và thông báo tóm tắt cho User.
+Append vào `3-resources/log.md` và thông báo tóm tắt cho User.
 
 ---
 

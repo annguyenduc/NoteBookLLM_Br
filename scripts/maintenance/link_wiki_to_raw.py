@@ -32,7 +32,7 @@ def link_wiki_to_raw():
             # Pattern: matches `raw_file` or raw_file but not inside [[ ]]
             pattern = rf'(?<!\[\[)([`]?{escaped_raw}[`]?)(?!\]\])'
             
-            replacement = f'[[brain/raw/{raw_file}]]'
+            replacement = f'[[3-resources/raw/{raw_file}]]'
             new_content = re.sub(pattern, replacement, new_content)
         
         if new_content != content:

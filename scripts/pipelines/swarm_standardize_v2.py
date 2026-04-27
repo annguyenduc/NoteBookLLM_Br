@@ -155,7 +155,7 @@ Nhiệm vụ: Tinh cất nội dung từ bản nháp thô sang tài liệu học
 QUY TẮC BẮT BUỘC:
 1. NGÔN NGỮ: Tuyệt đối sử dụng Tiếng Việt 100%. Nếu nguồn là Tiếng Anh, hãy DỊCH sang Tiếng Việt chuyên ngành chuẩn xác.
 2. DẪN NGUỒN (PROVENANCE): Mọi sự kiện/kiến thức quan trọng phải kết thúc bằng liên kết: {src_link}. Không dùng định dạng khác.
-3. MEDIA: Nếu thấy image1.png, image2.png... hãy đổi thành: ![mô tả](../../brain/raw/lms_multi_media_dump/assets/[KEY]_imageN.png) với [KEY] là tên file nguồn (bỏ .md).
+3. MEDIA: Nếu thấy image1.png, image2.png... hãy đổi thành: ![mô tả](../../3-resources/raw/lms_multi_media_dump/assets/[KEY]_imageN.png) với [KEY] là tên file nguồn (bỏ .md).
 4. CẤU TRÚC: Sử dụng Heading (#, ##, ###), bảng biểu, và các hộp Markdown chuyên nghiệp.
 
 INPUT:

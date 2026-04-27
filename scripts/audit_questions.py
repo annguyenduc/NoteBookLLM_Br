@@ -2,7 +2,7 @@ import os
 import re
 from collections import defaultdict
 
-WIKI_DIR = os.path.join("brain", "wiki")
+WIKI_DIR = os.path.join("3-resources", "wiki")
 
 def main():
     # Cấu trúc: groups[module_submodule][de_str] = set(q_nums)
@@ -61,7 +61,7 @@ def main():
 
     report_lines.insert(1, f"**Tổng số câu phát hiện bị đứt gãy/thiếu:** {total_missing}")
     
-    out_path = os.path.join("brain", "process", "Audit_Missing_Questions.md")
+    out_path = os.path.join("3-resources", "process", "Audit_Missing_Questions.md")
     if not os.path.exists(os.path.dirname(out_path)):
         os.makedirs(os.path.dirname(out_path))
         

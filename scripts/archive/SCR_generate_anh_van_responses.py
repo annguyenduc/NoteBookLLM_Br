@@ -78,7 +78,7 @@ for p in prompts:
         print(f"  Error: {e}")
 
 # Ghi kết quả ra file JSON
-output_file = root / "brain/process/ai_comparison_results_anh_van.json"
+output_file = root / "3-resources/process/ai_comparison_results_anh_van.json"
 with open(output_file, "w", encoding="utf-8") as f:
     json.dump(results, f, ensure_ascii=False, indent=4)
 

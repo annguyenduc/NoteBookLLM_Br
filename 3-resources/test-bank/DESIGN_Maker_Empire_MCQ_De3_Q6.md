@@ -1,0 +1,27 @@
+---
+file_id: "DESIGN_Maker_Empire_MCQ_De3_Q6"
+title: "Câu 6 (Nhận biết)"
+category: "Atomic Question"
+prefix: "MCQ"
+tags: ['DESIGN', 'Maker_Empire', 'Nhận biết']
+source: "`3. Đề trắc nghiệm 3 - Maker Empire.docx`"
+level: "Nhận biết"
+answer: "B/"
+status: "draft"
+created: "2026-04-27"
+---
+
+# [MCQ] Câu 6 (Nhận biết)
+
+## ❓ Câu hỏi
+Để thu nhỏ tầm quan sát đối tượng khi sử dụng máy tính, ta thao tác bằng cách nào?
+(Nhiều đáp án)
+
+## 📝 Đáp án lựa chọn
+- **A/ (Đáp án)** Lăn bánh xe chuột theo chiều xuống.
+- **B/ (Đáp án)** Nhấp đôi chuột trái ngoài không gian thiết kế.
+- **C/** Nhấp đôi chuột trái vào đối tượng.
+- **D/** Nhấn giữ bánh xe trên chuột và di chuyển chuột.
+
+## 🔗 Liên kết tư duy
+- [Rule 14] Đã mở file nguồn `.../DESIGN/.../3. Đề trắc nghiệm 3 - Maker Empire.docx` và xác nhận fact.

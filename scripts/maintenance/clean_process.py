@@ -1,5 +1,5 @@
 """
-clean_process.py — Dọn brain/process/, move đúng file về đúng chỗ
+clean_process.py — Dọn 3-resources/process/, move đúng file về đúng chỗ
 Chạy từ root repo: python scripts/clean_process.py
 
 Logic phân loại:
@@ -15,9 +15,9 @@ from pathlib import Path
 
 # ── CẤU HÌNH ──────────────────────────────────────────────────────────────────
 REPO_ROOT = Path(".")
-PROCESS   = REPO_ROOT / "brain" / "process"
-DISTILLED = REPO_ROOT / "brain" / "distilled"
-RAW       = REPO_ROOT / "brain" / "raw"
+PROCESS   = REPO_ROOT / "3-resources" / "process"
+DISTILLED = REPO_ROOT / "3-resources" / "distilled"
+RAW       = REPO_ROOT / "3-resources" / "raw"
 DOCS      = REPO_ROOT / "docs"
 DRY_RUN   = False  # ← Đổi False khi muốn chạy thật
 

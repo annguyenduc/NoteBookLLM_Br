@@ -12,7 +12,7 @@ sys.path.append(os.getcwd())
 def finalize_test():
     print("--- 🏁 HOÀN TẤT ĐỀ KIỂM TRA CHUẨN (STRICT REFINE) ---")
     
-    with open("brain/distilled/LMS_KB_IOT_DEEP.md", "r", encoding="utf-8") as f:
+    with open("3-resources/distilled/LMS_KB_IOT_DEEP.md", "r", encoding="utf-8") as f:
         kb_content = f.read()
 
     # Re-generating from scratch with all auditor feedback incorporated into the prompt
@@ -29,7 +29,7 @@ Yêu cầu bắt buộc:
     
     content, model = call_pedagogical_agent("finalizer", final_prompt, model="groq/llama-3.3-70b-versatile")
     
-    output_path = "brain/distilled/LMS_Tests_Arduino_M1_FINAL.md"
+    output_path = "3-resources/distilled/LMS_Tests_Arduino_M1_FINAL.md"
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(content)

@@ -62,7 +62,7 @@ QUY TẮC CHƯNG CẤT (LOM v4.4 Supreme):
 3. **Hình ảnh (Clickable Images)**: 
    - PHẢI duy trì liên kết đến file ảnh trong thư mục assets.
    - PHẢI bao bọc mã hình ảnh trong một liên kết tuyệt đối file:/// để người dùng có thể click mở ảnh.
-   - Định dạng bắt buộc: `[![Image](../assets/FILENAME.png)](file:///d:/NoteBookLLM_Br/brain/assets/FILENAME.png)`
+   - Định dạng bắt buộc: `[![Image](../assets/FILENAME.png)](file:///d:/NoteBookLLM_Br/3-resources/assets/FILENAME.png)`
 
 4. **Ngôn ngữ**: Phải là Tiếng Việt đúng chuyên môn sư phạm.
 5. **Cấu trúc File**: Cả 2 phần phải nằm trong cùng một file .md.
@@ -78,7 +78,7 @@ QUY TẮC CHƯNG CẤT (LOM v4.4 Supreme):
             f_out.write(f"# DISTILLED KNOWLEDGE: {clean_name}\n\n")
             
             # Triple-Link for Human and Agent
-            raw_uri = f"file:///d:/NoteBookLLM_Br/brain/raw/{filename}"
+            raw_uri = f"file:///d:/NoteBookLLM_Br/3-resources/raw/{filename}"
             f_out.write(f"Source: [[{filename}]] — [🚀 Xem RAW]({raw_uri})\n\n")
             
             f_out.write(result)

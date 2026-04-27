@@ -82,8 +82,8 @@ def process_lms_folder(input_root, output_root):
                         print(f"  [ERROR] {file}: {e}")
 
 if __name__ == "__main__":
-    LMS_ROOT = "brain/raw/Tổng hợp đề kiểm tra LMS"
-    EXPORT_DIR = "brain/raw/lms_multi_media_dump"
+    LMS_ROOT = "3-resources/raw/Tổng hợp đề kiểm tra LMS"
+    EXPORT_DIR = "3-resources/raw/lms_multi_media_dump"
     
     if not os.path.exists(EXPORT_DIR):
         os.makedirs(EXPORT_DIR)

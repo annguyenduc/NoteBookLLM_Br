@@ -7,10 +7,10 @@ def run_graphify():
     project_root = Path(os.getcwd())
     # Cập nhật: Bao gồm cả wiki và distilled
     input_paths = [
-        project_root / "brain" / "wiki",
-        project_root / "brain" / "distilled"
+        project_root / "3-resources" / "wiki",
+        project_root / "3-resources" / "distilled"
     ]
-    output_path = project_root / "brain" / "process" / "graphify"
+    output_path = project_root / "3-resources" / "process" / "graphify"
     
     # Đảm bảo thư mục đầu ra tồn tại
     os.makedirs(output_path, exist_ok=True)

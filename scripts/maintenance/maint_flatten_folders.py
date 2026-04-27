@@ -48,6 +48,6 @@ def recursive_flatten_to_level3(root_path, max_depth=3):
 if __name__ == "__main__":
     current_dir = os.getcwd()
     # Execute on brain/archive primarily as that's where the violations are
-    archive_path = os.path.join(current_dir, "brain", "archive")
+    archive_path = os.path.join(current_dir, "3-resources", "archive")
     if os.path.exists(archive_path):
         recursive_flatten_to_level3(current_dir)

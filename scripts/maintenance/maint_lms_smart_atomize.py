@@ -18,10 +18,10 @@ if sys.stdout.encoding != 'utf-8':
 
 # Configuration
 WORKSPACE_ROOT = Path(r"d:\NoteBookLLM_Br")
-DOCX_ROOT = WORKSPACE_ROOT / "brain" / "raw" / "Tổng hợp đề kiểm tra LMS"
-ATOMS_DIR = WORKSPACE_ROOT / "brain" / "atoms"
-ASSETS_DIR = WORKSPACE_ROOT / "brain" / "assets"
-LOG_FILE = WORKSPACE_ROOT / "brain" / "log.md"
+DOCX_ROOT = WORKSPACE_ROOT / "3-resources" / "raw" / "Tổng hợp đề kiểm tra LMS"
+ATOMS_DIR = WORKSPACE_ROOT / "3-resources" / "atoms"
+ASSETS_DIR = WORKSPACE_ROOT / "3-resources" / "assets"
+LOG_FILE = WORKSPACE_ROOT / "3-resources" / "log.md"
 
 # Categories mapping
 CATEGORY_MAP = {

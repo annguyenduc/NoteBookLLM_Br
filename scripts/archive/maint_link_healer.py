@@ -22,8 +22,8 @@ def link_healer(root_path, map_file="brain/link_map.json"):
     
     # Process distilled and archive
     target_dirs = [
-        os.path.join(root_path, "brain", "distilled"),
-        os.path.join(root_path, "brain", "archive")
+        os.path.join(root_path, "3-resources", "distilled"),
+        os.path.join(root_path, "3-resources", "archive")
     ]
     
     for target_dir in target_dirs:

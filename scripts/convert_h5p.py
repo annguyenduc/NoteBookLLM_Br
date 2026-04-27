@@ -1,7 +1,7 @@
 import os
 import re
 
-WIKI_DIR = os.path.join("brain", "wiki")
+WIKI_DIR = os.path.join("3-resources", "wiki")
 
 def convert_to_h5p():
     count = 0

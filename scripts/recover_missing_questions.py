@@ -39,7 +39,7 @@ title: "Câu {q_num}"
 category: "Atomic Question"
 prefix: "QUESTION"
 tags: []
-source: "brain/raw/{raw_file}"
+source: "3-resources/raw/{raw_file}"
 level: "Unknown"
 answer: ""
 status: "needs_review"

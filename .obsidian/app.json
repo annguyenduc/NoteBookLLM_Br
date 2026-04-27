@@ -3,5 +3,7 @@
     "brain/test-bank/",
     "archive/",
     "brain/process/"
-  ]
+  ],
+  "newFileLocation": "folder",
+  "newFileFolderPath": "3-resources/raw"
 }

@@ -1,0 +1,40 @@
+﻿---
+file_id: "DESIGN_3D_Tinkercad_MCQ_De4_Q28"
+title: "Câu 28 (Thông hiểu) "
+category: "Atomic Question"
+prefix: "MCQ"
+tags: ['DESIGN', '3D_Tinkercad', 'Thông hiểu']
+source: "`ĐỀ 4 TRẮC NGHIỆM 3D TINKERCAD.docx`"
+level: "Thông hiểu"
+answer: "A/"
+status: "draft"
+created: "2026-04-22"
+---
+
+# [MCQ] Câu 28 (Thông hiểu) 
+
+## ❓ Câu hỏi
+![Image](../assets/ASSET_DESIGN_3D_Tinkercad_De3_rId27.png)
+![Image](../assets/ASSET_DESIGN_3D_Tinkercad_De3_rId28.png)
+(KHÔNG CẦN NHÚNG)
+Link Tinkercad: (Đã copy file qua tài khoản Tinkercad của HO)
+Link nhúng:
+<iframe width="725" height="453" src="https://www.tinkercad.com/embed/6w8PJMiBXIA?editbtn=1" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+Cho 1 nửa trái tim (đã group lại) như hình 1, hãy nêu các bước để tạo hình trái tim hoàn thiện (hình 2)?
+
+## 📝 Đáp án lựa chọn
+- **A/ (Đáp án)**
+  Chọn nửa trái tim, nhấn Duplicate, sau đó nhấn nút M và lật khối theo chiều ngang, rồi di chuyển ngang đến vị trí phù hợp.
+- **B/**
+  Chọn nửa trái tim, nhấn Duplicate, sau đó xoay khối theo trục y 180 độ, rồi di chuyển khối đến vị trí phù hợp.
+- **C/**
+  Chọn nửa trái tim, nhấn Duplicate, sau đó xoay khối theo trục x 180 độ, rồi di chuyển khối đến vị trí phù hợp.
+- **D/**
+  Chọn nửa trái tim, nhấn Duplicate, sau đó xoay khối theo trục z 180 độ, rồi di chuyển khối đến vị trí phù hợp.
+
+## 🔗 Liên kết tư duy
+- Kiến thức liên quan: `WIKI_DESIGN`
+- Module: `DESIGN_3D_Tinkercad`
+
+## 📖 Nguồn
+`📖 Nguồn: [ĐỀ 4 TRẮC NGHIỆM 3D TINKERCAD.docx] — 28`

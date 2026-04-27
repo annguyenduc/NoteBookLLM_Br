@@ -6,14 +6,14 @@ Vấn đề: Cùng 1 khái niệm nhưng có nhiều tag khác nhau
   [Servo Motor] / [Linh kiện - Servo] / [Servo_Wiring] / [Câu 8] / [Động cơ Servo]
   → Gộp tất cả về 1 tag chuẩn
 
-Output: brain/raw/LMS_KB_IOT_NORMALIZED.md (KHÔNG ghi đè file gốc)
+Output: 3-resources/raw/LMS_KB_IOT_NORMALIZED.md (KHÔNG ghi đè file gốc)
 """
 
 import re
 from pathlib import Path
 
-INPUT_FILE  = Path("brain/raw/LMS_KB_IOT_ORIGINAL.md")
-OUTPUT_FILE = Path("brain/raw/LMS_KB_IOT_NORMALIZED.md")
+INPUT_FILE  = Path("3-resources/raw/LMS_KB_IOT_ORIGINAL.md")
+OUTPUT_FILE = Path("3-resources/raw/LMS_KB_IOT_NORMALIZED.md")
 DRY_RUN     = False   # ← Đổi False để ghi file thật
 
 # ── BẢNG CHUẨN HÓA TAGS ───────────────────────────────────────────────────────

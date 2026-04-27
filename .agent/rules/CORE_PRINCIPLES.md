@@ -17,7 +17,7 @@
 - Khi nhắc đến một Agent, hãy dùng tag `@` (ví dụ: `@pm`, `@engineer`).
 
 ## 4. Bảo mật & An toàn (Safety)
-- Tuyệt đối không xóa dữ liệu thô trong `brain/raw/` cho đến khi đã được @qa xác nhận đã "Hóa thân" (Distilled) thành công sang `brain/distilled/`.
+- Tuyệt đối không xóa dữ liệu thô trong `3-resources/raw/` cho đến khi đã được @qa xác nhận đã "Hóa thân" (Distilled) thành công sang `3-resources/distilled/`.
 - Mọi thay đổi lớn về cấu trúc Vault phải được `@pm` phê duyệt.
 
 ---

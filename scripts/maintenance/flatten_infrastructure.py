@@ -4,11 +4,11 @@ import glob
 
 # Constants
 BASE_DIR = r"d:\NoteBookLLM_Br"
-ASSETS_SRC = os.path.join(BASE_DIR, "brain", "raw", "lms_multi_media_dump", "assets")
-ASSETS_DEST = os.path.join(BASE_DIR, "brain", "assets")
-RAW_SRC = os.path.join(BASE_DIR, "brain", "raw", "lms_tests_raw")
-RAW_DEST = os.path.join(BASE_DIR, "brain", "raw")
-ARCHIVE_DEST = os.path.join(BASE_DIR, "brain", "archive")
+ASSETS_SRC = os.path.join(BASE_DIR, "3-resources", "raw", "lms_multi_media_dump", "assets")
+ASSETS_DEST = os.path.join(BASE_DIR, "3-resources", "assets")
+RAW_SRC = os.path.join(BASE_DIR, "3-resources", "raw", "lms_tests_raw")
+RAW_DEST = os.path.join(BASE_DIR, "3-resources", "raw")
+ARCHIVE_DEST = os.path.join(BASE_DIR, "3-resources", "archive")
 
 def flatten_assets():
     print(f"Flattening assets from {ASSETS_SRC} to {ASSETS_DEST}...")

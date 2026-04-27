@@ -33,7 +33,7 @@ CUSTOM_THEME = Theme(
 console = Console(theme=CUSTOM_THEME)
 
 
-def get_logger(name: str = "burn_token", log_dir: str = "./brain/process/storage/logs") -> logging.Logger:
+def get_logger(name: str = "burn_token", log_dir: str = "./3-resources/process/storage/logs") -> logging.Logger:
     """
     Tạo và trả về logger chuẩn cho pipeline.
 

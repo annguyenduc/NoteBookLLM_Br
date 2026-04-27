@@ -5,8 +5,8 @@ def link_healer_v2(root_path):
     print(f"Starting Intelligent Link Healing for: {root_path}")
     
     target_dirs = [
-        os.path.join(root_path, "brain", "distilled"),
-        os.path.join(root_path, "brain", "archive")
+        os.path.join(root_path, "3-resources", "distilled"),
+        os.path.join(root_path, "3-resources", "archive")
     ]
     
     # 1. Map all existing files in the project for fast lookup

@@ -17,9 +17,9 @@ from libs.core.logger import get_logger
 
 logger = get_logger("brain_lint")
 
-BRAIN_DISTILLED_DIR = project_root / "brain" / "distilled"
-REPORT_PATH = project_root / "brain" / "lint_report.md"
-CACHE_PATH = project_root / "brain" / "process" / "storage" / "cache" / "brain_lint_manifest.json"
+BRAIN_DISTILLED_DIR = project_root / "3-resources" / "distilled"
+REPORT_PATH = project_root / "3-resources" / "lint_report.md"
+CACHE_PATH = project_root / "3-resources" / "process" / "storage" / "cache" / "brain_lint_manifest.json"
 PROMPT_VERSION = "brain-lint-v1"
 LINT_MODEL = "fast-engine"
 CONTENT_CHAR_LIMIT = 3000
@@ -44,7 +44,7 @@ def parse_args() -> argparse.Namespace:
 
 def get_wiki_files() -> List[Path]:
     """Get all markdown files in brain/distilled and brain/wiki, sorted for stable output."""
-    BRAIN_ATOMS_DIR = project_root / "brain" / "atoms"
+    BRAIN_ATOMS_DIR = project_root / "3-resources" / "atoms"
     files = list(BRAIN_DISTILLED_DIR.glob("*.md")) + list(BRAIN_ATOMS_DIR.glob("*.md"))
     return sorted(files, key=lambda path: path.name.lower())
 

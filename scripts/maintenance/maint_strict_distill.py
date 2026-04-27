@@ -10,7 +10,7 @@ if hasattr(sys.stdout, 'reconfigure'):
 sys.path.append(os.getcwd())
 
 def distill_volume(volume_id):
-    path = f"brain/raw/optimized_part_1_{volume_id}.md"
+    path = f"3-resources/raw/optimized_part_1_{volume_id}.md"
     if not os.path.exists(path):
         print(f"File {path} không tồn tại.")
         return
@@ -47,7 +47,7 @@ QUY TẮC NGHIÊM NGẶT (LOM v4.1):
         # We use a high-capacity model for distillation
         atomic_out, model = call_pedagogical_agent("scout", prompt)
         
-        output_file = f"brain/distilled/atomic/CONV_atoms_{volume_id}_{idx+1}.md"
+        output_file = f"3-resources/distilled/atomic/CONV_atoms_{volume_id}_{idx+1}.md"
         with open(output_file, "w", encoding="utf-8") as out_f:
             out_f.write(atomic_out)
         
@@ -62,13 +62,13 @@ if __name__ == "__main__":
     # Merge all distilled files
     print("--- 🔗 MERGING ALL ATOMS ---")
     merged_content = ""
-    output_dir = "brain/distilled/atomic/"
+    output_dir = "3-resources/distilled/atomic/"
     files = sorted([f for f in os.listdir(output_dir) if f.startswith("CONV_atoms_")])
     
     for filename in files:
         with open(os.path.join(output_dir, filename), "r", encoding="utf-8") as f:
             merged_content += f.read() + "\n\n"
             
-    with open("brain/distilled/MASTER_CONV_ATOMS.md", "w", encoding="utf-8") as f:
+    with open("3-resources/distilled/MASTER_CONV_ATOMS.md", "w", encoding="utf-8") as f:
         f.write(merged_content)
-    print("--- ✅ MERGE COMPLETE: brain/distilled/MASTER_CONV_ATOMS.md ---")
+    print("--- ✅ MERGE COMPLETE: 3-resources/distilled/MASTER_CONV_ATOMS.md ---")

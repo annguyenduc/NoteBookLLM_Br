@@ -1,7 +1,7 @@
 import os
 import re
 
-WIKI_DIR = os.path.join("brain", "wiki")
+WIKI_DIR = os.path.join("3-resources", "wiki")
 
 def parse_de_from_source(content):
     # match source: "..."

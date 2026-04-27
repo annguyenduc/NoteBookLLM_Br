@@ -1,7 +1,7 @@
 description: Tối ưu hóa & Đối soát tri thức Master (Refinement & Reconciliation)
 ---
 
-Workflow `/distill` giờ đây đóng vai trò là bước **Kiểm định chất lượng cao** sau khi các Master files (`brain/distilled/`) đã được bồi đắp qua nhiều lần ingest. 
+Workflow `/distill` giờ đây đóng vai trò là bước **Kiểm định chất lượng cao** sau khi các Master files (`3-resources/distilled/`) đã được bồi đắp qua nhiều lần ingest. 
 
 Karpathy: *"Optimization is as important as extraction."* — `/distill` giúp làm gọn tri thức, loại bỏ sự trùng lặp và hàn gắn các liên kết mâu thuẫn.
 
@@ -18,8 +18,8 @@ Trước khi chạy `/distill`, kiểm tra bắt buộc:
 ## ⚙️ Các bước thực hiện
 
 ### Bước 1 — @scout: Nhận diện mâu thuẫn và trùng lặp
-- Đọc Master file (`brain/distilled/KB_[Domain]_Master.md`).
-- So sánh với các Atomic Wiki pages liên quan trong `brain/wiki/`.
+- Đọc Master file (`3-resources/distilled/KB_[Domain]_Master.md`).
+- So sánh với các Atomic Wiki pages liên quan trong `3-resources/wiki/`.
 - Xác định các đoạn văn bản có nội dung tương đồng nhưng cách diễn đạt khác nhau (redundancy) hoặc các fact trái ngược nhau (conflict).
 
 ### Bước 2 — @engineer: Thực hiện Refactoring Master
@@ -48,9 +48,9 @@ python scripts/update_wiki_index.py
 ## 🔗 Vị trí trong Karpathy Pipeline
 
 ```
-/ingest  →  brain/wiki/ (Chi tiết, có thể cập nhật từng phần)
+/ingest  →  3-resources/wiki/ (Chi tiết, có thể cập nhật từng phần)
                 ↓
-/distill →  brain/distilled/ (Tóm tắt nhanh, phục vụ Query đơn giản)
+/distill →  3-resources/distilled/ (Tóm tắt nhanh, phục vụ Query đơn giản)
                 ↓
 /lint    →  Health check cả hai tầng
 ```

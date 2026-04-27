@@ -64,7 +64,7 @@ def get_responses():
             continue
     
     # Save results to a file (UTF-8)
-    output_path = root / "brain/process/ai_comparison_results.md"
+    output_path = root / "3-resources/process/ai_comparison_results.md"
     try:
         with open(output_path, "w", encoding="utf-8") as f:
             f.write("# Phản hồi thực tế từ AI (Gemini-3-Flash)\n\n")

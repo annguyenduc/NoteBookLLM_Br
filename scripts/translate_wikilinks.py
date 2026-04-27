@@ -58,8 +58,8 @@ def process_file(path):
     }
     
     for old, new in mapping.items():
-        content = content.replace(f"source: \"brain/raw/{old}\"", f"source: \"brain/raw/{new}\"")
-        content = content.replace(f"source: 'brain/raw/{old}'", f"source: 'brain/raw/{new}'")
+        content = content.replace(f"source: \"3-resources/raw/{old}\"", f"source: \"3-resources/raw/{new}\"")
+        content = content.replace(f"source: '3-resources/raw/{old}'", f"source: '3-resources/raw/{new}'")
     
     with open(path, "w", encoding="utf-8") as f:
         f.write(content)

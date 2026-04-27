@@ -1,24 +1,33 @@
-# Roadmap NoteBookLLM_Br v4.2 (2026-04-25)
+# Roadmap NoteBookLLM_Br v5.0 (2026-04-27) — Pivot: Test Bank Only
 
-## 🏁 Giai đoạn 1: Dứt điểm IOT Arduino
-- [x] **Audit & Consolidation**: Gộp 5 tệp linh kiện lẻ vào `WIKI_IOT_Arduino_Hardware.md`.
-- [x] **AI Logic Review**: Cập nhật logic Máy học và Cognitive Services vào `WIKI_IOT_Arduino_Logic.md`.
-- [x] **Master Distillation**: Tạo `brain/distilled/KB_IOT_Arduino_Master.md` (Ground Truth).
-- [x] **Index Sync**: Cập nhật `WIKI_INDEX.md` (2109 file).
-**=> KẾT QUẢ: Module Arduino đã hoàn thành 100%.**
-
-## 🏗️ Giai đoạn 2: Tinh gọn & Pivot Robotics
-- [x] **Cleanup**: Di chuyển toàn bộ tệp **GBot** vào `archive/GBot/`. (User không cần GBot nữa).
-- [ ] **Rover Inventory**: Rà soát dữ liệu Rover OhStem trong `brain/raw/`.
-- [ ] **xBot Inventory**: Rà soát dữ liệu xBot OhStem trong `brain/raw/`.
-- [ ] **Wiki Creation**: Xây dựng 3 tệp cốt lõi cho Robotics mới:
-    - `WIKI_ROBOT_Hardware_Master.md` (Dùng chung xBot/Rover).
-    - `WIKI_ROBOT_Logic_Master.md` (Tư duy lập trình Python/mBlock cho Robot).
-    - `WIKI_ROBOT_Rover_Expansion.md` (Các module đặc thù của Rover).
-
-## 📥 Giai đoạn 3: Merge Workspace
-- [ ] **Discovery**: Quét `Gemini_Study_Hub` (Ổ D).
-- [ ] **Mapping**: Ánh xạ tri thức vào hệ thống Wiki hiện tại.
+## ⚠️ PIVOT NOTICE (2026-04-27)
+> **Quyết định từ User**: Dự án không cần chiết xuất kiến thức Atom hay xây dựng Wiki nữa.
+> **Mục tiêu mới**: Tập trung 100% vào việc trích xuất và duy trì **Test Bank** (MCQ Atoms) từ nguồn LMS.
+> **Hành động**: Đã Archive toàn bộ `1-projects/`, `wiki/` và `distilled/`.
 
 ---
-*Ghi chú: Mọi hành động tạo mới Wiki phải đọc `brain/process/WIKI_AGENT_GUIDE.md`.*
+
+## ✅ Giai đoạn 0: Dọn dẹp & Lưu trữ (HOÀN TẤT)
+- [x] **Archive Projects**: Chuyển `1-projects/2026_Robotics` vào `4-archive/`.
+- [x] **Archive Wiki/Distilled**: Chuyển toàn bộ tệp tri thức vào `4-archive/`.
+- [x] **Standardize Prefix**: Đổi tên `ROBOT_*` -> `Robot_*` theo đúng Rule 7.
+- [x] **WIKI_INDEX Cleanup**: Chỉ giữ lại danh mục `test-bank`.
+
+---
+
+## 🏗️ Giai đoạn 1: Trích xuất LMS (ƯU TIÊN CAO)
+- [ ] **Audit Nguồn**: Rà soát 60 đề docx còn lại trong `3-resources/raw/Tổng hợp đề kiểm tra LMS/`.
+- [ ] **Extraction Engine**: Sử dụng scripts để trích xuất câu hỏi hàng loạt.
+- [ ] **Asset Management**: Đảm bảo toàn bộ ảnh được lưu vào `3-resources/assets/` với prefix `ASSET_[LEVEL1]_[LEVEL2]`.
+- [ ] **Link Integrity**: Kiểm tra 100% link ảnh trong `test-bank` không bị broken.
+
+---
+
+## 🧪 Giai đoạn 2: Kiểm định Chất lượng (Quality Gate)
+- [ ] **Consistency Check**: Đảm bảo toàn bộ 2500+ câu hỏi (sau khi xong) đều tuân thủ Rule 7.
+- [ ] **Metadata Audit**: Kiểm tra tag độ khó và mức độ nhận thức (Bloom) trong từng Atom.
+
+---
+
+*Ghi chú: Không tạo thêm tệp `wiki/` hay `distilled/` trừ khi có yêu cầu mới.*
+*Quy tắc prefix: `[CẤP_1]_[CẤP_2]_MCQ_[DE]_[Q].md`*

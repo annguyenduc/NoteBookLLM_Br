@@ -1,17 +1,17 @@
 """
-sort_distilled.py — Tự động sort brain/distilled/ vào đúng folder
+sort_distilled.py — Tự động sort 3-resources/distilled/ vào đúng folder
 Chạy từ root của repo: python scripts/sort_distilled.py
 
 Quy tắc phân loại:
-  LMS_Tests_*       → brain/distilled/   (giữ nguyên - test bank thực sự)
-  EXAM_Context_*    → brain/process/     (handoff file)
-  Trainer_Profile_* → brain/process/     (handoff file)
-  Learning_Design_* → brain/process/     (handoff file)
-  Eval_Report_*     → brain/process/     (handoff file)
+  LMS_Tests_*       → 3-resources/distilled/   (giữ nguyên - test bank thực sự)
+  EXAM_Context_*    → 3-resources/process/     (handoff file)
+  Trainer_Profile_* → 3-resources/process/     (handoff file)
+  Learning_Design_* → 3-resources/process/     (handoff file)
+  Eval_Report_*     → 3-resources/process/     (handoff file)
   agents-index*     → docs/              (config file)
-  CONV_Atoms_*      → brain/raw/         (raw data, chưa distill đúng)
-  *_atoms_*         → brain/raw/         (raw data)
-  Còn lại           → brain/process/     (mặc định an toàn - không xóa)
+  CONV_Atoms_*      → 3-resources/raw/         (raw data, chưa distill đúng)
+  *_atoms_*         → 3-resources/raw/         (raw data)
+  Còn lại           → 3-resources/process/     (mặc định an toàn - không xóa)
 """
 
 import os
@@ -20,10 +20,10 @@ from pathlib import Path
 
 # ── CẤU HÌNH ──────────────────────────────────────────────────────────────────
 REPO_ROOT = Path(".")   # Chạy từ root repo
-DISTILLED  = REPO_ROOT / "brain" / "distilled"
-RAW        = REPO_ROOT / "brain" / "raw"
-ATOMS      = REPO_ROOT / "brain" / "atoms"
-PROCESS    = REPO_ROOT / "brain" / "process"
+DISTILLED  = REPO_ROOT / "3-resources" / "distilled"
+RAW        = REPO_ROOT / "3-resources" / "raw"
+ATOMS      = REPO_ROOT / "3-resources" / "atoms"
+PROCESS    = REPO_ROOT / "3-resources" / "process"
 DOCS       = REPO_ROOT / "docs"
 DRY_RUN    = False      # ← ĐỔI THÀNH False KHI MUỐN CHẠY THẬT
 

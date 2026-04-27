@@ -17,7 +17,7 @@ for fname in files:
     def replace_image(match):
         rel_path = match.group(1)
         filename = match.group(2)
-        abs_uri = f'file:///d:/NoteBookLLM_Br/brain/assets/{filename}'
+        abs_uri = f'file:///d:/NoteBookLLM_Br/3-resources/assets/{filename}'
         return f'[![Image]({rel_path})]({abs_uri})'
     
     new_content = re.sub(pattern, replace_image, content)

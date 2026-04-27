@@ -40,7 +40,7 @@ def run_pipeline():
     print(f"  > Content generated (Model: {e_model})")
     
     # Save output
-    output_path = "brain/distilled/LMS_Tests_Arduino_M1_Swarm_Demo.md"
+    output_path = "3-resources/distilled/LMS_Tests_Arduino_M1_Swarm_Demo.md"
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(engineer_out)

@@ -6,7 +6,7 @@
 
 ## 🎯 Mục tiêu dự án
 
-1. **LLM Wiki Sư phạm** — Xây dựng kho tri thức sống (`brain/`) về đào tạo và giáo dục STEAM, tích lũy theo thời gian qua cơ chế Stream Ingest.
+1. **LLM Wiki Sư phạm** — Xây dựng kho tri thức sống (`3-resources/`) về đào tạo và giáo dục STEAM, tích lũy theo thời gian qua cơ chế Stream Ingest.
 2. **Swarm Agent đúng vai** — Mỗi agent (@profiler, @designer, @engineer, @creative, @evaluator, @auditor) được giao đúng model AI phù hợp năng lực, có fallback tự động khi gặp lỗi.
 3. **Sản xuất nội dung đào tạo** — Pipeline tự động tạo giáo án, slide, assignment cho một khoá học hoàn chỉnh, với cơ chế chunking để không vượt token limit của free tier.
 
@@ -16,13 +16,14 @@
 
 ```
 build-peda/
-├── brain/            # Wiki Knowledge Base (Raw, Wiki, Distilled, Process)
+├── 1-projects/       # Các dự án đang thực thi
+├── 2-areas/          # Các lĩnh vực trách nhiệm lâu dài
+├── 3-resources/      # Thư viện tri thức cốt lõi (Raw, Wiki, Distilled, Process)
+├── 4-archive/        # Lưu trữ các dự án đã hoàn thành
 ├── scripts/          # Các script automation (maintenance, pipelines, setup)
 ├── libs/             # Thư viện core và wrapper API
 ├── tools/            # Các công cụ bổ trợ hệ thống
-├── assets/           # Tài nguyên tĩnh, hình ảnh, templates
 ├── storage/          # Dữ liệu tạm, logs thực thi (execution_manifest)
-├── archive/          # Lưu trữ các tệp cũ hoặc atoms lỗi
 ├── AGENTS.md         # Registry Swarm Agent v4.0 Supreme
 ├── CLAUDE.md         # Operational Memory (LOM) & Session Context
 ├── COMMAND_BOARD.md  # Bảng điều khiển tác vụ hàng ngày
@@ -108,7 +109,7 @@ python scripts/run_pipeline.py --module M2.1 --trainer-level entry
 
 ```bash
 # Kiểm định sức khỏe Wiki
-python scripts/brain_lint.py
+python scripts/resources_lint.py
 
 # Cập nhật đồ thị tri thức
 python scripts/graphify_bootstrap.py
@@ -124,10 +125,10 @@ python scripts/chunked_engineer.py --output slide --module M2.1 --chunk-size 5
 
 ## 📋 Quy tắc vận hành
 
-- **Anti-Hallucination**: Mọi claim phải có nguồn từ `brain/raw/` hoặc `brain/distilled/`. Xem `AUDITOR_Protocol.md`.
-- **Log-First Ingest**: Mọi thay đổi tri thức ghi vào `brain/log.md` (append only).
+- **Anti-Hallucination**: Mọi claim phải có nguồn từ `3-resources/raw/` hoặc `3-resources/distilled/`. Xem `AUDITOR_Protocol.md`.
+- **Log-First Ingest**: Mọi thay đổi tri thức ghi vào `3-resources/log.md` (append only).
 - **Absolute Flatness**: Thư mục tối đa 2 cấp từ root. Dùng underscore prefix thay vì thư mục con.
-- **Source Integrity**: Chỉ trích dẫn từ file gốc hiện tồn tại trong `brain/raw/`.
+- **Source Integrity**: Chỉ trích dẫn từ file gốc hiện tồn tại trong `3-resources/raw/`.
 
 ---
 

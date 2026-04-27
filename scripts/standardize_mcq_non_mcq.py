@@ -1,7 +1,7 @@
 import os
 import re
 
-WIKI_DIR = os.path.join("brain", "wiki")
+WIKI_DIR = os.path.join("3-resources", "wiki")
 
 def standardize_item_bank():
     # Bộ từ khóa cực kỳ khắt khe để phân biệt Non-MCQ

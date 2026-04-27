@@ -1,7 +1,7 @@
 import os
 import re
 
-BRAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'brain'))
+BRAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '3-resources'))
 INDEX_FILE = os.path.join(BRAIN_DIR, 'WIKI_INDEX.md')
 DIRS_TO_INDEX = ['wiki', 'distilled', 'test-bank']
 
@@ -129,7 +129,7 @@ def main():
         f.write("*MCQ atoms và dữ liệu chi tiết — không cần đọc cho File-Back.*\n\n")
         if atom_pages:
             for page in atom_pages:
-                f.write(f"- [[{page['rel_path']}]] | {page['title']}\n")
+                f.write(f"- `{page['rel_path']}` | {page['title']}\n")
         f.write("\n")
             
     total = len(concept_pages) + len(atom_pages) + len(distilled_pages)

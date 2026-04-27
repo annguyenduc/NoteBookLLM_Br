@@ -5,14 +5,14 @@ Chạy: python scripts/generate_atoms.py
 Nguyên tắc:
 - Facts được COPY NGUYÊN VĂN từ file nguồn — không paraphrase
 - Agent CHỈ cần điền 4F và wikilinks sau
-- Mỗi tag → 1 file ATOMS_[tag].md trong brain/wiki/
+- Mỗi tag → 1 file ATOMS_[tag].md trong 3-resources/wiki/
 """
 
 import re
 from pathlib import Path
 from datetime import date
 
-INPUT_FILE  = Path("brain/raw/LMS_KB_IOT_NORMALIZED.md")
+INPUT_FILE  = Path("3-resources/raw/LMS_KB_IOT_NORMALIZED.md")
 OUTPUT_DIR  = Path("brain/wiki")
 DRY_RUN     = False   # ← Đổi False khi muốn ghi file thật
 
@@ -74,14 +74,14 @@ last_updated: "{today}"
 | **Futures** | ⚠️ TODO: Ứng dụng vào task nào cụ thể? |
 
 ## 📖 Nguồn
-`📖 Nguồn: brain/raw/LMS_KB_IOT_NORMALIZED.md — tag [{tag}]`
+`📖 Nguồn: 3-resources/raw/LMS_KB_IOT_NORMALIZED.md — tag [{tag}]`
 
 ---
 <!-- ATOM CHECKLIST — @librarian verify trước khi đổi status: verified -->
 - [ ] Chỉ có 1 khái niệm duy nhất trong file này
 - [ ] Có ít nhất 2 [[wikilinks]]
 - [ ] Phần Futures không để trống
-- [ ] Nguồn có thể trace về brain/raw/
+- [ ] Nguồn có thể trace về 3-resources/raw/
 - [ ] Facts là copy nguyên văn, không paraphrase
 """
 

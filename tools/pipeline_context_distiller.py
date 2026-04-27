@@ -29,7 +29,7 @@ class ContextDistiller:
         else:
             self.root = Path(project_root)
             
-        self.input_file = self.root / "brain/raw/raw_context.md"
+        self.input_file = self.root / "3-resources/raw/raw_context.md"
         self.output_file = self.root / "brain/optimized_context.md"
 
     def distill(self):

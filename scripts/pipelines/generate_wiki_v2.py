@@ -3,7 +3,7 @@ generate_wiki_v2.py — Tạo atomic notes từ các file LMS_RAW_*.md
 Chạy từ root repo: python scripts/generate_wiki_v2.py
 
 Cải tiến so với v1:
-- Đọc thẳng từ brain/raw/LMS_RAW_*.md — không qua file KB tổng hợp
+- Đọc thẳng từ 3-resources/raw/LMS_RAW_*.md — không qua file KB tổng hợp
 - Regex linh hoạt match 200/201 facts (v1 chỉ match 33)
 - Gộp facts trùng lặp giữa các file (dedup)
 - Ghi rõ nguồn từng fact (file nào, dòng mấy)
@@ -206,7 +206,7 @@ last_updated: "{today}"
 - [ ] Chỉ có 1 khái niệm duy nhất trong file này
 - [ ] Có ít nhất 2 [[wikilinks]] thật (không phải TODO)
 - [ ] Phần Futures không để trống
-- [ ] Nguồn có thể trace về brain/raw/
+- [ ] Nguồn có thể trace về 3-resources/raw/
 - [ ] Facts là copy nguyên văn — không paraphrase
 """
 
@@ -273,7 +273,7 @@ def build_facts_block(facts: list) -> str:
 
 def build_sources_block(facts: list) -> str:
     sources = sorted(set(src for _, src in facts))
-    lines = [f"`📖 Nguồn {i+1}: brain/raw/{src}`"
+    lines = [f"`📖 Nguồn {i+1}: 3-resources/raw/{src}`"
              for i, src in enumerate(sources)]
     return "\n".join(lines)
 

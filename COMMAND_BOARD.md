@@ -8,7 +8,7 @@
 
 ### 1. Chuẩn hóa Hệ thống & Protocol (v4.0)
 - **Trạng thái:** ✅ HOÀN THÀNH (100%)
-- **Kết quả:** Đã di trú `brain/wiki/`, cập nhật `CLAUDE.md`, `AGENTS.md`, `README.md`.
+- **Kết quả:** Đã di trú `3-resources/wiki/`, cập nhật `CLAUDE.md`, `AGENTS.md`, `README.md`.
 - **Bước tiếp theo:** Duy trì kỉ luật "Manus First" với `task_plan.md`.
 
 ### 2. Module Robotics (xBot, mBot, Codey Rocky)
@@ -21,7 +21,7 @@
 ### 3. Module Python K10 (CS Master)
 - **Trạng thái:** 🟡 ĐANG ĐỢI (Priority 2)
 - **Bước tiếp theo:**
-  - [ ] Rà soát Raw Data tại `brain/raw/KHMT_Python_K10_Raw_Master.md`.
+  - [ ] Rà soát Raw Data tại `3-resources/raw/KHMT_Python_K10_Raw_Master.md`.
   - [ ] Lập kế hoạch phân mảnh (Atomize) kiến thức.
 
 ### 4. Hackathon & MimiClaw

@@ -17,23 +17,23 @@ OUTPUT_DIR = ROOT / "distilled/K10_Pedagogical_Kit"
 # Subjects and Files Mapping
 MATERIALS = {
     "Math_10": [
-        ROOT / "brain/wiki/ATOMS_Prompt_Engineering_K10_Toan.md",
-        ROOT / "brain/process/Math10_Prompt_Comparison_Examples.md",
-        ROOT / "brain/process/Math10_Prompt_Showcase.md",
-        ROOT / "brain/process/Lesson_Plan_Math10_Prompt_45m.md",
-        ROOT / "brain/process/Math10_Gemini_Study_Guide.md"
+        ROOT / "3-resources/wiki/ATOMS_Prompt_Engineering_K10_Toan.md",
+        ROOT / "3-resources/process/Math10_Prompt_Comparison_Examples.md",
+        ROOT / "3-resources/process/Math10_Prompt_Showcase.md",
+        ROOT / "3-resources/process/Lesson_Plan_Math10_Prompt_45m.md",
+        ROOT / "3-resources/process/Math10_Gemini_Study_Guide.md"
     ],
     "English_10": [
-        ROOT / "brain/wiki/ATOMS_Prompt_Engineering_K10_Anh.md",
-        ROOT / "brain/process/English10_Prompt_Comparison_Examples.md",
-        ROOT / "brain/process/English10_Prompt_Showcase.md",
-        ROOT / "brain/process/Lesson_Plan_English10_Prompt_45m.md"
+        ROOT / "3-resources/wiki/ATOMS_Prompt_Engineering_K10_Anh.md",
+        ROOT / "3-resources/process/English10_Prompt_Comparison_Examples.md",
+        ROOT / "3-resources/process/English10_Prompt_Showcase.md",
+        ROOT / "3-resources/process/Lesson_Plan_English10_Prompt_45m.md"
     ],
     "Literature_10": [
-        ROOT / "brain/wiki/ATOMS_Prompt_Engineering_K10_Van.md",
-        ROOT / "brain/process/Literature10_Prompt_Comparison_Examples.md",
-        ROOT / "brain/process/Literature10_Prompt_Showcase.md",
-        ROOT / "brain/process/Lesson_Plan_Literature10_Prompt_45m.md"
+        ROOT / "3-resources/wiki/ATOMS_Prompt_Engineering_K10_Van.md",
+        ROOT / "3-resources/process/Literature10_Prompt_Comparison_Examples.md",
+        ROOT / "3-resources/process/Literature10_Prompt_Showcase.md",
+        ROOT / "3-resources/process/Lesson_Plan_Literature10_Prompt_45m.md"
     ]
 }
 

@@ -2,7 +2,7 @@ import os
 import glob
 
 BASE_DIR = r"d:\NoteBookLLM_Br"
-RAW_DIR = os.path.join(BASE_DIR, "brain", "raw")
+RAW_DIR = os.path.join(BASE_DIR, "3-resources", "raw")
 INDEX_PATH = os.path.join(RAW_DIR, "MASTER_SOURCE_INDEX.md")
 
 def update_index():

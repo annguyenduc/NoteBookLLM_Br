@@ -1,0 +1,9 @@
+// Chỉ giữ lại các file markdown và cấu hình cần thiết
+!**/*.md
+!**/*.json
+!/.obsidian/
+**/workspace.json  
+**/workspaces.json  
+**/workspace-mobile.json  
+// Loại bỏ tất cả các định dạng file nặng khác
+*.*

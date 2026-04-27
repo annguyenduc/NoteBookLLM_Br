@@ -49,7 +49,7 @@ yaml_frontmatter:
 ```
 /audit-context [EXAM_Context_file]
 ```
-Kiểm tra EXAM_Context file của @scout — xác minh mọi terminology và fact đều có nguồn trong `brain/distilled/` (Source of Truth) trước, sau đó cross-check với `brain/raw/` nếu cần.
+Kiểm tra EXAM_Context file của @scout — xác minh mọi terminology và fact đều có nguồn trong `3-resources/distilled/` (Source of Truth) trước, sau đó cross-check với `3-resources/raw/` nếu cần.
 
 ---
 
@@ -78,7 +78,7 @@ Claims cần verify:
 Với mỗi claim, @auditor thực hiện theo thứ tự **ưu tiên từ distilled → raw**:
 
 ```
-TẦNG 1 — brain/distilled/ (Source of Truth)
+TẦNG 1 — 3-resources/distilled/ (Source of Truth)
   → Đọc EXAM_Context_[module].md
     Tìm claim trong:
       - Section 2.1 (Mandatory Terminology)
@@ -88,7 +88,7 @@ TẦNG 1 — brain/distilled/ (Source of Truth)
 
         ↓ Không tìm thấy trong distilled
 
-TẦNG 2 — brain/raw/ (Cross-check fallback)
+TẦNG 2 — 3-resources/raw/ (Cross-check fallback)
   → Đọc tài liệu gốc tương ứng với module
   → Tìm đoạn văn bản khớp với claim
   → Nếu tìm thấy: gắn nhãn ⚠️ PARTIAL

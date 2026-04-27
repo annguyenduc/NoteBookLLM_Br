@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "e88bb74dab760fea",
+        "id": "aabf83f6f117e91d",
         "type": "tabs",
         "children": [
           {
-            "id": "52cdf6cc06f09dae",
+            "id": "a6d1b28b4978105c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "assets/RES_Antigravity_Obsidian_Memory_LOM.md",
+                "file": "3-resources/assets/RES_Antigravity_Obsidian_Memory_LOM.md",
                 "mode": "source",
                 "source": false
               },
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 297.5
   },
   "right": {
     "id": "ce606e0bbf2fe1a6",
@@ -94,14 +94,14 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "assets/RES_Antigravity_Obsidian_Memory_LOM.md",
+                "file": "3-resources/assets/RES_Antigravity_Obsidian_Memory_LOM.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
                 "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
+                "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
               "title": "Backlinks for RES_Antigravity_Obsidian_Memory_LOM"
@@ -180,43 +180,53 @@
       "bases:Create new base": false
     }
   },
-  "active": "52cdf6cc06f09dae",
+  "active": "a6d1b28b4978105c",
   "lastOpenFiles": [
-    "CLAUDE.md",
-    "COMMAND_BOARD.md",
-    "llm-wiki.md",
-    "README.md",
-    "brain/raw/PROMPT_K10_Van_Lesson_Plan_45m.md",
-    "AGENTS.md",
-    "assets/TMPL_Note_Template.md",
-    "assets/LP_ToT_IoT_Smart_Irrigation.md",
-    "assets/LP_ToT_Prompt_Engineering_G10.md",
-    "assets/TMPL_WIKI_TEMPLATE.md",
-    "assets/TMPL_Wiki_Article_Template.md",
-    "brain/test-bank/MCQ_Robot_Rover_De1_Q14.md",
-    "brain/test-bank/MCQ_Robot_Rover_De5_Q17.md",
-    "brain/test-bank/MCQ_Robot_Rover_De5_Q21.md",
-    "brain/test-bank/MCQ_Robot_Rover_De5_Q16.md",
-    "brain/test-bank/MCQ_Robot_Rover_De5_Q20.md",
-    "brain/test-bank/MCQ_Robot_Rover_De5_Q24.md",
-    "brain/test-bank/MCQ_Robot_Rover_De5_Q22.md",
-    "brain/test-bank/MCQ_Robot_Rover_De5_Q25.md",
-    "brain/test-bank/MCQ_Robot_Rover_De5_Q27.md",
-    "brain/test-bank/MCQ_Robot_Rover_De5_Q28.md",
-    "brain/test-bank/MCQ_Robot_Rover_De5_Q30.md",
-    "brain/test-bank/MCQ_Robot_Rover_De5_Q26.md",
-    "brain/test-bank/MCQ_Robot_Unplugged_De1_Q01_v2.md",
-    "brain/test-bank/MCQ_Robot_Unplugged_De1_Q02.md",
-    "brain/test-bank/MCQ_Robot_Unplugged_De1_Q02_v2.md",
-    "scripts/maintenance/purge_test_bank_links.py",
-    "scripts/maintenance/deep_neutralize_atoms.py",
-    "Untitled.base",
-    "scripts/maintenance/link_wiki_to_raw.py",
-    "scripts/maintenance/neutralize_index_atoms.py",
-    "scripts/maintenance/fix_encoding.py",
-    "scripts/maintenance/neutralize_archive_links.py",
-    "brain/test-bank",
-    "tools/cache/dede35e3f34b5e11edf215566c2e435d1a22f9ad2a34498ba7dc89e63939c02c.json",
-    "tools/cache/db3c793c0d0dd9a84f7717ee1295b198cef536130c0ef8dba0044c8683246b05.json"
+    "3-resources/log.md",
+    "1-projects/2026_MimiClaw_Inbox/PLAN_Inbox_Workflow.md",
+    "1-projects/2026_MimiClaw_Inbox",
+    "1-projects",
+    "4-archive/20260427_Archived_Knowledge/WIKI_IOT_Arduino_Logic.md",
+    "3-resources/assets/TMPL_Note_Template.md",
+    "4-archive/20260427_Archived_Knowledge/WIKI_IOT_Arduino_Hardware.md",
+    "00_Inbox",
+    "3-resources/test-bank/KHMT_Tynker_MCQ_De4_Q8.md",
+    "3-resources/test-bank/KHMT_Tynker_MCQ_De4_Q7.md",
+    "3-resources/test-bank/KHMT_Tynker_MCQ_De4_Q6.md",
+    "3-resources/test-bank/KHMT_Tynker_MCQ_De4_Q30.md",
+    "3-resources/test-bank/KHMT_Tynker_MCQ_De4_Q27.md",
+    "3-resources/test-bank/KHMT_Tynker_MCQ_De4_Q25.md",
+    "3-resources/test-bank/KHMT_Tynker_MCQ_De4_Q23.md",
+    "3-resources/test-bank/KHMT_Tynker_MCQ_De4_Q21.md",
+    "3-resources/test-bank/KHMT_Tynker_MCQ_De4_Q20.md",
+    "3-resources/test-bank/KHMT_Tynker_MCQ_De4_Q14.md",
+    "3-resources/test-bank/KHMT_Tynker_MCQ_De4_Q13.md",
+    "3-resources/test-bank/KHMT_Scratch_MCQ_De4_Q24.md",
+    "3-resources/test-bank/KHMT_Scratch_MCQ_De4_Q23.md",
+    "3-resources/test-bank/KHMT_Scratch_MCQ_De4_Q22.md",
+    "3-resources/test-bank/KHMT_Scratch_MCQ_De4_Q21.md",
+    "3-resources/test-bank/KHMT_Scratch_MCQ_De4_Q20.md",
+    "3-resources/test-bank/KHMT_Scratch_MCQ_De4_Q18.md",
+    "3-resources/test-bank/KHMT_Scratch_MCQ_De4_Q17.md",
+    "3-resources/test-bank/KHMT_Scratch_MCQ_De4_Q16.md",
+    "3-resources/test-bank/KHMT_Scratch_MCQ_De4_Q14.md",
+    "3-resources/test-bank/KHMT_Scratch_MCQ_De4_Q13.md",
+    "3-resources/assets/ASSET_DESIGN_Wordpress_De1_rId25.png",
+    "3-resources/assets/ASSET_DESIGN_Wordpress_De1_rId24.png",
+    "3-resources/assets/ASSET_DESIGN_Wordpress_De1_rId23.png",
+    "3-resources/assets/ASSET_DESIGN_Wordpress_De1_rId22.png",
+    "3-resources/assets/ASSET_DESIGN_Wordpress_De1_rId21.png",
+    "3-resources/assets/ASSET_DESIGN_Wordpress_De1_rId20.png",
+    "3-resources/assets/ASSET_DESIGN_Wordpress_De1_rId19.png",
+    "3-resources/assets/ASSET_DESIGN_Wordpress_De1_rId18.png",
+    "3-resources/assets/ASSET_DESIGN_Wordpress_De1_rId17.png",
+    "3-resources/assets/ASSET_DESIGN_Wordpress_De1_rId16.png",
+    "scratch/extract_design_recursive.py",
+    "scratch/extract_khmt_recursive.py",
+    "scratch/extract_khmt_direct.py",
+    "scratch/extract_iot_direct.py",
+    "3-resources/raw/LMS_MD_Sources",
+    "scripts/maintenance/fix_links.py",
+    "scripts/maintenance/repair_assets.py"
   ]
 }

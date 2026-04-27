@@ -22,7 +22,7 @@ def run_strict_pipeline():
     
     # 2. @designer
     print("\n[STEP 2] @designer is planning (Strict Mode)...")
-    with open("brain/distilled/LMS_KB_IOT_DEEP.md", "r", encoding="utf-8") as f:
+    with open("3-resources/distilled/LMS_KB_IOT_DEEP.md", "r", encoding="utf-8") as f:
         kb_content = f.read()
 
     design_input = [
@@ -51,7 +51,7 @@ def run_strict_pipeline():
     print(f"  > Audit completed (Model: {a_model})")
     
     # Save output
-    output_path = "brain/distilled/LMS_Tests_Arduino_M1_Swarm_Strict.md"
+    output_path = "3-resources/distilled/LMS_Tests_Arduino_M1_Swarm_Strict.md"
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(auditor_out)

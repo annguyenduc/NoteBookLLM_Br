@@ -19,7 +19,7 @@ def cleanup_deep_structures(root_path, max_depth=3):
             continue
             
         # Archive specifically: Zap anything starting with _git, _pytest, _memory if deep
-        if len(parts) >= 2 and parts[0] == 'brain' and parts[1] == 'archive':
+        if len(parts) >= 2 and parts[0] == '3-resources' and parts[1] == 'archive':
             if any('_git' in p or '_pytest' in p or '_.memory' in p for p in parts):
                 if depth >= max_depth:
                     try:

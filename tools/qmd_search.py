@@ -71,7 +71,7 @@ def score_file(filepath: Path, keywords: list[str]) -> tuple[int, list[str]]:
 
 def search_knowledge(query: str, top_k: int = 10):
     """
-    Tìm kiếm tri thức theo keywords trong brain/wiki/ và brain/distilled/.
+    Tìm kiếm tri thức theo keywords trong 3-resources/wiki/ và 3-resources/distilled/.
     Xếp hạng theo tổng số lần xuất hiện (BM25-lite).
     """
     keywords = query.strip().split()
@@ -88,7 +88,7 @@ def search_knowledge(query: str, top_k: int = 10):
             all_files.extend(search_dir.glob("*.md"))
 
     if not all_files:
-        print(f"❌ Không tìm thấy file nào trong brain/wiki/ hoặc brain/distilled/")
+        print(f"❌ Không tìm thấy file nào trong 3-resources/wiki/ hoặc 3-resources/distilled/")
         return
 
     # Tính điểm từng file

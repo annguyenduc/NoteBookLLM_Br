@@ -55,10 +55,10 @@ QUY TẮC CHƯNG CẤT (LOM v4.1):
     # Tách kết quả dựa trên regex (không phân biệt chữ hoa thường, chấp nhận các ký tự thừa)
     parts = re.split(r"###.*TEST BANK.*", result, flags=re.IGNORECASE)
     
-    kb_path = "brain/distilled/LMS_KB_IOT.md"
-    test_path = f"brain/distilled/assessments/{base_name}_BANK.md"
+    kb_path = "3-resources/distilled/LMS_KB_IOT.md"
+    test_path = f"3-resources/distilled/assessments/{base_name}_BANK.md"
     
-    os.makedirs("brain/distilled/assessments", exist_ok=True)
+    os.makedirs("3-resources/distilled/assessments", exist_ok=True)
     
     # Clean Fact part
     fact_part = parts[0].replace("### 1. FACT BANK (KIẾN THỨC CHUẨN)", "").strip()
@@ -78,7 +78,7 @@ QUY TẮC CHƯNG CẤT (LOM v4.1):
     print(f"  > Distilled to KB and {test_path} (Model: {model})")
 
 if __name__ == "__main__":
-    SOURCE_DIR = "brain/raw/lms_multi_media_dump"
+    SOURCE_DIR = "3-resources/raw/lms_multi_media_dump"
     # Lấy 5 file IoT tiêu biểu để chạy batch đầu tiên
     files = [f for f in os.listdir(SOURCE_DIR) if f.endswith(".md")]
     

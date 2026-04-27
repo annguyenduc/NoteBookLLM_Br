@@ -3,8 +3,8 @@ import re
 import shutil
 import hashlib
 
-ARCHIVE_DIR = os.path.join("brain", "archive")
-WIKI_DIR = os.path.join("brain", "wiki")
+ARCHIVE_DIR = os.path.join("3-resources", "archive")
+WIKI_DIR = os.path.join("3-resources", "wiki")
 
 def shorten_filename(filename):
     # Match PREFIX

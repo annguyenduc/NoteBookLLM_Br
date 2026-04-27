@@ -52,7 +52,7 @@ def audit():
             status = "EXIST" if s in raw_files else "MISSING_RAW"
             f.write(f"- {s} [{status}]\n")
 
-    print(f"Audit complete. Report saved to brain/process/Global_LMS_Audit_Report.md")
+    print(f"Audit complete. Report saved to 3-resources/process/Global_LMS_Audit_Report.md")
 
 if __name__ == "__main__":
     audit()
