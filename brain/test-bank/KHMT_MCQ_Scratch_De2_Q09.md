@@ -1,0 +1,26 @@
+---
+file_id: "KHMT_MCQ_Scratch_De2_Q09"
+title: "Câu 9 - Scratch De2"
+category: "Atomic Question"
+prefix: "KHMT"
+tags: ['KHMT', 'Scratch']
+source: "`Đề 2 Scratch trắc nghiệm.docx`"
+status: "draft"
+created: "2026-04-25"
+---
+
+## ❓ Câu hỏi 9
+\(Nhận biết\)__
+
+__Hãy sắp xếp các bước để có thể thêm âm thanh mới vào lệnh “Play sound” của một nhân vật\.__
+
+__1\. Nhấn vào thẻ Code ở khu vực phía trên các nhóm lệnh để quay lại khu vực lập trình\.  
+2\. Nhấn vào icon "Choose a sound" ![](data:image/png;base64,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)  
+3\. Trong thư viện âm thanh, chọn một âm thanh mong muốn\.  
+4\. Nhấn vào thẻ Sound ở khu vực phía trên các nhóm lệnh\.__
+
+A/ 4\-2\-3\-1
+
+B/ 4\-1\-2\-3  
+C/ 1\-2\-3\-4  
+D/ 4\-2\-1\-3

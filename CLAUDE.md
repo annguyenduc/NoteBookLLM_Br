@@ -1,71 +1,56 @@
-# Antigravity CLAUDE.md (LOM v4.0 Supreme)
+# 📕 Operational Memory (LOM) — CLAUDE.md
 
-> **Goal**: Vận hành Hệ sinh thái Tri thức NotebookLM chuyên sâu cho giáo dục STEAM & AI. Hướng tới hệ thống Swarm Agent tự phục hồi (Self-healing) và tự học (Recursive Learning).
+> **Status**: ACTIVE | **Session ID**: 99db579e | **Focus**: IOT Arduino Deep Distillation
 
-## 🗺️ SESSION_CONTEXT (Điền trước mỗi phiên làm việc)
-    Ai điền: Người dùng điền trước khi gọi agent đầu tiên trong phiên.
-    Khi nào cập nhật: @pm append cập nhật vào brain/log.md sau mỗi bước hoàn thành.
-    Quy tắc: Agent đọc block này ĐẦU TIÊN trước khi đọc bất cứ thứ gì khác. 
-```yaml
-session:
-  date: "YYYY-MM-DD"
-  active_task: "[VD: Tạo đề kiểm tra Module M2.1]"
-  active_pipeline: "exam | design | scout | audit | split-kb"
-  current_step: "[VD: Bước 2/4 — @engineer viết đề]"
-  last_output: "[VD: brain/distilled/EXAM_Context_M2.md — đã tạo xong]"
-  next_expected: "[VD: brain/distilled/EXAM_M2_Draft.md]"
-  blocking_issues: "none | [mô tả vấn đề cụ thể]"
-  active_agent: "@[tên agent đang chạy]"
-  notes: "[ghi chú thêm nếu cần — để trống nếu không có]"
-```
-Ví dụ điền thực tế:
+## 📏 Wiki Content Standards (Bắt buộc)
+Mọi file Wiki liên quan đến phần cứng (Hardware) **BẮT BUỘC** phải có cấu trúc:
+1.  **Quy tắc vật lý:** Cách nhận dạng, cực tính (+/-), số chân.
+2.  **Quy tắc đấu nối:** Ánh xạ chân cắm cụ thể (Ví dụ: GND ➔ GND, Signal ➔ D2).
+3.  **Lưu ý an toàn:** Điện áp, điện trở bảo vệ, chia sẻ GND chung.
+*Tuyệt đối không chấp nhận các file Wiki chỉ có mô tả chung chung.*
 
-```yaml
-session:
-  date: "2026-04-12"
-  active_task: "Split ELN_Test_KB_IOT.md thành atomic notes"
-  active_pipeline: "split-kb"
-  current_step: "Bước 1/4 — @scout liệt kê tags"
-  last_output: "none"
-  next_expected: "brain/distilled/TAG_LIST_IOT.md"
-  blocking_issues: "none"
-  active_agent: "@scout"
-  notes: "Nguồn: brain/raw/ELN_Test_KB_IOT.md"
-``` 
-## 🗂️ Cấu trúc tri thức (Wiki Taxonomy)
-Các Knowledge Items (KIs) chính nằm tại `brain/distilled/`:
-- [[Pedagogical_Master_DNA]] — "Gen" sư phạm và Tri thức nền.
-- [[Education_AI_Handbook]] — Cẩm nang dạy & học AI K12.
-- [[Engineering_Robotics_Master]] — Kỹ thuật Robot & Hệ thống.
-- [[DevOps_IT_Automation_Wiki]] — Lưu trữ script và vận hành IT.
+## 🗓️ Session Context (2026-04-24)
+- **Task Hiện tại**: Chuẩn hóa Wiki IOT Arduino (Pure IOT).
+- **Tiến độ**: 
+    - [x] Tách bạch Hardware vs Logic.
+    - [x] Bổ sung 100% linh kiện từ 120 câu hỏi.
+    - [x] Thiết lập tiêu chuẩn "Quy tắc vật lý & Đấu nối".
+- **Hành động tiếp theo**: Đồng bộ hóa Logic Lập trình.
 
-## 🛠️ Quy trình làm việc (ECC Standard)
-1. **Manus First**: Luôn đọc `task_plan.md` (nếu có) và `AGENTS.md` trước khi làm việc.
-2. **Absolute Flatness**: Tuyệt đối không để thư mục sâu quá 2 cấp từ Root. Sử dụng underscore prefix thay vì thư mục con (e.g. `distilled/ELN_Test_AI_file.md`).
-3. **Double Link**: Mọi tệp markdown mới phải có liên kết chéo `[[Wikilink]]`.
-4. **Log-First Ingest**: Mọi thay đổi lớn phải được ghi vào `brain/log.md`, phải dùng append không được overwrite, phải viết đúng định dạng được ghi trong log.
-5. **Anti-Hallucination**: Tuân thủ nghiêm ngặt [[AUDITOR_Protocol.md]].
-6. **Exam Handoff (Rule 9)**: Mọi tác vụ ra đề kiểm tra BẮT BUỘC @scout tạo `brain/distilled/EXAM_Context_[module].md` trước. @engineer chỉ được bắt đầu sau khi file này tồn tại. Xem chi tiết tại [[AGENTS.md]].
+## 🧭 Wiki Taxonomy (Trạng thái)
+- [[WIKI_IOT_Arduino_Hardware]] — **[ĐÃ HOÀN TẤT]** (100% linh kiện).
+- [[WIKI_IOT_Arduino_Logic]] — **[ĐANG XỬ LÝ]** (Cần nâng cấp theo chuẩn mới).
+- [[WIKI_Arduino_System]] — **[ĐÃ HOÀN TẤT]**.
 
-## 🤖 Biệt đội Agent (Swarm Registry v4.0 Supreme)
-Xem chi tiết tại [[AGENTS.md]]. Các vai trò chính:
-- **Planner (@pm)**: Lập kế hoạch theo ECC, Audit ID và điều phối Swarm.
-- **Executioner (@engineer)**: Viết mã nguồn, thực thi TDD và sửa lỗi hệ thống (@healer profile).
-- **Researcher (@scout)**: Nghiên cứu tri thức, Audit CLT và tạo EXAM Context.
-- **Orchestrator (@devops)**: Quản lý MCP, Terminal, Git và hạ tầng Smart Proxy.
-- **Reviewer (@librarian)**: Rà soát chất lượng tri thức, quản lý Wiki và linting.
-- **Integrity (@auditor)**: Đối soát nguồn theo AUDITOR_Protocol và ngăn chặn ảo giác.
-- **Instructional Designer (@designer)**: Thiết kế learning sequence, scaffolding, lesson plan theo 5E/UDL/Backward Design.
-- **Learning Evaluator (@evaluator)**: Phân tích kết quả đào tạo theo Kirkpatrick, xác định knowledge gap, đề xuất remediation.
-- **Learner Profiler (@profiler)**: Xây dựng Trainer Profile (entry/intermediate/advanced), feed context cho @designer và @engineer.
-- **Creative Specialist (@creative)**: Tạo case study, roleplay scenario, lesson plan mẫu (High-engagement content).
-- **Maintenance Specialist (@healer)**: Hàn gắn tri thức, sửa lỗi liên kết và phục hồi tính toàn vẹn hệ thống.
-
-## 🚀 Build & Test Commands
-- `python scripts/brain_lint.py` — Kiểm định sức khỏe Wiki.
-- `python scripts/setup/graphify_bootstrap.py` — Cập nhật đồ thị tri thức (V-Ingest).
-- `/heal` — Sửa lỗi hệ thống tự động.
-- `/heartbeat` — Đồng bộ hóa tri thức raw -> distilled.
+## 🛠️ Supreme Toolkit (Lệnh nhanh)
+- `/distill` — Chưng cất tri thức từ MCQ sang Wiki.
+- `/consolidate` — Tổng hợp các Wiki nhỏ thành Master KB.
+- `/maintenance-gateway` — Bảo trì SmartProxyHub (Port 4000).
+- `/file-back` — Lưu kết quả phân tích có giá trị thành Wiki page mới (Auto File-Back).
+- `/lint` — Kiểm tra sức khỏe Wiki: trang mồ côi, liên kết gãy, mâu thuẫn.
 
 ---
-*Thuộc dự án: NoteBookLLM_Br | Framework: Antigravity v4.0 | Engine: LLM Wiki Supreme*
+
+## 🏛️ Nền tảng Kiến trúc (Architectural Foundation)
+
+> **Đọc bắt buộc**: `llm-wiki.md` tại Root là tài liệu gốc định hình toàn bộ triết lý của hệ thống này.
+> Mọi Agent PHẢI hiểu và tuân thủ 3 tầng và 3 phép vận hành được mô tả trong đó.
+
+### Ba tầng (Three Layers)
+| Tầng | Thư mục | Quy tắc cốt lõi |
+| :--- | :--- | :--- |
+| **Raw Sources** | `brain/raw/` | Bất biến. LLM chỉ đọc, tuyệt đối không ghi (Rule 12). |
+| **The Wiki** | `brain/wiki/` | LLM sở hữu và bảo trì. Mọi tri thức đều có nguồn gốc truy vết được. |
+| **The Schema** | `AGENTS.md`, `CLAUDE.md`, `AUDITOR_Protocol.md` | Quy định cách LLM vận hành wiki. |
+
+### Ba phép vận hành (Three Operations)
+| Phép vận hành | Lệnh | Mô tả |
+| :--- | :--- | :--- |
+| **Ingest** | `/distill`, `/consolidate` | Đọc raw → Khai thác → Ghi wiki → Update index → Append log. |
+| **Query + File-Back** | `/file-back` | Trả lời từ Wiki. Kết quả tốt được nộp ngược thành Wiki page mới. |
+| **Lint** | `/lint` | Định kỳ kiểm tra sức khỏe: mâu thuẫn, orphan pages, stale claims. |
+
+### 🔍 Future Tools (Bookmark — chưa implement)
+| Tool | Repo | Khi nào dùng |
+| :--- | :--- | :--- |
+| **qmd** | https://github.com/tobi/qmd | Khi Concept pages > 200, cần semantic search nội dung. BM25 + Vector + MCP server. |

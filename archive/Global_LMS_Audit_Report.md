@@ -1,0 +1,104 @@
+# 🛡️ BÁO CÁO KIỂM ĐỊNH TỔNG THỂ LMS
+
+## 📊 Thống kê
+- Tổng số tệp RAW tìm thấy: 85
+- Tổng số nguồn đã chuyển đổi: 83
+- Số tệp RAW chưa được chuyển đổi: 11
+
+## ⚠️ Danh sách tệp RAW chưa được chuyển đổi (Black Holes)
+- [ ] (Template) Đề trắc nghiệm 2_3_4 - Môn.docx
+- [ ] Bản sao của Bản sao của (Template) Đề trắc nghiệm 2_3_4 - Môn.docx
+- [ ] Tiêu chí chấm và thang điểm- Codey M2.docx
+- [ ] Tiêu chí và thang điểm - 3D M2.docx
+- [ ] Tiêu chí và thang điểm - Scratch M2.docx
+- [ ] Tiêu chí và thang điểm - mBot M2.docx
+- [ ] Đề 1 - Tiêu chí chấm và thang điểm - Arduino M2.docx
+- [ ] Đề 2 - Tiêu chí chấm và thang điểm - Arduino M2.docx
+- [ ] Đề thực hành 1 - Gbot.docx
+- [ ] Đề thực hành 1 - Scratch 1.docx
+- [ ] Đề trắc nghiệm 2 - Scratch M1.docx
+
+## ✅ Danh sách các nguồn đã được xác nhận (Verified)
+- (CŨ chưa sửa Extension KDI) Đề trắc nghiệm 1 - Arduino M2.docx [EXIST]
+- 120_Cau_Hoi_IOT_Arduino_LMS [MISSING_RAW]
+- 2. Đề trắc nghiệm 2 - Maker Empire.docx [EXIST]
+- 3. Đề trắc nghiệm 3 - Maker Empire.docx [EXIST]
+- 4. Đề trắc nghiệm 4 - Maker Empire.docx [EXIST]
+- AI24-AItool-M2_1-BG [MISSING_RAW]
+- Bản sao của Bản sao của Đề kiểm tra Arduino module 1.docx [EXIST]
+- Bản sao của Đề kiểm tra Arduino module 1.docx [EXIST]
+- Bản sao của Đề kiểm tra mBot module 1.docx [EXIST]
+- IOT_AI_Arduino_de_trac_nghiem_1_-_ai_arduino [MISSING_RAW]
+- IOT_Arduino_ban_sao_cua_ban_sao_cua_de_kiem_tra_arduino_module_1 [MISSING_RAW]
+- LMS_KB_IOT_NORMALIZED.md [MISSING_RAW]
+- WIKI_INDEX.md [MISSING_RAW]
+- anh10-hk2-matran-25-26_31320268.pdf [MISSING_RAW]
+- noi-dung-hkii-mon-toan-hs-3-khoi-25-26_1420268.pdf [MISSING_RAW]
+- noi-dung-ma-tran-kt-cuoi-hk-ii-mon-ngu-van-nh-2025-2026ky-so_5420269.pdf [MISSING_RAW]
+- ĐỀ 2 TRẮC NGHIỆM 3D TINKERCAD_.docx [EXIST]
+- ĐỀ 3 TRẮC NGHIỆM 3D TINKERCAD_.docx [EXIST]
+- ĐỀ 4 TRẮC NGHIỆM 3D TINKERCAD.docx [EXIST]
+- Đề 2 Scratch trắc nghiệm.docx [EXIST]
+- Đề 2 Trắc nghiệm - AI Tiểu học.docx [EXIST]
+- Đề 2 Trắc nghiệm - Arduino M1,2.docx [EXIST]
+- Đề 2 trắc nghiệm - AI Arduino.docx [EXIST]
+- Đề 2 trắc nghiệm - AI THCS.docx [EXIST]
+- Đề 2 trắc nghiệm - Halocode.docx [EXIST]
+- Đề 2 trắc nghiệm - Tynker.docx [EXIST]
+- Đề 2. TRẮC NGHIỆM YOLOBIT_.docx [EXIST]
+- Đề 3 Scratch trắc nghiệm.docx [EXIST]
+- Đề 3 Trắc nghiệm - AI Tiểu học.docx [EXIST]
+- Đề 3 Trắc nghiệm - Arduino M1,2.docx [EXIST]
+- Đề 3 trắc nghiệm - AI Arduino.docx [EXIST]
+- Đề 3 trắc nghiệm - AI THCS.docx [EXIST]
+- Đề 3 trắc nghiệm - Halocode.docx [EXIST]
+- Đề 3 trắc nghiệm - Tynker.docx [EXIST]
+- Đề 3. TRẮC NGHIỆM YOLOBIT_.docx [EXIST]
+- Đề 4 Scratch trắc nghiệm.docx [EXIST]
+- Đề 4 Trắc nghiệm - AI Tiểu học.docx [EXIST]
+- Đề 4 Trắc nghiệm - Arduino M1,2.docx [EXIST]
+- Đề 4 trắc nghiệm - AI Arduino.docx [EXIST]
+- Đề 4 trắc nghiệm - AI THCS.docx [EXIST]
+- Đề 4 trắc nghiệm - Halocode.docx [EXIST]
+- Đề 4 trắc nghiệm - Tynker.docx [EXIST]
+- Đề 4. TRẮC NGHIỆM YOLOBIT_.docx [EXIST]
+- Đề trắc nghiệm 1 - 3D M1.docx [EXIST]
+- Đề trắc nghiệm 1 - 3D M2.docx [EXIST]
+- Đề trắc nghiệm 1 - AI Arduino.docx [EXIST]
+- Đề trắc nghiệm 1 - AI THCS.docx [EXIST]
+- Đề trắc nghiệm 1 - AI Tiểu học.docx [EXIST]
+- Đề trắc nghiệm 1 - Arduino M2.docx [EXIST]
+- Đề trắc nghiệm 1 - Canva.docx [EXIST]
+- Đề trắc nghiệm 1 - Codey M1.docx [EXIST]
+- Đề trắc nghiệm 1 - Codey M2.docx [EXIST]
+- Đề trắc nghiệm 1 - GBot v1.docx [EXIST]
+- Đề trắc nghiệm 1 - GBot v2.docx [EXIST]
+- Đề trắc nghiệm 1 - Halocode.docx [EXIST]
+- Đề trắc nghiệm 1 - Maker Empire.docx [EXIST]
+- Đề trắc nghiệm 1 - Môn mBot M1+2.docx [EXIST]
+- Đề trắc nghiệm 1 - Python.docx [EXIST]
+- Đề trắc nghiệm 1 - Rover.docx [EXIST]
+- Đề trắc nghiệm 1 - Scratch Junior.docx [EXIST]
+- Đề trắc nghiệm 1 - Scratch M1.docx [EXIST]
+- Đề trắc nghiệm 1 - Scratch M2.docx [EXIST]
+- Đề trắc nghiệm 1 - Tynker.docx [EXIST]
+- Đề trắc nghiệm 1 - Unplugged Coding (Codey).docx [EXIST]
+- Đề trắc nghiệm 1 - Unplugged Coding (Rio).docx [EXIST]
+- Đề trắc nghiệm 1 - Web Wordpress.docx [EXIST]
+- Đề trắc nghiệm 1 - Yolo_Bit.docx [EXIST]
+- Đề trắc nghiệm 1 - mBot M1.docx [EXIST]
+- Đề trắc nghiệm 1 - mBot M2.docx [EXIST]
+- Đề trắc nghiệm 1 - xBot.docx [EXIST]
+- Đề trắc nghiệm 2 - AI Tiểu học.docx [EXIST]
+- Đề trắc nghiệm 2 - Arduino M2.docx [EXIST]
+- Đề trắc nghiệm 2 - Môn Codey_.docx [EXIST]
+- Đề trắc nghiệm 2 - Môn mBot M1+2.docx [EXIST]
+- Đề trắc nghiệm 2 - Rover - Rút gọn.docx [EXIST]
+- Đề trắc nghiệm 3 - AI Tiểu học.docx [EXIST]
+- Đề trắc nghiệm 3 - Môn Codey_.docx [EXIST]
+- Đề trắc nghiệm 3 - Môn mBot M1+2.docx [EXIST]
+- Đề trắc nghiệm 3 - Rover.docx [EXIST]
+- Đề trắc nghiệm 4 - AI Tiểu học.docx [EXIST]
+- Đề trắc nghiệm 4 - Môn Codey_.docx [EXIST]
+- Đề trắc nghiệm 4 - Rover.docx [EXIST]
+- Đề trắc nghiệm 5 - Rover.docx [EXIST]

@@ -1,32 +1,2122 @@
 # 📚 LLM WIKI INDEX
 
 > **Auto-generated Catalog of Wiki Knowledge**
-> Lớp này là Mục lục của toàn bộ các file Kiến thức đã được LLM tạo ra, giúp tìm kiếm nhanh chóng.
+> Lớp này là Mục lục của toàn bộ các file Kiến thức đã được LLM tạo ra.
 
-## 📂 ATOMS
-- [[atoms/ATOMS_Breadboard.md]] | **Breadboard — Quy tắc kết nối** **[DRAFT]** `"Hardware", "Arduino", "Circuit"`
-  > Breadboard (bo mạch thử nghiệm) và mạch mở rộng là các công cụ hỗ trợ kết nối, phân phối nguồn điện và tín hiệu giữa mạch điều khiển chính với các lin...
-- [[atoms/ATOMS_Buzzer.md]] | **Còi Buzzer** **[DRAFT]** `"Hardware", "Arduino", "Output"`
-  > > ⚠️ TODO (@scout): Viết 1-2 câu định nghĩa ngắn gọn dựa trên facts bên dưới.
-- [[atoms/ATOMS_Prompt_Engineering_K10_Van.md]] | **Kỹ thuật Prompt trong học Ngữ Văn 10 (HKII)** **[DRAFT]** `"AI", "Prompt", "Ngữ Văn 10", "K10", "Thơ tự do", "Vietnam"`
-  > Tài liệu này hướng dẫn học sinh Khối 10 ứng dụng mô hình **RTC (Role - Task - Context)** để phân tích Thơ tự do và viết Nghị luận văn học hiệu quả nhấ...
-- [[atoms/ATOMS_Prompt_Engineering_K10_Anh.md]] | **Kỹ thuật Prompt trong học Tiếng Anh 10 (HKII)** **[DRAFT]** `"AI", "Prompt", "English 10", "K10", "Global Success", "Vietnam"`
-  > Tài liệu này hướng dẫn học sinh Khối 10 sử dụng mô hình **RTC (Role - Task - Context)** để ôn luyện hiệu quả môn Tiếng Anh theo Ma trận đề thi HKII.
-- [[atoms/ATOMS_Prompt_Engineering_K10_Toan.md]] | **Kỹ thuật Prompt trong học Toán 10 (HKII)** **[DRAFT]** `"AI", "Prompt", "Toán 10", "K10", "Chương trình VN"`
-  > Tài liệu này hướng dẫn học sinh Khối 10 ứng dụng mô hình **RTC (Role - Task - Context)** để ôn tập hiệu quả các nội dung trong ma trận đề thi HKII Chư...
-- [[atoms/ATOMS_Prompt_Engineering_Hoc_Tap.md]] | **Kỹ thuật Prompt trong học tập** **[PERSONAL]** `"AI", "Prompt", "Pedagogy", "M2.1"`
-  > Prompt kỹ thuật không phải là "hỏi đúng câu" — mà là **cung cấp đủ ngữ cảnh để AI trả lời đúng ngay lần đầu**, thay vì phải hỏi thêm nhiềưu vòng.
-- [[atoms/ATOMS_Arduino_Power.md]] | **Nguồn điện Arduino** **[DRAFT]** `"Hardware", "Arduino", "Power"`
-  > Cấp nguồn cho Arduino là việc cung cấp điện năng (điện áp và dòng điện) thông qua các cổng USB, Jack DC hoặc chân Vin để mạch vi điều khiển hoạt động ...
-- [[atoms/ATOMS_Teachable_Machine.md]] | **Teachable Machine — Học máy** **[DRAFT]** `"AI", "ML", "mBlock"`
-  > > ⚠️ TODO (@scout): Viết 1-2 câu định nghĩa ngắn gọn dựa trên facts bên dưới.
-- [[atoms/ATOMS_Mau_Prompt_Hoc_Tap_K10.md]] | **Thư viện Prompt Thực chiến Đa môn (Khối 10)** **[VERIFIED]** `"AI", "Prompt", "Pedagogy", "Grade10", "Math", "Physics", "Chemistry", "Literature", "English"`
-  > > Bộ sưu tập này giúp học sinh khối 10 làm chủ công nghệ AI để hỗ trợ việc tự học. Mọi câu lệnh đều được tối ưu theo cấu trúc **RTC (Role - Task - Con...
-- [[atoms/ATOMS_Demo_Prompt_Comparison_K10.md]] | **Đối soát Kỹ thuật Prompt: Toán 10** **[VERIFIED]** `"AI", "Prompt_Engineering", "Math", "K10", "Pedagogy"`
-  > > **Mục tiêu**: Chứng minh sức mạnh của cấu trúc **RTC (Role-Task-Context)** trong việc chuyển đổi AI từ một "máy trả lời" thành một "Gia sư sư phạm".
-- [[atoms/ATOMS_Servo_Motor.md]] | **Động cơ Servo** **[DRAFT]** `"Hardware", "Arduino", "Actuator"`
-  > Động cơ Servo là một thiết bị đầu ra (actuator) có khả năng xoay và duy trì vị trí trục ở các góc xác định (thường từ 0-180 độ) dựa trên tín hiệu điều...
+> **Hướng dẫn File-Back Judgment**: Chỉ cần đọc section **CONCEPT PAGES** để kiểm tra xem một insight mới đã tồn tại chưa. Không cần đọc ATOM PAGES.
 
-## 📂 DISTILLED
-*Thư mục trống*
+## 🧠 CONCEPT PAGES (45 trang)
+*Dành cho File-Back Judgment — LLM đọc section này để kiểm tra trùng lặp.*
+
+- [[wiki/WIKI_Scratch_AI_Extensions.md]] | **Các nhóm lệnh mở rộng AI trong Scratch** **[DRAFT]**
+  > Để thực hiện các chức năng thông minh, Scratch (phiên bản MIT AI) cung cấp các nhóm lệnh mở rộng (Extensions) cho phép l...
+- [[wiki/WIKI_Codey_Rocky_Sensors.md]] | **Hệ thống cảm biến Codey Rocky** **[DRAFT]**
+  > Codey Rocky được trang bị một hệ thống cảm biến phong phú tích hợp sẵn trên cả hai bộ phận Codey và Rocky, giúp robot có...
+- [[wiki/WIKI_mBot_Sensors.md]] | **Hệ thống cảm biến mBot** **[DRAFT]**
+  > Hệ thống cảm biến giúp mBot có khả năng cảm nhận môi trường (ánh sáng, khoảng cách, vạch đen) để thực hiện các hành động...
+- [[wiki/WIKI_AI_THCS_System.md]] | **Hệ thống học tập Trí tuệ nhân tạo (AI) THCS** **[DRAFT]**
+  > Học phần Trí tuệ nhân tạo (A.I) cấp Trung học cơ sở là chương trình giúp học sinh hiểu về bản chất của AI, máy học (Mach...
+- [[wiki/WIKI_Codey_Rocky_System.md]] | **Hệ thống Robot Codey Rocky** **[DRAFT]**
+  > Codey Rocky là một robot giáo dục lập trình thông minh của Makeblock, bao gồm hai phần chính: **Codey** (bộ não điều khi...
+- [[wiki/WIKI_mBot_System.md]] | **Hệ thống Robot mBot** **[DRAFT]**
+  > mBot là một robot giáo dục lập trình STEM phổ biến của Makeblock, được thiết kế theo dạng module giúp học sinh dễ dàng l...
+- [[wiki/WIKI_3D_Tinkercad_System.md]] | **Hệ thống thiết kế 3D Tinkercad** **[DRAFT]**
+  > Tinkercad là một ứng dụng web miễn phí của Autodesk, cho phép người dùng thiết kế mô hình 3D, mô phỏng mạch điện và lập ...
+- [[wiki/WIKI_Codey_LED_Coordinates.md]] | **Hệ tọa độ trên màn hình LED Codey** **[DRAFT]**
+  > Để điều khiển chính xác từng điểm sáng trên màn hình LED ma trận 16x8 của Codey, người lập trình sử dụng hệ tọa độ Desca...
+- [[wiki/WIKI_IOT_Arduino_Advanced.md]] | **Kiến thức Arduino Nâng cao & Phức hợp** **[VERIFIED]**
+  > Tài liệu này đi sâu vào chi tiết kỹ thuật, đấu nối và logic xử lý phức hợp được đúc kết từ 120 câu hỏi sát hạch Arduino.
+- [[wiki/WIKI_Codey_Rocky_Connection.md]] | **Kết nối và Nguồn cho Codey Rocky** **[DRAFT]**
+  > Để lập trình và vận hành Codey Rocky, người dùng cần nắm rõ quy trình kết nối với máy tính và cách quản lý năng lượng ch...
+- [[wiki/WIKI_Prompt_Engineering_K10_Van.md]] | **Kỹ thuật Prompt trong học Ngữ Văn 10 (HKII)** **[VERIFIED]**
+  > Tài liệu này hướng dẫn học sinh Khối 10 ứng dụng mô hình **RTC (Role - Task - Context)** để phân tích Thơ tự do và viết ...
+- [[wiki/WIKI_Prompt_Engineering_K10_Anh.md]] | **Kỹ thuật Prompt trong học Tiếng Anh 10 (HKII)** **[VERIFIED]**
+  > Tài liệu này hướng dẫn học sinh Khối 10 sử dụng mô hình **RTC (Role - Task - Context)** để ôn luyện hiệu quả môn Tiếng A...
+- [[wiki/WIKI_Prompt_Engineering_K10_Toan.md]] | **Kỹ thuật Prompt trong học Toán 10 (HKII)** **[VERIFIED]**
+  > Tài liệu này hướng dẫn học sinh Khối 10 ứng dụng mô hình **RTC (Role - Task - Context)** để ôn tập hiệu quả các nội dung...
+- [[wiki/WIKI_Prompt_Engineering_Hoc_Tap.md]] | **Kỹ thuật Prompt trong học tập** **[VERIFIED]**
+  > Prompt kỹ thuật không phải là "hỏi đúng câu" — mà là **cung cấp đủ ngữ cảnh để AI trả lời đúng ngay lần đầu**, thay vì p...
+- [[wiki/WIKI_Codey_Rocky_Movement.md]] | **Lập trình di chuyển cho Codey Rocky** **[DRAFT]**
+  > Di chuyển là chức năng chính của bộ phận Rocky, cho phép robot di chuyển theo nhiều quỹ đạo khác nhau dựa trên việc điều...
+- [[wiki/WIKI_KHMT_Scratch_Master.md]] | **Lập trình trực quan Scratch** **[VERIFIED]**
+  > Scratch là ngôn ngữ lập trình kéo thả (Block-based) giúp học sinh làm quen với tư duy lập trình mà không cần nhớ cú pháp...
+- [[wiki/WIKI_KHMT_Tynker.md]] | **Lập trình Tynker** **[VERIFIED]**
+  > Tynker là một nền tảng lập trình kéo thả (Block-based) mạnh mẽ, được thiết kế tối ưu cho giáo dục với hệ thống quản lý l...
+- [[wiki/WIKI_ROBOT_Rover_Expansion.md]] | **Module Mở rộng & Tính năng Nâng cao (Rover & xBot)** **[VERIFIED]**
+  > Tài liệu này tập trung vào các thành phần mở rộng giúp nâng cấp khả năng của Robot OhStem, từ cơ cấu cơ khí đến trí tuệ ...
+- [[wiki/WIKI_Codey_LED_Matrix.md]] | **Màn hình LED ma trận của Codey** **[DRAFT]**
+  > Màn hình LED ma trận trên Codey là bộ phận hiển thị chính, bao gồm 128 đèn LED nhỏ được sắp xếp theo dạng lưới, cho phép...
+- [[wiki/WIKI_mCore_Board.md]] | **Mạch điều khiển mCore (mBot)** **[DRAFT]**
+  > mCore là bo mạch điều khiển trung tâm dành riêng cho robot mBot, được phát triển dựa trên nền tảng Arduino Uno với các c...
+- [[wiki/WIKI_Codey_Rocky_Color_Sensing.md]] | **Nhận diện màu sắc trên Codey Rocky** **[DRAFT]**
+  > Cảm biến màu sắc (Color Sensor) nằm ở mặt dưới của Rocky, cho phép robot nhận biết các màu sắc khác nhau của bề mặt hoặc...
+- [[wiki/WIKI_PROMPT_K10_AI_Evaluation.md]] | **Năng lực Sư phạm của Gemini qua thực nghiệm** **[VERIFIED]**
+  > Dựa trên kết quả thử nghiệm thực tế với các bộ Prompt K10, dưới đây là tổng kết năng lực của Gemini (bao gồm các phiên b...
+- [[wiki/WIKI_ROBOT_Rover_Hardware.md]] | **Phần cứng Robot Rover (Yolo:Bit)** **[VERIFIED]**
+  > Rover là dòng robot di động sử dụng **Yolo:Bit** làm bộ não trung tâm, kết hợp với mạch mở rộng (Rover Shield).
+- [[wiki/WIKI_ROBOT_xBot_Hardware.md]] | **Phần cứng Robot xBot (xController)** **[VERIFIED]**
+  > xBot là dòng robot giáo dục STEAM của OhStem, sử dụng board mạch điều khiển chính là **xController**.
+- [[wiki/WIKI_PROMPT_K10_Literature.md]] | **Prompt Engineering: Ngữ Văn 10** **[VERIFIED]**
+  > Sử dụng các Prompt gợi mở để học sinh tự khám phá giá trị nghệ thuật của tác phẩm.
+- [[wiki/WIKI_PROMPT_K10_English.md]] | **Prompt Engineering: Tiếng Anh 10** **[VERIFIED]**
+  > Tiếng Anh cần ngữ cảnh thực tế (Real-world context). Sử dụng AI để tạo ra các bài tập dựa trên sở thích cá nhân của học ...
+- [[wiki/WIKI_PROMPT_K10_Math.md]] | **Prompt Engineering: Toán Học 10** **[VERIFIED]**
+  > Để AI đóng vai trò như một gia sư Toán, tài liệu nguồn quy định sử dụng cấu trúc `RTC`:
+- [[wiki/WIKI_Python_K10_System.md]] | **Python K10 — Hệ thống lập trình** **[VERIFIED]**
+  > Ngôn ngữ lập trình Python trong chương trình Tin học Khối 10 là công cụ chính để học sinh làm quen với tư duy lập trình ...
+- [[wiki/WIKI_Python_Data_Types.md]] | **Python — Các kiểu dữ liệu cơ bản** **[VERIFIED]**
+  > Trong Python, kiểu dữ liệu (Data Type) xác định loại giá trị mà một biến có thể lưu trữ và các phép toán có thể thực hiệ...
+- [[wiki/WIKI_Scratch_Jr_Blocks.md]] | **Scratch Jr — Các nhóm khối lệnh** **[VERIFIED]**
+  > Khối lệnh trong Scratch Jr là các mảnh ghép hình ảnh đại diện cho một hành động hoặc sự kiện. Các khối được phân loại th...
+- [[wiki/WIKI_Scratch_Jr_System.md]] | **Scratch Jr — Lập trình cho trẻ nhỏ** **[VERIFIED]**
+  > Scratch Jr là ngôn ngữ lập trình nhập môn (introductory programming) được thiết kế đặc biệt cho trẻ em từ 5-7 tuổi, cho ...
+- [[wiki/WIKI_Teachable_Machine.md]] | **Teachable Machine — Công cụ Học máy No-Code**
+  > Teachable Machine là tiện ích mở rộng (Extension) trong mBlock, cho phép **huấn luyện mô hình máy học (Machine Learning)...
+- [[wiki/WIKI_DESIGN_3D_Master.md]] | **Thiết kế 3D và Công nghệ In 3D** **[VERIFIED]**
+  > Thiết kế 3D là quá trình tạo ra các mô hình kỹ thuật số trong không gian ba chiều (X, Y, Z). Các mô hình này sau đó có t...
+- [[wiki/WIKI_DESIGN_Media_Master.md]] | **Thiết kế Media và Truyền thông số** **[VERIFIED]**
+  > Thiết kế Media bao gồm việc tạo ra các nội dung số (Digital Content) như hình ảnh, video, trang web và các tài sản truyề...
+- [[wiki/WIKI_DESIGN_Wordpress.md]] | **Thiết kế Website với WordPress** **[VERIFIED]**
+  > WordPress là một phần mềm mã nguồn mở (CMS - Content Management System) giúp người dùng tạo website, blog hoặc ứng dụng ...
+- [[wiki/WIKI_Mau_Prompt_Hoc_Tap_K10.md]] | **Thư viện Prompt Thực chiến Đa môn (Khối 10)** **[VERIFIED]**
+  > *Tập trung vào tư duy logic và các bước giải toán.*
+- [[wiki/WIKI_KHMT_AI_Master.md]] | **Trí tuệ nhân tạo (AI) & Machine Learning** **[VERIFIED]**
+  > Trí tuệ nhân tạo (AI) là lĩnh vực khoa học máy tính nhằm tạo ra các hệ thống có khả năng thực hiện các nhiệm vụ thông mi...
+- [[wiki/WIKI_ROBOT_Hardware_Master.md]] | **Trụ cột Phần cứng Robot (xBot & Rover)** **[VERIFIED]**
+  > Tài liệu này tổng hợp cấu trúc phần cứng và các chuẩn kết nối của hệ sinh thái Robot OhStem, tập trung vào hai dòng chín...
+- [[wiki/WIKI_ROBOT_Logic_Master.md]] | **Trụ cột Tư duy Lập trình Robot (xBot & Rover)** **[VERIFIED]**
+  > Tài liệu này hệ thống hóa các mô thức lập trình (Design Patterns) và thuật toán điều khiển áp dụng cho hệ sinh thái Robo...
+- [[wiki/WIKI_IOT_Arduino_Logic.md]] | **Tư duy Lập trình IOT Arduino** **[VERIFIED]**
+  > Wiki này tổng hợp các mô thức logic (Design Patterns) thường gặp nhất trong 120 câu hỏi IOT Arduino, tập trung vào cách ...
+- [[wiki/WIKI_KHMT_General_Master.md]] | **Tổng quan Khoa học Máy tính (KHMT)** **[VERIFIED]**
+  > Khoa học máy tính (KHMT) trong hệ thống giáo dục STEM tập trung vào việc phát triển tư duy máy tính (Computational Think...
+- [[wiki/WIKI_DESIGN_General_Master.md]] | **Tổng quan về Thiết kế (Design)** **[VERIFIED]**
+  > Thiết kế trong STEM không chỉ là làm cho sản phẩm đẹp mắt (Art) mà còn là quá trình tư duy (Design Thinking) để tạo ra c...
+- [[wiki/WIKI_IOT_Arduino_Hardware.md]] | **Từ điển Thiết bị IOT Arduino** **[VERIFIED]**
+  > Wiki này tập trung vào phần cứng, cách nhận diện linh kiện và quy tắc đấu nối vật lý chi tiết cho hệ thống IOT Arduino U...
+- [[wiki/WIKI_Codey_Rocky_Music_Sound.md]] | **Âm thanh và Nhạc trên Codey Rocky** **[DRAFT]**
+  > Codey Rocky tích hợp một loa nhỏ cho phép phát các hiệu ứng âm thanh có sẵn hoặc chơi các nốt nhạc theo ý muốn của người...
+- [[wiki/WIKI_Demo_Prompt_Comparison_K10.md]] | **🎓 Đối soát Kỹ thuật Prompt: Phương trình bậc hai (Toán 10)**
+  > AI không thông minh hơn khi dùng Prompt tốt, nó chỉ **tập trung đúng vùng tri thức** (Latent Space) hơn.
+
+## 💎 DISTILLED KB (2 file)
+
+- [[distilled/KB_IOT_Arduino_Master.md]] | **Bản đồ Tri thức IOT Arduino (Final)**
+  > Đây là tệp tin chưng cất cuối cùng, tổng hợp toàn bộ tri thức từ hơn 120 câu hỏi LMS và 200+ câu hỏi AI Arduino. Tệp này...
+- [[distilled/KB_ROBOT_Master.md]] | **Tri thức cốt lõi Robotics (xBot & Rover)**
+  > Tệp này chưng cất (distill) toàn bộ tri thức kỹ thuật và logic lập trình cho hệ sinh thái robot giáo dục của OhStem, phụ...
+
+## ⚛️ ATOM PAGES (2010 câu hỏi/atom)
+*MCQ atoms và dữ liệu chi tiết — không cần đọc cho File-Back.*
+
+- `test-bank/IOT_MCQ_Arduino_De1_Q01.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De2_Q01.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De3_Q01.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De4_Q01.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De1_Q01.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De2_Q01.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De3_Q01.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De4_Q01.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De2_Q01.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De3_Q01.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De4_Q01.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q01.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q01_v2.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De2_Q01.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De3_Q01.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De4_Q01.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Canva_De1_Q01.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De1_Q01.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De2_Q01.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De3_Q01.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De4_Q01.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De2_Q01.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De1_Q01.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De2_Q01.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De2_Q01_v2.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De3_Q01.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De3_Q01_v2.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De4_Q01.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De4_Q01_v2.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/MCQ_Robot_Codey_De1_Q01.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/MCQ_Robot_Codey_De3_Q01.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/MCQ_Robot_De1_Q01.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/MCQ_Robot_De1_Q01_v2.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/MCQ_Robot_De1_Q01_v3.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/MCQ_Robot_De2_Q01.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/MCQ_Robot_Rover_De1_Q01.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/MCQ_Robot_Unplugged_De1_Q01.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/MCQ_Robot_Unplugged_De1_Q01_v2.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/NEEDS_REVIEW_MCQ_IOT_Arduino_De3_Q01.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/NEEDS_REVIEW_MCQ_KHMT_AI_THCS_De3_Q01.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/NEEDS_REVIEW_MCQ_KHMT_AI_THCS_De4_Q01.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_Rover_De3_Q01.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_Rover_De5_Q01.md` | [MCQ] Câu 1 (Nhận biết)
+- `test-bank/NEEDS_REVIEW_MCQ_DESIGN_Wordpress_De1_Q01.md` | [MCQ] Câu 1,2 không chặt chẽ
+- `test-bank/MCQ_DESIGN_Maker_Empire_De2_Q10.md` | [MCQ] Câu 10 ( Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De1_Q10.md` | [MCQ] Câu 10 (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De2_Q10.md` | [MCQ] Câu 10 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De2_Q10.md` | [MCQ] Câu 10 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De3_Q10.md` | [MCQ] Câu 10 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De4_Q10.md` | [MCQ] Câu 10 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De1_Q10.md` | [MCQ] Câu 10 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De2_Q10.md` | [MCQ] Câu 10 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q10_v2.md` | [MCQ] Câu 10 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De2_Q10.md` | [MCQ] Câu 10 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De3_Q10.md` | [MCQ] Câu 10 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De4_Q10.md` | [MCQ] Câu 10 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Canva_De1_Q10.md` | [MCQ] Câu 10 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De1_Q10.md` | [MCQ] Câu 10 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De3_Q10.md` | [MCQ] Câu 10 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De4_Q10.md` | [MCQ] Câu 10 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Wordpress_De1_Q10.md` | [MCQ] Câu 10 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De2_Q10.md` | [MCQ] Câu 10 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De3_Q10.md` | [MCQ] Câu 10 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De4_Q10.md` | [MCQ] Câu 10 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De1_Q10.md` | [MCQ] Câu 10 (Nhận biết)
+- `test-bank/MCQ_Robot_Codey_De1_Q10.md` | [MCQ] Câu 10 (Nhận biết)
+- `test-bank/MCQ_Robot_Codey_De2_Q10.md` | [MCQ] Câu 10 (Nhận biết)
+- `test-bank/MCQ_Robot_Codey_De3_Q10.md` | [MCQ] Câu 10 (Nhận biết)
+- `test-bank/MCQ_Robot_Codey_De4_Q10.md` | [MCQ] Câu 10 (Nhận biết)
+- `test-bank/MCQ_Robot_De1_Q10.md` | [MCQ] Câu 10 (Nhận biết)
+- `test-bank/MCQ_Robot_De2_Q10.md` | [MCQ] Câu 10 (Nhận biết)
+- `test-bank/MCQ_Robot_De3_Q10.md` | [MCQ] Câu 10 (Nhận biết)
+- `test-bank/MCQ_Robot_Unplugged_De1_Q10.md` | [MCQ] Câu 10 (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De3_Q10.md` | [MCQ] Câu 10 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De4_Q10.md` | [MCQ] Câu 10 (Thông hiểu)
+- `test-bank/IOT_MCQ_Halocode_De1_Q10.md` | [MCQ] Câu 10 (Thông hiểu)
+- `test-bank/IOT_MCQ_Yolobit_De3_Q10.md` | [MCQ] Câu 10 (Thông hiểu)
+- `test-bank/IOT_MCQ_Yolobit_De4_Q10.md` | [MCQ] Câu 10 (Thông hiểu)
+- `test-bank/IOT_MCQ_Yolobit_De5_Q10.md` | [MCQ] Câu 10 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q10.md` | [MCQ] Câu 10 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De1_Q10.md` | [MCQ] Câu 10 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De2_Q10.md` | [MCQ] Câu 10 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De3_Q10.md` | [MCQ] Câu 10 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De4_Q10.md` | [MCQ] Câu 10 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q10_v2.md` | [MCQ] Câu 10 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q10_v3.md` | [MCQ] Câu 10 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De1_Q10.md` | [MCQ] Câu 10 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De2_Q10.md` | [MCQ] Câu 10 (Thông hiểu)
+- `test-bank/MCQ_Robot_Codey_De1_Q10_v2.md` | [MCQ] Câu 10:
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_De1_Q10.md` | [MCQ] Câu 10:
+- `test-bank/NEEDS_REVIEW_MCQ_IOT_Arduino_De1_Q10.md` | [MCQ] Câu 10: Cảm biến hồng ngoại hoạt động dựa trên nguyên tắc nào?
+- `test-bank/MCQ_DESIGN_Maker_Empire_De2_Q11.md` | [MCQ] Câu 11 ( Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De3_Q11.md` | [MCQ] Câu 11 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De1_Q11.md` | [MCQ] Câu 11 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De2_Q11.md` | [MCQ] Câu 11 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De3_Q11.md` | [MCQ] Câu 11 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De4_Q11.md` | [MCQ] Câu 11 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De2_Q11.md` | [MCQ] Câu 11 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De3_Q11.md` | [MCQ] Câu 11 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q11_v2.md` | [MCQ] Câu 11 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De2_Q11.md` | [MCQ] Câu 11 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De4_Q11.md` | [MCQ] Câu 11 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Canva_De1_Q11.md` | [MCQ] Câu 11 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De1_Q11.md` | [MCQ] Câu 11 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De3_Q11.md` | [MCQ] Câu 11 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De2_Q11.md` | [MCQ] Câu 11 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De3_Q11.md` | [MCQ] Câu 11 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De4_Q11.md` | [MCQ] Câu 11 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De2_Q11.md` | [MCQ] Câu 11 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De3_Q11.md` | [MCQ] Câu 11 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De4_Q11.md` | [MCQ] Câu 11 (Nhận biết)
+- `test-bank/MCQ_Robot_Codey_De2_Q11.md` | [MCQ] Câu 11 (Nhận biết)
+- `test-bank/MCQ_Robot_Codey_De3_Q11.md` | [MCQ] Câu 11 (Nhận biết)
+- `test-bank/MCQ_Robot_Codey_De4_Q11.md` | [MCQ] Câu 11 (Nhận biết)
+- `test-bank/MCQ_Robot_De1_Q11.md` | [MCQ] Câu 11 (Nhận biết)
+- `test-bank/MCQ_Robot_De2_Q11.md` | [MCQ] Câu 11 (Nhận biết)
+- `test-bank/MCQ_Robot_Rover_De1_Q11.md` | [MCQ] Câu 11 (Nhận biết)
+- `test-bank/MCQ_Robot_Rover_De2_Q11.md` | [MCQ] Câu 11 (Nhận biết)
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_De3_Q11.md` | [MCQ] Câu 11 (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De1_Q11.md` | [MCQ] Câu 11 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De2_Q11.md` | [MCQ] Câu 11 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De4_Q11.md` | [MCQ] Câu 11 (Thông hiểu)
+- `test-bank/IOT_MCQ_Yolobit_De1_Q11.md` | [MCQ] Câu 11 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q11.md` | [MCQ] Câu 11 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De4_Q11.md` | [MCQ] Câu 11 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Wordpress_De1_Q11.md` | [MCQ] Câu 11 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De1_Q11.md` | [MCQ] Câu 11 (Thông hiểu)
+- `test-bank/MCQ_Robot_Codey_De1_Q11.md` | [MCQ] Câu 11 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q11_v2.md` | [MCQ] Câu 11 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q11_v3.md` | [MCQ] Câu 11 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De3_Q11.md` | [MCQ] Câu 11 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De4_Q11.md` | [MCQ] Câu 11 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De5_Q11.md` | [MCQ] Câu 11 (Thông hiểu)
+- `test-bank/MCQ_Robot_Unplugged_De1_Q11.md` | [MCQ] Câu 11 (Thông hiểu)
+- `test-bank/MCQ_Robot_Unplugged_De1_Q11_v2.md` | [MCQ] Câu 11 (Thông hiểu)
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_Codey_De1_Q11.md` | [MCQ] Câu 11:
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_De1_Q11.md` | [MCQ] Câu 11:
+- `test-bank/NEEDS_REVIEW_MCQ_IOT_Arduino_De1_Q11.md` | [MCQ] Câu 11: Điện áp hoạt động của cảm biến hồng ngoại là bao nhiêu?
+- `test-bank/IOT_MCQ_Arduino_De1_Q12.md` | [MCQ] Câu 12 (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De3_Q12.md` | [MCQ] Câu 12 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De1_Q12.md` | [MCQ] Câu 12 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De2_Q12.md` | [MCQ] Câu 12 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De3_Q12.md` | [MCQ] Câu 12 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De4_Q12.md` | [MCQ] Câu 12 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De2_Q12.md` | [MCQ] Câu 12 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De3_Q12.md` | [MCQ] Câu 12 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De4_Q12.md` | [MCQ] Câu 12 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q12.md` | [MCQ] Câu 12 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q12_v2.md` | [MCQ] Câu 12 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De2_Q12.md` | [MCQ] Câu 12 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De3_Q12.md` | [MCQ] Câu 12 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De4_Q12.md` | [MCQ] Câu 12 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Canva_De1_Q12.md` | [MCQ] Câu 12 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De2_Q12.md` | [MCQ] Câu 12 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De4_Q12.md` | [MCQ] Câu 12 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De1_Q12.md` | [MCQ] Câu 12 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De2_Q12.md` | [MCQ] Câu 12 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De3_Q12.md` | [MCQ] Câu 12 (Nhận biết)
+- `test-bank/MCQ_Robot_Codey_De2_Q12.md` | [MCQ] Câu 12 (Nhận biết)
+- `test-bank/MCQ_Robot_Codey_De3_Q12.md` | [MCQ] Câu 12 (Nhận biết)
+- `test-bank/MCQ_Robot_Codey_De4_Q12.md` | [MCQ] Câu 12 (Nhận biết)
+- `test-bank/MCQ_Robot_De1_Q12_v2.md` | [MCQ] Câu 12 (Nhận biết)
+- `test-bank/MCQ_Robot_De1_Q12_v3.md` | [MCQ] Câu 12 (Nhận biết)
+- `test-bank/MCQ_Robot_De2_Q12.md` | [MCQ] Câu 12 (Nhận biết)
+- `test-bank/MCQ_Robot_De3_Q12.md` | [MCQ] Câu 12 (Nhận biết)
+- `test-bank/MCQ_Robot_Rover_De3_Q12.md` | [MCQ] Câu 12 (Nhận biết)
+- `test-bank/MCQ_Robot_Rover_De4_Q12.md` | [MCQ] Câu 12 (Nhận biết)
+- `test-bank/MCQ_Robot_Rover_De5_Q12.md` | [MCQ] Câu 12 (Nhận biết)
+- `test-bank/NEEDS_REVIEW_MCQ_KHMT_AI_THCS_De4_Q12.md` | [MCQ] Câu 12 (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De2_Q12.md` | [MCQ] Câu 12 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De4_Q12.md` | [MCQ] Câu 12 (Thông hiểu)
+- `test-bank/IOT_MCQ_Yolobit_De1_Q12.md` | [MCQ] Câu 12 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De3_Q12.md` | [MCQ] Câu 12 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Wordpress_De1_Q12.md` | [MCQ] Câu 12 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De1_Q12.md` | [MCQ] Câu 12 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De2_Q12.md` | [MCQ] Câu 12 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De3_Q12.md` | [MCQ] Câu 12 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De4_Q12.md` | [MCQ] Câu 12 (Thông hiểu)
+- `test-bank/MCQ_Robot_Codey_De1_Q12.md` | [MCQ] Câu 12 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q12.md` | [MCQ] Câu 12 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De1_Q12.md` | [MCQ] Câu 12 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De2_Q12.md` | [MCQ] Câu 12 (Thông hiểu)
+- `test-bank/MCQ_Robot_Unplugged_De1_Q12.md` | [MCQ] Câu 12 (Thông hiểu)
+- `test-bank/MCQ_Robot_Unplugged_De1_Q12_v2.md` | [MCQ] Câu 12 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De1_Q12.md` | [MCQ] Câu 12 (Thông hiểu) 2
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_Codey_De1_Q12.md` | [MCQ] Câu 12:
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_De1_Q12.md` | [MCQ] Câu 12:
+- `test-bank/IOT_MCQ_Arduino_De2_Q13.md` | [MCQ] Câu 13 (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De3_Q13.md` | [MCQ] Câu 13 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De4_Q13.md` | [MCQ] Câu 13 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Wordpress_De1_Q13.md` | [MCQ] Câu 13 (Nhận biết)
+- `test-bank/MCQ_Robot_Codey_De1_Q13.md` | [MCQ] Câu 13 (Nhận biết)
+- `test-bank/MCQ_Robot_De1_Q13.md` | [MCQ] Câu 13 (Nhận biết)
+- `test-bank/MCQ_Robot_De1_Q13_v3.md` | [MCQ] Câu 13 (Nhận biết)
+- `test-bank/MCQ_Robot_Unplugged_De1_Q13.md` | [MCQ] Câu 13 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De2_Q13.md` | [MCQ] Câu 13 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Yolobit_De3_Q13.md` | [MCQ] Câu 13 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Arduino_De1_Q13.md` | [MCQ] Câu 13 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De4_Q13.md` | [MCQ] Câu 13 (Thông hiểu)
+- `test-bank/IOT_MCQ_Yolobit_De1_Q13.md` | [MCQ] Câu 13 (Thông hiểu)
+- `test-bank/IOT_MCQ_Yolobit_De4_Q13.md` | [MCQ] Câu 13 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q13.md` | [MCQ] Câu 13 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q13_v2.md` | [MCQ] Câu 13 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De2_Q13.md` | [MCQ] Câu 13 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De3_Q13.md` | [MCQ] Câu 13 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De4_Q13.md` | [MCQ] Câu 13 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Canva_De1_Q13.md` | [MCQ] Câu 13 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De1_Q13.md` | [MCQ] Câu 13 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De2_Q13.md` | [MCQ] Câu 13 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De3_Q13.md` | [MCQ] Câu 13 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De1_Q13.md` | [MCQ] Câu 13 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De2_Q13.md` | [MCQ] Câu 13 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De3_Q13.md` | [MCQ] Câu 13 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De4_Q13.md` | [MCQ] Câu 13 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De1_Q13.md` | [MCQ] Câu 13 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De2_Q13.md` | [MCQ] Câu 13 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De3_Q13.md` | [MCQ] Câu 13 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De4_Q13.md` | [MCQ] Câu 13 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q13_v4.md` | [MCQ] Câu 13 (Thông hiểu)
+- `test-bank/MCQ_Robot_De2_Q13.md` | [MCQ] Câu 13 (Thông hiểu)
+- `test-bank/MCQ_Robot_De3_Q13.md` | [MCQ] Câu 13 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De1_Q13.md` | [MCQ] Câu 13 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De2_Q13.md` | [MCQ] Câu 13 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De3_Q13.md` | [MCQ] Câu 13 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De4_Q13.md` | [MCQ] Câu 13 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De5_Q13.md` | [MCQ] Câu 13 (Thông hiểu)
+- `test-bank/MCQ_Robot_Unplugged_De1_Q13_v2.md` | [MCQ] Câu 13 (Thông hiểu)
+- `test-bank/IOT_MCQ_Halocode_De2_Q13.md` | [MCQ] Câu 13 (Thông hiểu/ vận dụng)
+- `test-bank/IOT_MCQ_Halocode_De3_Q13.md` | [MCQ] Câu 13 (Thông hiểu/ vận dụng)
+- `test-bank/IOT_MCQ_Halocode_De4_Q13.md` | [MCQ] Câu 13 (Thông hiểu/ vận dụng)
+- `test-bank/MCQ_Robot_Codey_De2_Q13.md` | [MCQ] Câu 13 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_Robot_Codey_De3_Q13.md` | [MCQ] Câu 13 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_Robot_Codey_De4_Q13.md` | [MCQ] Câu 13 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_Robot_De1_Q13_v2.md` | [MCQ] Câu 13:
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_Codey_De1_Q13.md` | [MCQ] Câu 13:
+- `test-bank/IOT_MCQ_Halocode_De1_Q14.md` | [MCQ] Câu 14 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De1_Q14.md` | [MCQ] Câu 14 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De1_Q14.md` | [MCQ] Câu 14 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De1_Q14.md` | [MCQ] Câu 14 (Nhận biết)
+- `test-bank/MCQ_Robot_De1_Q14_v3.md` | [MCQ] Câu 14 (Nhận biết)
+- `test-bank/MCQ_Robot_Rover_De1_Q14.md` | [MCQ] Câu 14 (Nhận biết)
+- `test-bank/MCQ_Robot_Unplugged_De1_Q14_v2.md` | [MCQ] Câu 14 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De2_Q14.md` | [MCQ] Câu 14 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Yolobit_De3_Q14.md` | [MCQ] Câu 14 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Yolobit_De4_Q14.md` | [MCQ] Câu 14 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Arduino_De1_Q14.md` | [MCQ] Câu 14 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De2_Q14.md` | [MCQ] Câu 14 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De3_Q14.md` | [MCQ] Câu 14 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De4_Q14.md` | [MCQ] Câu 14 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q14.md` | [MCQ] Câu 14 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De2_Q14.md` | [MCQ] Câu 14 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De3_Q14.md` | [MCQ] Câu 14 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Canva_De1_Q14.md` | [MCQ] Câu 14 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De3_Q14.md` | [MCQ] Câu 14 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De4_Q14.md` | [MCQ] Câu 14 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De2_Q14.md` | [MCQ] Câu 14 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De3_Q14.md` | [MCQ] Câu 14 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De4_Q14.md` | [MCQ] Câu 14 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De2_Q14.md` | [MCQ] Câu 14 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De3_Q14.md` | [MCQ] Câu 14 (Thông hiểu)
+- `test-bank/MCQ_Robot_Codey_De1_Q14.md` | [MCQ] Câu 14 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q14.md` | [MCQ] Câu 14 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q14_v2.md` | [MCQ] Câu 14 (Thông hiểu)
+- `test-bank/MCQ_Robot_De2_Q14.md` | [MCQ] Câu 14 (Thông hiểu)
+- `test-bank/MCQ_Robot_De3_Q14.md` | [MCQ] Câu 14 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De2_Q14.md` | [MCQ] Câu 14 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De3_Q14.md` | [MCQ] Câu 14 (Thông hiểu)
+- `test-bank/MCQ_Robot_Unplugged_De1_Q14.md` | [MCQ] Câu 14 (Thông hiểu)
+- `test-bank/NEEDS_REVIEW_MCQ_IOT_AI_Arduino_De4_Q14.md` | [MCQ] Câu 14 (Thông hiểu)
+- `test-bank/NEEDS_REVIEW_MCQ_KHMT_AI_THCS_De1_Q14.md` | [MCQ] Câu 14 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q14_v2.md` | [MCQ] Câu 14 (Thông hiểu) (Mới) (Đáp án)
+- `test-bank/IOT_MCQ_Halocode_De2_Q14.md` | [MCQ] Câu 14 (Thông hiểu/ vận dụng)
+- `test-bank/IOT_MCQ_Halocode_De3_Q14.md` | [MCQ] Câu 14 (Thông hiểu/ vận dụng)
+- `test-bank/IOT_MCQ_Halocode_De4_Q14.md` | [MCQ] Câu 14 (Thông hiểu/ vận dụng)
+- `test-bank/MCQ_Robot_Codey_De2_Q14.md` | [MCQ] Câu 14 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_Robot_Codey_De3_Q14.md` | [MCQ] Câu 14 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_DESIGN_Wordpress_De1_Q14.md` | [MCQ] Câu 14 => Hơi chi tiết
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De4_Q14.md` | [MCQ] Câu 14 Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De4_Q14.md` | [MCQ] Câu 14 Thông hiểu)
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_Codey_De1_Q14.md` | [MCQ] Câu 14:
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_De1_Q14.md` | [MCQ] Câu 14:
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_Codey_De4_Q14.md` | [MCQ] Câu 14:(Thông hiểu/Vận dụng)
+- `test-bank/IOT_MCQ_Yolobit_De1_Q15.md` | [MCQ] Câu 15 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De2_Q15.md` | [MCQ] Câu 15 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De3_Q15.md` | [MCQ] Câu 15 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De4_Q15.md` | [MCQ] Câu 15 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De2_Q15.md` | [MCQ] Câu 15 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Yolobit_De3_Q15.md` | [MCQ] Câu 15 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Yolobit_De4_Q15.md` | [MCQ] Câu 15 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Arduino_De1_Q15.md` | [MCQ] Câu 15 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De2_Q15.md` | [MCQ] Câu 15 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De3_Q15.md` | [MCQ] Câu 15 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De4_Q15.md` | [MCQ] Câu 15 (Thông hiểu)
+- `test-bank/IOT_MCQ_Halocode_De1_Q15.md` | [MCQ] Câu 15 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q15_v2.md` | [MCQ] Câu 15 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De2_Q15.md` | [MCQ] Câu 15 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De3_Q15.md` | [MCQ] Câu 15 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De4_Q15.md` | [MCQ] Câu 15 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Canva_De1_Q15.md` | [MCQ] Câu 15 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De1_Q15.md` | [MCQ] Câu 15 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De2_Q15.md` | [MCQ] Câu 15 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De1_Q15.md` | [MCQ] Câu 15 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De2_Q15.md` | [MCQ] Câu 15 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De3_Q15.md` | [MCQ] Câu 15 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De4_Q15.md` | [MCQ] Câu 15 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De1_Q15.md` | [MCQ] Câu 15 (Thông hiểu)
+- `test-bank/MCQ_Robot_Codey_De1_Q15.md` | [MCQ] Câu 15 (Thông hiểu)
+- `test-bank/MCQ_Robot_Codey_De4_Q15.md` | [MCQ] Câu 15 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q15.md` | [MCQ] Câu 15 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q15_v2.md` | [MCQ] Câu 15 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q15_v3.md` | [MCQ] Câu 15 (Thông hiểu)
+- `test-bank/MCQ_Robot_De2_Q15.md` | [MCQ] Câu 15 (Thông hiểu)
+- `test-bank/MCQ_Robot_De3_Q15.md` | [MCQ] Câu 15 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De2_Q15.md` | [MCQ] Câu 15 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De3_Q15.md` | [MCQ] Câu 15 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De4_Q15.md` | [MCQ] Câu 15 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De5_Q15.md` | [MCQ] Câu 15 (Thông hiểu)
+- `test-bank/MCQ_Robot_Unplugged_De1_Q15.md` | [MCQ] Câu 15 (Thông hiểu)
+- `test-bank/MCQ_Robot_Unplugged_De1_Q15_v2.md` | [MCQ] Câu 15 (Thông hiểu)
+- `test-bank/NEEDS_REVIEW_MCQ_IOT_De1_Q15.md` | [MCQ] Câu 15 (Thông hiểu)
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_De1_Q15.md` | [MCQ] Câu 15 (Thông hiểu) (Cũ)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q15.md` | [MCQ] Câu 15 (Thông hiểu) (Mới) (Đáp án)
+- `test-bank/IOT_MCQ_Halocode_De2_Q15.md` | [MCQ] Câu 15 (Thông hiểu/ vận dụng)
+- `test-bank/IOT_MCQ_Halocode_De3_Q15.md` | [MCQ] Câu 15 (Thông hiểu/ vận dụng)
+- `test-bank/IOT_MCQ_Halocode_De4_Q15.md` | [MCQ] Câu 15 (Thông hiểu/ vận dụng)
+- `test-bank/MCQ_Robot_Codey_De2_Q15.md` | [MCQ] Câu 15 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_Robot_Codey_De3_Q15.md` | [MCQ] Câu 15 (Thông hiểu/Vận dụng)
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_Codey_De1_Q15.md` | [MCQ] Câu 15:
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_De1_Q15_v2.md` | [MCQ] Câu 15:
+- `test-bank/MCQ_DESIGN_Maker_Empire_De3_Q16.md` | [MCQ] Câu 16 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De4_Q16.md` | [MCQ] Câu 16 (Nhận biết)
+- `test-bank/MCQ_Robot_Rover_De2_Q16.md` | [MCQ] Câu 16 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De2_Q16.md` | [MCQ] Câu 16 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Yolobit_De3_Q16.md` | [MCQ] Câu 16 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Yolobit_De4_Q16.md` | [MCQ] Câu 16 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Arduino_De2_Q16.md` | [MCQ] Câu 16 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De3_Q16.md` | [MCQ] Câu 16 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De4_Q16.md` | [MCQ] Câu 16 (Thông hiểu)
+- `test-bank/IOT_MCQ_Halocode_De1_Q16.md` | [MCQ] Câu 16 (Thông hiểu)
+- `test-bank/IOT_MCQ_Yolobit_De1_Q16.md` | [MCQ] Câu 16 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q16.md` | [MCQ] Câu 16 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De2_Q16.md` | [MCQ] Câu 16 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De3_Q16.md` | [MCQ] Câu 16 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Canva_De1_Q16.md` | [MCQ] Câu 16 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De1_Q16.md` | [MCQ] Câu 16 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De2_Q16.md` | [MCQ] Câu 16 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De1_Q16.md` | [MCQ] Câu 16 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De2_Q16.md` | [MCQ] Câu 16 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De3_Q16.md` | [MCQ] Câu 16 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De4_Q16.md` | [MCQ] Câu 16 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De1_Q16.md` | [MCQ] Câu 16 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De2_Q16.md` | [MCQ] Câu 16 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De3_Q16.md` | [MCQ] Câu 16 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De4_Q16.md` | [MCQ] Câu 16 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q16.md` | [MCQ] Câu 16 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q16_v2.md` | [MCQ] Câu 16 (Thông hiểu)
+- `test-bank/MCQ_Robot_De2_Q16.md` | [MCQ] Câu 16 (Thông hiểu)
+- `test-bank/MCQ_Robot_De3_Q16.md` | [MCQ] Câu 16 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De3_Q16.md` | [MCQ] Câu 16 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De4_Q16.md` | [MCQ] Câu 16 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De5_Q16.md` | [MCQ] Câu 16 (Thông hiểu)
+- `test-bank/MCQ_Robot_Unplugged_De1_Q16.md` | [MCQ] Câu 16 (Thông hiểu)
+- `test-bank/NEEDS_REVIEW_MCQ_IOT_Arduino_De3_Q16.md` | [MCQ] Câu 16 (Thông hiểu)
+- `test-bank/NEEDS_REVIEW_MCQ_IOT_De1_Q16.md` | [MCQ] Câu 16 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De4_Q16.md` | [MCQ] Câu 16 (Thông hiểu) (Nhiều đáp án)
+- `test-bank/IOT_MCQ_Halocode_De2_Q16.md` | [MCQ] Câu 16 (Thông hiểu/ vận dụng)
+- `test-bank/IOT_MCQ_Halocode_De3_Q16.md` | [MCQ] Câu 16 (Thông hiểu/ vận dụng)
+- `test-bank/IOT_MCQ_Halocode_De4_Q16.md` | [MCQ] Câu 16 (Thông hiểu/ vận dụng)
+- `test-bank/MCQ_Robot_Codey_De2_Q16.md` | [MCQ] Câu 16 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_Robot_Codey_De3_Q16.md` | [MCQ] Câu 16 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_Robot_Codey_De4_Q16.md` | [MCQ] Câu 16 (Thông hiểu/Vận dụng)
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_Codey_De1_Q16.md` | [MCQ] Câu 16:
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_De1_Q16.md` | [MCQ] Câu 16:
+- `test-bank/IOT_MCQ_Arduino_De1_Q16.md` | [MCQ] Câu 16: Cho mạch Arduino và đèn Led như hình bên dưới, hỏi đoạn chương trình nào dùng để điều khiển cho đèn Led sáng nhấp nháy (sáng-tắt) với chu kỳ 1 giây?
+- `test-bank/IOT_MCQ_Halocode_De1_Q17.md` | [MCQ] Câu 17 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De3_Q17.md` | [MCQ] Câu 17 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Wordpress_De1_Q17.md` | [MCQ] Câu 17 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De1_Q17.md` | [MCQ] Câu 17 (Nhận biết)
+- `test-bank/MCQ_Robot_De1_Q17_v3.md` | [MCQ] Câu 17 (Nhận biết)
+- `test-bank/MCQ_Robot_Unplugged_De1_Q17.md` | [MCQ] Câu 17 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De2_Q17.md` | [MCQ] Câu 17 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Yolobit_De3_Q17.md` | [MCQ] Câu 17 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Arduino_De1_Q17.md` | [MCQ] Câu 17 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De2_Q17.md` | [MCQ] Câu 17 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De3_Q17.md` | [MCQ] Câu 17 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De4_Q17.md` | [MCQ] Câu 17 (Thông hiểu)
+- `test-bank/IOT_MCQ_Yolobit_De1_Q17.md` | [MCQ] Câu 17 (Thông hiểu)
+- `test-bank/IOT_MCQ_Yolobit_De4_Q17.md` | [MCQ] Câu 17 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De2_Q17.md` | [MCQ] Câu 17 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De3_Q17.md` | [MCQ] Câu 17 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De4_Q17.md` | [MCQ] Câu 17 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Canva_De1_Q17.md` | [MCQ] Câu 17 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De2_Q17.md` | [MCQ] Câu 17 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De4_Q17.md` | [MCQ] Câu 17 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De2_Q17.md` | [MCQ] Câu 17 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De3_Q17.md` | [MCQ] Câu 17 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De4_Q17.md` | [MCQ] Câu 17 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De1_Q17.md` | [MCQ] Câu 17 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De2_Q17.md` | [MCQ] Câu 17 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De3_Q17.md` | [MCQ] Câu 17 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De4_Q17.md` | [MCQ] Câu 17 (Thông hiểu)
+- `test-bank/MCQ_Robot_Codey_De4_Q17.md` | [MCQ] Câu 17 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q17_v2.md` | [MCQ] Câu 17 (Thông hiểu)
+- `test-bank/MCQ_Robot_De2_Q17.md` | [MCQ] Câu 17 (Thông hiểu)
+- `test-bank/MCQ_Robot_De3_Q17.md` | [MCQ] Câu 17 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De1_Q17.md` | [MCQ] Câu 17 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De2_Q17.md` | [MCQ] Câu 17 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De3_Q17.md` | [MCQ] Câu 17 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De4_Q17.md` | [MCQ] Câu 17 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De5_Q17.md` | [MCQ] Câu 17 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q17.md` | [MCQ] Câu 17 (Thông hiểu) (Mới) (Đáp án)
+- `test-bank/IOT_MCQ_Halocode_De2_Q17.md` | [MCQ] Câu 17 (Thông hiểu/ vận dụng)
+- `test-bank/IOT_MCQ_Halocode_De3_Q17.md` | [MCQ] Câu 17 (Thông hiểu/ vận dụng)
+- `test-bank/IOT_MCQ_Halocode_De4_Q17.md` | [MCQ] Câu 17 (Thông hiểu/ vận dụng)
+- `test-bank/MCQ_Robot_Codey_De2_Q17.md` | [MCQ] Câu 17 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_Robot_Codey_De3_Q17.md` | [MCQ] Câu 17 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_Robot_De1_Q17.md` | [MCQ] Câu 17:
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_Codey_De1_Q17.md` | [MCQ] Câu 17:
+- `test-bank/NEEDS_REVIEW_MCQ_IOT_Arduino_De1_Q17.md` | [MCQ] Câu 17: Chọn đáp án sai: để lập trình cho còi liên tục phát ra tiếng hú, ta dùng đoạn chương trình nào sau đây?
+- `test-bank/MCQ_DESIGN_Maker_Empire_De2_Q18.md` | [MCQ] Câu 18 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Wordpress_De1_Q18.md` | [MCQ] Câu 18 (Nhận biết)
+- `test-bank/MCQ_Robot_Unplugged_De1_Q18.md` | [MCQ] Câu 18 (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De2_Q18.md` | [MCQ] Câu 18 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De3_Q18.md` | [MCQ] Câu 18 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De4_Q18.md` | [MCQ] Câu 18 (Thông hiểu)
+- `test-bank/IOT_MCQ_Halocode_De1_Q18.md` | [MCQ] Câu 18 (Thông hiểu)
+- `test-bank/IOT_MCQ_Yolobit_De1_Q18.md` | [MCQ] Câu 18 (Thông hiểu)
+- `test-bank/IOT_MCQ_Yolobit_De2_Q18.md` | [MCQ] Câu 18 (Thông hiểu)
+- `test-bank/IOT_MCQ_Yolobit_De3_Q18.md` | [MCQ] Câu 18 (Thông hiểu)
+- `test-bank/IOT_MCQ_Yolobit_De4_Q18.md` | [MCQ] Câu 18 (Thông hiểu)
+- `test-bank/IOT_MCQ_Yolobit_De5_Q18.md` | [MCQ] Câu 18 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q18.md` | [MCQ] Câu 18 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De2_Q18.md` | [MCQ] Câu 18 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De3_Q18.md` | [MCQ] Câu 18 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De4_Q18.md` | [MCQ] Câu 18 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Canva_De1_Q18.md` | [MCQ] Câu 18 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De1_Q18.md` | [MCQ] Câu 18 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De3_Q18.md` | [MCQ] Câu 18 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De4_Q18.md` | [MCQ] Câu 18 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De1_Q18.md` | [MCQ] Câu 18 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De2_Q18.md` | [MCQ] Câu 18 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De3_Q18.md` | [MCQ] Câu 18 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De4_Q18.md` | [MCQ] Câu 18 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De1_Q18.md` | [MCQ] Câu 18 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De2_Q18.md` | [MCQ] Câu 18 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De3_Q18.md` | [MCQ] Câu 18 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q18.md` | [MCQ] Câu 18 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q18_v2.md` | [MCQ] Câu 18 (Thông hiểu)
+- `test-bank/MCQ_Robot_De2_Q18.md` | [MCQ] Câu 18 (Thông hiểu)
+- `test-bank/MCQ_Robot_De3_Q18.md` | [MCQ] Câu 18 (Thông hiểu)
+- `test-bank/NEEDS_REVIEW_MCQ_IOT_Arduino_De2_Q18.md` | [MCQ] Câu 18 (Thông hiểu)
+- `test-bank/IOT_MCQ_Halocode_De2_Q18.md` | [MCQ] Câu 18 (Thông hiểu/ vận dụng)
+- `test-bank/IOT_MCQ_Halocode_De3_Q18.md` | [MCQ] Câu 18 (Thông hiểu/ vận dụng)
+- `test-bank/IOT_MCQ_Halocode_De4_Q18.md` | [MCQ] Câu 18 (Thông hiểu/ vận dụng)
+- `test-bank/MCQ_Robot_Codey_De2_Q18.md` | [MCQ] Câu 18 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_Robot_Codey_De3_Q18.md` | [MCQ] Câu 18 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_Robot_De1_Q18_v3.md` | [MCQ] Câu 18:
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_Codey_De1_Q18.md` | [MCQ] Câu 18:
+- `test-bank/MCQ_Robot_Codey_De4_Q18.md` | [MCQ] Câu 18: (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De1_Q18.md` | [MCQ] Câu 18: Đoạn chương trình nào dưới đây cho hiệu ứng 2 đèn sáng tắt luân phiên (thời gian sáng, tắt mỗi đèn là 1 giây)?
+- `test-bank/IOT_MCQ_Yolobit_De5_Q19.md` | [MCQ] Câu 19 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De1_Q19.md` | [MCQ] Câu 19 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De2_Q19.md` | [MCQ] Câu 19 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Yolobit_De3_Q19.md` | [MCQ] Câu 19 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Arduino_De2_Q19.md` | [MCQ] Câu 19 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De3_Q19.md` | [MCQ] Câu 19 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De4_Q19.md` | [MCQ] Câu 19 (Thông hiểu)
+- `test-bank/IOT_MCQ_Halocode_De1_Q19.md` | [MCQ] Câu 19 (Thông hiểu)
+- `test-bank/IOT_MCQ_Yolobit_De1_Q19.md` | [MCQ] Câu 19 (Thông hiểu)
+- `test-bank/IOT_MCQ_Yolobit_De4_Q19.md` | [MCQ] Câu 19 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q19.md` | [MCQ] Câu 19 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De2_Q19.md` | [MCQ] Câu 19 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De3_Q19.md` | [MCQ] Câu 19 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De4_Q19.md` | [MCQ] Câu 19 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Canva_De1_Q19.md` | [MCQ] Câu 19 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De2_Q19.md` | [MCQ] Câu 19 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Wordpress_De1_Q19.md` | [MCQ] Câu 19 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De2_Q19.md` | [MCQ] Câu 19 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De3_Q19.md` | [MCQ] Câu 19 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De4_Q19.md` | [MCQ] Câu 19 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De1_Q19.md` | [MCQ] Câu 19 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De4_Q19.md` | [MCQ] Câu 19 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q19_v2.md` | [MCQ] Câu 19 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q19_v3.md` | [MCQ] Câu 19 (Thông hiểu)
+- `test-bank/MCQ_Robot_De2_Q19.md` | [MCQ] Câu 19 (Thông hiểu)
+- `test-bank/MCQ_Robot_De3_Q19.md` | [MCQ] Câu 19 (Thông hiểu)
+- `test-bank/MCQ_Robot_Unplugged_De1_Q19.md` | [MCQ] Câu 19 (Thông hiểu)
+- `test-bank/NEEDS_REVIEW_MCQ_IOT_Halocode_De1_Q19.md` | [MCQ] Câu 19 (Thông hiểu)
+- `test-bank/NEEDS_REVIEW_MCQ_KHMT_AI_THCS_De1_Q19.md` | [MCQ] Câu 19 (Thông hiểu)
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_De1_Q19.md` | [MCQ] Câu 19 (Thông hiểu) (Cũ)
+- `test-bank/IOT_MCQ_Halocode_De2_Q19.md` | [MCQ] Câu 19 (Thông hiểu/ vận dụng)
+- `test-bank/IOT_MCQ_Halocode_De3_Q19.md` | [MCQ] Câu 19 (Thông hiểu/ vận dụng)
+- `test-bank/IOT_MCQ_Halocode_De4_Q19.md` | [MCQ] Câu 19 (Thông hiểu/ vận dụng)
+- `test-bank/MCQ_Robot_Codey_De2_Q19.md` | [MCQ] Câu 19 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_Robot_Codey_De3_Q19.md` | [MCQ] Câu 19 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_Robot_De1_Q19.md` | [MCQ] Câu 19:
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_Codey_De1_Q19.md` | [MCQ] Câu 19:
+- `test-bank/MCQ_Robot_Codey_De4_Q19.md` | [MCQ] Câu 19: (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De1_Q19.md` | [MCQ] Câu 19: Một bạn học sinh mắc mạch gồm Arduino, đèn Led và breadboard, (quy ước các chân đèn Led được minh họa như hình. Hỏi khi bạn thực hiện chương trình sau thì có những đèn nào phát sáng?
+- `test-bank/NEEDS_REVIEW_MCQ_IOT_Arduino_De1_Q19.md` | [MCQ] Câu 19: Một bạn học sinh mắc mạch gồm Arduino, đèn Led và breadboard, (quy ước các chân đèn Led được minh họa như hình. Hỏi khi bạn thực hiện chương trình sau thì có những đèn nào phát sáng?
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_De1_Q01.md` | [MCQ] Câu 1:
+- `test-bank/NEEDS_REVIEW_MCQ_IOT_Arduino_De1_Q01.md` | [MCQ] Câu 1: Những cách cấp nguồn cho Arduino Uno R3?
+- `test-bank/IOT_MCQ_Arduino_De3_Q02.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De4_Q02.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De1_Q02.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De2_Q02.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De3_Q02.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De4_Q02.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De1_Q02.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De2_Q02.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De3_Q02.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De4_Q02.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q02.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q02_v2.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De2_Q02.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De3_Q02.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Canva_De1_Q02.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De1_Q02.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De2_Q02.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De3_Q02.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De4_Q02.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De1_Q02.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De3_Q02.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De4_Q02.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De1_Q02.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De2_Q02.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De2_Q02_v2.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De3_Q02.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De4_Q02.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De4_Q02_v2.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/MCQ_Robot_Codey_De1_Q02.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/MCQ_Robot_Codey_De2_Q02.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/MCQ_Robot_Codey_De4_Q02.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/MCQ_Robot_De1_Q02_v2.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/MCQ_Robot_De1_Q02_v3.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/MCQ_Robot_De2_Q02.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/MCQ_Robot_Rover_De4_Q02.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/MCQ_Robot_Rover_De5_Q02.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/MCQ_Robot_Unplugged_De1_Q02.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/MCQ_Robot_Unplugged_De1_Q02_v2.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/NEEDS_REVIEW_MCQ_IOT_Arduino_De4_Q02.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/NEEDS_REVIEW_MCQ_KHMT_AI_THCS_De2_Q02.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_Codey_De3_Q02.md` | [MCQ] Câu 2 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De3_Q02_v2.md` | [MCQ] Câu 2 (Nhận biết) (Nhiều đáp án)
+- `test-bank/IOT_MCQ_Arduino_De1_Q02.md` | [MCQ] Câu 2 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De2_Q02.md` | [MCQ] Câu 2 (Thông hiểu)
+- `test-bank/IOT_MCQ_Halocode_De1_Q20.md` | [MCQ] Câu 20 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De1_Q20.md` | [MCQ] Câu 20 (Nhận biết)
+- `test-bank/MCQ_Robot_De1_Q20.md` | [MCQ] Câu 20 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De2_Q20.md` | [MCQ] Câu 20 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Yolobit_De3_Q20.md` | [MCQ] Câu 20 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Yolobit_De4_Q20.md` | [MCQ] Câu 20 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Arduino_De1_Q20.md` | [MCQ] Câu 20 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De2_Q20.md` | [MCQ] Câu 20 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De3_Q20.md` | [MCQ] Câu 20 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De4_Q20.md` | [MCQ] Câu 20 (Thông hiểu)
+- `test-bank/IOT_MCQ_Yolobit_De1_Q20.md` | [MCQ] Câu 20 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q20.md` | [MCQ] Câu 20 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De2_Q20.md` | [MCQ] Câu 20 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De3_Q20.md` | [MCQ] Câu 20 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De4_Q20.md` | [MCQ] Câu 20 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Canva_De1_Q20.md` | [MCQ] Câu 20 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De1_Q20.md` | [MCQ] Câu 20 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De2_Q20.md` | [MCQ] Câu 20 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De3_Q20.md` | [MCQ] Câu 20 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De4_Q20.md` | [MCQ] Câu 20 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Wordpress_De1_Q20.md` | [MCQ] Câu 20 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De2_Q20.md` | [MCQ] Câu 20 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De3_Q20.md` | [MCQ] Câu 20 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De4_Q20.md` | [MCQ] Câu 20 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De1_Q20.md` | [MCQ] Câu 20 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De2_Q20.md` | [MCQ] Câu 20 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De3_Q20.md` | [MCQ] Câu 20 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De4_Q20.md` | [MCQ] Câu 20 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q20_v3.md` | [MCQ] Câu 20 (Thông hiểu)
+- `test-bank/MCQ_Robot_De2_Q20.md` | [MCQ] Câu 20 (Thông hiểu)
+- `test-bank/MCQ_Robot_De3_Q20.md` | [MCQ] Câu 20 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De1_Q20.md` | [MCQ] Câu 20 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De2_Q20.md` | [MCQ] Câu 20 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De3_Q20.md` | [MCQ] Câu 20 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De4_Q20.md` | [MCQ] Câu 20 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De5_Q20.md` | [MCQ] Câu 20 (Thông hiểu)
+- `test-bank/MCQ_Robot_Unplugged_De1_Q20.md` | [MCQ] Câu 20 (Thông hiểu)
+- `test-bank/IOT_MCQ_Halocode_De2_Q20.md` | [MCQ] Câu 20 (Thông hiểu/ vận dụng)
+- `test-bank/IOT_MCQ_Halocode_De3_Q20.md` | [MCQ] Câu 20 (Thông hiểu/ vận dụng)
+- `test-bank/IOT_MCQ_Halocode_De4_Q20.md` | [MCQ] Câu 20 (Thông hiểu/ vận dụng)
+- `test-bank/MCQ_Robot_Codey_De2_Q20.md` | [MCQ] Câu 20 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_Robot_Codey_De3_Q20.md` | [MCQ] Câu 20 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_Robot_Codey_De4_Q20.md` | [MCQ] Câu 20 (Thông hiểu/Vận dụng) (nhiều đáp án)
+- `test-bank/MCQ_Robot_De1_Q20_v2.md` | [MCQ] Câu 20:
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_Codey_De1_Q20.md` | [MCQ] Câu 20:
+- `test-bank/NEEDS_REVIEW_MCQ_IOT_Arduino_De1_Q20.md` | [MCQ] Câu 20: Cho mạch điện ba đèn sáng luân phiên, hãy chọn số thích hợp vào ô số 01 và 02 để được đoạn chương trình cho kết quả ba đèn sáng luân phiên như ảnh động.
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_Codey_De3_Q21.md` | [MCQ] Câu 21
+- `test-bank/IOT_MCQ_Arduino_De1_Q21.md` | [MCQ] Câu 21 (Hiểu)
+- `test-bank/IOT_MCQ_Arduino_De4_Q21.md` | [MCQ] Câu 21 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Wordpress_De1_Q21.md` | [MCQ] Câu 21 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De1_Q21.md` | [MCQ] Câu 21 (Nhận biết)
+- `test-bank/MCQ_Robot_Rover_De1_Q21.md` | [MCQ] Câu 21 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De2_Q21.md` | [MCQ] Câu 21 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Yolobit_De3_Q21.md` | [MCQ] Câu 21 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Yolobit_De4_Q21.md` | [MCQ] Câu 21 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Arduino_De2_Q21.md` | [MCQ] Câu 21 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De3_Q21.md` | [MCQ] Câu 21 (Thông hiểu)
+- `test-bank/IOT_MCQ_Halocode_De1_Q21.md` | [MCQ] Câu 21 (Thông hiểu)
+- `test-bank/IOT_MCQ_Yolobit_De1_Q21.md` | [MCQ] Câu 21 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q21.md` | [MCQ] Câu 21 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De2_Q21.md` | [MCQ] Câu 21 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De3_Q21.md` | [MCQ] Câu 21 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De4_Q21.md` | [MCQ] Câu 21 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Canva_De1_Q21.md` | [MCQ] Câu 21 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De4_Q21.md` | [MCQ] Câu 21 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De1_Q21.md` | [MCQ] Câu 21 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De2_Q21.md` | [MCQ] Câu 21 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De3_Q21.md` | [MCQ] Câu 21 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De4_Q21.md` | [MCQ] Câu 21 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q21.md` | [MCQ] Câu 21 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q21_v2.md` | [MCQ] Câu 21 (Thông hiểu)
+- `test-bank/MCQ_Robot_De2_Q21.md` | [MCQ] Câu 21 (Thông hiểu)
+- `test-bank/MCQ_Robot_De3_Q21.md` | [MCQ] Câu 21 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De2_Q21.md` | [MCQ] Câu 21 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De4_Q21.md` | [MCQ] Câu 21 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De5_Q21.md` | [MCQ] Câu 21 (Thông hiểu)
+- `test-bank/NEEDS_REVIEW_MCQ_KHMT_AI_THCS_De2_Q21.md` | [MCQ] Câu 21 (Thông hiểu)
+- `test-bank/NEEDS_REVIEW_MCQ_KHMT_AI_THCS_De3_Q21.md` | [MCQ] Câu 21 (Thông hiểu)
+- `test-bank/IOT_MCQ_Halocode_De2_Q21.md` | [MCQ] Câu 21 (Thông hiểu/ vận dụng)
+- `test-bank/IOT_MCQ_Halocode_De3_Q21.md` | [MCQ] Câu 21 (Thông hiểu/ vận dụng)
+- `test-bank/IOT_MCQ_Halocode_De4_Q21.md` | [MCQ] Câu 21 (Thông hiểu/ vận dụng)
+- `test-bank/MCQ_Robot_Codey_De2_Q21.md` | [MCQ] Câu 21 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_Robot_Codey_De4_Q21.md` | [MCQ] Câu 21 (Thông hiểu/Vận dụng)
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_Codey_De1_Q21.md` | [MCQ] Câu 21:
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_De1_Q21.md` | [MCQ] Câu 21:
+- `test-bank/NEEDS_REVIEW_MCQ_IOT_Arduino_De1_Q21.md` | [MCQ] Câu 21: Cho mạch điện gồm Arduino, còi, đèn Led và breadboard được thiết lập để mô phỏng đèn xe cảnh sát đang hoạt động như hình minh hoạ. Hãy kéo và thả các câu lệnh thích hợp vào đoạn chương trình đang khuyết để được kết quả như yêu cầu.
+- `test-bank/IOT_MCQ_Yolobit_De1_Q22.md` | [MCQ] Câu 22 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Wordpress_De1_Q22.md` | [MCQ] Câu 22 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De1_Q22.md` | [MCQ] Câu 22 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De3_Q22.md` | [MCQ] Câu 22 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Yolobit_De4_Q22.md` | [MCQ] Câu 22 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Arduino_De2_Q22.md` | [MCQ] Câu 22 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De3_Q22.md` | [MCQ] Câu 22 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De4_Q22.md` | [MCQ] Câu 22 (Thông hiểu)
+- `test-bank/IOT_MCQ_Halocode_De1_Q22.md` | [MCQ] Câu 22 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q22.md` | [MCQ] Câu 22 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De2_Q22.md` | [MCQ] Câu 22 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De3_Q22.md` | [MCQ] Câu 22 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De4_Q22.md` | [MCQ] Câu 22 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Canva_De1_Q22.md` | [MCQ] Câu 22 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De2_Q22.md` | [MCQ] Câu 22 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De3_Q22.md` | [MCQ] Câu 22 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De4_Q22.md` | [MCQ] Câu 22 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De1_Q22.md` | [MCQ] Câu 22 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De2_Q22.md` | [MCQ] Câu 22 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De3_Q22.md` | [MCQ] Câu 22 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De4_Q22.md` | [MCQ] Câu 22 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q22_v2.md` | [MCQ] Câu 22 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q22_v3.md` | [MCQ] Câu 22 (Thông hiểu)
+- `test-bank/MCQ_Robot_De2_Q22.md` | [MCQ] Câu 22 (Thông hiểu)
+- `test-bank/MCQ_Robot_De3_Q22.md` | [MCQ] Câu 22 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De1_Q22.md` | [MCQ] Câu 22 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De4_Q22.md` | [MCQ] Câu 22 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De5_Q22.md` | [MCQ] Câu 22 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q22_v4.md` | [MCQ] Câu 22 (Thông hiểu) (Chỉnh sửa)
+- `test-bank/IOT_MCQ_Yolobit_De2_Q22.md` | [MCQ] Câu 22 (Thông hiểu) ………
+- `test-bank/IOT_MCQ_Arduino_De1_Q22.md` | [MCQ] Câu 22 (Thông hiểu)...
+- `test-bank/IOT_MCQ_Halocode_De2_Q22.md` | [MCQ] Câu 22 (Thông hiểu/ vận dụng)
+- `test-bank/IOT_MCQ_Halocode_De3_Q22.md` | [MCQ] Câu 22 (Thông hiểu/ vận dụng)
+- `test-bank/IOT_MCQ_Halocode_De4_Q22.md` | [MCQ] Câu 22 (Thông hiểu/ vận dụng)
+- `test-bank/MCQ_Robot_Codey_De2_Q22.md` | [MCQ] Câu 22 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_Robot_Codey_De3_Q22.md` | [MCQ] Câu 22 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_Robot_Codey_De4_Q22.md` | [MCQ] Câu 22 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_Robot_Codey_De1_Q22.md` | [MCQ] Câu 22:
+- `test-bank/MCQ_Robot_De1_Q22.md` | [MCQ] Câu 22:
+- `test-bank/NEEDS_REVIEW_MCQ_IOT_Arduino_De1_Q22.md` | [MCQ] Câu 22:  Ứng dụng nào sau đây không phải của cảm biến hồng ngoại?
+- `test-bank/IOT_MCQ_Halocode_De1_Q23.md` | [MCQ] Câu 23 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De1_Q23.md` | [MCQ] Câu 23 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Wordpress_De1_Q23.md` | [MCQ] Câu 23 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De1_Q23.md` | [MCQ] Câu 23 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De1_Q23.md` | [MCQ] Câu 23 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De2_Q23.md` | [MCQ] Câu 23 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De3_Q23.md` | [MCQ] Câu 23 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De4_Q23.md` | [MCQ] Câu 23 (Nhận biết)
+- `test-bank/MCQ_Robot_De1_Q23.md` | [MCQ] Câu 23 (Nhận biết)
+- `test-bank/MCQ_Robot_Rover_De2_Q23.md` | [MCQ] Câu 23 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De2_Q23.md` | [MCQ] Câu 23 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Arduino_De2_Q23.md` | [MCQ] Câu 23 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De3_Q23.md` | [MCQ] Câu 23 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De4_Q23.md` | [MCQ] Câu 23 (Thông hiểu)
+- `test-bank/IOT_MCQ_Yolobit_De3_Q23.md` | [MCQ] Câu 23 (Thông hiểu)
+- `test-bank/IOT_MCQ_Yolobit_De4_Q23.md` | [MCQ] Câu 23 (Thông hiểu)
+- `test-bank/IOT_MCQ_Yolobit_De5_Q23.md` | [MCQ] Câu 23 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De2_Q23.md` | [MCQ] Câu 23 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De3_Q23.md` | [MCQ] Câu 23 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De4_Q23.md` | [MCQ] Câu 23 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Canva_De1_Q23.md` | [MCQ] Câu 23 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De2_Q23.md` | [MCQ] Câu 23 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De3_Q23.md` | [MCQ] Câu 23 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De4_Q23.md` | [MCQ] Câu 23 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q23_v3.md` | [MCQ] Câu 23 (Thông hiểu)
+- `test-bank/MCQ_Robot_De2_Q23.md` | [MCQ] Câu 23 (Thông hiểu)
+- `test-bank/MCQ_Robot_De3_Q23.md` | [MCQ] Câu 23 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De1_Q23.md` | [MCQ] Câu 23 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q23.md` | [MCQ] Câu 23 (Thông hiểu) (Chỉnh sửa đáp án)
+- `test-bank/IOT_MCQ_Halocode_De3_Q23.md` | [MCQ] Câu 23 (Thông hiểu/ vận dụng)
+- `test-bank/IOT_MCQ_Halocode_De4_Q23.md` | [MCQ] Câu 23 (Thông hiểu/ vận dụng)
+- `test-bank/MCQ_Robot_Codey_De2_Q23.md` | [MCQ] Câu 23 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_Robot_Codey_De3_Q23.md` | [MCQ] Câu 23 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_Robot_Codey_De4_Q23.md` | [MCQ] Câu 23 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_Robot_Codey_De1_Q23.md` | [MCQ] Câu 23:
+- `test-bank/MCQ_Robot_De1_Q23_v2.md` | [MCQ] Câu 23:
+- `test-bank/IOT_MCQ_Arduino_De1_Q23.md` | [MCQ] Câu 23: Giáo viên đưa ra yêu cầu lập trình cho cảm biến hồng ngoại như sau: Khi phát hiện vật cản thì cho đèn Led được nối với chân D8 sáng, còn không có vật cản thì cho đèn Led đó tắt. Hỏi đoạn chương trình nào dưới đây cho kết quả đúng với yêu cầu của giáo viên, biết chân DO của cảm biến được nối với chân D7.
+- `test-bank/IOT_MCQ_Yolobit_De1_Q24.md` | [MCQ] Câu 24 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De1_Q24.md` | [MCQ] Câu 24 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De2_Q24.md` | [MCQ] Câu 24 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De3_Q24.md` | [MCQ] Câu 24 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De4_Q24.md` | [MCQ] Câu 24 (Nhận biết)
+- `test-bank/MCQ_Robot_Rover_De3_Q24.md` | [MCQ] Câu 24 (Nhận biết)
+- `test-bank/MCQ_Robot_Rover_De4_Q24.md` | [MCQ] Câu 24 (Nhận biết)
+- `test-bank/MCQ_Robot_Rover_De5_Q24.md` | [MCQ] Câu 24 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De2_Q24.md` | [MCQ] Câu 24 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Yolobit_De3_Q24.md` | [MCQ] Câu 24 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Yolobit_De4_Q24.md` | [MCQ] Câu 24 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Arduino_De2_Q24.md` | [MCQ] Câu 24 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De3_Q24.md` | [MCQ] Câu 24 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De4_Q24.md` | [MCQ] Câu 24 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q24.md` | [MCQ] Câu 24 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De2_Q24.md` | [MCQ] Câu 24 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De3_Q24.md` | [MCQ] Câu 24 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De4_Q24.md` | [MCQ] Câu 24 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Canva_De1_Q24.md` | [MCQ] Câu 24 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Wordpress_De1_Q24.md` | [MCQ] Câu 24 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De1_Q24.md` | [MCQ] Câu 24 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De2_Q24.md` | [MCQ] Câu 24 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De3_Q24.md` | [MCQ] Câu 24 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De4_Q24.md` | [MCQ] Câu 24 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q24.md` | [MCQ] Câu 24 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q24_v2.md` | [MCQ] Câu 24 (Thông hiểu)
+- `test-bank/MCQ_Robot_De2_Q24.md` | [MCQ] Câu 24 (Thông hiểu)
+- `test-bank/MCQ_Robot_De3_Q24.md` | [MCQ] Câu 24 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De2_Q24.md` | [MCQ] Câu 24 (Thông hiểu)
+- `test-bank/IOT_MCQ_Halocode_De3_Q24.md` | [MCQ] Câu 24 (Thông hiểu/ vận dụng)
+- `test-bank/IOT_MCQ_Halocode_De4_Q24.md` | [MCQ] Câu 24 (Thông hiểu/ vận dụng)
+- `test-bank/MCQ_Robot_Codey_De2_Q24.md` | [MCQ] Câu 24 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_Robot_Codey_De3_Q24.md` | [MCQ] Câu 24 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_Robot_Codey_De4_Q24.md` | [MCQ] Câu 24 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_Robot_Codey_De1_Q24.md` | [MCQ] Câu 24:
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_De1_Q24.md` | [MCQ] Câu 24:
+- `test-bank/IOT_MCQ_Arduino_De1_Q24.md` | [MCQ] Câu 24: Yêu cầu lập trình cho cảm biến hồng ngoại, đèn Led và còi hoạt động như sau: khi không có vật cản, đèn xanh sáng, đèn đỏ tắt, còi tắt; khi có vật cản đèn xanh sáng thêm 2 giây rồi tắt, còi hú báo động, đèn đỏ sáng.
+- `test-bank/IOT_MCQ_Yolobit_De2_Q25.md` | [MCQ] Câu 25 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Yolobit_De3_Q25.md` | [MCQ] Câu 25 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Yolobit_De4_Q25.md` | [MCQ] Câu 25 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Arduino_De2_Q25.md` | [MCQ] Câu 25 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De3_Q25.md` | [MCQ] Câu 25 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De4_Q25.md` | [MCQ] Câu 25 (Thông hiểu)
+- `test-bank/IOT_MCQ_Yolobit_De1_Q25.md` | [MCQ] Câu 25 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q25.md` | [MCQ] Câu 25 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De2_Q25.md` | [MCQ] Câu 25 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De3_Q25.md` | [MCQ] Câu 25 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De4_Q25.md` | [MCQ] Câu 25 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Canva_De1_Q25.md` | [MCQ] Câu 25 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Wordpress_De1_Q25.md` | [MCQ] Câu 25 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De1_Q25.md` | [MCQ] Câu 25 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De2_Q25.md` | [MCQ] Câu 25 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De3_Q25.md` | [MCQ] Câu 25 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De4_Q25.md` | [MCQ] Câu 25 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De1_Q25.md` | [MCQ] Câu 25 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De2_Q25.md` | [MCQ] Câu 25 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De4_Q25.md` | [MCQ] Câu 25 (Thông hiểu)
+- `test-bank/MCQ_Robot_Codey_De4_Q25.md` | [MCQ] Câu 25 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q25_v2.md` | [MCQ] Câu 25 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q25_v3.md` | [MCQ] Câu 25 (Thông hiểu)
+- `test-bank/MCQ_Robot_De2_Q25.md` | [MCQ] Câu 25 (Thông hiểu)
+- `test-bank/MCQ_Robot_De3_Q25.md` | [MCQ] Câu 25 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De2_Q25.md` | [MCQ] Câu 25 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De3_Q25.md` | [MCQ] Câu 25 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De5_Q25.md` | [MCQ] Câu 25 (Thông hiểu)
+- `test-bank/IOT_MCQ_Halocode_De2_Q25.md` | [MCQ] Câu 25 (Thông hiểu/ vận dụng)
+- `test-bank/IOT_MCQ_Halocode_De4_Q25.md` | [MCQ] Câu 25 (Thông hiểu/ vận dụng)
+- `test-bank/MCQ_Robot_Codey_De2_Q25.md` | [MCQ] Câu 25 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_Robot_Codey_De3_Q25.md` | [MCQ] Câu 25 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_Robot_Codey_De1_Q25.md` | [MCQ] Câu 25:
+- `test-bank/MCQ_Robot_De1_Q25.md` | [MCQ] Câu 25:
+- `test-bank/IOT_MCQ_Arduino_De1_Q25.md` | [MCQ] Câu 25: Yêu cầu lập trình cho cảm biến hồng ngoại, đèn Led và còi hoạt động như sau: khi không có vật cản, đèn xanh sáng, đèn đỏ tắt, còi tắt;  khi có vật cản đèn xanh sáng 2 giây rồi tắt, còi hú báo động, đèn đỏ sáng.
+- `test-bank/MCQ_KHMT_AI_THCS_De1_Q26.md` | [MCQ] Câu 26 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De2_Q26.md` | [MCQ] Câu 26 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Yolobit_De3_Q26.md` | [MCQ] Câu 26 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Yolobit_De4_Q26.md` | [MCQ] Câu 26 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Arduino_De1_Q26.md` | [MCQ] Câu 26 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De2_Q26.md` | [MCQ] Câu 26 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De3_Q26.md` | [MCQ] Câu 26 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De4_Q26.md` | [MCQ] Câu 26 (Thông hiểu)
+- `test-bank/IOT_MCQ_Yolobit_De1_Q26.md` | [MCQ] Câu 26 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q26.md` | [MCQ] Câu 26 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De3_Q26.md` | [MCQ] Câu 26 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De4_Q26.md` | [MCQ] Câu 26 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Canva_De1_Q26.md` | [MCQ] Câu 26 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Wordpress_De1_Q26.md` | [MCQ] Câu 26 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De2_Q26.md` | [MCQ] Câu 26 (thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De3_Q26.md` | [MCQ] Câu 26 (thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De4_Q26.md` | [MCQ] Câu 26 (thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De1_Q26.md` | [MCQ] Câu 26 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De2_Q26.md` | [MCQ] Câu 26 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De3_Q26.md` | [MCQ] Câu 26 (Thông hiểu)
+- `test-bank/MCQ_Robot_Codey_De4_Q26.md` | [MCQ] Câu 26 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q26_v2.md` | [MCQ] Câu 26 (Thông hiểu)
+- `test-bank/MCQ_Robot_De2_Q26.md` | [MCQ] Câu 26 (Thông hiểu)
+- `test-bank/MCQ_Robot_De3_Q26.md` | [MCQ] Câu 26 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De1_Q26.md` | [MCQ] Câu 26 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De2_Q26.md` | [MCQ] Câu 26 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De3_Q26.md` | [MCQ] Câu 26 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De4_Q26.md` | [MCQ] Câu 26 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De5_Q26.md` | [MCQ] Câu 26 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De2_Q26.md` | [MCQ] Câu 26 (Thông hiểu) (Nhiều đáp án)
+- `test-bank/IOT_MCQ_Halocode_De2_Q26.md` | [MCQ] Câu 26 (Thông hiểu/ vận dụng)
+- `test-bank/IOT_MCQ_Halocode_De3_Q26.md` | [MCQ] Câu 26 (Thông hiểu/ vận dụng)
+- `test-bank/IOT_MCQ_Halocode_De4_Q26.md` | [MCQ] Câu 26 (Thông hiểu/ vận dụng)
+- `test-bank/MCQ_Robot_Codey_De2_Q26.md` | [MCQ] Câu 26 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_Robot_Codey_De3_Q26.md` | [MCQ] Câu 26 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_Robot_De1_Q26.md` | [MCQ] Câu 26 (Vận dụng)
+- `test-bank/MCQ_Robot_De1_Q26_v3.md` | [MCQ] Câu 26:
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_Codey_De1_Q26.md` | [MCQ] Câu 26:
+- `test-bank/IOT_MCQ_Yolobit_De1_Q27.md` | [MCQ] Câu 27 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De1_Q27.md` | [MCQ] Câu 27 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De1_Q27.md` | [MCQ] Câu 27 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De2_Q27.md` | [MCQ] Câu 27 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De4_Q27.md` | [MCQ] Câu 27 (Nhận biết)
+- `test-bank/MCQ_Robot_De1_Q27_v2.md` | [MCQ] Câu 27 (Nhận biết)
+- `test-bank/MCQ_Robot_Rover_De2_Q27.md` | [MCQ] Câu 27 (Nhận biết)
+- `test-bank/MCQ_Robot_Rover_De3_Q27.md` | [MCQ] Câu 27 (Nhận biết)
+- `test-bank/MCQ_Robot_Rover_De4_Q27.md` | [MCQ] Câu 27 (Nhận biết)
+- `test-bank/MCQ_Robot_Rover_De5_Q27.md` | [MCQ] Câu 27 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De2_Q27.md` | [MCQ] Câu 27 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Yolobit_De3_Q27.md` | [MCQ] Câu 27 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Arduino_De2_Q27.md` | [MCQ] Câu 27 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De3_Q27.md` | [MCQ] Câu 27 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De4_Q27.md` | [MCQ] Câu 27 (Thông hiểu)
+- `test-bank/IOT_MCQ_Yolobit_De4_Q27.md` | [MCQ] Câu 27 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q27.md` | [MCQ] Câu 27 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De2_Q27.md` | [MCQ] Câu 27 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De3_Q27.md` | [MCQ] Câu 27 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De4_Q27.md` | [MCQ] Câu 27 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Canva_De1_Q27.md` | [MCQ] Câu 27 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Wordpress_De1_Q27.md` | [MCQ] Câu 27 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De2_Q27.md` | [MCQ] Câu 27 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De3_Q27.md` | [MCQ] Câu 27 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De4_Q27.md` | [MCQ] Câu 27 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q27.md` | [MCQ] Câu 27 (Thông hiểu)
+- `test-bank/MCQ_Robot_De2_Q27.md` | [MCQ] Câu 27 (Thông hiểu)
+- `test-bank/MCQ_Robot_De3_Q27.md` | [MCQ] Câu 27 (Thông hiểu)
+- `test-bank/IOT_MCQ_Halocode_De2_Q27.md` | [MCQ] Câu 27 (Thông hiểu/ vận dụng)
+- `test-bank/IOT_MCQ_Halocode_De3_Q27.md` | [MCQ] Câu 27 (Thông hiểu/ vận dụng)
+- `test-bank/IOT_MCQ_Halocode_De4_Q27.md` | [MCQ] Câu 27 (Thông hiểu/ vận dụng)
+- `test-bank/MCQ_Robot_Codey_De2_Q27.md` | [MCQ] Câu 27 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_Robot_Codey_De3_Q27.md` | [MCQ] Câu 27 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_Robot_Codey_De4_Q27.md` | [MCQ] Câu 27 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_Robot_Codey_De1_Q27.md` | [MCQ] Câu 27:
+- `test-bank/MCQ_Robot_De1_Q27_v3.md` | [MCQ] Câu 27:
+- `test-bank/IOT_MCQ_Arduino_De1_Q27.md` | [MCQ] Câu 27: Cho các linh kiện điện tử và các chân kết nối như bảng dưới đây:
+- `test-bank/IOT_MCQ_Arduino_De3_Q28.md` | [MCQ] Câu 28 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De2_Q28.md` | [MCQ] Câu 28 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De3_Q28.md` | [MCQ] Câu 28 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De2_Q28.md` | [MCQ] Câu 28 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De3_Q28.md` | [MCQ] Câu 28 (Nhận biết)
+- `test-bank/MCQ_Robot_Rover_De1_Q28.md` | [MCQ] Câu 28 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De2_Q28.md` | [MCQ] Câu 28 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Yolobit_De3_Q28.md` | [MCQ] Câu 28 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Yolobit_De4_Q28.md` | [MCQ] Câu 28 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Arduino_De2_Q28.md` | [MCQ] Câu 28 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De4_Q28.md` | [MCQ] Câu 28 (Thông hiểu)
+- `test-bank/IOT_MCQ_Yolobit_De1_Q28.md` | [MCQ] Câu 28 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De2_Q28.md` | [MCQ] Câu 28 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De3_Q28.md` | [MCQ] Câu 28 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De4_Q28.md` | [MCQ] Câu 28 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Wordpress_De1_Q28.md` | [MCQ] Câu 28 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De1_Q28.md` | [MCQ] Câu 28 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De4_Q28.md` | [MCQ] Câu 28 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q28_v2.md` | [MCQ] Câu 28 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q28_v3.md` | [MCQ] Câu 28 (Thông hiểu)
+- `test-bank/MCQ_Robot_De2_Q28.md` | [MCQ] Câu 28 (Thông hiểu)
+- `test-bank/MCQ_Robot_De3_Q28.md` | [MCQ] Câu 28 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De3_Q28.md` | [MCQ] Câu 28 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De4_Q28.md` | [MCQ] Câu 28 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De5_Q28.md` | [MCQ] Câu 28 (Thông hiểu)
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_Rover_De2_Q28.md` | [MCQ] Câu 28 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q28.md` | [MCQ] Câu 28 (Thông hiểu) (Mới) (Đáp án)
+- `test-bank/IOT_MCQ_Halocode_De2_Q28.md` | [MCQ] Câu 28 (Thông hiểu/ vận dụng)
+- `test-bank/IOT_MCQ_Halocode_De3_Q28.md` | [MCQ] Câu 28 (Thông hiểu/ vận dụng)
+- `test-bank/IOT_MCQ_Halocode_De4_Q28.md` | [MCQ] Câu 28 (Thông hiểu/ vận dụng)
+- `test-bank/MCQ_Robot_Codey_De2_Q28.md` | [MCQ] Câu 28 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_Robot_Codey_De3_Q28.md` | [MCQ] Câu 28 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_Robot_De1_Q28.md` | [MCQ] Câu 28:
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_Codey_De1_Q28.md` | [MCQ] Câu 28:
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_Codey_De4_Q28.md` | [MCQ] Câu 28: (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De1_Q28.md` | [MCQ] Câu 28: Tìm đoạn chương trình cho kết quả quan sát được động cơ servo MG90S quay theo góc tăng dần từ góc 0 đến góc 90 độ
+- `test-bank/IOT_MCQ_Arduino_De1_Q29.md` | [MCQ] Câu 29 (Hiểu)
+- `test-bank/IOT_MCQ_Yolobit_De2_Q29.md` | [MCQ] Câu 29 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Yolobit_De3_Q29.md` | [MCQ] Câu 29 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Arduino_De2_Q29.md` | [MCQ] Câu 29 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De3_Q29.md` | [MCQ] Câu 29 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De4_Q29.md` | [MCQ] Câu 29 (Thông hiểu)
+- `test-bank/IOT_MCQ_Yolobit_De1_Q29.md` | [MCQ] Câu 29 (Thông hiểu)
+- `test-bank/IOT_MCQ_Yolobit_De4_Q29.md` | [MCQ] Câu 29 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De2_Q29.md` | [MCQ] Câu 29 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De3_Q29.md` | [MCQ] Câu 29 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De4_Q29.md` | [MCQ] Câu 29 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Canva_De1_Q29.md` | [MCQ] Câu 29 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Wordpress_De1_Q29.md` | [MCQ] Câu 29 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De1_Q29.md` | [MCQ] Câu 29 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De2_Q29.md` | [MCQ] Câu 29 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De3_Q29.md` | [MCQ] Câu 29 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De4_Q29.md` | [MCQ] Câu 29 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De1_Q29.md` | [MCQ] Câu 29 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De2_Q29.md` | [MCQ] Câu 29 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De3_Q29.md` | [MCQ] Câu 29 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De4_Q29.md` | [MCQ] Câu 29 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q29_v2.md` | [MCQ] Câu 29 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q29_v3.md` | [MCQ] Câu 29 (Thông hiểu)
+- `test-bank/MCQ_Robot_De2_Q29.md` | [MCQ] Câu 29 (Thông hiểu)
+- `test-bank/MCQ_Robot_De3_Q29.md` | [MCQ] Câu 29 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De1_Q29.md` | [MCQ] Câu 29 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De2_Q29.md` | [MCQ] Câu 29 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De3_Q29.md` | [MCQ] Câu 29 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De4_Q29.md` | [MCQ] Câu 29 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q29.md` | [MCQ] Câu 29 (Thông hiểu) (Dạng h5P: Trắc nghiệm nhiều đáp án)
+- `test-bank/IOT_MCQ_Halocode_De2_Q29.md` | [MCQ] Câu 29 (Thông hiểu/ vận dụng)
+- `test-bank/IOT_MCQ_Halocode_De3_Q29.md` | [MCQ] Câu 29 (Thông hiểu/ vận dụng)
+- `test-bank/IOT_MCQ_Halocode_De4_Q29.md` | [MCQ] Câu 29 (Thông hiểu/ vận dụng)
+- `test-bank/MCQ_Robot_Codey_De3_Q29.md` | [MCQ] Câu 29 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_Robot_Codey_De2_Q29.md` | [MCQ] Câu 29 (Thông hiểu/Vận dụng) (nhiều đáp án)
+- `test-bank/MCQ_Robot_De1_Q29.md` | [MCQ] Câu 29:
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_Codey_De1_Q29.md` | [MCQ] Câu 29:
+- `test-bank/MCQ_Robot_Codey_De4_Q29.md` | [MCQ] Câu 29: Thông hiểu
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_De1_Q02.md` | [MCQ] Câu 2:
+- `test-bank/NEEDS_REVIEW_MCQ_IOT_Arduino_De1_Q02.md` | [MCQ] Câu 2: Vì sao nên hạn chế sử dụng chân digital số 0 (RX) và 1 (TX)?
+- `test-bank/MCQ_Robot_Codey_De3_Q03.md` | [MCQ] Câu 3  (Nhận biết).
+- `test-bank/IOT_MCQ_Arduino_De1_Q03.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De3_Q03.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De4_Q03.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De1_Q03.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De2_Q03.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De3_Q03.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De4_Q03.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De1_Q03.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De2_Q03.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De3_Q03.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De4_Q03.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De5_Q03.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q03.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q03_v2.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De2_Q03.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De3_Q03.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Canva_De1_Q03.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De1_Q03.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De2_Q03.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De3_Q03.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De4_Q03.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Wordpress_De1_Q03.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De1_Q03.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De2_Q03.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De3_Q03.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De4_Q03.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De1_Q03.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De2_Q03.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De2_Q03_v2.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De3_Q03.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De3_Q03_v2.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De4_Q03.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De4_Q03_v2.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/MCQ_Robot_Codey_De2_Q03.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/MCQ_Robot_De1_Q03_v2.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/MCQ_Robot_De1_Q03_v3.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/MCQ_Robot_De3_Q03.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/MCQ_Robot_Rover_De4_Q03.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/MCQ_Robot_Unplugged_De1_Q03_v2.md` | [MCQ] Câu 3 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De4_Q03.md` | [MCQ] Câu 3 (Nhận biết) (Dạng h5P: Nối)
+- `test-bank/IOT_MCQ_Arduino_De2_Q03.md` | [MCQ] Câu 3 (Thông hiểu)
+- `test-bank/MCQ_Robot_Codey_De1_Q03.md` | [MCQ] Câu 3 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q03.md` | [MCQ] Câu 3 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De1_Q03.md` | [MCQ] Câu 3 (Thông hiểu)
+- `test-bank/MCQ_Robot_Unplugged_De1_Q03.md` | [MCQ] Câu 3 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De4_Q30.md` | [MCQ] Câu 30  (Thông hiểu)
+- `test-bank/IOT_MCQ_Yolobit_De2_Q30.md` | [MCQ] Câu 30 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Yolobit_De3_Q30.md` | [MCQ] Câu 30 (Thông hiểu / Vận dụng)
+- `test-bank/IOT_MCQ_Arduino_De1_Q30.md` | [MCQ] Câu 30 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De2_Q30.md` | [MCQ] Câu 30 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De3_Q30.md` | [MCQ] Câu 30 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De4_Q30.md` | [MCQ] Câu 30 (Thông hiểu)
+- `test-bank/IOT_MCQ_Yolobit_De1_Q30.md` | [MCQ] Câu 30 (Thông hiểu)
+- `test-bank/IOT_MCQ_Yolobit_De4_Q30.md` | [MCQ] Câu 30 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q30.md` | [MCQ] Câu 30 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De2_Q30.md` | [MCQ] Câu 30 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De3_Q30.md` | [MCQ] Câu 30 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Canva_De1_Q30.md` | [MCQ] Câu 30 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Wordpress_De1_Q30.md` | [MCQ] Câu 30 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De1_Q30.md` | [MCQ] Câu 30 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De2_Q30.md` | [MCQ] Câu 30 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De3_Q30.md` | [MCQ] Câu 30 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De4_Q30.md` | [MCQ] Câu 30 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De1_Q30.md` | [MCQ] Câu 30 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De2_Q30.md` | [MCQ] Câu 30 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De3_Q30.md` | [MCQ] Câu 30 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De4_Q30.md` | [MCQ] Câu 30 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q30_v2.md` | [MCQ] Câu 30 (Thông hiểu)
+- `test-bank/MCQ_Robot_De3_Q30.md` | [MCQ] Câu 30 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De2_Q30.md` | [MCQ] Câu 30 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De3_Q30.md` | [MCQ] Câu 30 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De4_Q30.md` | [MCQ] Câu 30 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De5_Q30.md` | [MCQ] Câu 30 (Thông hiểu)
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_De1_Q30_v2.md` | [MCQ] Câu 30 (Thông hiểu) (Cũ)
+- `test-bank/IOT_MCQ_Halocode_De2_Q30.md` | [MCQ] Câu 30 (Thông hiểu/ vận dụng)
+- `test-bank/IOT_MCQ_Halocode_De3_Q30.md` | [MCQ] Câu 30 (Thông hiểu/ vận dụng)
+- `test-bank/IOT_MCQ_Halocode_De4_Q30.md` | [MCQ] Câu 30 (Thông hiểu/ vận dụng)
+- `test-bank/MCQ_Robot_Codey_De2_Q30.md` | [MCQ] Câu 30 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_Robot_Codey_De4_Q30.md` | [MCQ] Câu 30 (Thông hiểu/Vận dụng)
+- `test-bank/MCQ_Robot_Codey_De1_Q30.md` | [MCQ] Câu 30:
+- `test-bank/MCQ_Robot_De1_Q30.md` | [MCQ] Câu 30:
+- `test-bank/NEEDS_REVIEW_MCQ_IOT_Arduino_De1_Q30_v2.md` | [MCQ] Câu 30: Yêu cầu lập trình cho cảm biến mưa, động cơ servo và các đèn Led như sau:
+- `test-bank/IOT_MCQ_Halocode_De1_Q31.md` | [MCQ] Câu 31 (Nhận biết) (Đề xuất thay cho câu 28)
+- `test-bank/NEEDS_REVIEW_MCQ_IOT_Arduino_De1_Q32.md` | [MCQ] Câu 32  (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De1_Q33.md` | [MCQ] Câu 33 (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De1_Q34.md` | [MCQ] Câu 34 (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De1_Q35.md` | [MCQ] Câu 35 (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De1_Q36.md` | [MCQ] Câu 36 (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De1_Q37.md` | [MCQ] Câu 37 (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De1_Q38.md` | [MCQ] Câu 38 (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De1_Q39.md` | [MCQ] Câu 39 (Nhận biết)
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_De1_Q03.md` | [MCQ] Câu 3:
+- `test-bank/MCQ_Robot_Codey_De4_Q03.md` | [MCQ] Câu 3: (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De2_Q04.md` | [MCQ] Câu 4  (Nhận biết)
+- `test-bank/MCQ_Robot_Codey_De3_Q04.md` | [MCQ] Câu 4  (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De1_Q04.md` | [MCQ] Câu 4 (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De2_Q04.md` | [MCQ] Câu 4 (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De3_Q04.md` | [MCQ] Câu 4 (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De4_Q04.md` | [MCQ] Câu 4 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De1_Q04.md` | [MCQ] Câu 4 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De2_Q04.md` | [MCQ] Câu 4 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De3_Q04.md` | [MCQ] Câu 4 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De4_Q04.md` | [MCQ] Câu 4 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De1_Q04.md` | [MCQ] Câu 4 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De2_Q04.md` | [MCQ] Câu 4 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De3_Q04.md` | [MCQ] Câu 4 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De4_Q04.md` | [MCQ] Câu 4 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De5_Q04.md` | [MCQ] Câu 4 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q04_v2.md` | [MCQ] Câu 4 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De3_Q04.md` | [MCQ] Câu 4 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De4_Q04.md` | [MCQ] Câu 4 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Canva_De1_Q04.md` | [MCQ] Câu 4 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De1_Q04.md` | [MCQ] Câu 4 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De2_Q04.md` | [MCQ] Câu 4 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De3_Q04.md` | [MCQ] Câu 4 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De4_Q04.md` | [MCQ] Câu 4 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De2_Q04.md` | [MCQ] Câu 4 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De3_Q04.md` | [MCQ] Câu 4 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De4_Q04.md` | [MCQ] Câu 4 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De1_Q04.md` | [MCQ] Câu 4 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De2_Q04.md` | [MCQ] Câu 4 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De2_Q04_v2.md` | [MCQ] Câu 4 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De3_Q04.md` | [MCQ] Câu 4 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De3_Q04_v2.md` | [MCQ] Câu 4 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De4_Q04.md` | [MCQ] Câu 4 (Nhận biết)
+- `test-bank/MCQ_Robot_Codey_De2_Q04.md` | [MCQ] Câu 4 (Nhận biết)
+- `test-bank/MCQ_Robot_De1_Q04.md` | [MCQ] Câu 4 (Nhận biết)
+- `test-bank/MCQ_Robot_De2_Q04.md` | [MCQ] Câu 4 (Nhận biết)
+- `test-bank/MCQ_Robot_De3_Q04.md` | [MCQ] Câu 4 (Nhận biết)
+- `test-bank/MCQ_Robot_Unplugged_De1_Q04.md` | [MCQ] Câu 4 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q04.md` | [MCQ] Câu 4 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Wordpress_De1_Q04.md` | [MCQ] Câu 4 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De1_Q04.md` | [MCQ] Câu 4 (Thông hiểu)
+- `test-bank/MCQ_Robot_Codey_De1_Q04.md` | [MCQ] Câu 4 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q04_v2.md` | [MCQ] Câu 4 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q04_v3.md` | [MCQ] Câu 4 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De1_Q04.md` | [MCQ] Câu 4 (Thông hiểu)
+- `test-bank/MCQ_Robot_Unplugged_De1_Q04_v2.md` | [MCQ] Câu 4 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De4_Q04_v2.md` | [MCQ] Câu 4 (Thông hiểu/ Vận dụng)
+- `test-bank/IOT_MCQ_Arduino_De1_Q41.md` | [MCQ] Câu 41 (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De1_Q42.md` | [MCQ] Câu 42 (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De1_Q43.md` | [MCQ] Câu 43 (Hiểu)
+- `test-bank/NEEDS_REVIEW_MCQ_IOT_Arduino_De1_Q44.md` | [MCQ] Câu 44 (Hiểu)
+- `test-bank/IOT_MCQ_Arduino_De1_Q45.md` | [MCQ] Câu 45 (Vận dụng)
+- `test-bank/IOT_MCQ_Arduino_De1_Q46.md` | [MCQ] Câu 46 (Hiểu)
+- `test-bank/IOT_MCQ_Arduino_De1_Q47.md` | [MCQ] Câu 47 (Vận dụng)
+- `test-bank/IOT_MCQ_Arduino_De1_Q48.md` | [MCQ] Câu 48 (Hiểu)
+- `test-bank/IOT_MCQ_Arduino_De1_Q49.md` | [MCQ] Câu 49 (Vận dụng)
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_Codey_De1_Q04.md` | [MCQ] Câu 4:
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_De1_Q04.md` | [MCQ] Câu 4:
+- `test-bank/MCQ_Robot_Codey_De4_Q04.md` | [MCQ] Câu 4: (Nhận biết)
+- `test-bank/MCQ_Robot_Codey_De3_Q05.md` | [MCQ] Câu 5  (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De3_Q05.md` | [MCQ] Câu 5 (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De4_Q05.md` | [MCQ] Câu 5 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De2_Q05.md` | [MCQ] Câu 5 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De3_Q05.md` | [MCQ] Câu 5 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De4_Q05.md` | [MCQ] Câu 5 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De1_Q05.md` | [MCQ] Câu 5 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De2_Q05.md` | [MCQ] Câu 5 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De3_Q05.md` | [MCQ] Câu 5 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De4_Q05.md` | [MCQ] Câu 5 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q05.md` | [MCQ] Câu 5 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De2_Q05.md` | [MCQ] Câu 5 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De3_Q05.md` | [MCQ] Câu 5 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De4_Q05.md` | [MCQ] Câu 5 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Canva_De1_Q05.md` | [MCQ] Câu 5 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De1_Q05.md` | [MCQ] Câu 5 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De2_Q05.md` | [MCQ] Câu 5 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De3_Q05.md` | [MCQ] Câu 5 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De4_Q05.md` | [MCQ] Câu 5 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De1_Q05.md` | [MCQ] Câu 5 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De2_Q05.md` | [MCQ] Câu 5 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De3_Q05.md` | [MCQ] Câu 5 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De4_Q05.md` | [MCQ] Câu 5 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De1_Q05.md` | [MCQ] Câu 5 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De2_Q05.md` | [MCQ] Câu 5 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De3_Q05.md` | [MCQ] Câu 5 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De4_Q05.md` | [MCQ] Câu 5 (Nhận biết)
+- `test-bank/MCQ_Robot_Codey_De2_Q05.md` | [MCQ] Câu 5 (Nhận biết)
+- `test-bank/MCQ_Robot_Codey_De4_Q05.md` | [MCQ] Câu 5 (Nhận biết)
+- `test-bank/MCQ_Robot_De1_Q05_v2.md` | [MCQ] Câu 5 (Nhận biết)
+- `test-bank/MCQ_Robot_De2_Q05.md` | [MCQ] Câu 5 (Nhận biết)
+- `test-bank/MCQ_Robot_De3_Q05.md` | [MCQ] Câu 5 (Nhận biết)
+- `test-bank/MCQ_Robot_Rover_De1_Q05.md` | [MCQ] Câu 5 (Nhận biết)
+- `test-bank/MCQ_Robot_Rover_De4_Q05.md` | [MCQ] Câu 5 (Nhận biết)
+- `test-bank/MCQ_Robot_Rover_De5_Q05.md` | [MCQ] Câu 5 (Nhận biết)
+- `test-bank/MCQ_Robot_Unplugged_De1_Q05.md` | [MCQ] Câu 5 (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De1_Q05.md` | [MCQ] Câu 5 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De2_Q05.md` | [MCQ] Câu 5 (Thông hiểu)
+- `test-bank/IOT_MCQ_Halocode_De1_Q05.md` | [MCQ] Câu 5 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q05_v2.md` | [MCQ] Câu 5 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q05.md` | [MCQ] Câu 5 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q05_v3.md` | [MCQ] Câu 5 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De3_Q05_v2.md` | [MCQ] Câu 5 (Thông hiểu/ Vận dụng)
+- `test-bank/MCQ_KHMT_AI_TH_De4_Q05_v2.md` | [MCQ] Câu 5 (Thông hiểu/ Vận dụng)
+- `test-bank/MCQ_Robot_Codey_De1_Q05.md` | [MCQ] Câu 5 (Thông hểu)
+- `test-bank/NEEDS_REVIEW_MCQ_DESIGN_Wordpress_De1_Q05.md` | [MCQ] Câu 5 => hỏi tổng quát hơn về các tên miền khác, chứ không hỏi chi tiết 1 cái
+- `test-bank/IOT_MCQ_Arduino_De1_Q50.md` | [MCQ] Câu 50 (Hiểu)
+- `test-bank/IOT_MCQ_Arduino_De1_Q51.md` | [MCQ] Câu 51 (Vận dụng)
+- `test-bank/IOT_MCQ_Arduino_De1_Q52.md` | [MCQ] Câu 52 (Vận dụng)
+- `test-bank/IOT_MCQ_Arduino_De1_Q53.md` | [MCQ] Câu 53 (Hiểu)
+- `test-bank/IOT_MCQ_Arduino_De1_Q54.md` | [MCQ] Câu 54 (Hiểu)
+- `test-bank/IOT_MCQ_Arduino_De1_Q56.md` | [MCQ] Câu 56 (Hiểu)
+- `test-bank/IOT_MCQ_Arduino_De1_Q57.md` | [MCQ] Câu 57 (Hiểu)
+- `test-bank/IOT_MCQ_Arduino_De1_Q58.md` | [MCQ] Câu 58 (Hiểu)
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_Codey_De1_Q05.md` | [MCQ] Câu 5:
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_De1_Q05.md` | [MCQ] Câu 5:
+- `test-bank/MCQ_Robot_Codey_De3_Q06.md` | [MCQ] Câu 6  (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De3_Q06.md` | [MCQ] Câu 6 (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De4_Q06.md` | [MCQ] Câu 6 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De2_Q06.md` | [MCQ] Câu 6 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De3_Q06.md` | [MCQ] Câu 6 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De1_Q06.md` | [MCQ] Câu 6 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De2_Q06.md` | [MCQ] Câu 6 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De3_Q06.md` | [MCQ] Câu 6 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De2_Q06.md` | [MCQ] Câu 6 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De3_Q06.md` | [MCQ] Câu 6 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De4_Q06.md` | [MCQ] Câu 6 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Canva_De1_Q06.md` | [MCQ] Câu 6 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De1_Q06.md` | [MCQ] Câu 6 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De2_Q06.md` | [MCQ] Câu 6 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De3_Q06.md` | [MCQ] Câu 6 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De4_Q06.md` | [MCQ] Câu 6 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Wordpress_De1_Q06.md` | [MCQ] Câu 6 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De1_Q06.md` | [MCQ] Câu 6 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De2_Q06.md` | [MCQ] Câu 6 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De3_Q06.md` | [MCQ] Câu 6 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De4_Q06.md` | [MCQ] Câu 6 (Nhận biết)
+- `test-bank/MCQ_Robot_Codey_De2_Q06.md` | [MCQ] Câu 6 (Nhận biết)
+- `test-bank/MCQ_Robot_Codey_De4_Q06.md` | [MCQ] Câu 6 (Nhận biết)
+- `test-bank/MCQ_Robot_De1_Q06_v3.md` | [MCQ] Câu 6 (Nhận biết)
+- `test-bank/MCQ_Robot_De1_Q06_v4.md` | [MCQ] Câu 6 (Nhận biết)
+- `test-bank/MCQ_Robot_De2_Q06.md` | [MCQ] Câu 6 (Nhận biết)
+- `test-bank/MCQ_Robot_De3_Q06.md` | [MCQ] Câu 6 (Nhận biết)
+- `test-bank/MCQ_Robot_Rover_De2_Q06.md` | [MCQ] Câu 6 (Nhận biết)
+- `test-bank/MCQ_Robot_Rover_De4_Q06.md` | [MCQ] Câu 6 (Nhận biết)
+- `test-bank/MCQ_Robot_Rover_De5_Q06.md` | [MCQ] Câu 6 (Nhận biết)
+- `test-bank/MCQ_Robot_Unplugged_De1_Q06.md` | [MCQ] Câu 6 (Nhận biết)
+- `test-bank/MCQ_Robot_Unplugged_De1_Q06_v2.md` | [MCQ] Câu 6 (Nhận biết)
+- `test-bank/NEEDS_REVIEW_MCQ_IOT_Arduino_De2_Q06.md` | [MCQ] Câu 6 (Nhận biết)
+- `test-bank/NEEDS_REVIEW_MCQ_IOT_Arduino_De4_Q06.md` | [MCQ] Câu 6 (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De1_Q06.md` | [MCQ] Câu 6 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De2_Q06.md` | [MCQ] Câu 6 (Thông hiểu)
+- `test-bank/IOT_MCQ_Halocode_De1_Q06.md` | [MCQ] Câu 6 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q06.md` | [MCQ] Câu 6 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De1_Q06.md` | [MCQ] Câu 6 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De2_Q06.md` | [MCQ] Câu 6 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De3_Q06.md` | [MCQ] Câu 6 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De4_Q06.md` | [MCQ] Câu 6 (Thông hiểu)
+- `test-bank/MCQ_Robot_Codey_De1_Q06.md` | [MCQ] Câu 6 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q06.md` | [MCQ] Câu 6 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De1_Q06.md` | [MCQ] Câu 6 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q06_v2.md` | [MCQ] Câu 6 (Thông hiểu) (Chỉnh sửa) (Đáp án)
+- `test-bank/MCQ_KHMT_AI_TH_De2_Q06_v2.md` | [MCQ] Câu 6 (Thông hiểu/ Vận dụng)
+- `test-bank/MCQ_KHMT_AI_TH_De3_Q06_v2.md` | [MCQ] Câu 6 (Thông hiểu/ Vận dụng)
+- `test-bank/MCQ_KHMT_AI_TH_De4_Q06_v2.md` | [MCQ] Câu 6 (Thông hiểu/ Vận dụng)
+- `test-bank/IOT_MCQ_Arduino_De1_Q60.md` | [MCQ] Câu 60 (Hiểu)
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_Codey_De1_Q06.md` | [MCQ] Câu 6:
+- `test-bank/NEEDS_REVIEW_MCQ_IOT_Arduino_De1_Q06.md` | [MCQ] Câu 6: Một chiếc đèn Led bị gãy chân nên không thể phân biệt các chân của đèn Led bằng chiều dài được. Nếu quan sát bằng cách nhìn bên trong đèn thì phải phân biệt như thế nào?
+- `test-bank/IOT_MCQ_Arduino_De3_Q07.md` | [MCQ] Câu 7 (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De4_Q07.md` | [MCQ] Câu 7 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De2_Q07.md` | [MCQ] Câu 7 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De3_Q07.md` | [MCQ] Câu 7 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De4_Q07.md` | [MCQ] Câu 7 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De2_Q07.md` | [MCQ] Câu 7 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De3_Q07.md` | [MCQ] Câu 7 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De2_Q07.md` | [MCQ] Câu 7 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De3_Q07.md` | [MCQ] Câu 7 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De4_Q07.md` | [MCQ] Câu 7 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Canva_De1_Q07.md` | [MCQ] Câu 7 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De1_Q07.md` | [MCQ] Câu 7 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De2_Q07.md` | [MCQ] Câu 7 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De3_Q07.md` | [MCQ] Câu 7 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De4_Q07.md` | [MCQ] Câu 7 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De2_Q07.md` | [MCQ] Câu 7 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De3_Q07.md` | [MCQ] Câu 7 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De1_Q07.md` | [MCQ] Câu 7 (Nhận biết)
+- `test-bank/MCQ_Robot_Codey_De1_Q07.md` | [MCQ] Câu 7 (Nhận biết)
+- `test-bank/MCQ_Robot_Codey_De2_Q07.md` | [MCQ] Câu 7 (Nhận biết)
+- `test-bank/MCQ_Robot_Codey_De4_Q07.md` | [MCQ] Câu 7 (Nhận biết)
+- `test-bank/MCQ_Robot_De1_Q07.md` | [MCQ] Câu 7 (Nhận biết)
+- `test-bank/MCQ_Robot_De1_Q07_v4.md` | [MCQ] Câu 7 (Nhận biết)
+- `test-bank/MCQ_Robot_De2_Q07.md` | [MCQ] Câu 7 (Nhận biết)
+- `test-bank/MCQ_Robot_De3_Q07.md` | [MCQ] Câu 7 (Nhận biết)
+- `test-bank/MCQ_Robot_Rover_De2_Q07.md` | [MCQ] Câu 7 (Nhận biết)
+- `test-bank/MCQ_Robot_Rover_De3_Q07.md` | [MCQ] Câu 7 (Nhận biết)
+- `test-bank/MCQ_Robot_Rover_De4_Q07.md` | [MCQ] Câu 7 (Nhận biết)
+- `test-bank/MCQ_Robot_Rover_De5_Q07.md` | [MCQ] Câu 7 (Nhận biết)
+- `test-bank/MCQ_Robot_Unplugged_De1_Q07.md` | [MCQ] Câu 7 (Nhận biết)
+- `test-bank/NEEDS_REVIEW_MCQ_KHMT_AI_THCS_De4_Q07.md` | [MCQ] Câu 7 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q07_v2.md` | [MCQ] Câu 7 (Nhận biết) (Dạng h5P: Trắc nghiệm nhiều đáp án)
+- `test-bank/IOT_MCQ_Arduino_De1_Q07.md` | [MCQ] Câu 7 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De2_Q07.md` | [MCQ] Câu 7 (Thông hiểu)
+- `test-bank/IOT_MCQ_Halocode_De1_Q07.md` | [MCQ] Câu 7 (Thông hiểu)
+- `test-bank/IOT_MCQ_Yolobit_De1_Q07.md` | [MCQ] Câu 7 (Thông hiểu)
+- `test-bank/IOT_MCQ_Yolobit_De4_Q07.md` | [MCQ] Câu 7 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q07.md` | [MCQ] Câu 7 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Wordpress_De1_Q07.md` | [MCQ] Câu 7 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De1_Q07.md` | [MCQ] Câu 7 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De2_Q07.md` | [MCQ] Câu 7 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De3_Q07.md` | [MCQ] Câu 7 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De4_Q07.md` | [MCQ] Câu 7 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q07_v2.md` | [MCQ] Câu 7 (Thông hiểu)
+- `test-bank/MCQ_Robot_Unplugged_De1_Q07_v2.md` | [MCQ] Câu 7 (Thông hiểu)
+- `test-bank/NEEDS_REVIEW_MCQ_IOT_De1_Q07.md` | [MCQ] Câu 7 (Thông hiểu)
+- `test-bank/NEEDS_REVIEW_MCQ_IOT_De1_Q07_v2.md` | [MCQ] Câu 7 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De2_Q07_v2.md` | [MCQ] Câu 7 (Thông hiểu/ Vận dụng)
+- `test-bank/MCQ_KHMT_AI_TH_De3_Q07_v2.md` | [MCQ] Câu 7 (Thông hiểu/ Vận dụng)
+- `test-bank/MCQ_KHMT_AI_TH_De4_Q07_v2.md` | [MCQ] Câu 7 (Thông hiểu/ Vận dụng)
+- `test-bank/MCQ_Robot_De1_Q07_v3.md` | [MCQ] Câu 7:
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_Codey_De1_Q07.md` | [MCQ] Câu 7:
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_Codey_De3_Q07.md` | [MCQ] Câu 7: (Nhận biết)
+- `test-bank/MCQ_Robot_Codey_De3_Q08.md` | [MCQ] Câu 8  (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De3_Q08.md` | [MCQ] Câu 8 (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De4_Q08.md` | [MCQ] Câu 8 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De2_Q08.md` | [MCQ] Câu 8 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De3_Q08.md` | [MCQ] Câu 8 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De4_Q08.md` | [MCQ] Câu 8 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De2_Q08.md` | [MCQ] Câu 8 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De3_Q08.md` | [MCQ] Câu 8 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De4_Q08.md` | [MCQ] Câu 8 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q08_v2.md` | [MCQ] Câu 8 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De2_Q08.md` | [MCQ] Câu 8 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De3_Q08.md` | [MCQ] Câu 8 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De4_Q08.md` | [MCQ] Câu 8 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Canva_De1_Q08.md` | [MCQ] Câu 8 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De1_Q08.md` | [MCQ] Câu 8 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De2_Q08.md` | [MCQ] Câu 8 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Wordpress_De1_Q08.md` | [MCQ] Câu 8 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De2_Q08.md` | [MCQ] Câu 8 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De3_Q08.md` | [MCQ] Câu 8 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_TH_De4_Q08.md` | [MCQ] Câu 8 (Nhận biết)
+- `test-bank/MCQ_Robot_Codey_De2_Q08.md` | [MCQ] Câu 8 (Nhận biết)
+- `test-bank/MCQ_Robot_De1_Q08.md` | [MCQ] Câu 8 (Nhận biết)
+- `test-bank/MCQ_Robot_De1_Q08_v2.md` | [MCQ] Câu 8 (Nhận biết)
+- `test-bank/MCQ_Robot_De1_Q08_v3.md` | [MCQ] Câu 8 (Nhận biết)
+- `test-bank/MCQ_Robot_De2_Q08.md` | [MCQ] Câu 8 (Nhận biết)
+- `test-bank/MCQ_Robot_De3_Q08.md` | [MCQ] Câu 8 (Nhận biết)
+- `test-bank/MCQ_Robot_Rover_De1_Q08.md` | [MCQ] Câu 8 (Nhận biết)
+- `test-bank/MCQ_Robot_Rover_De3_Q08.md` | [MCQ] Câu 8 (Nhận biết)
+- `test-bank/MCQ_Robot_Rover_De4_Q08.md` | [MCQ] Câu 8 (Nhận biết)
+- `test-bank/MCQ_Robot_Rover_De5_Q08.md` | [MCQ] Câu 8 (Nhận biết)
+- `test-bank/MCQ_Robot_Unplugged_De1_Q08_v2.md` | [MCQ] Câu 8 (Nhận biết)
+- `test-bank/NEEDS_REVIEW_MCQ_DESIGN_Maker_Empire_De3_Q08.md` | [MCQ] Câu 8 (Nhận biết)
+- `test-bank/NEEDS_REVIEW_MCQ_DESIGN_Maker_Empire_De4_Q08.md` | [MCQ] Câu 8 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q08.md` | [MCQ] Câu 8 (Nhận biết) (Mới)
+- `test-bank/IOT_MCQ_Arduino_De1_Q08.md` | [MCQ] Câu 8 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De2_Q08.md` | [MCQ] Câu 8 (Thông hiểu)
+- `test-bank/IOT_MCQ_Halocode_De1_Q08.md` | [MCQ] Câu 8 (Thông hiểu)
+- `test-bank/IOT_MCQ_Yolobit_De1_Q08.md` | [MCQ] Câu 8 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De1_Q08.md` | [MCQ] Câu 8 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De2_Q08.md` | [MCQ] Câu 8 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De3_Q08.md` | [MCQ] Câu 8 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De4_Q08.md` | [MCQ] Câu 8 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De1_Q08.md` | [MCQ] Câu 8 (Thông hiểu)
+- `test-bank/MCQ_Robot_Codey_De1_Q08.md` | [MCQ] Câu 8 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De2_Q08.md` | [MCQ] Câu 8 (Thông hiểu)
+- `test-bank/MCQ_Robot_Unplugged_De1_Q08.md` | [MCQ] Câu 8 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De3_Q08_v2.md` | [MCQ] Câu 8 (Thông hiểu/ Vận dụng)
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_Codey_De1_Q08.md` | [MCQ] Câu 8:
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_De1_Q08.md` | [MCQ] Câu 8:
+- `test-bank/MCQ_Robot_Codey_De4_Q08.md` | [MCQ] Câu 8: (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De1_Q09.md` | [MCQ] Câu 9 (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De2_Q09.md` | [MCQ] Câu 9 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De2_Q09.md` | [MCQ] Câu 9 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De3_Q09.md` | [MCQ] Câu 9 (Nhận biết)
+- `test-bank/IOT_MCQ_Halocode_De4_Q09.md` | [MCQ] Câu 9 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De1_Q09.md` | [MCQ] Câu 9 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De3_Q09.md` | [MCQ] Câu 9 (Nhận biết)
+- `test-bank/IOT_MCQ_Yolobit_De4_Q09.md` | [MCQ] Câu 9 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q09.md` | [MCQ] Câu 9 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De1_Q09_v2.md` | [MCQ] Câu 9 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De2_Q09.md` | [MCQ] Câu 9 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De3_Q09.md` | [MCQ] Câu 9 (Nhận biết)
+- `test-bank/MCQ_DESIGN_3D_Tinkercad_De4_Q09.md` | [MCQ] Câu 9 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Canva_De1_Q09.md` | [MCQ] Câu 9 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De1_Q09.md` | [MCQ] Câu 9 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De3_Q09.md` | [MCQ] Câu 9 (Nhận biết)
+- `test-bank/MCQ_DESIGN_Maker_Empire_De4_Q09.md` | [MCQ] Câu 9 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De2_Q09.md` | [MCQ] Câu 9 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De3_Q09.md` | [MCQ] Câu 9 (Nhận biết)
+- `test-bank/MCQ_KHMT_AI_THCS_De4_Q09.md` | [MCQ] Câu 9 (Nhận biết)
+- `test-bank/MCQ_Robot_Codey_De2_Q09.md` | [MCQ] Câu 9 (Nhận biết)
+- `test-bank/MCQ_Robot_De1_Q09_v3.md` | [MCQ] Câu 9 (Nhận biết)
+- `test-bank/MCQ_Robot_De1_Q09_v4.md` | [MCQ] Câu 9 (Nhận biết)
+- `test-bank/MCQ_Robot_De2_Q09.md` | [MCQ] Câu 9 (Nhận biết)
+- `test-bank/MCQ_Robot_De3_Q09.md` | [MCQ] Câu 9 (Nhận biết)
+- `test-bank/MCQ_Robot_Unplugged_De1_Q09.md` | [MCQ] Câu 9 (Nhận biết)
+- `test-bank/MCQ_Robot_Unplugged_De1_Q09_v2.md` | [MCQ] Câu 9 (Nhận biết)
+- `test-bank/NEEDS_REVIEW_MCQ_DESIGN_Maker_Empire_De2_Q09.md` | [MCQ] Câu 9 (Nhận biết)
+- `test-bank/IOT_MCQ_Arduino_De3_Q09.md` | [MCQ] Câu 9 (Thông hiểu)
+- `test-bank/IOT_MCQ_Arduino_De4_Q09.md` | [MCQ] Câu 9 (Thông hiểu)
+- `test-bank/IOT_MCQ_Halocode_De1_Q09.md` | [MCQ] Câu 9 (Thông hiểu)
+- `test-bank/IOT_MCQ_Yolobit_De2_Q09.md` | [MCQ] Câu 9 (Thông hiểu)
+- `test-bank/MCQ_DESIGN_Wordpress_De1_Q09.md` | [MCQ] Câu 9 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_THCS_De1_Q09.md` | [MCQ] Câu 9 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De1_Q09.md` | [MCQ] Câu 9 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De2_Q09.md` | [MCQ] Câu 9 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De3_Q09.md` | [MCQ] Câu 9 (Thông hiểu)
+- `test-bank/MCQ_KHMT_AI_TH_De4_Q09.md` | [MCQ] Câu 9 (Thông hiểu)
+- `test-bank/MCQ_Robot_Codey_De1_Q09.md` | [MCQ] Câu 9 (Thông hiểu)
+- `test-bank/MCQ_Robot_De1_Q09_v2.md` | [MCQ] Câu 9 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De1_Q09.md` | [MCQ] Câu 9 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De3_Q09.md` | [MCQ] Câu 9 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De4_Q09.md` | [MCQ] Câu 9 (Thông hiểu)
+- `test-bank/MCQ_Robot_Rover_De5_Q09.md` | [MCQ] Câu 9 (Thông hiểu)
+- `test-bank/MCQ_Robot_Codey_De1_Q09_v2.md` | [MCQ] Câu 9:
+- `test-bank/MCQ_Robot_De1_Q09.md` | [MCQ] Câu 9:
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_Codey_De3_Q09.md` | [MCQ] Câu 9: (Nhận biết)
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_Codey_De4_Q09.md` | [MCQ] Câu 9: (Nhận biết)
+- `test-bank/NON_MCQ_IOT_Arduino_De4_Q01.md` | [NON_MCQ] Câu 1 (Nhận biết)
+- `test-bank/NON_MCQ_IOT_De1_Q01_v5.md` | [NON_MCQ] Câu 1 (Nhận biết)
+- `test-bank/NON_MCQ_IOT_De4_Q01.md` | [NON_MCQ] Câu 1 (Nhận biết)
+- `test-bank/NON_MCQ_IOT_De4_Q01_v2.md` | [NON_MCQ] Câu 1 (Nhận biết)
+- `test-bank/NON_MCQ_IOT_YoloBit_De1_Q01.md` | [NON_MCQ] Câu 1 (Nhận biết)
+- `test-bank/NON_MCQ_IOT_YoloBit_De4_Q01.md` | [NON_MCQ] Câu 1 (Nhận biết)
+- `test-bank/NON_MCQ_KHMT_AI_THCS_De1_Q01.md` | [NON_MCQ] Câu 1 (Nhận biết)
+- `test-bank/NON_MCQ_Robot_Codey_De2_Q01.md` | [NON_MCQ] Câu 1 (Nhận biết)
+- `test-bank/NON_MCQ_Robot_Codey_De4_Q01.md` | [NON_MCQ] Câu 1 (Nhận biết)
+- `test-bank/NON_MCQ_Robot_De3_Q01.md` | [NON_MCQ] Câu 1 (Nhận biết)
+- `test-bank/NON_MCQ_IOT_Arduino_De1_Q10.md` | [NON_MCQ] Câu 10 (Nhận biết)
+- `test-bank/NON_MCQ_IOT_Arduino_De1_Q10_v2.md` | [NON_MCQ] Câu 10 (Nhận biết)
+- `test-bank/NON_MCQ_IOT_Arduino_De3_Q10.md` | [NON_MCQ] Câu 10 (Nhận biết)
+- `test-bank/NON_MCQ_IOT_De1_Q10_v4.md` | [NON_MCQ] Câu 10 (Nhận biết)
+- `test-bank/NON_MCQ_IOT_De1_Q10_v7.md` | [NON_MCQ] Câu 10 (Nhận biết)
+- `test-bank/NON_MCQ_IOT_De3_Q10_v3.md` | [NON_MCQ] Câu 10 (Nhận biết)
+- `test-bank/NON_MCQ_Robot_Unplugged_De1_Q10.md` | [NON_MCQ] Câu 10 (Thông hiểu)
+- `test-bank/NON_MCQ_DESIGN_3D_Tinkercad_De3_Q11.md` | [NON_MCQ] Câu 11 (Nhận biết)
+- `test-bank/NON_MCQ_IOT_De4_Q11.md` | [NON_MCQ] Câu 11 (Nhận biết)
+- `test-bank/NON_MCQ_IOT_YoloBit_De4_Q11.md` | [NON_MCQ] Câu 11 (Nhận biết)
+- `test-bank/NON_MCQ_IOT_AI_Arduino_De3_Q11.md` | [NON_MCQ] Câu 11 (Thông hiểu)
+- `test-bank/NON_MCQ_IOT_De3_Q11_v3.md` | [NON_MCQ] Câu 11 (Thông hiểu)
+- `test-bank/NON_MCQ_KHMT_AI_THCS_De1_Q11.md` | [NON_MCQ] Câu 11 (Thông hiểu)
+- `test-bank/NON_MCQ_IOT_AI_Arduino_De1_Q12.md` | [NON_MCQ] Câu 12 (Thông hiểu)
+- `test-bank/NON_MCQ_IOT_De1_Q12_v7.md` | [NON_MCQ] Câu 12 (Thông hiểu)
+- `test-bank/NON_MCQ_IOT_AI_Arduino_De2_Q13.md` | [NON_MCQ] Câu 13 (Thông hiểu)
+- `test-bank/NON_MCQ_IOT_De2_Q13_v3.md` | [NON_MCQ] Câu 13 (Thông hiểu)
+- `test-bank/NON_MCQ_DESIGN_Maker_Empire_De2_Q14.md` | [NON_MCQ] Câu 14 (Thông hiểu)
+- `test-bank/NON_MCQ_Robot_Rover_De4_Q14.md` | [NON_MCQ] Câu 14 (Thông hiểu)
+- `test-bank/NON_MCQ_Robot_Rover_De5_Q14.md` | [NON_MCQ] Câu 14 (Thông hiểu)
+- `test-bank/NON_MCQ_DESIGN_Maker_Empire_De1_Q17.md` | [NON_MCQ] Câu 17 (Thông hiểu)
+- `test-bank/NON_MCQ_KHMT_AI_TH_De4_Q18.md` | [NON_MCQ] Câu 18 (Thông hiểu)
+- `test-bank/NON_MCQ_DESIGN_Maker_Empire_De3_Q19.md` | [NON_MCQ] Câu 19 (Thông hiểu)
+- `test-bank/NON_MCQ_DESIGN_Maker_Empire_De4_Q19.md` | [NON_MCQ] Câu 19 (Thông hiểu)
+- `test-bank/NON_MCQ_KHMT_AI_TH_De2_Q19.md` | [NON_MCQ] Câu 19 (Thông hiểu)
+- `test-bank/NON_MCQ_KHMT_AI_TH_De3_Q19.md` | [NON_MCQ] Câu 19 (Thông hiểu)
+- `test-bank/NON_MCQ_Robot_Codey_De1_Q01.md` | [NON_MCQ] Câu 1:
+- `test-bank/NON_MCQ_DESIGN_3D_Tinkercad_De4_Q02.md` | [NON_MCQ] Câu 2 (Nhận biết)
+- `test-bank/NON_MCQ_IOT_AI_Arduino_De2_Q02.md` | [NON_MCQ] Câu 2 (Nhận biết)
+- `test-bank/NON_MCQ_IOT_AI_Arduino_De3_Q02.md` | [NON_MCQ] Câu 2 (Nhận biết)
+- `test-bank/NON_MCQ_IOT_De1_Q02_v7.md` | [NON_MCQ] Câu 2 (Nhận biết)
+- `test-bank/NON_MCQ_IOT_De2_Q02_v2.md` | [NON_MCQ] Câu 2 (Nhận biết)
+- `test-bank/NON_MCQ_IOT_De3_Q02_v3.md` | [NON_MCQ] Câu 2 (Nhận biết)
+- `test-bank/NON_MCQ_IOT_YoloBit_De1_Q02.md` | [NON_MCQ] Câu 2 (Nhận biết)
+- `test-bank/NON_MCQ_Robot_De3_Q02.md` | [NON_MCQ] Câu 2 (Nhận biết)
+- `test-bank/NON_MCQ_IOT_De2_Q23_v3.md` | [NON_MCQ] Câu 23 (Thông hiểu/ vận dụng)
+- `test-bank/NON_MCQ_IOT_Halocode_De2_Q23.md` | [NON_MCQ] Câu 23 (Thông hiểu/ vận dụng)
+- `test-bank/NON_MCQ_IOT_Arduino_De3_Q24.md` | [NON_MCQ] Câu 24 (Thông hiểu)
+- `test-bank/NON_MCQ_IOT_De3_Q24_v4.md` | [NON_MCQ] Câu 24 (Thông hiểu)
+- `test-bank/NON_MCQ_IOT_De2_Q24.md` | [NON_MCQ] Câu 24 (Thông hiểu/ vận dụng)
+- `test-bank/NON_MCQ_IOT_Halocode_De2_Q24.md` | [NON_MCQ] Câu 24 (Thông hiểu/ vận dụng)
+- `test-bank/NON_MCQ_IOT_AI_Arduino_De3_Q25.md` | [NON_MCQ] Câu 25 (Nhận biết)
+- `test-bank/NON_MCQ_IOT_De3_Q25_v4.md` | [NON_MCQ] Câu 25 (Nhận biết)
+- `test-bank/NON_MCQ_KHMT_AI_TH_De3_Q25.md` | [NON_MCQ] Câu 25 (Thông hiểu)
+- `test-bank/NON_MCQ_Robot_Rover_De1_Q25.md` | [NON_MCQ] Câu 25 (Thông hiểu)
+- `test-bank/NON_MCQ_Robot_Rover_De4_Q25.md` | [NON_MCQ] Câu 25 (Thông hiểu)
+- `test-bank/NON_MCQ_IOT_De3_Q25_v2.md` | [NON_MCQ] Câu 25 (Thông hiểu/ vận dụng)
+- `test-bank/NON_MCQ_IOT_Halocode_De3_Q25.md` | [NON_MCQ] Câu 25 (Thông hiểu/ vận dụng)
+- `test-bank/NON_MCQ_IOT_Arduino_De3_Q26.md` | [NON_MCQ] Câu 26 (Thông hiểu)
+- `test-bank/NON_MCQ_IOT_De3_Q26_v3.md` | [NON_MCQ] Câu 26 (Thông hiểu)
+- `test-bank/NON_MCQ_KHMT_AI_TH_De4_Q26.md` | [NON_MCQ] Câu 26 (Thông hiểu)
+- `test-bank/NON_MCQ_KHMT_AI_TH_De3_Q27.md` | [NON_MCQ] Câu 27 (Nhận biết)
+- `test-bank/NON_MCQ_KHMT_AI_TH_De1_Q28.md` | [NON_MCQ] Câu 28 (Nhận biết)
+- `test-bank/NON_MCQ_KHMT_AI_TH_De4_Q28.md` | [NON_MCQ] Câu 28 (Nhận biết)
+- `test-bank/NON_MCQ_DESIGN_Canva_De1_Q28.md` | [NON_MCQ] Câu 28 (Thông hiểu)
+- `test-bank/NON_MCQ_IOT_Arduino_De3_Q28.md` | [NON_MCQ] Câu 28 (Thông hiểu)
+- `test-bank/NON_MCQ_IOT_De3_Q28.md` | [NON_MCQ] Câu 28 (Thông hiểu)
+- `test-bank/NON_MCQ_IOT_Arduino_De4_Q29.md` | [NON_MCQ] Câu 29 (Thông hiểu)
+- `test-bank/NON_MCQ_IOT_De4_Q29_v2.md` | [NON_MCQ] Câu 29 (Thông hiểu)
+- `test-bank/NON_MCQ_Robot_Rover_De5_Q29.md` | [NON_MCQ] Câu 29 (Thông hiểu)
+- `test-bank/NON_MCQ_Robot_De2_Q03.md` | [NON_MCQ] Câu 3 (Nhận biết)
+- `test-bank/NON_MCQ_Robot_De1_Q30.md` | [NON_MCQ] Câu 30 (Thông hiểu)
+- `test-bank/NON_MCQ_Robot_De2_Q30.md` | [NON_MCQ] Câu 30 (Thông hiểu)
+- `test-bank/NON_MCQ_Robot_Codey_De3_Q30.md` | [NON_MCQ] Câu 30 (Thông hiểu/Vận dụng)
+- `test-bank/NON_MCQ_IOT_Arduino_De1_Q30.md` | [NON_MCQ] Câu 30 (Vận dụng)
+- `test-bank/NON_MCQ_IOT_De1_Q30_v3.md` | [NON_MCQ] Câu 30 (Vận dụng)
+- `test-bank/NON_MCQ_IOT_Arduino_De1_Q31.md` | [NON_MCQ] Câu 31 (Nhận biết)
+- `test-bank/NON_MCQ_IOT_De1_Q31_v2.md` | [NON_MCQ] Câu 31 (Nhận biết)
+- `test-bank/NON_MCQ_IOT_De3_Q04_v4.md` | [NON_MCQ] Câu 4 (Nhận biết)
+- `test-bank/NON_MCQ_IOT_YoloBit_De3_Q04.md` | [NON_MCQ] Câu 4 (Nhận biết)
+- `test-bank/NON_MCQ_IOT_Arduino_De1_Q40.md` | [NON_MCQ] Câu 40 (Nhận biết)
+- `test-bank/NON_MCQ_IOT_De1_Q40.md` | [NON_MCQ] Câu 40 (Nhận biết)
+- `test-bank/NON_MCQ_Robot_Unplugged_De1_Q05.md` | [NON_MCQ] Câu 5 (Nhận biết)
+- `test-bank/NON_MCQ_IOT_Arduino_De1_Q55.md` | [NON_MCQ] Câu 55 (Hiểu)
+- `test-bank/NON_MCQ_IOT_De1_Q55.md` | [NON_MCQ] Câu 55 (Hiểu)
+- `test-bank/NON_MCQ_IOT_Arduino_De1_Q59.md` | [NON_MCQ] Câu 59 (Vận dụng)
+- `test-bank/NON_MCQ_IOT_De1_Q59.md` | [NON_MCQ] Câu 59 (Vận dụng)
+- `test-bank/NON_MCQ_IOT_De4_Q06.md` | [NON_MCQ] Câu 6 (Nhận biết)
+- `test-bank/NON_MCQ_IOT_De4_Q06_v2.md` | [NON_MCQ] Câu 6 (Nhận biết)
+- `test-bank/NON_MCQ_IOT_Halocode_De4_Q06.md` | [NON_MCQ] Câu 6 (Nhận biết)
+- `test-bank/NON_MCQ_IOT_YoloBit_De4_Q06.md` | [NON_MCQ] Câu 6 (Nhận biết)
+- `test-bank/NON_MCQ_IOT_Arduino_De1_Q04.md` | Câu 04:  Nối chân tín hiệu digital, pwm, analog
+- `test-bank/KHMT_MCQ_AI_THCS_De1_Q01.md` | Câu 1 - AI_THCS De1
+- `test-bank/KHMT_MCQ_AI_THCS_De2_Q01.md` | Câu 1 - AI_THCS De2
+- `test-bank/KHMT_MCQ_AI_THCS_De3_Q01.md` | Câu 1 - AI_THCS De3
+- `test-bank/KHMT_MCQ_AI_THCS_De4_Q01.md` | Câu 1 - AI_THCS De4
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De1_Q01.md` | Câu 1 - AI_Tieu_hoc De1
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De2_Q01.md` | Câu 1 - AI_Tieu_hoc De2
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De3_Q01.md` | Câu 1 - AI_Tieu_hoc De3
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De4_Q01.md` | Câu 1 - AI_Tieu_hoc De4
+- `test-bank/KHMT_MCQ_KHMT_General_De2_Q01.md` | Câu 1 - KHMT_General De2
+- `test-bank/KHMT_MCQ_Python_De1_Q01.md` | Câu 1 - Python De1
+- `test-bank/KHMT_MCQ_Scratch_De1_Q01.md` | Câu 1 - Scratch De1
+- `test-bank/KHMT_MCQ_Scratch_De2_Q01.md` | Câu 1 - Scratch De2
+- `test-bank/KHMT_MCQ_Scratch_De3_Q01.md` | Câu 1 - Scratch De3
+- `test-bank/KHMT_MCQ_Scratch_De4_Q01.md` | Câu 1 - Scratch De4
+- `test-bank/KHMT_MCQ_Scratch_Jr_De1_Q01.md` | Câu 1 - Scratch_Jr De1
+- `test-bank/KHMT_MCQ_Tynker_De1_Q01.md` | Câu 1 - Tynker De1
+- `test-bank/KHMT_MCQ_Tynker_De2_Q01.md` | Câu 1 - Tynker De2
+- `test-bank/KHMT_MCQ_Tynker_De3_Q01.md` | Câu 1 - Tynker De3
+- `test-bank/KHMT_MCQ_Tynker_De4_Q01.md` | Câu 1 - Tynker De4
+- `test-bank/KHMT_MCQ_AI_THCS_De1_Q10.md` | Câu 10 - AI_THCS De1
+- `test-bank/KHMT_MCQ_AI_THCS_De2_Q10.md` | Câu 10 - AI_THCS De2
+- `test-bank/KHMT_MCQ_AI_THCS_De3_Q10.md` | Câu 10 - AI_THCS De3
+- `test-bank/KHMT_MCQ_AI_THCS_De4_Q10.md` | Câu 10 - AI_THCS De4
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De1_Q10.md` | Câu 10 - AI_Tieu_hoc De1
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De2_Q10.md` | Câu 10 - AI_Tieu_hoc De2
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De3_Q10.md` | Câu 10 - AI_Tieu_hoc De3
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De4_Q10.md` | Câu 10 - AI_Tieu_hoc De4
+- `test-bank/KHMT_MCQ_KHMT_General_De2_Q10.md` | Câu 10 - KHMT_General De2
+- `test-bank/KHMT_MCQ_Python_De1_Q10.md` | Câu 10 - Python De1
+- `test-bank/KHMT_MCQ_Scratch_De1_Q10.md` | Câu 10 - Scratch De1
+- `test-bank/KHMT_MCQ_Scratch_De2_Q10.md` | Câu 10 - Scratch De2
+- `test-bank/KHMT_MCQ_Scratch_De3_Q10.md` | Câu 10 - Scratch De3
+- `test-bank/KHMT_MCQ_Scratch_De4_Q10.md` | Câu 10 - Scratch De4
+- `test-bank/KHMT_MCQ_Scratch_Jr_De1_Q10.md` | Câu 10 - Scratch_Jr De1
+- `test-bank/KHMT_MCQ_Tynker_De1_Q10.md` | Câu 10 - Tynker De1
+- `test-bank/KHMT_MCQ_Tynker_De2_Q10.md` | Câu 10 - Tynker De2
+- `test-bank/KHMT_MCQ_Tynker_De3_Q10.md` | Câu 10 - Tynker De3
+- `test-bank/KHMT_MCQ_Tynker_De4_Q10.md` | Câu 10 - Tynker De4
+- `test-bank/KHMT_MCQ_AI_THCS_De1_Q11.md` | Câu 11 - AI_THCS De1
+- `test-bank/KHMT_MCQ_AI_THCS_De2_Q11.md` | Câu 11 - AI_THCS De2
+- `test-bank/KHMT_MCQ_AI_THCS_De3_Q11.md` | Câu 11 - AI_THCS De3
+- `test-bank/KHMT_MCQ_AI_THCS_De4_Q11.md` | Câu 11 - AI_THCS De4
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De1_Q11.md` | Câu 11 - AI_Tieu_hoc De1
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De2_Q11.md` | Câu 11 - AI_Tieu_hoc De2
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De3_Q11.md` | Câu 11 - AI_Tieu_hoc De3
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De4_Q11.md` | Câu 11 - AI_Tieu_hoc De4
+- `test-bank/KHMT_MCQ_KHMT_General_De2_Q11.md` | Câu 11 - KHMT_General De2
+- `test-bank/KHMT_MCQ_Python_De1_Q11.md` | Câu 11 - Python De1
+- `test-bank/KHMT_MCQ_Scratch_De1_Q11.md` | Câu 11 - Scratch De1
+- `test-bank/KHMT_MCQ_Scratch_De2_Q11.md` | Câu 11 - Scratch De2
+- `test-bank/KHMT_MCQ_Scratch_De3_Q11.md` | Câu 11 - Scratch De3
+- `test-bank/KHMT_MCQ_Scratch_De4_Q11.md` | Câu 11 - Scratch De4
+- `test-bank/KHMT_MCQ_Scratch_Jr_De1_Q11.md` | Câu 11 - Scratch_Jr De1
+- `test-bank/KHMT_MCQ_Tynker_De1_Q11.md` | Câu 11 - Tynker De1
+- `test-bank/KHMT_MCQ_Tynker_De2_Q11.md` | Câu 11 - Tynker De2
+- `test-bank/KHMT_MCQ_Tynker_De3_Q11.md` | Câu 11 - Tynker De3
+- `test-bank/KHMT_MCQ_Tynker_De4_Q11.md` | Câu 11 - Tynker De4
+- `test-bank/KHMT_MCQ_AI_THCS_De1_Q12.md` | Câu 12 - AI_THCS De1
+- `test-bank/KHMT_MCQ_AI_THCS_De2_Q12.md` | Câu 12 - AI_THCS De2
+- `test-bank/KHMT_MCQ_AI_THCS_De3_Q12.md` | Câu 12 - AI_THCS De3
+- `test-bank/KHMT_MCQ_AI_THCS_De4_Q12.md` | Câu 12 - AI_THCS De4
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De1_Q12.md` | Câu 12 - AI_Tieu_hoc De1
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De2_Q12.md` | Câu 12 - AI_Tieu_hoc De2
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De3_Q12.md` | Câu 12 - AI_Tieu_hoc De3
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De4_Q12.md` | Câu 12 - AI_Tieu_hoc De4
+- `test-bank/KHMT_MCQ_KHMT_General_De2_Q12.md` | Câu 12 - KHMT_General De2
+- `test-bank/KHMT_MCQ_Python_De1_Q12.md` | Câu 12 - Python De1
+- `test-bank/KHMT_MCQ_Scratch_De1_Q12.md` | Câu 12 - Scratch De1
+- `test-bank/KHMT_MCQ_Scratch_De2_Q12.md` | Câu 12 - Scratch De2
+- `test-bank/KHMT_MCQ_Scratch_De3_Q12.md` | Câu 12 - Scratch De3
+- `test-bank/KHMT_MCQ_Scratch_De4_Q12.md` | Câu 12 - Scratch De4
+- `test-bank/KHMT_MCQ_Scratch_Jr_De1_Q12.md` | Câu 12 - Scratch_Jr De1
+- `test-bank/KHMT_MCQ_Tynker_De1_Q12.md` | Câu 12 - Tynker De1
+- `test-bank/KHMT_MCQ_Tynker_De2_Q12.md` | Câu 12 - Tynker De2
+- `test-bank/KHMT_MCQ_Tynker_De3_Q12.md` | Câu 12 - Tynker De3
+- `test-bank/KHMT_MCQ_Tynker_De4_Q12.md` | Câu 12 - Tynker De4
+- `test-bank/IOT_MCQ_Halocode_De1_Q13.md` | Câu 13
+- `test-bank/NON_MCQ_IOT_AI_Arduino_De1_Q13.md` | Câu 13
+- `test-bank/KHMT_MCQ_AI_THCS_De1_Q13.md` | Câu 13 - AI_THCS De1
+- `test-bank/KHMT_MCQ_AI_THCS_De2_Q13.md` | Câu 13 - AI_THCS De2
+- `test-bank/KHMT_MCQ_AI_THCS_De3_Q13.md` | Câu 13 - AI_THCS De3
+- `test-bank/KHMT_MCQ_AI_THCS_De4_Q13.md` | Câu 13 - AI_THCS De4
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De1_Q13.md` | Câu 13 - AI_Tieu_hoc De1
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De2_Q13.md` | Câu 13 - AI_Tieu_hoc De2
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De3_Q13.md` | Câu 13 - AI_Tieu_hoc De3
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De4_Q13.md` | Câu 13 - AI_Tieu_hoc De4
+- `test-bank/KHMT_MCQ_KHMT_General_De2_Q13.md` | Câu 13 - KHMT_General De2
+- `test-bank/KHMT_MCQ_Python_De1_Q13.md` | Câu 13 - Python De1
+- `test-bank/KHMT_MCQ_Scratch_De1_Q13.md` | Câu 13 - Scratch De1
+- `test-bank/KHMT_MCQ_Scratch_De2_Q13.md` | Câu 13 - Scratch De2
+- `test-bank/KHMT_MCQ_Scratch_De3_Q13.md` | Câu 13 - Scratch De3
+- `test-bank/KHMT_MCQ_Scratch_De4_Q13.md` | Câu 13 - Scratch De4
+- `test-bank/KHMT_MCQ_Scratch_Jr_De1_Q13.md` | Câu 13 - Scratch_Jr De1
+- `test-bank/KHMT_MCQ_Tynker_De1_Q13.md` | Câu 13 - Tynker De1
+- `test-bank/KHMT_MCQ_Tynker_De2_Q13.md` | Câu 13 - Tynker De2
+- `test-bank/KHMT_MCQ_Tynker_De3_Q13.md` | Câu 13 - Tynker De3
+- `test-bank/KHMT_MCQ_Tynker_De4_Q13.md` | Câu 13 - Tynker De4
+- `test-bank/KHMT_MCQ_AI_THCS_De1_Q14.md` | Câu 14 - AI_THCS De1
+- `test-bank/KHMT_MCQ_AI_THCS_De2_Q14.md` | Câu 14 - AI_THCS De2
+- `test-bank/KHMT_MCQ_AI_THCS_De3_Q14.md` | Câu 14 - AI_THCS De3
+- `test-bank/KHMT_MCQ_AI_THCS_De4_Q14.md` | Câu 14 - AI_THCS De4
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De1_Q14.md` | Câu 14 - AI_Tieu_hoc De1
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De2_Q14.md` | Câu 14 - AI_Tieu_hoc De2
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De3_Q14.md` | Câu 14 - AI_Tieu_hoc De3
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De4_Q14.md` | Câu 14 - AI_Tieu_hoc De4
+- `test-bank/KHMT_MCQ_KHMT_General_De2_Q14.md` | Câu 14 - KHMT_General De2
+- `test-bank/KHMT_MCQ_Python_De1_Q14.md` | Câu 14 - Python De1
+- `test-bank/KHMT_MCQ_Scratch_De1_Q14.md` | Câu 14 - Scratch De1
+- `test-bank/KHMT_MCQ_Scratch_De2_Q14.md` | Câu 14 - Scratch De2
+- `test-bank/KHMT_MCQ_Scratch_De3_Q14.md` | Câu 14 - Scratch De3
+- `test-bank/KHMT_MCQ_Scratch_De4_Q14.md` | Câu 14 - Scratch De4
+- `test-bank/KHMT_MCQ_Scratch_Jr_De1_Q14.md` | Câu 14 - Scratch_Jr De1
+- `test-bank/KHMT_MCQ_Tynker_De1_Q14.md` | Câu 14 - Tynker De1
+- `test-bank/KHMT_MCQ_Tynker_De2_Q14.md` | Câu 14 - Tynker De2
+- `test-bank/KHMT_MCQ_Tynker_De3_Q14.md` | Câu 14 - Tynker De3
+- `test-bank/KHMT_MCQ_Tynker_De4_Q14.md` | Câu 14 - Tynker De4
+- `test-bank/NEEDS_REVIEW_MCQ_DESIGN_Maker_Empire_De3_Q15.md` | Câu 15
+- `test-bank/NEEDS_REVIEW_MCQ_DESIGN_Maker_Empire_De4_Q15.md` | Câu 15
+- `test-bank/NEEDS_REVIEW_MCQ_DESIGN_Wordpress_De1_Q15.md` | Câu 15
+- `test-bank/KHMT_MCQ_AI_THCS_De1_Q15.md` | Câu 15 - AI_THCS De1
+- `test-bank/KHMT_MCQ_AI_THCS_De2_Q15.md` | Câu 15 - AI_THCS De2
+- `test-bank/KHMT_MCQ_AI_THCS_De3_Q15.md` | Câu 15 - AI_THCS De3
+- `test-bank/KHMT_MCQ_AI_THCS_De4_Q15.md` | Câu 15 - AI_THCS De4
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De1_Q15.md` | Câu 15 - AI_Tieu_hoc De1
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De2_Q15.md` | Câu 15 - AI_Tieu_hoc De2
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De3_Q15.md` | Câu 15 - AI_Tieu_hoc De3
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De4_Q15.md` | Câu 15 - AI_Tieu_hoc De4
+- `test-bank/KHMT_MCQ_KHMT_General_De2_Q15.md` | Câu 15 - KHMT_General De2
+- `test-bank/KHMT_MCQ_Python_De1_Q15.md` | Câu 15 - Python De1
+- `test-bank/KHMT_MCQ_Scratch_De1_Q15.md` | Câu 15 - Scratch De1
+- `test-bank/KHMT_MCQ_Scratch_De2_Q15.md` | Câu 15 - Scratch De2
+- `test-bank/KHMT_MCQ_Scratch_De3_Q15.md` | Câu 15 - Scratch De3
+- `test-bank/KHMT_MCQ_Scratch_De4_Q15.md` | Câu 15 - Scratch De4
+- `test-bank/KHMT_MCQ_Scratch_Jr_De1_Q15.md` | Câu 15 - Scratch_Jr De1
+- `test-bank/KHMT_MCQ_Tynker_De1_Q15.md` | Câu 15 - Tynker De1
+- `test-bank/KHMT_MCQ_Tynker_De2_Q15.md` | Câu 15 - Tynker De2
+- `test-bank/KHMT_MCQ_Tynker_De3_Q15.md` | Câu 15 - Tynker De3
+- `test-bank/KHMT_MCQ_Tynker_De4_Q15.md` | Câu 15 - Tynker De4
+- `test-bank/NEEDS_REVIEW_MCQ_DESIGN_Wordpress_De1_Q16.md` | Câu 16
+- `test-bank/KHMT_MCQ_AI_THCS_De1_Q16.md` | Câu 16 - AI_THCS De1
+- `test-bank/KHMT_MCQ_AI_THCS_De2_Q16.md` | Câu 16 - AI_THCS De2
+- `test-bank/KHMT_MCQ_AI_THCS_De3_Q16.md` | Câu 16 - AI_THCS De3
+- `test-bank/KHMT_MCQ_AI_THCS_De4_Q16.md` | Câu 16 - AI_THCS De4
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De1_Q16.md` | Câu 16 - AI_Tieu_hoc De1
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De2_Q16.md` | Câu 16 - AI_Tieu_hoc De2
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De3_Q16.md` | Câu 16 - AI_Tieu_hoc De3
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De4_Q16.md` | Câu 16 - AI_Tieu_hoc De4
+- `test-bank/KHMT_MCQ_KHMT_General_De2_Q16.md` | Câu 16 - KHMT_General De2
+- `test-bank/KHMT_MCQ_Python_De1_Q16.md` | Câu 16 - Python De1
+- `test-bank/KHMT_MCQ_Scratch_De1_Q16.md` | Câu 16 - Scratch De1
+- `test-bank/KHMT_MCQ_Scratch_De2_Q16.md` | Câu 16 - Scratch De2
+- `test-bank/KHMT_MCQ_Scratch_De3_Q16.md` | Câu 16 - Scratch De3
+- `test-bank/KHMT_MCQ_Scratch_De4_Q16.md` | Câu 16 - Scratch De4
+- `test-bank/KHMT_MCQ_Scratch_Jr_De1_Q16.md` | Câu 16 - Scratch_Jr De1
+- `test-bank/KHMT_MCQ_Tynker_De1_Q16.md` | Câu 16 - Tynker De1
+- `test-bank/KHMT_MCQ_Tynker_De2_Q16.md` | Câu 16 - Tynker De2
+- `test-bank/KHMT_MCQ_Tynker_De3_Q16.md` | Câu 16 - Tynker De3
+- `test-bank/KHMT_MCQ_Tynker_De4_Q16.md` | Câu 16 - Tynker De4
+- `test-bank/KHMT_MCQ_AI_THCS_De1_Q17.md` | Câu 17 - AI_THCS De1
+- `test-bank/KHMT_MCQ_AI_THCS_De2_Q17.md` | Câu 17 - AI_THCS De2
+- `test-bank/KHMT_MCQ_AI_THCS_De3_Q17.md` | Câu 17 - AI_THCS De3
+- `test-bank/KHMT_MCQ_AI_THCS_De4_Q17.md` | Câu 17 - AI_THCS De4
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De1_Q17.md` | Câu 17 - AI_Tieu_hoc De1
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De2_Q17.md` | Câu 17 - AI_Tieu_hoc De2
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De3_Q17.md` | Câu 17 - AI_Tieu_hoc De3
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De4_Q17.md` | Câu 17 - AI_Tieu_hoc De4
+- `test-bank/KHMT_MCQ_KHMT_General_De2_Q17.md` | Câu 17 - KHMT_General De2
+- `test-bank/KHMT_MCQ_Python_De1_Q17.md` | Câu 17 - Python De1
+- `test-bank/KHMT_MCQ_Scratch_De1_Q17.md` | Câu 17 - Scratch De1
+- `test-bank/KHMT_MCQ_Scratch_De2_Q17.md` | Câu 17 - Scratch De2
+- `test-bank/KHMT_MCQ_Scratch_De3_Q17.md` | Câu 17 - Scratch De3
+- `test-bank/KHMT_MCQ_Scratch_De4_Q17.md` | Câu 17 - Scratch De4
+- `test-bank/KHMT_MCQ_Scratch_Jr_De1_Q17.md` | Câu 17 - Scratch_Jr De1
+- `test-bank/KHMT_MCQ_Tynker_De1_Q17.md` | Câu 17 - Tynker De1
+- `test-bank/KHMT_MCQ_Tynker_De2_Q17.md` | Câu 17 - Tynker De2
+- `test-bank/KHMT_MCQ_Tynker_De3_Q17.md` | Câu 17 - Tynker De3
+- `test-bank/KHMT_MCQ_Tynker_De4_Q17.md` | Câu 17 - Tynker De4
+- `test-bank/KHMT_MCQ_AI_THCS_De1_Q18.md` | Câu 18 - AI_THCS De1
+- `test-bank/KHMT_MCQ_AI_THCS_De2_Q18.md` | Câu 18 - AI_THCS De2
+- `test-bank/KHMT_MCQ_AI_THCS_De3_Q18.md` | Câu 18 - AI_THCS De3
+- `test-bank/KHMT_MCQ_AI_THCS_De4_Q18.md` | Câu 18 - AI_THCS De4
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De1_Q18.md` | Câu 18 - AI_Tieu_hoc De1
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De2_Q18.md` | Câu 18 - AI_Tieu_hoc De2
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De3_Q18.md` | Câu 18 - AI_Tieu_hoc De3
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De4_Q18.md` | Câu 18 - AI_Tieu_hoc De4
+- `test-bank/KHMT_MCQ_KHMT_General_De2_Q18.md` | Câu 18 - KHMT_General De2
+- `test-bank/KHMT_MCQ_Python_De1_Q18.md` | Câu 18 - Python De1
+- `test-bank/KHMT_MCQ_Scratch_De1_Q18.md` | Câu 18 - Scratch De1
+- `test-bank/KHMT_MCQ_Scratch_De2_Q18.md` | Câu 18 - Scratch De2
+- `test-bank/KHMT_MCQ_Scratch_De3_Q18.md` | Câu 18 - Scratch De3
+- `test-bank/KHMT_MCQ_Scratch_De4_Q18.md` | Câu 18 - Scratch De4
+- `test-bank/KHMT_MCQ_Scratch_Jr_De1_Q18.md` | Câu 18 - Scratch_Jr De1
+- `test-bank/KHMT_MCQ_Tynker_De1_Q18.md` | Câu 18 - Tynker De1
+- `test-bank/KHMT_MCQ_Tynker_De2_Q18.md` | Câu 18 - Tynker De2
+- `test-bank/KHMT_MCQ_Tynker_De3_Q18.md` | Câu 18 - Tynker De3
+- `test-bank/KHMT_MCQ_Tynker_De4_Q18.md` | Câu 18 - Tynker De4
+- `test-bank/NEEDS_REVIEW_MCQ_Robot_Rover_De1_Q19.md` | Câu 19
+- `test-bank/KHMT_MCQ_AI_THCS_De1_Q19.md` | Câu 19 - AI_THCS De1
+- `test-bank/KHMT_MCQ_AI_THCS_De2_Q19.md` | Câu 19 - AI_THCS De2
+- `test-bank/KHMT_MCQ_AI_THCS_De3_Q19.md` | Câu 19 - AI_THCS De3
+- `test-bank/KHMT_MCQ_AI_THCS_De4_Q19.md` | Câu 19 - AI_THCS De4
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De1_Q19.md` | Câu 19 - AI_Tieu_hoc De1
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De2_Q19.md` | Câu 19 - AI_Tieu_hoc De2
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De3_Q19.md` | Câu 19 - AI_Tieu_hoc De3
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De4_Q19.md` | Câu 19 - AI_Tieu_hoc De4
+- `test-bank/KHMT_MCQ_KHMT_General_De2_Q19.md` | Câu 19 - KHMT_General De2
+- `test-bank/KHMT_MCQ_Python_De1_Q19.md` | Câu 19 - Python De1
+- `test-bank/KHMT_MCQ_Scratch_De1_Q19.md` | Câu 19 - Scratch De1
+- `test-bank/KHMT_MCQ_Scratch_De2_Q19.md` | Câu 19 - Scratch De2
+- `test-bank/KHMT_MCQ_Scratch_De3_Q19.md` | Câu 19 - Scratch De3
+- `test-bank/KHMT_MCQ_Scratch_De4_Q19.md` | Câu 19 - Scratch De4
+- `test-bank/KHMT_MCQ_Scratch_Jr_De1_Q19.md` | Câu 19 - Scratch_Jr De1
+- `test-bank/KHMT_MCQ_Tynker_De1_Q19.md` | Câu 19 - Tynker De1
+- `test-bank/KHMT_MCQ_Tynker_De2_Q19.md` | Câu 19 - Tynker De2
+- `test-bank/KHMT_MCQ_Tynker_De3_Q19.md` | Câu 19 - Tynker De3
+- `test-bank/KHMT_MCQ_Tynker_De4_Q19.md` | Câu 19 - Tynker De4
+- `test-bank/NEEDS_REVIEW_MCQ_DESIGN_Wordpress_De1_Q02.md` | Câu 2
+- `test-bank/KHMT_MCQ_AI_THCS_De1_Q02.md` | Câu 2 - AI_THCS De1
+- `test-bank/KHMT_MCQ_AI_THCS_De2_Q02.md` | Câu 2 - AI_THCS De2
+- `test-bank/KHMT_MCQ_AI_THCS_De3_Q02.md` | Câu 2 - AI_THCS De3
+- `test-bank/KHMT_MCQ_AI_THCS_De4_Q02.md` | Câu 2 - AI_THCS De4
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De1_Q02.md` | Câu 2 - AI_Tieu_hoc De1
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De2_Q02.md` | Câu 2 - AI_Tieu_hoc De2
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De3_Q02.md` | Câu 2 - AI_Tieu_hoc De3
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De4_Q02.md` | Câu 2 - AI_Tieu_hoc De4
+- `test-bank/KHMT_MCQ_KHMT_General_De2_Q02.md` | Câu 2 - KHMT_General De2
+- `test-bank/KHMT_MCQ_Python_De1_Q02.md` | Câu 2 - Python De1
+- `test-bank/KHMT_MCQ_Scratch_De1_Q02.md` | Câu 2 - Scratch De1
+- `test-bank/KHMT_MCQ_Scratch_De2_Q02.md` | Câu 2 - Scratch De2
+- `test-bank/KHMT_MCQ_Scratch_De3_Q02.md` | Câu 2 - Scratch De3
+- `test-bank/KHMT_MCQ_Scratch_De4_Q02.md` | Câu 2 - Scratch De4
+- `test-bank/KHMT_MCQ_Scratch_Jr_De1_Q02.md` | Câu 2 - Scratch_Jr De1
+- `test-bank/KHMT_MCQ_Tynker_De1_Q02.md` | Câu 2 - Tynker De1
+- `test-bank/KHMT_MCQ_Tynker_De2_Q02.md` | Câu 2 - Tynker De2
+- `test-bank/KHMT_MCQ_Tynker_De3_Q02.md` | Câu 2 - Tynker De3
+- `test-bank/KHMT_MCQ_Tynker_De4_Q02.md` | Câu 2 - Tynker De4
+- `test-bank/KHMT_MCQ_AI_THCS_De1_Q20.md` | Câu 20 - AI_THCS De1
+- `test-bank/KHMT_MCQ_AI_THCS_De2_Q20.md` | Câu 20 - AI_THCS De2
+- `test-bank/KHMT_MCQ_AI_THCS_De3_Q20.md` | Câu 20 - AI_THCS De3
+- `test-bank/KHMT_MCQ_AI_THCS_De4_Q20.md` | Câu 20 - AI_THCS De4
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De1_Q20.md` | Câu 20 - AI_Tieu_hoc De1
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De2_Q20.md` | Câu 20 - AI_Tieu_hoc De2
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De3_Q20.md` | Câu 20 - AI_Tieu_hoc De3
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De4_Q20.md` | Câu 20 - AI_Tieu_hoc De4
+- `test-bank/KHMT_MCQ_KHMT_General_De2_Q20.md` | Câu 20 - KHMT_General De2
+- `test-bank/KHMT_MCQ_Python_De1_Q20.md` | Câu 20 - Python De1
+- `test-bank/KHMT_MCQ_Scratch_De1_Q20.md` | Câu 20 - Scratch De1
+- `test-bank/KHMT_MCQ_Scratch_De2_Q20.md` | Câu 20 - Scratch De2
+- `test-bank/KHMT_MCQ_Scratch_De3_Q20.md` | Câu 20 - Scratch De3
+- `test-bank/KHMT_MCQ_Scratch_De4_Q20.md` | Câu 20 - Scratch De4
+- `test-bank/KHMT_MCQ_Scratch_Jr_De1_Q20.md` | Câu 20 - Scratch_Jr De1
+- `test-bank/KHMT_MCQ_Tynker_De1_Q20.md` | Câu 20 - Tynker De1
+- `test-bank/KHMT_MCQ_Tynker_De2_Q20.md` | Câu 20 - Tynker De2
+- `test-bank/KHMT_MCQ_Tynker_De3_Q20.md` | Câu 20 - Tynker De3
+- `test-bank/KHMT_MCQ_Tynker_De4_Q20.md` | Câu 20 - Tynker De4
+- `test-bank/KHMT_MCQ_AI_THCS_De1_Q21.md` | Câu 21 - AI_THCS De1
+- `test-bank/KHMT_MCQ_AI_THCS_De2_Q21.md` | Câu 21 - AI_THCS De2
+- `test-bank/KHMT_MCQ_AI_THCS_De3_Q21.md` | Câu 21 - AI_THCS De3
+- `test-bank/KHMT_MCQ_AI_THCS_De4_Q21.md` | Câu 21 - AI_THCS De4
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De1_Q21.md` | Câu 21 - AI_Tieu_hoc De1
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De2_Q21.md` | Câu 21 - AI_Tieu_hoc De2
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De3_Q21.md` | Câu 21 - AI_Tieu_hoc De3
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De4_Q21.md` | Câu 21 - AI_Tieu_hoc De4
+- `test-bank/KHMT_MCQ_KHMT_General_De2_Q21.md` | Câu 21 - KHMT_General De2
+- `test-bank/KHMT_MCQ_Python_De1_Q21.md` | Câu 21 - Python De1
+- `test-bank/KHMT_MCQ_Scratch_De1_Q21.md` | Câu 21 - Scratch De1
+- `test-bank/KHMT_MCQ_Scratch_De2_Q21.md` | Câu 21 - Scratch De2
+- `test-bank/KHMT_MCQ_Scratch_De3_Q21.md` | Câu 21 - Scratch De3
+- `test-bank/KHMT_MCQ_Scratch_De4_Q21.md` | Câu 21 - Scratch De4
+- `test-bank/KHMT_MCQ_Tynker_De1_Q21.md` | Câu 21 - Tynker De1
+- `test-bank/KHMT_MCQ_Tynker_De2_Q21.md` | Câu 21 - Tynker De2
+- `test-bank/KHMT_MCQ_Tynker_De3_Q21.md` | Câu 21 - Tynker De3
+- `test-bank/KHMT_MCQ_Tynker_De4_Q21.md` | Câu 21 - Tynker De4
+- `test-bank/KHMT_MCQ_AI_THCS_De1_Q22.md` | Câu 22 - AI_THCS De1
+- `test-bank/KHMT_MCQ_AI_THCS_De2_Q22.md` | Câu 22 - AI_THCS De2
+- `test-bank/KHMT_MCQ_AI_THCS_De3_Q22.md` | Câu 22 - AI_THCS De3
+- `test-bank/KHMT_MCQ_AI_THCS_De4_Q22.md` | Câu 22 - AI_THCS De4
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De1_Q22.md` | Câu 22 - AI_Tieu_hoc De1
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De2_Q22.md` | Câu 22 - AI_Tieu_hoc De2
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De3_Q22.md` | Câu 22 - AI_Tieu_hoc De3
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De4_Q22.md` | Câu 22 - AI_Tieu_hoc De4
+- `test-bank/KHMT_MCQ_KHMT_General_De2_Q22.md` | Câu 22 - KHMT_General De2
+- `test-bank/KHMT_MCQ_Python_De1_Q22.md` | Câu 22 - Python De1
+- `test-bank/KHMT_MCQ_Scratch_De1_Q22.md` | Câu 22 - Scratch De1
+- `test-bank/KHMT_MCQ_Scratch_De2_Q22.md` | Câu 22 - Scratch De2
+- `test-bank/KHMT_MCQ_Scratch_De3_Q22.md` | Câu 22 - Scratch De3
+- `test-bank/KHMT_MCQ_Scratch_De4_Q22.md` | Câu 22 - Scratch De4
+- `test-bank/KHMT_MCQ_Tynker_De1_Q22.md` | Câu 22 - Tynker De1
+- `test-bank/KHMT_MCQ_Tynker_De2_Q22.md` | Câu 22 - Tynker De2
+- `test-bank/KHMT_MCQ_Tynker_De3_Q22.md` | Câu 22 - Tynker De3
+- `test-bank/KHMT_MCQ_Tynker_De4_Q22.md` | Câu 22 - Tynker De4
+- `test-bank/KHMT_MCQ_AI_THCS_De1_Q23.md` | Câu 23 - AI_THCS De1
+- `test-bank/KHMT_MCQ_AI_THCS_De2_Q23.md` | Câu 23 - AI_THCS De2
+- `test-bank/KHMT_MCQ_AI_THCS_De3_Q23.md` | Câu 23 - AI_THCS De3
+- `test-bank/KHMT_MCQ_AI_THCS_De4_Q23.md` | Câu 23 - AI_THCS De4
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De1_Q23.md` | Câu 23 - AI_Tieu_hoc De1
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De2_Q23.md` | Câu 23 - AI_Tieu_hoc De2
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De3_Q23.md` | Câu 23 - AI_Tieu_hoc De3
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De4_Q23.md` | Câu 23 - AI_Tieu_hoc De4
+- `test-bank/KHMT_MCQ_KHMT_General_De2_Q23.md` | Câu 23 - KHMT_General De2
+- `test-bank/KHMT_MCQ_Python_De1_Q23.md` | Câu 23 - Python De1
+- `test-bank/KHMT_MCQ_Scratch_De1_Q23.md` | Câu 23 - Scratch De1
+- `test-bank/KHMT_MCQ_Scratch_De2_Q23.md` | Câu 23 - Scratch De2
+- `test-bank/KHMT_MCQ_Scratch_De3_Q23.md` | Câu 23 - Scratch De3
+- `test-bank/KHMT_MCQ_Scratch_De4_Q23.md` | Câu 23 - Scratch De4
+- `test-bank/KHMT_MCQ_Tynker_De1_Q23.md` | Câu 23 - Tynker De1
+- `test-bank/KHMT_MCQ_Tynker_De2_Q23.md` | Câu 23 - Tynker De2
+- `test-bank/KHMT_MCQ_Tynker_De3_Q23.md` | Câu 23 - Tynker De3
+- `test-bank/KHMT_MCQ_Tynker_De4_Q23.md` | Câu 23 - Tynker De4
+- `test-bank/NEEDS_REVIEW_MCQ_IOT_Halocode_De1_Q24.md` | Câu 24
+- `test-bank/KHMT_MCQ_AI_THCS_De1_Q24.md` | Câu 24 - AI_THCS De1
+- `test-bank/KHMT_MCQ_AI_THCS_De2_Q24.md` | Câu 24 - AI_THCS De2
+- `test-bank/KHMT_MCQ_AI_THCS_De3_Q24.md` | Câu 24 - AI_THCS De3
+- `test-bank/KHMT_MCQ_AI_THCS_De4_Q24.md` | Câu 24 - AI_THCS De4
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De1_Q24.md` | Câu 24 - AI_Tieu_hoc De1
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De2_Q24.md` | Câu 24 - AI_Tieu_hoc De2
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De3_Q24.md` | Câu 24 - AI_Tieu_hoc De3
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De4_Q24.md` | Câu 24 - AI_Tieu_hoc De4
+- `test-bank/KHMT_MCQ_KHMT_General_De2_Q24.md` | Câu 24 - KHMT_General De2
+- `test-bank/KHMT_MCQ_Python_De1_Q24.md` | Câu 24 - Python De1
+- `test-bank/KHMT_MCQ_Scratch_De1_Q24.md` | Câu 24 - Scratch De1
+- `test-bank/KHMT_MCQ_Scratch_De2_Q24.md` | Câu 24 - Scratch De2
+- `test-bank/KHMT_MCQ_Scratch_De3_Q24.md` | Câu 24 - Scratch De3
+- `test-bank/KHMT_MCQ_Scratch_De4_Q24.md` | Câu 24 - Scratch De4
+- `test-bank/KHMT_MCQ_Tynker_De1_Q24.md` | Câu 24 - Tynker De1
+- `test-bank/KHMT_MCQ_Tynker_De2_Q24.md` | Câu 24 - Tynker De2
+- `test-bank/KHMT_MCQ_Tynker_De3_Q24.md` | Câu 24 - Tynker De3
+- `test-bank/KHMT_MCQ_Tynker_De4_Q24.md` | Câu 24 - Tynker De4
+- `test-bank/NEEDS_REVIEW_MCQ_IOT_Halocode_De1_Q25.md` | Câu 25
+- `test-bank/KHMT_MCQ_AI_THCS_De1_Q25.md` | Câu 25 - AI_THCS De1
+- `test-bank/KHMT_MCQ_AI_THCS_De2_Q25.md` | Câu 25 - AI_THCS De2
+- `test-bank/KHMT_MCQ_AI_THCS_De3_Q25.md` | Câu 25 - AI_THCS De3
+- `test-bank/KHMT_MCQ_AI_THCS_De4_Q25.md` | Câu 25 - AI_THCS De4
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De1_Q25.md` | Câu 25 - AI_Tieu_hoc De1
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De2_Q25.md` | Câu 25 - AI_Tieu_hoc De2
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De3_Q25.md` | Câu 25 - AI_Tieu_hoc De3
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De4_Q25.md` | Câu 25 - AI_Tieu_hoc De4
+- `test-bank/KHMT_MCQ_KHMT_General_De2_Q25.md` | Câu 25 - KHMT_General De2
+- `test-bank/KHMT_MCQ_Python_De1_Q25.md` | Câu 25 - Python De1
+- `test-bank/KHMT_MCQ_Scratch_De1_Q25.md` | Câu 25 - Scratch De1
+- `test-bank/KHMT_MCQ_Scratch_De2_Q25.md` | Câu 25 - Scratch De2
+- `test-bank/KHMT_MCQ_Scratch_De3_Q25.md` | Câu 25 - Scratch De3
+- `test-bank/KHMT_MCQ_Scratch_De4_Q25.md` | Câu 25 - Scratch De4
+- `test-bank/KHMT_MCQ_Tynker_De1_Q25.md` | Câu 25 - Tynker De1
+- `test-bank/KHMT_MCQ_Tynker_De2_Q25.md` | Câu 25 - Tynker De2
+- `test-bank/KHMT_MCQ_Tynker_De3_Q25.md` | Câu 25 - Tynker De3
+- `test-bank/KHMT_MCQ_Tynker_De4_Q25.md` | Câu 25 - Tynker De4
+- `test-bank/KHMT_MCQ_AI_THCS_De1_Q26.md` | Câu 26 - AI_THCS De1
+- `test-bank/KHMT_MCQ_AI_THCS_De2_Q26.md` | Câu 26 - AI_THCS De2
+- `test-bank/KHMT_MCQ_AI_THCS_De3_Q26.md` | Câu 26 - AI_THCS De3
+- `test-bank/KHMT_MCQ_AI_THCS_De4_Q26.md` | Câu 26 - AI_THCS De4
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De1_Q26.md` | Câu 26 - AI_Tieu_hoc De1
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De2_Q26.md` | Câu 26 - AI_Tieu_hoc De2
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De3_Q26.md` | Câu 26 - AI_Tieu_hoc De3
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De4_Q26.md` | Câu 26 - AI_Tieu_hoc De4
+- `test-bank/KHMT_MCQ_KHMT_General_De2_Q26.md` | Câu 26 - KHMT_General De2
+- `test-bank/KHMT_MCQ_Python_De1_Q26.md` | Câu 26 - Python De1
+- `test-bank/KHMT_MCQ_Scratch_De1_Q26.md` | Câu 26 - Scratch De1
+- `test-bank/KHMT_MCQ_Scratch_De2_Q26.md` | Câu 26 - Scratch De2
+- `test-bank/KHMT_MCQ_Scratch_De3_Q26.md` | Câu 26 - Scratch De3
+- `test-bank/KHMT_MCQ_Scratch_De4_Q26.md` | Câu 26 - Scratch De4
+- `test-bank/KHMT_MCQ_Tynker_De1_Q26.md` | Câu 26 - Tynker De1
+- `test-bank/KHMT_MCQ_Tynker_De2_Q26.md` | Câu 26 - Tynker De2
+- `test-bank/KHMT_MCQ_Tynker_De3_Q26.md` | Câu 26 - Tynker De3
+- `test-bank/KHMT_MCQ_Tynker_De4_Q26.md` | Câu 26 - Tynker De4
+- `test-bank/IOT_MCQ_Halocode_De1_Q26.md` | Câu 26: Lập trình xe di chuyển
+- `test-bank/NEEDS_REVIEW_MCQ_IOT_Halocode_De1_Q27.md` | Câu 27
+- `test-bank/KHMT_MCQ_AI_THCS_De1_Q27.md` | Câu 27 - AI_THCS De1
+- `test-bank/KHMT_MCQ_AI_THCS_De2_Q27.md` | Câu 27 - AI_THCS De2
+- `test-bank/KHMT_MCQ_AI_THCS_De3_Q27.md` | Câu 27 - AI_THCS De3
+- `test-bank/KHMT_MCQ_AI_THCS_De4_Q27.md` | Câu 27 - AI_THCS De4
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De1_Q27.md` | Câu 27 - AI_Tieu_hoc De1
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De2_Q27.md` | Câu 27 - AI_Tieu_hoc De2
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De3_Q27.md` | Câu 27 - AI_Tieu_hoc De3
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De4_Q27.md` | Câu 27 - AI_Tieu_hoc De4
+- `test-bank/KHMT_MCQ_KHMT_General_De2_Q27.md` | Câu 27 - KHMT_General De2
+- `test-bank/KHMT_MCQ_Python_De1_Q27.md` | Câu 27 - Python De1
+- `test-bank/KHMT_MCQ_Scratch_De1_Q27.md` | Câu 27 - Scratch De1
+- `test-bank/KHMT_MCQ_Scratch_De2_Q27.md` | Câu 27 - Scratch De2
+- `test-bank/KHMT_MCQ_Scratch_De3_Q27.md` | Câu 27 - Scratch De3
+- `test-bank/KHMT_MCQ_Scratch_De4_Q27.md` | Câu 27 - Scratch De4
+- `test-bank/KHMT_MCQ_Tynker_De1_Q27.md` | Câu 27 - Tynker De1
+- `test-bank/KHMT_MCQ_Tynker_De2_Q27.md` | Câu 27 - Tynker De2
+- `test-bank/KHMT_MCQ_Tynker_De3_Q27.md` | Câu 27 - Tynker De3
+- `test-bank/KHMT_MCQ_Tynker_De4_Q27.md` | Câu 27 - Tynker De4
+- `test-bank/IOT_MCQ_Halocode_De1_Q28.md` | Câu 28
+- `test-bank/KHMT_MCQ_AI_THCS_De1_Q28.md` | Câu 28 - AI_THCS De1
+- `test-bank/KHMT_MCQ_AI_THCS_De2_Q28.md` | Câu 28 - AI_THCS De2
+- `test-bank/KHMT_MCQ_AI_THCS_De3_Q28.md` | Câu 28 - AI_THCS De3
+- `test-bank/KHMT_MCQ_AI_THCS_De4_Q28.md` | Câu 28 - AI_THCS De4
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De1_Q28.md` | Câu 28 - AI_Tieu_hoc De1
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De2_Q28.md` | Câu 28 - AI_Tieu_hoc De2
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De3_Q28.md` | Câu 28 - AI_Tieu_hoc De3
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De4_Q28.md` | Câu 28 - AI_Tieu_hoc De4
+- `test-bank/KHMT_MCQ_KHMT_General_De2_Q28.md` | Câu 28 - KHMT_General De2
+- `test-bank/KHMT_MCQ_Python_De1_Q28.md` | Câu 28 - Python De1
+- `test-bank/KHMT_MCQ_Scratch_De1_Q28.md` | Câu 28 - Scratch De1
+- `test-bank/KHMT_MCQ_Scratch_De2_Q28.md` | Câu 28 - Scratch De2
+- `test-bank/KHMT_MCQ_Scratch_De3_Q28.md` | Câu 28 - Scratch De3
+- `test-bank/KHMT_MCQ_Scratch_De4_Q28.md` | Câu 28 - Scratch De4
+- `test-bank/KHMT_MCQ_Tynker_De1_Q28.md` | Câu 28 - Tynker De1
+- `test-bank/KHMT_MCQ_Tynker_De2_Q28.md` | Câu 28 - Tynker De2
+- `test-bank/KHMT_MCQ_Tynker_De3_Q28.md` | Câu 28 - Tynker De3
+- `test-bank/KHMT_MCQ_Tynker_De4_Q28.md` | Câu 28 - Tynker De4
+- `test-bank/IOT_MCQ_Halocode_De1_Q29.md` | Câu 29
+- `test-bank/KHMT_MCQ_AI_THCS_De1_Q29.md` | Câu 29 - AI_THCS De1
+- `test-bank/KHMT_MCQ_AI_THCS_De2_Q29.md` | Câu 29 - AI_THCS De2
+- `test-bank/KHMT_MCQ_AI_THCS_De3_Q29.md` | Câu 29 - AI_THCS De3
+- `test-bank/KHMT_MCQ_AI_THCS_De4_Q29.md` | Câu 29 - AI_THCS De4
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De1_Q29.md` | Câu 29 - AI_Tieu_hoc De1
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De2_Q29.md` | Câu 29 - AI_Tieu_hoc De2
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De3_Q29.md` | Câu 29 - AI_Tieu_hoc De3
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De4_Q29.md` | Câu 29 - AI_Tieu_hoc De4
+- `test-bank/KHMT_MCQ_Python_De1_Q29.md` | Câu 29 - Python De1
+- `test-bank/KHMT_MCQ_Scratch_De1_Q29.md` | Câu 29 - Scratch De1
+- `test-bank/KHMT_MCQ_Scratch_De2_Q29.md` | Câu 29 - Scratch De2
+- `test-bank/KHMT_MCQ_Scratch_De3_Q29.md` | Câu 29 - Scratch De3
+- `test-bank/KHMT_MCQ_Scratch_De4_Q29.md` | Câu 29 - Scratch De4
+- `test-bank/KHMT_MCQ_Tynker_De1_Q29.md` | Câu 29 - Tynker De1
+- `test-bank/KHMT_MCQ_Tynker_De2_Q29.md` | Câu 29 - Tynker De2
+- `test-bank/KHMT_MCQ_Tynker_De3_Q29.md` | Câu 29 - Tynker De3
+- `test-bank/KHMT_MCQ_Tynker_De4_Q29.md` | Câu 29 - Tynker De4
+- `test-bank/KHMT_MCQ_AI_THCS_De1_Q03.md` | Câu 3 - AI_THCS De1
+- `test-bank/KHMT_MCQ_AI_THCS_De2_Q03.md` | Câu 3 - AI_THCS De2
+- `test-bank/KHMT_MCQ_AI_THCS_De3_Q03.md` | Câu 3 - AI_THCS De3
+- `test-bank/KHMT_MCQ_AI_THCS_De4_Q03.md` | Câu 3 - AI_THCS De4
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De1_Q03.md` | Câu 3 - AI_Tieu_hoc De1
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De2_Q03.md` | Câu 3 - AI_Tieu_hoc De2
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De3_Q03.md` | Câu 3 - AI_Tieu_hoc De3
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De4_Q03.md` | Câu 3 - AI_Tieu_hoc De4
+- `test-bank/KHMT_MCQ_KHMT_General_De2_Q03.md` | Câu 3 - KHMT_General De2
+- `test-bank/KHMT_MCQ_Python_De1_Q03.md` | Câu 3 - Python De1
+- `test-bank/KHMT_MCQ_Scratch_De1_Q03.md` | Câu 3 - Scratch De1
+- `test-bank/KHMT_MCQ_Scratch_De2_Q03.md` | Câu 3 - Scratch De2
+- `test-bank/KHMT_MCQ_Scratch_De3_Q03.md` | Câu 3 - Scratch De3
+- `test-bank/KHMT_MCQ_Scratch_De4_Q03.md` | Câu 3 - Scratch De4
+- `test-bank/KHMT_MCQ_Scratch_Jr_De1_Q03.md` | Câu 3 - Scratch_Jr De1
+- `test-bank/KHMT_MCQ_Tynker_De1_Q03.md` | Câu 3 - Tynker De1
+- `test-bank/KHMT_MCQ_Tynker_De2_Q03.md` | Câu 3 - Tynker De2
+- `test-bank/KHMT_MCQ_Tynker_De3_Q03.md` | Câu 3 - Tynker De3
+- `test-bank/KHMT_MCQ_Tynker_De4_Q03.md` | Câu 3 - Tynker De4
+- `test-bank/IOT_MCQ_Halocode_De1_Q30.md` | Câu 30
+- `test-bank/KHMT_MCQ_AI_THCS_De1_Q30.md` | Câu 30 - AI_THCS De1
+- `test-bank/KHMT_MCQ_AI_THCS_De2_Q30.md` | Câu 30 - AI_THCS De2
+- `test-bank/KHMT_MCQ_AI_THCS_De3_Q30.md` | Câu 30 - AI_THCS De3
+- `test-bank/KHMT_MCQ_AI_THCS_De4_Q30.md` | Câu 30 - AI_THCS De4
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De1_Q30.md` | Câu 30 - AI_Tieu_hoc De1
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De2_Q30.md` | Câu 30 - AI_Tieu_hoc De2
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De3_Q30.md` | Câu 30 - AI_Tieu_hoc De3
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De4_Q30.md` | Câu 30 - AI_Tieu_hoc De4
+- `test-bank/KHMT_MCQ_Python_De1_Q30.md` | Câu 30 - Python De1
+- `test-bank/KHMT_MCQ_Scratch_De1_Q30.md` | Câu 30 - Scratch De1
+- `test-bank/KHMT_MCQ_Scratch_De2_Q30.md` | Câu 30 - Scratch De2
+- `test-bank/KHMT_MCQ_Scratch_De3_Q30.md` | Câu 30 - Scratch De3
+- `test-bank/KHMT_MCQ_Scratch_De4_Q30.md` | Câu 30 - Scratch De4
+- `test-bank/KHMT_MCQ_Tynker_De1_Q30.md` | Câu 30 - Tynker De1
+- `test-bank/KHMT_MCQ_Tynker_De2_Q30.md` | Câu 30 - Tynker De2
+- `test-bank/KHMT_MCQ_Tynker_De3_Q30.md` | Câu 30 - Tynker De3
+- `test-bank/KHMT_MCQ_Tynker_De4_Q30.md` | Câu 30 - Tynker De4
+- `test-bank/KHMT_MCQ_AI_THCS_De4_Q31.md` | Câu 31 - AI_THCS De4
+- `test-bank/KHMT_MCQ_AI_THCS_De4_Q32.md` | Câu 32 - AI_THCS De4
+- `test-bank/KHMT_MCQ_AI_THCS_De1_Q04.md` | Câu 4 - AI_THCS De1
+- `test-bank/KHMT_MCQ_AI_THCS_De2_Q04.md` | Câu 4 - AI_THCS De2
+- `test-bank/KHMT_MCQ_AI_THCS_De3_Q04.md` | Câu 4 - AI_THCS De3
+- `test-bank/KHMT_MCQ_AI_THCS_De4_Q04.md` | Câu 4 - AI_THCS De4
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De1_Q04.md` | Câu 4 - AI_Tieu_hoc De1
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De2_Q04.md` | Câu 4 - AI_Tieu_hoc De2
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De3_Q04.md` | Câu 4 - AI_Tieu_hoc De3
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De4_Q04.md` | Câu 4 - AI_Tieu_hoc De4
+- `test-bank/KHMT_MCQ_KHMT_General_De2_Q04.md` | Câu 4 - KHMT_General De2
+- `test-bank/KHMT_MCQ_Python_De1_Q04.md` | Câu 4 - Python De1
+- `test-bank/KHMT_MCQ_Scratch_De1_Q04.md` | Câu 4 - Scratch De1
+- `test-bank/KHMT_MCQ_Scratch_De2_Q04.md` | Câu 4 - Scratch De2
+- `test-bank/KHMT_MCQ_Scratch_De3_Q04.md` | Câu 4 - Scratch De3
+- `test-bank/KHMT_MCQ_Scratch_De4_Q04.md` | Câu 4 - Scratch De4
+- `test-bank/KHMT_MCQ_Scratch_Jr_De1_Q04.md` | Câu 4 - Scratch_Jr De1
+- `test-bank/KHMT_MCQ_Tynker_De1_Q04.md` | Câu 4 - Tynker De1
+- `test-bank/KHMT_MCQ_Tynker_De2_Q04.md` | Câu 4 - Tynker De2
+- `test-bank/KHMT_MCQ_Tynker_De3_Q04.md` | Câu 4 - Tynker De3
+- `test-bank/KHMT_MCQ_Tynker_De4_Q04.md` | Câu 4 - Tynker De4
+- `test-bank/KHMT_MCQ_AI_THCS_De1_Q05.md` | Câu 5 - AI_THCS De1
+- `test-bank/KHMT_MCQ_AI_THCS_De2_Q05.md` | Câu 5 - AI_THCS De2
+- `test-bank/KHMT_MCQ_AI_THCS_De3_Q05.md` | Câu 5 - AI_THCS De3
+- `test-bank/KHMT_MCQ_AI_THCS_De4_Q05.md` | Câu 5 - AI_THCS De4
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De1_Q05.md` | Câu 5 - AI_Tieu_hoc De1
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De2_Q05.md` | Câu 5 - AI_Tieu_hoc De2
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De3_Q05.md` | Câu 5 - AI_Tieu_hoc De3
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De4_Q05.md` | Câu 5 - AI_Tieu_hoc De4
+- `test-bank/KHMT_MCQ_KHMT_General_De2_Q05.md` | Câu 5 - KHMT_General De2
+- `test-bank/KHMT_MCQ_Python_De1_Q05.md` | Câu 5 - Python De1
+- `test-bank/KHMT_MCQ_Scratch_De1_Q05.md` | Câu 5 - Scratch De1
+- `test-bank/KHMT_MCQ_Scratch_De2_Q05.md` | Câu 5 - Scratch De2
+- `test-bank/KHMT_MCQ_Scratch_De3_Q05.md` | Câu 5 - Scratch De3
+- `test-bank/KHMT_MCQ_Scratch_De4_Q05.md` | Câu 5 - Scratch De4
+- `test-bank/KHMT_MCQ_Scratch_Jr_De1_Q05.md` | Câu 5 - Scratch_Jr De1
+- `test-bank/KHMT_MCQ_Tynker_De1_Q05.md` | Câu 5 - Tynker De1
+- `test-bank/KHMT_MCQ_Tynker_De2_Q05.md` | Câu 5 - Tynker De2
+- `test-bank/KHMT_MCQ_Tynker_De3_Q05.md` | Câu 5 - Tynker De3
+- `test-bank/KHMT_MCQ_Tynker_De4_Q05.md` | Câu 5 - Tynker De4
+- `test-bank/KHMT_MCQ_AI_THCS_De1_Q06.md` | Câu 6 - AI_THCS De1
+- `test-bank/KHMT_MCQ_AI_THCS_De2_Q06.md` | Câu 6 - AI_THCS De2
+- `test-bank/KHMT_MCQ_AI_THCS_De3_Q06.md` | Câu 6 - AI_THCS De3
+- `test-bank/KHMT_MCQ_AI_THCS_De4_Q06.md` | Câu 6 - AI_THCS De4
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De1_Q06.md` | Câu 6 - AI_Tieu_hoc De1
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De2_Q06.md` | Câu 6 - AI_Tieu_hoc De2
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De3_Q06.md` | Câu 6 - AI_Tieu_hoc De3
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De4_Q06.md` | Câu 6 - AI_Tieu_hoc De4
+- `test-bank/KHMT_MCQ_KHMT_General_De2_Q06.md` | Câu 6 - KHMT_General De2
+- `test-bank/KHMT_MCQ_Python_De1_Q06.md` | Câu 6 - Python De1
+- `test-bank/KHMT_MCQ_Scratch_De1_Q06.md` | Câu 6 - Scratch De1
+- `test-bank/KHMT_MCQ_Scratch_De2_Q06.md` | Câu 6 - Scratch De2
+- `test-bank/KHMT_MCQ_Scratch_De3_Q06.md` | Câu 6 - Scratch De3
+- `test-bank/KHMT_MCQ_Scratch_De4_Q06.md` | Câu 6 - Scratch De4
+- `test-bank/KHMT_MCQ_Scratch_Jr_De1_Q06.md` | Câu 6 - Scratch_Jr De1
+- `test-bank/KHMT_MCQ_Tynker_De1_Q06.md` | Câu 6 - Tynker De1
+- `test-bank/KHMT_MCQ_Tynker_De2_Q06.md` | Câu 6 - Tynker De2
+- `test-bank/KHMT_MCQ_Tynker_De3_Q06.md` | Câu 6 - Tynker De3
+- `test-bank/KHMT_MCQ_Tynker_De4_Q06.md` | Câu 6 - Tynker De4
+- `test-bank/KHMT_MCQ_AI_THCS_De1_Q07.md` | Câu 7 - AI_THCS De1
+- `test-bank/KHMT_MCQ_AI_THCS_De2_Q07.md` | Câu 7 - AI_THCS De2
+- `test-bank/KHMT_MCQ_AI_THCS_De3_Q07.md` | Câu 7 - AI_THCS De3
+- `test-bank/KHMT_MCQ_AI_THCS_De4_Q07.md` | Câu 7 - AI_THCS De4
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De1_Q07.md` | Câu 7 - AI_Tieu_hoc De1
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De2_Q07.md` | Câu 7 - AI_Tieu_hoc De2
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De3_Q07.md` | Câu 7 - AI_Tieu_hoc De3
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De4_Q07.md` | Câu 7 - AI_Tieu_hoc De4
+- `test-bank/KHMT_MCQ_KHMT_General_De2_Q07.md` | Câu 7 - KHMT_General De2
+- `test-bank/KHMT_MCQ_Python_De1_Q07.md` | Câu 7 - Python De1
+- `test-bank/KHMT_MCQ_Scratch_De1_Q07.md` | Câu 7 - Scratch De1
+- `test-bank/KHMT_MCQ_Scratch_De2_Q07.md` | Câu 7 - Scratch De2
+- `test-bank/KHMT_MCQ_Scratch_De3_Q07.md` | Câu 7 - Scratch De3
+- `test-bank/KHMT_MCQ_Scratch_De4_Q07.md` | Câu 7 - Scratch De4
+- `test-bank/KHMT_MCQ_Scratch_Jr_De1_Q07.md` | Câu 7 - Scratch_Jr De1
+- `test-bank/KHMT_MCQ_Tynker_De1_Q07.md` | Câu 7 - Tynker De1
+- `test-bank/KHMT_MCQ_Tynker_De2_Q07.md` | Câu 7 - Tynker De2
+- `test-bank/KHMT_MCQ_Tynker_De3_Q07.md` | Câu 7 - Tynker De3
+- `test-bank/KHMT_MCQ_Tynker_De4_Q07.md` | Câu 7 - Tynker De4
+- `test-bank/KHMT_MCQ_AI_THCS_De1_Q08.md` | Câu 8 - AI_THCS De1
+- `test-bank/KHMT_MCQ_AI_THCS_De2_Q08.md` | Câu 8 - AI_THCS De2
+- `test-bank/KHMT_MCQ_AI_THCS_De3_Q08.md` | Câu 8 - AI_THCS De3
+- `test-bank/KHMT_MCQ_AI_THCS_De4_Q08.md` | Câu 8 - AI_THCS De4
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De1_Q08.md` | Câu 8 - AI_Tieu_hoc De1
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De2_Q08.md` | Câu 8 - AI_Tieu_hoc De2
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De3_Q08.md` | Câu 8 - AI_Tieu_hoc De3
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De4_Q08.md` | Câu 8 - AI_Tieu_hoc De4
+- `test-bank/KHMT_MCQ_KHMT_General_De2_Q08.md` | Câu 8 - KHMT_General De2
+- `test-bank/KHMT_MCQ_Python_De1_Q08.md` | Câu 8 - Python De1
+- `test-bank/KHMT_MCQ_Scratch_De1_Q08.md` | Câu 8 - Scratch De1
+- `test-bank/KHMT_MCQ_Scratch_De2_Q08.md` | Câu 8 - Scratch De2
+- `test-bank/KHMT_MCQ_Scratch_De3_Q08.md` | Câu 8 - Scratch De3
+- `test-bank/KHMT_MCQ_Scratch_De4_Q08.md` | Câu 8 - Scratch De4
+- `test-bank/KHMT_MCQ_Scratch_Jr_De1_Q08.md` | Câu 8 - Scratch_Jr De1
+- `test-bank/KHMT_MCQ_Tynker_De1_Q08.md` | Câu 8 - Tynker De1
+- `test-bank/KHMT_MCQ_Tynker_De2_Q08.md` | Câu 8 - Tynker De2
+- `test-bank/KHMT_MCQ_Tynker_De3_Q08.md` | Câu 8 - Tynker De3
+- `test-bank/KHMT_MCQ_Tynker_De4_Q08.md` | Câu 8 - Tynker De4
+- `test-bank/KHMT_MCQ_AI_THCS_De1_Q09.md` | Câu 9 - AI_THCS De1
+- `test-bank/KHMT_MCQ_AI_THCS_De2_Q09.md` | Câu 9 - AI_THCS De2
+- `test-bank/KHMT_MCQ_AI_THCS_De3_Q09.md` | Câu 9 - AI_THCS De3
+- `test-bank/KHMT_MCQ_AI_THCS_De4_Q09.md` | Câu 9 - AI_THCS De4
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De1_Q09.md` | Câu 9 - AI_Tieu_hoc De1
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De2_Q09.md` | Câu 9 - AI_Tieu_hoc De2
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De3_Q09.md` | Câu 9 - AI_Tieu_hoc De3
+- `test-bank/KHMT_MCQ_AI_Tieu_hoc_De4_Q09.md` | Câu 9 - AI_Tieu_hoc De4
+- `test-bank/KHMT_MCQ_KHMT_General_De2_Q09.md` | Câu 9 - KHMT_General De2
+- `test-bank/KHMT_MCQ_Python_De1_Q09.md` | Câu 9 - Python De1
+- `test-bank/KHMT_MCQ_Scratch_De1_Q09.md` | Câu 9 - Scratch De1
+- `test-bank/KHMT_MCQ_Scratch_De2_Q09.md` | Câu 9 - Scratch De2
+- `test-bank/KHMT_MCQ_Scratch_De3_Q09.md` | Câu 9 - Scratch De3
+- `test-bank/KHMT_MCQ_Scratch_De4_Q09.md` | Câu 9 - Scratch De4
+- `test-bank/KHMT_MCQ_Scratch_Jr_De1_Q09.md` | Câu 9 - Scratch_Jr De1
+- `test-bank/KHMT_MCQ_Tynker_De1_Q09.md` | Câu 9 - Tynker De1
+- `test-bank/KHMT_MCQ_Tynker_De2_Q09.md` | Câu 9 - Tynker De2
+- `test-bank/KHMT_MCQ_Tynker_De3_Q09.md` | Câu 9 - Tynker De3
+- `test-bank/KHMT_MCQ_Tynker_De4_Q09.md` | Câu 9 - Tynker De4
 

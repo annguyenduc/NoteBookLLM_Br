@@ -1,0 +1,7 @@
+{
+  "userIgnoreFilters": [
+    "brain/test-bank/",
+    "archive/",
+    "brain/process/"
+  ]
+}

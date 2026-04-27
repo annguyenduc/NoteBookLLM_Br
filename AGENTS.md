@@ -2,6 +2,11 @@
 
 > **Cảnh báo cho AI Agent**: Đọc tệp này VÀ **[[CLAUDE.md]]** TRƯỚC KHI thực hiện bất kỳ tác vụ nào. Sử dụng ký hiệu `@` để triệu hồi cá tính phù hợp.
 
+## 🏁 GLOBAL STARTUP PROTOCOL (Bắt buộc)
+1. **READ FIRST**: Luôn đọc `AGENTS.md` và `CLAUDE.md` ngay khi bắt đầu phiên làm việc hoặc trước khi thực hiện tác vụ quan trọng.
+2. **CHECKPOINT**: Luôn khai báo block `CHECKPOINT` (mục ✋ bên dưới) trước khi thực hiện task.
+3. **LOG**: Luôn ghi nhật ký vào `brain/log.md` sau khi hoàn thành.
+
 ## 👥 Danh mục Biệt đội Agent (Swarm Registry v4.0 Supreme)
 Dự án vận hành theo mô hình Swarm với hệ thống Phân loại thông minh (Taxonomy):
 
@@ -23,21 +28,25 @@ Dự án vận hành theo mô hình Swarm với hệ thống Phân loại thông
 ```
 brain/
 ├── raw/          ← Dữ liệu thô gốc. KHÔNG ai được sửa, chỉ được đọc.
-├── atoms/        ← Atomic notes có [[wikilinks]]. 1 file = 1 khái niệm.
-│                    Template: brain/atoms/ATOMS_TEMPLATE.md
+├── wiki/         ← Wiki Pages có [[wikilinks]]. 1 file = 1 khái niệm.
+│                    Guide: brain/process/WIKI_AGENT_GUIDE.md
 ├── distilled/    ← Output cuối: Test bank (ELN_Test_*.md) và KB đã verify.
 │                    CHỈ @librarian và @auditor được ghi vào đây sau khi verify.
 └── process/      ← Handoff files giữa agents. Vòng đời theo task.
                      EXAM_Context_*, Trainer_Profile_*, Learning_Design_*, Eval_Report_*
 ```
 **Quy tắc vàng:**
-- `raw/` → không ai sửa
-- `atoms/` → @scout tạo, @librarian verify, @auditor approve
-- `distilled/` → output đã verify, không phải nơi dump
-- `process/` → sống và chết theo pipeline task
+- `raw/` → không ai sửa (Immutable Source)
+- `wiki/` → Atomic Records (Lịch sử trích xuất, hỗ trợ Rule 14)
+- `distilled/` → **The Wiki** (Nơi bồi đắp tri thức nén, đa chiều)
+- `process/` → Ephemeral Scratchpad (Vùng đệm tạm thời theo Task)
+- `archive/` → Snapshot Storage (Lưu trữ vĩnh viễn, Wikilinks đã trung hòa)
 
 ## 🛠️ Lệnh điều khiển (Manus Commands)
 - `/scout` — Kích hoạt `@scout` nghiên cứu & Đánh giá độ khó (Difficulty Audit).
+- `/file-back` — Tự động lưu kết quả phân tích có giá trị thành Wiki page mới (Query Compounding).
+- `/ingest` — Kích hoạt quy trình chuẩn nạp nguồn dữ liệu mới vào Wiki (5 bước cố định).
+- `/lint` — Kiểm tra sức khỏe Wiki: orphan pages, mâu thuẫn, stale claims, concept gaps.
 - `/assess-difficulty` — Lệnh chuyên biệt để đánh giá tải nhận thức của tri thức.
 - `/heal` — Kích hoạt `@healer` sửa lỗi dựa trên log hoặc báo cáo lỗi.
 - `/heartbeat` — Kích hoạt `@librarian` tổng hợp `brain/raw/` và cập nhật đồ thị kiến thức.
@@ -55,15 +64,15 @@ brain/
 | Agent | Đọc | Ghi | Cấm tuyệt đối |
 |:---|:---|:---|:---|
 | **@pm** | Tất cả | `brain/process/`, `brain/log.md`, `CONTINUITY.md` | Ghi `brain/raw/` |
-| **@scout** | `brain/raw/`, `brain/process/` | `brain/atoms/` (draft), `brain/process/EXAM_Context_*.md` | Ghi `brain/distilled/` trực tiếp |
-| **@engineer** | `brain/process/`, `brain/distilled/` | `brain/process/` (output task) | Ghi `brain/atoms/`, `brain/raw/` |
+| **@scout** | `brain/raw/`, `brain/process/` | `brain/wiki/` (draft), `brain/process/EXAM_Context_*.md` | Ghi `brain/distilled/` trực tiếp |
+| **@engineer** | `brain/process/`, `brain/distilled/` | `brain/process/` (output task) | Ghi `brain/wiki/`, `brain/raw/` |
 | **@librarian** | Tất cả | `brain/distilled/` (sau verify), `brain/log.md` | Overwrite `brain/log.md` |
 | **@auditor** | Tất cả (read-only) | `brain/log.md` (append only) | Ghi bất kỳ file nội dung nào |
 | **@designer** | `brain/raw/`, `brain/distilled/`, `brain/process/Trainer_Profile_*.md` | `brain/process/Learning_Design_*.md` | Bỏ qua Trainer_Profile |
 | **@evaluator** | `brain/process/`, `brain/distilled/` | `brain/process/Eval_Report_*.md`, `brain/log.md` | — |
 | **@profiler** | `brain/raw/`, `brain/distilled/` | `brain/process/Trainer_Profile_*.md` | — |
-| **@creative** | `brain/distilled/`, `brain/atoms/` | `docs/`, `res/`, `templates/` | Ghi `brain/` trực tiếp |
-| **@healer** | Tất cả | `brain/atoms/` (sửa links), `scripts/` | Xóa file không có backup |
+| **@creative** | `brain/distilled/`, `brain/wiki/` | `docs/`, `res/`, `templates/` | Ghi `brain/` trực tiếp |
+| **@healer** | Tất cả | `brain/wiki/` (sửa links), `scripts/` | Xóa file không có backup |
 | **@devops** | Tất cả | `scripts/`, `tools/`, `libs/` | Ghi `brain/distilled/` |
  
 **Quy tắc ghi log bắt buộc:**
@@ -78,16 +87,24 @@ Mọi hành động ghi file → append vào `brain/log.md` theo format:
 ## ⚖️ Quy tắc Swarm v4.0 Supreme (Manus Standard)
 1. **Manus First**: Ưu tiên đọc `task_plan.md` trước khi thực hiện bất kỳ hành động nào.
 2. **Double Link**: Mọi note mới trong Wiki phải có ít nhất 2 liên kết `[[Wikilinks]]`.
-3. **Knowledge Compounding**: Mọi giải pháp hoặc Insight quan trọng phải được "file back" vào `brain/distilled/` ngay sau phiên làm việc để tích lũy tri thức.
-4. **Log-First Ingest**: Mọi thay đổi về tri thức hệ thống (Brain/Wiki) phải được ghi nhận vào `brain/log.md`, phải dùng append không được overwrite, phải viết đúng định dạng được ghi trong log.
-5. **Automated Self-Healing**: Agent phải **tự động** triệu hồi `@healer` khi gặp lỗi hệ thống hoặc logic lặp lại.
-6. **Budget Awareness**: Thông báo cho người dùng khi phiên làm việc tiêu tốn >80% Budget đã định nghĩa.
+3. **Knowledge Compounding (Rule 3)**: Mọi giải pháp, Insight hoặc tri thức mới từ Raw phải được bồi đắp (Compounded) trực tiếp vào các file Master trong `brain/distilled/` ngay trong phiên làm việc. Không đợi đến cuối Pipeline.
+4. **Log-First Ingest (Rule 4)**: Mọi thay đổi về tri thức hệ thống (Brain/Wiki) phải được ghi nhận vào `brain/log.md`, phải dùng append không được overwrite, phải viết đúng định dạng được ghi trong log. **BẮT BUỘC sử dụng bảng mã UTF-8 (không BOM) khi ghi file.** Khi dùng PowerShell, luôn thêm `-Encoding UTF8`.
+5. **Automated Self-Healing (Rule 5)**: Agent phải **tự động** triệu hồi `@healer` khi gặp lỗi hệ thống hoặc logic lặp lại.
+6. **Budget Awareness (Rule 6)**: Thông báo cho người dùng khi phiên làm việc tiêu tốn >80% Budget đã định nghĩa.
 7. **Hierarchy Limit (Rule 7 - Absolute Flatness)**: 
     - Tuyệt đối không để thư mục sâu quá 2 cấp từ Root (Depth <= 2 Folders).
-    - Cấp 1 (Root): `brain/`, `scripts/`, `libs/`, `tools/`.
-    - Cấp 2 (Buckets - Level 2 Folders): `raw/`, `distilled/`, `assets/`, `archive/`.
+    - Cấp 1 (Root): `brain/`, `scripts/`, `libs/`, `tools/`, `assets/`, `archive/`.
+    - Cấp 2 (Buckets): `brain/raw/`, `brain/wiki/`, `brain/distilled/`, `brain/process/`, `scripts/archive/`, `scripts/maintenance/`, `scripts/pipelines/`, `scripts/setup/`, `scripts/tests/`.
     - Cấp 3 (Files): Phải là tệp tin trực tiếp. **KHÔNG CÓ THƯ MỤC CON Ở CẤP 3**.
-    - **Quy tắc Prefix**: Nếu cần phân loại, hãy dùng dấu gạch dưới (e.g. `distilled/ELN_Test_file.md`).
+    - **Quy tắc Lưu trữ (Archiving)**: Khi hoàn thành task, các file trong `brain/process/` phải được chuyển vào `archive/` với prefix `YYYYMMDD_`.
+    - **Quy tắc Trung hòa (Neutralization)**: Khi di chuyển file vào `archive/`, PHẢI chuyển đổi Wikilinks `[[...]]` thành văn bản thuần (ví dụ: bọc trong backticks `` `...` ``) để không làm loãng đồ thị tri thức.
+    - **Quy tắc Prefix 2 cấp**: Bắt buộc đặt tên file theo cấu trúc `[CẤP_1]_[CẤP_2]_[TÊN_FILE].md` để duy trì tính phẳng nhưng vẫn phân loại được.
+        - **KHMT**: AI_THCS, AI_Tieu_hoc, Python, Scratch, Scratch_Jr, Tynker.
+        - **Robot**: Codey, GBot, mBot, Rover, Unplugged, xBot.
+        - **DESIGN**: 3D_Tinkercad, Canva, Maker_Empire, Wordpress.
+        - **IOT**: AI_Arduino, Arduino, Halocode, YoloBit.
+        - **PROMPT**: K10_Toan, K10_Van, K10_Anh (Dành cho Prompt Engineering).
+        - **ACAD**: Biology, Math, Physics (Dành cho Giáo án/Academic).
 8. **Machine-Readability**: Đặt tên File/Folder theo chuẩn `Snake_Case`, prefix bằng số (`01_`, `02_`) và sử dụng YAML Frontmatter cho ngữ cảnh.
 9. **Exam Handoff Protocol**: Khi tạo đề kiểm tra, `@scout` PHẢI hoàn thành và ghi `brain/distilled/EXAM_Context_[module].md` chứa:
     - Danh sách concept chính xác cần kiểm tra (trích từ tài liệu gốc).
@@ -127,10 +144,30 @@ Rule 12 — RAW IS IMMUTABLE:
 - CHỈ người dùng mới được thêm file mới vào raw/
 
 ## 📚 WIKI CATALOGING (Quy tắc Mục lục Kiến thức)
-Rule 13 — WIKI_INDEX IS MANDATORY:
+Rule 13 — WIKI_INDEX & AGENT_GUIDE IS MANDATORY:
 - Mọi tệp tin kiến thức (Atoms, Distilled) khi được tạo ra hoặc chỉnh sửa đều PHẢI được cập nhật vào `brain/WIKI_INDEX.md`.
+- **BẮT BUỘC**: Trước khi tạo/sửa Wiki, Agent phải đọc hướng dẫn tại `brain/process/WIKI_AGENT_GUIDE.md`.
 - Agent có thể dùng script `scripts/update_wiki_index.py` để tự động hóa việc này.
 - `brain/WIKI_INDEX.md` đóng vai trò là "Bản đồ" (Catalog) để LLM quét nhanh thay vì lục lọi toàn bộ files.
+
+Rule 15 — EXECUTION INTEGRITY (Chống "Nói mà không làm"):
+- Tuyệt đối KHÔNG báo cáo "Đã tạo/sửa file" nếu chưa thực hiện cuộc gọi tool (write_file, replace_file, v.v.) thành công trong cùng lượt phản hồi.
+- Mọi báo cáo hoàn thành phải dựa trên Output thực tế của Tool, không dựa trên dự định của Agent.
+- Vi phạm: Phải tự phê bình và ghi lỗi vào `CONTINUITY.md`.
+## 🔐 SOURCE INTEGRITY (Bắt buộc khi tạo ATOMS)
+Rule 14 — SOURCE_INTEGRITY:
+- Khi viết trường `📖 Nguồn`, agent phải **thực sự mở file đó** trong `brain/raw/` trước khi viết.
+- Chỉ ghi **tên file raw gốc hiện tồn tại** trong `brain/raw/` — không ghi file tổng hợp trung gian đã deprecated.
+- Phải xác nhận fact xuất hiện ở section / câu hỏi nào cụ thể — ghi rõ vào comment `[AUDITOR] Rule 14`.
+- Checklist ATOMS bắt buộc có mục: `- [ ] [Rule 14] Đã mở file nguồn trong brain/raw/ và xác nhận fact tồn tại`.
+- Vi phạm: ATOMS không được phép đổi status thành `verified` nếu thiếu mục này.
+
+Rule 16 — PROCESS_MANDATORY_STATS:
+- Mọi tệp tin kiến thức trung gian trong `brain/process/` PHẢI sử dụng cấu trúc từ `brain/process/PROCESS_TEMPLATE.md`.
+- Bắt buộc phải có **Bảng thống kê hiệu suất Khai thác (Mining Stats)** ở đầu tệp tin để theo dõi độ phủ tri thức.
+- **BẮT BUỘC**: Phải liệt kê danh sách các Master Files (`brain/distilled/`) đã được bồi đắp tri thức từ nguồn này.
+- Bất kỳ Agent nào khi thực hiện trích xuất tri thức (Extraction/Mining) đều phải cập nhật bảng này trước khi nạp vào Wiki.
+
 ## ✋ CHECKPOINT Protocol (Bắt buộc mọi agent)
 
 Trước khi thực hiện BẤT KỲ task nào, agent PHẢI trả lời chính xác các block sau:
@@ -140,7 +177,7 @@ CHECKPOINT:
   task: "[tên task cụ thể — không được viết chung chung]"
   step: "[bước X / tổng Y bước trong pipeline]"
   output_file: "[đường dẫn file sẽ tạo — VD: brain/distilled/EXAM_Context_M2.md]"
-  stop_condition: "[điều kiện dừng cụ thể — VD: sau khi tạo xong 5 atomic notes]"
+  stop_condition: "[điều kiện dừng cụ thể — VD: sau khi tạo xong 5 Wiki Pages]"
   prerequisites:
     - file: "[tên file prerequisite 1]"
       exists: "YES | NO"

@@ -1,0 +1,136 @@
+<a id="_es55c26bk5n1"></a>__ĐỀ KIỂM TRA TRẮC NGHIỆM \- Lập trình Tynker  
+\(Đề 1\)__
+
+\- 30 câu: 12 nhận biết \(40%\) \-  18 thông hiểu \(60%\)  
+\- Câu trắc nghiệm 1 đáp án: 1 điểm  
+\- Câu trắc nghiệm nhiều đáp án: Số điểm = số đáp án đúng, đúng 1 câu được 1 điểm  
+\- Điểm đạt: 70% điểm tối đa
+
+Các kiến thức cần đạt
+
+Nhận biết  
+\(12 câu\)
+
+Thông hiểu / Vận dụng  
+\(18 câu\)
+
+Vận hành Tynker:
+
+\- Giới thiệu phần mềm Tynker
+
+\- Đăng ký tài khoản giáo viên
+
+\- Giao diện phần mềm Tynker
+
+\- Tạo lớp học và tài khoản học sinh
+
+\- Giao diện lập trình
+
+\- Các khối lệnh lập trình
+
+4
+
+5,6
+
+  
+1
+
+Kiến thức lập trình:
+
+\- Thêm và thao tác với nhân vật, phông nền
+
+\- Thay đổi trang phục và phông nền
+
+\- Sử dụng vòng lặp
+
+\- Hiển thị lời nói
+
+\- Nhân vật di chuyển
+
+\- Nhân vật xoay
+
+\- Phát âm thanh
+
+\- Nhân vật ẩn và hiện
+
+\- Nhóm lệnh Pen
+
+\- Truyền và nhận tin nhắn
+
+\- Điều kiện
+
+\- Bản sao
+
+\- Biến số
+
+\- Phép so sánh
+
+\- Hàm
+
+2,3
+
+7
+
+11
+
+15
+
+16
+
+22
+
+25
+
+23
+
+8
+
+9,10
+
+12,13,19,29
+
+14
+
+17,18,30
+
+21
+
+26,27
+
+24
+
+28,29
+
+### <a id="_59405mh6dudf"></a>__Câu 1 \(Thông hiểu\)__
+
+__Chọn \(những\) mô tả đúng về Scratch và Tynker\.__
+
+A/ Scratch và Tynker đều là nền tảng lập trình kéo \- thả\.
+
+B/ Scratch có 2 phiên bản sử dụng là online và offline, Tynker chỉ có phiên bản online\.
+
+C/ Scratch có thể cài đặt nhiều ngôn ngữ sử dụng, Tynker chỉ có thể sử dụng ngôn ngữ Tiếng Anh\.
+
+D/ Scratch không có tài khoản giáo viên nên không thể tạo lớp học còn Tynker thì có thể\.
+
+### <a id="_ixnywimgius4"></a>__Câu 2 \(Nhận biết\)__
+
+__Chọn cách thêm nhân vật vào dự án\.__
+
+__\(Nhiều đáp án\)__
+
+A/ Sử dụng công cụ vẽ
+
+B/ Chọn nhân vật từ thư viện
+
+C/ Thiết kế nhân vật từ thư viện
+
+D/ Tải nhân vật từ máy tính
+
+E/ Chụp hình trực tiếp từ màn hình máy tính
+
+### <a id="_p9agh5l0e8ia"></a>__Câu 3 \(Thông hiểu\)__
+
+__Chọn chế độ xoay phù hợp với gif\.__
+
+A/ ![](data:image/gif;base64,R0lGODlhWAJRAff/MQAAAAAAAwABAQABBAEAAgEAAwEABgEBAgEBCAEDDQEFEQIABAIBAgIBBAICAwIJFgIOHAMBBAMTIwQCBgQDBQQDBQQDBgQZKgUECAYFCA

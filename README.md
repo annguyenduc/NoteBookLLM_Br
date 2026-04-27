@@ -16,36 +16,35 @@
 
 ```
 build-peda/
-├── brain/
-│   ├── raw/          # Tài liệu gốc, chưa xử lý
-│   └── distilled/    # Tri thức đã tinh chế (Trainer Profile, Learning Design, Eval Report)
-├── libs/
-│   └── core/
-│       └── llm_client.py   # LLM gateway wrapper — 9Router + fallback chain
-├── scripts/          # Automation: ping, lint, graphify, chunked output
-├── templates/        # Template giáo án, slide, assignment
-├── docs/             # Output nội dung đào tạo đã hoàn thiện
-├── res/              # Tài nguyên tĩnh (hình ảnh, assets)
-├── tools/            # Tiện ích hỗ trợ
+├── brain/            # Wiki Knowledge Base (Raw, Wiki, Distilled, Process)
+├── scripts/          # Các script automation (maintenance, pipelines, setup)
+├── libs/             # Thư viện core và wrapper API
+├── tools/            # Các công cụ bổ trợ hệ thống
+├── assets/           # Tài nguyên tĩnh, hình ảnh, templates
+├── storage/          # Dữ liệu tạm, logs thực thi (execution_manifest)
+├── archive/          # Lưu trữ các tệp cũ hoặc atoms lỗi
 ├── AGENTS.md         # Registry Swarm Agent v4.0 Supreme
-├── CLAUDE.md         # Operational Memory (LOM) cho AI agent
-├── AUDITOR_Protocol.md  # Quy trình chống hallucination
-└── CONTINUITY.md     # Continuity log giữa các phiên làm việc
+├── CLAUDE.md         # Operational Memory (LOM) & Session Context
+├── COMMAND_BOARD.md  # Bảng điều khiển tác vụ hàng ngày
+├── CONTINUITY.md     # Duy trì mạch tri thức giữa các phiên
+└── AUDITOR_Protocol.md # Quy trình chống hallucination
 ```
 
 ---
 
-## 🤖 Swarm Agent Registry
+## 🤖 Biệt đội Agent (Swarm Registry v4.0 Supreme)
+Dự án vận hành theo mô hình Swarm với hệ thống Phân loại thông minh (Taxonomy). 
 
-| Agent | Vai trò | Model chính | Fallback |
-| :--- | :--- | :--- | :--- |
-| **@profiler** | Phân tích năng lực trainer | `groq/llama-3.3-70b-versatile` | `groq/qwen/qwen3-32b` → `ag/gemini-3-flash` |
-| **@designer** | Thiết kế learning sequence | `groq/qwen/qwen3-32b` | `groq/llama-3.3-70b-versatile` → `ag/gemini-3-flash` |
-| **@engineer** | Tạo nội dung (giáo án, slide, bài tập) | `qw/qwen3-coder-plus` | `groq/qwen/qwen3-32b` → `ag/gemini-3-flash` |
-| **@creative** | Case study, roleplay, scenario | `nvidia/moonshotai/kimi-k2.5` | `groq/llama-3.3-70b-versatile` → `ag/gemini-3-flash` |
-| **@evaluator** | Đánh giá kết quả (Kirkpatrick) | `groq/qwen/qwen3-32b` | `groq/llama-3.3-70b-versatile` → `ag/gemini-3-flash` |
-| **@auditor** | Kiểm định tính xác thực | `groq/llama-3.3-70b-versatile` | `groq/qwen/qwen3-32b` → `ag/gemini-3-flash` |
-| **@pm** | Lập kế hoạch, điều phối | `ag/gemini-3-flash` | `groq/llama-3.3-70b-versatile` |
+👉 **Xem chi tiết tại: [[AGENTS.md]]**
+
+| Agent | Vai trò | Trọng tâm v4.0 |
+| :--- | :--- | :--- |
+| **@pm** | Planner | Lập kế hoạch & Điều phối Swarm. |
+| **@scout** | Researcher | Nghiên cứu tri thức & Audit nguồn. |
+| **@engineer** | Executioner | Viết mã nguồn & Thực thi TDD. |
+| **@librarian** | Reviewer | Rà soát chất lượng & Quản lý Wiki. |
+| **@auditor** | Integrity | Kiểm định tính xác thực (Rule 10). |
+| **@designer** | ID Expert | Thiết kế learning sequence (5E/UDL). |
 
 ---
 
@@ -126,9 +125,9 @@ python scripts/chunked_engineer.py --output slide --module M2.1 --chunk-size 5
 ## 📋 Quy tắc vận hành
 
 - **Anti-Hallucination**: Mọi claim phải có nguồn từ `brain/raw/` hoặc `brain/distilled/`. Xem `AUDITOR_Protocol.md`.
-- **Log-First**: Mọi thay đổi tri thức ghi vào `brain/log.md` (append only).
-- **Flat Hierarchy**: Thư mục tối đa 2 cấp từ root. Dùng underscore prefix thay vì thư mục con.
-- **Execution Manifest**: Mọi agent call ghi vào `storage/execution_manifest.jsonl` — bằng chứng vật lý chống hallucinate orchestration.
+- **Log-First Ingest**: Mọi thay đổi tri thức ghi vào `brain/log.md` (append only).
+- **Absolute Flatness**: Thư mục tối đa 2 cấp từ root. Dùng underscore prefix thay vì thư mục con.
+- **Source Integrity**: Chỉ trích dẫn từ file gốc hiện tồn tại trong `brain/raw/`.
 
 ---
 

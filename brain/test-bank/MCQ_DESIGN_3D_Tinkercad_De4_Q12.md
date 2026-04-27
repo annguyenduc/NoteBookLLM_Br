@@ -1,0 +1,36 @@
+﻿---
+file_id: "MCQ_DESIGN_3D_Tinkercad_De4_Q12"
+title: "Câu 12 (Nhận biết)"
+category: "Atomic Question"
+prefix: "MCQ"
+tags: ['DESIGN', '3D_Tinkercad', 'Nhận biết']
+source: "`ĐỀ 4 TRẮC NGHIỆM 3D TINKERCAD.docx`"
+level: "Nhận biết"
+answer: "A/"
+status: "draft"
+created: "2026-04-22"
+---
+
+# [MCQ] Câu 12 (Nhận biết)
+
+## ❓ Câu hỏi
+![Image](../assets/IMG_DESIGN_3D_Tinkercad_de_2_trac_nghiem_3d_tinkercad_rId9.png)
+Trong các thiết kế trên, có bao nhiêu thiết kế có sử dụng khớp nối?
+![Image](../assets/IMG_DESIGN_3D_Tinkercad_de_2_trac_nghiem_3d_tinkercad_rId10.png)
+
+## 📝 Đáp án lựa chọn
+- **A/ (Đáp án)**
+  2
+- **B/**
+  1
+- **C/**
+  3
+- **D/**
+  4
+
+## 🔗 Liên kết tư duy
+- Kiến thức liên quan: `WIKI_DESIGN`
+- Module: `DESIGN_3D_Tinkercad`
+
+## 📖 Nguồn
+`📖 Nguồn: [ĐỀ 4 TRẮC NGHIỆM 3D TINKERCAD.docx] — 12`

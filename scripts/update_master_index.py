@@ -6,7 +6,7 @@ RAW_DIR = os.path.join(BASE_DIR, "brain", "raw")
 INDEX_PATH = os.path.join(RAW_DIR, "MASTER_SOURCE_INDEX.md")
 
 def update_index():
-    md_files = glob.glob(os.path.join(RAW_DIR, "LMS_RAW_*.md"))
+    md_files = [f for f in glob.glob(os.path.join(RAW_DIR, "*.md")) if "MASTER_SOURCE_INDEX.md" not in f]
     # Also include the rare .txt or other raw files if any
     other_files = glob.glob(os.path.join(RAW_DIR, "*"))
     other_files = [f for f in other_files if not f.endswith(".md") and os.path.isfile(f)]

@@ -7,7 +7,7 @@ Write-Host "Initiating Heartbeat Synthesis..." -ForegroundColor Cyan
 
 # 1. Update Knowledge Graph
 Write-Host "Syncing Knowledge Graph (Incremental)..."
-python scripts/setup_graphify_bootstrap.py --update
+# python scripts/setup/setup_graphify_bootstrap.py --update
 
 # 2. Context Distillation (Placeholder)
 Write-Host "Distilling new knowledge from brain/raw/..."
