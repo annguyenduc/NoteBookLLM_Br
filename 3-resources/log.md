@@ -187,3 +187,8 @@
 - Atomic Files: ACAD_AI_Data_Bias.md, ACAD_AI_Knowledge_Cutoff.md, ACAD_AI_Model_Drift.md, ACAD_AI_Human_In_The_Loop.md
 - Master Compounded: ACAD_AI_Responsible_AI.md
 - Số concept: 4
+
+## [2026-04-28 15:42] ingest | @pm | coursera-AI-essential-Stay up to date with AI.md
+- Atomic Files: ACAD_AI_Information_Toolkit.md, ACAD_AI_Learning_Habits.md
+- Master Compounded: ACAD_AI_Responsible_AI.md
+- Số concept: 2

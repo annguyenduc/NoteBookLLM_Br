@@ -5,13 +5,17 @@
 
 > **Hướng dẫn File-Back Judgment**: Chỉ cần đọc section **CONCEPT PAGES** để kiểm tra xem một insight mới đã tồn tại chưa. Không cần đọc ATOM PAGES.
 
-## 🧠 CONCEPT PAGES (4 trang)
+## 🧠 CONCEPT PAGES (6 trang)
 *Dành cho File-Back Judgment — LLM đọc section này để kiểm tra trùng lặp.*
 
+- [[wiki/ACAD_AI_Information_Toolkit.md]] | **Bộ công cụ tri thức AI (AI Information Toolkit)** **[VERIFIED]**
+  > **Bộ công cụ tri thức AI (AI Information Toolkit)** là một bộ sưu tập cá nhân các nguồn tin được tuyển chọn kỹ lưỡng, gi...
 - [[wiki/ACAD_AI_Human_In_The_Loop.md]] | **Con người trong vòng lặp (Human-in-the-loop)** **[VERIFIED]**
   > **Con người trong vòng lặp (Human-in-the-loop)** là nguyên tắc mà con người luôn giữ vai trò là trọng tài cuối cùng đánh...
 - [[wiki/ACAD_AI_Model_Drift.md]] | **Sự trôi dạt mô hình (Model Drift)** **[VERIFIED]**
   > **Sự trôi dạt (Drift)** là sự suy giảm dần dần về độ chính xác và tính phù hợp của đầu ra AI khi thế giới thực thay đổi.
+- [[wiki/ACAD_AI_Learning_Habits.md]] | **Thói quen học tập AI (AI Learning Habits)** **[VERIFIED]**
+  > **Thói quen học tập AI** là các phương pháp tiếp cận chủ động và nhất quán để duy trì năng lực trong kỷ nguyên AI, nhấn ...
 - [[wiki/ACAD_AI_Knowledge_Cutoff.md]] | **Điểm dừng tri thức (Knowledge Cutoff)** **[VERIFIED]**
   > **Điểm dừng tri thức (Knowledge Cutoff)** là giới hạn thời gian mà tại đó một mô hình AI được hoàn tất việc huấn luyện. ...
 - [[wiki/ACAD_AI_Data_Bias.md]] | **Định kiến dữ liệu trong AI (Data Bias)** **[VERIFIED]**
