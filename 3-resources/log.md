@@ -182,3 +182,8 @@
 ## [2026-04-28 00:10] PLAN | @pm | Tạo implementation plan P1.1 cho MimiClaw GitHub Capture
 - File tạo/sửa: 1-projects/2026_MimiClaw_Inbox/IMPLEMENTATION_P1_1_MimiClaw_GitHub_Capture.md, 1-projects/2026_MimiClaw_Inbox/PLAN_Inbox_Workflow.md
 - Lý do: Chốt scope triển khai tối thiểu cho nhánh Telegram -> GitHub -> 00_Inbox trước khi giao cho @engineer.
+
+## [2026-04-28 15:10] ingest | @pm | coursera-AI-essential-Bias, drift, and knowledge cutoff.md
+- Atomic Files: ACAD_AI_Data_Bias.md, ACAD_AI_Knowledge_Cutoff.md, ACAD_AI_Model_Drift.md, ACAD_AI_Human_In_The_Loop.md
+- Master Compounded: ACAD_AI_Responsible_AI.md
+- Số concept: 4

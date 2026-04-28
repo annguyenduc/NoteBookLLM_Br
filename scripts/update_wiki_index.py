@@ -86,7 +86,7 @@ def main():
                     info = parse_markdown_file(filepath)
                     if dir_name == 'distilled':
                         distilled_pages.append(info)
-                    elif is_concept_page(filepath):
+                    elif dir_name == 'wiki':
                         concept_pages.append(info)
                     else:
                         atom_pages.append(info)
