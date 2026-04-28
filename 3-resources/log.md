@@ -192,3 +192,5 @@
 - Atomic Files: ACAD_AI_Information_Toolkit.md, ACAD_AI_Learning_Habits.md
 - Master Compounded: ACAD_AI_Responsible_AI.md
 - Số concept: 2
+
+## [2026-04-28 15:49] file-back | @pm | ACAD_AI_Cutoff_vs_Drift.md

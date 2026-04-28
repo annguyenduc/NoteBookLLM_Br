@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "3-resources/raw/coursera-AI-essential-Stay up to date with AI.md",
+                "file": "3-resources/distilled/ACAD_AI_Responsible_AI.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "coursera-AI-essential-Stay up to date with AI"
+              "title": "ACAD_AI_Responsible_AI"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "3-resources/raw/coursera-AI-essential-Stay up to date with AI.md",
+                "file": "3-resources/distilled/ACAD_AI_Responsible_AI.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for coursera-AI-essential-Stay up to date with AI"
+              "title": "Backlinks for ACAD_AI_Responsible_AI"
             }
           },
           {
@@ -182,8 +182,10 @@
   },
   "active": "a6d1b28b4978105c",
   "lastOpenFiles": [
-    "3-resources/raw/LMS_MD_Sources/IOT_AI_Arduino_Đề_2_trắc_nghiệm_-_AI_Arduino.md",
+    "3-resources/wiki/ACAD_AI_Cutoff_vs_Drift.md",
+    "3-resources/WIKI_INDEX.md",
     "3-resources/raw/coursera-AI-essential-Stay up to date with AI.md",
+    "3-resources/raw/LMS_MD_Sources/IOT_AI_Arduino_Đề_2_trắc_nghiệm_-_AI_Arduino.md",
     "3-resources/assets/RES_Antigravity_Obsidian_Memory_LOM.md",
     "3-resources/log.md",
     "1-projects/2026_MimiClaw_Inbox/PLAN_Inbox_Workflow.md",
@@ -209,8 +211,6 @@
     "3-resources/test-bank/KHMT_Scratch_MCQ_De4_Q22.md",
     "3-resources/test-bank/KHMT_Scratch_MCQ_De4_Q21.md",
     "3-resources/test-bank/KHMT_Scratch_MCQ_De4_Q20.md",
-    "3-resources/test-bank/KHMT_Scratch_MCQ_De4_Q18.md",
-    "3-resources/test-bank/KHMT_Scratch_MCQ_De4_Q17.md",
     "3-resources/assets/ASSET_DESIGN_Wordpress_De1_rId25.png",
     "3-resources/assets/ASSET_DESIGN_Wordpress_De1_rId24.png",
     "3-resources/assets/ASSET_DESIGN_Wordpress_De1_rId23.png",
