@@ -1,56 +1,139 @@
 # 📕 Operational Memory (LOM) — CLAUDE.md
 
-> **Status**: ACTIVE | **Session ID**: 99db579e | **Focus**: IOT Arduino Deep Distillation
-
-## 📏 Wiki Content Standards (Bắt buộc)
-Mọi file Wiki liên quan đến phần cứng (Hardware) **BẮT BUỘC** phải có cấu trúc:
-1.  **Quy tắc vật lý:** Cách nhận dạng, cực tính (+/-), số chân.
-2.  **Quy tắc đấu nối:** Ánh xạ chân cắm cụ thể (Ví dụ: GND ➔ GND, Signal ➔ D2).
-3.  **Lưu ý an toàn:** Điện áp, điện trở bảo vệ, chia sẻ GND chung.
-*Tuyệt đối không chấp nhận các file Wiki chỉ có mô tả chung chung.*
-
-## 🗓️ Session Context (2026-04-24)
-- **Task Hiện tại**: Chuẩn hóa Wiki IOT Arduino (Pure IOT).
-- **Tiến độ**: 
-    - [x] Tách bạch Hardware vs Logic.
-    - [x] Bổ sung 100% linh kiện từ 120 câu hỏi.
-    - [x] Thiết lập tiêu chuẩn "Quy tắc vật lý & Đấu nối".
-- **Hành động tiếp theo**: Đồng bộ hóa Logic Lập trình.
-
-## 🧭 Wiki Taxonomy (Trạng thái)
-- [[WIKI_IOT_Arduino_Hardware]] — **[ĐÃ HOÀN TẤT]** (100% linh kiện).
-- [[WIKI_IOT_Arduino_Logic]] — **[ĐANG XỬ LÝ]** (Cần nâng cấp theo chuẩn mới).
-- [[WIKI_Arduino_System]] — **[ĐÃ HOÀN TẤT]**.
-
-## 🛠️ Supreme Toolkit (Lệnh nhanh)
-- `/distill` — Chưng cất tri thức từ MCQ sang Wiki.
-- `/consolidate` — Tổng hợp các Wiki nhỏ thành Master KB.
-- `/maintenance-gateway` — Bảo trì SmartProxyHub (Port 4000).
-- `/file-back` — Lưu kết quả phân tích có giá trị thành Wiki page mới (Auto File-Back).
-- `/lint` — Kiểm tra sức khỏe Wiki: trang mồ côi, liên kết gãy, mâu thuẫn.
+> **Status**: ACTIVE | **Session ID**: AUTO-GENERATE | **Focus**: Data Analyst 80/20 Ingest
+> **Cập nhật lần cuối**: 2026-04-29 | **Schema**: v5.3
+> ⚠️ **Đây là file Bộ nhớ Trung hạn.** Nó sẽ được reset/archive khi dự án `2026_Data_Analyst` hoàn tất.
 
 ---
 
-## 🏛️ Nền tảng Kiến trúc (Architectural Foundation)
+## 🗓️ Session Context — Dự án Hiện tại
 
-> **Đọc bắt buộc**: `llm-wiki.md` tại Root là tài liệu gốc định hình toàn bộ triết lý của hệ thống này.
-> Mọi Agent PHẢI hiểu và tuân thủ 3 tầng và 3 phép vận hành được mô tả trong đó.
+- **Dự án chính**: `1-projects/2026_Data_Analyst/`
+- **File tracking**: `1-projects/2026_Data_Analyst/Ingest_80_20.md`
+- **Mục tiêu**: Trích xuất 20% kiến thức lõi (SQL, Python/Pandas, Data Visualization, Analytical Thinking) giải quyết 80% công việc của một Data Analyst.
+- **Trạng thái Ingest**:
+  - [x] Nhóm 1 — THINK (Tư duy & Giải quyết vấn đề): **DONE** (10 concepts, 3 source summaries)
+  - [ ] Nhóm 3 — SQL: 🔴 Chưa bắt đầu — **ƯU TIÊN TIẾP THEO**
+  - [ ] Nhóm 4 — Python / Pandas: 🔴 Chưa bắt đầu
+  - [ ] Nhóm 5 — Data Visualization & Storytelling: 🔴 Chưa bắt đầu
+- **Hành động tiếp theo**: Bắt đầu Ingest Nhóm 3 — SQL (`TOOL_SQL_Getting_Started.md`)
 
-### Ba tầng (Three Layers)
-| Tầng | Thư mục | Quy tắc cốt lõi |
+---
+
+## 📏 Wiki Content Standards — Data Analyst
+
+Mọi Wiki Atom thuộc dự án này **BẮT BUỘC** tuân theo các chuẩn sau. Agent phải đọc `3-resources/WIKI_AGENT_GUIDE.md` trước khi tạo/sửa bất kỳ trang nào.
+
+### 📐 Chuẩn cho SQL Atoms (`CONCEPT_SQL_*.md`, `ENTITY_SQL.md`)
+1. **Syntax Block**: Mọi khái niệm SQL phải có một code block cú pháp chuẩn (ANSI SQL).
+2. **Minimal Working Example**: Tối thiểu 1 ví dụ SQL hoạt động được, có comment giải thích.
+3. **Gotchas / Pitfalls**: Ít nhất 1 mục cảnh báo lỗi thường gặp (vd: `NULL` trong `JOIN`, thứ tự `WHERE` vs `HAVING`).
+4. **Wikilinks bắt buộc**: Mỗi trang SQL phải link đến `[[ENTITY_SQL]]` và ít nhất 1 concept liên quan.
+
+```sql
+-- Ví dụ chuẩn format cho SQL block
+SELECT
+    department,
+    COUNT(*) AS employee_count,
+    AVG(salary) AS avg_salary
+FROM employees
+WHERE hire_date >= '2020-01-01'
+GROUP BY department
+HAVING COUNT(*) > 5
+ORDER BY avg_salary DESC;
+```
+
+### 🐍 Chuẩn cho Python / Pandas Atoms (`CONCEPT_Pandas_*.md`, `ENTITY_Python.md`)
+1. **Import block**: Mọi code block phải bắt đầu bằng import statement rõ ràng.
+2. **Input → Transform → Output Pattern**: Mỗi ví dụ phải thể hiện rõ 3 giai đoạn: dữ liệu đầu vào, phép biến đổi, kết quả đầu ra.
+3. **Docstring-style comment**: Mỗi function/method được giải thích bằng 1 dòng comment `#`.
+4. **Wikilinks bắt buộc**: Link đến `[[ENTITY_Python]]` và `[[ENTITY_Pandas]]`.
+
+```python
+import pandas as pd
+
+# Input: DataFrame với cột 'age' có giá trị NaN
+df = pd.DataFrame({'name': ['Alice', 'Bob', 'Carol'], 'age': [25, None, 30]})
+
+# Transform: Điền giá trị trung bình vào ô trống
+df['age'] = df['age'].fillna(df['age'].mean())
+
+# Output: DataFrame sạch, không còn NaN
+print(df)
+```
+
+### 📊 Chuẩn cho Visualization Atoms (`VIZ_*.md`)
+1. **Khi nào dùng (Use Case)**: Mô tả rõ loại dữ liệu / câu hỏi phân tích phù hợp với viz này.
+2. **Khi nào KHÔNG dùng (Anti-pattern)**: Tối thiểu 1 ví dụ phản ví dụ.
+3. **Design Checklist**: Danh sách 3-5 tiêu chí thiết kế cần đảm bảo (vd: loại bỏ gridlines không cần thiết, dùng màu có mục đích).
+4. **Wikilinks bắt buộc**: Link đến ít nhất 2 concept trong `wiki/concepts/` hoặc `wiki/synthesis/`.
+
+### 🧠 Chuẩn chung cho mọi Atom (Rule 14 & Rule 17)
+- **Rule 14 (Source Integrity)**: Mọi claim phải có `📖 Nguồn: [tên file raw] — [section]`. Agent phải thực sự mở file đó trong `3-resources/raw/` để xác nhận.
+- **Rule 17 (Double Examples)**: Mọi concept phải có **tối thiểu 2 ví dụ** từ các ngữ cảnh khác nhau.
+- **YAML Frontmatter bắt buộc**:
+
+```yaml
+---
+title: "Tên Concept"
+type: concept | entity | synthesis | source | viz
+domain: SQL | Python | Visualization | Thinking
+status: draft | verified
+sources:
+  - "tên-file-raw.pdf"
+tags: [sql, joins, data-manipulation]
+created: YYYY-MM-DD
+updated: YYYY-MM-DD
+---
+```
+
+---
+
+## 🛠️ Bộ lệnh Chuẩn (Toolkit v5.3)
+
+| Lệnh | Agent | Mô tả |
 | :--- | :--- | :--- |
-| **Raw Sources** | `3-resources/raw/` | Bất biến. LLM chỉ đọc, tuyệt đối không ghi (Rule 12). |
-| **The Wiki** | `3-resources/wiki/` | LLM sở hữu và bảo trì. Mọi tri thức đều có nguồn gốc truy vết được. |
-| **The Schema** | `AGENTS.md`, `CLAUDE.md`, `AUDITOR_Protocol.md` | Quy định cách LLM vận hành wiki. |
+| `/ingest` | `@scout` → `@engineer` | Quy trình 2 bước: (1) @scout phân tích raw file → tạo `Analysis_PREFIX.md`; (2) User duyệt → @engineer tạo Wiki Atoms & cập nhật synthesis. |
+| `/file-back` | `@pm` | Lưu kết quả research/chat có giá trị thành Wiki page mới trong `wiki/queries/` hoặc `wiki/concepts/`. |
+| `/lint` | `@librarian` | Chạy `scripts/brain_lint.py`: kiểm tra orphan pages, broken wikilinks, stale claims, concept gaps. |
+| `/scout` | `@scout` | Nghiên cứu tự do, đánh giá độ khó, không ghi thẳng vào synthesis. |
+| `/heal` | `@healer` | Sửa lỗi liên kết, rollback vi phạm Rule 12, phục hồi tính toàn vẹn. |
+| `/heartbeat` | `@librarian` | Tổng hợp trạng thái toàn bộ `3-resources/raw/` và cập nhật đồ thị kiến thức. |
+| `/audit-tokens` | `@pm` | Kiểm tra ngân sách token của phiên hiện tại. |
 
-### Ba phép vận hành (Three Operations)
-| Phép vận hành | Lệnh | Mô tả |
-| :--- | :--- | :--- |
-| **Ingest** | `/distill`, `/consolidate` | Đọc raw → Khai thác → Ghi wiki → Update index → Append log. |
-| **Query + File-Back** | `/file-back` | Trả lời từ Wiki. Kết quả tốt được nộp ngược thành Wiki page mới. |
-| **Lint** | `/lint` | Định kỳ kiểm tra sức khỏe: mâu thuẫn, orphan pages, stale claims. |
+> ⛔ **Lệnh đã deprecated**: `/distill`, `/consolidate` — Không còn dùng trong Schema v5+. Thay thế bằng `/ingest`.
 
-### 🔍 Future Tools (Bookmark — chưa implement)
-| Tool | Repo | Khi nào dùng |
+---
+
+## 🏛️ Nền tảng Kiến trúc (Nhắc lại nhanh)
+
+### Ba tầng bộ nhớ
+| Tầng | File / Thư mục | Đặc điểm |
 | :--- | :--- | :--- |
-| **qmd** | https://github.com/tobi/qmd | Khi Concept pages > 200, cần semantic search nội dung. BM25 + Vector + MCP server. |
+| **Short-term** | Context window của phiên chat | Bốc hơi khi đóng terminal. @pm đẩy insight sang Medium-term. |
+| **Medium-term** | `CLAUDE.md`, `task_plan.md`, `Ingest_80_20.md`, `CONTINUITY.md` | "Bàn làm việc". Reset/archive khi dự án kết thúc. |
+| **Long-term** | `AGENTS.md`, `WORKSPACE_OVERVIEW.md`, `3-resources/wiki/` | Vĩnh viễn. Chỉ bồi đắp thêm hoặc deprecate vào `4-archive/`. |
+
+### Luồng dữ liệu cốt lõi
+```
+3-resources/raw/sources/  [IMMUTABLE]
+        ↓ /ingest (Two-Step CoT)
+1-projects/2026_Data_Analyst/Analysis_*.md  [DRAFT by @scout]
+        ↓ User approve
+3-resources/wiki/concepts/ & entities/  [ATOMS by @engineer]
+        ↓ Knowledge Compounding (Rule 3)
+3-resources/wiki/synthesis/  [MASTER by @librarian]
+        ↓ /lint
+3-resources/wiki/log.md  [APPEND-ONLY]
+```
+
+---
+
+## 🚧 Các lỗi đã biết (Known Issues — xem chi tiết tại `CONTINUITY.md`)
+
+- Đường dẫn `WIKI_INDEX.md` (cũ) đã được chuẩn hóa thành `wiki/index.md` — mọi reference cũ cần được cập nhật bởi `@healer`.
+- Schema v4 dùng thư mục `distilled/` — đã **deprecated**, gộp vào `wiki/synthesis/`. Agent không được tạo file mới trong `distilled/`.
+
+---
+
+*File này là Bộ nhớ Trung hạn — được cập nhật bởi `@pm` sau mỗi phiên làm việc lớn. Khi dự án `2026_Data_Analyst` hoàn tất, file này sẽ được archive vào `4-archive/YYYYMMDD_CLAUDE_DA_Final.md`.*
