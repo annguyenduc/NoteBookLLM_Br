@@ -11,10 +11,14 @@
             "id": "f52986abc19cc3ea",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "3-resources/wiki/synthesis/THINK_Analytical_Thinking.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "THINK_Analytical_Thinking"
             }
           }
         ]
@@ -90,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "3-resources/wiki/synthesis/THINK_Analytical_Thinking.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,7 +104,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for THINK_Analytical_Thinking"
             }
           },
           {
@@ -177,6 +182,9 @@
   },
   "active": "f52986abc19cc3ea",
   "lastOpenFiles": [
+    "4-archive/20260429_THINK_Thinking_with_Data_Deep_Mining.md",
+    "4-archive/20260429_THINK_Problem_Solving_101_Deep_Mining.md",
+    "4-archive/20260429_THINK_Data_Science_for_Business_Deep_Mining.md",
     "patch.py",
     "1-projects/2026_Data_Analyst/Ingest_80_20.md",
     "1-projects/2026_Data_Analyst",
@@ -189,7 +197,6 @@
     "3-resources/raw/sources/05_Data_Engineering/Data_Warehousing/The Data Warehouse Toolkit - Ralph Kimball & Margy Ross-.pdf",
     "3-resources/raw/sources/05_Data_Engineering/Data_Warehousing/Star Schema.pdf",
     "3-resources/raw/sources/05_Data_Engineering/Data_Warehousing/Data Modeling with Snowflake _ A Practical Guide to -- Serge Gershkovich, Kent Graziano -- Packt Publishing, Birmingham, 2023 -- Packt Publishing, -- 9781837632787 -- d6ec917f245e471f643522911b17f86b -- Anna’s Arch.pdf",
-    "3-resources/raw/sources/05_Data_Engineering/ETL_and_Pipelines/Rebuilding Reliable Data Pipelines Through Modern Tools.pdf",
     "3-resources/raw/assets/TMPL_WIKI_TEMPLATE.md",
     "3-resources/raw/assets/TMPL_Wiki_Article_Template.md",
     "3-resources/raw/assets/TMPL_Note_Template.md",
@@ -220,8 +227,6 @@
     "3-resources/raw/sources/VIZ_Storytelling_with_Data_P2.md",
     "3-resources/raw/sources/VIZ_Storytelling_with_Data_P1.md",
     "3-resources/raw/sources/VIZ_Mastering_Tableau_2021.md",
-    "3-resources/raw/sources/VIZ_Introducing_Power_BI.md",
-    "3-resources/raw/sources/VIZ_How_to_Design_a_Dashboard.md",
-    "3-resources/raw/sources/VIZ_Analyzing_Data_Power_BI.md"
+    "3-resources/raw/sources/VIZ_Introducing_Power_BI.md"
   ]
 }

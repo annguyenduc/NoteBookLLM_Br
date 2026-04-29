@@ -1,4 +1,4 @@
-# PLAN — MimiClaw Inbox Workflow
+﻿# PLAN — MimiClaw Inbox Workflow
 
 ## 1. Objective
 - Thiết lập workflow để MimiClaw ghi note vào `00_Inbox/` và Antigravity xử lý bằng lệnh `/ingest-inbox`.
@@ -30,7 +30,7 @@
    - `ignore`: khi note quá mơ hồ, trùng lặp, hoặc không đủ giá trị để nạp hệ thống.
 5. Trước khi ghi bất kỳ wiki page nào:
    - bắt buộc đọc `3-resources/WIKI_AGENT_GUIDE.md`
-   - cập nhật `3-resources/WIKI_INDEX.md`
+   - cập nhật `3-resources/index.md`
    - append `3-resources/log.md`
 6. Sau khi xử lý xong từng inbox note:
    - đổi trạng thái logic thành `processed`
@@ -40,7 +40,7 @@
 8. Nếu câu trả lời tạo ra insight tốt, checklist rõ, synthesis có giá trị tái sử dụng hoặc mini knowledge page sạch:
    - chạy `/file-back`
    - `@librarian` hoặc agent phù hợp chuẩn hóa kết quả thành Wiki page mới
-   - page mới phải tuân thủ `WIKI_AGENT_GUIDE.md`, có ít nhất 2 `[[Wikilinks]]`, được cập nhật vào `WIKI_INDEX.md` và append log
+   - page mới phải tuân thủ `WIKI_AGENT_GUIDE.md`, có ít nhất 2 `[[Wikilinks]]`, được cập nhật vào `index.md` và append log
 9. Kết thúc phiên:
    - `git push`
 
@@ -65,7 +65,7 @@
   - không dùng `/file-back` cho note thô, nhắc nhớ rời rạc hoặc câu trả lời quá ngắn
 - Output contract:
   - 1 Wiki page mới hoặc 1 update có giá trị cho Wiki page hiện có
-  - cập nhật `3-resources/WIKI_INDEX.md`
+  - cập nhật `3-resources/index.md`
   - append `3-resources/log.md`
 - Quality gate:
   - phải có tiêu đề rõ
@@ -143,3 +143,4 @@
   - `ignore` nếu chỉ là nhắc nhớ cá nhân quá ngắn
   - `project` nếu đang phục vụ một module đang chạy
 - Với output sau query, chỉ dùng `/file-back` khi nội dung đã vượt mức “trả lời trong chat” và xứng đáng trở thành tri thức lâu dài trong Wiki.
+
