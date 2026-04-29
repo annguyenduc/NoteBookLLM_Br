@@ -1,9 +1,9 @@
-﻿# 🚀 AGENTS.md — NoteBookLLM_Br (Swarm 4.0 Supreme)
+# 🚀 AGENTS.md — NoteBookLLM_Br (Swarm 4.0 Supreme)
 
 > **Cảnh báo cho AI Agent**: Đọc tệp này VÀ **[[CLAUDE.md]]** TRƯỚC KHI thực hiện bất kỳ tác vụ nào. Sử dụng ký hiệu `@` để triệu hồi cá tính phù hợp.
 
 ## 🏁 GLOBAL STARTUP PROTOCOL (Bắt buộc)
-1. **READ FIRST**: Luôn đọc `AGENTS.md` và `CLAUDE.md` ngay khi bắt đầu phiên làm việc hoặc trước khi thực hiện tác vụ quan trọng.
+1. **READ FIRST**: Luôn đọc `AGENTS.md`, `CLAUDE.md` và `WORKSPACE_OVERVIEW.md` ngay khi bắt đầu phiên làm việc hoặc trước khi thực hiện tác vụ quan trọng.
 2. **CHECKPOINT**: Luôn khai báo block `CHECKPOINT` (mục ✋ bên dưới) trước khi thực hiện task.
 3. **LOG**: Luôn ghi nhật ký vào `3-resources/wiki/log.md` sau khi hoàn thành.
 
