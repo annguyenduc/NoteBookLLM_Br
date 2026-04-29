@@ -1,44 +1,100 @@
-# Project Continuity - NoteBookLLM_Br (Swarm Supreme v8.0 — Post-PARA)
+# CONTINUITY — Phiên kế tiếp NoteBookLLM_Br
 
-## 🏛️ Status: PARA Migration COMPLETE (2026-04-27)
-- **Current Goal**: Hệ thống đã hoàn tất PARA Migration. Ổn định và sẵn sàng cho các dự án mới.
-- **Architecture**: PARA hoàn chỉnh — `1-projects/` (active), `2-areas/` (ongoing), `3-resources/` (knowledge), `4-archive/` (done).
+> **Tạo**: 2026-04-29 07:25 | **Agent**: @pm | **Conversation**: 20439d5e-01b5-44e1-a962-0adc14dc803e
 
-## ✅ Accomplishments (Session 27/04 — PARA Migration Sprint)
-- [x] **brain/ → 3-resources/**: Migrate 122 files thành công, không mất data.
-- [x] **AGENTS.md Full Overhaul**: Rule 7 (3-cấp flatness), bảng phân quyền PARA, loại bỏ `process/`.
-- [x] **process/ Deprecated**: Files useful chuyển sang `3-resources/` (WIKI_AGENT_GUIDE, PROCESS_TEMPLATE). Folder đã xóa.
-- [x] **Graph Stabilization**: 2010 Atom links trung hòa → ~50 nodes còn lại trong Obsidian Graph View.
-- [x] **Script Fix**: Toàn bộ `BRAIN_DIR` trong Python scripts đã đổi sang `3-resources/`.
-- [x] **WIKI_INDEX rebuild**: 46 Concepts + 2 Distilled + 2010 Atoms (text-only, không tạo node).
-- [x] **README & task_plan**: Cập nhật sơ đồ cây và roadmap sang PARA.
-- [x] **LMS Test Bank Full Extraction**: Trích xuất 100% (1,538 câu) từ 84 đề Docx (Robot, IOT, KHMT, DESIGN).
-- [x] **Asset Deduplication Pro**: Xóa ~13,400 ảnh trùng lặp, tối ưu hóa assets chỉ còn 4,120 ảnh độc nhất.
+---
 
-- [x] **Giai đoạn 3 — LMS Pivot**: Hoàn tất trích xuất Test Bank (LMS_Pivot).
-- [ ] **Giai đoạn 4 — Merge Workspace**: Quét và ánh xạ `Gemini_Study_Hub`.
-- [ ] **CONTINUITY update**: Cập nhật CLAUDE.md sang session mới.
+## ✅ ĐÃ HOÀN THÀNH trong phiên này
 
-## ⚠️ Incidents & Lessons Learned
+### 1. Verify Migration Wiki/ ✅
+- Phát hiện & fix **17 files** có đường dẫn ảnh lỗi `assets/assets/` → `assets/`
+- Lint kết quả: 136 wikilinks → 77 broken → **2 broken thật** sau fix
 
-### [2026-04-27] PARA Migration — process/ Deprecation
-- **Vấn đề:** `process/` gây confuse sau PARA vì không rõ scope (dự án nào? lĩnh vực nào?).
-- **Giải pháp:** Xóa `process/`, route lại handoff files theo đúng nhà trong PARA:
-  - Ephemeral task files → `1-projects/[Project]/`
-  - Long-term profiles/eval → `2-areas/Profiles/` và `2-areas/Assessment/`
-- **Bài học:** PARA buộc agent phải **luôn đặt câu hỏi** "file này thuộc dự án nào / lĩnh vực nào?" thay vì ném vào vùng đệm chung.
+### 2. Fix P0 — Wikilinks trỏ sai vào raw ✅
+- **Layer 1** (concepts/ + entities/): 29 files — thay `[[THINK_X]]` → `[[SOURCE_THINK_X]]`
+- **Layer 2** (sources/): 3 files — chuyển frontmatter `source: "[[...]]"` → `source_raw: "..."`
+- **Layer 3** (ACAD_AI): 6 files — neutralize `[[coursera-AI-*]]` thành backtick
+- Kết quả cuối: **2 broken links thật** (WIKI_ENTITY_SQL, WIKI_ENTITY_Python trong ENTITY_Data_Science.md)
 
-### [2026-04-27] Obsidian Graph — 2000 nodes problem
-- **Vấn đề:** WIKI_INDEX.md chứa 2010 Wikilinks → Graph View bùng nổ.
-- **Giải pháp:** Đổi Atom entries sang backtick text (`` `path/file.md` ``) thay vì `[[wikilinks]]`.
-- **Bài học:** WIKI_INDEX nên là **catalog cho người đọc và LLM**, không phải link graph cho Obsidian.
+### 3. Làm rõ kiến trúc (Architecture Clarification) ✅
+- `distilled/` ≠ `wiki/synthesis/` — distilled là quality gate cao hơn, không cần đổi
+- `overview.md` và `synthesis/` trong llm-wiki.md chỉ là mô tả ý tưởng, không phải thư mục thực tế
+- Mapping đúng: `WIKI_INDEX.md` = index, `distilled/THINK_Analytical_Thinking.md` = synthesis
+- Lint script cần scan `wiki/ + distilled/` (không chỉ `wiki/`)
 
-### [2026-04-27] Python scripts hardcode brain/
-- **Vấn đề:** Sau rename, `update_wiki_index.py` và 15 scripts khác vẫn trỏ `BRAIN_DIR = 'brain'`.
-- **Giải pháp:** Script `fix_py_vars.py` chạy một lần, batch-replace toàn bộ.
-- **Bài học:** Khi đổi tên thư mục cốt lõi, PHẢI audit toàn bộ Python scripts ngay trong cùng session.
+### 4. Clarify Link Rules ✅
+- Concept pages → chỉ trỏ vào wiki (SOURCE_*, other concepts, entities)
+- SOURCE pages → ghi `source_raw:` dạng text, không dùng wikilink
+- Raw files → chỉ @auditor mở để verify (không wikilink)
 
-### [2026-04-27] Vi phạm append-only với 3-resources/log.md
-- **Vấn đề:** Agent đã dùng thao tác tạo file khi ghi log kế hoạch MimiClaw Inbox, làm ghi đè `3-resources/log.md` thay vì append ở cuối file.
-- **Giải pháp:** Phục hồi lịch sử log từ snapshot git `e0fa2c7:brain/log.md`, hợp nhất với các entry hiện tại ngày 2026-04-27 và giữ lại entry `CORRECTION` để trace sự cố.
-- **Bài học:** Từ đây về sau, mọi lần ghi `3-resources/log.md` phải dùng append an toàn; không được dùng create/replace toàn file trừ khi đang làm phục hồi sự cố có kiểm soát.
+### 5. Dọn dẹp stale files ✅
+- Archive `3-resources/lint_report.md` → `4-archive/20260422_lint_report_stale.md`
+- Archive `3-resources/RESOURCES_WIP.md` → `4-archive/20260423_RESOURCES_WIP_superseded.md`
+
+---
+
+## ⏳ CÒN LẠI — Việc cần làm phiên sau
+
+### 🔴 P1 — Fix 2 broken links thật (15 min) ✅
+- Đã kiểm tra `ENTITY_Data_Science.md`, file đã trỏ đúng dạng `[[ENTITY_SQL]]` và `[[ENTITY_Python]]` (dù file target chưa được tạo). Đã bỏ tiền tố `WIKI_` thành công.
+- **Agent**: @healer — 1 file, 2 dòng
+
+### 🟡 P2 — Tạo 4 trang còn thiếu: Thinking with Data (45 min) ✅
+Nguồn raw: `3-resources/raw/THINK_Thinking_with_Data.md`
+| Trang cần tạo | Chương |
+|:--|:--|
+| `THINK_Correlation_vs_Causation` | Chương 4 |
+| `THINK_Data_Story_Structure` | Chương 7 |
+| `THINK_Audience_Framing` | Chương 5 |
+| `THINK_Exploration_vs_Confirmation` | Chương 3 |
+- **Agent**: @scout đọc raw → @engineer viết wiki pages vào `wiki/concepts/` (Đã hoàn thành)
+- Đã update `SOURCE_THINK_Thinking_with_Data.md` Ingest Map và ghi log.
+
+### 🟡 P3 — Tạo Comparison page (20 min) ✅
+- `wiki/comparisons/COMPARE_5Whys_vs_RCA.md`
+- Đã tách bảng so sánh từ `THINK_Root_Cause_Analysis.md` sang file comparison riêng.
+- **Agent**: @librarian (Đã hoàn thành)
+
+### 🟡 P4 — Update brain_lint.py (15 min) ✅
+- Đã sửa script để add `distilled/` vào scan scope (`get_all_target_files`).
+- Ngăn chặn false positive cho các file thuộc distilled/.
+- **Agent**: @devops (Đã hoàn thành)
+
+### 🟢 P5 — Ingest nhóm ACAD (Coursera) → tạo `ACAD_AI_Responsible_AI` (trong distilled/) ✅
+- Đã verify nội dung `ACAD_AI_Responsible_AI.md` hoàn toàn khớp với `raw/coursera-AI-essentail-Bias, drift, and knowledge cutoff.md` và `raw/coursera-AI-essential-Stay up to date with AI.md`.
+- Đã khắc phục trang mồ côi `ACAD_AI_Cutoff_vs_Drift` bằng cách link vào trang Master này.
+- **Agent**: @auditor (Đã hoàn thành)
+
+---
+
+## 📊 Trạng thái Wiki hiện tại
+```
+wiki/concepts/  : 36 trang
+wiki/entities/  : 1 trang
+wiki/sources/   : 3 trang
+wiki/assets/    : 17 ảnh
+wiki/comparisons/: TRỐNG (P3)
+wiki/queries/   : TRỐNG
+distilled/      : 2 files (THINK_Analytical_Thinking, ACAD_AI_Responsible_AI)
+Broken links    : 2 thật (ENTITY_SQL, ENTITY_Python)
+```
+
+## 🔑 Files quan trọng cần đọc khi bắt đầu phiên mới
+1. `CONTINUITY.md` — file này
+2. `purpose.md` — Định hướng Wiki
+3. `AGENTS.md` — 18 Rules (đặc biệt Rule 7 Semantic Structure)
+4. `3-resources/distilled/THINK_Analytical_Thinking.md` — Master Index
+
+---
+
+## ⚠️ Lưu ý kỹ thuật cho Agent tiếp theo
+
+### Link rules (đã chốt phiên này)
+- `wiki/concepts/` → trỏ `[[SOURCE_THINK_X]]` cho source, `[[THINK_Y]]` cho cross-ref
+- `wiki/sources/` → dùng `source_raw: "tên_file.md"` trong frontmatter (text, không wikilink)
+- `wiki/` → KHÔNG BAO GIỜ trỏ `[[wikilink]]` vào `raw/`
+- `distilled/` → hợp lệ là link target từ wiki (Obsidian resolve toàn vault)
+
+### Lint script
+- `brain_lint.py` cần update: thêm `distilled/` vào valid_files scope
+- Hiện scan chỉ `3-resources/wiki/**` → false positive cho distilled links

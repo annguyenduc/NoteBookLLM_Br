@@ -23,21 +23,29 @@ Dự án vận hành theo mô hình Swarm với hệ thống Phân loại thông
 | **AG-SWARM-009** | **@profiler** | **Learner Profiler** | Xây dựng và cập nhật Trainer Profile (entry/intermediate/advanced), feed context cho @designer và @engineer. | 20k / 4k | < 40s |
 | **AG-SWARM-010** | **@creative** | **Creative Specialist** | Tạo case study, roleplay scenario, lesson plan mẫu cho giáo viên (Creative content). | 25k / 5k | < 60s |
 | **AG-SWARM-011** | **@healer** | **Maintenance** | Hàn gắn tri thức, sửa lỗi liên kết và phục hồi tính toàn vẹn hệ thống. | 10k / 2k | < 20s |
+
 ## 🗂️ Cấu trúc Resources (Resources Architecture v4.1)
  
 ```
 3-resources/
-├── raw/          ← Dữ liệu thô gốc. KHÔNG ai được sửa, chỉ được đọc.
-├── wiki/         ← Wiki Pages có [[wikilinks]]. 1 file = 1 khái niệm.
-│                    Guide: 3-resources/WIKI_AGENT_GUIDE.md
-└── distilled/    ← Output cuối: Test bank (ELN_Test_*.md) và KB đã verify.
-                     CHỈ @librarian và @auditor được ghi vào đây sau khi verify.
+├── raw/
+│   ├── sources/            ← Dữ liệu thô gốc dạng PDF/Docx. KHÔNG ai được sửa.
+│   └── assets/             ← Local images.
+└── wiki/                   ← Kho tri thức hệ thống.
+    ├── index.md            ← Mục lục (Tự động tạo)
+    ├── log.md              ← Nhật ký hệ thống
+    ├── entities/           ← Thực thể (công cụ, hệ thống, ngôn ngữ)
+    ├── concepts/           ← Khái niệm, kỹ thuật, phương pháp (THINK_*, STAT_*)
+    ├── sources/            ← Tóm tắt nguồn sách đã Ingest
+    ├── queries/            ← Kết quả research đã file-back
+    ├── comparisons/        ← Bảng so sánh
+    └── synthesis/          ← (Thay thế distilled/) Nơi bồi đắp tri thức, bài kiểm tra
 ```
 **Quy tắc vàng:**
-- `raw/` → không ai sửa (Immutable Source)
-- `wiki/` → Atomic Records (Lịch sử trích xuất, hỗ trợ Rule 14)
-- `distilled/` → **The Wiki** (Nơi bồi đắp tri thức nén, đa chiều)
-- `process/` → [DEPRECATED] Chuyển sang `1-projects/` hoặc `2-areas/`.
+- `raw/sources/` → không ai sửa (Immutable Source)
+- `wiki/concepts/` & `wiki/entities/` → Atomic Records (Lịch sử trích xuất, hỗ trợ Rule 14)
+- `wiki/synthesis/` → **The Wiki Master** (Nơi bồi đắp tri thức nén, đa chiều)
+- `distilled/` → [DEPRECATED] Đã gộp vào `wiki/synthesis/`
 - `archive/` → Snapshot Storage (Lưu trữ vĩnh viễn, Wikilinks đã trung hòa)
 
 ## 🛠️ Lệnh điều khiển (Manus Commands)
@@ -68,14 +76,14 @@ Dự án vận hành theo mô hình Swarm với hệ thống Phân loại thông
 | **@librarian** | Tất cả | `3-resources/distilled/` (sau verify), `3-resources/log.md` | Overwrite `3-resources/log.md` |
 | **@auditor** | Tất cả (read-only) | `3-resources/log.md` (append only) | Ghi bất kỳ file nội dung nào |
 | **@designer** | `3-resources/raw/`, `3-resources/distilled/`, `2-areas/Profiles/Trainer_Profile_*.md` | `1-projects/[Project]/Learning_Design_*.md` | Bỏ qua Trainer_Profile |
-| **@evaluator** | `1-projects/`, `3-resources/distilled/` | `2-areas/Assessment/Eval_Report_*.md`, `3-resources/log.md` | — |
+| **@evaluator** | `1-projects/`, `3-resources/distilled/` | `2-areas/Assessment/Eval_Report_*.md`, `3-resources/wiki/log.md` | — |
 | **@profiler** | `3-resources/raw/`, `3-resources/distilled/` | `2-areas/Profiles/Trainer_Profile_*.md` | — |
 | **@creative** | `3-resources/distilled/`, `3-resources/wiki/` | `docs/`, `res/`, `templates/` | Ghi `3-resources/` trực tiếp |
 | **@healer** | Tất cả | `3-resources/wiki/` (sửa links), `scripts/` | Xóa file không có backup |
 | **@devops** | Tất cả | `scripts/`, `tools/`, `libs/` | Ghi `3-resources/distilled/` |
  
 **Quy tắc ghi log bắt buộc:**
-Mọi hành động ghi file → append vào `3-resources/log.md` theo format:
+Mọi hành động ghi file → append vào `3-resources/wiki/log.md` theo format:
 ```
 ## [YYYY-MM-DD HH:MM] <type> | <agent> | <mô tả ngắn>
 - File tạo/sửa: [đường dẫn]
@@ -87,25 +95,32 @@ Mọi hành động ghi file → append vào `3-resources/log.md` theo format:
 1. **Manus First**: Ưu tiên đọc `task_plan.md` trước khi thực hiện bất kỳ hành động nào.
 2. **Double Link**: Mọi note mới trong Wiki phải có ít nhất 2 liên kết `[[Wikilinks]]`.
 3. **Knowledge Compounding (Rule 3)**: Mọi giải pháp, Insight hoặc tri thức mới từ Raw phải được bồi đắp (Compounded) trực tiếp vào các file Master trong `3-resources/distilled/` ngay trong phiên làm việc. Không đợi đến cuối Pipeline.
-4. **Log-First Ingest (Rule 4)**: Mọi thay đổi về tri thức hệ thống (Brain/Wiki) phải được ghi nhận vào `3-resources/log.md`, phải dùng append không được overwrite, phải viết đúng định dạng được ghi trong log. **BẮT BUỘC sử dụng bảng mã UTF-8 (không BOM) khi ghi file.** Khi dùng PowerShell, luôn thêm `-Encoding UTF8`.
+4. **Log-First Ingest (Rule 4)**: Mọi thay đổi về tri thức hệ thống (Brain/Wiki) phải được ghi nhận vào `3-resources/wiki/log.md`, phải dùng append không được overwrite, phải viết đúng định dạng được ghi trong log. **BẮT BUỘC sử dụng bảng mã UTF-8 (không BOM) khi ghi file.** Khi dùng PowerShell, luôn thêm `-Encoding UTF8`.
 5. **Automated Self-Healing (Rule 5)**: Agent phải **tự động** triệu hồi `@healer` khi gặp lỗi hệ thống hoặc logic lặp lại.
 6. **Budget Awareness (Rule 6)**: Thông báo cho người dùng khi phiên làm việc tiêu tốn >80% Budget đã định nghĩa.
-7. **Hierarchy Limit (Rule 7 - Absolute Flatness)**: 
+7. **Hierarchy Limit (Rule 7 - Semantic Structure)**:
     - Cấp 1 (Root Buckets): `00_Inbox/`, `1-projects/`, `2-areas/`, `3-resources/`, `4-archive/`, `scripts/`, `tools/`.
     - `00_Inbox/`: Files flat, không subfolder, prefix YYYYMMDD_, xử lý hàng tuần.
-    - Cấp 2 (Buckets): 
-      - `1-projects/`: Mỗi dự án là 1 folder (vd: `2026_TOT_STEAM/`, `2026_K10_Prompt/`)
+    - Cấp 2 (Buckets):
+      - `1-projects/`: Mỗi dự án là 1 folder (vd: `2026_TOT_STEAM/`, `2026_Data_Analyst/`)
       - `2-areas/`: `Curriculum/`, `Assessment/`, `Profiles/`
-      - `3-resources/`: `raw/`, `wiki/`, `distilled/`
+      - `3-resources/`: `raw/`, `wiki/`
       - `scripts/`: `maintenance/`, `pipelines/`, `tests/`
-    - Cấp 3 (Files): Phải là tệp tin trực tiếp. **KHÔNG CÓ THƯ MỤC CON Ở CẤP 3**.
+    - Cấp 3 — **Ngoại lệ `wiki/`**: Thư mục `3-resources/wiki/` được phép có các thư mục con ngữ nghĩa:
+      - `wiki/concepts/` ← Trang khái niệm, kỹ thuật (THINK_*, ACAD_*, STAT_*...)
+      - `wiki/entities/` ← Trang thực thể (công cụ, hệ thống, tổ chức)
+      - `wiki/sources/` ← Trang tóm tắt nguồn sách đã Ingest
+      - `wiki/queries/` ← Kết quả chat/research đã file-back
+      - `wiki/synthesis/` ← Nơi bồi đắp tri thức, so sánh, bài kiểm tra
+      - `wiki/comparisons/` ← Bảng so sánh song song
+      - `wiki/assets/` ← Hình ảnh, sơ đồ minh họa
+    - Cấp 3 (Files, áp dụng cho tất cả trừ `wiki/`): Phải là tệp tin trực tiếp. **KHÔNG CÓ THƯ MỤC CON**.
     - **Quy tắc Lưu trữ (Archiving)**: Khi hoàn thành task, các file từ `1-projects/` hoặc tài liệu cũ phải được chuyển vào `4-archive/` với prefix `YYYYMMDD_` (KHÔNG có subfolder ở cấp 2 của archive).
     - **Quy tắc Trung hòa (Neutralization)**: Khi di chuyển file vào `4-archive/`, PHẢI chuyển đổi Wikilinks `[[...]]` thành văn bản thuần (ví dụ: bọc trong backticks `` `...` ``) để không làm loãng đồ thị tri thức.
     - **Quy tắc Prefix 2 cấp**: Bắt buộc đặt tên file theo cấu trúc `[CẤP_1]_[CẤP_2]_[TÊN_FILE].md` để duy trì tính phẳng nhưng vẫn phân loại được.
         - **KHMT**: AI_THCS, AI_Tieu_hoc, Python, Scratch, Scratch_Jr, Tynker.
         - **Robot**: Codey, GBot, mBot, Rover, Unplugged, xBot.
         - **DESIGN**: 3D_Tinkercad, Canva, Maker_Empire, Wordpress.
-        - **IOT**: AI_Arduino, Arduino, Halocode, YoloBit.
         - **PROMPT**: K10_Toan, K10_Van, K10_Anh (Dành cho Prompt Engineering).
         - **ACAD**: Biology, Math, Physics (Dành cho Giáo án/Academic).
 8. **Machine-Readability**: Đặt tên File/Folder theo chuẩn `Snake_Case`, prefix bằng số (`01_`, `02_`) và sử dụng YAML Frontmatter cho ngữ cảnh.

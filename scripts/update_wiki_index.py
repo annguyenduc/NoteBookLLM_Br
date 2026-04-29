@@ -1,9 +1,9 @@
-import os
+﻿import os
 import re
 
 BRAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '3-resources'))
-INDEX_FILE = os.path.join(BRAIN_DIR, 'WIKI_INDEX.md')
-DIRS_TO_INDEX = ['wiki', 'distilled', 'test-bank']
+INDEX_FILE = os.path.join(BRAIN_DIR, 'wiki', 'index.md')
+DIRS_TO_INDEX = ['wiki', 'synthesis', 'test-bank']
 
 def parse_markdown_file(filepath):
     title = os.path.basename(filepath)
@@ -14,7 +14,7 @@ def parse_markdown_file(filepath):
     with open(filepath, 'r', encoding='utf-8') as f:
         content = f.read()
         
-    # Fix Windows line endings trước khi parse
+    # Fix Windows line endings trÆ°á»›c khi parse
     content = content.replace('\r\n', '\n').replace('\r', '\n')
         
     # Try to parse frontmatter
@@ -65,7 +65,7 @@ def parse_markdown_file(filepath):
     }
 
 def is_concept_page(filename):
-    """Concept pages là WIKI_*.md và KB_*.md — dùng cho File-Back judgment."""
+    """Concept pages lÃ  WIKI_*.md vÃ  KB_*.md â€” dÃ¹ng cho File-Back judgment."""
     name = os.path.basename(filename)
     return (name.startswith('WIKI_') or name.startswith('KB_'))
 
@@ -84,7 +84,7 @@ def main():
                 if file.endswith('.md') and not file.endswith('_TEMPLATE.md'):
                     filepath = os.path.join(root, file)
                     info = parse_markdown_file(filepath)
-                    if dir_name == 'distilled':
+                    if dir_name == 'synthesis':
                         distilled_pages.append(info)
                     elif dir_name == 'wiki':
                         concept_pages.append(info)
@@ -97,36 +97,36 @@ def main():
 
     # Generate Index
     with open(INDEX_FILE, 'w', encoding='utf-8') as f:
-        f.write("# 📚 LLM WIKI INDEX\n\n")
+        f.write("# ðŸ“š LLM WIKI INDEX\n\n")
         f.write("> **Auto-generated Catalog of Wiki Knowledge**\n")
-        f.write("> Lớp này là Mục lục của toàn bộ các file Kiến thức đã được LLM tạo ra.\n\n")
-        f.write("> **Hướng dẫn File-Back Judgment**: Chỉ cần đọc section **CONCEPT PAGES** để kiểm tra xem một insight mới đã tồn tại chưa. Không cần đọc ATOM PAGES.\n\n")
+        f.write("> Lá»›p nÃ y lÃ  Má»¥c lá»¥c cá»§a toÃ n bá»™ cÃ¡c file Kiáº¿n thá»©c Ä‘Ã£ Ä‘Æ°á»£c LLM táº¡o ra.\n\n")
+        f.write("> **HÆ°á»›ng dáº«n File-Back Judgment**: Chá»‰ cáº§n Ä‘á»c section **CONCEPT PAGES** Ä‘á»ƒ kiá»ƒm tra xem má»™t insight má»›i Ä‘Ã£ tá»“n táº¡i chÆ°a. KhÃ´ng cáº§n Ä‘á»c ATOM PAGES.\n\n")
 
         # Section 1: Concept Pages (cho File-Back judgment)
-        f.write(f"## 🧠 CONCEPT PAGES ({len(concept_pages)} trang)\n")
-        f.write("*Dành cho File-Back Judgment — LLM đọc section này để kiểm tra trùng lặp.*\n\n")
+        f.write(f"## ðŸ§  CONCEPT PAGES ({len(concept_pages)} trang)\n")
+        f.write("*DÃ nh cho File-Back Judgment â€” LLM Ä‘á»c section nÃ y Ä‘á»ƒ kiá»ƒm tra trÃ¹ng láº·p.*\n\n")
         if concept_pages:
             for page in concept_pages:
                 status_str = f" **[{page['status'].upper()}]**" if page['status'] else ""
-                f.write(f"- [[{page['rel_path']}]] | **{page['title']}**{status_str}\n")
+                f.write(f"- [[{os.path.splitext(os.path.basename(page['rel_path']))[0]}]] | **{page['title']}**{status_str}\n")
                 if page['summary']:
                     f.write(f"  > {page['summary']}\n")
         else:
-            f.write("*Chưa có trang nào.*\n")
+            f.write("*ChÆ°a cÃ³ trang nÃ o.*\n")
         f.write("\n")
 
         # Section 2: Distilled KB
-        f.write(f"## 💎 DISTILLED KB ({len(distilled_pages)} file)\n\n")
+        f.write(f"## ðŸ’Ž DISTILLED KB ({len(distilled_pages)} file)\n\n")
         if distilled_pages:
             for page in distilled_pages:
-                f.write(f"- [[{page['rel_path']}]] | **{page['title']}**\n")
+                f.write(f"- [[{os.path.splitext(os.path.basename(page['rel_path']))[0]}]] | **{page['title']}**\n")
                 if page['summary']:
                     f.write(f"  > {page['summary']}\n")
         f.write("\n")
 
         # Section 3: Atom pages (MCQ, etc.)
-        f.write(f"## ⚛️ ATOM PAGES ({len(atom_pages)} câu hỏi/atom)\n")
-        f.write("*MCQ atoms và dữ liệu chi tiết — không cần đọc cho File-Back.*\n\n")
+        f.write(f"## âš›ï¸ ATOM PAGES ({len(atom_pages)} cÃ¢u há»i/atom)\n")
+        f.write("*MCQ atoms vÃ  dá»¯ liá»‡u chi tiáº¿t â€” khÃ´ng cáº§n Ä‘á»c cho File-Back.*\n\n")
         if atom_pages:
             for page in atom_pages:
                 f.write(f"- `{page['rel_path']}` | {page['title']}\n")
@@ -138,3 +138,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+

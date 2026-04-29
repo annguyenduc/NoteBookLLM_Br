@@ -29,18 +29,32 @@ last_updated: "YYYY-MM-DD"
 ```
 
 ## 2. Các mục nội dung chính
-1.  **📌 Định nghĩa cốt lõi**: Ngắn gọn, súc tích.
-2.  **🔍 Chi tiết kỹ thuật**: Thông số, bảng chân (Pinout).
-3.  **💡 Ví dụ thực tế**: Ứng dụng trong KDI/Arduino.
+1.  **📌 Định nghĩa cốt lõi**: Ngắn gọn, súc tích, bám sát thuật ngữ trong sách.
+2.  **🔍 Chi tiết kỹ thuật/Phương pháp**: Cấu trúc các bước phải khớp chính xác với tài liệu gốc.
+3.  **💡 Ví dụ đối chiếu (Mandatory)**:
+    -   **Ví dụ từ sách (Original)**: Trích dẫn hoặc tóm tắt sát thực tế trong sách.
+    -   **Ứng dụng sư phạm (Pedagogical Application)**: Chuyển đổi sang tình huống dạy học/STEAM để giáo viên dễ áp dụng.
 4.  **🔗 Liên kết tư duy**: Ít nhất 2 liên kết `[[Wiki_Link]]`.
 5.  **4F — Phản tư sư phạm**: Facts, Feelings, Findings, Futures.
-6.  **📖 Nguồn**: Trích dẫn chính xác file trong `3-resources/raw/`.
+6.  **📖 Nguồn**: Trích dẫn chính xác file và trang/section trong `3-resources/raw/`.
 
-## 3. Quy tắc vàng (Rule Checklist)
-- [ ] **Rule 7 (Flatness)**: Lưu trực tiếp vào `3-resources/wiki/`, không tạo thư mục con. Tên file: `WIKI_[NHÓM]_[TÊN].md`.
-- [ ] **Rule 14 (Source Integrity)**: Phải mở file raw trong `3-resources/raw/` trước khi trích dẫn.
-- [ ] **Rule 16 (Stats)**: Nếu là file tổng hợp (Distilled), phải có bảng thống kê mining.
-- [ ] **Encoding**: Luôn sử dụng UTF-8 (không BOM).
+## 3. Chiến lược Ingest (10-15 trang/nguồn)
+Mỗi khi nạp (Ingest) một nguồn tài liệu mới, Agent phải đảm bảo tạo ra/cập nhật khoảng 10-15 trang Wiki theo cấu trúc:
+
+1.  **Trang Tóm tắt (Summary - 1 trang)**: `WIKI_SOURCE_[Tên_Sách]`. Tóm tắt Key Takeaways, cấu trúc sách và ghi log nạp.
+2.  **Trang Chỉ mục (Index - 1-2 trang)**: Cập nhật `WIKI_INDEX.md` và các trang Master Topic (ví dụ: `THINK_Analytical_Thinking.md`).
+3.  **Trang Thực thể (Entity - 2-3 trang)**: Các trang về công cụ hoặc hệ thống lớn (ví dụ: `WIKI_ENTITY_SQL`, `WIKI_ENTITY_Python`).
+4.  **Trang Khái niệm (Concept - 5-8 trang)**: Các trang Atomic về thuật ngữ, kỹ thuật cụ thể (ví dụ: `WIKI_THINK_Entropy`).
+
+## 4. Quy tắc vàng (Rule Checklist)
+- [ ] **Rule 7 (Flatness)**: Lưu trực tiếp vào `3-resources/wiki/`.
+- [ ] **Rule 17 (Double Examples)**: Luôn có ví dụ Gốc và ví dụ Sư phạm.
+- [ ] **Rule 18 (Structural Fidelity)**: Giữ nguyên cấu trúc logic của tác giả.
+- [ ] **Mật độ tri thức**: Đảm bảo chạm đến 10-15 trang liên quan cho mỗi nguồn.
+- [ ] **Rule 14 (Source Integrity)**: Phải mở file raw và trích dẫn trung thực. **CẤM phóng tác tùy ý**.
+- [ ] **Rule 17 (Double Examples)**: Xem chi tiết tại [[AGENTS.md]]. Bắt buộc có ví dụ đối chiếu.
+- [ ] **Rule 18 (Structural Fidelity)**: Xem chi tiết tại [[AGENTS.md]]. Bám sát cấu trúc của tác giả.
+- [ ] **Encoding**: UTF-8 (không BOM).
 
 ---
 *Lưu ý: Template mẫu nằm tại `d:/NoteBookLLM_Br/archive/WIKI_TEMPLATE.md`.*
