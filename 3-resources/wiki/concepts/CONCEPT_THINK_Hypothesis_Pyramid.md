@@ -10,9 +10,9 @@ created: "2026-04-28"
 last_updated: "2026-04-28"
 ---
 
-# 📌 Kim tự tháp Giả thuyết (Hypothesis Pyramid)
+# Kim tự tháp Giả thuyết (Hypothesis Pyramid)
 
-![Minh họa Kim tự tháp Giả thuyết](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/WIKI_IMG_THINK_Hypothesis_Pyramid.png)
+![Minh họa Kim tự tháp Giả thuyết](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/THINK_Hypothesis_Pyramid.png)
 
 ## 1. Sơ đồ cấu trúc (Visual Guide)
 
@@ -44,7 +44,7 @@ graph TD
 
 ---
 
-## 3. 💡 Ví dụ đối chiếu (Mandatory)
+## 3.  Ví dụ đối chiếu (Rule 17: Double Examples)
 
 ### 3.1. Ví dụ từ sách (Original)
 **Tình huống**: Đề xuất phương án mua máy tính (Trang 88).
@@ -64,7 +64,7 @@ graph TD
     3. Là mô hình học tập trực quan cho các lớp sinh học.
 -   **Tầng đáy**: Số liệu về lượng nước tiêu thụ khi tưới thủ công, biểu đồ độ ẩm đất đo được qua cảm biến, và phản hồi tích cực từ học sinh khối 6.
 
-## 4. 🔗 Liên kết tư duy
+## 4.  Liên kết tư duy
 -   [[CONCEPT_THINK_Logic_Tree]]
 -   [[CONCEPT_THINK_Problem_Solving_Process]]
 
@@ -74,7 +74,7 @@ graph TD
 -   **Findings**: Một kim tự tháp lỏng lẻo ở đáy sẽ khiến toàn bộ lập luận sụp đổ.
 -   **Futures**: Rèn luyện cho học sinh kỹ năng tranh biện (Debate) dựa trên bằng chứng thay vì cảm tính.
 
-## 📖 Nguồn
+## Nguồn
 -   [[SOURCE_THINK_Problem_Solving_101]] — Trang 86-95.
 
 ---

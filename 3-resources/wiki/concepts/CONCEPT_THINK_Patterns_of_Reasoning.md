@@ -1,4 +1,4 @@
----
+﻿---
 id: THINK_Patterns_of_Reasoning
 type: concept
 aliases: ["Patterns of Reasoning", "Mô hình lập luận"]
@@ -7,7 +7,7 @@ tags: ["data-thinking", "logic", "argumentation"]
 
 # Các Mô hình Lập luận (Patterns of Reasoning)
 
-<!-- [AUDITOR] Rule 14: Nguồn được lấy trực tiếp từ 3-resources/raw/THINK_Thinking_with_Data.md, tại Chương 3 (Arguments) và Chương 4 (Patterns of Reasoning). -->
+Nguồn: [[SOURCE_THINK_Thinking_with_Data]] (Xác nhận Rule 14 từ: [[\THINK_Thinking_with_Data]])
 
 ## 1. Khái niệm cốt lõi
 Trong phân tích dữ liệu, việc đưa ra kết luận đòi hỏi những mô hình lập luận vững chắc để dẫn dắt khán giả từ các niềm tin sẵn có (Prior Beliefs) đến những niềm tin mới (New Beliefs). Một phân tích thiếu đi cấu trúc lập luận rõ ràng sẽ chỉ là một tập hợp các con số vô nghĩa.
@@ -25,7 +25,7 @@ Khi làm việc với dữ liệu cụ thể, có các mô hình suy luận (Pat
 - **Phân tích chi phí - lợi ích (Cost/Benefit Analysis)**: So sánh định lượng giữa cái được và cái mất để hỗ trợ quyết định.
 - **Trường hợp biên (Bounding Cases)**: Đánh giá kịch bản xấu nhất (Worst-case) và tốt nhất (Best-case) để thiết lập giới hạn kỳ vọng.
 
-## 4. 💡 Ví dụ đối chiếu (Double Examples)
+## 4.  Ví dụ đối chiếu (Double Examples)
 ### 4.1. Ví dụ gốc (Original)
 Khi một Data Scientist trình bày về việc tối ưu hóa chi phí quảng cáo (Optimization), họ phải lập luận từ **Fact** (Chi phí đang cao) -> **Value** (Hiệu suất hiện tại là chưa đủ tốt) -> **Policy** (Nên dịch chuyển ngân sách sang kênh khác), sử dụng dữ liệu làm bằng chứng (Evidence) cho từng bước.
 

@@ -1,4 +1,4 @@
----
+﻿---
 id: THINK_Audience_Framing
 type: concept
 aliases: ["Audience Framing", "Prior Beliefs", "Khung khán giả", "Niềm tin có sẵn"]
@@ -7,7 +7,7 @@ tags: ["data-thinking", "arguments", "audience", "persuasion"]
 
 # Định hình Khán giả và Niềm tin (Audience Framing & Prior Beliefs)
 
-<!-- [AUDITOR] Rule 14: Nguồn được lấy trực tiếp từ 3-resources/raw/THINK_Thinking_with_Data.md, tại Chương 3 (Arguments), trang 31-32, line 1338-1400. -->
+Nguồn: [[SOURCE_THINK_Thinking_with_Data]] (Xác nhận Rule 14 từ: [[\THINK_Thinking_with_Data]])
 
 ## 1. Khái niệm cốt lõi
 Dữ liệu chỉ là các quan sát thô. Để dữ liệu trở thành kiến thức và dẫn đến hành động, nó phải được đóng gói vào một **lập luận (Argument)**. Và mọi lập luận đều nhắm đến một khán giả cụ thể.
@@ -17,13 +17,13 @@ Tác giả định nghĩa khán giả lý tưởng là: **"Skeptical but friendl
 Nguyên lý quan trọng nhất trong việc định hình lập luận là: **Lập luận phải di chuyển từ những tuyên bố mà khán giả ĐÃ TIN (Prior Beliefs) đến những tuyên bố mà họ CHƯA TIN (New Beliefs).**
 Không có khán giả nào là "trang giấy trắng". Mọi lập luận đều dựa trên các giả định ngầm định (background knowledge) không cần phải giải thích (ví dụ: các định luật vật lý, các bảng cửu chương, hay nguồn gốc của bộ dữ liệu đã được tin cậy). Việc nhận diện đúng "Prior Beliefs" giúp ta không giải thích quá đà hoặc làm mất lòng tin của khán giả.
 
-📖 Nguồn: `[[SOURCE_THINK_Thinking_with_Data]]` — Chương 3: Arguments (Trang 31-32).
+ Nguồn: `[[SOURCE_THINK_Thinking_with_Data]]` — Chương 3: Arguments (Trang 31-32).
 
 ## 2. Ứng dụng & Ví dụ (Double Examples)
 
 **Ví dụ Gốc (Original):**
 Khi thuyết phục rằng một tên lửa an toàn để phóng, chúng ta bắt đầu từ những điều khán giả đã mặc định tin tưởng (luật vật lý, tính toán đại số). Nếu bộ dữ liệu phân tích lấy từ một cảm biến thử nghiệm có rủi ro bị nhiễu sóng, lập luận phải dành thời gian xây dựng niềm tin vào độ chuẩn xác của dữ liệu cảm biến trước tiên (điều họ chưa tin), thay vì bỏ qua nó để đi ngay vào kết luận.
-📖 Nguồn: `[[SOURCE_THINK_Thinking_with_Data]]` — Chương 3: Arguments (Trang 32).
+ Nguồn: `[[SOURCE_THINK_Thinking_with_Data]]` — Chương 3: Arguments (Trang 32).
 
 **Ví dụ Sư phạm (Pedagogical) [Phóng tác]:**
 Khi một giáo viên EdTech muốn thuyết phục Hội đồng Trường áp dụng Minecraft vào giờ Lịch sử:

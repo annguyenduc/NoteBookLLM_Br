@@ -1,4 +1,4 @@
----
+﻿---
 id: COMPARE_5Whys_vs_RCA
 type: comparison
 aliases: ["So sánh 5 Whys và RCA"]

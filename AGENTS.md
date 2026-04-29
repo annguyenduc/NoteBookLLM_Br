@@ -1,13 +1,13 @@
-# 🚀 AGENTS.md — NoteBookLLM_Br (Swarm 4.0 Supreme)
+#  AGENTS.md — NoteBookLLM_Br (Swarm 4.0 Supreme)
 
 > **Cảnh báo cho AI Agent**: Đọc tệp này VÀ **[[CLAUDE.md]]** TRƯỚC KHI thực hiện bất kỳ tác vụ nào. Sử dụng ký hiệu `@` để triệu hồi cá tính phù hợp.
 
-## 🏁 GLOBAL STARTUP PROTOCOL (Bắt buộc)
+##  GLOBAL STARTUP PROTOCOL (Bắt buộc)
 1. **READ FIRST**: Luôn đọc `AGENTS.md`, `CLAUDE.md` và `WORKSPACE_OVERVIEW.md` ngay khi bắt đầu phiên làm việc hoặc trước khi thực hiện tác vụ quan trọng.
-2. **CHECKPOINT**: Luôn khai báo block `CHECKPOINT` (mục ✋ bên dưới) trước khi thực hiện task.
+2. **CHECKPOINT**: Luôn khai báo block `CHECKPOINT` (mục  bên dưới) trước khi thực hiện task.
 3. **LOG**: Luôn ghi nhật ký vào `3-resources/wiki/log.md` sau khi hoàn thành.
 
-## 👥 Danh mục Biệt đội Agent (Swarm Registry v4.0 Supreme)
+##  Danh mục Biệt đội Agent (Swarm Registry v4.0 Supreme)
 Dự án vận hành theo mô hình Swarm với hệ thống Phân loại thông minh (Taxonomy):
 
 | Audit-ID | Agent | Vai trò ECC | Trọng tâm v4.0 | Budget (In/Out) | Latency |
@@ -24,7 +24,7 @@ Dự án vận hành theo mô hình Swarm với hệ thống Phân loại thông
 | **AG-SWARM-010** | **@creative** | **Creative Specialist** | Tạo case study, roleplay scenario, lesson plan mẫu cho giáo viên (Creative content). | 25k / 5k | < 60s |
 | **AG-SWARM-011** | **@healer** | **Maintenance** | Hàn gắn tri thức, sửa lỗi liên kết và phục hồi tính toàn vẹn hệ thống. | 10k / 2k | < 20s |
 
-## 🗂️ Cấu trúc Resources (Resources Architecture v4.1)
+## ️ Cấu trúc Resources (Resources Architecture v4.1)
  
 ```
 3-resources/
@@ -48,7 +48,7 @@ Dự án vận hành theo mô hình Swarm với hệ thống Phân loại thông
 - `distilled/` → [DEPRECATED] Đã gộp vào `wiki/synthesis/`
 - `archive/` → Snapshot Storage (Lưu trữ vĩnh viễn, Wikilinks đã trung hòa)
 
-## 🛠️ Lệnh điều khiển (Manus Commands)
+## ️ Lệnh điều khiển (Manus Commands)
 - `/scout` — Kích hoạt `@scout` nghiên cứu & Đánh giá độ khó (Difficulty Audit).
 - `/file-back` — Tự động lưu kết quả phân tích có giá trị thành Wiki page mới (Query Compounding).
 - `/ingest` — Kích hoạt quy trình chuẩn nạp nguồn dữ liệu mới vào Wiki (5 bước cố định).
@@ -66,7 +66,7 @@ Dự án vận hành theo mô hình Swarm với hệ thống Phân loại thông
 - `/evaluate [module] [kết_quả_file]` — Kích hoạt `@evaluator` phân tích kết quả đào tạo theo Kirkpatrick Level 1-4. Output ghi vào `2-areas/Assessment/Eval_Report_[module].md` và `3-resources/wiki/log.md`.
 - `/ingest-inbox` — @librarian đọc toàn bộ `00_Inbox/`, phân loại từng file, propose action trước khi execute.
 
-## 📂 Phân quyền truy cập (Manus Scoped Access)
+##  Phân quyền truy cập (Manus Scoped Access)
 
 | Agent | Đọc | Ghi | Cấm tuyệt đối |
 |:---|:---|:---|:---|
@@ -91,11 +91,15 @@ Mọi hành động ghi file → append vào `3-resources/wiki/log.md` theo form
 ```
  
 
-## ⚖️ Quy tắc Swarm v4.0 Supreme (Manus Standard)
+## ️ Quy tắc Swarm v4.0 Supreme (Manus Standard)
 1. **Manus First**: Ưu tiên đọc `task_plan.md` trước khi thực hiện bất kỳ hành động nào.
 2. **Double Link**: Mọi note mới trong Wiki phải có ít nhất 2 liên kết `[[Wikilinks]]`.
 3. **Knowledge Compounding (Rule 3)**: Mọi giải pháp, Insight hoặc tri thức mới từ Raw phải được bồi đắp (Compounded) trực tiếp vào các file Master trong `3-resources/wiki/synthesis/` ngay trong phiên làm việc. Không đợi đến cuối Pipeline.
-4. **Log-First Ingest (Rule 4)**: Mọi thay đổi về tri thức hệ thống (Brain/Wiki) phải được ghi nhận vào `3-resources/wiki/log.md`, phải dùng append không được overwrite, phải viết đúng định dạng được ghi trong log. **BẮT BUỘC sử dụng bảng mã UTF-8 (không BOM) khi ghi file.** Khi dùng PowerShell, luôn thêm `-Encoding UTF8`.
+4. **Log-First Ingest (Rule 4 - Absolute Encoding)**: Mọi thay đổi về tri thức hệ thống (Brain/Wiki) phải được ghi nhận vào `3-resources/wiki/log.md`.
+    - **BẮT BUỘC** dùng append, không overwrite.
+    - **BẮT BUỘC** sử dụng bảng mã UTF-8 (không BOM) khi ghi file.
+    - **CẢNH BÁO ĐỎ:** Khi dùng PowerShell (`Add-Content`, `Out-File`), **PHẢI** thêm `-Encoding UTF8`. Nếu không, PowerShell 5.1 sẽ phá hủy ký tự Tiếng Việt (Mojibake).
+    - **Ưu tiên:** Dùng Python hoặc `replace_file_content` để ghi log nếu có thể.
 5. **Automated Self-Healing (Rule 5)**: Agent phải **tự động** triệu hồi `@healer` khi gặp lỗi hệ thống hoặc logic lặp lại.
 6. **Budget Awareness (Rule 6)**: Thông báo cho người dùng khi phiên làm việc tiêu tốn >80% Budget đã định nghĩa.
 7. **Hierarchy Limit (Rule 7 - Semantic Structure)**:
@@ -136,7 +140,7 @@ Mọi hành động ghi file → append vào `3-resources/wiki/log.md` theo form
 
     b. Chỉ trích dẫn từ file có trong `3-resources/raw/` hoặc `3-resources/wiki/synthesis/` — KHÔNG dùng general knowledge.
 
-    c. Với mỗi claim, ghi rõ: `📖 Nguồn: [tên file] — [dòng/section cụ thể]`
+    c. Với mỗi claim, ghi rõ: ` Nguồn: [tên file] — [dòng/section cụ thể]`
 
     d. Nếu không tìm thấy nguồn trong hệ thống: → Ghi `[KHÔNG TÌM THẤY NGUỒN]` → Báo cáo cho `@auditor` → KHÔNG tự điền nội dung thay thế.
 
@@ -154,27 +158,27 @@ Mọi hành động ghi file → append vào `3-resources/wiki/log.md` theo form
     
     Nếu file prerequisite KHÔNG tồn tại → agent DỪNG ngay,
     báo @pm, KHÔNG tự tiếp tục.
-## 🔒 WRITE-PROTECT Rule (Bổ sung vào Rules)
+##  WRITE-PROTECT Rule (Bổ sung vào Rules)
 Rule 12 — RAW IS IMMUTABLE:
 - 3-resources/raw/ là READ-ONLY với TẤT CẢ agents
 - Không agent nào được ghi, sửa, hoặc overwrite file trong 3-resources/raw/
 - Vi phạm Rule này → @healer rollback ngay, ghi incident vào 3-resources/wiki/log.md
 - CHỈ người dùng mới được thêm file mới vào 3-resources/raw/
 
-## 📚 WIKI CATALOGING (Quy tắc Mục lục Kiến thức)
+##  WIKI CATALOGING (Quy tắc Mục lục Kiến thức)
 Rule 13 — WIKI INDEX & AGENT_GUIDE IS MANDATORY:
 - Mọi tệp tin kiến thức (Atoms, Synthesis) khi được tạo ra hoặc chỉnh sửa đều PHẢI được cập nhật vào `3-resources/wiki/index.md`.
 - **BẮT BUỘC**: Trước khi tạo/sửa Wiki, Agent phải đọc hướng dẫn tại `3-resources/WIKI_AGENT_GUIDE.md`.
-- Agent có thể dùng script `scripts/update_wiki_index.py` để tự động hóa việc này.
-- `3-resources/wiki/index.md` đóng vai trò là "Bản đồ" (Catalog) để LLM quét nhanh thay vì lục lọi toàn bộ files.
+- **CẢNH BÁO ĐỎ**: Khi tạo file `SOURCE_`, Agent **BẮT BUỘC** phải đọc và sao chép cấu trúc từ `3-resources/SOURCE_TEMPLATE.md`. Tuyệt đối không tự ý dùng placeholder.
+- **BẮT BUỘC**: Khi tạo file `QUERY_`, Agent **BẮT BUỘC** phải sử dụng cấu trúc từ `3-resources/QUERY_template.md`.
 
 Rule 15 — EXECUTION INTEGRITY (Chống "Nói mà không làm"):
 - Tuyệt đối KHÔNG báo cáo "Đã tạo/sửa file" nếu chưa thực hiện cuộc gọi tool (write_file, replace_file, v.v.) thành công trong cùng lượt phản hồi.
 - Mọi báo cáo hoàn thành phải dựa trên Output thực tế của Tool, không dựa trên dự định của Agent.
 - Vi phạm: Phải tự phê bình và ghi lỗi vào `CONTINUITY.md`.
-## 🔐 SOURCE INTEGRITY (Bắt buộc khi tạo ATOMS)
+##  SOURCE INTEGRITY (Bắt buộc khi tạo ATOMS)
 Rule 14 — SOURCE_INTEGRITY:
-- Khi viết trường `📖 Nguồn`, agent phải **thực sự mở file đó** trong `3-resources/raw/` trước khi viết.
+- Khi viết trường ` Nguồn`, agent phải **thực sự mở file đó** trong `3-resources/raw/` trước khi viết.
 - Chỉ ghi **tên file raw gốc hiện tồn tại** trong `3-resources/raw/` — không ghi file tổng hợp trung gian đã deprecated.
 - Phải xác nhận fact xuất hiện ở section / câu hỏi nào cụ thể — ghi rõ vào comment `[AUDITOR] Rule 14`.
 - Checklist ATOMS bắt buộc có mục: `- [ ] [Rule 14] Đã mở file nguồn trong 3-resources/raw/ và xác nhận fact tồn tại`.
@@ -186,7 +190,34 @@ Rule 16 — EXTRACTION_MANDATORY_STATS:
 - **BẮT BUỘC**: Phải liệt kê danh sách các Master Files (`3-resources/wiki/synthesis/`) đã được bồi đắp tri thức từ nguồn này.
 - Bất kỳ Agent nào khi thực hiện trích xuất tri thức (Extraction/Mining) đều phải cập nhật bảng này trước khi nạp vào Wiki.
 
-## ✋ CHECKPOINT Protocol (Bắt buộc mọi agent)
+Rule 17 — DOUBLE EXAMPLES MANDATORY (Nguyên tắc Minh họa kép):
+- MỌI trang Concept hoặc Entity trong hệ thống Wiki (bao gồm `wiki/concepts/`, `wiki/entities/`) đều BẮT BUỘC phải có khối `## [X]. Ví dụ đối chiếu (Rule 17: Double Examples)` trước phần trích dẫn Nguồn.
+- Khối này PHẢI bao gồm chính xác 2 ví dụ phân tách rõ ràng:
+  1. **Ví dụ từ sách (Original)**: Trích dẫn hoặc tóm tắt sát thực tế trong tài liệu gốc.
+  2. **Ứng dụng sư phạm (Pedagogical Application)**: Chuyển đổi sang tình huống dạy học/STEAM/EdTech để giáo viên dễ áp dụng.
+- Vi phạm: Agent rà soát (Librarian/Auditor) phải block trang đó khỏi danh mục "verified" cho đến khi Rule 17 được đáp ứng.
+
+Rule 19 — QUERY_STANDARDIZATION (Chuẩn hóa điều tra):
+- Mọi kết quả nghiên cứu, research từ Web hoặc NotebookLM khi lưu vào `3-resources/wiki/queries/` PHẢI dùng prefix `QUERY_` và tuân thủ `3-resources/QUERY_template.md`.
+- **Trường bắt buộc**: `type: query`, `title`, `tags`, `related`.
+- **Source Tracing**: Phải ghi rõ `source_tool` để phân biệt nguồn gốc tri thức.
+
+Rule 18 — FILE OPERATION STANDARD (Chuẩn thao tác file):
+- Agent KHÔNG được tự generate lệnh PowerShell/bash tùy ý để ghi file.
+- Mọi thao tác tạo/sửa file (read/write) BẮT BUỘC phải đi qua MCP Filesystem tool.
+- **Tool bắt buộc theo tình huống**:
+  - Sửa file đã tồn tại: `edit_file` / `replace_file_content` (patch mode). NGHIÊM CẤM `write_file` hoặc script ghi trực tiếp.
+  - Tạo file mới: `create_file` / `write_file`.
+  - Append log.md: `edit_file` (chỉ thêm cuối, không xóa dòng nào).
+- **Báo cáo sau mỗi lần ghi (bắt buộc)**:
+  WRITE REPORT:
+    file: "[đường dẫn]"
+    operation: "append | patch | create"
+    added: "[tóm tắt 1 câu]"
+    removed: "[tóm tắt 1 câu — hoặc NONE]"
+- Vi phạm → @healer rollback ngay lập tức, ghi incident vào `log.md`.
+
+##  CHECKPOINT Protocol (Bắt buộc mọi agent)
 
 Trước khi thực hiện BẤT KỲ task nào, agent PHẢI trả lời chính xác các block sau:
 ```yaml

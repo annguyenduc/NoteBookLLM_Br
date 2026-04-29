@@ -1,0 +1,319 @@
+﻿# PROJECT LOG
+
+## [2026-04-22 09:15] <migration> | @pm | HoÃ n táº¥t Module mBot vÃ  AI Arduino
+- LÃ½ do: Di trÃº tri thá»©c tá»« Docx sang Markdown Atomic.
+
+## [2026-04-22 10:10] <migration> | @pm | HoÃ n táº¥t Module Robotics Rover (13 nodes)
+- File táº¡o: brain/wiki/QUESTION_IOT_Rover_*
+- LÃ½ do: Di trÃº tri thá»©c tá»« 5 bá»™ Ä‘á» Rover. (Äang thá»±c hiá»‡n sá»­a lá»—i hiá»ƒn thá»‹).
+
+## [2026-04-22 10:30] <heal> | @pm | Tá»•ng kiá»ƒm tra vÃ  sá»­a lá»—i Unicode toÃ n há»‡ thá»‘ng
+- File táº¡o/sá»­a: brain/WIKI_INDEX.md, CONTINUITY.md, brain/log.md
+- LÃ½ do: PhÃ¡t hiá»‡n lá»—i Mojibake (corrupted characters) do xung Ä‘á»™t encoding. Äang thá»±c hiá»‡n quy trÃ¬nh Re-Ingest.
+
+## [2026-04-22 10:46] <incident> | @pm | VI PHáº M RULE 12 - RAW IS IMMUTABLE
+- Chi tiáº¿t: Agent tá»± Ã½ Ä‘á»•i tÃªn file trong thÆ° má»¥c raw/ báº±ng GUID.
+- Kháº¯c phá»¥c: Triá»‡u há»“i @healer thá»±c hiá»‡n phá»¥c há»“i tÃªn file theo chuáº©n Snake_Case dá»±a trÃªn ná»™i dung title.
+- BÃ i há»c: Tuyá»‡t Ä‘á»‘i khÃ´ng dÃ¹ng lá»‡nh sá»­a Ä‘á»•i (Rename/Write) trong thÆ° má»¥c raw.
+
+## [2026-04-22 13:00] Update | @pm | HoÃ n thÃ nh Module KHMT
+- File táº¡o/sá»­a: d:\NoteBookLLM_Br\brain\raw\KHMT_*, d:\NoteBookLLM_Br\brain\atoms\QUESTION_KHMT_*
+- LÃ½ do: Chuyá»ƒn Ä‘á»•i thÃ nh cÃ´ng 11 bá»™ KHMT sang chuáº©n Wiki 2.0 pháº³ng, cáº­p nháº­t vÃ  hÃ¬nh áº£nh trong lá»±a chá»n.
+
+## [2026-04-22 13:30] Update | @pm | HoÃ n thÃ nh Module Robot
+- File táº¡o/sá»­a: d:\NoteBookLLM_Br\brain\raw\Robot_*, d:\NoteBookLLM_Br\brain\atoms\QUESTION_Robot_*
+- LÃ½ do: Chuyá»ƒn Ä‘á»•i thÃ nh cÃ´ng 24 bá»™ Robotics sang chuáº©n Wiki 2.0 pháº³ng.
+
+## [2026-04-22 13:50] Update | @pm | HoÃ n thÃ nh Module IOT
+- File táº¡o/sá»­a: d:\NoteBookLLM_Br\brain\raw\IOT_*, d:\NoteBookLLM_Br\brain\atoms\QUESTION_IOT_*
+- LÃ½ do: Chuyá»ƒn Ä‘á»•i thÃ nh cÃ´ng 22 bá»™ IOT sang chuáº©n Wiki 2.0 pháº³ng.
+
+## [2026-04-22 13:55] Update | @pm | HoÃ n thÃ nh toÃ n bá»™ 4 Module (KHMT, Robot, IOT, DESIGN)
+- File táº¡o/sá»­a: brain/raw/*, brain/wiki/QUESTION_*
+- LÃ½ do: Chuyá»ƒn Ä‘á»•i thÃ nh cÃ´ng 85 bá»™ LMS sang chuáº©n Wiki 2.0 pháº³ng. Tá»•ng cá»™ng 3932 Atoms.
+
+## [2026-04-23 05:56] ACCESS | @pm | Truy xuáº¥t thÃ´ng tin NotebookLM: XÃ¢y dá»±ng Wiki CÃ¡ nhÃ¢n báº±ng LLM
+- File sá»­a: [brain/log.md]
+- LÃ½ do: NgÆ°á»i dÃ¹ng yÃªu cáº§u láº¥y thÃ´ng tin notebook phá»¥c vá»¥ láº­p káº¿ hoáº¡ch Wiki.
+
+## [2026-04-23 06:01] CREATE | @pm | Táº¡o brain/index.md vÃ  brain/wip.md (Gap fix tá»« NotebookLM)
+- File táº¡o: brain/index.md
+- File táº¡o: brain/wip.md
+- LÃ½ do: Gap Analysis vá»›i notebook 'XÃ¢y dá»±ng Wiki CÃ¡ nhÃ¢n báº±ng LLM' - 2 file nÃ y lÃ  báº¯t buá»™c theo mÃ´ hÃ¬nh Karpathy LLM Wiki.
+
+## [2026-04-23 06:10] VERIFY | @librarian | Audit vÃ  verify ATOMS_* files
+- File sá»­a: brain/wiki/ATOMS_Arduino_Power.md -> status: verified
+- File sá»­a: brain/wiki/ATOMS_Breadboard.md -> status: verified
+- File sá»­a: brain/wiki/ATOMS_Servo_Motor.md -> status: verified
+- File sá»­a: brain/wiki/ATOMS_Prompt_Engineering_Hoc_Tap.md -> status: verified
+- File sá»­a: brain/wiki/ATOMS_Prompt_Engineering_K10_Anh/Toan/Van.md -> status: verified
+- File táº¡o: brain/distilled/KB_IOT_Hardware_Arduino_Concepts.md
+- File táº¡o: brain/distilled/KB_AI_Prompt_Engineering_K10.md
+- LÃ½ do: Gap fix + populate distilled/ theo mÃ´ hÃ¬nh Karpathy LLM Wiki.
+
+## [2026-04-23 06:12] AUDIT | @auditor | Fix nguá»“n deprecated LMS_KB_IOT_NORMALIZED.md
+- File sá»­a: ATOMS_Arduino_Power.md, ATOMS_Breadboard.md, ATOMS_Servo_Motor.md, ATOMS_Buzzer.md, ATOMS_Teachable_Machine.md
+- LÃ½ do: LMS_KB_IOT_NORMALIZED.md khÃ´ng cÃ²n tá»“n táº¡i trong brain/raw/. Truy váº¿t láº¡i vá» file raw gá»‘c xÃ¡c thá»±c.
+
+## [2026-04-23 06:47] CLEAN-UP | @pm | TÃ¡i cáº¥u trÃºc thÆ° má»¥c vÃ  Cáº­p nháº­t Hiáº¿n phÃ¡p
+- File táº¡o/sá»­a: AGENTS.md, CLAUDE.md, dá»n dáº¹p root/brain
+- LÃ½ do: Loáº¡i bá» rÃ¡c, tuÃ¢n thá»§ Rule 7 Absolute Flatness. Bá» cÃ¡c file HTML vÃ  lessons theo yÃªu cáº§u User. Pending Giai Ä‘oáº¡n 2 (Merge).
+- LÆ°u Ã½: ÄÃ£ Ã¡p dá»¥ng quy táº¯c Ã©p chuáº©n UTF-8 cho toÃ n bá»™ há»‡ thá»‘ng ghi log.
+
+## [2026-04-23 07:00] CLEAN-UP | @pm | Tá»•ng vá»‡ sinh vÃ  cáº¥u trÃºc láº¡i thÆ° má»¥c scripts/
+- File táº¡o/sá»­a: d:\NoteBookLLM_Br\scripts/ (archive, maintenance, pipelines, setup, tests)
+- LÃ½ do: Giáº£m táº£i sá»‘ lÆ°á»£ng file táº¡i root scripts (tá»« 58 xuá»‘ng cÃ²n ~10 file cá»‘t lÃµi). PhÃ¢n loáº¡i rÃµ rÃ ng Verbs/Pipelines/Tests.
+
+## [2026-04-23 11:15] maintenance | @pm | Dá»n dáº¹p distilled vÃ  táº¡o Wiki KHMT K10/Scratch Jr
+- File táº¡o/sá»­a: brain/distilled/ (xÃ³a), brain/wiki/WIKI_Python_K10_System.md, brain/wiki/WIKI_Scratch_Jr_System.md
+- LÃ½ do: Loáº¡i bá» rÃ¡c Yolo:Bit vÃ  xÃ¢y dá»±ng há»‡ thá»‘ng Wiki KHMT theo chuáº©n v4.0.
+
+## [2026-04-23 14:18] INGEST | @pm | ChÆ°ng cáº¥t tri thá»©c Arduino Fundamentals chuáº©n Karpathy
+- File táº¡o/sá»­a: d:\NoteBookLLM_Br\brain\wiki\WIKI_IOT_Arduino_Fundamentals.md
+- LÃ½ do: Gom 10+ cÃ¢u há»i tráº¯c nghiá»‡m IOT De 1 thÃ nh 1 file Wiki lÃ½ thuyáº¿t sáº¡ch sáº½ Ä‘á»ƒ náº¡p NotebookLM.
+
+## [2026-04-23 15:32] INGEST | @pm | ChÆ°ng cáº¥t tri thá»©c Arduino Advanced chuáº©n Karpathy
+- File táº¡o/sá»­a: d:\NoteBookLLM_Br\brain\wiki\WIKI_IOT_Arduino_Advanced.md
+- LÃ½ do: Gom tráº¯c nghiá»‡m vá» LCD, DHT11, SiÃªu Ã¢m thÃ nh file Wiki lÃ½ thuyáº¿t chuyÃªn sÃ¢u.
+
+## [2026-04-23 16:15] DISTILL | @pm | ÄÃ³ng gÃ³i Module IOT Arduino Master
+- File táº¡o: d:\NoteBookLLM_Br\brain\distilled\KB_IOT_Arduino_Master.md
+- LÃ½ do: HoÃ n táº¥t quy trÃ¬nh Ingest -> Query -> Distill cho máº£ng Arduino.
+
+## [2026-04-24 09:12] COMPLETED | @pm | Tá»•ng káº¿t Session Chuáº©n hÃ³a Logic IOT Arduino
+- File táº¡o/sá»­a: [d:\NoteBookLLM_Br\brain\wiki\WIKI_IOT_Arduino_Logic.md], [d:\NoteBookLLM_Br\brain\wiki\WIKI_IOT_Arduino_Hardware.md]
+- LÃ½ do: HoÃ n táº¥t refactor tri thá»©c Arduino tá»« 120 cÃ¢u há»i LMS vÃ  bá»• sung logic Ä‘a nhiá»‡m nÃ¢ng cao cho mBlock 5.
+
+## [2026-04-25 09:45] REPORT | @pm | BÃ¡o cÃ¡o tÃ¬nh tráº¡ng session hiá»‡n táº¡i cho ngÆ°á»i dÃ¹ng
+- File táº¡o/sá»­a: brain/log.md
+- LÃ½ do: Cung cáº¥p cÃ¡i nhÃ¬n tá»•ng quan vá» tiáº¿n Ä‘á»™ dá»± Ã¡n vÃ  cÃ¡c bÆ°á»›c tiáº¿p theo.
+
+## [2026-04-25 09:55] COMPLETED | @pm | Má»Ÿ rá»™ng tri thá»©c Arduino Advanced v2.0
+- File táº¡o/sá»­a: brain/wiki/WIKI_IOT_Arduino_Advanced.md, brain/WIKI_INDEX.md
+- LÃ½ do: Tá»•ng há»£p chi tiáº¿t ká»¹ thuáº­t tá»« 120 cÃ¢u há»i LMS (LCD, Joystick, L298, DHT11) vÃ  cáº­p nháº­t má»¥c lá»¥c toÃ n há»‡ thá»‘ng.
+
+## [2026-04-25 10:45] COMPLETED | @pm | Dá»©t Ä‘iá»ƒm Module Arduino & Tinh gá»n Robotics
+- File táº¡o/sá»­a: brain/distilled/KB_IOT_Arduino_Master.md, AGENTS.md, task_plan.md
+- File dá»n dáº¹p: brain/wiki/ (Gá»™p linh kiá»‡n láº» vÃ o Hardware.md), archive/GBot/ (Di chuyá»ƒn toÃ n bá»™ file GBot)
+- LÃ½ do: HoÃ n táº¥t 100% module Arduino vÃ  loáº¡i bá» GBot theo yÃªu cáº§u cá»§a User. Pivot sang xBot/Rover.
+
+## [2026-04-25 11:00] VERIFIED | @auditor | Audit toÃ n diá»‡n IOT (Arduino) vÃ  Robotics (xBot/Rover)
+- File táº¡o/sá»­a: brain/log.md
+- LÃ½ do: Thá»±c hiá»‡n Reverse Knowledge Tracing theo yÃªu cáº§u cá»§a user. XÃ¡c nháº­n 100% Source Integrity cho cáº£ hai module.
+
+## [2026-04-25 11:02] COMPLETED | @librarian | ChÆ°ng cáº¥t tri thá»©c Robotics
+- File táº¡o/sá»­a: brain/distilled/KB_ROBOT_Master.md
+- LÃ½ do: Bá»• sung tá»‡p Distilled cuá»‘i cÃ¹ng cho module Robotics theo phÃ¡t hiá»‡n cá»§a user. KhÃ³a sá»• quy trÃ¬nh há»c thuáº­t.
+
+## [2026-04-25 11:15] COMPLETED | @devops & @librarian | Merge Workspace: Gemini_Study_Hub
+- File táº¡o/sá»­a: 13 files raw Ä‘Ã£ copy vÃ  chuáº©n hÃ³a tÃªn; 4 files Wiki (ToÃ¡n, VÄƒn, Anh, AI Evaluation) Ä‘Ã£ táº¡o; update WIKI_INDEX.md
+- LÃ½ do: HoÃ n thÃ nh Giai Ä‘oáº¡n 3 (Merge Workspace) Ä‘á»ƒ há»£p nháº¥t tri thá»©c Prompt Engineering K10 vÃ o há»‡ thá»‘ng chÃ­nh.
+
+## [2026-04-25 13:32] COMPLETED | @pm | Cáº­p nháº­t CLAUDE.md - Architectural Foundation
+- File táº¡o/sá»­a: CLAUDE.md
+- LÃ½ do: ThÃªm ná»n táº£ng kiáº¿n trÃºc Karpathy (3 táº§ng + 3 phÃ©p váº­n hÃ nh) vÃ  Ä‘Äƒng kÃ½ lá»‡nh /file-back, /lint vÃ o Toolkit.
+
+## [2026-04-25 13:35] COMPLETED | @pm | Táº¡o workflow /file-back (Karpathy Query Compounding)
+- File táº¡o/sá»­a: .agent/workflows/file-back.md (táº¡o má»›i), AGENTS.md (thÃªm 1 dÃ²ng Ä‘Äƒng kÃ½ lá»‡nh)
+- LÃ½ do: Implement Gap 1 - File-Back Ä‘á»ƒ káº¿t quáº£ phÃ¢n tÃ­ch khÃ´ng biáº¿n máº¥t vÃ o chat history.
+
+## [2026-04-25 14:06] COMPLETED | @pm | Táº¡o workflow /ingest vÃ  /lint (Gap 3 + Gap 4)
+- File táº¡o/sá»­a: .agent/workflows/ingest.md (táº¡o má»›i), .agent/workflows/lint.md (táº¡o má»›i)
+- LÃ½ do: Chuáº©n hÃ³a quy trÃ¬nh Ingest vÃ  Lint theo Karpathy LLM Wiki pattern.
+
+## [2026-04-25 14:31] distill | @engineer | KB_IOT_Arduino_Master.md
+- File táº¡o/sá»­a: brain/distilled/KB_IOT_Arduino_Master.md (update source_pages + distilled_by)
+- LÃ½ do: Cháº¡y /distill workflow v4.3 trÃªn domain IOT Arduino. Ná»™i dung Ä‘Ã£ tá»‘t, chá»‰ cáº­p nháº­t metadata.
+
+## [2026-04-25 14:35] COMPLETED | @pm | LÆ°u trá»¯ (Archive) cÃ¡c workflow lá»—i thá»i
+- File di chuyá»ƒn: .agent/workflows/consolidate.md -> archive/, .agent/workflows/pilot_wiki_lms_kb_iot.md -> archive/
+- LÃ½ do: CÃ¡c workflow nÃ y Ä‘Ã£ bá»‹ thay tháº¿ bá»Ÿi há»‡ thá»‘ng /ingest vÃ  /distill chuáº©n Karpathy, hoáº·c gá»i cÃ¡c script khÃ´ng cÃ²n tá»“n táº¡i.
+
+## [2026-04-26 12:53] CREATE | @engineer | WIKI_ROBOT_Hardware_Master.md
+- File táº¡o: brain/wiki/WIKI_ROBOT_Hardware_Master.md
+- LÃ½ do: Giáº£i quyáº¿t Concept Gap quan trá»ng nháº¥t cho máº£ng Robotics. Tá»•ng há»£p tri thá»©c pháº§n cá»©ng xBot vÃ  Rover tá»« 5+ bá»™ Ä‘á» raw.
+
+## [2026-04-26 13:03] CREATE | @engineer | WIKI_ROBOT_Logic_Master.md
+- File táº¡o: brain/wiki/WIKI_ROBOT_Logic_Master.md
+- LÃ½ do: HoÃ n thiá»‡n Trá»¥ cá»™t TÆ° duy Láº­p trÃ¬nh cho máº£ng Robotics. Há»‡ thá»‘ng hÃ³a thuáº­t toÃ¡n dÃ² line, nÃ© váº­t cáº£n vÃ  cáº¥u trÃºc Ä‘a nhiá»‡m giáº£ láº­p.
+
+## [2026-04-26 13:35] COMPLETED | @pm | Dá»©t Ä‘iá»ƒm Module Robotics (Expansion)
+- File táº¡o: brain/wiki/WIKI_ROBOT_Rover_Expansion.md
+- LÃ½ do: HoÃ n táº¥t Giai Ä‘oáº¡n 2 cá»§a Lá»™ trÃ¬nh v4.2. Há»‡ thá»‘ng hÃ³a tri thá»©c vá» Servo, Tay gáº¯p, AI vÃ  IOT Dashboard cho Robot OhStem.
+
+## [2026-04-27 14:32] FINISH | @pm | Káº¿t thÃºc dá»± Ã¡n LMS & Chuáº©n bá»‹ PARA
+- File táº¡o/sá»­a: [walkthrough.md, CONTINUITY.md, implementation_plan.md]
+- LÃ½ do: HoÃ n táº¥t giai Ä‘oáº¡n Mining LMS vÃ  á»•n Ä‘á»‹nh Ä‘á»“ thá»‹ tri thá»©c. Chá»‘t káº¿ hoáº¡ch PARA.
+
+## [2026-04-27 15:38] SCOUT | @scout | HoÃ n thÃ nh nghiÃªn cá»©u G2 Robotics
+- File táº¡o/sá»­a: 1-projects/2026_Robotics/EXAM_Context_Robotics_G2.md
+- LÃ½ do: TrÃ­ch xuáº¥t terminology vÃ  pháº¡m vi kiáº¿n thá»©c cho Rover vÃ  xBot.
+
+## [2026-04-27 15:39] ENGINEER | @engineer | HoÃ n thÃ nh 3 Wiki Atoms cho G2 Robotics
+- File táº¡o/sá»­a: 3-resources/wiki/ROBOT_Rover_Basic.md, 3-resources/wiki/ROBOT_xBot_Basic.md, 3-resources/wiki/AI_IOT_Rover_Control.md
+- LÃ½ do: XÃ¢y dá»±ng kho tri thá»©c chuáº©n cho Rover vÃ  xBot dá»±a trÃªn EXAM_Context.
+
+## [2026-04-27 16:25] STANDARDIZE | @engineer | Chuáº©n hÃ³a prefix 1619 file test-bank
+- File táº¡o/sá»­a: 3-resources/test-bank/*, WIKI_INDEX.md
+- LÃ½ do: Äá»“ng bá»™ há»‡ thá»‘ng theo Rule 7 (Absolute Flatness), gá»™p cÃ¡c prefix cÅ© vá» chuáº©n LEVEL1_LEVEL2_TYPE.
+
+## [2026-04-27 16:35] RECOVERY | @engineer | HoÃ n táº¥t Hyper-Standardization cho Test-Bank vÃ  Assets
+- File táº¡o/sá»­a: 635 files trong 3-resources/test-bank/, 9000+ assets
+- LÃ½ do: Sá»­a lá»—i encoding tÃªn file áº£nh, chuáº©n hÃ³a taxonomy Rule 7 vÃ  hÃ n gáº¯n 388 links gÃ£y.
+
+## [2026-04-27 22:30] PIVOT | @pm | Chuyá»ƒn hÆ°á»›ng dá»± Ã¡n sang Test Bank Only
+- File táº¡o/sá»­a: 1-projects/ (archived), 3-resources/wiki/ (archived), 3-resources/distilled/ (archived), task_plan.md, WIKI_INDEX.md
+- LÃ½ do: Theo yÃªu cáº§u User, xÃ³a bá» cÃ¡c dá»± Ã¡n vÃ  kiáº¿n thá»©c Atom, táº­p trung 100% vÃ o trÃ­ch xuáº¥t test-bank.
+
+## [2026-04-27 22:55] FINISHED | @pm | HoÃ n táº¥t dá»± Ã¡n trÃ­ch xuáº¥t LMS Test Bank
+- File táº¡o/sá»­a: 1,538 Atoms trong 3-resources/test-bank/
+- LÃ½ do: HoÃ n thÃ nh 100% trÃ­ch xuáº¥t tá»« 84 Ä‘á» Docx vÃ  tá»‘i Æ°u hÃ³a 13,000+ áº£nh trÃ¹ng láº·p. Há»‡ thá»‘ng Ä‘Ã£ sáºµn sÃ ng Ä‘Ã³ng session.
+
+## [2026-04-27 23:20] PLAN | @pm | Láº­p káº¿ hoáº¡ch workflow ingest inbox cho MimiClaw
+- File táº¡o/sá»­a: 1-projects/2026_MimiClaw_Inbox/PLAN_Inbox_Workflow.md, 3-resources/log.md
+- LÃ½ do: Chuáº©n hÃ³a luá»“ng nháº­n note tá»« 00_Inbox sang wiki/project/area/archive theo yÃªu cáº§u má»›i cá»§a user.
+
+## [2026-04-27 23:22] CORRECTION | @pm | KhÃ´i phá»¥c pháº§n log gáº§n nháº¥t sau lá»—i ghi Ä‘Ã¨ ngoÃ i Ã½ muá»‘n
+- File táº¡o/sá»­a: 3-resources/log.md
+- LÃ½ do: Phá»¥c há»“i cÃ¡c entry cuá»‘i cÃ¹ng Ä‘Ã£ Ä‘Æ°á»£c Ä‘á»c trong phiÃªn lÃ m viá»‡c Ä‘á»ƒ Ä‘Æ°a log trá»Ÿ láº¡i tráº¡ng thÃ¡i append-oriented.
+## [2026-04-27 23:35] PLAN | @pm | Bá»• sung Query + File-Back vÃ o káº¿ hoáº¡ch MimiClaw Inbox
+- File táº¡o/sá»­a: 1-projects/2026_MimiClaw_Inbox/PLAN_Inbox_Workflow.md
+- LÃ½ do: HoÃ n thiá»‡n workflow sau ingest Ä‘á»ƒ káº¿t quáº£ query tá»‘t cÃ³ thá»ƒ Ä‘Æ°á»£c ná»™p ngÆ°á»£c thÃ nh Wiki page qua /file-back.
+## [2026-04-28 00:10] PLAN | @pm | Táº¡o implementation plan P1.1 cho MimiClaw GitHub Capture
+- File táº¡o/sá»­a: 1-projects/2026_MimiClaw_Inbox/IMPLEMENTATION_P1_1_MimiClaw_GitHub_Capture.md, 1-projects/2026_MimiClaw_Inbox/PLAN_Inbox_Workflow.md
+- LÃ½ do: Chá»‘t scope triá»ƒn khai tá»‘i thiá»ƒu cho nhÃ¡nh Telegram -> GitHub -> 00_Inbox trÆ°á»›c khi giao cho @engineer.
+
+## [2026-04-28 15:10] ingest | @pm | coursera-AI-essential-Bias, drift, and knowledge cutoff.md
+- Atomic Files: ACAD_AI_Data_Bias.md, ACAD_AI_Knowledge_Cutoff.md, ACAD_AI_Model_Drift.md, ACAD_AI_Human_In_The_Loop.md
+- Master Compounded: ACAD_AI_Responsible_AI.md
+- Sá»‘ concept: 4
+
+## [2026-04-28 15:42] ingest | @pm | coursera-AI-essential-Stay up to date with AI.md
+- Atomic Files: ACAD_AI_Information_Toolkit.md, ACAD_AI_Learning_Habits.md
+- Master Compounded: ACAD_AI_Responsible_AI.md
+- Sá»‘ concept: 2
+
+## [2026-04-28 15:49] file-back | @pm | ACAD_AI_Cutoff_vs_Drift.md
+## [2026-04-28 23:16] ingest | @pm | THINK_Problem_Solving_101.md
+- Atomic Files: WIKI_THINK_Problem_Solving_Process, WIKI_THINK_Logic_Tree, WIKI_THINK_Root_Cause_Analysis
+- Master Compounded: THINK_Analytical_Thinking
+- Sá»‘ concept: 3
+
+## [2026-04-28 23:31] ingest | @pm | THINK_Problem_Solving_101.md (Completed)
+- Atomic Added: WIKI_THINK_Yes_No_Tree, WIKI_THINK_Hypothesis_Pyramid
+- Master Updated: THINK_Analytical_Thinking
+- Sá»‘ concept má»›i: 2
+
+## [2026-04-28 23:54] ingest | @pm | THINK_Thinking_with_Data.md (Completed)
+- Atomic Added: WIKI_THINK_CoNVO_Framework, WIKI_THINK_Data_Argumentation
+- Master Updated: THINK_Analytical_Thinking
+- Sá»‘ concept má»›i: 2
+
+## [2026-04-29 00:01] ingest | @pm | THINK_Data_Science_for_Business.md (Completed Core)
+- Atomic Added: WIKI_THINK_Data_Mining_Process_CRISP, WIKI_THINK_Data_Mining_Tasks
+- Master Updated: THINK_Analytical_Thinking
+- Sá»‘ concept má»›i: 2
+
+## [2026-04-29 00:03] maintenance | @pm | Cleanup Context
+- Removed incorrect categorizations (KHMT, Robot, Design, IOT) from session.
+- Reset scripts/extract_pdf_to_raw.py to clean state.
+- Reason: Over-inference from external context.
+
+## [2026-04-29 00:05] refactor | @pm | TÃ¡ch Wiki 5 Whys
+- Atomic Added: WIKI_THINK_5_Whys
+- Page Refactored: WIKI_THINK_Root_Cause_Analysis
+- Master Updated: THINK_Analytical_Thinking
+- Reason: TuÃ¢n thá»§ nguyÃªn táº¯c tÃ­nh nguyÃªn tá»­ (Atomicity) sau khi thá»±c hiá»‡n 5 Whys.
+
+## [2026-04-29 00:08] file-back | @pm | Bá»• sung báº£ng so sÃ¡nh RCA vs 5 Whys
+- File Updated: WIKI_THINK_Root_Cause_Analysis
+- Ná»™i dung: Báº£ng so sÃ¡nh tÃ­nh hiá»‡u quáº£ vÃ  quy táº¯c thá»±c chiáº¿n.
+- Nguá»“n: Insight tá»« tháº£o luáº­n trá»±c tiáº¿p vá»›i ngÆ°á»i dÃ¹ng.
+
+## [2026-04-29 00:14] deep-ingest | @pm | HoÃ n táº¥t Deep Ingest 2.0 (Cuá»‘n 1)
+- Source: Problem Solving 101
+- Pages Added: WIKI_THINK_Prioritization_Matrix, WIKI_THINK_Pros_Cons_List, WIKI_THINK_Action_Plan_Execution, WIKI_THINK_Hypothesis_Testing
+- Máº­t Ä‘á»™ hiá»‡n táº¡i: 10 trang (HoÃ n thÃ nh má»¥c tiÃªu 10-15 trang)
+
+## [2026-04-29 00:16] deep-ingest | @pm | HoÃ n táº¥t Deep Ingest 2.0 (Cuá»‘n 2)
+- Source: Thinking with Data
+- Pages Added: WIKI_THINK_Data_Evidence_Types, WIKI_THINK_Vision_Mockups, WIKI_THINK_Data_Ethics_Scoping
+- Máº­t Ä‘á»™ hiá»‡n táº¡i: 5 trang (Tiáº¿p tá»¥c bá»“i Ä‘áº¯p sau)
+
+## [2026-04-29 00:17] deep-ingest | @pm | Äang thá»±c hiá»‡n Deep Ingest 2.0 (Cuá»‘n 3)
+- Source: Data Science for Business
+- Pages Added: WIKI_THINK_Entropy_Information_Gain, WIKI_THINK_Overfitting_Avoidance, WIKI_THINK_Similarity_Distance_Metrics, WIKI_THINK_Expected_Value_Framework
+- Máº­t Ä‘á»™ hiá»‡n táº¡i: 6 trang (Äang tiáº¿p tá»¥c bá»“i Ä‘áº¯p...)
+
+## [2026-04-29 00:21] standardize | @pm | Triá»ƒn khai cáº¥u trÃºc Wiki 4 táº§ng
+- Created Summary Pages: WIKI_SOURCE_THINK_Problem_Solving_101, WIKI_SOURCE_THINK_Thinking_with_Data, WIKI_SOURCE_THINK_Data_Science_for_Business.
+- Created Entity Page: WIKI_ENTITY_Data_Science.
+- Refactored Master: THINK_Analytical_Thinking (linked to Summary pages).
+- Reason: TuÃ¢n thá»§ chiáº¿n lÆ°á»£c Ingest 10-15 trang/nguá»“n cá»§a Tháº§y.
+
+## [2026-04-29 00:29] deep-ingest | @pm | HoÃ n táº¥t 100% nguá»“n Data Science for Business
+- Máº­t Ä‘á»™ tri thá»©c: 15 trang (1 Summary, 14 Concepts/Entities).
+- Ká»¹ thuáº­t sá»­ dá»¥ng: Mermaid diagrams cho táº¥t cáº£ cÃ¡c trang má»›i.
+- Master Topic: THINK_Analytical_Thinking Ä‘Ã£ Ä‘Æ°á»£c cáº­p nháº­t toÃ n diá»‡n.
+
+## [2026-04-29 06:17] setup | @pm | Táº¡o Dataview_Queries.md vÃ  purpose.md
+- File táº¡o: 3-resources/Dataview_Queries.md (10 query máº«u cho Obsidian Dataview plugin)
+- File táº¡o: purpose.md (Ä‘á»‹nh hÆ°á»›ng cá»‘t lÃµi Wiki, pattern tá»« nashsu/llm_wiki)
+- LÃ½ do: GiÃºp Tháº§y khai thÃ¡c Obsidian hiá»‡u quáº£ khÃ´ng cáº§n cÃ i app bÃªn thá»© ba.
+
+## [2026-04-29 06:37] migrate | @pm | TÃ¡i cáº¥u trÃºc wiki/ thÃ nh subdirectories
+- Script: scripts/migrate_wiki_structure.py
+- Moved: 57 files (40 MD + 17 PNG) vÃ o concepts/, entities/, sources/, assets/
+- Removed prefix WIKI_ khá»i tÃªn file
+- Updated wikilinks trong 24 files
+- Updated AGENTS.md Rule 7: Absolute Flatness -> Semantic Structure
+- LÃ½ do: Tháº§y approved Ä‘á»ƒ align vá»›i nashsu/llm_wiki pattern.
+
+## [2026-04-29 06:50] verify | @pm | Verify migration wiki/ + Lint Report
+- File táº¡o/sá»­a: 3-resources/wiki/concepts/ (17 files)
+- LÃ½ do: Fix lá»—i double path assets/assets/ -> assets/ sau migration
+- Káº¿t quáº£ lint: 136 wikilinks, 77 broken (phÃ¢n loáº¡i: SOURCE links + missing entities)
+
+## [2026-04-29 07:15] fix | @healer | P0 â€” Fix wikilinks trá» sai vÃ o raw
+- File táº¡o/sá»­a: 3-resources/wiki/concepts/ (29 files), wiki/sources/ (3 files), wiki/concepts/ACAD_AI_* (6 files)
+- LÃ½ do: Concept pages trá» [[THINK_X]] vÃ o raw thay vÃ¬ SOURCE pages; SOURCE pages dÃ¹ng wikilink trong frontmatter
+- Káº¿t quáº£: 77 broken â†’ 10 broken (cÃ²n: ACAD_AI_Responsible_AI x5, WIKI_ENTITY_SQL/Python x2, THINK_Analytical_Thinking x3)
+
+## [2026-04-29 07:25] archive | @pm | Archive 2 stale files tá»« 3-resources/
+- File táº¡o/sá»­a: 4-archive/20260422_lint_report_stale.md, 4-archive/20260423_RESOURCES_WIP_superseded.md
+- LÃ½ do: lint_report stale (lá»—i Gateway 100%), RESOURCES_WIP superseded bá»Ÿi CONTINUITY.md
+
+## [2026-04-29 07:32] ADD | @engineer | HoÃ n táº¥t táº¡o 4 trang khÃ¡i niá»‡m Thinking with Data
+- File táº¡o/sá»­a: 3-resources/wiki/concepts/THINK_Correlation_vs_Causation.md, 3-resources/wiki/concepts/THINK_Data_Story_Structure.md, 3-resources/wiki/concepts/THINK_Audience_Framing.md, 3-resources/wiki/concepts/THINK_Exploration_vs_Confirmation.md, 3-resources/wiki/sources/SOURCE_THINK_Thinking_with_Data.md
+- LÃ½ do: HoÃ n thÃ nh P2 trong CONTINUITY.md, giáº£i quyáº¿t cÃ¡c khÃ¡i niá»‡m chÆ°a Ä‘Æ°á»£c táº¡o.
+
+## [2026-04-29 07:43] AUDIT | @auditor | HoÃ n táº¥t kiá»ƒm Ä‘á»‹nh nhÃ³m Coursera AI
+- File táº¡o/sá»­a: 3-resources/distilled/ACAD_AI_Responsible_AI.md
+- LÃ½ do: Verify ná»™i dung khá»›p vá»›i file raw vÃ  ná»‘i káº¿t trang má»“ cÃ´i ACAD_AI_Cutoff_vs_Drift Ä‘á»ƒ hoÃ n thiá»‡n P5 trong CONTINUITY.md.
+
+## [2026-04-29 07:45] ADD | @engineer | Giáº£i quyáº¿t 3 Broken Links cuá»‘i cÃ¹ng
+- File táº¡o/sá»­a: 3-resources/wiki/entities/ENTITY_Python.md, 3-resources/wiki/entities/ENTITY_SQL.md, 3-resources/wiki/concepts/THINK_Patterns_of_Reasoning.md
+- LÃ½ do: Bá»• sung cÃ¡c trang kiáº¿n thá»©c cÃ²n thiáº¿u Ä‘á»ƒ giáº£i quyáº¿t dá»©t Ä‘iá»ƒm cÃ¡c broken links vÃ  orphan pages cÃ²n láº¡i trong há»‡ thá»‘ng.
+
+## [2026-04-29 07:56] SYSTEM | @pm | NÃ¢ng cáº¥p cáº¥u trÃºc thÆ° má»¥c 3-resources theo chuáº©n má»›i
+- File táº¡o/sá»­a: 3-resources/raw/sources/*, 3-resources/purpose.md, 3-resources/schema.md, AGENTS.md, scripts/*
+- LÃ½ do: Bá»• sung cÃ¡c file raw tá»« Thu_Vien_Cua_Xom vÃ  tÃ¡i cáº¥u trÃºc láº¡i thÆ° má»¥c 3-resources Ä‘á»ƒ cÃ¡c agents dá»… dÃ ng theo dÃµi (phÃ¢n máº£nh rÃµ rÃ ng raw/sources, raw/assets, wiki/synthesis). Cáº­p nháº­t AGENTS.md vÃ  cÃ¡c script báº£o trÃ¬ Ä‘á»ƒ tÆ°Æ¡ng thÃ­ch.
+
+## [2026-04-29 08:45] Ingest-Step-1 | @scout | Táº¡o báº£n phÃ¢n tÃ­ch sÃ¡ch SQL
+- File táº¡o/sá»­a: 1-projects/2026_Data_Analyst/Analysis_SQL_Getting_Started.md
+- LÃ½ do: TrÃ­ch xuáº¥t cÃ¡c thá»±c thá»ƒ vÃ  concept chÃ­nh tá»« sÃ¡ch SQL, chuáº©n bá»‹ cho @engineer sinh Atom.
+
+## [2026-04-29 08:48] Ingest-Step-2 | @engineer | Sinh Wiki Atoms cho SQL
+- File táº¡o/sá»­a: 
+  + 3-resources/wiki/sources/SOURCE_TOOL_SQL_Getting_Started.md
+  + 3-resources/wiki/entities/ENTITY_SQL.md
+  + 3-resources/wiki/concepts/CONCEPT_SQL_Select_And_Filter.md
+  + 3-resources/wiki/concepts/CONCEPT_SQL_Aggregations.md
+  + 3-resources/wiki/concepts/CONCEPT_SQL_Case_Statements.md
+  + 3-resources/wiki/concepts/CONCEPT_SQL_Joins.md
+  + 1-projects/2026_Data_Analyst/Ingest_80_20.md
+- LÃ½ do: HoÃ n thÃ nh Step 2 cá»§a quy trÃ¬nh Two-Step Ingest, tuÃ¢n thá»§ Rule 14 & Rule 17.
+
+## [2026-04-29 08:53] Maintenance | @devops | Chuáº©n hÃ³a tiá»n tá»‘ CONCEPT
+- File táº¡o/sá»­a: HÃ ng loáº¡t file trong 3-resources/wiki/concepts/ vÃ  cÃ¡c file tham chiáº¿u.
+- LÃ½ do: Kháº¯c phá»¥c di sáº£n tá»« Schema cÅ©. Chuyá»ƒn toÃ n bá»™ THINK_ vÃ  ACAD_ thÃ nh CONCEPT_THINK_ vÃ  CONCEPT_ACAD_ Ä‘á»ƒ tuÃ¢n thá»§ quy táº¯c 3 cáº¥p [LOáº I]_[DOMAIN]_[TÃŠN] (Schema v5.3). Äá»“ng thá»i cáº­p nháº­t toÃ n bá»™ Wikilinks liÃªn quan.

@@ -10,9 +10,9 @@ created: "2026-04-29"
 last_updated: "2026-04-29"
 ---
 
-# 📌 Ma trận Ưu tiên (Prioritization Matrix)
+# Ma trận Ưu tiên (Prioritization Matrix)
 
-![Minh họa Ma trận Ưu tiên](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/WIKI_IMG_THINK_Prioritization_Matrix.png)
+![Minh họa Ma trận Ưu tiên](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/THINK_Prioritization_Matrix.png)
 
 ## 1. Sơ đồ cấu trúc (Visual Guide)
 
@@ -39,7 +39,7 @@ quadrantChart
 
 ---
 
-## 4. 💡 Ví dụ đối chiếu (Mandatory)
+## 4.  Ví dụ đối chiếu (Rule 17: Double Examples)
 
 ### 4.1. Ví dụ từ sách (Original)
 **Tình huống**: Nhóm Mushroom Lovers muốn tăng doanh thu bán vé (Trang 68).
@@ -59,7 +59,7 @@ quadrantChart
 -   **Findings**: Nỗ lực ở đây không chỉ là tiền bạc, mà còn là thời gian, năng lượng và nhân sự.
 -   **Futures**: Dạy học sinh dùng ma trận này để quản lý thời gian làm dự án cuối khóa.
 
-## 📖 Nguồn
+## Nguồn
 -   [[SOURCE_THINK_Problem_Solving_101]] — Trang 60-75.
 
 ---

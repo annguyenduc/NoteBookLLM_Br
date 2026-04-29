@@ -1,4 +1,4 @@
-﻿---
+---
 file_id: "WIKI_THINK_ENTROPY_INFORMATION_GAIN"
 title: "Entropy và Information Gain (Độ lợi thông tin)"
 category: "Wiki Page"
@@ -10,7 +10,7 @@ created: "2026-04-29"
 last_updated: "2026-04-29"
 ---
 
-# 📌 Entropy và Information Gain (Độ lợi thông tin)
+# Entropy và Information Gain (Độ lợi thông tin)
 
 ## 1. Sơ đồ trực quan (Visual Guide)
 
@@ -39,7 +39,7 @@ Trong khai thác dữ liệu, **Entropy** là thước đo độ hỗn loạn ho
 
 ---
 
-## 4. 💡 Ví dụ đối chiếu (Mandatory)
+## 4.  Ví dụ đối chiếu (Rule 17: Double Examples)
 
 ### 4.1. Ví dụ từ sách (Original)
 **Tình huống**: Phân loại khách hàng có rời bỏ dịch vụ (Churn) hay không.
@@ -60,7 +60,7 @@ Trong khai thác dữ liệu, **Entropy** là thước đo độ hỗn loạn ho
 -   **Findings**: Thông tin càng giá trị khi nó làm giảm bớt sự không chắc chắn của chúng ta.
 -   **Futures**: Sử dụng ví dụ về việc "Dọn phòng" để giải thích Entropy cho học sinh tiểu học (Phòng bừa bộn = Entropy cao).
 
-## 📖 Nguồn
+## Nguồn
 -   [[SOURCE_THINK_Data_Science_for_Business]] — Chapter 3: Introduction to Predictive Modeling.
 
 ---

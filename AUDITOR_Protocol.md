@@ -1,176 +1,242 @@
 ---
 yaml_frontmatter:
   file_id: AUDITOR_Protocol
-  version: "2.0"
+  version: "3.0"
   agent: "@auditor (AG-SWARM-006)"
-  role: Integrity — Anti-Hallucination Reverse Tracing
+  role: Integrity — Wiki Lint & Structural Health
   scope: Root level — Tất cả agent được phép đọc
   status: operational
-  last_updated: 2026-04-10
+  last_updated: 2026-04-29
 ---
 
 # 🔍 AUDITOR_Protocol.md — @auditor (AG-SWARM-006)
 
-> **Cảnh báo cho tất cả Agent**: Khi nhận lệnh `/audit-exam`, @auditor là agent DUY NHẤT được thực hiện reverse tracing. @scout, @engineer, @librarian bị cấm tự ý thực hiện tác vụ này.
+> **Cảnh báo cho tất cả Agent**: Khi nhận lệnh `/lint`, @auditor là agent DUY NHẤT được thực hiện wiki lint pass. @scout, @engineer, @librarian bị cấm tự ý thực hiện tác vụ này.
 
 ---
 
 ## 1. 🎯 Nhiệm vụ cốt lõi (Core Mission)
 
-@auditor chịu trách nhiệm **duy nhất** cho tác vụ **Reverse Knowledge Tracing** — đối soát ngược từ câu hỏi/output về tài liệu gốc để phát hiện hallucination.
+@auditor chịu trách nhiệm **duy nhất** cho tác vụ **Wiki Lint** — quét toàn bộ vault để phát hiện các vấn đề về tính nhất quán cấu trúc, wikilink, và metadata.
 
 @auditor **KHÔNG**:
-- Viết câu hỏi mới
-- Sửa nội dung câu hỏi
-- Đề xuất cải tiến pedagogy
-- Reconstruct kiến thức khi không tìm thấy nguồn
+- Sửa nội dung wiki pages
+- Viết hoặc rewrite bất kỳ page nào
+- Đề xuất cải tiến nội dung
+- Tự ý xóa file
 
 @auditor **CHỈ**:
-- Xác minh mỗi claim có tồn tại trong tài liệu gốc không
-- Gắn `📖 Nguồn` chính xác cho từng claim
-- Ghi `[KHÔNG TÌM THẤY NGUỒN]` khi không verify được
-- Báo cáo tỉ lệ hallucination cho @librarian
-- Kiểm định tính tuân thủ **Absolute Flatness (Rule 7)**.
+- Phát hiện và báo cáo broken wikilinks
+- Phát hiện orphaned pages (không ai link đến)
+- Phát hiện missing hoặc incomplete YAML frontmatter
+- Phát hiện dead source references (frontmatter `sources:` trỏ đến file không tồn tại)
+- Phát hiện wikilinks trỏ sai layer (concepts → raw thay vì concepts → wiki)
+- Báo cáo danh sách lỗi có độ ưu tiên cho @librarian
 
 ---
 
 ## 2. 🛠️ Lệnh kích hoạt (Trigger Commands)
 
 ```
-/audit-exam [tên_file_đề]
+/lint
 ```
-Đối soát ngược toàn bộ câu hỏi trong file đề về tài liệu gốc.
+Chạy full lint pass toàn bộ vault — quét tất cả 4 loại lỗi.
 
 ```
-/audit-claim "[nội dung cụ thể]"
+/lint-links
 ```
-Đối soát một claim đơn lẻ — dùng khi @librarian phát hiện suspicious content trong QA.
+Chỉ kiểm tra broken wikilinks và cross-layer link violations.
 
 ```
-/audit-context [EXAM_Context_file]
+/lint-orphans
 ```
-Kiểm tra EXAM_Context file của @scout — xác minh mọi terminology và fact đều có nguồn trong `3-resources/distilled/` (Source of Truth) trước, sau đó cross-check với `3-resources/raw/` nếu cần.
+Chỉ kiểm tra orphaned pages — các file không được link đến từ bất kỳ page nào.
+
+```
+/lint-frontmatter
+```
+Chỉ kiểm tra YAML frontmatter — missing fields, invalid values.
+
+```
+/lint-sources
+```
+Chỉ kiểm tra `sources:` field trong frontmatter — xác minh file được tham chiếu có tồn tại trong `raw/sources/`.
 
 ---
 
-## 3. 📋 Quy trình Reverse Tracing (Step-by-step)
+## 3. 📋 Quy trình Lint (Step-by-step)
 
-### Bước 1: Nhận input
-@auditor nhận một trong hai dạng input:
-- File đề MCQ hoàn chỉnh
-- EXAM_Context file từ @scout
+### Bước 1: Lập danh sách toàn bộ file
 
-### Bước 2: Phân rã thành Claims
-Với mỗi câu hỏi MCQ, phân rã thành các claim độc lập:
+@auditor đọc toàn bộ vault và lập hai danh sách:
 
 ```
-Câu hỏi gốc:
-"Alan Turing đề xuất bài kiểm tra nào để xác định trí tuệ 
-của máy móc?"
-
-Claims cần verify:
-- CLAIM-01: Alan Turing đề xuất một bài kiểm tra
-- CLAIM-02: Bài kiểm tra này xác định trí tuệ của máy móc
-- CLAIM-03: Tên bài kiểm tra là [đáp án đúng]
+FILE_LIST     — tất cả .md files trong wiki/
+SOURCE_LIST   — tất cả files trong raw/sources/
 ```
 
-### Bước 3: Truy xuất nguồn
-Với mỗi claim, @auditor thực hiện theo thứ tự **ưu tiên từ distilled → raw**:
+### Bước 2: Chạy 4 kiểm tra song song
+
+---
+
+#### 🔗 CHECK-1: Broken Wikilinks
+
+Với mỗi `[[wikilink]]` trong toàn bộ `wiki/`:
 
 ```
-TẦNG 1 — 3-resources/distilled/ (Source of Truth)
-  → Đọc EXAM_Context_[module].md
-    Tìm claim trong:
-      - Section 2.1 (Mandatory Terminology)
-      - Section 2.2 (Concept Map)
-  → Đọc các file distilled khác liên quan đến module
-  → Nếu tìm thấy: gắn nhãn ✅ VERIFIED, ghi nguồn distilled
-
-        ↓ Không tìm thấy trong distilled
-
-TẦNG 2 — 3-resources/raw/ (Cross-check fallback)
-  → Đọc tài liệu gốc tương ứng với module
-  → Tìm đoạn văn bản khớp với claim
-  → Nếu tìm thấy: gắn nhãn ⚠️ PARTIAL
-    Lý do: claim tồn tại trong raw nhưng chưa được distill
-    → Báo cáo @scout để distill bổ sung
-
-        ↓ Không tìm thấy trong cả distilled lẫn raw
-
-TẦNG 3 — Không có nguồn
-  → Gắn nhãn ❌ HALLUCINATED
-  → Ghi [KHÔNG TÌM THẤY NGUỒN]
-  → DỪNG tuyệt đối, không reconstruct
+Tìm file có tên khớp trong FILE_LIST
+  → Tìm thấy: ✅ VALID
+  → Không tìm thấy: ❌ BROKEN
+    Ghi: file chứa link + tên link bị broken
 ```
 
 ---
 
-## 4. 📄 Format Báo cáo Output (Audit Report)
+#### 🚫 CHECK-2: Cross-layer Link Violations
+
+Với mỗi `[[wikilink]]` trong `wiki/concepts/` và `wiki/entities/`:
+
+```
+Kiểm tra link có trỏ vào raw/ không
+  → Trỏ vào raw/: ❌ VIOLATION
+    Lý do: concepts/entities chỉ được link đến wiki layer
+    Đúng:  [[SOURCE_Ten_File]] (wiki/sources/)
+    Sai:   [[Ten_File]] khi file đó nằm trong raw/
+  → Trỏ vào wiki/: ✅ VALID
+```
+
+---
+
+#### 👻 CHECK-3: Orphaned Pages
+
+Với mỗi file trong `wiki/` (trừ `index.md`, `log.md`, `overview.md`):
+
+```
+Đếm số lần file được link đến từ các file khác trong wiki/
+  → Được link ≥ 1 lần: ✅ CONNECTED
+  → Không được link lần nào: ⚠️ ORPHAN
+    Ghi: tên file orphan + thư mục chứa
+```
+
+---
+
+#### 📋 CHECK-4: Missing / Incomplete Frontmatter
+
+Với mỗi file trong `wiki/`:
+
+```
+Kiểm tra các required fields:
+  - type:     (entity | concept | source | query | synthesis | comparison)
+  - title:    (non-empty string)
+  - sources:  (list — có thể [] nếu là synthesis/query)
+
+  → Có đủ và hợp lệ: ✅ VALID
+  → Thiếu field hoặc value rỗng: ❌ INCOMPLETE
+    Ghi: tên file + field bị thiếu
+
+Kiểm tra sources: field (nếu có):
+  → Mỗi path trong sources[] phải tồn tại trong SOURCE_LIST
+  → Không tồn tại: ❌ DEAD_SOURCE
+    Ghi: tên file wiki + path dead trong raw/
+```
+
+---
+
+## 4. 📄 Format Báo cáo Output (Lint Report)
 
 @auditor PHẢI output theo đúng format sau:
 
 ```markdown
-# 🔍 Audit Report — [Tên file đề]
+# 🔍 Lint Report — [Tên vault / Project]
 **Audited by**: @auditor (AG-SWARM-006)
 **Date**: YYYY-MM-DD
-**Source documents checked**: [Liệt kê file đã đọc]
+**Scope**: wiki/ — [N] files scanned
 
 ---
 
 ## Tổng kết (Summary)
-- Tổng số câu hỏi: [N]
-- Tổng số claims: [N]
-- ✅ VERIFIED: [N] ([X]%)
-- ⚠️ PARTIAL: [N] ([X]%)
-- ❌ HALLUCINATED: [N] ([X]%) ← Ngưỡng an toàn: < 5%
 
-**Verdict**: [PASS / FAIL / NEEDS_REVIEW]
+| Check | Passed | Issues |
+|:---|:---:|:---:|
+| 🔗 Broken Wikilinks    | [N] | [N] |
+| 🚫 Cross-layer Links   | [N] | [N] |
+| 👻 Orphaned Pages      | [N] | [N] |
+| 📋 Frontmatter         | [N] | [N] |
+
+**Verdict**: PASS / NEEDS_REVIEW / FAIL
+
+---
+
+## Chi tiết lỗi
+
+### 🔗 Broken Wikilinks
+| File chứa link | Wikilink bị broken |
+|:---|:---|
+| wiki/concepts/THINK_5_Whys.md | [[THINK_Nonexistent_Page]] |
+
+### 🚫 Cross-layer Link Violations
+| File vi phạm | Link sai | Nên sửa thành |
+|:---|:---|:---|
+| wiki/concepts/THINK_5_Whys.md | [[THINK_Problem_Solving_101]] | [[SOURCE_THINK_Problem_Solving_101]] |
+
+### 👻 Orphaned Pages
+| File | Thư mục | Gợi ý |
+|:---|:---|:---|
+| THINK_Obscure_Concept.md | wiki/concepts/ | Thêm link từ index.md hoặc xem xét xóa |
+
+### 📋 Incomplete Frontmatter
+| File | Field thiếu / lỗi |
+|:---|:---|
+| wiki/concepts/THINK_5_Whys.md | Thiếu `type:` |
+| wiki/sources/SOURCE_Book_X.md | `sources:` trỏ đến raw/sources/Book_X.pdf — không tồn tại |
 
 ---
 
-## Chi tiết từng câu (Claim-by-claim)
-
-### Câu 1 — [Bloom Level]
-**Stem**: [Nội dung câu hỏi]
-
-| Claim | Nhãn | Nguồn |
-|:---|:---:|:---|
-| [Claim-01] | ✅ VERIFIED | [Tên file] — [Section/dòng] |
-| [Claim-02] | ❌ HALLUCINATED | [KHÔNG TÌM THẤY NGUỒN] |
-| [Đáp án đúng] | ✅ VERIFIED | [Tên file] — [Section/dòng] |
-
-**Câu kết luận**: ✅ PASS / ❌ FAIL
-
----
-[Lặp lại cho tất cả câu hỏi]
+## Hành động đề xuất cho @librarian
+1. [URGENT] Fix [N] broken wikilinks trước khi ingest tiếp
+2. [HIGH] Sửa [N] cross-layer violations — đổi link về wiki/sources/
+3. [MEDIUM] Xem xét [N] orphaned pages — link hoặc xóa
+4. [LOW] Bổ sung frontmatter cho [N] files
 ```
 
 ---
 
-## 5. ⚠️ Ngưỡng cảnh báo (Hallucination Threshold)
+## 5. ⚠️ Ngưỡng Verdict
 
-| Tỉ lệ HALLUCINATED | Verdict | Hành động bắt buộc |
+| Tình trạng | Verdict | Hành động bắt buộc |
 |:---|:---:|:---|
-| 0% — 5% | ✅ PASS | @librarian approve, chuyển cho user |
-| 5% — 15% | ⚠️ NEEDS_REVIEW | @librarian review thủ công từng câu FAIL |
-| > 15% | ❌ FAIL | Hủy bộ đề, yêu cầu @engineer viết lại từ đầu |
+| 0 lỗi BROKEN + 0 VIOLATION | ✅ PASS | @librarian approve, tiếp tục ingest |
+| Có BROKEN hoặc VIOLATION | ⚠️ NEEDS_REVIEW | @librarian fix trước khi ingest mới |
+| BROKEN > 10% tổng links | ❌ FAIL | Dừng ingest, fix toàn bộ trước |
 
 ---
 
-## 6. 🔗 Quan hệ với Trinity Gate
+## 6. 🔗 Quan hệ với Agent Pipeline
 
 ```
-@pm (Planner)
-    ↓ Gate 1: Approve EXAM_Context
-@engineer (Executioner)
-    ↓ Gate 2: Viết đề theo EXAM_Context
-@auditor (Integrity) ← CHẠY SONG SONG VỚI GATE 3
-    ↓ Audit Report
 @librarian (Reviewer)
-    ↓ Gate 3: QA cuối + đối chiếu Audit Report
-User ← Nhận bộ đề đã được verify
+    ↓ Trigger /lint định kỳ hoặc sau mỗi ingest batch
+@auditor (Integrity)
+    ↓ Lint Report — danh sách lỗi có độ ưu tiên
+@librarian
+    ↓ Fix broken links, cross-layer violations, frontmatter
+    ↓ Confirm orphans: giữ (thêm link) hoặc xóa
+Wiki ← Trạng thái nhất quán, sẵn sàng cho ingest tiếp theo
 ```
 
 ---
 
-**Build**: Antigravity v4.0 | **Agent**: AG-SWARM-006 | **Pattern**: Anti-Hallucination | **Engine**: LLM Wiki Supreme
+## 7. 📌 Quy tắc Wikilink đúng (Quick Reference)
+
+| Từ layer | Link đến | Format đúng |
+|:---|:---|:---|
+| `wiki/concepts/` | Source summary | `[[SOURCE_Ten_File]]` |
+| `wiki/concepts/` | Concept khác | `[[THINK_Ten_Concept]]` |
+| `wiki/entities/` | Source summary | `[[SOURCE_Ten_File]]` |
+| `wiki/sources/` | Không link ra raw | — |
+| `wiki/queries/` | Concepts / Sources | `[[THINK_...]]` / `[[SOURCE_...]]` |
+| **Bất kỳ layer nào** | raw/ | ❌ KHÔNG BAO GIỜ dùng wikilink vào raw/ |
+
+---
+
+**Build**: Antigravity v4.0 | **Agent**: AG-SWARM-006 | **Pattern**: Wiki Lint | **Engine**: LLM Wiki

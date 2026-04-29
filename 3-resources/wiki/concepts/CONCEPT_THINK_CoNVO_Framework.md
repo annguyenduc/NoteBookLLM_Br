@@ -1,4 +1,4 @@
-﻿---
+---
 file_id: "WIKI_THINK_CONVO_FRAMEWORK"
 title: "Khung CoNVO (Context, Need, Vision, Outcome)"
 category: "Wiki Page"
@@ -10,9 +10,9 @@ created: "2026-04-28"
 last_updated: "2026-04-28"
 ---
 
-# 📌 Khung CoNVO (Context, Need, Vision, Outcome)
+# Khung CoNVO (Context, Need, Vision, Outcome)
 
-![Minh họa CoNVO](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/WIKI_IMG_THINK_CoNVO_Framework.png)
+![Minh họa CoNVO](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/THINK_CoNVO_Framework.png)
 
 ## 1. Sơ đồ cấu trúc (Visual Guide)
 
@@ -48,7 +48,7 @@ graph TD
 
 ---
 
-## 4. 💡 Ví dụ đối chiếu (Mandatory)
+## 4.  Ví dụ đối chiếu (Rule 17: Double Examples)
 
 ### 4.1. Ví dụ từ sách (Original)
 **Tình huống**: Một tổ chức phi lợi nhuận muốn đoàn tụ các gia đình ly tán do xung đột (Trang 17-21).
@@ -70,7 +70,7 @@ graph TD
 -   **Findings**: Nhu cầu (Need) luôn là phần khó xác định đúng nhất.
 -   **Futures**: Áp dụng CoNVO để hướng dẫn học sinh làm dự án khoa học kỹ thuật (KHKT).
 
-## 📖 Nguồn
+## Nguồn
 -   [[SOURCE_THINK_Thinking_with_Data]] — Trang 15-30.
 
 ---

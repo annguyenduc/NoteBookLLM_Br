@@ -10,9 +10,9 @@ created: "2026-04-28"
 last_updated: "2026-04-28"
 ---
 
-# 📌 9 Nhiệm vụ Khai thác Dữ liệu Phổ biến
+# 9 Nhiệm vụ Khai thác Dữ liệu Phổ biến
 
-![Minh họa 9 Nhiệm vụ](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/WIKI_IMG_THINK_Data_Mining_Tasks.png)
+![Minh họa 9 Nhiệm vụ](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/THINK_Data_Mining_Tasks.png)
 
 ## 1. Phân loại nhiệm vụ (Taxonomy)
 
@@ -38,7 +38,7 @@ last_updated: "2026-04-28"
 
 ---
 
-## 3. 💡 Ví dụ đối chiếu (Mandatory)
+## 3.  Ví dụ đối chiếu (Rule 17: Double Examples)
 
 ### 3.1. Ví dụ từ sách (Original)
 **Tình huống**: Quản lý khách hàng của một ngân hàng (Trang 21).
@@ -59,7 +59,7 @@ last_updated: "2026-04-28"
 -   **Findings**: Sai lầm lớn nhất là dùng nhầm nhiệm vụ (ví dụ: dùng Clustering khi thực tế cần Classification).
 -   **Futures**: Hướng dẫn học sinh phân loại ý tưởng dự án của mình vào 9 nhóm này để chọn thuật toán phù hợp.
 
-## 📖 Nguồn
+## Nguồn
 -   [[SOURCE_THINK_Data_Science_for_Business]] — Trang 19-26.
 
 ---

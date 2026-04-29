@@ -1,8 +1,6 @@
 {
   "userIgnoreFilters": [
-    "brain/test-bank/",
-    "archive/",
-    "brain/process/"
+    "3-resources/raw/"
   ],
   "newFileLocation": "folder",
   "newFileFolderPath": "3-resources/raw"

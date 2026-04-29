@@ -1,20 +1,33 @@
-﻿import os
+import os
 import re
+from pathlib import Path
 
+# Configuration
+# Path to 3-resources/
 BRAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '3-resources'))
+# Path to 3-resources/wiki/index.md
 INDEX_FILE = os.path.join(BRAIN_DIR, 'wiki', 'index.md')
-DIRS_TO_INDEX = ['wiki', 'synthesis', 'test-bank']
+
+# Subdirectories within 3-resources/wiki/
+WIKI_SUBDIRS = ['concepts', 'entities', 'sources', 'synthesis', 'queries', 'comparisons']
+# Other directories in 3-resources/
+OTHER_DIRS = ['test-bank']
 
 def parse_markdown_file(filepath):
-    title = os.path.basename(filepath)
+    stem = Path(filepath).stem
+    title = stem
     summary = ""
     status = ""
     tags = ""
     
-    with open(filepath, 'r', encoding='utf-8') as f:
-        content = f.read()
+    try:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            content = f.read()
+    except Exception as e:
+        print(f"Error reading {filepath}: {e}")
+        return None
         
-    # Fix Windows line endings trÆ°á»›c khi parse
+    # Fix Windows line endings
     content = content.replace('\r\n', '\n').replace('\r', '\n')
         
     # Try to parse frontmatter
@@ -33,15 +46,14 @@ def parse_markdown_file(filepath):
         if tags_match:
             tags = tags_match.group(1)
             
-        # Remove frontmatter for summary search
         content = content[frontmatter_match.end():]
-    else:
-        # Fallback to H1
+    # Fallback to H1 if title is still stem
+    if title == stem:
         h1_match = re.search(r'^#\s+(.*?)$', content, re.MULTILINE)
         if h1_match:
             title = h1_match.group(1).strip()
             
-    # Find first meaningful paragraph (skip headers, dividers, YAML-like lines)
+    # Find first meaningful paragraph
     lines = content.split('\n')
     for line in lines:
         line = line.strip()
@@ -55,8 +67,9 @@ def parse_markdown_file(filepath):
             len(line) > 20):
             summary = line[:120] + "..." if len(line) > 120 else line
             break
-                    
+                     
     return {
+        'stem': stem,
         'title': title,
         'summary': summary,
         'status': status,
@@ -64,81 +77,101 @@ def parse_markdown_file(filepath):
         'rel_path': os.path.relpath(filepath, BRAIN_DIR).replace('\\', '/')
     }
 
-def is_concept_page(filename):
-    """Concept pages lÃ  WIKI_*.md vÃ  KB_*.md â€” dÃ¹ng cho File-Back judgment."""
-    name = os.path.basename(filename)
-    return (name.startswith('WIKI_') or name.startswith('KB_'))
-
 def main():
-    concept_pages = []
-    atom_pages = []
-    distilled_pages = []
+    sections = {
+        'concepts': [],
+        'entities': [],
+        'sources': [],
+        'synthesis': [],
+        'queries': [],
+        'comparisons': [],
+        'atoms': []
+    }
     
-    for dir_name in DIRS_TO_INDEX:
-        dir_path = os.path.join(BRAIN_DIR, dir_name)
-        if not os.path.exists(dir_path):
+    # Scan wiki subdirs
+    wiki_root = os.path.join(BRAIN_DIR, 'wiki')
+    for subdir in WIKI_SUBDIRS:
+        subdir_path = os.path.join(wiki_root, subdir)
+        if not os.path.exists(subdir_path):
             continue
-            
-        for root, _, files in os.walk(dir_path):
+        for root, _, files in os.walk(subdir_path):
             for file in files:
                 if file.endswith('.md') and not file.endswith('_TEMPLATE.md'):
-                    filepath = os.path.join(root, file)
-                    info = parse_markdown_file(filepath)
-                    if dir_name == 'synthesis':
-                        distilled_pages.append(info)
-                    elif dir_name == 'wiki':
-                        concept_pages.append(info)
-                    else:
-                        atom_pages.append(info)
-                    
-    # Sort all sections alphabetically
-    for lst in [concept_pages, atom_pages, distilled_pages]:
-        lst.sort(key=lambda x: x['title'].lower())
+                    info = parse_markdown_file(os.path.join(root, file))
+                    if info:
+                        sections[subdir].append(info)
+                        
+    # Scan test-bank
+    test_bank_path = os.path.join(BRAIN_DIR, 'test-bank')
+    if os.path.exists(test_bank_path):
+        for root, _, files in os.walk(test_bank_path):
+            for file in files:
+                if file.endswith('.md'):
+                    info = parse_markdown_file(os.path.join(root, file))
+                    if info:
+                        sections['atoms'].append(info)
+
+    # Sort
+    for key in sections:
+        sections[key].sort(key=lambda x: x['title'].lower())
 
     # Generate Index
     with open(INDEX_FILE, 'w', encoding='utf-8') as f:
-        f.write("# ðŸ“š LLM WIKI INDEX\n\n")
+        f.write("# 📚 LLM WIKI INDEX\n\n")
         f.write("> **Auto-generated Catalog of Wiki Knowledge**\n")
-        f.write("> Lá»›p nÃ y lÃ  Má»¥c lá»¥c cá»§a toÃ n bá»™ cÃ¡c file Kiáº¿n thá»©c Ä‘Ã£ Ä‘Æ°á»£c LLM táº¡o ra.\n\n")
-        f.write("> **HÆ°á»›ng dáº«n File-Back Judgment**: Chá»‰ cáº§n Ä‘á»c section **CONCEPT PAGES** Ä‘á»ƒ kiá»ƒm tra xem má»™t insight má»›i Ä‘Ã£ tá»“n táº¡i chÆ°a. KhÃ´ng cáº§n Ä‘á»c ATOM PAGES.\n\n")
-
-        # Section 1: Concept Pages (cho File-Back judgment)
-        f.write(f"## ðŸ§  CONCEPT PAGES ({len(concept_pages)} trang)\n")
-        f.write("*DÃ nh cho File-Back Judgment â€” LLM Ä‘á»c section nÃ y Ä‘á»ƒ kiá»ƒm tra trÃ¹ng láº·p.*\n\n")
-        if concept_pages:
-            for page in concept_pages:
-                status_str = f" **[{page['status'].upper()}]**" if page['status'] else ""
-                f.write(f"- [[{os.path.splitext(os.path.basename(page['rel_path']))[0]}]] | **{page['title']}**{status_str}\n")
-                if page['summary']:
-                    f.write(f"  > {page['summary']}\n")
-        else:
-            f.write("*ChÆ°a cÃ³ trang nÃ o.*\n")
+        f.write("> Bản đồ tri thức tự động nén cho Swarm Agent 4.0.\n\n")
+        
+        # Section: SYNTHESIS (Master Pages)
+        f.write(f"## 💎 MASTER PAGES ({len(sections['synthesis'])} file)\n")
+        f.write("*Nơi bồi đắp tri thức nén, đa chiều.*\n\n")
+        for p in sections['synthesis']:
+            f.write(f"- [[{p['stem']}]] | **{p['title']}**\n")
+            if p['summary']: f.write(f"  > {p['summary']}\n")
         f.write("\n")
 
-        # Section 2: Distilled KB
-        f.write(f"## ðŸ’Ž DISTILLED KB ({len(distilled_pages)} file)\n\n")
-        if distilled_pages:
-            for page in distilled_pages:
-                f.write(f"- [[{os.path.splitext(os.path.basename(page['rel_path']))[0]}]] | **{page['title']}**\n")
-                if page['summary']:
-                    f.write(f"  > {page['summary']}\n")
+        # Section: CONCEPTS
+        f.write(f"## 🧠 CONCEPTS ({len(sections['concepts'])} trang)\n")
+        f.write("*Các khái niệm, kỹ thuật nguyên tử.*\n\n")
+        for p in sections['concepts']:
+            status = f" **[{p['status'].upper()}]**" if p['status'] else ""
+            f.write(f"- [[{p['stem']}]] | **{p['title']}**{status}\n")
+            if p['summary']: f.write(f"  > {p['summary']}\n")
         f.write("\n")
 
-        # Section 3: Atom pages (MCQ, etc.)
-        f.write(f"## âš›ï¸ ATOM PAGES ({len(atom_pages)} cÃ¢u há»i/atom)\n")
-        f.write("*MCQ atoms vÃ  dá»¯ liá»‡u chi tiáº¿t â€” khÃ´ng cáº§n Ä‘á»c cho File-Back.*\n\n")
-        if atom_pages:
-            for page in atom_pages:
-                f.write(f"- `{page['rel_path']}` | {page['title']}\n")
+        # Section: ENTITIES & SOURCES
+        f.write(f"## 🏢 ENTITIES ({len(sections['entities'])})\n")
+        for p in sections['entities']:
+            f.write(f"- [[{p['stem']}]] | **{p['title']}**\n")
         f.write("\n")
+
+        f.write(f"## 📖 SOURCES ({len(sections['sources'])})\n")
+        for p in sections['sources']:
+            f.write(f"- [[{p['stem']}]] | **{p['title']}**\n")
+        f.write("\n")
+
+        # Section: COMPARISONS
+        f.write(f"## ⚖️ COMPARISONS ({len(sections['comparisons'])})\n")
+        for p in sections['comparisons']:
+            f.write(f"- [[{p['stem']}]] | **{p['title']}**\n")
+        f.write("\n")
+
+        # Section: QUERIES
+        f.write(f"## 🔍 QUERIES ({len(sections['queries'])})\n")
+        f.write("*Các cuộc nghiên cứu, research chuyên sâu.*\n\n")
+        for p in sections['queries']:
+            f.write(f"- [[{p['stem']}]] | **{p['title']}**\n")
+        f.write("\n")
+
+        # Section: ATOMS
+        f.write(f"## ⚛️ ATOM PAGES ({len(sections['atoms'])} atoms)\n")
+        f.write("*Dữ liệu chi tiết, câu hỏi trắc nghiệm.*\n\n")
+        # To save tokens, only list first 50 atoms or just count
+        f.write(f"*Tổng số {len(sections['atoms'])} câu hỏi đã được phân rã.*\n")
             
-    total = len(concept_pages) + len(atom_pages) + len(distilled_pages)
-    print(f"Successfully generated index.md at {INDEX_FILE}")
-    print(f"Concept pages: {len(concept_pages)} | Distilled: {len(distilled_pages)} | Atoms: {len(atom_pages)} | Total: {total}")
+    print(f"Successfully updated index.md")
 
 if __name__ == '__main__':
+    if os.name == 'nt':
+        import sys, io
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
     main()
-
-
-
-

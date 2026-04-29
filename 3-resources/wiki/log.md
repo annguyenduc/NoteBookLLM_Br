@@ -39,7 +39,7 @@
 ## [2026-04-23 06:01] CREATE | @pm | Tạo brain/index.md và brain/wip.md (Gap fix từ NotebookLM)
 - File tạo: brain/index.md
 - File tạo: brain/wip.md
-- Lý do: Gap Analysis với notebook 'Xây dựng Wiki Cá nhân bằng LLM' - 2 file này là bắt buộc theo mô hình Karpathy LLM Wiki.
+- Lý do: Gap Analysis with notebook 'Xây dựng Wiki Cá nhân bằng LLM' - 2 file này là bắt buộc theo mô hình Karpathy LLM Wiki.
 
 ## [2026-04-23 06:10] VERIFY | @librarian | Audit và verify ATOMS_* files
 - File sửa: brain/wiki/ATOMS_Arduino_Power.md -> status: verified
@@ -176,9 +176,11 @@
 ## [2026-04-27 23:22] CORRECTION | @pm | Khôi phục phần log gần nhất sau lỗi ghi đè ngoài ý muốn
 - File tạo/sửa: 3-resources/log.md
 - Lý do: Phục hồi các entry cuối cùng đã được đọc trong phiên làm việc để đưa log trở lại trạng thái append-oriented.
+
 ## [2026-04-27 23:35] PLAN | @pm | Bổ sung Query + File-Back vào kế hoạch MimiClaw Inbox
 - File tạo/sửa: 1-projects/2026_MimiClaw_Inbox/PLAN_Inbox_Workflow.md
 - Lý do: Hoàn thiện workflow sau ingest để kết quả query tốt có thể được nộp ngược thành Wiki page qua /file-back.
+
 ## [2026-04-28 00:10] PLAN | @pm | Tạo implementation plan P1.1 cho MimiClaw GitHub Capture
 - File tạo/sửa: 1-projects/2026_MimiClaw_Inbox/IMPLEMENTATION_P1_1_MimiClaw_GitHub_Capture.md, 1-projects/2026_MimiClaw_Inbox/PLAN_Inbox_Workflow.md
 - Lý do: Chốt scope triển khai tối thiểu cho nhánh Telegram -> GitHub -> 00_Inbox trước khi giao cho @engineer.
@@ -194,6 +196,7 @@
 - Số concept: 2
 
 ## [2026-04-28 15:49] file-back | @pm | ACAD_AI_Cutoff_vs_Drift.md
+
 ## [2026-04-28 23:16] ingest | @pm | THINK_Problem_Solving_101.md
 - Atomic Files: WIKI_THINK_Problem_Solving_Process, WIKI_THINK_Logic_Tree, WIKI_THINK_Root_Cause_Analysis
 - Master Compounded: THINK_Analytical_Thinking
@@ -267,7 +270,7 @@
 - Removed prefix WIKI_ khỏi tên file
 - Updated wikilinks trong 24 files
 - Updated AGENTS.md Rule 7: Absolute Flatness -> Semantic Structure
-- Lý do: Thầy approved để align với nashsu/llm_wiki pattern.
+- Lý do: Thầy approved để align with nashsu/llm_wiki pattern.
 
 ## [2026-04-29 06:50] verify | @pm | Verify migration wiki/ + Lint Report
 - File tạo/sửa: 3-resources/wiki/concepts/ (17 files)
@@ -276,8 +279,8 @@
 
 ## [2026-04-29 07:15] fix | @healer | P0 — Fix wikilinks trỏ sai vào raw
 - File tạo/sửa: 3-resources/wiki/concepts/ (29 files), wiki/sources/ (3 files), wiki/concepts/ACAD_AI_* (6 files)
-- Lý do: Concept pages trỏ [[THINK_X]] vào raw thay vì SOURCE pages; SOURCE pages dùng wikilink trong frontmatter
-- Kết quả: 77 broken → 10 broken (còn: ACAD_AI_Responsible_AI x5, WIKI_ENTITY_SQL/Python x2, THINK_Analytical_Thinking x3)
+- Lý do: Concept pages trỏ `THINK_X` vào raw thay vì SOURCE pages; SOURCE pages dùng wikilink trong frontmatter
+- Kết quả: 77 broken -> 10 broken (còn: ACAD_AI_Responsible_AI x5, WIKI_ENTITY_SQL/Python x2, THINK_Analytical_Thinking x3)
 
 ## [2026-04-29 07:25] archive | @pm | Archive 2 stale files từ 3-resources/
 - File tạo/sửa: 4-archive/20260422_lint_report_stale.md, 4-archive/20260423_RESOURCES_WIP_superseded.md
@@ -313,3 +316,104 @@
   + 3-resources/wiki/concepts/CONCEPT_SQL_Joins.md
   + 1-projects/2026_Data_Analyst/Ingest_80_20.md
 - Lý do: Hoàn thành Step 2 của quy trình Two-Step Ingest, tuân thủ Rule 14 & Rule 17.
+
+## [2026-04-29 08:53] Maintenance | @devops | Chuẩn hóa tiền tố CONCEPT
+- File tạo/sửa: Hàng loạt file trong 3-resources/wiki/concepts/ và các file tham chiếu.
+- Lý do: Khắc phục di sản từ Schema cũ. Chuyển toàn bộ THINK_ và ACAD_ thành CONCEPT_THINK_ và CONCEPT_ACAD_ để tuân thủ quy tắc 3 cấp [LOẠI]_[DOMAIN]_[TÊN] (Schema v5.3). Đồng thời cập nhật toàn bộ Wikilinks liên quan.
+
+## [2026-04-29 09:45] VERIFY | @auditor | Hoàn tất đối soát tọa độ Reverse Tracing cho Nhóm THINK.
+- File đối soát: 5 Concept Pages thuộc Thinking with Data.
+- Kết quả: Toàn bộ đường dẫn raw/sources/ và line numbers khớp 100% với file nguồn.
+- [Rule 14] Đã mở file nguồn và xác nhận fact tồn tại.
+
+## [2026-04-29 10:00] CREATE | @engineer | Tạo Concept Page đầu tiên cho Nhóm 5 (Visualization).
+- File tạo/sửa: [3-resources/wiki/concepts/CONCEPT_VIZ_Importance_of_Context.md](file:///d:/NoteBookLLM_Br/3-resources/wiki/concepts/CONCEPT_VIZ_Importance_of_Context.md)
+- Lý do: Bắt đầu lộ trình trích xuất kiến thức từ Storytelling with Data.
+
+## [2026-04-29 10:10] CREATE | @engineer | Tạo Concept Page thứ 2 cho Nhóm 5 (Visual Selection).
+- File tạo/sửa: [3-resources/wiki/concepts/CONCEPT_VIZ_Effective_Visual_Selection.md](file:///d:/NoteBookLLM_Br/3-resources/wiki/concepts/CONCEPT_VIZ_Effective_Visual_Selection.md)
+- Lý do: Hệ thống hóa các loại biểu đồ và nguyên tắc lựa chọn.
+## [2026-04-29 10:00] INGEST | @librarian | Ingest CONCEPT_VIZ_Eliminating_Clutter.
+- File tạo: 3-resources/wiki/concepts/CONCEPT_VIZ_Eliminating_Clutter.md
+- Lý do: Loại bỏ rác nhiễu và áp dụng nguyên tắc Gestalt trong VIZ.
+## [2026-04-29 10:02] INGEST | @librarian | Ingest CONCEPT_VIZ_Focusing_Attention.
+- File tạo: 3-resources/wiki/concepts/CONCEPT_VIZ_Focusing_Attention.md
+- Lý do: Tận dụng Preattentive Attributes để tập trung sự chú ý trong VIZ.
+## [2026-04-29 10:02] INGEST | @librarian | Ingest CONCEPT_VIZ_Design_Principles.
+- File tạo: 3-resources/wiki/concepts/CONCEPT_VIZ_Design_Principles.md
+- Lý do: Áp dụng Affordances, Accessibility và Aesthetics vào VIZ.
+## [2026-04-29 10:02] INGEST | @librarian | Ingest CONCEPT_VIZ_Data_Storytelling_Framework.
+- File tạo: 3-resources/wiki/concepts/CONCEPT_VIZ_Data_Storytelling_Framework.md
+- Lý do: Hoàn thành khung kể chuyện dữ liệu (Chapter 7).
+## [2026-04-29 10:03] INGEST | @librarian | Ingest CONCEPT_VIZ_Dashboard_Design_Best_Practices.
+- File tạo: 3-resources/wiki/concepts/CONCEPT_VIZ_Dashboard_Design_Best_Practices.md
+- Lý do: Hoàn thành các nguyên tắc thiết kế Dashboard (How to Design a Dashboard).
+## [2026-04-29 10:04] INGEST | @librarian | Ingest CONCEPT_VIZ_PowerBI_vs_Tableau.
+- File tạo: 3-resources/wiki/concepts/CONCEPT_VIZ_PowerBI_vs_Tableau.md
+- Lý do: Hoàn thành bảng so sánh Power BI và Tableau.
+## [2026-04-29 10:17] INGEST | @librarian | Ingest CONCEPT_Pandas_Data_Cleaning.md.
+- File tạo: 3-resources/wiki/concepts/CONCEPT_Pandas_Data_Cleaning.md
+- Lý do: Xử lý dữ liệu thiếu, trùng lặp và làm sạch cơ bản.
+## [2026-04-29 10:17] INGEST | @librarian | Ingest CONCEPT_Pandas_Data_Transformation.md.
+- File tạo: 3-resources/wiki/concepts/CONCEPT_Pandas_Data_Transformation.md
+- Lý do: Thực hiện Mapping, Binning và các kỹ thuật biến đổi dữ liệu.
+## [2026-04-29 10:17] INGEST | @librarian | Ingest CONCEPT_Pandas_Wrangling_Advanced.md.
+- File tạo: 3-resources/wiki/concepts/CONCEPT_Pandas_Wrangling_Advanced.md
+- Lý do: Hợp nhất (Merge/Join) và nối (Concat) dữ liệu Pandas.
+## [2026-04-29 10:17] INGEST | @librarian | Ingest CONCEPT_Pandas_Aggregation.md.
+- File tạo: 3-resources/wiki/concepts/CONCEPT_Pandas_Aggregation.md
+- Lý do: Gom nhóm (GroupBy) và các phép toán tổng hợp (Agg).
+## [2026-04-29 10:17] INGEST | @librarian | Ingest ENTITY_PANDAS.md.
+- File tạo: 3-resources/wiki/entities/ENTITY_PANDAS.md
+- Lý do: Định danh thư viện Pandas và vai trò trong hệ thống.
+## [2026-04-29 10:17] INGEST | @librarian | Ingest SYNTHESIS_DA_Core_Workflow.md.
+- File tạo: 3-resources/wiki/synthesis/SYNTHESIS_DA_Core_Workflow.md
+- Lý do: Kết nối 4 nhóm kỹ năng DA thành luồng làm việc Master.
+## [2026-04-29 10:28] AUDIT | @librarian | Hoàn tất rà soát Double Examples Nhóm 3 (SQL) & Nhóm 4 (Pandas).
+- File tạo/sửa: N/A
+- Lý do: Rà soát phát hiện 6 file thiếu Double Examples (chuẩn Rule 17).
+## [2026-04-29 10:31] HEALER | @librarian | Thực thi Self-Heal (Rule 5) cho 6 file Concepts.
+- File tạo/sửa: CONCEPT_Pandas_*.md (4 files), CONCEPT_SQL_CTEs.md, CONCEPT_SQL_Window_Functions.md
+- Lý do: Bổ sung Ví dụ 1 và Ví dụ 2 theo cấu trúc chuẩn Double Examples từ tài liệu gốc.
+
+## [2026-04-29 10:45] UPDATE | @engineer | Vá lỗi 9 file Python/Pandas/SQL theo chuẩn Rule 17
+- File tạo/sửa: Các file `CONCEPT_PY_*` (6 file) và 3 file `CONCEPT_SQL_*` (`CRUD_Operations`, `Execution_Order`, `Set_Operations`).
+- Lý do: Bổ sung cấu trúc Double Examples để làm rõ ứng dụng thực tiễn, tuân thủ Rule 17 và Rule 14.
+
+## [2026-04-29 12:45] mass-heal | @engineer | Vá Rule 17 (Double Examples) cho 19 files
+- File sửa: 7 files SQL, 4 files EXCEL, 8 files VIZ
+- Lý do: Triển khai chiến dịch Mass-Heal cho nợ kỹ thuật (Rule 17).
+
+## [2026-04-29 12:55] mass-heal | @engineer | Hoàn thành Phase 2 - Vá 36 files bằng EdTech Case
+- File sửa: 29 files CONCEPT_THINK, 7 files CONCEPT_ACAD_AI
+- Lý do: Triển khai chiến dịch Mass-Heal Phase 2 theo ngữ cảnh Giáo dục.
+
+## [2026-04-29 06:19] patch | @engineer | Cập nhật chuẩn Rule 17 (Original + Pedagogical) cho nhóm Data Analyst Python
+- File tạo/sửa: 3-resources/wiki/concepts/CONCEPT_Pandas_*.md (3 files)
+- File tạo/sửa: 3-resources/wiki/concepts/CONCEPT_PY_*.md (7 files)
+- Lý do: Tái cấu trúc chuẩn Rule 17 với 1 ví dụ gốc trong sách và 1 ứng dụng EdTech/STEAM.
+
+## [2026-04-29 14:05] milestone | @pm | Hoàn thành Vòng 1 (Round 1) - Phủ kín 8 nhóm tri thức
+- File tạo: 10+ CONCEPT_STAT, CONCEPT_DE, CONCEPT_DSML.
+- File sửa: SOURCE_STAT, SOURCE_DE, SOURCE_DSML, SYNTHESIS_DA_Core_Workflow.
+- Lý do: Hoàn tất bộ khung xương 80/20 cho toàn bộ lộ trình Data Analyst.
+
+
+## [2026-04-29 15:15] patch | @engineer | Mass-Standardization Wiki 2.0 (Standard compliance)
+- File sửa: 21 files CONCEPT_STAT_*, CONCEPT_DE_*, CONCEPT_DSML_*, CONCEPT_VIZ_*
+- Lý do: Chuẩn hóa 100% file vừa tạo theo WIKI_AGENT_GUIDE.md (Bổ sung YAML, mục 4F và Rule 17).
+
+## [2026-04-29 15:26] creation | @pm | Khởi động Vòng 3 (Practical Integration)
+- File tạo: [3-resources/wiki/synthesis/SYNTHESIS_DA_Case_Study_Library.md]
+- File tạo: [3-resources/wiki/synthesis/CASE_STUDY_Churn_Prediction.md]
+- Lý do: Bắt đầu giai đoạn tổng hợp ứng dụng thực tế từ các Concepts nguyên tử.
+
+## [2026-04-29 15:40] governance | @pm | Thiết lập Two-Step Ingest Protocol
+- File tạo: [3-resources/SOURCE_TEMPLATE.md]
+- File sửa: [3-resources/WIKI_AGENT_GUIDE.md], [3-resources/wiki/sources/SOURCE_VIZ_Mastering_Tableau_2021.md]
+- Lý do: Chấn chỉnh quy trình nạp dữ liệu, ngăn chặn việc Agent tạo file placeholder thiếu nội dung.
+
+## [2026-04-29 16:20] MASS_SWEEP | @pm & @auditor | Hoàn tất chuẩn hóa toàn bộ danh mục Sources.
+- File tạo/sửa: 33 files trong 3-resources/wiki/sources/
+- Lý do: Thực hiện chiến lược Fractal Ingestion, đảm bảo 100% nguồn đạt chuẩn Premium và tuân thủ Rule 10, 13, 19.
+- Template mới: d:\NoteBookLLM_Br\3-resources\QUERY_template.md đã được áp dụng.

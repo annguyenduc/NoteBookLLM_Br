@@ -10,7 +10,7 @@ created: "2026-04-29"
 last_updated: "2026-04-29"
 ---
 
-# 📌 Lập luận Naive Bayes (Xác suất có điều kiện)
+# Lập luận Naive Bayes (Xác suất có điều kiện)
 
 ## 1. Sơ đồ trực quan (Visual Guide)
 
@@ -35,7 +35,7 @@ graph TD
 
 ---
 
-## 4. 💡 Ví dụ đối chiếu (Mandatory)
+## 4.  Ví dụ đối chiếu (Rule 17: Double Examples)
 
 ### 4.1. Ví dụ từ sách (Original)
 **Tình huống**: Lọc thư rác (Spam Filter).
@@ -55,7 +55,7 @@ graph TD
 -   **Findings**: Sự đơn giản (Naive) đôi khi lại hiệu quả hơn sự phức tạp.
 -   **Futures**: Ứng dụng Bayes trong việc lập trình các hệ thống tự học (Self-learning) đơn giản cho Robot.
 
-## 📖 Nguồn
+## Nguồn
 -   [[SOURCE_THINK_Data_Science_for_Business]] — Chapter 9: Evidence and Probabilities.
 
 ---

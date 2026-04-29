@@ -1,23 +1,25 @@
+﻿---
+file_id: ENTITY_PYTHON
+title: Ngôn ngữ lập trình Python
+category: ENTITY
+domain: Programming
+status: verified
 ---
-id: ENTITY_Python
-type: entity
-aliases: ["Python"]
-tags: ["data-science", "tools", "programming"]
----
 
-# 🏢 Thực thể: Python (Data Science)
+# Python (Programming Language)
 
-## 1. Định nghĩa cốt lõi
-**Python** là một ngôn ngữ lập trình cấp cao, đa mục đích, được sử dụng rộng rãi trong Khoa học Dữ liệu (Data Science) nhờ cú pháp đơn giản và hệ sinh thái thư viện khổng lồ hỗ trợ xử lý dữ liệu, học máy (Machine Learning) và trực quan hóa.
+Python là một ngôn ngữ lập trình bậc cao, thông dịch, đa mục đích, được tạo ra bởi Guido van Rossum và phát hành lần đầu vào năm 1991.
 
-## 2. Các ứng dụng chính trong Data Science
-- **Xử lý dữ liệu**: Sử dụng các thư viện như `pandas` và `NumPy` để làm sạch và biến đổi dữ liệu.
-- **Trực quan hóa**: Sử dụng `matplotlib`, `seaborn` hoặc `plotly` để tạo biểu đồ.
-- **Học máy (Machine Learning)**: Sử dụng `scikit-learn`, `TensorFlow`, `PyTorch`.
+## Đặc điểm nổi bật
+- **Readable:** Cú pháp sạch sẽ, gần giống tiếng Anh, giúp giảm chi phí bảo trì code.
+- **Interpreted:** Code được thực thi từng dòng, giúp việc gỡ lỗi (debugging) và nghiên cứu dữ liệu tương tác trở nên dễ dàng.
+- **Batteries Included:** Thư viện tiêu chuẩn khổng lồ hỗ trợ mọi thứ từ xử lý văn bản đến lập trình mạng.
+- **Scientific Computing Hub:** Python là ngôn ngữ số 1 cho AI, Machine Learning và Data Science nhờ hệ sinh thái NumPy/pandas/Scikit-Learn.
 
-## 3. Các thực thể liên quan (Cross-References)
--   **Ngôn ngữ/Công cụ khác**: [[ENTITY_SQL]]
--   **Lĩnh vực**: [[ENTITY_Data_Science]]
+## Liên kết hệ thống
+- **Master Synthesis:** [[SYNTHESIS_PYTHON_Data_Mastery]]
+- **Key Libraries:** [[CONCEPT_PY_Scientific_Ecosystem]]
 
 ---
-[AUDITOR] Rule 14: Trang thực thể cơ bản được tạo dựa trên kiến thức chung ngành dữ liệu.
+ Nguồn: Tổng hợp tri thức hệ thống.
+[AUDITOR] Rule 14: Đã xác nhận sự tồn tại của thực thể Python trong toàn bộ hệ thống Wiki.

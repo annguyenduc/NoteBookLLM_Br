@@ -1,4 +1,4 @@
-﻿---
+---
 file_id: "WIKI_THINK_DATA_EVIDENCE_TYPES"
 title: "4 Loại Bằng chứng trong Lập luận Dữ liệu"
 category: "Wiki Page"
@@ -10,9 +10,9 @@ created: "2026-04-29"
 last_updated: "2026-04-29"
 ---
 
-# 📌 4 Loại Bằng chứng trong Lập luận Dữ liệu
+# 4 Loại Bằng chứng trong Lập luận Dữ liệu
 
-![Minh họa 4 Loại Bằng chứng](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/WIKI_IMG_THINK_Evidence_Blocks.png)
+![Minh họa 4 Loại Bằng chứng](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/THINK_Evidence_Blocks.png)
 
 ## 1. Sơ đồ cấu trúc (Visual Guide)
 
@@ -43,7 +43,7 @@ Trong cuốn *Thinking with Data*, Max Shron phân loại các tuyên bố (clai
 
 ---
 
-## 4. 💡 Ví dụ đối chiếu (Mandatory)
+## 4.  Ví dụ đối chiếu (Rule 17: Double Examples)
 
 ### 4.1. Ví dụ từ sách (Original)
 **Tình huống**: Cải thiện chất lượng dịch vụ khách hàng.
@@ -65,7 +65,7 @@ Trong cuốn *Thinking with Data*, Max Shron phân loại các tuyên bố (clai
 -   **Findings**: Nếu không định nghĩa (Definition) rõ ràng, dữ liệu (Fact) sẽ vô nghĩa.
 -   **Futures**: Dạy học sinh cách viết báo cáo dự án chia theo 4 cột này để rèn luyện tư duy phản biện.
 
-## 📖 Nguồn
+## Nguồn
 -   [[SOURCE_THINK_Thinking_with_Data]] — Chương 3: Arguments.
 
 ---

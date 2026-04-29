@@ -10,9 +10,9 @@ created: "2026-04-29"
 last_updated: "2026-04-29"
 ---
 
-# 📌 Danh sách Ưu và Nhược điểm (Pros & Cons List)
+# Danh sách Ưu và Nhược điểm (Pros & Cons List)
 
-![Minh họa Pros & Cons](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/WIKI_IMG_THINK_Pros_Cons_Scale.png)
+![Minh họa Pros & Cons](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/THINK_Pros_Cons_Scale.png)
 
 ## 1. Sơ đồ cấu trúc (Visual Guide)
 
@@ -42,7 +42,7 @@ graph LR
 
 ---
 
-## 4. 💡 Ví dụ đối chiếu (Mandatory)
+## 4.  Ví dụ đối chiếu (Rule 17: Double Examples)
 
 ### 4.1. Ví dụ từ sách (Original)
 **Tình huống**: Nhóm Mushroom Lovers chọn địa điểm biểu diễn (Trang 82).
@@ -68,7 +68,7 @@ graph LR
 -   **Findings**: Một nhược điểm "Chí mạng" có thể phủ nhận toàn bộ 10 ưu điểm khác.
 -   **Futures**: Dạy học sinh cách phản biện (Critical Thinking) bằng cách ép các em phải tìm ít nhất 3 nhược điểm cho phương án các em "yêu nhất".
 
-## 📖 Nguồn
+## Nguồn
 -   [[SOURCE_THINK_Problem_Solving_101]] — Trang 80-90.
 
 ---

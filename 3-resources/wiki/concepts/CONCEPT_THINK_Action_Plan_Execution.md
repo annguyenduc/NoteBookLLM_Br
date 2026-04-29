@@ -10,9 +10,9 @@ created: "2026-04-29"
 last_updated: "2026-04-29"
 ---
 
-# 📌 Kế hoạch Hành động và Thực thi (Action Plan)
+# Kế hoạch Hành động và Thực thi (Action Plan)
 
-![Minh họa Action Plan](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/WIKI_IMG_THINK_Action_Roadmap.png)
+![Minh họa Action Plan](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/THINK_Action_Roadmap.png)
 
 ## 1. Sơ đồ cấu trúc (Visual Guide)
 
@@ -39,7 +39,7 @@ gantt
 
 ---
 
-## 4. 💡 Ví dụ đối chiếu (Mandatory)
+## 4.  Ví dụ đối chiếu (Rule 17: Double Examples)
 
 ### 4.1. Ví dụ từ sách (Original)
 **Tình huống**: Nhóm Mushroom Lovers chuẩn bị cho buổi biểu diễn (Trang 98).
@@ -60,7 +60,7 @@ gantt
 -   **Findings**: Cần có các "Cột mốc" (Milestones) để ăn mừng những thành công nhỏ.
 -   **Futures**: Dạy học sinh dùng bảng Kanban hoặc công cụ quản lý dự án đơn giản để theo dõi tiến độ.
 
-## 📖 Nguồn
+## Nguồn
 -   [[SOURCE_THINK_Problem_Solving_101]] — Trang 90-105.
 
 ---

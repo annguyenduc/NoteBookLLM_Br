@@ -1,30 +1,34 @@
 ---
-title: "Source: Getting Started with SQL"
-type: source
-domain: SQL
-status: verified
-sources:
-  - "TOOL_SQL_Getting_Started.md"
-tags: [sql, book, thomas-nield, sqlite]
-created: 2026-04-29
-updated: 2026-04-29
+source_id: SOURCE_TOOL_SQL_Getting_Started
+title: "TOOL Getting Started with SQL: A Hands-On Approach for Beginners"
+author: "Thomas Nield"
+category: TOOL
+domain: "Database / SQL"
+status: "verified"
+created: "2026-04-29"
+last_updated: "2026-04-29"
 ---
 
-# 📖 Source: Getting Started with SQL (Thomas Nield)
+# TOOL SQL Getting Started
 
-## 1. Tổng quan
-Cuốn sách "Getting Started with SQL" (Thomas Nield) cung cấp nền tảng cơ bản về SQL và cơ sở dữ liệu quan hệ (RDBMS). Tác giả sử dụng **SQLite** và công cụ GUI **SQLiteStudio** để giúp người học thực hành ngay mà không cần cấu hình server phức tạp.
+## 📝 1. Phân tích Ingest (Analysis - Step 1)
+- **Thực thể & Khái niệm then chốt:** Database structure, SQLite, SELECT, JOIN, GROUP BY, HAVING, Subqueries.
+- **Kết nối Wiki:** Cung cấp kiến thức nhập môn cho nhóm [[SQL]]. Là nền tảng cho [[CONCEPT_SQL_Advanced_Reporting]].
+- **Điểm khác biệt/Mâu thuẫn:** Nhấn mạnh vào việc học qua thực hành (Hands-on) với SQLite. Giải thích cực kỳ rõ ràng về "Tư duy tập hợp" (Set theory) — rào cản lớn nhất của người mới học SQL.
+- **Đề xuất cấu trúc:** Tạo trang [[CONCEPT_SQL_Sublanguages]] để phân loại rõ DDL, DML, DQL giúp DA hiểu được quyền hạn của mình trong hệ thống Database.
 
-## 2. Các thực thể & Khái niệm chính
-- **Thực thể**: [[ENTITY_SQL]] (RDBMS, SQLite, MySQL).
-- **Trích xuất dữ liệu**: [[CONCEPT_SQL_Select_And_Filter]] (Lấy và lọc dữ liệu bằng SELECT, WHERE).
-- **Gom nhóm dữ liệu**: [[CONCEPT_SQL_Aggregations]] (Tổng hợp dữ liệu với GROUP BY).
-- **Xử lý logic**: [[CONCEPT_SQL_Case_Statements]] (Phân loại dữ liệu linh hoạt).
-- **Kết nối bảng**: [[CONCEPT_SQL_Joins]] (Nối dữ liệu từ nhiều nguồn).
+## 📖 2. Tổng quan nguồn (Overview - Step 2)
+Cuốn sách nhập môn SQL hoàn hảo cho người mới bắt đầu. Thomas Nield hướng dẫn cách truy xuất dữ liệu từ các hệ quản trị CSDL quan hệ thông qua các ví dụ thực tế, giúp người học nhanh chóng làm chủ các câu lệnh truy vấn từ cơ bản đến phức tạp và hiểu được cách dữ liệu được tổ chức trong thế giới thực.
 
-## 3. Điểm đáng chú ý (Tensions / Notes)
-- Cuốn sách thiên về **SQLite**, là một Lightweight Database. Trong môi trường doanh nghiệp thực tế, Data Analyst thường dùng **Centralized Databases** như PostgreSQL, MySQL, hoặc Cloud DBs. Tuy nhiên, ANSI SQL (cú pháp cơ bản) gần như giống nhau.
-- Cuốn sách hướng dẫn cơ sở về **Normalization** (Thiết kế dữ liệu). Nhưng đối với Data Analyst khi truy vấn Data Warehouse, dữ liệu thường đã được **Denormalization** (phi chuẩn hóa) để tăng tốc độ phân tích.
+## 🚀 3. Các Concept đã trích xuất (Rule 14 & 17)
+- [[CONCEPT_SQL_Sublanguages]] | **Ngôn ngữ con trong SQL** - Hiểu về cấu trúc ngôn ngữ.
+- [[CONCEPT_SQL_Data_Preparation_Workflow]] | **Quy trình chuẩn bị dữ liệu** - Từ dữ liệu thô đến bảng báo cáo.
+- [[CONCEPT_SQL_Advanced_Reporting]] | **Báo cáo nâng cao** - Giới thiệu về Joins và Aggregations.
 
----
-[AUDITOR] Rule 14: Tóm tắt này được tạo từ file raw `3-resources/raw/sources/TOOL_SQL_Getting_Started.md`.
+## 🔍 4. Review Items (Dành cho Human)
+- [ ] Thiết lập môi trường SQLite cục bộ để thực hành các ví dụ trong sách với dữ liệu mẫu từ LMS.
+- [ ] So sánh cú pháp JOIN trong sách với cú pháp đang sử dụng trong hệ thống production hiện tại.
+
+--- 
+**Nguồn thô:** `TOOL_SQL_Getting_Started`
+**Deep Research Query:** `Thomas Nield Getting Started with SQL examples and SQLite database`

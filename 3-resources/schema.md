@@ -26,7 +26,7 @@
 - **Entities**: `ENTITY_[TênThựcThể].md` (ví dụ: `ENTITY_Python.md`).
 - **Comparisons**: `COMPARE_[A]_vs_[B].md`.
 - **Sources**: `SOURCE_[TênSách_TàiLiệu].md`.
-- **Synthesis**: Các file dạng `ELN_Test_*.md` hoặc báo cáo tổng hợp.
+- **Synthesis**: Các file dạng `CASE_STUDY_*.md`, `SYNTHESIS_*.md`.
 
 ## 3. Quy định liên kết (Links)
 - Chỉ sử dụng `[[wikilinks]]` để liên kết nội bộ trong `wiki/`.

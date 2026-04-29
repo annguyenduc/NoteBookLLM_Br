@@ -10,7 +10,7 @@ created: "2026-04-29"
 last_updated: "2026-04-29"
 ---
 
-# 📌 Phân cụm K-Means (Dữ liệu không nhãn)
+# Phân cụm K-Means (Dữ liệu không nhãn)
 
 ## 1. Sơ đồ trực quan (Visual Guide)
 
@@ -34,7 +34,7 @@ graph TD
 
 ---
 
-## 💡 Ví dụ đối chiếu (Mandatory)
+## Ví dụ đối chiếu (Rule 17: Double Examples)
 
 ### 4.1. Ví dụ từ sách (Original)
 **Tình huống**: Phân khúc khách hàng (Customer Segmentation).
@@ -54,7 +54,7 @@ graph TD
 -   **Findings**: Dữ liệu tự kể câu chuyện của nó mà không cần con người đặt tên trước.
 -   **Futures**: Sử dụng K-Means để khởi đầu cho việc khám phá bất kỳ tập dữ liệu mới nào.
 
-## 📖 Nguồn
+## Nguồn
 -   [[SOURCE_THINK_Data_Science_for_Business]] — Chapter 6: Similarity, Neighbors, and Clusters.
 
 ---

@@ -10,7 +10,7 @@ created: "2026-04-29"
 last_updated: "2026-04-29"
 ---
 
-# 📌 SVM - Máy Vector Hỗ trợ (Ranh giới tối ưu)
+# SVM - Máy Vector Hỗ trợ (Ranh giới tối ưu)
 
 ## 1. Sơ đồ trực quan (Visual Guide)
 
@@ -32,7 +32,7 @@ graph TD
 
 ---
 
-## 4. 💡 Ví dụ đối chiếu (Mandatory)
+## 4.  Ví dụ đối chiếu (Rule 17: Double Examples)
 
 ### 4.1. Ví dụ từ sách (Original)
 **Tình huống**: Phân loại các tế bào ung thư (Lành tính vs Ác tính).
@@ -51,7 +51,7 @@ graph TD
 -   **Findings**: Đôi khi chúng ta cần hy sinh sự chính xác tuyệt đối trên tập huấn luyện để đổi lấy một lề rộng hơn (Soft Margin).
 -   **Futures**: Sử dụng SVM cho các bài toán nhận diện chữ viết tay hoặc nhận diện khuôn mặt đơn giản.
 
-## 📖 Nguồn
+## Nguồn
 -   [[SOURCE_THINK_Data_Science_for_Business]] — Chapter 4: Fitting a Model to Data.
 
 ---

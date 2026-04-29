@@ -10,9 +10,9 @@ created: "2026-04-28"
 last_updated: "2026-04-28"
 ---
 
-# 📌 Quy trình CRISP-DM (Cross-Industry Standard Process for Data Mining)
+# Quy trình CRISP-DM (Cross-Industry Standard Process for Data Mining)
 
-![Minh họa CRISP-DM](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/WIKI_IMG_THINK_CRISP_DM_Process.png)
+![Minh họa CRISP-DM](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/THINK_CRISP_DM_Process.png)
 
 ## 1. Sơ đồ cấu trúc (Visual Guide)
 
@@ -47,7 +47,7 @@ graph LR
 
 ---
 
-## 4. 💡 Ví dụ đối chiếu (Mandatory)
+## 4.  Ví dụ đối chiếu (Rule 17: Double Examples)
 
 ### 4.1. Ví dụ từ sách (Original)
 **Tình huống**: Giảm tỷ lệ rời mạng (Churn) của khách hàng viễn thông (Trang 27).
@@ -67,7 +67,7 @@ graph LR
 -   **Findings**: Bước quay lại từ Evaluation sang Business Understanding là nơi sinh ra nhiều Insight quý giá nhất.
 -   **Futures**: Dạy học sinh làm dự án theo quy trình này để rèn luyện tính kỷ luật trong tư duy khoa học.
 
-## 📖 Nguồn
+## Nguồn
 -   [[SOURCE_THINK_Data_Science_for_Business]] — Trang 26-34.
 
 ---

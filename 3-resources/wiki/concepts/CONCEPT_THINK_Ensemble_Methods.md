@@ -10,7 +10,7 @@ created: "2026-04-29"
 last_updated: "2026-04-29"
 ---
 
-# 📌 Phương pháp Tổ hợp (Ensemble Methods)
+# Phương pháp Tổ hợp (Ensemble Methods)
 
 ## 1. Sơ đồ trực quan (Visual Guide)
 
@@ -37,7 +37,7 @@ graph TD
 
 ---
 
-## 4. 💡 Ví dụ đối chiếu (Mandatory)
+## 4.  Ví dụ đối chiếu (Rule 17: Double Examples)
 
 ### 4.1. Ví dụ từ sách (Original)
 **Tình huống**: Dự báo rủi ro tín dụng.
@@ -55,7 +55,7 @@ graph TD
 -   **Findings**: Không có mô hình nào hoàn hảo, nhưng sự kết hợp của chúng có thể tiệm cận sự hoàn hảo.
 -   **Futures**: Dạy học sinh cách xây dựng các "hội đồng Robot" để ra quyết định thay vì chỉ dựa vào một cảm biến duy nhất.
 
-## 📖 Nguồn
+## Nguồn
 -   [[SOURCE_THINK_Data_Science_for_Business]] — Chapter 12: Data Science and Business Strategy.
 
 ---

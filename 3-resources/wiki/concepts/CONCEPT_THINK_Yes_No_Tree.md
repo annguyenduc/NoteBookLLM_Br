@@ -1,4 +1,4 @@
-﻿---
+---
 file_id: "WIKI_THINK_YES_NO_TREE"
 title: "Cây Yes/No (Yes/No Tree)"
 category: "Wiki Page"
@@ -10,9 +10,9 @@ created: "2026-04-28"
 last_updated: "2026-04-28"
 ---
 
-# 📌 Cây Yes/No (Yes/No Tree)
+# Cây Yes/No (Yes/No Tree)
 
-![Minh họa Cây Yes/No](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/WIKI_IMG_THINK_Yes_No_Tree.png)
+![Minh họa Cây Yes/No](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/THINK_Yes_No_Tree.png)
 
 ## 1. Sơ đồ quyết định (Visual Guide)
 
@@ -45,7 +45,7 @@ graph TD
 
 ---
 
-## 3. 💡 Ví dụ đối chiếu (Mandatory)
+## 3.  Ví dụ đối chiếu (Rule 17: Double Examples)
 
 ### 3.1. Ví dụ từ sách (Original)
 **Tình huống**: Nhân vật John quyết định cách để có tiền mua máy tính (Trang 84).
@@ -68,7 +68,7 @@ graph TD
     -   *Yes* -> Tận dụng đồ cũ để tiết kiệm.
     -   *No* -> Sử dụng quang trở (LDR) - giá rẻ nhưng cần code lọc nhiễu.
 
-## 4. 🔗 Liên kết tư duy
+## 4.  Liên kết tư duy
 -   [[CONCEPT_THINK_Logic_Tree]]
 -   [[CONCEPT_THINK_Problem_Solving_Process]]
 
@@ -78,7 +78,7 @@ graph TD
 -   **Findings**: Một câu hỏi tốt ở đầu cây sẽ tiết kiệm rất nhiều thời gian ở các nhánh sau.
 -   **Futures**: Dạy học sinh dùng cây này để lập trình các khối lệnh `if-else` trong Arduino/Python.
 
-## 📖 Nguồn
+## Nguồn
 -   [[SOURCE_THINK_Problem_Solving_101]] — Trang 76-85.
 
 ---

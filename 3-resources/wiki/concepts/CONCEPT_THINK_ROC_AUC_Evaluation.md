@@ -10,7 +10,7 @@ created: "2026-04-29"
 last_updated: "2026-04-29"
 ---
 
-# 📌 ROC Curve và chỉ số AUC
+# ROC Curve và chỉ số AUC
 
 ## 1. Sơ đồ trực quan (Visual Guide)
 
@@ -36,7 +36,7 @@ graph LR
 
 ---
 
-## 4. 💡 Ví dụ đối chiếu (Mandatory)
+## 4.  Ví dụ đối chiếu (Rule 17: Double Examples)
 
 ### 4.1. Ví dụ từ sách (Original)
 **Tình huống**: So sánh hai mô hình dự báo khách hàng rời bỏ dịch vụ (Churn).
@@ -56,7 +56,7 @@ graph LR
 -   **Findings**: AUC là chỉ số công bằng nhất để đánh giá các thuật toán phân loại.
 -   **Futures**: Luôn yêu cầu học sinh tính AUC khi báo cáo kết quả huấn luyện mô hình Machine Learning.
 
-## 📖 Nguồn
+## Nguồn
 -   [[SOURCE_THINK_Data_Science_for_Business]] — Chapter 8: Visualizing Model Performance.
 
 ---

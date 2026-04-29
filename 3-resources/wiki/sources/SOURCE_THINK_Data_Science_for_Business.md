@@ -1,49 +1,32 @@
-﻿---
-file_id: "WIKI_SOURCE_THINK_DATA_SCIENCE_FOR_BUSINESS"
-title: "Tóm tắt Sách: Data Science for Business (Fawcett & Provost)"
-category: "Source Summary"
-prefix: "WIKI"
-tags: ["Data_Science", "Business_Strategy", "Machine_Learning"]
-source_raw: "THINK_Data_Science_for_Business.md"
+---
+source_id: SOURCE_THINK_Data_Science_for_Business
+title: "ACAD Data Science for Business: What You Need to Know about Data Mining and Data-Analytic Thinking"
+author: "Foster Provost & Tom Fawcett"
+category: ACAD
+domain: "Data Strategy / DS Foundations"
 status: "verified"
 created: "2026-04-29"
 last_updated: "2026-04-29"
 ---
 
-# 📖 Tóm tắt Sách: Data Science for Business
+# ACAD Data Science for Business
 
-## 1. Thông tin chung
--   **Tác giả**: Foster Provost & Tom Fawcett.
--   **Mục tiêu**: Cung cấp các nguyên lý cơ bản của khoa học dữ liệu để áp dụng vào bài toán kinh doanh. Không đi sâu vào code, tập trung vào tư duy phân tích.
--   **Triết lý**: Dữ liệu là một tài sản chiến lược. Khoa học dữ liệu giúp tối ưu hóa việc ra quyết định thông qua các mô hình dự báo.
+## 📝 1. Phân tích Ingest (Analysis - Step 1)
+- **Thực thể & Khái niệm then chốt:** Data-Analytic Thinking, Predictive Modeling, Overfitting, Tree Induction, Expected Value Framework.
+- **Kết nối Wiki:** Cầu nối giữa [[Thinking]] và [[DSML]]. Hỗ trợ [[CONCEPT_DSML_Decision_Trees_Random_Forest]].
+- **Điểm khác biệt:** Giải thích các thuật toán ML dưới góc độ "Giá trị kinh doanh" thay vì toán học.
+- **Đề xuất cấu trúc:** Tạo trang [[CONCEPT_THINK_Expected_Value_Framework]].
 
-## 2. Bản đồ tri thức (Ingest Map)
-Nguồn này đã bồi đắp cho **15 trang Wiki**:
+## 📖 2. Tổng quan nguồn (Overview - Step 2)
+Cuốn sách giúp nhà quản lý và DA hiểu được cốt lõi của khoa học dữ liệu mà không cần quá sâu về code. Nó cung cấp các khung tư duy để đánh giá tính khả thi và lợi nhuận của các dự án AI/ML.
 
-1.  **Chỉ mục Master**: [[THINK_Analytical_Thinking]]
-2.  **Quy trình chuẩn**: [[CONCEPT_THINK_Data_Mining_Process_CRISP]]
-3.  **Phân loại nhiệm vụ**: [[CONCEPT_THINK_Data_Mining_Tasks]]
-4.  **Cấu trúc Logic**: [[CONCEPT_THINK_Decision_Trees_Induction]]
-5.  **Phân loại xác suất**: [[CONCEPT_THINK_Logistic_Regression_Classifier]]
-6.  **Ranh giới tối ưu**: [[CONCEPT_THINK_SVM_Linear_Separation]]
-7.  **Cốt lõi toán học**: [[CONCEPT_THINK_Entropy_Information_Gain]]
-8.  **Đánh giá mô hình**: [[CONCEPT_THINK_Overfitting_Avoidance]]
-9.  **Phép đo tương đồng**: [[CONCEPT_THINK_Similarity_Distance_Metrics]]
-10. **Phân cụm tự động**: [[CONCEPT_THINK_Clustering_KMeans]]
-11. **Khung quyết định**: [[CONCEPT_THINK_Expected_Value_Framework]]
-12. **Đồ thị hiệu suất**: [[CONCEPT_THINK_ROC_AUC_Evaluation]]
-13. **Lập luận Bayes**: [[CONCEPT_THINK_Naive_Bayes_Logic]]
-14. **Khai thác văn bản**: [[CONCEPT_THINK_TF_IDF_Text_Mining]]
-15. **Mô hình tổ hợp**: [[CONCEPT_THINK_Ensemble_Methods]]
+## 🚀 3. Các Concept đã trích xuất (Rule 14 & 17)
+- [[CONCEPT_THINK_Expected_Value_Framework]] | **Khung giá trị kỳ vọng** - Ra quyết định dựa trên xác suất.
+- [[CONCEPT_DSML_Decision_Trees_Induction]] | **Cảm sinh cây quyết định** - Logic đằng sau việc phân loại.
 
-## 3. Key Takeaways (Thông điệp cốt lõi)
--   **Tư duy Phân tích Dữ liệu (Data-Analytic Thinking)**: Khả năng nhìn nhận bài toán kinh doanh dưới góc độ dữ liệu.
--   **Mô hình là sự đơn giản hóa**: Mọi mô hình đều sai, nhưng một số có ích (George Box). Cần biết khi nào mô hình bị quá khớp (Overfitting).
--   **Giá trị kỳ vọng (Expected Value)**: Cầu nối quan trọng nhất để chuyển đổi xác suất của mô hình thành tiền tệ/lợi nhuận.
+## 🔍 4. Review Items (Dành cho Human)
+- [ ] Tính toán "Expected Value" cho việc triển khai hệ thống nhắc nhở học tập tự động.
 
-## 4. Nhật ký hệ thống (Log)
--   **2026-04-28**: Trích xuất sang raw/.
--   **2026-04-29**: Thực hiện Deep Ingest 2.0. Phân rã thành 15 trang Wiki. Trạng thái: **Hoàn tất 100%**.
-
----
-[AUDITOR] Rule 14: Xác nhận Key Takeaways khớp với 14 chương của sách.
+--- 
+**Nguồn thô:** `THINK_Data_Science_for_Business`
+**Deep Research Query:** `Data Science for Business Foster Provost summary`

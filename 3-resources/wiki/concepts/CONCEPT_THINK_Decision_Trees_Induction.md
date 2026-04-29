@@ -10,7 +10,7 @@ created: "2026-04-29"
 last_updated: "2026-04-29"
 ---
 
-# 📌 Cây Quyết định (Quy trình Phân rã dữ liệu)
+# Cây Quyết định (Quy trình Phân rã dữ liệu)
 
 ## 1. Sơ đồ trực quan (Visual Guide)
 
@@ -34,7 +34,7 @@ graph TD
 
 ---
 
-## 4. 💡 Ví dụ đối chiếu (Mandatory)
+## 4.  Ví dụ đối chiếu (Rule 17: Double Examples)
 
 ### 4.1. Ví dụ từ sách (Original)
 **Tình huống**: Xét duyệt cho vay (Credit Scoring).
@@ -55,7 +55,7 @@ graph TD
 -   **Findings**: Logic của cây quyết định chính là nền tảng của các mô hình tổ hợp mạnh mẽ (Ensemble).
 -   **Futures**: Dạy học sinh vẽ cây quyết định trên giấy trước khi cho Robot chạy thuật toán.
 
-## 📖 Nguồn
+## Nguồn
 -   [[SOURCE_THINK_Data_Science_for_Business]] — Chapter 3: Thinking Analytically about Business Problems.
 
 ---

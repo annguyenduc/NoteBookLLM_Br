@@ -10,7 +10,7 @@ created: "2026-04-29"
 last_updated: "2026-04-29"
 ---
 
-# 📌 Quá khớp và Cách phòng tránh (Overfitting Avoidance)
+# Quá khớp và Cách phòng tránh (Overfitting Avoidance)
 
 ## 1. Sơ đồ trực quan (Visual Guide)
 
@@ -37,7 +37,7 @@ graph LR
 
 ---
 
-## 4. 💡 Ví dụ đối chiếu (Mandatory)
+## 4.  Ví dụ đối chiếu (Rule 17: Double Examples)
 
 ### 4.1. Ví dụ từ sách (Original)
 **Tình huống**: Xây dựng mô hình dự báo gian lận thẻ tín dụng.
@@ -56,7 +56,7 @@ graph LR
 -   **Findings**: "Cái gì quá tốt thì thường không thật" (If it's too good to be true, it probably is).
 -   **Futures**: Dạy học sinh cách luôn giữ lại một phần dữ liệu "bí mật" để thử thách Robot của mình.
 
-## 📖 Nguồn
+## Nguồn
 -   [[SOURCE_THINK_Data_Science_for_Business]] — Chapter 5: Overfitting and Its Avoidance.
 
 ---

@@ -10,9 +10,9 @@ created: "2026-04-29"
 last_updated: "2026-04-29"
 ---
 
-# 📌 Kiểm chứng Giả thuyết (Hypothesis Testing)
+# Kiểm chứng Giả thuyết (Hypothesis Testing)
 
-![Minh họa Kiểm chứng](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/WIKI_IMG_THINK_Hypothesis_Test.png)
+![Minh họa Kiểm chứng](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/THINK_Hypothesis_Test.png)
 
 ## 1. Sơ đồ cấu trúc (Visual Guide)
 
@@ -38,7 +38,7 @@ flowchart LR
 
 ---
 
-## 4. 💡 Ví dụ đối chiếu (Mandatory)
+## 4.  Ví dụ đối chiếu (Rule 17: Double Examples)
 
 ### 4.1. Ví dụ từ sách (Original)
 **Tình huống**: Giả thuyết "Mọi người không biết đến buổi biểu diễn" (Trang 58).
@@ -60,7 +60,7 @@ flowchart LR
 -   **Findings**: Một giả thuyết bị bác bỏ cũng có giá trị như một giả thuyết được xác nhận (vì nó giúp loại trừ hướng đi sai).
 -   **Futures**: Dạy học sinh cách lập bảng "Information Needs" (Cần biết gì - Lấy ở đâu) trước khi bắt tay vào làm dự án.
 
-## 📖 Nguồn
+## Nguồn
 -   [[SOURCE_THINK_Problem_Solving_101]] — Trang 50-65.
 
 ---

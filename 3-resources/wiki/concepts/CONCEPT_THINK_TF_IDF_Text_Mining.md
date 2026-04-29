@@ -10,7 +10,7 @@ created: "2026-04-29"
 last_updated: "2026-04-29"
 ---
 
-# 📌 TF-IDF (Khai thác dữ liệu văn bản)
+# TF-IDF (Khai thác dữ liệu văn bản)
 
 ## 1. Sơ đồ trực quan (Visual Guide)
 
@@ -36,7 +36,7 @@ graph LR
 
 ---
 
-## 4. 💡 Ví dụ đối chiếu (Mandatory)
+## 4.  Ví dụ đối chiếu (Rule 17: Double Examples)
 
 ### 4.1. Ví dụ từ sách (Original)
 **Tình huống**: Phân loại các tin tức về "Kinh tế" và "Thể thao".
@@ -55,7 +55,7 @@ graph LR
 -   **Findings**: Sự "hiếm" mang lại giá trị định danh.
 -   **Futures**: Dạy học sinh cách tự tạo một "đám mây từ khóa" (Word Cloud) dựa trên trọng số TF-IDF cho đồ án của mình.
 
-## 📖 Nguồn
+## Nguồn
 -   [[SOURCE_THINK_Data_Science_for_Business]] — Chapter 10: Representing and Mining Text.
 
 ---

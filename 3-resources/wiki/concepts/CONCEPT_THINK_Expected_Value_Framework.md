@@ -10,7 +10,7 @@ created: "2026-04-29"
 last_updated: "2026-04-29"
 ---
 
-# 📌 Khung Giá trị Kỳ vọng (Expected Value Framework)
+# Khung Giá trị Kỳ vọng (Expected Value Framework)
 
 ## 1. Sơ đồ trực quan (Visual Guide)
 
@@ -41,7 +41,7 @@ graph TD
 
 ---
 
-## 4. 💡 Ví dụ đối chiếu (Mandatory)
+## 4.  Ví dụ đối chiếu (Rule 17: Double Examples)
 
 ### 4.1. Ví dụ từ sách (Original)
 **Tình huống**: Gửi thư quảng cáo giảm giá cho khách hàng.
@@ -64,7 +64,7 @@ graph TD
 -   **Findings**: Dữ liệu chỉ là một nửa cuộc chơi, nửa còn lại là hiểu về giá trị kinh tế/vận hành.
 -   **Futures**: Dạy học sinh cách lập bảng EV khi đứng trước các lựa chọn rủi ro trong cuộc sống.
 
-## 📖 Nguồn
+## Nguồn
 -   [[SOURCE_THINK_Data_Science_for_Business]] — Chapter 7: Decision Analytic Thinking.
 
 ---

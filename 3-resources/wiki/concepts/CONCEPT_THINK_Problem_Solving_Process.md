@@ -10,9 +10,9 @@ created: "2026-04-28"
 last_updated: "2026-04-28"
 ---
 
-# 📌 Quy trình Giải quyết Vấn đề 4 Bước
+# Quy trình Giải quyết Vấn đề 4 Bước
 
-![Minh họa Quy trình 4 bước](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/WIKI_IMG_THINK_Problem_Solving_Process.png)
+![Minh họa Quy trình 4 bước](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/THINK_Problem_Solving_Process.png)
 
 ## 1. Sơ đồ quy trình (Visual Guide)
 
@@ -49,7 +49,7 @@ Giải quyết vấn đề không phải là một kỹ năng dành riêng cho m
     -   Thực hiện kế hoạch.
     -   Theo dõi kết quả và điều chỉnh nếu cần thiết.
 
-## 3. 💡 Ví dụ đối chiếu (Mandatory)
+## 3.  Ví dụ đối chiếu (Rule 17: Double Examples)
 
 ### 3.1. Ví dụ từ sách (Original)
 **Tình huống**: Một học sinh có điểm môn Toán đang giảm sút (Trang 21-22).
@@ -65,7 +65,7 @@ Giải quyết vấn đề không phải là một kỹ năng dành riêng cho m
 -   **(B3) Lập kế hoạch hành động**: Thử nghiệm đổi pin, vệ sinh bánh xe, và thêm khối lệnh bù trừ tốc độ (Calibration) cho motor yếu hơn.
 -   **(B4) Thực thi và tinh chỉnh**: Chạy thử trên sa bàn, ghi nhận kết quả và điều chỉnh thông số bù trừ cho đến khi robot đi thẳng.
 
-## 4. 🔗 Liên kết tư duy
+## 4.  Liên kết tư duy
 -   [[CONCEPT_THINK_Logic_Tree]]
 -   [[CONCEPT_THINK_Root_Cause_Analysis]]
 
@@ -75,7 +75,7 @@ Giải quyết vấn đề không phải là một kỹ năng dành riêng cho m
 -   **Findings**: Điểm mấu chốt nằm ở bước 2 (Xác định nguyên nhân gốc rễ).
 -   **Futures**: Áp dụng quy trình này vào việc thiết kế bài giảng STEAM cho học sinh.
 
-## 📖 Nguồn
+## Nguồn
 -   [[SOURCE_THINK_Problem_Solving_101]] — Page 14-25.
 
 ---

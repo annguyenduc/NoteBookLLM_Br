@@ -10,9 +10,9 @@ created: "2026-04-29"
 last_updated: "2026-04-29"
 ---
 
-# 📌 Kỹ thuật 5 Whys (5 Tại sao)
+# Kỹ thuật 5 Whys (5 Tại sao)
 
-![Minh họa 5 Whys](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/WIKI_IMG_THINK_5_Whys.png)
+![Minh họa 5 Whys](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/THINK_5_Whys.png)
 
 ## 1. Sơ đồ cấu trúc (Visual Guide)
 
@@ -40,7 +40,7 @@ graph TD
 
 ---
 
-## 4. 💡 Ví dụ đối chiếu (Mandatory)
+## 4.  Ví dụ đối chiếu (Rule 17: Double Examples)
 
 ### 4.1. Ví dụ từ sách (Original)
 **Tình huống**: Nhóm nhạc "Mushroom Lovers" có ít khán giả đi xem (Trang 48).
@@ -66,7 +66,7 @@ graph TD
 -   **Findings**: Kỹ thuật này hiệu quả nhất khi được thực hiện bởi một nhóm có góc nhìn đa chiều.
 -   **Futures**: Kết hợp 5 Whys vào biên bản báo cáo lỗi sau mỗi buổi thực hành STEAM.
 
-## 📖 Nguồn
+## Nguồn
 -   [[SOURCE_THINK_Problem_Solving_101]] — Trang 45-52.
 
 ---

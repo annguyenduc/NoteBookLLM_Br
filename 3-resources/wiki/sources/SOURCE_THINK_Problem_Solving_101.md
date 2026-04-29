@@ -1,45 +1,34 @@
-﻿---
-file_id: "WIKI_SOURCE_THINK_PROBLEM_SOLVING_101"
-title: "Tóm tắt Sách: Problem Solving 101 (Ken Watanabe)"
-category: "Source Summary"
-prefix: "WIKI"
-tags: ["Thinking", "Problem_Solving", "Education"]
-source_raw: "THINK_Problem_Solving_101.md"
+---
+source_id: SOURCE_THINK_Problem_Solving_101
+title: "ACAD Problem Solving 101: A Simple Book for Smart People"
+author: "Ken Watanabe"
+category: ACAD
+domain: "Analytical Thinking / Problem Solving"
 status: "verified"
 created: "2026-04-29"
 last_updated: "2026-04-29"
 ---
 
-# 📖 Tóm tắt Sách: Problem Solving 101
+# ACAD Problem Solving 101
 
-## 1. Thông tin chung
--   **Tác giả**: Ken Watanabe.
--   **Mục tiêu**: Đơn giản hóa các kỹ thuật giải quyết vấn đề phức tạp (vốn dùng cho tư vấn quản trị) để bất kỳ ai cũng có thể áp dụng.
--   **Triết lý**: Giải quyết vấn đề là một kỹ năng có thể rèn luyện thông qua thói quen suy nghĩ hệ thống.
+## 📝 1. Phân tích Ingest (Analysis - Step 1)
+- **Thực thể & Khái niệm then chốt:** Logic Tree, Yes/No Tree, Problem-Solving Process, Prioritization Matrix, Action Plan.
+- **Kết nối Wiki:** Là nền tảng nhập môn cho nhóm [[Thinking]]. Cung cấp các công cụ trực quan cho [[CONCEPT_THINK_Logic_Tree]] và [[CONCEPT_THINK_Root_Cause_Analysis]].
+- **Điểm khác biệt/Mâu thuẫn:** Tập trung vào việc "Đơn giản hóa" các vấn đề phức tạp. Đối lập với xu hướng làm phức tạp hóa vấn đề bằng công nghệ của các DA mới vào nghề.
+- **Đề xuất cấu trúc:** Tạo trang [[CONCEPT_THINK_Logic_Tree]] với các ví dụ thực tế về việc phân tích "Tại sao doanh thu giảm" bằng cây logic.
 
-## 2. Bản đồ tri thức (Ingest Map)
-Nguồn này đã bồi đắp cho **11 trang Wiki**:
+## 📖 2. Tổng quan nguồn (Overview - Step 2)
+Một cuốn sách tinh gọn nhưng đầy sức mạnh về tư duy giải quyết vấn đề. Tác giả hướng dẫn cách sử dụng các sơ đồ trực quan để chẩn đoán nguyên nhân gốc rễ, đưa ra các giải pháp khả thi và lập kế hoạch thực hiện một cách khoa học, giúp DA rèn luyện tư duy logic ngay từ những bước đầu tiên.
 
-1.  **Chỉ mục Master**: [[THINK_Analytical_Thinking]]
-2.  **Quy trình**: [[CONCEPT_THINK_Problem_Solving_Process]]
-3.  **Công cụ Phân rã**: [[CONCEPT_THINK_Logic_Tree]]
-4.  **Công cụ Gốc rễ**: [[CONCEPT_THINK_Root_Cause_Analysis]]
-5.  **Kỹ thuật Đào sâu**: [[CONCEPT_THINK_5_Whys]]
-6.  **Công cụ Ra quyết định**: [[CONCEPT_THINK_Yes_No_Tree]]
-7.  **Công cụ Lập luận**: [[CONCEPT_THINK_Hypothesis_Pyramid]]
-8.  **Công cụ Ưu tiên**: [[CONCEPT_THINK_Prioritization_Matrix]]
-9.  **Công cụ So sánh**: [[CONCEPT_THINK_Pros_Cons_List]]
-10. **Công cụ Thực thi**: [[CONCEPT_THINK_Action_Plan_Execution]]
-11. **Kỹ thuật Kiểm chứng**: [[CONCEPT_THINK_Hypothesis_Testing]]
+## 🚀 3. Các Concept đã trích xuất (Rule 14 & 17)
+- [[CONCEPT_THINK_Problem_Solving_Process]] | **Quy trình giải quyết vấn đề** - 4 bước từ xác định đến hành động.
+- [[CONCEPT_THINK_Logic_Tree]] | **Cây Logic** - Công cụ phân tách vấn đề thành các phần nhỏ.
+- [[CONCEPT_THINK_Prioritization_Matrix]] | **Ma trận ưu tiên** - Cách chọn lọc giải pháp hiệu quả nhất.
 
-## 3. Key Takeaways (Thông điệp cốt lõi)
--   **Đừng nhảy ngay vào giải pháp**: Hãy dành 70% thời gian để hiểu vấn đề và tìm nguyên nhân gốc rễ.
--   **MECE là chìa khóa**: Phân rã vấn đề sao cho "Không trùng lặp, không bỏ sót".
--   **Thái độ "Can-do"**: Phân loại người thành 4 nhóm (Người chỉ trích, Người mộng mơ, Người bỏ cuộc, Người giải quyết vấn đề). Chỉ có nhóm cuối cùng mới tạo ra thay đổi.
+## 🔍 4. Review Items (Dành cho Human)
+- [ ] Áp dụng "Logic Tree" để phân tích cấu trúc của khóa học Python trong dự án.
+- [ ] Kiểm tra xem các bài tập trong sách có thể dùng làm tài liệu đào tạo tư duy cho giáo viên không.
 
-## 4. Nhật ký hệ thống (Log)
--   **2026-04-28**: Trích xuất text từ PDF sang raw/.
--   **2026-04-29**: Thực hiện Deep Ingest 2.0. Phân rã thành 11 trang Wiki Atomic. Trạng thái: **Hoàn tất 100%**.
-
----
-[AUDITOR] Rule 14: Nội dung tóm tắt khớp với cấu trúc 4 chương của sách.
+--- 
+**Nguồn thô:** `THINK_Problem_Solving_101`
+**Deep Research Query:** `Ken Watanabe problem solving 101 logic tree examples for business`

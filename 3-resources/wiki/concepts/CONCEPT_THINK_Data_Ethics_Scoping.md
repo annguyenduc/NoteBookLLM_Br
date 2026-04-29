@@ -10,9 +10,9 @@ created: "2026-04-29"
 last_updated: "2026-04-29"
 ---
 
-# 📌 Đạo đức và Quyền riêng tư trong Dữ liệu
+# Đạo đức và Quyền riêng tư trong Dữ liệu
 
-![Minh họa Đạo đức Dữ liệu](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/WIKI_IMG_THINK_Data_Ethics.png)
+![Minh họa Đạo đức Dữ liệu](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/THINK_Data_Ethics.png)
 
 ## 1. Sơ đồ cấu trúc (Visual Guide)
 
@@ -36,7 +36,7 @@ Trong cuốn *Thinking with Data*, đạo đức không chỉ là một khái ni
 
 ---
 
-## 4. 💡 Ví dụ đối chiếu (Mandatory)
+## 4.  Ví dụ đối chiếu (Rule 17: Double Examples)
 
 ### 4.1. Ví dụ từ sách (Original)
 **Tình huống**: Phân tích dữ liệu hành vi người dùng để tối ưu hóa quảng cáo.
@@ -54,7 +54,7 @@ Trong cuốn *Thinking with Data*, đạo đức không chỉ là một khái ni
 -   **Findings**: Một dự án thành công về kỹ thuật nhưng thất bại về đạo đức có thể gây hậu quả pháp lý và uy tín nghiêm trọng.
 -   **Futures**: Luôn có một mục "Đánh giá tác động đạo đức" trong mọi đồ án tốt nghiệp STEAM.
 
-## 📖 Nguồn
+## Nguồn
 -   [[SOURCE_THINK_Thinking_with_Data]] — Chapter: Ethics and Privacy.
 
 ---

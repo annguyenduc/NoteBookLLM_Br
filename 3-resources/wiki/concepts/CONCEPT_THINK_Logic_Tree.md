@@ -10,9 +10,9 @@ created: "2026-04-28"
 last_updated: "2026-04-28"
 ---
 
-# 📌 Cây Logic (Logic Tree)
+# Cây Logic (Logic Tree)
 
-![Minh họa Cây Logic](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/WIKI_IMG_THINK_Logic_Tree.png)
+![Minh họa Cây Logic](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/THINK_Logic_Tree.png)
 
 ## 1. Sơ đồ cấu trúc (Visual Guide)
 
@@ -44,7 +44,7 @@ graph TD
 -   **Nguyên tắc MECE:** Các nhánh ở cùng một cấp độ không được chồng chéo lên nhau và phải bao phủ toàn bộ các khả năng.
 -   **Độ sâu:** Thường phân rã từ 3 đến 5 cấp độ để đi sâu vào chi tiết nhưng vẫn giữ được cái nhìn tổng thể.
 
-## 4. 💡 Ví dụ đối chiếu (Mandatory)
+## 4.  Ví dụ đối chiếu (Rule 17: Double Examples)
 
 ### 4.1. Ví dụ từ sách (Original)
 **Tình huống**: Cách phân loại học sinh trong một lớp 3 (Trang 23-24).
@@ -60,7 +60,7 @@ graph TD
 -   **Nhánh 3 (Thiết kế - Design)**: Mô hình nhà bằng bìa carton, Cách bố trí nội thất, Vị trí đặt đèn.
 => *Ứng dụng*: Giúp học sinh quản lý dự án tốt hơn và biết chính xác mình đang thiếu sót ở phần nào.
 
-## 5. 🔗 Liên kết tư duy
+## 5.  Liên kết tư duy
 -   [[CONCEPT_THINK_Problem_Solving_Process]]
 -   [[CONCEPT_THINK_Root_Cause_Analysis]]
 
@@ -70,7 +70,7 @@ graph TD
 -   **Findings**: Một Cây Logic tốt thường bắt đầu bằng một câu hỏi cụ thể và rõ ràng.
 -   **Futures**: Sử dụng để phân tích các dự án Robot phức tạp của học sinh.
 
-## 📖 Nguồn
+## Nguồn
 -   [[SOURCE_THINK_Problem_Solving_101]] — Page 30-45.
 
 ---

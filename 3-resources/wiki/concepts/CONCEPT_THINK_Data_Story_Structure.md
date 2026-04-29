@@ -1,4 +1,4 @@
----
+﻿---
 id: THINK_Data_Story_Structure
 type: concept
 aliases: ["Data Story Structure", "CoNVO", "Cấu trúc Kể chuyện Dữ liệu", "Scoping"]
@@ -7,7 +7,7 @@ tags: ["data-thinking", "storytelling", "scoping", "communication"]
 
 # Cấu trúc Kể chuyện Dữ liệu (Data Story Structure / CoNVO)
 
-<!-- [AUDITOR] Rule 14: Nguồn được lấy trực tiếp từ 3-resources/raw/THINK_Thinking_with_Data.md, tại Chương 1 (Scoping) và Chương 6 (Putting It All Together), trang 16/line 810 và trang 67-75. -->
+Nguồn: [[SOURCE_THINK_Thinking_with_Data]] (Xác nhận Rule 14 từ: [[\THINK_Thinking_with_Data]])
 
 ## 1. Khái niệm cốt lõi
 Một dự án khoa học dữ liệu không chỉ là quá trình chạy các thuật toán, mà cốt lõi là việc **kể một câu chuyện** thuyết phục thông qua dữ liệu. Tác giả khẳng định: "Một câu chuyện hay về một dự án và một phạm vi dự án (scope) tốt là khó có thể phân biệt được."
@@ -18,7 +18,7 @@ Một dự án khoa học dữ liệu không chỉ là quá trình chạy các t
 3. **Vision (Tầm nhìn):** Bản phác thảo (mockup) về những gì sẽ được tạo ra (biểu đồ, mô hình, ứng dụng) và nó sẽ trông như thế nào.
 4. **Outcome (Kết quả):** Hành động thực tế sẽ xảy ra sau khi sản phẩm dữ liệu được giao (Ai sẽ dùng nó? Dùng như thế nào để thay đổi thực tế?).
 
-📖 Nguồn: `[[SOURCE_THINK_Thinking_with_Data]]` — Chương 1: Scoping (Trang 16) & Chương 6: Putting It All Together.
+ Nguồn: `[[SOURCE_THINK_Thinking_with_Data]]` — Chương 1: Scoping (Trang 16) & Chương 6: Putting It All Together.
 
 ## 2. Ứng dụng & Ví dụ (Double Examples)
 
@@ -28,7 +28,7 @@ Trong dự án dự đoán tỷ lệ chuyển đổi cho công ty phần mềm (
 - *Need:* Cần rút ngắn vòng lặp phản hồi 30 ngày xuống vài ngày để cắt giảm quảng cáo vô ích.
 - *Vision:* Một mô hình dự đoán giá trị vòng đời (LTV) của user trong những ngày đầu tiên và xuất ra một báo cáo ước tính.
 - *Outcome:* Đội ngũ kỹ sư tích hợp mô hình, tự động dừng các chiến dịch quảng cáo kém hiệu quả, tiết kiệm hàng ngàn đô la.
-📖 Nguồn: `[[SOURCE_THINK_Thinking_with_Data]]` — Chương 6: Putting It All Together (Trang 67-69).
+ Nguồn: `[[SOURCE_THINK_Thinking_with_Data]]` — Chương 6: Putting It All Together (Trang 67-69).
 
 **Ví dụ Sư phạm (Pedagogical) [Phóng tác]:**
 Trong dự án học tập Project-Based Learning (PBL) về rác thải trường học:

@@ -10,7 +10,7 @@ created: "2026-04-29"
 last_updated: "2026-04-29"
 ---
 
-# 📌 Độ tương đồng và Các phép đo Khoảng cách
+# Độ tương đồng và Các phép đo Khoảng cách
 
 ## 1. Sơ đồ trực quan (Visual Guide)
 
@@ -33,7 +33,7 @@ Trong dữ liệu, để biết hai đối tượng (khách hàng, sản phẩm,
 
 ---
 
-## 4. 💡 Ví dụ đối chiếu (Mandatory)
+## 4.  Ví dụ đối chiếu (Rule 17: Double Examples)
 
 ### 4.1. Ví dụ từ sách (Original)
 **Tình huống**: Hệ thống gợi ý bạn bè trên mạng xã hội.
@@ -50,7 +50,7 @@ Trong dữ liệu, để biết hai đối tượng (khách hàng, sản phẩm,
 -   **Findings**: Chọn sai phép đo khoảng cách có thể dẫn đến kết quả phân loại sai hoàn toàn.
 -   **Futures**: Dạy học sinh cách dùng thước kẻ đo khoảng cách trên giấy để hiểu về sự tương đồng trước khi lập trình cho Robot.
 
-## 📖 Nguồn
+## Nguồn
 -   [[SOURCE_THINK_Data_Science_for_Business]] — Chapter 6: Similarity, Neighbors, and Clusters.
 
 ---

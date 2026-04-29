@@ -1,30 +1,32 @@
----
+﻿---
 title: "CONCEPT: SQL Joins (Kết nối bảng)"
 type: concept
 domain: SQL
 status: verified
 sources:
-  - "TOOL_SQL_Getting_Started.md"
+  - [[SOURCE_TOOL_SQL_Getting_Started]]
 tags: [sql, join, inner-join, left-join, relational-database]
 created: 2026-04-29
 updated: 2026-04-29
 ---
 
-# 🧠 Khái niệm: SQL Joins (Kết nối bảng)
+# Khái niệm: SQL Joins (Kết nối bảng)
 
 ## 1. Định nghĩa & Lý do sử dụng
 Trong cơ sở dữ liệu quan hệ (RDBMS), dữ liệu thường được tách ra thành nhiều bảng riêng biệt để tránh dư thừa (quá trình này gọi là **Normalization**). 
 Để lấy được thông tin hoàn chỉnh, Data Analyst phải sử dụng `JOIN` để "khâu" (stitch) các bảng này lại với nhau dựa trên một cột chung (thường là **Primary Key** của bảng này khớp với **Foreign Key** của bảng kia).
 
-📖 Nguồn: `TOOL_SQL_Getting_Started.md` — [Page 107-114]
+ Nguồn: [[SOURCE_TOOL_SQL_Getting_Started]] (Xác nhận Rule 14 từ: `TOOL_SQL_Getting_Started`) — [Page 107-114]
 
 ## 2. Các loại JOIN cốt lõi
 1. **INNER JOIN**: Chỉ lấy những bản ghi có giá trị khớp nhau ở CẢ HAI bảng. (Phần giao nhau).
 2. **LEFT JOIN**: Lấy TOÀN BỘ bản ghi của bảng bên trái. Nếu bảng bên phải không có dữ liệu khớp, hệ thống sẽ điền `NULL`. Đây là loại Join an toàn nhất khi không muốn mất dữ liệu gốc.
 
-## 3. Ví dụ minh họa (Rule 17: Double Examples)
+## 3. Ví dụ đối chiếu (Rule 17: Double Examples)
 
-### Ví dụ 1: INNER JOIN (Tìm dữ liệu khớp hoàn toàn)
+### 3.1. Ví dụ từ sách (Original)
+*Tình huống: INNER JOIN (Tìm dữ liệu khớp hoàn toàn).*
+- **Cách giải quyết:** Khi phòng kinh doanh cần phân tích hành vi mua hàng, họ chỉ quan tâm đến những người *đã từng mua*. Bằng cách dùng `INNER JOIN` nối bảng `orders` và bảng `customers`, hệ thống sẽ tự động lọc ra danh sách các đơn hàng có `customer_id` hợp lệ và lấy kèm tên khách hàng.
 ```sql
 -- Lấy thông tin chi tiết các đơn hàng CÓ khách hàng tồn tại trong hệ thống
 SELECT 
@@ -35,22 +37,21 @@ FROM orders
 INNER JOIN customers 
     ON orders.customer_id = customers.customer_id;
 ```
-*(Giải thích: Chỉ những `order` nào có `customer_id` hợp lệ nằm trong bảng `customers` mới được hiển thị).*
 
-### Ví dụ 2: LEFT JOIN (Giữ lại dữ liệu bảng gốc)
+### 3.2. Ứng dụng sư phạm (Pedagogical Application)
+*Tình huống: LEFT JOIN (Giữ lại dữ liệu bảng gốc) để kiểm tra tình trạng nộp bài.*
+- **Cách giải quyết:** Giáo viên cần xuất danh sách toàn bộ học sinh trong lớp, xem ai đã nộp bài tập và nộp khi nào. Nếu dùng `INNER JOIN`, các em chưa nộp sẽ bị "biến mất" khỏi danh sách. Giáo viên bắt buộc phải dùng `LEFT JOIN` lấy gốc từ `danh_sach_lop`. Em nào chưa nộp bài sẽ hiện `NULL` ở cột ngày nộp.
 ```sql
--- Lấy toàn bộ danh sách khách hàng, kèm theo đơn hàng của họ (nếu có)
--- Những khách hàng chưa từng mua hàng sẽ hiện NULL ở phần order_id
+-- Lấy toàn bộ học sinh, kèm ngày nộp bài (nếu có)
 SELECT 
-    c.name, 
-    o.order_id, 
-    o.amount
-FROM customers c
-LEFT JOIN orders o 
-    ON c.customer_id = o.customer_id;
+    hs.ten_hoc_sinh, 
+    hs.ma_hoc_sinh,
+    bt.ngay_nop_bai
+FROM danh_sach_lop hs
+LEFT JOIN bai_tap_nop bt 
+    ON hs.ma_hoc_sinh = bt.ma_hoc_sinh;
 ```
-*(Giải thích: Sử dụng alias `c` và `o` cho tên bảng để viết code ngắn gọn. Khách hàng không có `order` vẫn xuất hiện trên kết quả).*
-📖 Nguồn: `TOOL_SQL_Getting_Started.md` — [Page 110-111]
+ Nguồn: [[SOURCE_TOOL_SQL_Getting_Started]] (Xác nhận Rule 14 từ: `TOOL_SQL_Getting_Started`) — [Page 110-111]
 
 ## 4. Gotchas / Pitfalls (Những lỗi thường gặp)
 - **Missing JOIN condition (Lỗi Cartesian Product / Cross Join)**: Nếu bạn dùng `JOIN` nhưng quên mệnh đề `ON` hoặc nối nhiều bảng mà thiếu mệnh đề `WHERE` nối, cơ sở dữ liệu sẽ nhân chéo các dòng lại với nhau (vd bảng 100 dòng x bảng 100 dòng = 10,000 dòng). Điều này gây treo máy hoặc trả về dữ liệu rác.

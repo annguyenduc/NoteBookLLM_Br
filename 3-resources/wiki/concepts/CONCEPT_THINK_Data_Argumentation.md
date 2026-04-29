@@ -1,4 +1,4 @@
-﻿---
+---
 file_id: "WIKI_THINK_DATA_ARGUMENTATION"
 title: "Lập luận bằng Dữ liệu (Data Argumentation)"
 category: "Wiki Page"
@@ -10,9 +10,9 @@ created: "2026-04-28"
 last_updated: "2026-04-28"
 ---
 
-# 📌 Lập luận bằng Dữ liệu (Data Argumentation)
+# Lập luận bằng Dữ liệu (Data Argumentation)
 
-![Minh họa Lập luận Dữ liệu](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/WIKI_IMG_THINK_Data_Argumentation.png)
+![Minh họa Lập luận Dữ liệu](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/THINK_Data_Argumentation.png)
 
 ## 1. Sơ đồ cấu trúc (Visual Guide)
 
@@ -38,7 +38,7 @@ graph TD
 
 ---
 
-## 4. 💡 Ví dụ đối chiếu (Mandatory)
+## 4.  Ví dụ đối chiếu (Rule 17: Double Examples)
 
 ### 4.1. Ví dụ từ sách (Original)
 **Tình huống**: Xác định "Người đọc gắn bó" (Engaged Reader) cho một tờ báo online (Trang 21).
@@ -60,7 +60,7 @@ graph TD
 -   **Findings**: Rất nhiều dự án dữ liệu thất bại vì chỉ tập trung vào Fact mà quên mất Definition và Policy.
 -   **Futures**: Dạy học sinh không chỉ làm biểu đồ, mà phải biết viết câu kết luận (Claim) và đưa ra bằng chứng (Evidence) hỗ trợ.
 
-## 📖 Nguồn
+## Nguồn
 -   [[SOURCE_THINK_Thinking_with_Data]] — Trang 31-56.
 
 ---

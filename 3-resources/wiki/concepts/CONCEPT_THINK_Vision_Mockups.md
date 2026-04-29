@@ -10,9 +10,9 @@ created: "2026-04-29"
 last_updated: "2026-04-29"
 ---
 
-# 📌 Tầm nhìn và Phác thảo (Vision & Mockups)
+# Tầm nhìn và Phác thảo (Vision & Mockups)
 
-![Minh họa Vision Mockup](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/WIKI_IMG_THINK_Vision_Mockup.png)
+![Minh họa Vision Mockup](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/THINK_Vision_Mockup.png)
 
 ## 1. Sơ đồ cấu trúc (Visual Guide)
 
@@ -41,7 +41,7 @@ Trong khung CoNVO, **Vision** là giai đoạn quan trọng nhất để thống
 
 ---
 
-## 4. 💡 Ví dụ đối chiếu (Mandatory)
+## 4.  Ví dụ đối chiếu (Rule 17: Double Examples)
 
 ### 4.1. Ví dụ từ sách (Original)
 **Tình huống**: Xây dựng hệ thống gợi ý bán hàng.
@@ -61,7 +61,7 @@ Trong khung CoNVO, **Vision** là giai đoạn quan trọng nhất để thống
 -   **Findings**: Vision càng cụ thể, việc chọn thuật toán sau này càng dễ dàng.
 -   **Futures**: Yêu cầu học sinh luôn nộp bản phác thảo tay (Sketch) trước khi bắt đầu lập trình app hoặc dashboard.
 
-## 📖 Nguồn
+## Nguồn
 -   [[SOURCE_THINK_Thinking_with_Data]] — Chương 2: The CoNVO Framework.
 
 ---

@@ -10,7 +10,7 @@ created: "2026-04-29"
 last_updated: "2026-04-29"
 ---
 
-# 📌 Hồi quy Logistic (Phân loại bằng xác suất)
+# Hồi quy Logistic (Phân loại bằng xác suất)
 
 ## 1. Sơ đồ trực quan (Visual Guide)
 
@@ -33,7 +33,7 @@ Dù tên có chữ "Hồi quy" (Regression), **Hồi quy Logistic** thực chấ
 
 ---
 
-## 4. 💡 Ví dụ đối chiếu (Mandatory)
+## 4.  Ví dụ đối chiếu (Rule 17: Double Examples)
 
 ### 4.1. Ví dụ từ sách (Original)
 **Tình huống**: Khách hàng có đồng ý vay tiền không?
@@ -53,7 +53,7 @@ Dù tên có chữ "Hồi quy" (Regression), **Hồi quy Logistic** thực chấ
 -   **Findings**: Ranh giới quyết định (Decision Boundary) có thể thay đổi tùy theo mức độ rủi ro mà chúng ta chấp nhận.
 -   **Futures**: Sử dụng Logistic Regression làm bước đầu tiên cho mọi bài toán phân loại nhị phân (Binary Classification).
 
-## 📖 Nguồn
+## Nguồn
 -   [[SOURCE_THINK_Data_Science_for_Business]] — Chapter 4: Fitting a Model to Data.
 
 ---
