@@ -42,7 +42,7 @@ last_updated: "YYYY-MM-DD"
 Mỗi khi nạp (Ingest) một nguồn tài liệu mới, Agent phải đảm bảo tạo ra/cập nhật khoảng 10-15 trang Wiki theo cấu trúc:
 
 1.  **Trang Tóm tắt (Summary - 1 trang)**: `WIKI_SOURCE_[Tên_Sách]`. Tóm tắt Key Takeaways, cấu trúc sách và ghi log nạp.
-2.  **Trang Chỉ mục (Index - 1-2 trang)**: Cập nhật `WIKI_INDEX.md` và các trang Master Topic (ví dụ: `THINK_Analytical_Thinking.md`).
+2.  **Trang Chỉ mục (Index - 1-2 trang)**: Cập nhật `index.md` và các trang Master Topic (ví dụ: `THINK_Analytical_Thinking.md`).
 3.  **Trang Thực thể (Entity - 2-3 trang)**: Các trang về công cụ hoặc hệ thống lớn (ví dụ: `WIKI_ENTITY_SQL`, `WIKI_ENTITY_Python`).
 4.  **Trang Khái niệm (Concept - 5-8 trang)**: Các trang Atomic về thuật ngữ, kỹ thuật cụ thể (ví dụ: `WIKI_THINK_Entropy`).
 

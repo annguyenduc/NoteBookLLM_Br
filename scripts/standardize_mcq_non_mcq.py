@@ -1,4 +1,4 @@
-import os
+﻿import os
 import re
 
 WIKI_DIR = os.path.join("3-resources", "wiki")
@@ -16,7 +16,7 @@ def standardize_item_bank():
         
         # Nhận diện prefix cũ
         if ("QUESTION_" in filename) or ("H5P_" in filename) or ("MCQ_" in filename) or ("NON_MCQ_" in filename):
-            if filename == "WIKI_INDEX.md" or filename.startswith("WIKI_"):
+            if filename == "index.md" or filename.startswith("WIKI_"):
                 continue
                 
             filepath = os.path.join(WIKI_DIR, filename)
@@ -69,3 +69,4 @@ def standardize_item_bank():
 
 if __name__ == "__main__":
     standardize_item_bank()
+

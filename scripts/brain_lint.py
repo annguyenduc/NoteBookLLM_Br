@@ -12,7 +12,7 @@ WIKI_DIR = Path(r"d:\NoteBookLLM_Br\3-resources\wiki")
 DISTILLED_DIR = Path(r"d:\NoteBookLLM_Br\3-resources\wiki\synthesis")
 
 def get_all_target_files():
-    files = [f for f in WIKI_DIR.rglob("*.md") if f.stem not in ['log', 'index', 'WIKI_INDEX', 'overview']]
+    files = [f for f in WIKI_DIR.rglob("*.md") if f.stem not in ['log', 'index', 'index', 'overview']]
     return {f.stem: f for f in files}
 
 def get_all_content_files():
@@ -29,7 +29,7 @@ def lint():
     link_pattern = re.compile(r'\[\[([^\]|]+)(?:\|[^\]]*)?]]')
     
     for file_path in all_content_files:
-        if file_path.stem in ['log', 'index', 'WIKI_INDEX', 'overview']: continue
+        if file_path.stem in ['log', 'index', 'index', 'overview']: continue
 
         try:
             content = file_path.read_text(encoding='utf-8')
@@ -61,6 +61,7 @@ def lint():
 
 if __name__ == "__main__":
     lint()
+
 
 
 

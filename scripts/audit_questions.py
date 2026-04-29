@@ -1,4 +1,4 @@
-import os
+﻿import os
 import re
 from collections import defaultdict
 
@@ -10,7 +10,7 @@ def main():
     
     for filename in os.listdir(WIKI_DIR):
         if ("MCQ_" in filename) or ("NON_MCQ_" in filename):
-            if filename == "WIKI_INDEX.md" or filename.startswith("WIKI_"):
+            if filename == "index.md" or filename.startswith("WIKI_"):
                 continue
                 
             match = re.search(r'_(De[X\d]+)_(Q\d+)(?:_v\d+)?\.md$', filename)
@@ -72,3 +72,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

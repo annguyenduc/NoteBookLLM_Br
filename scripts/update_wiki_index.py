@@ -133,11 +133,12 @@ def main():
         f.write("\n")
             
     total = len(concept_pages) + len(atom_pages) + len(distilled_pages)
-    print(f"Successfully generated WIKI_INDEX.md at {INDEX_FILE}")
+    print(f"Successfully generated index.md at {INDEX_FILE}")
     print(f"Concept pages: {len(concept_pages)} | Distilled: {len(distilled_pages)} | Atoms: {len(atom_pages)} | Total: {total}")
 
 if __name__ == '__main__':
     main()
+
 
 
 

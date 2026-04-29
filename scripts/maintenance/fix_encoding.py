@@ -1,4 +1,4 @@
-import os
+﻿import os
 
 def fix_mojibake(file_path):
     try:
@@ -40,9 +40,10 @@ def fix_mojibake(file_path):
             return False
 
 if __name__ == "__main__":
-    file_path = r"d:\NoteBookLLM_Br\brain\WIKI_INDEX.md"
+    file_path = r"d:\NoteBookLLM_Br\brain\index.md"
     if fix_mojibake(file_path):
-        print("Successfully fixed encoding for WIKI_INDEX.md")
+        print("Successfully fixed encoding for index.md")
     else:
         # Emergency backup: If fix failed, I'll try to regenerate it or use a different approach
         print("Failed to fix encoding with cp1252.")
+

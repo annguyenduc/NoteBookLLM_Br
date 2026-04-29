@@ -1,4 +1,4 @@
-import os
+﻿import os
 import re
 
 def neutralize_atom_links_in_index(file_path):
@@ -30,8 +30,9 @@ def neutralize_atom_links_in_index(file_path):
         return False
 
 if __name__ == "__main__":
-    index_path = r"d:\NoteBookLLM_Br\brain\WIKI_INDEX.md"
+    index_path = r"d:\NoteBookLLM_Br\brain\index.md"
     if neutralize_atom_links_in_index(index_path):
-        print("Successfully neutralized atom links in WIKI_INDEX.md")
+        print("Successfully neutralized atom links in index.md")
     else:
         print("Failed to neutralize links.")
+

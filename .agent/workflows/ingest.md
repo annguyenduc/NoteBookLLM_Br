@@ -18,40 +18,38 @@ Trước khi chạy `/ingest`, kiểm tra:
 
 ## ⚙️ Các bước thực hiện (Flow cố định)
 
-### Bước 1 — @scout: Đọc và Thảo luận
+### Bước 1 (Analysis) — @scout: Đọc và Phân tích cấu trúc (Structured Analysis)
 - Đọc toàn bộ file raw mới.
-- Trình bày cho User **3-5 key takeaways** quan trọng nhất.
-- Xác nhận phạm vi khai thác và những gì **KHÔNG** khai thác (negative scope).
-- **Dừng** và đợi User xác nhận trước khi tiếp tục.
+- Tạo file phân tích: `1-projects/[Project_Name]/Analysis_[PREFIX].md` bao gồm:
+  - **Tóm tắt cốt lõi**: 3-5 key takeaways quan trọng nhất.
+  - **Nhận diện thực thể & Khái niệm**: Liệt kê các key entities, concepts, arguments.
+  - **Kết nối (Connections)**: Tìm điểm chung với nội dung Wiki hiện có.
+  - **Mâu thuẫn (Contradictions & Tensions)**: Chỉ ra sự khác biệt/xung đột với kiến thức đã có.
+  - **Gợi ý cấu trúc Wiki (Recommendations)**: Đề xuất cây thư mục và cấu trúc bài viết mới.
+  - **Câu hỏi đào sâu (Deep Research Queries)**: Đề xuất các từ khóa/câu hỏi để bổ sung chỗ hổng kiến thức.
+- **Dừng** và đợi User xem xét bản phân tích (Analysis) trước khi tiếp tục.
 
-### Bước 2 — @scout: Tạo Process file
-- Tạo `3-resources/process/[PREFIX]_Deep_Mining.md` theo chuẩn `PROCESS_TEMPLATE.md`.
-- Điền đầy đủ **Mining Stats table** (tổng concept, phạm vi, trạng thái).
-- **MỚI**: Liệt kê các Master Files (`3-resources/distilled/`) dự kiến sẽ được bồi đắp.
+### Bước 2 (Generation) — @engineer: Khởi tạo & Bồi đắp Wiki (Wiki Generation)
+Dựa trên bản phân tích của `@scout`, `@engineer` tiến hành sinh file:
+1. **Tạo trang Source**: Tạo `3-resources/wiki/sources/SOURCE_[PREFIX].md` (chứa source summary, frontmatter type/title/sources).
+2. **Tạo/Cập nhật trang Khái niệm & Thực thể**: 
+   - Khởi tạo các trang trong `wiki/concepts/` và `wiki/entities/` theo chuẩn `WIKI_TEMPLATE.md`.
+   - Đảm bảo có Cross-references (liên kết chéo) giữa các trang.
+3. **Bồi đắp Master (Direct Compounding)**: Cập nhật trực tiếp kiến thức mới vào các Master pages trong `3-resources/wiki/synthesis/`.
+4. **Review Items**: Trình bày danh sách các điểm cần User/con người đánh giá lại (human judgment).
 
-### Bước 3 — @engineer: Tạo/Cập nhật Atomic Wiki pages
-Với mỗi concept chính được @scout xác định:
-1. Kiểm tra CONCEPT PAGES trong `3-resources/WIKI_INDEX.md` xem trang đã tồn tại chưa.
-2. **Nếu đã có** → Cập nhật (update) trang hiện tại trong `3-resources/wiki/`, ghi rõ nguồn mới.
-3. **Nếu chưa có** → Tạo trang mới theo `3-resources/wiki/WIKI_TEMPLATE.md`.
-
-### Bước 4 — @engineer: Direct Compounding (Bồi đắp Master)
-*Đây là bước quan trọng nhất của llm-wiki standard:*
-- Dựa trên các concept vừa trích xuất, thực hiện cập nhật ngay vào các tệp Master tương ứng trong `3-resources/distilled/`.
-- **Yêu cầu**: Nén tri thức, loại bỏ trùng lặp và tạo liên kết đa chiều giữa các Master pages.
-
-### Bước 5 — @librarian: Cập nhật Index
+### Bước 3 — @librarian: Cập nhật Index & Tổng hợp
 ```powershell
 python scripts/update_wiki_index.py
 ```
-Chạy script sau khi đã bồi đắp xong cả Wiki và Master.
+Cập nhật `3-resources/wiki/index.md` và `overview.md` để phản ánh các trang mới.
 
-### Bước 6 — @pm: Ghi log
-Append vào `3-resources/log.md`:
+### Bước 4 — @pm: Ghi log
+Append vào `3-resources/wiki/log.md`:
 ```
 ## [YYYY-MM-DD HH:MM] ingest | @pm | [Tên file raw]
 - Atomic Files: [danh sách N file wiki]
-- Master Compounded: [danh sách M file distilled]
+- Master Compounded: [danh sách M file synthesis]
 - Số concept: [X]
 ```
 
@@ -68,6 +66,6 @@ Append vào `3-resources/log.md`:
 
 ## 🔗 Liên kết hệ thống
 
-- Template quy trình: `3-resources/process/PROCESS_TEMPLATE.md`
-- Template Wiki: `3-resources/wiki/WIKI_TEMPLATE.md`
+- Template phân tích: `3-resources/wiki/sources/` (Sử dụng làm đầu vào)
+- Template Wiki: Không có thư mục process, file phân tích lưu ở `1-projects/`.
 - Kiểm tra sức khỏe sau ingest: `/lint`
