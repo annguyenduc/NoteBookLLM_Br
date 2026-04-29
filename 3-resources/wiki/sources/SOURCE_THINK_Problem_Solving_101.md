@@ -21,16 +21,16 @@ last_updated: "2026-04-29"
 Nguồn này đã bồi đắp cho **11 trang Wiki**:
 
 1.  **Chỉ mục Master**: [[THINK_Analytical_Thinking]]
-2.  **Quy trình**: [[THINK_Problem_Solving_Process]]
-3.  **Công cụ Phân rã**: [[THINK_Logic_Tree]]
-4.  **Công cụ Gốc rễ**: [[THINK_Root_Cause_Analysis]]
-5.  **Kỹ thuật Đào sâu**: [[THINK_5_Whys]]
-6.  **Công cụ Ra quyết định**: [[THINK_Yes_No_Tree]]
-7.  **Công cụ Lập luận**: [[THINK_Hypothesis_Pyramid]]
-8.  **Công cụ Ưu tiên**: [[THINK_Prioritization_Matrix]]
-9.  **Công cụ So sánh**: [[THINK_Pros_Cons_List]]
-10. **Công cụ Thực thi**: [[THINK_Action_Plan_Execution]]
-11. **Kỹ thuật Kiểm chứng**: [[THINK_Hypothesis_Testing]]
+2.  **Quy trình**: [[CONCEPT_THINK_Problem_Solving_Process]]
+3.  **Công cụ Phân rã**: [[CONCEPT_THINK_Logic_Tree]]
+4.  **Công cụ Gốc rễ**: [[CONCEPT_THINK_Root_Cause_Analysis]]
+5.  **Kỹ thuật Đào sâu**: [[CONCEPT_THINK_5_Whys]]
+6.  **Công cụ Ra quyết định**: [[CONCEPT_THINK_Yes_No_Tree]]
+7.  **Công cụ Lập luận**: [[CONCEPT_THINK_Hypothesis_Pyramid]]
+8.  **Công cụ Ưu tiên**: [[CONCEPT_THINK_Prioritization_Matrix]]
+9.  **Công cụ So sánh**: [[CONCEPT_THINK_Pros_Cons_List]]
+10. **Công cụ Thực thi**: [[CONCEPT_THINK_Action_Plan_Execution]]
+11. **Kỹ thuật Kiểm chứng**: [[CONCEPT_THINK_Hypothesis_Testing]]
 
 ## 3. Key Takeaways (Thông điệp cốt lõi)
 -   **Đừng nhảy ngay vào giải pháp**: Hãy dành 70% thời gian để hiểu vấn đề và tìm nguyên nhân gốc rễ.

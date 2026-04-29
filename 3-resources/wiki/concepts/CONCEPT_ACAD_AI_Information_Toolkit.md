@@ -25,7 +25,7 @@ last_updated: "2026-04-28"
 Hệ thống PARA và thư mục `3-resources/raw/` chính là hiện thực hóa của Toolkit này, nơi lưu trữ các tài liệu sơ cấp để Agent xử lý.
 
 ## 🔗 Liên kết tư duy
-*   [[ACAD_AI_Learning_Habits]]
+*   [[CONCEPT_ACAD_AI_Learning_Habits]]
 *   [[ACAD_AI_Responsible_AI]]
 
 ## 📖 Nguồn

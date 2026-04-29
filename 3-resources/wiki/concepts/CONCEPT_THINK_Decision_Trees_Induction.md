@@ -28,7 +28,7 @@ graph TD
 
 ## 3. Quy luật bồi đắp (Structural Fidelity - Chương 3)
 
-1.  **Phân chia (Splitting)**: Tại mỗi bước, thuật toán chọn thuộc tính nào mang lại nhiều thông tin nhất (xem [[THINK_Entropy_Information_Gain]]) để chia đôi dữ liệu.
+1.  **Phân chia (Splitting)**: Tại mỗi bước, thuật toán chọn thuộc tính nào mang lại nhiều thông tin nhất (xem [[CONCEPT_THINK_Entropy_Information_Gain]]) để chia đôi dữ liệu.
 2.  **Dừng (Stopping)**: Quy trình dừng lại khi các nhóm đã đủ "thuần khiết" hoặc đạt tới giới hạn độ sâu (để tránh Overfitting).
 3.  **Trực quan**: Kết quả là một tập hợp các quy tắc `IF-THEN` cực kỳ dễ hiểu.
 

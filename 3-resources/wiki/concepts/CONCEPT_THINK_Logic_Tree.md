@@ -61,8 +61,8 @@ graph TD
 => *Ứng dụng*: Giúp học sinh quản lý dự án tốt hơn và biết chính xác mình đang thiếu sót ở phần nào.
 
 ## 5. 🔗 Liên kết tư duy
--   [[THINK_Problem_Solving_Process]]
--   [[THINK_Root_Cause_Analysis]]
+-   [[CONCEPT_THINK_Problem_Solving_Process]]
+-   [[CONCEPT_THINK_Root_Cause_Analysis]]
 
 ## 6. 4F — Phản tư sư phạm
 -   **Facts**: Công cụ này biến một mớ bòng bong thành một sơ đồ có trật tự.

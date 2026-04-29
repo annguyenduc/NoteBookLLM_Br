@@ -18,14 +18,14 @@ last_updated: "2026-04-29"
 ## 2. Các thành phần chính (Entity Structure)
 Theo các nguồn tài liệu hiện có, Khoa học Dữ liệu trong kinh doanh bao gồm:
 
--   **Khai thác dữ liệu (Data Mining)**: Quy trình tìm kiếm các mẫu (patterns) trong dữ liệu. Xem: [[THINK_Data_Mining_Process_CRISP]].
--   **Học máy (Machine Learning)**: Sử dụng các mô hình dự báo. Xem: [[THINK_Overfitting_Avoidance]].
--   **Tư duy Phân tích (Analytic Thinking)**: Khả năng đặt câu hỏi và lập luận. Xem: [[THINK_CoNVO_Framework]].
+-   **Khai thác dữ liệu (Data Mining)**: Quy trình tìm kiếm các mẫu (patterns) trong dữ liệu. Xem: [[CONCEPT_THINK_Data_Mining_Process_CRISP]].
+-   **Học máy (Machine Learning)**: Sử dụng các mô hình dự báo. Xem: [[CONCEPT_THINK_Overfitting_Avoidance]].
+-   **Tư duy Phân tích (Analytic Thinking)**: Khả năng đặt câu hỏi và lập luận. Xem: [[CONCEPT_THINK_CoNVO_Framework]].
 
 ## 3. Các thực thể liên quan (Cross-References)
 -   **Công cụ**: [[ENTITY_SQL]], [[ENTITY_Python]] (Sắp tạo).
--   **Quy trình**: [[THINK_Data_Mining_Process_CRISP]].
--   **Đạo đức**: [[THINK_Data_Ethics_Scoping]].
+-   **Quy trình**: [[CONCEPT_THINK_Data_Mining_Process_CRISP]].
+-   **Đạo đức**: [[CONCEPT_THINK_Data_Ethics_Scoping]].
 
 ## 4. Key Takeaways cho Giáo dục STEAM
 -   Khoa học dữ liệu không chỉ là lập trình, mà là giải quyết vấn đề.

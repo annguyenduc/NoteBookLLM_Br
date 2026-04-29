@@ -24,7 +24,7 @@ last_updated: "2026-04-28"
 Nếu một AI có cutoff vào tháng 1/2024, nó sẽ không biết về các sự kiện chính trị hoặc thảm họa thiên nhiên xảy ra vào tháng 3/2024 trừ khi được tích hợp công cụ tìm kiếm web.
 
 ## 🔗 Liên kết tư duy
-*   [[ACAD_AI_Model_Drift]]
+*   [[CONCEPT_ACAD_AI_Model_Drift]]
 *   [[ACAD_AI_Responsible_AI]]
 
 ## 📖 Nguồn

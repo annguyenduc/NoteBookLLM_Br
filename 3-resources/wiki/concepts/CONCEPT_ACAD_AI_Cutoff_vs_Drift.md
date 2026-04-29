@@ -24,12 +24,12 @@ Mặc dù là hai khái niệm khác nhau, **Knowledge Cutoff** (Giới hạn tr
 
 ## 💡 Insight bồi đắp
 *   **Điểm gãy tri thức**: Khi thời gian trôi càng xa ngày Cutoff, tốc độ Model Drift sẽ càng tăng nhanh đối với các chủ đề biến động (tin tức, công nghệ).
-*   **Giải pháp nén**: Để chống lại Drift, ta không thể thay đổi Cutoff của mô hình, nhưng có thể dùng [[ACAD_AI_Information_Toolkit]] để nạp dữ liệu mới vào context, giúp AI "thông minh" hơn ngày huấn luyện của nó.
+*   **Giải pháp nén**: Để chống lại Drift, ta không thể thay đổi Cutoff của mô hình, nhưng có thể dùng [[CONCEPT_ACAD_AI_Information_Toolkit]] để nạp dữ liệu mới vào context, giúp AI "thông minh" hơn ngày huấn luyện của nó.
 
 ## 🔗 Liên kết tư duy
-*   [[ACAD_AI_Knowledge_Cutoff]]
-*   [[ACAD_AI_Model_Drift]]
-*   [[ACAD_AI_Information_Toolkit]]
+*   [[CONCEPT_ACAD_AI_Knowledge_Cutoff]]
+*   [[CONCEPT_ACAD_AI_Model_Drift]]
+*   [[CONCEPT_ACAD_AI_Information_Toolkit]]
 
 ---
 *Nội dung được tự động File-Back từ phiên thảo luận giữa @pm và Thầy AN.*

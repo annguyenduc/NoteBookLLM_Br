@@ -20,5 +20,5 @@ Bảng so sánh sau đây phân tích sự khác biệt giữa kỹ thuật **5 
 > **Quy tắc thực chiến**: Dùng RCA để tìm "rừng" nguyên nhân, sau đó dùng 5 Whys để đào sâu vào từng "cái cây" cụ thể.
 
 ## Liên kết liên quan
-- [[THINK_5_Whys]]
-- [[THINK_Root_Cause_Analysis]]
+- [[CONCEPT_THINK_5_Whys]]
+- [[CONCEPT_THINK_Root_Cause_Analysis]]

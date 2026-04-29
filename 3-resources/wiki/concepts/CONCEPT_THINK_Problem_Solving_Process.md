@@ -66,8 +66,8 @@ Giải quyết vấn đề không phải là một kỹ năng dành riêng cho m
 -   **(B4) Thực thi và tinh chỉnh**: Chạy thử trên sa bàn, ghi nhận kết quả và điều chỉnh thông số bù trừ cho đến khi robot đi thẳng.
 
 ## 4. 🔗 Liên kết tư duy
--   [[THINK_Logic_Tree]]
--   [[THINK_Root_Cause_Analysis]]
+-   [[CONCEPT_THINK_Logic_Tree]]
+-   [[CONCEPT_THINK_Root_Cause_Analysis]]
 
 ## 5. 4F — Phản tư sư phạm
 -   **Facts**: Quy trình 4 bước giúp đơn giản hóa các vấn đề phức tạp.

@@ -16,98 +16,98 @@
   > **SQL (Structured Query Language)** là ngôn ngữ tiêu chuẩn dùng để giao tiếp, quản lý và thao tác với các hệ quản trị cơ...
 - [[ACAD_AI_Responsible_AI]] | **Hướng dẫn sử dụng AI có trách nhiệm (Responsible AI Master)** **[VERIFIED]**
   > Để sử dụng AI một cách công bằng, chính xác và đạo đức, người dùng và nhà phát triển cần nắm vững 3 giới hạn cốt lõi:
-- [[ACAD_AI_Cutoff_vs_Drift]] | **Mối liên hệ giữa Knowledge Cutoff và Model Drift** **[VERIFIED]**
+- [[CONCEPT_ACAD_AI_Cutoff_vs_Drift]] | **Mối liên hệ giữa Knowledge Cutoff và Model Drift** **[VERIFIED]**
   > Mặc dù là hai khái niệm khác nhau, **Knowledge Cutoff** (Giới hạn tri thức) và **Model Drift** (Sự trôi dạt mô hình) có ...
 - [[overview]] | **overview.md**
-- [[THINK_Root_Cause_Analysis]] | **Phân tích Nguyên nhân Gốc rễ (Root Cause Analysis)** **[DRAFT]**
+- [[CONCEPT_THINK_Root_Cause_Analysis]] | **Phân tích Nguyên nhân Gốc rễ (Root Cause Analysis)** **[DRAFT]**
   > ![Minh họa RCA](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/WIKI_IMG_THINK_Root_Cause_Analysis.png)
 - [[log]] | **PROJECT LOG**
   > - Lý do: Di trú tri thức từ Docx sang Markdown Atomic.
-- [[THINK_Audience_Framing]] | **THINK_Audience_Framing.md**
+- [[CONCEPT_THINK_Audience_Framing]] | **THINK_Audience_Framing.md**
   > Dữ liệu chỉ là các quan sát thô. Để dữ liệu trở thành kiến thức và dẫn đến hành động, nó phải được đóng gói vào một **lậ...
-- [[THINK_Correlation_vs_Causation]] | **THINK_Correlation_vs_Causation.md**
+- [[CONCEPT_THINK_Correlation_vs_Causation]] | **THINK_Correlation_vs_Causation.md**
   > Trong phân tích dữ liệu, mục tiêu của suy luận nhân quả (Causal Analysis) không chỉ là tìm ra sự liên quan (correlation)...
-- [[THINK_Data_Story_Structure]] | **THINK_Data_Story_Structure.md**
+- [[CONCEPT_THINK_Data_Story_Structure]] | **THINK_Data_Story_Structure.md**
   > Một dự án khoa học dữ liệu không chỉ là quá trình chạy các thuật toán, mà cốt lõi là việc **kể một câu chuyện** thuyết p...
-- [[THINK_Exploration_vs_Confirmation]] | **THINK_Exploration_vs_Confirmation.md**
+- [[CONCEPT_THINK_Exploration_vs_Confirmation]] | **THINK_Exploration_vs_Confirmation.md**
   > Khi làm việc với dữ liệu, luôn tồn tại một sự giằng co tự nhiên (natural tension) giữa hai thái cực:
-- [[THINK_Patterns_of_Reasoning]] | **THINK_Patterns_of_Reasoning.md**
+- [[CONCEPT_THINK_Patterns_of_Reasoning]] | **THINK_Patterns_of_Reasoning.md**
   > Trong phân tích dữ liệu, việc đưa ra kết luận đòi hỏi những mô hình lập luận vững chắc để dẫn dắt khán giả từ các niềm t...
 - [[ENTITY_Data_Science]] | **Thực thể: Khoa học Dữ liệu (Data Science)** **[VERIFIED]**
   > **Khoa học Dữ liệu** là một lĩnh vực liên ngành sử dụng các phương pháp, quy trình, thuật toán và hệ thống khoa học để t...
 - [[SOURCE_THINK_Thinking_with_Data]] | **Tóm tắt Sách: Thinking with Data (Max Shron)** **[VERIFIED]**
   > -   **Tác giả**: Max Shron.
-- [[THINK_Data_Evidence_Types]] | **📌 4 Loại Bằng chứng trong Lập luận Dữ liệu**
+- [[CONCEPT_THINK_Data_Evidence_Types]] | **📌 4 Loại Bằng chứng trong Lập luận Dữ liệu**
   > ![Minh họa 4 Loại Bằng chứng](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/WIKI_IMG_THINK_Evidence_Blocks.png)
-- [[THINK_Data_Mining_Tasks]] | **📌 9 Nhiệm vụ Khai thác Dữ liệu Phổ biến**
+- [[CONCEPT_THINK_Data_Mining_Tasks]] | **📌 9 Nhiệm vụ Khai thác Dữ liệu Phổ biến**
   > ![Minh họa 9 Nhiệm vụ](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/WIKI_IMG_THINK_Data_Mining_Tasks.png)
-- [[THINK_Logic_Tree]] | **📌 Cây Logic (Logic Tree)**
+- [[CONCEPT_THINK_Logic_Tree]] | **📌 Cây Logic (Logic Tree)**
   > ![Minh họa Cây Logic](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/WIKI_IMG_THINK_Logic_Tree.png)
-- [[THINK_Decision_Trees_Induction]] | **📌 Cây Quyết định (Quy trình Phân rã dữ liệu)**
+- [[CONCEPT_THINK_Decision_Trees_Induction]] | **📌 Cây Quyết định (Quy trình Phân rã dữ liệu)**
   > Root[GỐC: Tất cả dữ liệu] --> Node1{Câu hỏi 1?}
-- [[THINK_Yes_No_Tree]] | **📌 Cây Yes/No (Yes/No Tree)**
+- [[CONCEPT_THINK_Yes_No_Tree]] | **📌 Cây Yes/No (Yes/No Tree)**
   > ![Minh họa Cây Yes/No](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/WIKI_IMG_THINK_Yes_No_Tree.png)
-- [[THINK_Pros_Cons_List]] | **📌 Danh sách Ưu và Nhược điểm (Pros & Cons List)**
+- [[CONCEPT_THINK_Pros_Cons_List]] | **📌 Danh sách Ưu và Nhược điểm (Pros & Cons List)**
   > ![Minh họa Pros & Cons](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/WIKI_IMG_THINK_Pros_Cons_Scale.png)
-- [[THINK_Entropy_Information_Gain]] | **📌 Entropy và Information Gain (Độ lợi thông tin)**
+- [[CONCEPT_THINK_Entropy_Information_Gain]] | **📌 Entropy và Information Gain (Độ lợi thông tin)**
   > Root[TẬP DỮ LIỆU GỐC - Entropy Cao] --> Split{Phân tách theo Thuộc tính}
-- [[THINK_Logistic_Regression_Classifier]] | **📌 Hồi quy Logistic (Phân loại bằng xác suất)**
+- [[CONCEPT_THINK_Logistic_Regression_Classifier]] | **📌 Hồi quy Logistic (Phân loại bằng xác suất)**
   > Input[Dữ liệu đầu vào] --> Func{Hàm Sigmoid}
-- [[THINK_CoNVO_Framework]] | **📌 Khung CoNVO (Context, Need, Vision, Outcome)**
+- [[CONCEPT_THINK_CoNVO_Framework]] | **📌 Khung CoNVO (Context, Need, Vision, Outcome)**
   > ![Minh họa CoNVO](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/WIKI_IMG_THINK_CoNVO_Framework.png)
-- [[THINK_Expected_Value_Framework]] | **📌 Khung Giá trị Kỳ vọng (Expected Value Framework)**
+- [[CONCEPT_THINK_Expected_Value_Framework]] | **📌 Khung Giá trị Kỳ vọng (Expected Value Framework)**
   > Decision[QUYẾT ĐỊNH] --> S1[Kịch bản 1 - Thành công]
-- [[THINK_Hypothesis_Pyramid]] | **📌 Kim tự tháp Giả thuyết (Hypothesis Pyramid)**
+- [[CONCEPT_THINK_Hypothesis_Pyramid]] | **📌 Kim tự tháp Giả thuyết (Hypothesis Pyramid)**
   > ![Minh họa Kim tự tháp Giả thuyết](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/WIKI_IMG_THINK_Hypothesis_Pyramid.p...
-- [[THINK_Hypothesis_Testing]] | **📌 Kiểm chứng Giả thuyết (Hypothesis Testing)**
+- [[CONCEPT_THINK_Hypothesis_Testing]] | **📌 Kiểm chứng Giả thuyết (Hypothesis Testing)**
   > ![Minh họa Kiểm chứng](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/WIKI_IMG_THINK_Hypothesis_Test.png)
-- [[THINK_Action_Plan_Execution]] | **📌 Kế hoạch Hành động và Thực thi (Action Plan)**
+- [[CONCEPT_THINK_Action_Plan_Execution]] | **📌 Kế hoạch Hành động và Thực thi (Action Plan)**
   > ![Minh họa Action Plan](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/WIKI_IMG_THINK_Action_Roadmap.png)
-- [[THINK_5_Whys]] | **📌 Kỹ thuật 5 Whys (5 Tại sao)**
+- [[CONCEPT_THINK_5_Whys]] | **📌 Kỹ thuật 5 Whys (5 Tại sao)**
   > ![Minh họa 5 Whys](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/WIKI_IMG_THINK_5_Whys.png)
-- [[THINK_Data_Argumentation]] | **📌 Lập luận bằng Dữ liệu (Data Argumentation)**
+- [[CONCEPT_THINK_Data_Argumentation]] | **📌 Lập luận bằng Dữ liệu (Data Argumentation)**
   > ![Minh họa Lập luận Dữ liệu](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/WIKI_IMG_THINK_Data_Argumentation.png)
-- [[THINK_Naive_Bayes_Logic]] | **📌 Lập luận Naive Bayes (Xác suất có điều kiện)**
+- [[CONCEPT_THINK_Naive_Bayes_Logic]] | **📌 Lập luận Naive Bayes (Xác suất có điều kiện)**
   > Prior[Xác suất ban đầu - Prior] --> Evidence[Bằng chứng mới - Evidence]
-- [[THINK_Prioritization_Matrix]] | **📌 Ma trận Ưu tiên (Prioritization Matrix)**
+- [[CONCEPT_THINK_Prioritization_Matrix]] | **📌 Ma trận Ưu tiên (Prioritization Matrix)**
   > ![Minh họa Ma trận Ưu tiên](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/WIKI_IMG_THINK_Prioritization_Matrix.png)
-- [[THINK_Clustering_KMeans]] | **📌 Phân cụm K-Means (Dữ liệu không nhãn)**
+- [[CONCEPT_THINK_Clustering_KMeans]] | **📌 Phân cụm K-Means (Dữ liệu không nhãn)**
   > Data[Dữ liệu thô - Chưa có nhóm] --> Step1[Chọn ngẫu nhiên K tâm cụm - Centroids]
-- [[THINK_Ensemble_Methods]] | **📌 Phương pháp Tổ hợp (Ensemble Methods)**
+- [[CONCEPT_THINK_Ensemble_Methods]] | **📌 Phương pháp Tổ hợp (Ensemble Methods)**
   > Data[Dữ liệu gốc] --> M1[Mô hình 1]
-- [[THINK_Data_Mining_Process_CRISP]] | **📌 Quy trình CRISP-DM (Cross-Industry Standard Process for Data Mining)**
+- [[CONCEPT_THINK_Data_Mining_Process_CRISP]] | **📌 Quy trình CRISP-DM (Cross-Industry Standard Process for Data Mining)**
   > ![Minh họa CRISP-DM](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/WIKI_IMG_THINK_CRISP_DM_Process.png)
-- [[THINK_Problem_Solving_Process]] | **📌 Quy trình Giải quyết Vấn đề 4 Bước**
+- [[CONCEPT_THINK_Problem_Solving_Process]] | **📌 Quy trình Giải quyết Vấn đề 4 Bước**
   > ![Minh họa Quy trình 4 bước](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/WIKI_IMG_THINK_Problem_Solving_Process.pn...
-- [[THINK_Overfitting_Avoidance]] | **📌 Quá khớp và Cách phòng tránh (Overfitting Avoidance)**
+- [[CONCEPT_THINK_Overfitting_Avoidance]] | **📌 Quá khớp và Cách phòng tránh (Overfitting Avoidance)**
   > A[Dữ liệu Huấn luyện] --> B{Mô hình}
-- [[THINK_ROC_AUC_Evaluation]] | **📌 ROC Curve và chỉ số AUC**
+- [[CONCEPT_THINK_ROC_AUC_Evaluation]] | **📌 ROC Curve và chỉ số AUC**
   > subgraph "Trục đồ thị ROC"
-- [[THINK_SVM_Linear_Separation]] | **📌 SVM - Máy Vector Hỗ trợ (Ranh giới tối ưu)**
+- [[CONCEPT_THINK_SVM_Linear_Separation]] | **📌 SVM - Máy Vector Hỗ trợ (Ranh giới tối ưu)**
   > A[Nhóm 1] --- B[KHOẢNG CÁCH TRỐNG - MARGIN]
-- [[THINK_TF_IDF_Text_Mining]] | **📌 TF-IDF (Khai thác dữ liệu văn bản)**
+- [[CONCEPT_THINK_TF_IDF_Text_Mining]] | **📌 TF-IDF (Khai thác dữ liệu văn bản)**
   > TF[TF: Tần suất từ trong 1 văn bản] -- Nhân --> IDF[IDF: Độ hiếm của từ trong toàn bộ kho]
-- [[THINK_Vision_Mockups]] | **📌 Tầm nhìn và Phác thảo (Vision & Mockups)**
+- [[CONCEPT_THINK_Vision_Mockups]] | **📌 Tầm nhìn và Phác thảo (Vision & Mockups)**
   > ![Minh họa Vision Mockup](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/WIKI_IMG_THINK_Vision_Mockup.png)
-- [[THINK_Data_Ethics_Scoping]] | **📌 Đạo đức và Quyền riêng tư trong Dữ liệu**
+- [[CONCEPT_THINK_Data_Ethics_Scoping]] | **📌 Đạo đức và Quyền riêng tư trong Dữ liệu**
   > ![Minh họa Đạo đức Dữ liệu](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/WIKI_IMG_THINK_Data_Ethics.png)
-- [[THINK_Similarity_Distance_Metrics]] | **📌 Độ tương đồng và Các phép đo Khoảng cách**
+- [[CONCEPT_THINK_Similarity_Distance_Metrics]] | **📌 Độ tương đồng và Các phép đo Khoảng cách**
   > A[ĐIỂM A] --- B[ĐIỂM B]
-- [[ACAD_AI_Information_Toolkit]] | **📖 Bộ công cụ tri thức AI (AI Information Toolkit)**
+- [[CONCEPT_ACAD_AI_Information_Toolkit]] | **📖 Bộ công cụ tri thức AI (AI Information Toolkit)**
   > **Bộ công cụ tri thức AI (AI Information Toolkit)** là một bộ sưu tập cá nhân các nguồn tin được tuyển chọn kỹ lưỡng, gi...
-- [[ACAD_AI_Human_In_The_Loop]] | **📖 Con người trong vòng lặp (Human-in-the-loop)**
+- [[CONCEPT_ACAD_AI_Human_In_The_Loop]] | **📖 Con người trong vòng lặp (Human-in-the-loop)**
   > **Con người trong vòng lặp (Human-in-the-loop)** là nguyên tắc mà con người luôn giữ vai trò là trọng tài cuối cùng đánh...
-- [[ACAD_AI_Model_Drift]] | **📖 Sự trôi dạt mô hình (Model Drift)**
+- [[CONCEPT_ACAD_AI_Model_Drift]] | **📖 Sự trôi dạt mô hình (Model Drift)**
   > **Sự trôi dạt (Drift)** là sự suy giảm dần dần về độ chính xác và tính phù hợp của đầu ra AI khi thế giới thực thay đổi.
-- [[ACAD_AI_Learning_Habits]] | **📖 Thói quen học tập AI (AI Learning Habits)**
+- [[CONCEPT_ACAD_AI_Learning_Habits]] | **📖 Thói quen học tập AI (AI Learning Habits)**
   > **Thói quen học tập AI** là các phương pháp tiếp cận chủ động và nhất quán để duy trì năng lực trong kỷ nguyên AI, nhấn ...
 - [[SOURCE_THINK_Data_Science_for_Business]] | **📖 Tóm tắt Sách: Data Science for Business**
   > source_raw: "THINK_Data_Science_for_Business.md"
 - [[SOURCE_THINK_Problem_Solving_101]] | **📖 Tóm tắt Sách: Problem Solving 101**
   > source_raw: "THINK_Problem_Solving_101.md"
-- [[ACAD_AI_Knowledge_Cutoff]] | **📖 Điểm dừng tri thức (Knowledge Cutoff)**
+- [[CONCEPT_ACAD_AI_Knowledge_Cutoff]] | **📖 Điểm dừng tri thức (Knowledge Cutoff)**
   > **Điểm dừng tri thức (Knowledge Cutoff)** là giới hạn thời gian mà tại đó một mô hình AI được hoàn tất việc huấn luyện. ...
-- [[ACAD_AI_Data_Bias]] | **📖 Định kiến dữ liệu trong AI (Data Bias)**
+- [[CONCEPT_ACAD_AI_Data_Bias]] | **📖 Định kiến dữ liệu trong AI (Data Bias)**
   > **Định kiến dữ liệu (Data Bias)** xảy ra khi dữ liệu được sử dụng để huấn luyện mô hình AI bị sai lệch, không đầy đủ hoặ...
 - [[index]] | **📚 LLM WIKI INDEX**
   > *Dành cho File-Back Judgment — LLM đọc section này để kiểm tra trùng lặp.*

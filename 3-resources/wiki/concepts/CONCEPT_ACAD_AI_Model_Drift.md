@@ -25,7 +25,7 @@ last_updated: "2026-04-28"
 *   **Chỉ dẫn rõ ràng**: Sử dụng các hướng dẫn cụ thể và tường minh.
 
 ## 🔗 Liên kết tư duy
-*   [[ACAD_AI_Knowledge_Cutoff]]
+*   [[CONCEPT_ACAD_AI_Knowledge_Cutoff]]
 *   [[ACAD_AI_Responsible_AI]]
 
 ## 📖 Nguồn

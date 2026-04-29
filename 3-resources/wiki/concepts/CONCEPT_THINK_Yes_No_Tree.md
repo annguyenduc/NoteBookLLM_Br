@@ -69,8 +69,8 @@ graph TD
     -   *No* -> Sử dụng quang trở (LDR) - giá rẻ nhưng cần code lọc nhiễu.
 
 ## 4. 🔗 Liên kết tư duy
--   [[THINK_Logic_Tree]]
--   [[THINK_Problem_Solving_Process]]
+-   [[CONCEPT_THINK_Logic_Tree]]
+-   [[CONCEPT_THINK_Problem_Solving_Process]]
 
 ## 5. 4F — Phản tư sư phạm
 -   **Facts**: Giúp đơn giản hóa việc ra quyết định phức tạp.

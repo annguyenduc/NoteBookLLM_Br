@@ -4,11 +4,13 @@ Tài liệu này theo dõi tiến độ trích xuất các concept cốt lõi nh
 
 ## 🟢 Nhóm 3: Công cụ Cốt lõi (SQL)
 *Tập trung vào: Select, Joins, Group By, Window Functions, CTEs.*
-- [ ] `ENTITY_SQL.md` (Đã có, cần cập nhật bổ sung nếu thiếu)
-- [ ] `CONCEPT_SQL_Joins.md` (Inner, Left, Right, Full)
-- [ ] `CONCEPT_SQL_Aggregations.md` (GROUP BY, HAVING)
-- [ ] `CONCEPT_SQL_Window_Functions.md` (OVER, PARTITION BY, ROW_NUMBER)
-- [ ] `CONCEPT_SQL_CTEs.md` (WITH clause)
+- [x] `ENTITY_SQL.md` (Cập nhật từ sách Getting Started với SQL)
+- [x] `CONCEPT_SQL_Select_And_Filter.md` (SELECT, WHERE, NULL)
+- [x] `CONCEPT_SQL_Case_Statements.md` (CASE, Pivot Trick)
+- [x] `CONCEPT_SQL_Joins.md` (Inner, Left)
+- [x] `CONCEPT_SQL_Aggregations.md` (GROUP BY, HAVING)
+- [ ] `CONCEPT_SQL_Window_Functions.md` (OVER, PARTITION BY, ROW_NUMBER) *(Chưa có trong sách)*
+- [ ] `CONCEPT_SQL_CTEs.md` (WITH clause) *(Chưa có trong sách)*
 
 ## 🟢 Nhóm 4: Lập trình & Xử lý dữ liệu (Python/Pandas)
 *Tập trung vào: Data structures, Filtering, Missing Data, Merging.*

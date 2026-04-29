@@ -30,5 +30,5 @@ Trong môi trường y tế, để kiểm tra tính nhân quả, việc chọn n
 Trong lớp học STEM/Toán: Học sinh nhận thấy "khi lượng kem bán ra tăng thì số vụ đuối nước cũng tăng" (Correlation). Giáo viên yêu cầu học sinh thiết kế một "Observational Design" để tìm ra biến gây nhiễu (Confounder). Học sinh sẽ nhận ra "Nhiệt độ mùa hè tăng cao" chính là nguyên nhân gây ra cả hai hiện tượng trên. Nhờ đó, học sinh hiểu rằng không thể đưa ra chính sách "Cấm bán kem để giảm đuối nước".
 
 ## 3. Liên kết liên quan
-- `[[THINK_Patterns_of_Reasoning]]`: Các mẫu lập luận bao gồm cả lập luận nhân quả.
-- `[[THINK_Exploration_vs_Confirmation]]`: Quá trình khám phá dữ liệu để tìm ra các biến gây nhiễu tiềm năng.
+- `[[CONCEPT_THINK_Patterns_of_Reasoning]]`: Các mẫu lập luận bao gồm cả lập luận nhân quả.
+- `[[CONCEPT_THINK_Exploration_vs_Confirmation]]`: Quá trình khám phá dữ liệu để tìm ra các biến gây nhiễu tiềm năng.

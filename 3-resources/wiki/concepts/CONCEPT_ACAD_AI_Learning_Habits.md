@@ -24,8 +24,8 @@ last_updated: "2026-04-28"
 Khi một mô hình như Gemini 1.5 Pro ra mắt tính năng Context Window lớn, thay vì chỉ đọc báo, hãy thử nạp toàn bộ repo code vào để Agent phân tích — đó chính là học tập Hands-on.
 
 ## 🔗 Liên kết tư duy
-*   [[ACAD_AI_Information_Toolkit]]
-*   [[ACAD_AI_Model_Drift]]
+*   [[CONCEPT_ACAD_AI_Information_Toolkit]]
+*   [[CONCEPT_ACAD_AI_Model_Drift]]
 
 ## 📖 Nguồn
 *   Nguồn: `coursera-AI-essential-Stay up to date with AI.md` — Section: "Several icons depicting various types of journals, articles, and resources"

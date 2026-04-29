@@ -36,6 +36,6 @@ Khi một Data Scientist trình bày về việc tối ưu hóa chi phí quảng
 - **Policy**: Đề xuất mua thêm 10 kit để giảm tỷ lệ xuống còn 2 em/kit. (Dùng **Cost/Benefit Analysis** để chỉ ra chi phí mua kit nhỏ hơn nhiều so với giá trị kỹ năng mang lại).
 
 ## 5. Liên kết tư duy
-- [[THINK_Audience_Framing]]
-- [[THINK_Data_Story_Structure]]
+- [[CONCEPT_THINK_Audience_Framing]]
+- [[CONCEPT_THINK_Data_Story_Structure]]
 - [[SOURCE_THINK_Thinking_with_Data]]

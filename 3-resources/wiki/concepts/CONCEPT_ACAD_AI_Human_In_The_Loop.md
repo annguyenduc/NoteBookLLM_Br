@@ -25,7 +25,7 @@ last_updated: "2026-04-28"
 Trong việc soạn thảo email tự động, người dùng không bao giờ để Agent gửi đi mà không qua bước review cuối cùng để kiểm tra tông giọng và độ chính xác của thông tin.
 
 ## 🔗 Liên kết tư duy
-*   [[ACAD_AI_Data_Bias]]
+*   [[CONCEPT_ACAD_AI_Data_Bias]]
 *   [[ACAD_AI_Responsible_AI]]
 
 ## 📖 Nguồn

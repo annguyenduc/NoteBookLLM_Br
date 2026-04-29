@@ -65,8 +65,8 @@ graph TD
 -   **Tầng đáy**: Số liệu về lượng nước tiêu thụ khi tưới thủ công, biểu đồ độ ẩm đất đo được qua cảm biến, và phản hồi tích cực từ học sinh khối 6.
 
 ## 4. 🔗 Liên kết tư duy
--   [[THINK_Logic_Tree]]
--   [[THINK_Problem_Solving_Process]]
+-   [[CONCEPT_THINK_Logic_Tree]]
+-   [[CONCEPT_THINK_Problem_Solving_Process]]
 
 ## 5. 4F — Phản tư sư phạm
 -   **Facts**: Cấu trúc này buộc chúng ta phải có dữ liệu (tầng đáy) mới được đưa ra kết luận (đỉnh).

@@ -27,7 +27,7 @@ Một mô hình AI tuyển dụng nếu chỉ được huấn luyện dựa trê
 
 ## 🔗 Liên kết tư duy
 *   [[ACAD_AI_Responsible_AI]]
-*   [[ACAD_AI_Human_In_The_Loop]]
+*   [[CONCEPT_ACAD_AI_Human_In_The_Loop]]
 
 ## 📖 Nguồn
 *   Nguồn: `coursera-AI-essentail-Bias, drift, and knowledge cutoff.md` — Section: "Understanding data bias"

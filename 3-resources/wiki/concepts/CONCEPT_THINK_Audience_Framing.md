@@ -30,5 +30,5 @@ Khi một giáo viên EdTech muốn thuyết phục Hội đồng Trường áp 
 Thay vì nhảy ngay vào trình bày "Dữ liệu cho thấy Minecraft tăng điểm số 20%" (điều hội đồng chưa tin và sẽ hoài nghi), giáo viên bắt đầu từ Prior Beliefs: "Tất cả chúng ta đều đồng ý rằng học sinh tiếp thu Lịch sử tốt nhất khi được trực tiếp trải nghiệm và hóa thân (Prior Beliefs)." Từ điểm neo đó, giáo viên trình bày dữ liệu về mức độ tương tác thông qua công cụ mô phỏng để dẫn đến kết luận (New Beliefs).
 
 ## 3. Liên kết liên quan
-- `[[THINK_Data_Story_Structure]]`: Cấu trúc câu chuyện luôn phải được định hình dựa trên ai sẽ là khán giả (Outcome).
-- `[[THINK_Patterns_of_Reasoning]]`: Sử dụng các mô hình lập luận để dẫn dắt khán giả từ Prior Beliefs đến New Beliefs.
+- `[[CONCEPT_THINK_Data_Story_Structure]]`: Cấu trúc câu chuyện luôn phải được định hình dựa trên ai sẽ là khán giả (Outcome).
+- `[[CONCEPT_THINK_Patterns_of_Reasoning]]`: Sử dụng các mô hình lập luận để dẫn dắt khán giả từ Prior Beliefs đến New Beliefs.

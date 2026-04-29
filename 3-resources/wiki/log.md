@@ -298,3 +298,18 @@
 ## [2026-04-29 07:56] SYSTEM | @pm | Nâng cấp cấu trúc thư mục 3-resources theo chuẩn mới
 - File tạo/sửa: 3-resources/raw/sources/*, 3-resources/purpose.md, 3-resources/schema.md, AGENTS.md, scripts/*
 - Lý do: Bổ sung các file raw từ Thu_Vien_Cua_Xom và tái cấu trúc lại thư mục 3-resources để các agents dễ dàng theo dõi (phân mảnh rõ ràng raw/sources, raw/assets, wiki/synthesis). Cập nhật AGENTS.md và các script bảo trì để tương thích.
+
+## [2026-04-29 08:45] Ingest-Step-1 | @scout | Tạo bản phân tích sách SQL
+- File tạo/sửa: 1-projects/2026_Data_Analyst/Analysis_SQL_Getting_Started.md
+- Lý do: Trích xuất các thực thể và concept chính từ sách SQL, chuẩn bị cho @engineer sinh Atom.
+
+## [2026-04-29 08:48] Ingest-Step-2 | @engineer | Sinh Wiki Atoms cho SQL
+- File tạo/sửa: 
+  + 3-resources/wiki/sources/SOURCE_TOOL_SQL_Getting_Started.md
+  + 3-resources/wiki/entities/ENTITY_SQL.md
+  + 3-resources/wiki/concepts/CONCEPT_SQL_Select_And_Filter.md
+  + 3-resources/wiki/concepts/CONCEPT_SQL_Aggregations.md
+  + 3-resources/wiki/concepts/CONCEPT_SQL_Case_Statements.md
+  + 3-resources/wiki/concepts/CONCEPT_SQL_Joins.md
+  + 1-projects/2026_Data_Analyst/Ingest_80_20.md
+- Lý do: Hoàn thành Step 2 của quy trình Two-Step Ingest, tuân thủ Rule 14 & Rule 17.

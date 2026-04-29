@@ -36,5 +36,5 @@ Học sinh thường mang máy đo nhiệt độ đi khắp trường để lấ
 3. (Confirmation) Nếu dữ liệu ban đầu cho thấy xu hướng rõ ràng, mới tiến hành đo quy mô lớn. Điều này giúp học sinh tránh lãng phí thời gian thu thập dữ liệu rác.
 
 ## 3. Liên kết liên quan
-- `[[THINK_Data_Story_Structure]]`: Tư duy ngược (Working backward) từ Outcome là chìa khóa để điều hướng việc khám phá.
-- `[[THINK_Correlation_vs_Causation]]`: Sự khác biệt giữa việc tình cờ khám phá ra sự tương quan so với việc lập kế hoạch để kiểm định quan hệ nhân quả.
+- `[[CONCEPT_THINK_Data_Story_Structure]]`: Tư duy ngược (Working backward) từ Outcome là chìa khóa để điều hướng việc khám phá.
+- `[[CONCEPT_THINK_Correlation_vs_Causation]]`: Sự khác biệt giữa việc tình cờ khám phá ra sự tương quan so với việc lập kế hoạch để kiểm định quan hệ nhân quả.
