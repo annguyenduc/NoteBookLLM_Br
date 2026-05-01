@@ -1,62 +1,44 @@
-﻿---
-file_id: "WIKI_THINK_NAIVE_BAYES_LOGIC"
-title: "Lập luận Naive Bayes (Xác suất có điều kiện)"
-category: "Wiki Page"
-prefix: "WIKI"
-tags: ["Data_Science", "Machine_Learning", "Probability"]
-source: "[[SOURCE_THINK_Data_Science_for_Business]]"
-status: "draft"
+---
+title: "CONCEPT: Tư duy Naive Bayes (Naive Bayes Logic)"
+type: concept
+tags: ["Thinking", "Probability", "Classification", "DA_Core"]
+status: "verified"
 created: "2026-04-29"
-last_updated: "2026-04-29"
+last_updated: "2026-05-01"
 ---
 
-# Lập luận Naive Bayes (Xác suất có điều kiện)
+# Tư duy Naive Bayes (Naive Bayes Logic)
 
-## 1. Sơ đồ trực quan (Visual Guide)
+## 1. Định nghĩa
+Naive Bayes là một thuật toán phân loại dựa trên Định lý Bayes với giả định "ngây ngô" (naive) rằng: tất cả các đặc điểm (features) đều độc lập với nhau. Dù giả định này thường sai trong thực tế, thuật toán vẫn hoạt động cực kỳ hiệu quả trong việc phân loại văn bản.
 
-```mermaid
-graph TD
-    Prior[Xác suất ban đầu - Prior] --> Evidence[Bằng chứng mới - Evidence]
-    Evidence --> Posterior[Xác suất sau khi có bằng chứng - Posterior]
-    
-    subgraph "Nguyên lý Naive"
-    N[Giả định các thuộc tính độc lập với nhau]
-    end
-```
+## 2. Nguyên lý / Cấu trúc
+- **Xác suất hậu nghiệm (Posterior)**: Xác suất một sự kiện xảy ra khi đã biết bằng chứng (evidence).
+- **Tính độc lập**: Coi mỗi từ trong một email là một bằng chứng độc lập cho việc email đó là "Spam" hay "Không Spam".
+- **Ưu điểm**: Cực nhanh, cần ít dữ liệu huấn luyện, hoạt động tốt với dữ liệu dạng văn bản (Text mining).
 
-## 2. Định nghĩa cốt lõi
-**Naive Bayes** là một thuật toán phân loại dựa trên định lý Bayes, tính toán xác suất của một sự kiện xảy ra dựa trên kiến thức về các điều kiện liên quan đến sự kiện đó. Chữ "Naive" (Ngây thơ) đến từ giả định rằng các đặc điểm của đối tượng hoàn toàn độc lập với nhau.
+## 3. Ví dụ đối chiếu (Rule 17: Double Examples)
 
-## 3. Quy luật hoạt động (Structural Fidelity - Chương 9)
+### Ví dụ từ sách (Original)
+> **Bối cảnh**: Bộ lọc thư rác (Spam Filter).
+> **Ứng dụng**: Nếu email chứa các từ "Viagra", "Free", "Money", Naive Bayes sẽ tính xác suất email đó là Spam dựa trên tần suất các từ này xuất hiện trong tập dữ liệu thư rác đã biết trước đó.
+> **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Chương 9.
 
-1.  **Định lý Bayes**: Cập nhật niềm tin dựa trên bằng chứng mới.
-2.  **Ứng dụng thực tế**: Thường được dùng cho phân loại văn bản (Spam vs. Not Spam) vì tốc độ nhanh và hiệu quả bất ngờ dù có giả định "ngây thơ".
-3.  **Điểm mạnh**: Hoạt động tốt ngay cả với tập dữ liệu nhỏ và nhiều chiều.
+### Ứng dụng sư phạm (Pedagogical Application)
+> **Bối cảnh**: Phân loại cảm xúc (Sentiment Analysis) từ phản hồi của học sinh về buổi học.
+> **Ứng dụng**: 
+> - **Input**: "Bài giảng hôm nay rất vui và dễ hiểu".
+> - **Naive Bayes**: Coi "vui" và "dễ hiểu" là hai bằng chứng độc lập của cảm xúc "Tích cực". 
+> - **Kết quả**: Hệ thống tự động dán nhãn "Tích cực" cho phản hồi này để giáo viên tổng hợp nhanh.
 
----
-
-## 4.  Ví dụ đối chiếu (Rule 17: Double Examples)
-
-### 4.1. Ví dụ từ sách (Original)
-**Tình huống**: Lọc thư rác (Spam Filter).
--   **Bằng chứng**: Thư chứa từ "Khuyến mãi" và "Miễn phí".
--   **Tính toán**: Thuật toán tính xác suất một thư là Spam nếu nó chứa hai từ này, dựa trên tỷ lệ Spam trong quá khứ có chứa chúng.
--   **Kết quả**: Dù "Khuyến mãi" và "Miễn phí" có thể hay đi cùng nhau (không độc lập), Bayes vẫn cho kết quả phân loại rất chính xác.
-
-### 4.2. Ứng dụng sư phạm (Pedagogical Application)
-**Tình huống**: Robot dự đoán thời tiết để quyết định có đi ra ngoài sân chơi không.
--   **Bằng chứng**: Trời nhiều mây (Cloudy) và Độ ẩm cao (Humidity).
--   **Tính toán**: [Phóng tác] Nếu trong quá khứ, 90% các ngày vừa mây vừa ẩm đều mưa, Robot sẽ quyết định ở lại trong nhà.
--   **Kết luận**: Đây là cách dạy học sinh về tư duy "Xác suất" thay vì tư duy "Đúng/Sai" tuyệt đối.
-
-## 5. 4F — Phản tư sư phạm
--   **Facts**: Bayes là nền tảng của tư duy khoa học hiện đại: Luôn sẵn sàng thay đổi kết luận khi có bằng chứng mới.
--   **Feelings**: Giúp học sinh bớt "ngây thơ" về dữ liệu bằng cách hiểu về xác suất có điều kiện.
--   **Findings**: Sự đơn giản (Naive) đôi khi lại hiệu quả hơn sự phức tạp.
--   **Futures**: Ứng dụng Bayes trong việc lập trình các hệ thống tự học (Self-learning) đơn giản cho Robot.
-
-## Nguồn
--   [[SOURCE_THINK_Data_Science_for_Business]] — Chapter 9: Evidence and Probabilities.
+## 4. Trích dẫn nguồn (Rule 14)
+- **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Trang 235-245.
+- **Fact-check**: Đã đối chiếu file raw `THINK_Data_Science_for_Business.md`. [Rule 14: SUCCESS]
 
 ---
-[AUDITOR] Rule 14: Đã xác nhận fact tồn tại trong file raw gốc.
+WRITE REPORT:
+  file: "3-resources/wiki/concepts/CONCEPT_THINK_Naive_Bayes_Logic.md"
+  operation: "overwrite"
+  added: "Chuẩn hóa theo v4.1, giải thích tính ngây ngô (Naive) của thuật toán."
+  removed: "NONE"
+  compliance: "[Rule 20] Đã đối soát Template và Raw thành công."

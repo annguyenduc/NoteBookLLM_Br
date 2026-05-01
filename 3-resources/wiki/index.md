@@ -61,9 +61,6 @@
 - [[CONCEPT_VIZ_Gestalt_Laws_in_Design]] | **Các định luật Gestalt trong thiết kế biểu đồ (Gestalt Laws)** **[VERIFIED]**
   > Định luật Gestalt giúp chúng ta hiểu cách não bộ con người tự động nhóm các yếu tố hình ảnh lại với nhau, từ đó thiết kế...
 - [[CONCEPT_THINK_Logic_Tree]] | **Cây Logic (Logic Tree)**
-  > ![Minh họa Cây Logic](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/THINK_Logic_Tree.png)
-- [[CONCEPT_THINK_Decision_Trees_Induction]] | **Cây Quyết định (Quy trình Phân rã dữ liệu)**
-  > Root[GỐC: Tất cả dữ liệu] --> Node1{Câu hỏi 1?}
 - [[CONCEPT_DSML_Decision_Trees_Random_Forest]] | **Cây quyết định và Rừng ngẫu nhiên (Decision Trees & Random Forest)** **[VERIFIED]**
   > Đây là các thuật toán dựa trên cấu trúc phân cấp, cực kỳ mạnh mẽ và dễ giải thích trong các bài toán phân tích dữ liệu t...
 - [[CONCEPT_THINK_Yes_No_Tree]] | **Cây Yes/No (Yes/No Tree)** **[DRAFT]**
@@ -115,9 +112,6 @@
 - [[CONCEPT_STAT_Hypothesis_Testing_PValue]] | **Kiểm định giả thuyết và P-Value (Hypothesis Testing & P-Value)** **[VERIFIED]**
   > Đây là quy trình ra quyết định dựa trên dữ liệu để xác định xem một kết quả quan sát được là thực sự có ý nghĩa hay chỉ ...
 - [[CONCEPT_STAT_T_Test_ANOVA]] | **Kiểm định T-Test và ANOVA** **[VERIFIED]**
-  > Đây là các công cụ quan trọng để so sánh sự khác biệt giữa các nhóm dữ liệu và xác định xem sự khác biệt đó có ý nghĩa t...
-- [[CONCEPT_THINK_Action_Plan_Execution]] | **Kế hoạch Hành động và Thực thi (Action Plan)**
-  > ![Minh họa Action Plan](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/THINK_Action_Roadmap.png)
 - [[CONCEPT_DSML_Feature_Engineering_Basics]] | **Kỹ nghệ đặc trưng cơ bản (Feature Engineering Basics)** **[VERIFIED]**
   > "Dữ liệu tốt đánh bại thuật toán tốt." Kỹ nghệ đặc trưng là quá trình biến đổi dữ liệu thô thành các đặc trưng giúp mô h...
 - [[CONCEPT_THINK_5_Whys]] | **Kỹ thuật 5 Whys (5 Tại sao)**
@@ -145,9 +139,6 @@
 - [[CONCEPT_VIZ_Dashboard_Design_Best_Practices]] | **Nguyên tắc Thiết kế Dashboard (Dashboard Design Best Practices)**
   > Để một Dashboard thực sự hiệu quả, nó cần đạt được 4 tiêu chí ACES:
 - [[CONCEPT_DSML_Clustering_KMeans]] | **Phân cụm K-Means (Clustering & K-Means)** **[VERIFIED]**
-  > Phân cụm là kỹ thuật Học không giám sát dùng để nhóm các đối tượng tương đồng lại với nhau mà không cần biết nhãn trước.
-- [[CONCEPT_THINK_Clustering_KMeans]] | **Phân cụm K-Means (Dữ liệu không nhãn)**
-  > Data[Dữ liệu thô - Chưa có nhóm] --> Step1[Chọn ngẫu nhiên K tâm cụm - Centroids]
 - [[CONCEPT_STAT_Data_Taxonomy]] | **Phân loại dữ liệu (Data Taxonomy)** **[VERIFIED]**
   > Dữ liệu không chỉ là những con số; việc phân loại đúng loại dữ liệu là bước đầu tiên để chọn phương pháp thống kê và biể...
 - [[CONCEPT_STAT_Probability_Distributions]] | **Phân phối xác suất (Probability Distributions)** **[VERIFIED]**
@@ -171,9 +162,6 @@
 - [[CONCEPT_THINK_Problem_Solving_Process]] | **Quy trình Giải quyết Vấn đề 4 Bước**
   > ![Minh họa Quy trình 4 bước](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/THINK_Problem_Solving_Process.png)
 - [[CONCEPT_PY_Scikit_Learn_Estimator]] | **Quy trình Scikit-Learn Estimator API** **[VERIFIED]**
-  > Sức mạnh của Scikit-Learn nằm ở tính nhất quán. Hầu như mọi thuật toán máy học (Machine Learning) đều tuân theo một giao...
-- [[CONCEPT_THINK_Overfitting_Avoidance]] | **Quá khớp và Cách phòng tránh (Overfitting Avoidance)**
-  > A[Dữ liệu Huấn luyện] --> B{Mô hình}
 - [[CONCEPT_THINK_ROC_AUC_Evaluation]] | **ROC Curve và chỉ số AUC**
   > subgraph "Trục đồ thị ROC"
 - [[CONCEPT_SQL_RDBMS_Comparison]] | **So sánh cú pháp giữa các hệ quản trị RDBMS** **[VERIFIED]**
@@ -197,9 +185,6 @@
 - [[CONCEPT_PY_NumPy_Vectorization]] | **Tính toán Vector hóa (Vectorization) trong NumPy** **[VERIFIED]**
   > Vectorization là khả năng thực hiện các phép toán trên toàn bộ mảng mà không cần sử dụng vòng lặp `for` tường minh trong...
 - [[CONCEPT_THINK_Correlation_vs_Causation]] | **Tương quan và Nhân quả (Correlation vs Causation)**
-  > Nguồn: [[SOURCE_THINK_Thinking_with_Data]] (Xác nhận Rule 14 từ: [[\THINK_Thinking_with_Data]])
-- [[CONCEPT_THINK_Vision_Mockups]] | **Tầm nhìn và Phác thảo (Vision & Mockups)**
-  > ![Minh họa Vision Mockup](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/THINK_Vision_Mockup.png)
 - [[CONCEPT_VIZ_Importance_of_Context]] | **Tầm quan trọng của bối cảnh (Importance of Context)** **[VERIFIED]**
   > Dữ liệu mà không có bối cảnh chỉ là những con số vô hồn. Trước khi bắt đầu vẽ biểu đồ, chúng ta phải trả lời được câu hỏ...
 - [[CONCEPT_EXCEL_Optimization_Solver]] | **Tối ưu hóa bài toán kinh doanh với Excel Solver** **[VERIFIED]**
@@ -216,6 +201,7 @@
   > Xây dựng mô hình chỉ là một nửa chặng đường; nửa còn lại là biết mô hình đó hoạt động tốt đến mức nào.
 - [[CONCEPT_THINK_Data_Ethics_Scoping]] | **Đạo đức và Quyền riêng tư trong Dữ liệu**
   > ![Minh họa Đạo đức Dữ liệu](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/THINK_Data_Ethics.png)
+- [[CONCEPT_THINK_Argument_Sketching]] | **Phác thảo lập luận** - Cách xây dựng cấu trúc logic cho dự án dữ liệu.
 - [[CONCEPT_THINK_Audience_Framing]] | **Định hình Khán giả và Niềm tin (Audience Framing & Prior Beliefs)**
   > id: THINK_Audience_Framing
 - [[CONCEPT_STAT_Central_Limit_Theorem]] | **Định lý giới hạn trung tâm (Central Limit Theorem)** **[VERIFIED]**

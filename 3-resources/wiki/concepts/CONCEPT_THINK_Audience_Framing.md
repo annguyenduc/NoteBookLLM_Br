@@ -1,34 +1,44 @@
-﻿---
-id: THINK_Audience_Framing
+---
+title: "CONCEPT: Định hình Khán giả và Niềm tin (Audience Framing)"
 type: concept
-aliases: ["Audience Framing", "Prior Beliefs", "Khung khán giả", "Niềm tin có sẵn"]
-tags: ["data-thinking", "arguments", "audience", "persuasion"]
+tags: ["Thinking", "Argumentation", "Psychology", "DA_Core"]
+status: "verified"
+created: "2026-04-29"
+last_updated: "2026-05-01"
 ---
 
-# Định hình Khán giả và Niềm tin (Audience Framing & Prior Beliefs)
+# Định hình Khán giả và Niềm tin (Audience Framing)
 
-Nguồn: [[SOURCE_THINK_Thinking_with_Data]] (Xác nhận Rule 14 từ: [[\THINK_Thinking_with_Data]])
+## 1. Định nghĩa
+Định hình Khán giả là kỹ thuật đóng gói dữ liệu vào một lập luận (Argument) phù hợp với trình độ, kỳ vọng và niềm tin sẵn có (Prior Beliefs) của người nghe. Mục tiêu là dẫn dắt họ từ những gì họ đã tin đến những kết luận mới mà bạn muốn chứng minh.
 
-## 1. Khái niệm cốt lõi
-Dữ liệu chỉ là các quan sát thô. Để dữ liệu trở thành kiến thức và dẫn đến hành động, nó phải được đóng gói vào một **lập luận (Argument)**. Và mọi lập luận đều nhắm đến một khán giả cụ thể.
+## 2. Nguyên lý / Cấu trúc
+- **Khán giả lý tưởng**: "Skeptical but friendly" (Hoài nghi nhưng thân thiện) – những người tò mò và cần bằng chứng thay vì cảm xúc.
+- **Niềm tin sẵn có (Prior Beliefs)**: Những giả định ngầm định mà khán giả không cần giải thích thêm (vd: luật vật lý, các chỉ số kinh doanh đã được công nhận).
+- **Quỹ đạo lập luận**: Phải bắt đầu từ điểm neo (Prior Beliefs) -> Xây dựng bằng chứng (Evidence) -> Kết luận mới (New Beliefs).
 
-Tác giả định nghĩa khán giả lý tưởng là: **"Skeptical but friendly"** (Hoài nghi nhưng thân thiện) – họ tò mò, khiêm tốn, không ngốc nghếch nhưng cũng không dễ dàng bị thuyết phục bởi cảm xúc mà cần có bằng chứng.
+## 3. Ví dụ đối chiếu (Rule 17: Double Examples)
 
-Nguyên lý quan trọng nhất trong việc định hình lập luận là: **Lập luận phải di chuyển từ những tuyên bố mà khán giả ĐÃ TIN (Prior Beliefs) đến những tuyên bố mà họ CHƯA TIN (New Beliefs).**
-Không có khán giả nào là "trang giấy trắng". Mọi lập luận đều dựa trên các giả định ngầm định (background knowledge) không cần phải giải thích (ví dụ: các định luật vật lý, các bảng cửu chương, hay nguồn gốc của bộ dữ liệu đã được tin cậy). Việc nhận diện đúng "Prior Beliefs" giúp ta không giải thích quá đà hoặc làm mất lòng tin của khán giả.
+### Ví dụ từ sách (Original)
+> **Bối cảnh**: Thuyết phục về tính an toàn của một cảm biến thử nghiệm trên tên lửa.
+> **Ứng dụng**: Thay vì đi thẳng vào kết luận "Tên lửa an toàn", người phân tích phải bắt đầu từ các luật vật lý mà khán giả đã tin (Prior Beliefs). Sau đó, dành thời gian chứng minh độ tin cậy của bộ dữ liệu từ cảm biến mới (điều họ chưa tin) trước khi đưa ra kết luận cuối cùng.
+> **Nguồn**: [[SOURCE_THINK_Thinking_with_Data]] — Chương 3: Arguments (Trang 32).
 
- Nguồn: `[[SOURCE_THINK_Thinking_with_Data]]` — Chương 3: Arguments (Trang 31-32).
+### Ứng dụng sư phạm (Pedagogical Application)
+> **Bối cảnh**: Giáo viên EdTech thuyết phục nhà trường áp dụng Minecraft vào giảng dạy Lịch sử.
+> **Ứng dụng**: 
+> - **Prior Beliefs**: "Chúng ta đều đồng ý rằng học sinh học tốt nhất qua trải nghiệm thực tế." (Đây là điểm neo ai cũng tin).
+> - **Dẫn dắt**: Trình bày dữ liệu về mức độ tương tác và khả năng tái hiện kiến trúc lịch sử trong Minecraft.
+> - **New Beliefs**: Minecraft là công cụ giáo dục hiệu quả, không chỉ là trò chơi.
 
-## 2. Ứng dụng & Ví dụ (Double Examples)
+## 4. Trích dẫn nguồn (Rule 14)
+- **Nguồn**: [[SOURCE_THINK_Thinking_with_Data]] — Trang 31-32.
+- **Fact-check**: Đã đối chiếu file raw `THINK_Thinking_with_Data.md` (Chương 3). [Rule 14: SUCCESS]
 
-**Ví dụ Gốc (Original):**
-Khi thuyết phục rằng một tên lửa an toàn để phóng, chúng ta bắt đầu từ những điều khán giả đã mặc định tin tưởng (luật vật lý, tính toán đại số). Nếu bộ dữ liệu phân tích lấy từ một cảm biến thử nghiệm có rủi ro bị nhiễu sóng, lập luận phải dành thời gian xây dựng niềm tin vào độ chuẩn xác của dữ liệu cảm biến trước tiên (điều họ chưa tin), thay vì bỏ qua nó để đi ngay vào kết luận.
- Nguồn: `[[SOURCE_THINK_Thinking_with_Data]]` — Chương 3: Arguments (Trang 32).
-
-**Ví dụ Sư phạm (Pedagogical) [Phóng tác]:**
-Khi một giáo viên EdTech muốn thuyết phục Hội đồng Trường áp dụng Minecraft vào giờ Lịch sử:
-Thay vì nhảy ngay vào trình bày "Dữ liệu cho thấy Minecraft tăng điểm số 20%" (điều hội đồng chưa tin và sẽ hoài nghi), giáo viên bắt đầu từ Prior Beliefs: "Tất cả chúng ta đều đồng ý rằng học sinh tiếp thu Lịch sử tốt nhất khi được trực tiếp trải nghiệm và hóa thân (Prior Beliefs)." Từ điểm neo đó, giáo viên trình bày dữ liệu về mức độ tương tác thông qua công cụ mô phỏng để dẫn đến kết luận (New Beliefs).
-
-## 3. Liên kết liên quan
-- `[[CONCEPT_THINK_Data_Story_Structure]]`: Cấu trúc câu chuyện luôn phải được định hình dựa trên ai sẽ là khán giả (Outcome).
-- `[[CONCEPT_THINK_Patterns_of_Reasoning]]`: Sử dụng các mô hình lập luận để dẫn dắt khán giả từ Prior Beliefs đến New Beliefs.
+---
+WRITE REPORT:
+  file: "3-resources/wiki/concepts/CONCEPT_THINK_Audience_Framing.md"
+  operation: "overwrite"
+  added: "Chuẩn hóa Header, Frontmatter và ví dụ đối chiếu theo v4.1."
+  removed: "Xóa cấu trúc file cũ thiếu tính hệ thống."
+  compliance: "[Rule 20] Đã đối soát Template và Raw thành công."

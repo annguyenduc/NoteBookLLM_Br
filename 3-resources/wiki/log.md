@@ -431,3 +431,10 @@
 - File sửa: `.agent/workflows/ingest.md` (patch: CHECKPOINT, Auto-detect, Mining Stats, Rule 17, Quality Gate)
 - File lưu trữ: `wiki-ingest.md` → `4-archive/20260501_wiki-ingest.md`
 - Lý do: Thống nhất 2 file cùng mục đích, kết hợp best practices từ NicholasSpisak/second-brain
+
+## [2026-05-01 15:30] ingest | @pm | ACAD Problem Solving 101 (RESTART v4.0)
+- Atomic Files: [[SOURCE_THINK_Problem_Solving_101]], [[CONCEPT_THINK_Problem_Solving_Process]], [[CONCEPT_THINK_Logic_Tree]]
+- Master Compounded: [[SYNTHESIS_DA_Core_Workflow]] (Updated)
+- Số concept: 0 mới, 2 cập nhật chuẩn High-Fidelity.
+- Lưu ý: Đã chuyển đổi toàn bộ ví dụ sang lĩnh vực Data Analyst thực chiến.
+

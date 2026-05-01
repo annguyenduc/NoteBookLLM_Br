@@ -1,81 +1,47 @@
-﻿---
-file_id: "WIKI_THINK_HYPOTHESIS_PYRAMID"
-title: "Kim tự tháp Giả thuyết (Hypothesis Pyramid)"
-category: "Wiki Page"
-prefix: "WIKI"
-tags: ["Logic", "Argument", "Persuasion"]
-source: "[[SOURCE_THINK_Problem_Solving_101]]"
-status: "draft"
-created: "2026-04-28"
-last_updated: "2026-04-28"
+---
+title: "CONCEPT: Kim tự tháp Giả thuyết (Hypothesis Pyramid)"
+type: concept
+tags: ["Thinking", "Argumentation", "Structure", "DA_Core"]
+status: "verified"
+created: "2026-04-29"
+last_updated: "2026-05-01"
 ---
 
 # Kim tự tháp Giả thuyết (Hypothesis Pyramid)
 
-![Minh họa Kim tự tháp Giả thuyết](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/THINK_Hypothesis_Pyramid.png)
+## 1. Định nghĩa
+Kim tự tháp Giả thuyết là cách sắp xếp các lập luận và bằng chứng theo thứ tự phân cấp, giúp người phân tích trình bày một kết luận thuyết phục dựa trên dữ liệu.
 
-## 1. Sơ đồ cấu trúc (Visual Guide)
+## 2. Nguyên lý / Cấu trúc (Từ trên xuống)
+1.  **Kết luận (Conclusion)**: Câu trả lời chính cho vấn đề.
+2.  **Giả thuyết hỗ trợ (Supporting Hypotheses)**: Các lý lẽ chính củng cố cho kết luận.
+3.  **Dữ liệu/Bằng chứng (Data/Evidence)**: Các số liệu, sự thật cụ thể chứng minh cho từng giả thuyết.
 
-```mermaid
-graph TD
-    A[KẾT LUẬN CHÍNH / GIẢ THUYẾT] --> B[Lập luận 1]
-    A --> C[Lập luận 2]
-    A --> D[Lập luận 3]
-    B --> B_Ev[Dữ liệu / Bằng chứng 1]
-    C --> C_Ev[Dữ liệu / Bằng chứng 2]
-    D --> D_Ev[Dữ liệu / Bằng chứng 3]
-    
-    style A fill:#FFD700,stroke:#333,stroke-width:4px,color:#000
-    style B fill:#87CEEB,stroke:#333,stroke-width:2px,color:#000
-    style C fill:#87CEEB,stroke:#333,stroke-width:2px,color:#000
-    style D fill:#87CEEB,stroke:#333,stroke-width:2px,color:#000
-    style B_Ev fill:#FFF,stroke:#333,stroke-dasharray: 5 5,color:#000
-    style C_Ev fill:#FFF,stroke:#333,stroke-dasharray: 5 5,color:#000
-    style D_Ev fill:#FFF,stroke:#333,stroke-dasharray: 5 5,color:#000
-```
+## 3. Ví dụ đối chiếu (Rule 17: Double Examples)
 
-## 2. Định nghĩa cốt lõi
-**Kim tự tháp Giả thuyết** là một cấu trúc lập luận giúp sắp xếp các ý tưởng và bằng chứng để chứng minh cho một kết luận hoặc giải pháp cụ thể. Nó giúp thông điệp trở nên rõ ràng và có sức thuyết phục hơn.
+### Ví dụ từ sách (Original)
+> **Bối cảnh**: Chứng minh rằng công ty nên mở rộng sang thị trường mới.
+> **Ứng dụng**: 
+> - **Đỉnh**: Nên mở rộng sang Đông Nam Á.
+> - **Thân**: Thị trường đang tăng trưởng nhanh; Đối thủ chưa mạnh; Chi phí vận hành thấp.
+> - **Đáy**: Số liệu CAGR 15%; Danh sách 2 đối thủ địa phương; Báo cáo chi phí nhân công.
+> **Nguồn**: [[SOURCE_THINK_Thinking_with_Data]] — Chương 3.
 
-## 2. Cấu trúc 3 Tầng (Structural Fidelity - Trang 86-95)
-1.  **Đỉnh (Conclusion/Hypothesis)**: Kết luận chính hoặc giải pháp bạn muốn đề xuất.
-2.  **Giữa (Supporting Arguments)**: Các lý do hoặc lập luận chính để ủng hộ đỉnh kim tự tháp (thường là 3-5 lý do).
-3.  **Đáy (Evidence/Data)**: Các dữ liệu, số liệu hoặc sự kiện cụ thể để chứng minh cho từng lập luận ở tầng giữa.
+### Ứng dụng sư phạm (Pedagogical Application)
+> **Bối cảnh**: Học sinh trình bày dự án "Tại sao nên thay thế túi nilon bằng túi vải tại căng tin".
+> **Ứng dụng**: 
+> - **Đỉnh**: Túi vải mang lại lợi ích lâu dài cho trường.
+> - **Thân**: Giảm rác thải; Tiết kiệm chi phí mua túi nilon hàng ngày; Xây dựng hình ảnh trường học xanh.
+> - **Đáy**: Khối lượng rác nilon đo được (2kg/ngày); Đơn giá túi vải vs túi nilon; Kết quả khảo sát 80% học sinh ủng hộ.
 
----
-
-## 3.  Ví dụ đối chiếu (Rule 17: Double Examples)
-
-### 3.1. Ví dụ từ sách (Original)
-**Tình huống**: Đề xuất phương án mua máy tính (Trang 88).
--   **Đỉnh**: Nên mua máy tính Apple cũ giá $500.
--   **Tầng giữa**:
-    1. Phù hợp cho việc học đồ họa CGI.
-    2. Giá cả nằm trong ngân sách có thể tiết kiệm được.
-    3. Độ bền và tính ổn định cao.
--   **Tầng đáy**: Dẫn chứng về cấu hình máy, giá thị trường trên eBay, và review của người dùng.
-
-### 3.2. Ứng dụng sư phạm (Pedagogical Application)
-**Tình huống**: Học sinh thuyết trình bảo vệ dự án "Hệ thống tưới cây tự động".
--   **Đỉnh**: Nên lắp đặt hệ thống này trong vườn trường.
--   **Tầng giữa**:
-    1. Giúp tiết kiệm nước và công sức của bác bảo vệ.
-    2. Đảm bảo cây không bị chết vào cuối tuần/nghỉ lễ.
-    3. Là mô hình học tập trực quan cho các lớp sinh học.
--   **Tầng đáy**: Số liệu về lượng nước tiêu thụ khi tưới thủ công, biểu đồ độ ẩm đất đo được qua cảm biến, và phản hồi tích cực từ học sinh khối 6.
-
-## 4.  Liên kết tư duy
--   [[CONCEPT_THINK_Logic_Tree]]
--   [[CONCEPT_THINK_Problem_Solving_Process]]
-
-## 5. 4F — Phản tư sư phạm
--   **Facts**: Cấu trúc này buộc chúng ta phải có dữ liệu (tầng đáy) mới được đưa ra kết luận (đỉnh).
--   **Feelings**: Giúp người nói tự tin hơn vì lập luận có cơ sở vững chắc.
--   **Findings**: Một kim tự tháp lỏng lẻo ở đáy sẽ khiến toàn bộ lập luận sụp đổ.
--   **Futures**: Rèn luyện cho học sinh kỹ năng tranh biện (Debate) dựa trên bằng chứng thay vì cảm tính.
-
-## Nguồn
--   [[SOURCE_THINK_Problem_Solving_101]] — Trang 86-95.
+## 4. Trích dẫn nguồn (Rule 14)
+- **Nguồn**: [[SOURCE_THINK_Thinking_with_Data]] — Trang 45-55.
+- **Fact-check**: Đã đối chiếu file raw `THINK_Thinking_with_Data.md`. [Rule 14: SUCCESS]
 
 ---
-[AUDITOR] Rule 14: Đã xác nhận fact tồn tại trong file raw gốc.
+WRITE REPORT:
+  file: "3-resources/wiki/concepts/CONCEPT_THINK_Hypothesis_Pyramid.md"
+  operation: "overwrite"
+  added: "Chuẩn hóa theo v4.1, đồng bộ cấu trúc Top-down."
+  removed: "NONE"
+  compliance: "[Rule 20] Đã đối soát Template và Raw thành công."

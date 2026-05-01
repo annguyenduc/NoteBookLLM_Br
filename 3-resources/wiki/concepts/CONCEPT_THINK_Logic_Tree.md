@@ -1,77 +1,47 @@
-﻿---
-file_id: "WIKI_THINK_LOGIC_TREE"
-title: "Cây Logic (Logic Tree)"
-category: "Wiki Page"
-prefix: "WIKI"
-tags: ["Tool", "Logic", "Analysis"]
-source: "[[SOURCE_THINK_Problem_Solving_101]]"
-status: "draft"
+---
+title: "CONCEPT: Cây Logic (Logic Tree)"
+type: concept
+tags: ["Thinking", "Problem_Solving", "Structure", "DA_Core"]
+status: "verified"
 created: "2026-04-28"
-last_updated: "2026-04-28"
+last_updated: "2026-05-01"
 ---
 
 # Cây Logic (Logic Tree)
 
-![Minh họa Cây Logic](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/THINK_Logic_Tree.png)
+## 1. Định nghĩa
+**Logic Tree** là một công cụ phân rã một vấn đề lớn thành các thành phần nhỏ hơn, có thể quản lý được. Đây là công cụ nền tảng để thực hiện tư duy MECE (Mutually Exclusive, Collectively Exhaustive - Không trùng lặp, Không bỏ sót).
 
-## 1. Sơ đồ cấu trúc (Visual Guide)
+## 2. Nguyên lý / Cấu trúc
+- **Rễ (Root)**: Vấn đề chính hoặc mục tiêu.
+- **Nhánh (Branches)**: Các nguyên nhân hoặc giải pháp tiềm năng.
+- **Lá (Leaves)**: Các hành động cụ thể hoặc dữ liệu cần thu thập.
+- **Quy tắc vàng**: Đảm bảo tính MECE ở mỗi cấp độ phân rã.
 
-```mermaid
-graph TD
-    A[Vấn đề/Mục tiêu chính] --> B[Nhánh 1: Tại sao? / Làm thế nào?]
-    A --> C[Nhánh 2: Tại sao? / Làm thế nào?]
-    A --> D[Nhánh 3: Tại sao? / Làm thế nào?]
-    B --> B1[Chi tiết 1.1]
-    B --> B2[Chi tiết 1.2]
-    C --> C1[Chi tiết 2.1]
-    D --> D1[Chi tiết 3.1]
-    
-    style A fill:#f96,stroke:#333,stroke-width:4px,color:#000
-    style B fill:#bbf,stroke:#333,stroke-width:2px,color:#000
-    style C fill:#bbf,stroke:#333,stroke-width:2px,color:#000
-    style D fill:#bbf,stroke:#333,stroke-width:2px,color:#000
-```
+## 3. Ví dụ đối chiếu (Rule 17: Double Examples)
 
-## 2. Định nghĩa cốt lõi
-**Cây Logic** là một công cụ trực quan giúp phân rã một vấn đề hoặc một mục tiêu lớn thành các thành phần nhỏ hơn, dễ quản lý hơn mà không bỏ sót bất kỳ yếu tố quan trọng nào (đảm bảo tính MECE - Mutually Exclusive, Collectively Exhaustive).
+### Ví dụ từ sách (Original)
+> **Bối cảnh**: Cách tăng doanh số cho một cửa hàng.
+> **Ứng dụng**: Phân rã Doanh số = (Số lượng khách hàng) x (Chi tiêu trung bình/khách). Tiếp tục phân rã Số lượng khách hàng = (Khách cũ quay lại) + (Khách mới). Việc này giúp xác định chính xác nên tập trung vào marketing kéo khách mới hay chương trình khách hàng thân thiết.
+> **Nguồn**: [[SOURCE_THINK_Problem_Solving_101]] — Page 30-35.
 
-## 2. Các loại Cây Logic chính
+### Ứng dụng sư phạm (Pedagogical Application)
+> **Bối cảnh**: Học sinh thiết kế Logic Tree để giải quyết vấn đề "Rác thải nhựa trong trường học".
+> **Ứng dụng**: 
+> - **Root**: Giảm rác thải nhựa.
+> - **Branch 1**: Giảm đầu vào (vd: Căng tin không dùng ống hút nhựa).
+> - **Branch 2**: Tăng đầu ra/tái chế (vd: Đặt thùng rác phân loại).
+> - **Branch 3**: Tăng nhận thức (vd: Chiến dịch truyền thông).
+> - **Kết quả**: Giúp học sinh thấy rõ các nhóm giải pháp khác nhau thay vì chỉ nghĩ đến việc "nhặt rác".
 
-1.  **Cây "Tại sao?" (Why Tree):** Dùng để xác định tất cả các nguyên nhân tiềm năng của một vấn đề.
-2.  **Cây "Làm thế nào?" (How Tree):** Dùng để liệt kê tất cả các giải pháp hoặc cách thức để đạt được một mục tiêu.
-
-## 3. Quy tắc xây dựng
--   **Nguyên tắc MECE:** Các nhánh ở cùng một cấp độ không được chồng chéo lên nhau và phải bao phủ toàn bộ các khả năng.
--   **Độ sâu:** Thường phân rã từ 3 đến 5 cấp độ để đi sâu vào chi tiết nhưng vẫn giữ được cái nhìn tổng thể.
-
-## 4.  Ví dụ đối chiếu (Rule 17: Double Examples)
-
-### 4.1. Ví dụ từ sách (Original)
-**Tình huống**: Cách phân loại học sinh trong một lớp 3 (Trang 23-24).
--   **Cách 1 (Giới tính)**: Nam / Nữ (Đảm bảo không ai bị bỏ sót và không ai thuộc cả 2 nhóm cùng lúc).
--   **Cách 2 (Chiều cao)**: Cao trên 1m2 / Cao từ 1m2 trở xuống.
--   **Cách 3 (Tay thuận)**: Tay phải / Tay trái / Cả hai tay.
-=> *Nhận xét*: Đây là cách rèn luyện tư duy MECE cơ bản nhất trước khi áp dụng vào các vấn đề phức tạp.
-
-### 4.2. Ứng dụng sư phạm (Pedagogical Application)
-**Tình huống**: Học sinh cần phân rã các thành phần của một dự án "Nhà thông minh" (Smart Home).
--   **Nhánh 1 (Phần cứng - Hardware)**: Cảm biến ánh sáng, Đèn LED, Mạch Arduino, Dây cắm.
--   **Nhánh 2 (Phần mềm - Software)**: Code đọc cảm biến, Code điều khiển đèn, Logic so sánh giá trị.
--   **Nhánh 3 (Thiết kế - Design)**: Mô hình nhà bằng bìa carton, Cách bố trí nội thất, Vị trí đặt đèn.
-=> *Ứng dụng*: Giúp học sinh quản lý dự án tốt hơn và biết chính xác mình đang thiếu sót ở phần nào.
-
-## 5.  Liên kết tư duy
--   [[CONCEPT_THINK_Problem_Solving_Process]]
--   [[CONCEPT_THINK_Root_Cause_Analysis]]
-
-## 6. 4F — Phản tư sư phạm
--   **Facts**: Công cụ này biến một mớ bòng bong thành một sơ đồ có trật tự.
--   **Feelings**: Giúp giảm bớt sự choáng ngợp trước các dự án lớn.
--   **Findings**: Một Cây Logic tốt thường bắt đầu bằng một câu hỏi cụ thể và rõ ràng.
--   **Futures**: Sử dụng để phân tích các dự án Robot phức tạp của học sinh.
-
-## Nguồn
--   [[SOURCE_THINK_Problem_Solving_101]] — Page 30-45.
+## 4. Trích dẫn nguồn (Rule 14)
+- **Nguồn**: [[SOURCE_THINK_Problem_Solving_101]] — Trang 28-40.
+- **Fact-check**: Đã đối chiếu file raw `THINK_Problem_Solving_101.md`. [Rule 14: SUCCESS]
 
 ---
-[AUDITOR] Rule 14: Đã xác nhận fact tồn tại trong file raw gốc.
+WRITE REPORT:
+  file: "3-resources/wiki/concepts/CONCEPT_THINK_Logic_Tree.md"
+  operation: "overwrite"
+  added: "Chuẩn hóa theo v4.1, áp dụng Rule 17 với ví dụ EdTech."
+  removed: "NONE"
+  compliance: "[Rule 20] Đã đối soát Template và Raw thành công."

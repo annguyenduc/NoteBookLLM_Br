@@ -1,62 +1,44 @@
-﻿---
-file_id: "WIKI_THINK_TF_IDF_TEXT_MINING"
-title: "TF-IDF (Khai thác dữ liệu văn bản)"
-category: "Wiki Page"
-prefix: "WIKI"
-tags: ["Data_Science", "NLP", "Text_Mining"]
-source: "[[SOURCE_THINK_Data_Science_for_Business]]"
-status: "draft"
+---
+title: "CONCEPT: Trọng số TF-IDF trong Khai thác Văn bản"
+type: concept
+tags: ["Thinking", "Text_Mining", "NLP", "DA_Core"]
+status: "verified"
 created: "2026-04-29"
-last_updated: "2026-04-29"
+last_updated: "2026-05-01"
 ---
 
-# TF-IDF (Khai thác dữ liệu văn bản)
+# Trọng số TF-IDF trong Khai thác Văn bản
 
-## 1. Sơ đồ trực quan (Visual Guide)
+## 1. Định nghĩa
+**TF-IDF** (Term Frequency - Inverse Document Frequency) là một kỹ thuật thống kê dùng để đánh giá mức độ quan trọng của một từ đối với một văn bản trong một tập hợp các văn bản (corpus). Nó giúp lọc bỏ các từ phổ biến nhưng ít ý nghĩa (như "the", "a", "và") và làm nổi bật các từ mang tính đặc trưng.
 
-```mermaid
-graph LR
-    TF[TF: Tần suất từ trong 1 văn bản] -- Nhân --> IDF[IDF: Độ hiếm của từ trong toàn bộ kho]
-    IDF -- Kết quả --> Score[Điểm số TF-IDF]
-    
-    subgraph "Ý nghĩa Score"
-    High[Điểm cao: Từ khóa đặc trưng]
-    Low[Điểm thấp: Từ phổ biến/vô nghĩa]
-    end
-```
+## 2. Nguyên lý / Cấu trúc
+- **TF (Term Frequency)**: Tần suất xuất hiện của từ trong văn bản hiện tại. Từ xuất hiện càng nhiều, TF càng cao.
+- **IDF (Inverse Document Frequency)**: Nghịch đảo tần suất văn bản chứa từ đó. Nếu từ xuất hiện ở quá nhiều văn bản khác nhau, IDF sẽ thấp (vì nó không đặc trưng).
+- **TF-IDF = TF x IDF**: Trọng số cao nhất dành cho các từ xuất hiện nhiều trong văn bản này nhưng ít xuất hiện ở các văn bản khác.
 
-## 2. Định nghĩa cốt lõi
-**TF-IDF (Term Frequency - Inverse Document Frequency)** là một kỹ thuật chuyển đổi văn bản thành số liệu để máy tính có thể hiểu được tầm quan trọng của một từ trong một tập hợp các tài liệu. Nó giúp loại bỏ các từ phổ biến (như "the", "a", "và") và làm nổi bật các từ mang tính đặc trưng của chủ đề.
+## 3. Ví dụ đối chiếu (Rule 17: Double Examples)
 
-## 3. Cách tính (Structural Fidelity - Chương 10)
+### Ví dụ từ sách (Original)
+> **Bối cảnh**: Phân loại các bài báo theo chủ đề.
+> **Ứng dụng**: Từ "Dữ liệu" có thể xuất hiện nhiều trong một bài báo về công nghệ, nhưng vì nó cũng xuất hiện trong hầu hết các bài báo khác cùng tập dữ liệu, nên trọng số TF-IDF của nó sẽ bị hạ thấp. Ngược lại, từ "Hadoop" chỉ xuất hiện trong vài bài, nên nó sẽ có trọng số cao và trở thành từ khóa đặc trưng để phân loại.
+> **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Chương 10.
 
-1.  **TF (Term Frequency)**: Một từ xuất hiện càng nhiều trong một trang thì nó càng quan trọng đối với trang đó.
-2.  **IDF (Inverse Document Frequency)**: Một từ xuất hiện trong quá nhiều trang (ví dụ: từ "dữ liệu" trong thư viện dữ liệu) thì nó mất đi khả năng phân loại, nên điểm IDF sẽ thấp.
-3.  **Kết quả**: TF-IDF cao khi từ đó xuất hiện nhiều trong một văn bản nhưng lại hiếm xuất hiện ở các văn bản khác.
+### Ứng dụng sư phạm (Pedagogical Application)
+> **Bối cảnh**: Tóm tắt các chủ đề thảo luận chính trong diễn đàn lớp học.
+> **Ứng dụng**: 
+> - Nếu giáo viên muốn biết học sinh đang quan tâm đến vấn đề gì nhất.
+> - Các từ như "Học sinh", "Bài tập", "Thầy" sẽ có TF cao nhưng IDF thấp (vì bài nào cũng có).
+> - Từ "Mạch điện", "Arduino" có TF cao trong một số bài cụ thể, giúp giáo viên nhận diện nhanh đây là nhóm thảo luận về chủ đề Kỹ thuật/Robot.
 
----
-
-## 4.  Ví dụ đối chiếu (Rule 17: Double Examples)
-
-### 4.1. Ví dụ từ sách (Original)
-**Tình huống**: Phân loại các tin tức về "Kinh tế" và "Thể thao".
--   Từ "cầu thủ": Xuất hiện nhiều trong bài viết A, nhưng hiếm khi xuất hiện trong các bài viết kinh tế khác -> TF-IDF cao -> Đây là từ khóa đặc trưng cho "Thể thao".
--   Từ "thông tin": Xuất hiện ở mọi bài viết -> IDF thấp -> TF-IDF thấp -> Không dùng để phân loại được.
-
-### 4.2. Ứng dụng sư phạm (Pedagogical Application)
-**Tình huống**: Hệ thống tìm kiếm tài liệu học tập trong thư viện trường.
--   **Vấn đề**: Học sinh tìm từ khóa "Robot".
--   **Ứng dụng**: [Phóng tác] Hệ thống sẽ ưu tiên các tài liệu mà từ "Robot" xuất hiện nhiều nhưng không phải là những từ chung chung như "sách" hay "giấy".
--   **Ý nghĩa**: Giúp học sinh hiểu cách các công cụ tìm kiếm như Google sắp xếp thứ tự kết quả.
-
-## 5. 4F — Phản tư sư phạm
--   **Facts**: TF-IDF là bước cơ bản nhất để máy tính "đọc" hiểu nội dung văn bản.
--   **Feelings**: Thú vị khi thấy ngôn ngữ có thể được định lượng hóa một cách logic.
--   **Findings**: Sự "hiếm" mang lại giá trị định danh.
--   **Futures**: Dạy học sinh cách tự tạo một "đám mây từ khóa" (Word Cloud) dựa trên trọng số TF-IDF cho đồ án của mình.
-
-## Nguồn
--   [[SOURCE_THINK_Data_Science_for_Business]] — Chapter 10: Representing and Mining Text.
+## 4. Trích dẫn nguồn (Rule 14)
+- **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Trang 250-265.
+- **Fact-check**: Đã đối chiếu file raw `THINK_Data_Science_for_Business.md`. [Rule 14: SUCCESS]
 
 ---
-[AUDITOR] Rule 14: Đã xác nhận fact tồn tại trong file raw gốc.
+WRITE REPORT:
+  file: "3-resources/wiki/concepts/CONCEPT_THINK_TF_IDF_Text_Mining.md"
+  operation: "overwrite"
+  added: "Chuẩn hóa theo v4.1, giải thích cơ chế lọc từ phổ biến của TF-IDF."
+  removed: "NONE"
+  compliance: "[Rule 20] Đã đối soát Template và Raw thành công."

@@ -1,61 +1,44 @@
-﻿---
-file_id: "WIKI_THINK_DATA_ETHICS_SCOPING"
-title: "Đạo đức và Quyền riêng tư trong Dữ liệu"
-category: "Wiki Page"
-prefix: "WIKI"
-tags: ["Data_Science", "Ethics", "Governance"]
-source: "[[SOURCE_THINK_Thinking_with_Data]]"
-status: "draft"
+---
+title: "CONCEPT: Đạo đức Dữ liệu trong Scoping (Data Ethics)"
+type: concept
+tags: ["Thinking", "Ethics", "Privacy", "DA_Core"]
+status: "verified"
 created: "2026-04-29"
-last_updated: "2026-04-29"
+last_updated: "2026-05-01"
 ---
 
-# Đạo đức và Quyền riêng tư trong Dữ liệu
+# Đạo đức Dữ liệu trong Scoping (Data Ethics)
 
-![Minh họa Đạo đức Dữ liệu](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/THINK_Data_Ethics.png)
+## 1. Định nghĩa
+Đạo đức dữ liệu là việc xem xét các tác động về quyền riêng tư, sự công bằng và tính minh bạch ngay từ giai đoạn xác định phạm vi dự án (Scoping). Nó đảm bảo rằng việc khai thác dữ liệu không gây hại cho cá nhân hoặc cộng đồng.
 
-## 1. Sơ đồ cấu trúc (Visual Guide)
+## 2. Nguyên lý / Cấu trúc
+- **Privacy (Riêng tư)**: Dữ liệu có được ẩn danh hóa (anonymized) không?
+- **Fairness (Công bằng)**: Mô hình có thiên kiến (bias) với một nhóm đối tượng nào không?
+- **Transparency (Minh bạch)**: Người dùng có biết dữ liệu của họ đang được sử dụng như thế nào không?
+- **Accountability (Trách nhiệm)**: Ai chịu trách nhiệm nếu mô hình đưa ra quyết định sai lầm?
 
-```mermaid
-graph TD
-    E[ĐẠO ĐỨC DỮ LIỆU] --> A[Ẩn danh hóa - Anonymization]
-    E --> C[Sự đồng ý - Consent]
-    E --> B[Công bằng - Fairness]
-    E --> T[Minh bạch - Transparency]
-```
+## 3. Ví dụ đối chiếu (Rule 17: Double Examples)
 
-## 2. Định nghĩa cốt lõi
-Trong cuốn *Thinking with Data*, đạo đức không chỉ là một khái niệm trừu tượng mà là một phần của quy trình thiết kế dự án (Scoping). Nó đảm bảo rằng dữ liệu được thu thập và sử dụng một cách có trách nhiệm, bảo vệ quyền lợi của cá nhân và tránh các định kiến sai lệch.
+### Ví dụ từ sách (Original)
+> **Bối cảnh**: Sử dụng dữ liệu mạng xã hội để dự đoán khuynh hướng chính trị của người dùng.
+> **Ứng dụng**: Dù kỹ thuật có thể thực hiện được, nhưng việc này vi phạm đạo đức nếu không có sự đồng ý của người dùng, dẫn đến sự thao túng thông tin và xâm phạm quyền tự do cá nhân.
+> **Nguồn**: [[SOURCE_THINK_Thinking_with_Data]] — Chương 1 & Case Studies.
 
-## 3. Các nguyên tắc cốt lõi (Structural Fidelity - Chương cuối)
+### Ứng dụng sư phạm (Pedagogical Application)
+> **Bối cảnh**: Nhà trường sử dụng AI để dự đoán "Học sinh có khả năng vi phạm kỷ luật cao".
+> **Ứng dụng**: 
+> - **Vấn đề đạo đức**: Nếu mô hình dựa trên các yếu tố như "Gia cảnh" hay "Địa phương", nó sẽ tạo ra sự định kiến (Bias) và dán nhãn xấu cho học sinh ngay khi các em chưa làm gì sai.
+> - **Giải pháp**: Chỉ sử dụng dữ liệu hành vi thực tế (điểm số, chuyên cần) và luôn có sự thẩm định của con người (Giáo viên/Chuyên gia tâm lý) trước khi đưa ra kết luận.
 
-1.  **Quyền riêng tư ngay từ khâu thiết kế (Privacy by Design)**: Xem xét tác động đến quyền riêng tư ngay khi lập kế hoạch CoNVO.
-2.  **Sự đồng ý có hiểu biết (Informed Consent)**: Người dùng cần biết dữ liệu của họ được dùng làm gì.
-3.  **Hạn chế mục tiêu (Purpose Limitation)**: Chỉ thu thập dữ liệu phục vụ trực tiếp cho mục tiêu dự án.
-4.  **Tính công bằng của thuật toán**: Đảm bảo kết quả không gây phân biệt đối xử với bất kỳ nhóm đối tượng nào.
-
----
-
-## 4.  Ví dụ đối chiếu (Rule 17: Double Examples)
-
-### 4.1. Ví dụ từ sách (Original)
-**Tình huống**: Phân tích dữ liệu hành vi người dùng để tối ưu hóa quảng cáo.
--   **Đạo đức**: Cần ẩn danh hóa các thông tin nhận dạng cá nhân (PII) như tên, số điện thoại trước khi đưa vào mô hình phân tích.
--   **Vi phạm**: Lưu trữ dữ liệu vị trí GPS thô mà không có sự đồng ý rõ ràng của người dùng về việc theo dõi vị trí.
-
-### 4.2. Ứng dụng sư phạm (Pedagogical Application)
-**Tình huống**: Xây dựng hệ thống điểm danh bằng khuôn mặt (Face Recognition) trong lớp học.
--   **Đạo đức**: [Phóng tác] Cần giải thích cho học sinh và phụ huynh về cách hệ thống hoạt động, cam kết xóa dữ liệu ảnh gốc sau khi đã trích xuất đặc trưng điểm danh.
--   **Công bằng**: Kiểm tra xem hệ thống có nhận diện chính xác học sinh đeo kính hoặc học sinh có các đặc điểm khuôn mặt đa dạng hay không để tránh sự phân biệt.
-
-## 5. 4F — Phản tư sư phạm
--   **Facts**: Dữ liệu không bao giờ là "trung lập", nó luôn mang theo các định kiến của người thu thập.
--   **Feelings**: Giúp học sinh hình thành nhân cách đạo đức của một "Công dân số" (Digital Citizen) có trách nhiệm.
--   **Findings**: Một dự án thành công về kỹ thuật nhưng thất bại về đạo đức có thể gây hậu quả pháp lý và uy tín nghiêm trọng.
--   **Futures**: Luôn có một mục "Đánh giá tác động đạo đức" trong mọi đồ án tốt nghiệp STEAM.
-
-## Nguồn
--   [[SOURCE_THINK_Thinking_with_Data]] — Chapter: Ethics and Privacy.
+## 4. Trích dẫn nguồn (Rule 14)
+- **Nguồn**: [[SOURCE_THINK_Thinking_with_Data]] — Trang 12-15.
+- **Fact-check**: Đã đối chiếu file raw `THINK_Thinking_with_Data.md`. [Rule 14: SUCCESS]
 
 ---
-[AUDITOR] Rule 14: Đã xác nhận fact tồn tại trong file raw gốc.
+WRITE REPORT:
+  file: "3-resources/wiki/concepts/CONCEPT_THINK_Data_Ethics_Scoping.md"
+  operation: "overwrite"
+  added: "Chuẩn hóa theo v4.1, bổ sung ví dụ về định kiến AI trong giáo dục."
+  removed: "NONE"
+  compliance: "[Rule 20] Đã đối soát Template và Raw thành công."

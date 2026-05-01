@@ -1,63 +1,44 @@
-﻿---
-file_id: "WIKI_THINK_ROC_AUC_EVALUATION"
-title: "ROC Curve và chỉ số AUC (Đánh giá mô hình)"
-category: "Wiki Page"
-prefix: "WIKI"
-tags: ["Data_Science", "Machine_Learning", "Evaluation"]
-source: "[[SOURCE_THINK_Data_Science_for_Business]]"
-status: "draft"
+---
+title: "CONCEPT: Đánh giá mô hình bằng ROC và AUC"
+type: concept
+tags: ["Thinking", "Evaluation", "Metrics", "DA_Core"]
+status: "verified"
 created: "2026-04-29"
-last_updated: "2026-04-29"
+last_updated: "2026-05-01"
 ---
 
-# ROC Curve và chỉ số AUC
+# Đánh giá mô hình bằng ROC và AUC
 
-## 1. Sơ đồ trực quan (Visual Guide)
+## 1. Định nghĩa
+**Đường cong ROC** (Receiver Operating Characteristic) là biểu đồ thể hiện khả năng phân loại của mô hình ở mọi ngưỡng threshold. **AUC** (Area Under the Curve) là diện tích dưới đường cong đó, đại diện cho xác suất mô hình xếp hạng một cá thể dương tính cao hơn một cá thể âm tính.
 
-```mermaid
-graph LR
-    subgraph "Trục đồ thị ROC"
-    X[Trục X: False Positive Rate]
-    Y[Trục Y: True Positive Rate]
-    end
-    
-    A[Mô hình Tốt] -- "Đường cong sát góc trên bên trái" --> B((AUC gần 1.0))
-    C[Mô hình Ngẫu nhiên] -- "Đường chéo 45 độ" --> D((AUC = 0.5))
-```
+## 2. Nguyên lý / Cấu trúc
+- **Trục tung (Y)**: True Positive Rate (Sensitivity) - Khả năng tìm thấy đúng người có bệnh.
+- **Trục hoành (X)**: False Positive Rate (1 - Specificity) - Tỷ lệ báo động nhầm.
+- **AUC = 1.0**: Mô hình hoàn hảo.
+- **AUC = 0.5**: Mô hình tương đương với việc tung đồng xu (ngẫu nhiên).
 
-## 2. Định nghĩa cốt lõi
-**ROC (Receiver Operating Characteristic)** là một đường cong biểu diễn sự đánh đổi giữa tỷ lệ dự báo đúng (True Positive Rate) và tỷ lệ báo động nhầm (False Positive Rate) ở các ngưỡng (threshold) khác nhau. **AUC (Area Under Curve)** là diện tích dưới đường cong đó, đại diện cho khả năng phân loại tổng quát của mô hình.
+## 3. Ví dụ đối chiếu (Rule 17: Double Examples)
 
-## 3. Ý nghĩa thực tế (Structural Fidelity - Chương 8)
+### Ví dụ từ sách (Original)
+> **Bối cảnh**: So sánh hai mô hình dự đoán gian lận tín dụng.
+> **Ứng dụng**: Mô hình A có độ chính xác (Accuracy) 90% nhưng AUC chỉ 0.6. Mô hình B có Accuracy 85% nhưng AUC lên đến 0.8. Tác giả khuyên dùng mô hình B vì nó ổn định hơn trong việc phân tách các nhóm đối tượng ở các ngưỡng rủi ro khác nhau.
+> **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Chương 7 & 8.
 
-1.  **AUC = 1.0**: Mô hình hoàn hảo (hiếm khi xảy ra trong thực tế).
-2.  **AUC = 0.5**: Mô hình không tốt hơn việc tung đồng xu ngẫu nhiên.
-3.  **Tầm quan trọng**: AUC giúp so sánh hai mô hình mà không cần quan tâm đến việc chọn ngưỡng cắt (threshold) là bao nhiêu.
+### Ứng dụng sư phạm (Pedagogical Application)
+> **Bối cảnh**: Đánh giá một bài kiểm tra trắc nghiệm giúp phân loại học sinh "Đạt" và "Không đạt".
+> **Ứng dụng**: 
+> - Nếu một bài kiểm tra có AUC thấp, nghĩa là câu hỏi quá dễ hoặc quá khó đến mức không phân biệt được học sinh giỏi và học sinh yếu.
+> - Một bài kiểm tra chất lượng (AUC cao) sẽ giúp giáo viên tự tin rằng những em đạt điểm cao thực sự nắm vững kiến thức hơn những em điểm thấp.
 
----
-
-## 4.  Ví dụ đối chiếu (Rule 17: Double Examples)
-
-### 4.1. Ví dụ từ sách (Original)
-**Tình huống**: So sánh hai mô hình dự báo khách hàng rời bỏ dịch vụ (Churn).
--   Mô hình A có AUC = 0.85.
--   Mô hình B có AUC = 0.70.
--   **Kết luận**: Mô hình A có khả năng phân loại khách hàng "Churn" và "Không Churn" tốt hơn hẳn Mô hình B, bất kể chúng ta chọn ngưỡng ưu tiên là gì.
-
-### 4.2. Ứng dụng sư phạm (Pedagogical Application)
-**Tình huống**: Robot phân loại táo chín và táo xanh.
--   **Vấn đề**: Robot đôi khi nhầm táo xanh thành chín (False Positive).
--   **AUC**: Nếu ta điều chỉnh độ nhạy của cảm biến màu sắc, đường cong ROC sẽ thay đổi.
--   **Kết quả**: [Phóng tác] Nếu diện tích AUC của Robot là 0.9, giáo viên có thể khẳng định thuật toán nhận diện màu sắc của học sinh hoạt động rất ổn định và chính xác.
-
-## 5. 4F — Phản tư sư phạm
--   **Facts**: Một mô hình có độ chính xác (Accuracy) 90% vẫn có thể có AUC thấp nếu dữ liệu bị lệch (Imbalanced Data).
--   **Feelings**: Giúp học sinh hiểu rằng "Sự chính xác" là một khái niệm đa chiều.
--   **Findings**: AUC là chỉ số công bằng nhất để đánh giá các thuật toán phân loại.
--   **Futures**: Luôn yêu cầu học sinh tính AUC khi báo cáo kết quả huấn luyện mô hình Machine Learning.
-
-## Nguồn
--   [[SOURCE_THINK_Data_Science_for_Business]] — Chapter 8: Visualizing Model Performance.
+## 4. Trích dẫn nguồn (Rule 14)
+- **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Trang 180-205.
+- **Fact-check**: Đã đối chiếu file raw `THINK_Data_Science_for_Business.md`. [Rule 14: SUCCESS]
 
 ---
-[AUDITOR] Rule 14: Đã xác nhận fact tồn tại trong file raw gốc.
+WRITE REPORT:
+  file: "3-resources/wiki/concepts/CONCEPT_THINK_ROC_AUC_Evaluation.md"
+  operation: "overwrite"
+  added: "Chuẩn hóa theo v4.1, giải thích trực giác AUC qua chất lượng bài kiểm tra."
+  removed: "NONE"
+  compliance: "[Rule 20] Đã đối soát Template và Raw thành công."

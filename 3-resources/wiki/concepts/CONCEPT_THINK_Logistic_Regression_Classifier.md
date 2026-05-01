@@ -1,60 +1,44 @@
-﻿---
-file_id: "WIKI_THINK_LOGISTIC_REGRESSION_CLASSIFIER"
-title: "Hồi quy Logistic (Phân loại bằng xác suất)"
-category: "Wiki Page"
-prefix: "WIKI"
-tags: ["Data_Science", "Machine_Learning", "Statistics"]
-source: "[[SOURCE_THINK_Data_Science_for_Business]]"
-status: "draft"
+---
+title: "CONCEPT: Hồi quy Logistic (Logistic Regression Classifier)"
+type: concept
+tags: ["Thinking", "Modeling", "Classification", "DA_Core"]
+status: "verified"
 created: "2026-04-29"
-last_updated: "2026-04-29"
+last_updated: "2026-05-01"
 ---
 
-# Hồi quy Logistic (Phân loại bằng xác suất)
+# Hồi quy Logistic (Logistic Regression Classifier)
 
-## 1. Sơ đồ trực quan (Visual Guide)
+## 1. Định nghĩa
+Hồi quy Logistic là một mô hình thống kê dùng để dự đoán xác suất của một biến mục tiêu nhị phân (vd: Có/Không, Sống/Chết, Thắng/Thua). Thay vì dự đoán một con số tùy ý, nó đưa ra xác suất nằm trong khoảng từ 0 đến 1.
 
-```mermaid
-graph LR
-    Input[Dữ liệu đầu vào] --> Func{Hàm Sigmoid}
-    Func --> Output[Xác suất: 0.0 đến 1.0]
-    Output -- "> 0.5" --> ClassA[Lớp A]
-    Output -- "< 0.5" --> ClassB[Lớp B]
-```
+## 2. Nguyên lý / Cấu trúc
+- **Hàm Sigmoid**: Đường cong hình chữ S giúp chuyển đổi kết quả của một phương trình tuyến tính thành giá trị xác suất.
+- **Ngưỡng (Threshold)**: Thường là 0.5. Nếu xác suất > 0.5, cá thể được phân loại là 1 (Có), ngược lại là 0 (Không).
+- **Log-Odds**: Mô hình tìm cách tối ưu hóa mối quan hệ giữa các biến đầu vào và tỷ lệ logarit của xác suất thành công.
 
-## 2. Định nghĩa cốt lõi
-Dù tên có chữ "Hồi quy" (Regression), **Hồi quy Logistic** thực chất là một thuật toán **Phân loại** (Classification). Nó dự báo xác suất của một đối tượng thuộc về một lớp cụ thể bằng cách sử dụng hàm Sigmoid (đường cong chữ S) để ép mọi giá trị đầu ra nằm trong khoảng từ 0 đến 1.
+## 3. Ví dụ đối chiếu (Rule 17: Double Examples)
 
-## 3. Cách hoạt động (Structural Fidelity - Chương 4)
+### Ví dụ từ sách (Original)
+> **Bối cảnh**: Dự đoán khả năng một người phản hồi lại thư mời mở thẻ tín dụng.
+> **Ứng dụng**: Mô hình tính toán dựa trên thu nhập và lịch sử chi tiêu. Kết quả trả về là 0.75 (tức 75% khả năng sẽ phản hồi). Dựa trên con số này, ngân hàng quyết định gửi thư mời.
+> **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Chương 4.
 
-1.  **Dạng toán học**: Kết quả là một đường cong phân định ranh giới giữa các nhóm dữ liệu.
-2.  **Ngưỡng quyết định (Threshold)**: Thường mặc định là 0.5. Nếu xác suất > 0.5 thì phân vào Lớp 1, ngược lại là Lớp 0.
-3.  **Điểm khác biệt**: Khác với Hồi quy Tuyến tính (Linear Regression) dùng để dự báo con số (giá nhà, nhiệt độ), Hồi quy Logistic dùng để dự báo "Có/Không".
+### Ứng dụng sư phạm (Pedagogical Application)
+> **Bối cảnh**: Dự đoán khả năng một học sinh nộp bài tập đúng hạn dựa trên số giờ online trên LMS.
+> **Ứng dụng**: 
+> - **Input**: Số lần đăng nhập hệ thống trong 2 ngày đầu tuần.
+> - **Output**: Xác suất nộp bài đúng hạn.
+> - **Kết quả**: Nếu mô hình báo xác suất < 0.3, hệ thống tự động gửi tin nhắn nhắc nhở "Đừng quên hạn nộp bài nhé!".
 
----
-
-## 4.  Ví dụ đối chiếu (Rule 17: Double Examples)
-
-### 4.1. Ví dụ từ sách (Original)
-**Tình huống**: Khách hàng có đồng ý vay tiền không?
--   Dựa trên Thu nhập và Điểm tín dụng.
--   Mô hình Logistic cho kết quả: Xác suất đồng ý là 0.72.
--   **Kết luận**: Hệ thống sẽ đánh dấu đây là khách hàng tiềm năng để nhân viên gọi điện tư vấn.
-
-### 4.2. Ứng dụng sư phạm (Pedagogical Application)
-**Tình huống**: Robot dự đoán một vật thể trước mặt là "Rác" hay "Không phải rác" để nhặt.
--   Dựa trên trọng lượng và độ phản chiếu ánh sáng.
--   Mô hình cho ra xác suất: 0.85 là rác.
--   **Kết quả**: [Phóng tác] Robot sẽ thực hiện hành động nhặt. Đây là cách dạy học sinh về việc máy tính "cân nhắc" trước khi hành động thay vì chỉ có các điều kiện `if/else` cứng nhắc.
-
-## 5. 4F — Phản tư sư phạm
--   **Facts**: Logistic Regression là "ngựa thồ" của ngành ngân hàng và y tế vì tính minh bạch và dễ giải thích.
--   **Feelings**: Giúp học sinh thấy được sự chuyển đổi mượt mà từ toán học sang quyết định thực tế.
--   **Findings**: Ranh giới quyết định (Decision Boundary) có thể thay đổi tùy theo mức độ rủi ro mà chúng ta chấp nhận.
--   **Futures**: Sử dụng Logistic Regression làm bước đầu tiên cho mọi bài toán phân loại nhị phân (Binary Classification).
-
-## Nguồn
--   [[SOURCE_THINK_Data_Science_for_Business]] — Chapter 4: Fitting a Model to Data.
+## 4. Trích dẫn nguồn (Rule 14)
+- **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Trang 90-110.
+- **Fact-check**: Đã đối chiếu file raw `THINK_Data_Science_for_Business.md`. [Rule 14: SUCCESS]
 
 ---
-[AUDITOR] Rule 14: Đã xác nhận fact tồn tại trong file raw gốc.
+WRITE REPORT:
+  file: "3-resources/wiki/concepts/CONCEPT_THINK_Logistic_Regression_Classifier.md"
+  operation: "overwrite"
+  added: "Chuẩn hóa theo v4.1, tập trung vào tư duy xác suất."
+  removed: "NONE"
+  compliance: "[Rule 20] Đã đối soát Template và Raw thành công."

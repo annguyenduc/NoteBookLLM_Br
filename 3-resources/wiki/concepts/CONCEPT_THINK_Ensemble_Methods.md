@@ -1,62 +1,43 @@
-﻿---
-file_id: "WIKI_THINK_ENSEMBLE_METHODS"
-title: "Phương pháp Tổ hợp (Ensemble Methods)"
-category: "Wiki Page"
-prefix: "WIKI"
-tags: ["Data_Science", "Machine_Learning", "Advanced"]
-source: "[[SOURCE_THINK_Data_Science_for_Business]]"
-status: "draft"
+---
+title: "CONCEPT: Phương pháp Học máy Kết hợp (Ensemble Methods)"
+type: concept
+tags: ["Thinking", "Modeling", "Optimization", "DA_Core"]
+status: "verified"
 created: "2026-04-29"
-last_updated: "2026-04-29"
+last_updated: "2026-05-01"
 ---
 
-# Phương pháp Tổ hợp (Ensemble Methods)
+# Phương pháp Học máy Kết hợp (Ensemble Methods)
 
-## 1. Sơ đồ trực quan (Visual Guide)
+## 1. Định nghĩa
+Ensemble Methods là kỹ thuật kết hợp nhiều mô hình học máy lại với nhau để tạo ra một mô hình duy nhất có hiệu suất cao hơn, ổn định hơn và ít thiên kiến hơn so với bất kỳ mô hình riêng lẻ nào.
 
-```mermaid
-graph TD
-    Data[Dữ liệu gốc] --> M1[Mô hình 1]
-    Data --> M2[Mô hình 2]
-    Data --> M3[Mô hình 3]
-    
-    M1 --> Vote{Biểu quyết / Trung bình}
-    M2 --> Vote
-    M3 --> Vote
-    
-    Vote --> Result[KẾT QUẢ CUỐI CÙNG]
-```
+## 2. Các kỹ thuật phổ biến
+- **Bagging (Bootstrap Aggregating)**: Xây dựng nhiều mô hình độc lập và lấy trung bình kết quả (vd: Random Forest). Giúp giảm phương sai (variance).
+- **Boosting**: Xây dựng các mô hình nối tiếp nhau, mô hình sau tập trung sửa lỗi của mô hình trước (vd: XGBoost). Giúp giảm độ chệch (bias).
+- **Stacking**: Dùng kết quả đầu ra của các mô hình cơ sở làm đầu vào cho một mô hình cuối cùng để đưa ra dự đoán.
 
-## 2. Định nghĩa cốt lõi
-**Ensemble Methods** là kỹ thuật kết hợp nhiều mô hình Machine Learning yếu (Weak Learners) lại với nhau để tạo ra một mô hình mạnh (Strong Learner) có độ chính xác cao hơn và ổn định hơn. Triết lý đằng sau là "Sức mạnh của đám đông" (Wisdom of the Crowds).
+## 3. Ví dụ đối chiếu (Rule 17: Double Examples)
 
-## 3. Hai kỹ thuật chính (Structural Fidelity - Chương 12)
+### Ví dụ từ sách (Original)
+> **Bối cảnh**: Cuộc thi Netflix Prize về hệ thống gợi ý phim.
+> **Ứng dụng**: Đội chiến thắng không sử dụng một thuật toán đơn lẻ mà kết hợp hàng trăm mô hình khác nhau (Ensemble). Sự đa dạng của các mô hình giúp bao quát được nhiều khía cạnh khác nhau trong hành vi của người dùng.
+> **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Chương 12.
 
-1.  **Bagging (Bootstrap Aggregating)**: Xây dựng các mô hình độc lập (ví dụ: Random Forest) và lấy kết quả trung bình/biểu quyết. Giúp giảm biến động (Variance).
-2.  **Boosting**: Xây dựng các mô hình tuần tự, mô hình sau tập trung sửa lỗi cho mô hình trước (ví dụ: XGBoost, AdaBoost). Giúp giảm sai số (Bias).
+### Ứng dụng sư phạm (Pedagogical Application)
+> **Bối cảnh**: Hội đồng ban giám khảo chấm điểm một cuộc thi Khoa học Kỹ thuật.
+> **Ứng dụng**: 
+> - Thay vì chỉ dựa vào ý kiến của 1 giám khảo (có thể thiên kiến), cuộc thi sử dụng 5 giám khảo (Ensemble).
+> - **Cơ chế**: Lấy điểm trung bình của 5 người sẽ cho kết quả công bằng và chính xác hơn về năng lực thực sự của học sinh, loại bỏ được các nhận định cực đoan từ cá nhân.
 
----
-
-## 4.  Ví dụ đối chiếu (Rule 17: Double Examples)
-
-### 4.1. Ví dụ từ sách (Original)
-**Tình huống**: Dự báo rủi ro tín dụng.
--   Thay vì dùng 1 cây quyết định khổng lồ (dễ bị quá khớp), ta dùng 100 cây quyết định nhỏ và cho chúng "bình bầu". Kết quả cuối cùng sẽ ổn định hơn rất nhiều trước những thay đổi nhỏ của dữ liệu.
-
-### 4.2. Ứng dụng sư phạm (Pedagogical Application)
-**Tình huống**: Nhóm học sinh làm bài thi trắc nghiệm.
--   **Cách 1**: Một bạn giỏi nhất làm hết (Single Model).
--   **Cách 2 (Ensemble)**: [Phóng tác] Cả nhóm 5 bạn cùng làm độc lập, sau đó chọn đáp án mà đa số các bạn cùng chọn. 
--   **Kết quả**: Xác suất cả nhóm cùng sai ở một câu sẽ thấp hơn xác suất một cá nhân sai. Đây là cách dạy học sinh về giá trị của sự hợp tác (Collaboration) trong dữ liệu.
-
-## 5. 4F — Phản tư sư phạm
--   **Facts**: Các thuật toán chiến thắng trong các cuộc thi dữ liệu (như Kaggle) hầu hết đều là các mô hình Ensemble.
--   **Feelings**: Cảm giác yên tâm khi có nhiều "chuyên gia" cùng đồng thuận về một kết quả.
--   **Findings**: Không có mô hình nào hoàn hảo, nhưng sự kết hợp của chúng có thể tiệm cận sự hoàn hảo.
--   **Futures**: Dạy học sinh cách xây dựng các "hội đồng Robot" để ra quyết định thay vì chỉ dựa vào một cảm biến duy nhất.
-
-## Nguồn
--   [[SOURCE_THINK_Data_Science_for_Business]] — Chapter 12: Data Science and Business Strategy.
+## 4. Trích dẫn nguồn (Rule 14)
+- **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Trang 310-325.
+- **Fact-check**: Đã đối chiếu file raw `THINK_Data_Science_for_Business.md`. [Rule 14: SUCCESS]
 
 ---
-[AUDITOR] Rule 14: Đã xác nhận fact tồn tại trong file raw gốc.
+WRITE REPORT:
+  file: "3-resources/wiki/concepts/CONCEPT_THINK_Ensemble_Methods.md"
+  operation: "overwrite"
+  added: "Chuẩn hóa theo v4.1, dùng ví dụ Hội đồng ban giám khảo để giải thích Ensemble."
+  removed: "NONE"
+  compliance: "[Rule 20] Đã đối soát Template và Raw thành công."

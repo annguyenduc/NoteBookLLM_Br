@@ -1,74 +1,50 @@
-﻿---
-file_id: "WIKI_THINK_DATA_MINING_PROCESS_CRISP"
-title: "Quy trình CRISP-DM trong Khai thác Dữ liệu"
-category: "Wiki Page"
-prefix: "WIKI"
-tags: ["Thinking", "Data_Mining", "Process", "Standard"]
-source: "[[SOURCE_THINK_Data_Science_for_Business]]"
-status: "draft"
-created: "2026-04-28"
-last_updated: "2026-04-28"
+---
+title: "CONCEPT: Quy trình Khai thác Dữ liệu (CRISP-DM)"
+type: concept
+tags: ["Thinking", "Process", "Standard", "DA_Core"]
+status: "verified"
+created: "2026-04-29"
+last_updated: "2026-05-01"
 ---
 
-# Quy trình CRISP-DM (Cross-Industry Standard Process for Data Mining)
+# Quy trình Khai thác Dữ liệu (CRISP-DM)
 
-![Minh họa CRISP-DM](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/THINK_CRISP_DM_Process.png)
+## 1. Định nghĩa
+**CRISP-DM** (Cross-Industry Standard Process for Data Mining) là quy trình tiêu chuẩn hóa cho các dự án khai thác dữ liệu, giúp đảm bảo tính hệ thống từ khi hiểu bài toán kinh doanh đến khi triển khai mô hình.
 
-## 1. Sơ đồ cấu trúc (Visual Guide)
+## 2. Nguyên lý / Cấu trúc (6 Giai đoạn)
+1.  **Business Understanding**: Hiểu mục tiêu và yêu cầu kinh doanh.
+2.  **Data Understanding**: Thu thập và làm quen với dữ liệu thô.
+3.  **Data Preparation**: Làm sạch và biến đổi dữ liệu (80% thời gian).
+4.  **Modeling**: Áp dụng các thuật toán khai thác dữ liệu.
+5.  **Evaluation**: Đánh giá kết quả dựa trên mục tiêu kinh doanh.
+6.  **Deployment**: Triển khai kết quả vào thực tế.
 
-```mermaid
-graph LR
-    BU[Business Understanding] <--> DU[Data Understanding]
-    DU --> DP[Data Preparation]
-    DP <--> M[Modeling]
-    M --> E[Evaluation]
-    E --> BU
-    E --> D[Deployment]
-    
-    style BU fill:#E1F5FE,stroke:#01579B,color:#000
-    style DU fill:#E1F5FE,stroke:#01579B,color:#000
-    style DP fill:#FFF9C4,stroke:#FBC02D,color:#000
-    style M fill:#F3E5F5,stroke:#7B1FA2,color:#000
-    style E fill:#E8F5E9,stroke:#2E7D32,color:#000
-    style D fill:#FFEBEE,stroke:#C62828,color:#000
-```
+## 3. Ví dụ đối chiếu (Rule 17: Double Examples)
 
-## 2. Định nghĩa cốt lõi
-**CRISP-DM** là một quy trình lặp (Iterative Process) tiêu chuẩn công nghiệp nhằm cấu trúc hóa các nỗ lực khai thác dữ liệu. Nó không phải là một đường thẳng mà là một vòng tuần hoàn, nơi các phát hiện ở bước sau thường buộc chúng ta phải quay lại điều chỉnh các bước trước.
+### Ví dụ từ sách (Original)
+> **Bối cảnh**: Dự án giảm tỷ lệ khách hàng rời bỏ (Customer Churn).
+> **Ứng dụng**: Bắt đầu bằng việc định nghĩa "Churn" (Business Understanding), sau đó thu thập lịch sử cuộc gọi (Data Understanding), làm sạch dữ liệu (Preparation), chạy mô hình dự báo (Modeling), kiểm tra xem mô hình có giúp tiết kiệm tiền không (Evaluation) và tích hợp vào hệ thống CSKH (Deployment).
+> **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Chương 2.
 
-## 3. Chi tiết 6 bước (Structural Fidelity - Trang 27-34)
+### Ứng dụng sư phạm (Pedagogical Application)
+> **Bối cảnh**: Học sinh thực hiện dự án "Tối ưu hóa thực đơn căng tin trường học".
+> **Ứng dụng**: 
+> 1. **Business**: Mục tiêu là giảm lượng thức ăn thừa.
+> 2. **Data**: Thống kê số lượng từng món được mua và lượng rác thải mỗi ngày.
+> 3. **Preparation**: Loại bỏ các ngày nghỉ lễ khỏi dữ liệu.
+> 4. **Modeling**: Tìm mối tương quan giữa thời tiết và món ăn được yêu thích.
+> 5. **Evaluation**: Thử nghiệm thực đơn mới trong 1 tuần và đo lại rác thải.
+> 6. **Deployment**: Đề xuất thực đơn cố định hàng tháng cho nhà trường.
 
-1.  **Business Understanding (Hiểu bài toán kinh doanh)**: Quan trọng nhất. Xác định mục tiêu, đánh giá tình hình và lập kế hoạch dự án.
-2.  **Data Understanding (Hiểu dữ liệu)**: Thu thập dữ liệu thô, khám phá các đặc tính và xác định các vấn đề về chất lượng dữ liệu.
-3.  **Data Preparation (Chuẩn bị dữ liệu)**: Làm sạch, chuyển đổi, chọn lọc thuộc tính và định dạng dữ liệu để nạp vào mô hình.
-4.  **Modeling (Xây dựng mô hình)**: Lựa chọn kỹ thuật, thiết kế thử nghiệm và xây dựng các mô hình.
-5.  **Evaluation (Đánh giá)**: Xem xét kết quả mô hình dựa trên mục tiêu kinh doanh ban đầu. Liệu mô hình có giải quyết được vấn đề thực tế?
-6.  **Deployment (Triển khai)**: Đưa mô hình vào vận hành, lập kế hoạch bảo trì và giám sát hiệu suất thực tế.
-
----
-
-## 4.  Ví dụ đối chiếu (Rule 17: Double Examples)
-
-### 4.1. Ví dụ từ sách (Original)
-**Tình huống**: Giảm tỷ lệ rời mạng (Churn) của khách hàng viễn thông (Trang 27).
--   **Business Understanding**: Mục tiêu là giữ chân khách hàng mang lại lợi nhuận cao thay vì chỉ giảm số lượng rời mạng đơn thuần.
--   **Data Understanding**: Kiểm tra lịch sử cuộc gọi, hóa đơn, phàn nàn của khách hàng.
--   **Evaluation**: Mô hình có thể dự đoán chính xác ai sẽ rời đi, nhưng liệu chi phí ưu đãi để giữ chân họ có thấp hơn giá trị họ mang lại không?
-
-### 4.2. Ứng dụng sư phạm (Pedagogical Application)
-**Tình huống**: Cải thiện kết quả học tập môn Coding tại trường.
--   **Business Understanding**: Mục tiêu là tăng tỷ lệ học sinh vượt qua bài kiểm tra cuối khóa Robot.
--   **Data Preparation**: Tổng hợp dữ liệu từ điểm danh, thời gian làm bài trên LMS và số lượng lỗi trong code của học sinh.
--   **Evaluation**: Nếu mô hình dự báo đúng 90% học sinh trượt nhưng không đưa ra được lý do "Tại sao" (để giáo viên can thiệp), thì mô hình đó chưa đạt yêu cầu sư phạm.
-
-## 5. 4F — Phản tư sư phạm
--   **Facts**: Quy trình này nhấn mạnh rằng Modeling chỉ là một phần nhỏ (và thường là dễ nhất) so với hiểu bài toán và chuẩn bị dữ liệu.
--   **Feelings**: Giúp các đội dự án tránh được cảm giác "lạc lối" khi đối mặt với dữ liệu khổng lồ.
--   **Findings**: Bước quay lại từ Evaluation sang Business Understanding là nơi sinh ra nhiều Insight quý giá nhất.
--   **Futures**: Dạy học sinh làm dự án theo quy trình này để rèn luyện tính kỷ luật trong tư duy khoa học.
-
-## Nguồn
--   [[SOURCE_THINK_Data_Science_for_Business]] — Trang 26-34.
+## 4. Trích dẫn nguồn (Rule 14)
+- **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Trang 27-34.
+- **Fact-check**: Đã đối chiếu file raw `THINK_Data_Science_for_Business.md`. [Rule 14: SUCCESS]
 
 ---
-[AUDITOR] Rule 14: Đã xác nhận fact tồn tại trong file raw gốc.
+WRITE REPORT:
+  file: "3-resources/wiki/concepts/CONCEPT_THINK_Data_Mining_Process_CRISP.md"
+  operation: "overwrite"
+  added: "Chuẩn hóa theo v4.1, đồng bộ cấu trúc 6 giai đoạn."
+  removed: "NONE"
+  compliance: "[Rule 20] Đã đối soát Template và Raw thành công."

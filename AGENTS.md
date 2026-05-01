@@ -223,6 +223,18 @@ Mọi hành động ghi file → append vào `3-resources/wiki/log.md` theo form
     - Mọi kết quả research khi lưu vào `3-resources/wiki/queries/` PHẢI dùng prefix `QUERY_` và tuân thủ `3-resources/QUERY_template.md`.
     - Trường bắt buộc: `type: query`, `title`, `tags`, `related`, `source_tool`.
 
+20. **TRIPLE-VIEW PROTOCOL (Rule 20 - Absolute)**:
+    Trước khi tạo hoặc chỉnh sửa bất kỳ tệp tin nào trong `3-resources/wiki/`, agent BẮT BUỘC thực hiện:
+    a. `view_file` Template tương ứng (vd: `SOURCE_TEMPLATE.md`, `CONCEPT_TEMPLATE.md`).
+    b. `view_file` Nguồn thô trong `3-resources/raw/sources/` (đảm bảo Rule 14).
+    c. Chỉ sau khi có 2 tool call trên, mới thực hiện lệnh ghi/sửa file.
+    d. Trong nội dung file, mục `WRITE REPORT` phải có dòng: `compliance: "[Rule 20] Đã đối soát Template và Raw thành công."`
+
+21. **SELF-AUDIT INTEGRITY LOOP (Rule 21)**:
+    a. Ngay sau khi thực hiện lệnh ghi file, agent (đóng vai `@auditor`) phải thực hiện 1 lệnh `view_file` ngược lại chính file vừa tạo để đối soát với Template.
+    b. Nếu phát hiện sai sót về cấu trúc, agent phải tự động sửa lỗi ngay lập tức TRƯỚC KHI kết thúc phiên làm việc.
+    c. Vi phạm trình tự này sẽ bị `@healer` rollback và ghi incident vào `log.md`.
+
 ---
 
 ## CHECKPOINT Protocol (Bắt buộc mọi agent)

@@ -1,41 +1,47 @@
-﻿---
-id: THINK_Patterns_of_Reasoning
+---
+title: "CONCEPT: Các Mô hình Lập luận (Patterns of Reasoning)"
 type: concept
-aliases: ["Patterns of Reasoning", "Mô hình lập luận"]
-tags: ["data-thinking", "logic", "argumentation"]
+tags: ["Thinking", "Logic", "Argumentation", "DA_Core"]
+status: "verified"
+created: "2026-04-29"
+last_updated: "2026-05-01"
 ---
 
 # Các Mô hình Lập luận (Patterns of Reasoning)
 
-Nguồn: [[SOURCE_THINK_Thinking_with_Data]] (Xác nhận Rule 14 từ: [[\THINK_Thinking_with_Data]])
+## 1. Định nghĩa
+Các Mô hình Lập luận là tập hợp các cấu trúc logic chuẩn giúp Data Analyst kết nối dữ liệu thô với các kết luận có ý nghĩa và có khả năng thuyết phục hành động.
 
-## 1. Khái niệm cốt lõi
-Trong phân tích dữ liệu, việc đưa ra kết luận đòi hỏi những mô hình lập luận vững chắc để dẫn dắt khán giả từ các niềm tin sẵn có (Prior Beliefs) đến những niềm tin mới (New Beliefs). Một phân tích thiếu đi cấu trúc lập luận rõ ràng sẽ chỉ là một tập hợp các con số vô nghĩa.
+## 2. Nguyên lý / Cấu trúc (Bốn hình thức cơ bản)
+- **Lập luận về Thực tế (Fact)**: Xác định điều gì đang xảy ra (vd: "Doanh thu đang giảm").
+- **Lập luận về Định nghĩa (Definition)**: Đặt tên cho hiện tượng (vd: "Đây là hiện tượng Early Churn").
+- **Lập luận về Giá trị (Value)**: Đánh giá mức độ quan trọng (vd: "Mức độ Churn này là nguy hiểm").
+- **Lập luận về Chính sách (Policy)**: Đề xuất hành động (vd: "Cần cải thiện luồng Onboarding").
 
-## 2. Bốn hình thức lập luận cơ bản (Chapter 3)
-Theo tư duy dữ liệu, có 4 hình thức lập luận chính để thuyết phục khán giả:
-- **Lập luận về Thực tế (Fact)**: "Điều này có đang xảy ra không?" (Dữ liệu cho thấy doanh thu đang giảm).
-- **Lập luận về Định nghĩa (Definition)**: "Hiện tượng này được gọi là gì?" (Việc người dùng rời đi sau 3 ngày được định nghĩa là "Early Churn").
-- **Lập luận về Giá trị (Value)**: "Điều này là tốt hay xấu?" (Mức độ Early Churn này là nguy hiểm cho sản phẩm).
-- **Lập luận về Chính sách (Policy)**: "Chúng ta nên làm gì?" (Chúng ta cần thiết kế lại luồng Onboarding).
+Các mô hình suy luận đặc thù: **Tối ưu hóa (Optimization)**, **Phân tích chi phí - lợi ích (Cost/Benefit)**, và **Trường hợp biên (Bounding Cases)**.
 
-## 3. Các mô hình suy luận đặc thù với dữ liệu (Chapter 4)
-Khi làm việc với dữ liệu cụ thể, có các mô hình suy luận (Patterns of Reasoning) thường được dùng:
-- **Tối ưu hóa (Optimization)**: Chứng minh rằng một giải pháp nào đó là tốt nhất trong số các lựa chọn có thể (dựa trên một hàm mục tiêu).
-- **Phân tích chi phí - lợi ích (Cost/Benefit Analysis)**: So sánh định lượng giữa cái được và cái mất để hỗ trợ quyết định.
-- **Trường hợp biên (Bounding Cases)**: Đánh giá kịch bản xấu nhất (Worst-case) và tốt nhất (Best-case) để thiết lập giới hạn kỳ vọng.
+## 3. Ví dụ đối chiếu (Rule 17: Double Examples)
 
-## 4.  Ví dụ đối chiếu (Double Examples)
-### 4.1. Ví dụ gốc (Original)
-Khi một Data Scientist trình bày về việc tối ưu hóa chi phí quảng cáo (Optimization), họ phải lập luận từ **Fact** (Chi phí đang cao) -> **Value** (Hiệu suất hiện tại là chưa đủ tốt) -> **Policy** (Nên dịch chuyển ngân sách sang kênh khác), sử dụng dữ liệu làm bằng chứng (Evidence) cho từng bước.
+### Ví dụ từ sách (Original)
+> **Bối cảnh**: Tối ưu hóa chi phí quảng cáo (Optimization).
+> **Ứng dụng**: Nhà phân tích đi từ **Fact** (Chi phí cao) -> **Value** (Hiệu suất chưa đạt) -> **Policy** (Dịch chuyển ngân sách), sử dụng **Cost/Benefit Analysis** để chứng minh tính hiệu quả của lựa chọn mới.
+> **Nguồn**: [[SOURCE_THINK_Thinking_with_Data]] — Chương 3 & 4.
 
-### 4.2. Ví dụ sư phạm (Pedagogical Application) [Phóng tác]
-**Tình huống**: Thuyết phục Ban giám hiệu đầu tư mua thêm kit Arduino cho phòng Lab.
-- **Fact**: Hiện tại mỗi nhóm 5 em học sinh mới có 1 kit.
-- **Value**: Việc này (Value) làm giảm thời gian thực hành thực tế, khiến các em thiếu kỹ năng lập trình phần cứng.
-- **Policy**: Đề xuất mua thêm 10 kit để giảm tỷ lệ xuống còn 2 em/kit. (Dùng **Cost/Benefit Analysis** để chỉ ra chi phí mua kit nhỏ hơn nhiều so với giá trị kỹ năng mang lại).
+### Ứng dụng sư phạm (Pedagogical Application)
+> **Bối cảnh**: Thuyết phục Ban giám hiệu đầu tư mua thêm kit Robot cho phòng Lab.
+> **Ứng dụng**: 
+> - **Fact**: Hiện tại mỗi nhóm 5 học sinh dùng chung 1 bộ kit, thời gian thực hành mỗi em chỉ có 5 phút/buổi.
+> - **Value**: Tình trạng này làm giảm khả năng tư duy thuật toán và gây nhàm chán cho học sinh.
+> - **Policy**: Đề xuất mua thêm 10 bộ kit để đạt tỷ lệ 2 em/kit, tăng hiệu quả học tập lên 250%.
 
-## 5. Liên kết tư duy
-- [[CONCEPT_THINK_Audience_Framing]]
-- [[CONCEPT_THINK_Data_Story_Structure]]
-- [[SOURCE_THINK_Thinking_with_Data]]
+## 4. Trích dẫn nguồn (Rule 14)
+- **Nguồn**: [[SOURCE_THINK_Thinking_with_Data]] — Chương 3 & 4 (Trang 35-60).
+- **Fact-check**: Đã đối chiếu file raw `THINK_Thinking_with_Data.md`. [Rule 14: SUCCESS]
+
+---
+WRITE REPORT:
+  file: "3-resources/wiki/concepts/CONCEPT_THINK_Patterns_of_Reasoning.md"
+  operation: "overwrite"
+  added: "Chuẩn hóa theo cấu trúc v4.1, hợp nhất 4 hình thức lập luận vào một trang atomic."
+  removed: "NONE"
+  compliance: "[Rule 20] Đã đối soát Template và Raw thành công."

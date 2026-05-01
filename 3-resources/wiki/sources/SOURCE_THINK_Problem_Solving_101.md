@@ -1,34 +1,39 @@
 ---
-source_id: SOURCE_THINK_Problem_Solving_101
-title: "ACAD Problem Solving 101: A Simple Book for Smart People"
+source_id: SOURCE_THINK_PROBLEM_SOLVING_101
+title: "ACAD: Problem Solving 101 - Tư duy giải quyết vấn đề kiểu McKinsey"
 author: "Ken Watanabe"
-category: ACAD
-domain: "Analytical Thinking / Problem Solving"
+category: "ACAD"
+domain: "Thinking & Problem Solving"
 status: "verified"
 created: "2026-04-29"
-last_updated: "2026-04-29"
+last_updated: "2026-05-01"
 ---
 
 # ACAD Problem Solving 101
 
 ## 📝 1. Phân tích Ingest (Analysis - Step 1)
-- **Thực thể & Khái niệm then chốt:** Logic Tree, Yes/No Tree, Problem-Solving Process, Prioritization Matrix, Action Plan.
-- **Kết nối Wiki:** Là nền tảng nhập môn cho nhóm [[Thinking]]. Cung cấp các công cụ trực quan cho [[CONCEPT_THINK_Logic_Tree]] và [[CONCEPT_THINK_Root_Cause_Analysis]].
-- **Điểm khác biệt/Mâu thuẫn:** Tập trung vào việc "Đơn giản hóa" các vấn đề phức tạp. Đối lập với xu hướng làm phức tạp hóa vấn đề bằng công nghệ của các DA mới vào nghề.
-- **Đề xuất cấu trúc:** Tạo trang [[CONCEPT_THINK_Logic_Tree]] với các ví dụ thực tế về việc phân tích "Tại sao doanh thu giảm" bằng cây logic.
+*Phần này ghi lại kết quả phân tích cấu trúc trước khi tạo các trang Concept.*
+
+- **Thực thể & Khái niệm then chốt:** Quy trình 4 bước, Logic Tree (Why/How), Yes/No Tree, Prioritization Matrix.
+- **Kết nối Wiki:** Là nền tảng tư duy (Mindset) cho toàn bộ lộ trình [[SYNTHESIS_DA_Core_Workflow]].
+- **Điểm khác biệt/Mâu thuẫn:** Chuyển đổi tư duy từ "thuần túy học thuật" sang "hành động dựa trên dữ liệu thực tế".
+- **Đề xuất cấu trúc:**
+    - [[CONCEPT_THINK_Problem_Solving_Process]]
+    - [[CONCEPT_THINK_Logic_Tree]]
+    - [[CONCEPT_THINK_Prioritization_Matrix]]
 
 ## 📖 2. Tổng quan nguồn (Overview - Step 2)
-Một cuốn sách tinh gọn nhưng đầy sức mạnh về tư duy giải quyết vấn đề. Tác giả hướng dẫn cách sử dụng các sơ đồ trực quan để chẩn đoán nguyên nhân gốc rễ, đưa ra các giải pháp khả thi và lập kế hoạch thực hiện một cách khoa học, giúp DA rèn luyện tư duy logic ngay từ những bước đầu tiên.
+Cuốn sách này cung cấp một bộ công cụ tối giản nhưng mạnh mẽ để giải quyết các vấn đề phức tạp. Đối với Data Analyst, nó giúp hình thành phản xạ phân rã các chỉ số kinh doanh bị sụt giảm thành các nguyên nhân gốc rễ có thể xử lý được.
 
 ## 🚀 3. Các Concept đã trích xuất (Rule 14 & 17)
-- [[CONCEPT_THINK_Problem_Solving_Process]] | **Quy trình giải quyết vấn đề** - 4 bước từ xác định đến hành động.
-- [[CONCEPT_THINK_Logic_Tree]] | **Cây Logic** - Công cụ phân tách vấn đề thành các phần nhỏ.
-- [[CONCEPT_THINK_Prioritization_Matrix]] | **Ma trận ưu tiên** - Cách chọn lọc giải pháp hiệu quả nhất.
+- [[CONCEPT_THINK_Problem_Solving_Process]] | **Quy trình giải quyết vấn đề** - 4 bước từ hiểu hiện trạng đến thực thi.
+- [[CONCEPT_THINK_Logic_Tree]] | **Cây Logic** - Công cụ phân tách vấn đề theo nguyên tắc MECE.
+- [[CONCEPT_THINK_Prioritization_Matrix]] | **Ma trận ưu tiên** - Lựa chọn hành động dựa trên tác động và nỗ lực.
 
 ## 🔍 4. Review Items (Dành cho Human)
-- [ ] Áp dụng "Logic Tree" để phân tích cấu trúc của khóa học Python trong dự án.
-- [ ] Kiểm tra xem các bài tập trong sách có thể dùng làm tài liệu đào tạo tư duy cho giáo viên không.
+- [ ] Kiểm tra xem các ví dụ sư phạm (STEAM) trong các Concept liên quan có sát với thực tế giảng dạy không.
+- [ ] Áp dụng Logic Tree vào việc phân rã cấu trúc chương trình học Python.
 
 --- 
-**Nguồn thô:** `THINK_Problem_Solving_101`
-**Deep Research Query:** `Ken Watanabe problem solving 101 logic tree examples for business`
+**Nguồn thô:** `Problem Solving 101.pdf`
+**Deep Research Query:** `Ken Watanabe problem solving 101 McKinsey logic tree`

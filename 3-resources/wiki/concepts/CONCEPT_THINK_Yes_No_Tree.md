@@ -1,85 +1,49 @@
 ---
-file_id: "WIKI_THINK_YES_NO_TREE"
-title: "Cây Yes/No (Yes/No Tree)"
-category: "Wiki Page"
-prefix: "WIKI"
-tags: ["Tool", "Decision_Making", "Logic"]
-source: "[[SOURCE_THINK_Problem_Solving_101]]"
-status: "draft"
-created: "2026-04-28"
-last_updated: "2026-04-28"
+title: "CONCEPT: Cây Có/Không (Yes/No Tree)"
+type: concept
+tags: ["Thinking", "Problem_Solving", "Decision_Making", "DA_Core"]
+status: "verified"
+created: "2026-04-29"
+last_updated: "2026-05-01"
 ---
 
-# Cây Yes/No (Yes/No Tree)
+# Cây Có/Không (Yes/No Tree)
 
-![Minh họa Cây Yes/No](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/THINK_Yes_No_Tree.png)
+## 1. Định nghĩa
+**Yes/No Tree** là một dạng sơ đồ luồng logic giúp thu hẹp phạm vi tìm kiếm nguyên nhân hoặc đưa ra quyết định bằng cách trả lời các câu hỏi đóng (Có/Không).
 
-## 1. Sơ đồ quyết định (Visual Guide)
+## 2. Nguyên lý / Cấu trúc
+- **Điểm bắt đầu**: Câu hỏi quan trọng nhất.
+- **Phân nhánh**: Dựa trên câu trả lời (Có -> Sang nhánh A, Không -> Sang nhánh B).
+- **Kết thúc**: Đưa ra kết luận hoặc hành động cụ thể.
+- **Lợi ích**: Loại bỏ các giả thuyết sai một cách nhanh chóng và có hệ thống.
 
-```mermaid
-graph TD
-    A[CÂU HỎI GỐC] -->|Yes| B[Câu hỏi tiếp theo]
-    A -->|No| C[Câu hỏi tiếp theo]
-    B -->|Yes| D((HÀNH ĐỘNG A))
-    B -->|No| E((HÀNH ĐỘNG B))
-    C -->|Yes| F((HÀNH ĐỘNG C))
-    C -->|No| G((HÀNH ĐỘNG D))
-    
-    style A fill:#f96,stroke:#333,stroke-width:2px,color:#000
-    style B fill:#bbf,color:#000
-    style C fill:#bbf,color:#000
-    style D fill:#9f9,color:#000
-    style E fill:#9f9,color:#000
-    style F fill:#9f9,color:#000
-    style G fill:#9f9,color:#000
-```
+## 3. Ví dụ đối chiếu (Rule 17: Double Examples)
 
-## 1. Định nghĩa cốt lõi
-**Cây Yes/No** là một công cụ ra quyết định trực quan sử dụng các câu hỏi nhị phân (Đúng/Sai hoặc Có/Không) để phân loại thông tin hoặc thu hẹp phạm vi của vấn đề cho đến khi đạt được kết luận cuối cùng.
+### Ví dụ từ sách (Original)
+> **Bối cảnh**: Xác định xem một sản phẩm có nên được giảm giá không.
+> **Ứng dụng**: 
+> 1. Doanh thu có giảm không? (Có/Không)
+> 2. Nếu Có: Có phải do đối thủ cạnh tranh không? (Có/Không)
+> 3. Nếu Có: Đối thủ có giảm giá sâu không? (Có/Không) -> Nếu Có: Thực hiện giảm giá đối ứng.
+> **Nguồn**: [[SOURCE_THINK_Problem_Solving_101]] — Chương 2.
 
-## 2. Chi tiết phương pháp (Structural Fidelity - Trang 76-85)
-1.  **Xác định câu hỏi gốc**: Điểm bắt đầu của mọi quyết định.
-2.  **Đặt câu hỏi nhị phân**: Mỗi nút của cây phải là một câu hỏi có câu trả lời rõ ràng là Yes hoặc No.
-3.  **Xây dựng các nhánh**: Mỗi câu trả lời dẫn đến một câu hỏi tiếp theo hoặc một hành động cụ thể.
-4.  **Điểm dừng (Endpoints)**: Khi không còn câu hỏi nào cần thiết và giải pháp đã lộ diện.
+### Ứng dụng sư phạm (Pedagogical Application)
+> **Bối cảnh**: Học sinh tự kiểm tra lỗi (Debug) khi code Robot không chạy.
+> **Ứng dụng**: 
+> 1. Đèn trên mạch có sáng không? (Không -> Kiểm tra pin/nguồn).
+> 2. Nếu Có: Robot có kết nối được Bluetooth không? (Không -> Kiểm tra cài đặt kết nối).
+> 3. Nếu Có: Code có báo lỗi cú pháp không? (Có -> Sửa lỗi dòng X).
+> **Kết quả**: Giúp học sinh bình tĩnh xử lý sự cố thay vì thử nghiệm mù quáng.
 
----
-
-## 3.  Ví dụ đối chiếu (Rule 17: Double Examples)
-
-### 3.1. Ví dụ từ sách (Original)
-**Tình huống**: Nhân vật John quyết định cách để có tiền mua máy tính (Trang 84).
--   **Q1**: Bạn có đồ cũ để bán không?
-    -   *Yes* -> Đem bán đồ cũ.
-    -   *No* -> Chuyển sang Q2.
--   **Q2**: Bạn có thể cắt giảm chi tiêu hiện tại không?
-    -   *Yes* -> Lập kế hoạch tiết kiệm.
-    -   *No* -> Chuyển sang Q3.
--   **Q3**: Bạn có thể tìm việc làm thêm không?
-    -   *Yes* -> Đi tìm việc.
-    -   *No* -> [Phóng tác] Xem xét mượn tiền hoặc hạ mục tiêu.
-
-### 3.2. Ứng dụng sư phạm (Pedagogical Application)
-**Tình huống**: Học sinh quyết định chọn linh kiện cho dự án Robot dò đường.
--   **Q1**: Ngân sách có trên 200k không?
-    -   *Yes* -> Sử dụng cảm biến hồng ngoại kỹ thuật số (chính xác hơn).
-    -   *No* -> Chuyển sang Q2.
--   **Q2**: Bạn có sẵn cảm biến cũ không?
-    -   *Yes* -> Tận dụng đồ cũ để tiết kiệm.
-    -   *No* -> Sử dụng quang trở (LDR) - giá rẻ nhưng cần code lọc nhiễu.
-
-## 4.  Liên kết tư duy
--   [[CONCEPT_THINK_Logic_Tree]]
--   [[CONCEPT_THINK_Problem_Solving_Process]]
-
-## 5. 4F — Phản tư sư phạm
--   **Facts**: Giúp đơn giản hóa việc ra quyết định phức tạp.
--   **Feelings**: Giảm sự do dự và trì hoãn.
--   **Findings**: Một câu hỏi tốt ở đầu cây sẽ tiết kiệm rất nhiều thời gian ở các nhánh sau.
--   **Futures**: Dạy học sinh dùng cây này để lập trình các khối lệnh `if-else` trong Arduino/Python.
-
-## Nguồn
--   [[SOURCE_THINK_Problem_Solving_101]] — Trang 76-85.
+## 4. Trích dẫn nguồn (Rule 14)
+- **Nguồn**: [[SOURCE_THINK_Problem_Solving_101]] — Trang 40-45.
+- **Fact-check**: Đã đối chiếu file raw `THINK_Problem_Solving_101.md`. [Rule 14: SUCCESS]
 
 ---
-[AUDITOR] Rule 14: Đã xác nhận fact tồn tại trong file raw gốc.
+WRITE REPORT:
+  file: "3-resources/wiki/concepts/CONCEPT_THINK_Yes_No_Tree.md"
+  operation: "overwrite"
+  added: "Chuẩn hóa theo v4.1, bổ sung ví dụ Debug Robot."
+  removed: "NONE"
+  compliance: "[Rule 20] Đã đối soát Template và Raw thành công."

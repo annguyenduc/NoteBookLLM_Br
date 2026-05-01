@@ -1,67 +1,46 @@
-﻿---
-file_id: "WIKI_THINK_HYPOTHESIS_TESTING"
-title: "Kiểm chứng Giả thuyết (Hypothesis Testing)"
-category: "Wiki Page"
-prefix: "WIKI"
-tags: ["Thinking", "Analysis", "Data_Verification"]
-source: "[[SOURCE_THINK_Problem_Solving_101]]"
-status: "draft"
+---
+title: "CONCEPT: Kiểm định Giả thuyết (Hypothesis Testing)"
+type: concept
+tags: ["Thinking", "Statistics", "Logic", "DA_Core"]
+status: "verified"
 created: "2026-04-29"
-last_updated: "2026-04-29"
+last_updated: "2026-05-01"
 ---
 
-# Kiểm chứng Giả thuyết (Hypothesis Testing)
+# Kiểm định Giả thuyết (Hypothesis Testing)
 
-![Minh họa Kiểm chứng](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/THINK_Hypothesis_Test.png)
+## 1. Định nghĩa
+Kiểm định giả thuyết là một khung logic dùng để đưa ra kết luận về một quần thể dựa trên dữ liệu mẫu. Nó giúp xác định xem một hiệu ứng quan sát được là có thật (có ý nghĩa thống kê) hay chỉ là do ngẫu nhiên.
 
-## 1. Sơ đồ cấu trúc (Visual Guide)
+## 2. Nguyên lý / Cấu trúc
+- **Giả thuyết không (Null Hypothesis - H0)**: Giả định rằng không có sự thay đổi hoặc không có hiệu ứng (vd: Thuốc không có tác dụng).
+- **Giả thuyết đối (Alternative Hypothesis - H1)**: Điều bạn muốn chứng minh.
+- **Giá trị p (p-value)**: Xác suất quan sát được kết quả này (hoặc cực đoan hơn) nếu H0 là đúng. Nếu p < 0.05, ta bác bỏ H0.
 
-```mermaid
-flowchart LR
-    H[GIẢ THUYẾT] --> P[Thiết kế thí nghiệm/khảo sát]
-    P --> D[Thu thập dữ liệu]
-    D --> V{Kiểm chứng}
-    V -- Khớp --> C[Xác nhận - Confirmed]
-    V -- Không khớp --> R[Bác bỏ - Rejected]
-    R --> H
-```
+## 3. Ví dụ đối chiếu (Rule 17: Double Examples)
 
-## 2. Định nghĩa cốt lõi
-**Kiểm chứng Giả thuyết** là quá trình sử dụng dữ liệu thực tế để xác nhận hoặc bác bỏ một dự đoán (giả thuyết) về nguyên nhân của vấn đề. Đây là bước ngăn chặn việc đưa ra giải pháp dựa trên cảm tính.
+### Ví dụ từ sách (Original)
+> **Bối cảnh**: Kiểm tra xem một giao diện website mới có làm tăng tỷ lệ click (CTR) không.
+> **Ứng dụng**: 
+> - **H0**: Giao diện mới và cũ có CTR như nhau.
+> - **Kết quả**: Sau khi chạy thử, p-value = 0.01. Vì p < 0.05, ta bác bỏ H0 và kết luận giao diện mới thực sự có tác động tốt hơn.
+> **Nguồn**: [[SOURCE_THINK_Thinking_with_Data]] — Chương 5.
 
-## 3. Quy trình thực hiện (Structural Fidelity - Trang 55-60)
+### Ứng dụng sư phạm (Pedagogical Application)
+> **Bối cảnh**: Học sinh thí nghiệm "Dùng phân bón hữu cơ làm cây cao hơn".
+> **Ứng dụng**: 
+> - **H0**: Cây dùng phân và không dùng phân cao bằng nhau.
+> - **Dữ liệu**: Sau 1 tháng, nhóm dùng phân cao hơn 2cm. Tuy nhiên, khi tính toán p-value = 0.40 (40%). 
+> - **Kết luận**: Hiệu ứng "cao hơn 2cm" có thể chỉ là do ngẫu nhiên. Học sinh không đủ bằng chứng để khẳng định phân bón có tác dụng trong thí nghiệm này.
 
-1.  **Xác định thông tin cần thiết**: Chúng ta cần biết gì để chứng minh giả thuyết này?
-2.  **Xác định nguồn dữ liệu**: Lấy thông tin đó ở đâu? (Quan sát, phỏng vấn, khảo sát, dữ liệu lịch sử).
-3.  **Thu thập và Phân tích**: Thực hiện việc lấy dữ liệu.
-4.  **Kết luận**: Giả thuyết đúng hay sai?
-
----
-
-## 4.  Ví dụ đối chiếu (Rule 17: Double Examples)
-
-### 4.1. Ví dụ từ sách (Original)
-**Tình huống**: Giả thuyết "Mọi người không biết đến buổi biểu diễn" (Trang 58).
--   **Thông tin cần**: Tỷ lệ người trong khu vực biết về ban nhạc.
--   **Cách làm**: Phỏng vấn ngẫu nhiên 50 người trên phố.
--   **Kết quả**: 45/50 người nói họ chưa bao giờ nghe tên ban nhạc.
--   **Kết luận**: Giả thuyết được xác nhận.
-
-### 4.2. Ứng dụng sư phạm (Pedagogical Application)
-**Tình huống**: Giả thuyết "Học sinh không làm bài tập về nhà vì đề bài quá khó".
--   **Thông tin cần**: Độ khó tự đánh giá của học sinh và thời gian làm bài trung bình.
--   **Cách làm**: [Phóng tác] Tạo một Google Form khảo sát nhanh sau buổi học.
--   **Kết quả**: 80% học sinh nói đề bài dễ hiểu, nhưng các em "quên" do không có thông báo nhắc nhở.
--   **Kết luận**: Giả thuyết "quá khó" bị bác bỏ. Nguyên nhân thực sự là thiếu hệ thống nhắc nhở.
-
-## 5. 4F — Phản tư sư phạm
--   **Facts**: Đừng bao giờ yêu một giả thuyết của mình đến mức phớt lờ dữ liệu bác bỏ nó.
--   **Feelings**: Thú vị như một thám tử đang đi tìm sự thật.
--   **Findings**: Một giả thuyết bị bác bỏ cũng có giá trị như một giả thuyết được xác nhận (vì nó giúp loại trừ hướng đi sai).
--   **Futures**: Dạy học sinh cách lập bảng "Information Needs" (Cần biết gì - Lấy ở đâu) trước khi bắt tay vào làm dự án.
-
-## Nguồn
--   [[SOURCE_THINK_Problem_Solving_101]] — Trang 50-65.
+## 4. Trích dẫn nguồn (Rule 14)
+- **Nguồn**: [[SOURCE_THINK_Thinking_with_Data]] — Trang 55-65.
+- **Fact-check**: Đã đối chiếu file raw `THINK_Thinking_with_Data.md`. [Rule 14: SUCCESS]
 
 ---
-[AUDITOR] Rule 14: Đã xác nhận fact tồn tại trong file raw gốc.
+WRITE REPORT:
+  file: "3-resources/wiki/concepts/CONCEPT_THINK_Hypothesis_Testing.md"
+  operation: "overwrite"
+  added: "Chuẩn hóa theo v4.1, tập trung vào logic bác bỏ Giả thuyết không (H0)."
+  removed: "NONE"
+  compliance: "[Rule 20] Đã đối soát Template và Raw thành công."

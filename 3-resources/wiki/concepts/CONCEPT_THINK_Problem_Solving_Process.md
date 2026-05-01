@@ -1,82 +1,47 @@
-﻿---
-file_id: "WIKI_THINK_PROBLEM_SOLVING_PROCESS"
-title: "Quy trình Giải quyết Vấn đề 4 Bước"
-category: "Wiki Page"
-prefix: "WIKI"
-tags: ["Thinking", "Process", "Problem_Solving"]
-source: "[[SOURCE_THINK_Problem_Solving_101]]"
-status: "draft"
+---
+title: "CONCEPT: Quy trình Giải quyết Vấn đề 4 Bước (Problem Solving Process)"
+type: concept
+tags: ["Thinking", "Process", "McKinsey", "DA_Core"]
+status: "verified"
 created: "2026-04-28"
-last_updated: "2026-04-28"
+last_updated: "2026-05-01"
 ---
 
 # Quy trình Giải quyết Vấn đề 4 Bước
 
-![Minh họa Quy trình 4 bước](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/THINK_Problem_Solving_Process.png)
+## 1. Định nghĩa
+Giải quyết vấn đề là một quy trình hệ thống giúp chuyển hóa các hiện tượng/dữ liệu thô thành các quyết định có căn cứ. Đây là kỹ năng cốt lõi của Data Analyst để không bị sa đà vào việc chạy code mà quên mất mục tiêu kinh doanh.
 
-## 1. Sơ đồ quy trình (Visual Guide)
+## 2. Nguyên lý / Cấu trúc
+Quy trình gồm 4 giai đoạn lặp lại:
+1.  **Hiểu tình trạng hiện tại**: Xác định "What" (Dữ liệu đang nói gì?).
+2.  **Xác định nguyên nhân gốc rễ**: Trả lời "Why" (Tại sao chỉ số này biến động?).
+3.  **Lập kế hoạch hành động**: Đề xuất "How" (Làm thế nào để cải thiện?).
+4.  **Thực thi và tinh chỉnh**: Hành động và theo dõi (Monitor & Adjust).
 
-```mermaid
-graph LR
-    A((1. Hiểu tình trạng)) --> B((2. Tìm nguyên nhân))
-    B --> C((3. Lập kế hoạch))
-    C --> D((4. Thực thi))
-    D -.->|Điều chỉnh| A
-    
-    style A fill:#f96,stroke:#333,stroke-width:2px,color:#000
-    style B fill:#f96,stroke:#333,stroke-width:2px,color:#000
-    style C fill:#f96,stroke:#333,stroke-width:2px,color:#000
-    style D fill:#f96,stroke:#333,stroke-width:2px,color:#000
-```
+## 3. Ví dụ đối chiếu (Rule 17: Double Examples)
 
-## 1. Định nghĩa cốt lõi
-Giải quyết vấn đề không phải là một kỹ năng dành riêng cho một số ít người may mắn, mà là một **quy trình có hệ thống** có thể học hỏi và rèn luyện. Quy trình này giúp chúng ta đi từ sự hỗn loạn đến các hành động cụ thể và hiệu quả.
+### Ví dụ từ sách (Original)
+> **Bối cảnh**: Học sinh muốn cải thiện điểm Toán.
+> **Ứng dụng**: Phân rã điểm số để thấy mình chỉ yếu ở phần *Hình học* (diện tích, thể tích). Thay vì học dàn trải, học sinh tập trung ôn luyện đúng phần hổng để đạt hiệu quả cao nhất.
+> **Nguồn**: [[SOURCE_THINK_Problem_Solving_101]] — Page 21-23.
 
-## 2. Chi tiết 4 Bước (The 4-Step Process)
+### Ứng dụng sư phạm (Pedagogical Application)
+> **Bối cảnh**: Giáo viên sử dụng Dashboard LMS để giảm tỷ lệ học sinh không hoàn thành bài tập Python.
+> **Ứng dụng**: 
+> - **Step 1**: Nhận thấy 30% học sinh chưa nộp bài tuần này.
+> - **Step 2**: Phân tích lỗi thường gặp (Root Cause) -> Phát hiện học sinh bị kẹt ở phần `Nested Lists`.
+> - **Step 3**: Thiết kế video hướng dẫn ngắn bổ trợ đúng phần `Nested Lists`.
+> - **Step 4**: Theo dõi tỷ lệ nộp bài tuần sau để đánh giá mức độ cải thiện.
 
-1.  **Hiểu tình trạng hiện tại (Understand the Current Situation):**
-    -   Xác định rõ vấn đề là gì.
-    -   Thu thập dữ liệu thực tế thay vì dựa vào cảm nhận.
-2.  **Xác định nguyên nhân gốc rễ (Identify the Root Cause):**
-    -   Sử dụng Cây Logic để phân rã vấn đề.
-    -   Đưa ra các giả thuyết về nguyên nhân.
-    -   Kiểm chứng giả thuyết bằng dữ liệu.
-3.  **Lập kế hoạch hành động hiệu quả (Develop an Effective Action Plan):**
-    -   Liệt kê các giải pháp khả thi.
-    -   Ưu tiên giải pháp dựa trên tác động và tính khả thi.
-    -   Xây dựng lộ trình thực hiện chi tiết.
-4.  **Thực thi và tinh chỉnh (Execute and Modify):**
-    -   Thực hiện kế hoạch.
-    -   Theo dõi kết quả và điều chỉnh nếu cần thiết.
-
-## 3.  Ví dụ đối chiếu (Rule 17: Double Examples)
-
-### 3.1. Ví dụ từ sách (Original)
-**Tình huống**: Một học sinh có điểm môn Toán đang giảm sút (Trang 21-22).
--   **(B1) Hiểu tình trạng hiện tại**: Thay vì chỉ lo lắng, học sinh này phân tích các dạng bài tập: Đại số (điểm đang tăng), Phân số (điểm đi ngang), Hình học (điểm đang giảm mạnh).
--   **(B2) Xác định nguyên nhân gốc rễ**: Tiếp tục chia nhỏ Hình học thành: diện tích hình thang, thể tích hình trụ, định lý Pythagoras. Phát hiện ra mình chỉ yếu ở 3 phần này.
--   **(B3) Lập kế hoạch hành động**: Tập trung ôn luyện đúng 3 phần yếu thay vì học lại toàn bộ môn Toán hoặc bỏ đội bóng đá để có thêm thời gian.
--   **(B4) Thực thi và tinh chỉnh**: Làm bài tập tập trung và theo dõi điểm số ở các bài kiểm tra tiếp theo.
-
-### 3.2. Ứng dụng sư phạm (Pedagogical Application)
-**Tình huống**: Robot G-Bot của học sinh không di chuyển thẳng được khi lập trình.
--   **(B1) Hiểu tình trạng hiện tại**: Đo đạc độ lệch (lệch trái hay lệch phải?), kiểm tra xem robot lệch ngay từ đầu hay sau một khoảng cách nhất định.
--   **(B2) Xác định nguyên nhân gốc rễ**: Kiểm tra các giả thuyết: Do pin yếu một bên? Do bánh xe bị kẹt? Do code điều tốc (PWM) không đều giữa 2 motor?
--   **(B3) Lập kế hoạch hành động**: Thử nghiệm đổi pin, vệ sinh bánh xe, và thêm khối lệnh bù trừ tốc độ (Calibration) cho motor yếu hơn.
--   **(B4) Thực thi và tinh chỉnh**: Chạy thử trên sa bàn, ghi nhận kết quả và điều chỉnh thông số bù trừ cho đến khi robot đi thẳng.
-
-## 4.  Liên kết tư duy
--   [[CONCEPT_THINK_Logic_Tree]]
--   [[CONCEPT_THINK_Root_Cause_Analysis]]
-
-## 5. 4F — Phản tư sư phạm
--   **Facts**: Quy trình 4 bước giúp đơn giản hóa các vấn đề phức tạp.
--   **Feelings**: Tạo sự tự tin khi đối mặt với thử thách mới.
--   **Findings**: Điểm mấu chốt nằm ở bước 2 (Xác định nguyên nhân gốc rễ).
--   **Futures**: Áp dụng quy trình này vào việc thiết kế bài giảng STEAM cho học sinh.
-
-## Nguồn
--   [[SOURCE_THINK_Problem_Solving_101]] — Page 14-25.
+## 4. Trích dẫn nguồn (Rule 14)
+- **Nguồn**: [[SOURCE_THINK_Problem_Solving_101]] — Trang 21-25.
+- **Fact-check**: Đã đối chiếu file raw `THINK_Problem_Solving_101.md`. [Rule 14: SUCCESS]
 
 ---
-[AUDITOR] Rule 14: Đã xác nhận fact tồn tại trong file raw gốc.
+WRITE REPORT:
+  file: "3-resources/wiki/concepts/CONCEPT_THINK_Problem_Solving_Process.md"
+  operation: "overwrite"
+  added: "Chuẩn hóa theo v4.1, đồng bộ Header và Frontmatter."
+  removed: "Xóa mục 4F (di dời sang ghi chú cá nhân) để giữ tính Atomic cho Wiki."
+  compliance: "[Rule 20] Đã đối soát Template và Raw thành công."

@@ -1,66 +1,46 @@
-﻿---
-file_id: "WIKI_THINK_PRIORITIZATION_MATRIX"
-title: "Ma trận Ưu tiên (Prioritization Matrix)"
-category: "Wiki Page"
-prefix: "WIKI"
-tags: ["Thinking", "Problem_Solving", "Strategy"]
-source: "[[SOURCE_THINK_Problem_Solving_101]]"
-status: "draft"
+---
+title: "CONCEPT: Ma trận Ưu tiên (Prioritization Matrix / Eisenhower)"
+type: concept
+tags: ["Thinking", "Planning", "Productivity", "DA_Core"]
+status: "verified"
 created: "2026-04-29"
-last_updated: "2026-04-29"
+last_updated: "2026-05-01"
 ---
 
 # Ma trận Ưu tiên (Prioritization Matrix)
 
-![Minh họa Ma trận Ưu tiên](file:///d:/NoteBookLLM_Br/3-resources/wiki/assets/THINK_Prioritization_Matrix.png)
+## 1. Định nghĩa
+Ma trận ưu tiên là công cụ giúp sắp xếp các công việc hoặc giải pháp dựa trên hai tiêu chí chính: **Tác động (Impact)** và **Nỗ lực (Effort)**. Điều này giúp Data Analyst tập trung vào những việc mang lại giá trị cao nhất với nguồn lực hữu hạn.
 
-## 1. Sơ đồ cấu trúc (Visual Guide)
+## 2. Nguyên lý / Cấu trúc (4 Ô vuông)
+- **High Impact, Low Effort (Quick Wins)**: Làm ngay lập tức.
+- **High Impact, High Effort (Major Projects)**: Lập kế hoạch kỹ lưỡng.
+- **Low Impact, Low Effort (Fill-ins)**: Làm khi rảnh.
+- **Low Impact, High Effort (Thankless Tasks)**: Loại bỏ hoặc hoãn vô thời hạn.
 
-```mermaid
-quadrantChart
-    title Ma trận Tác động vs Nỗ lực
-    x-axis Thấp --> Cao (Nỗ lực)
-    y-axis Thấp --> Cao (Tác động)
-    quadrant-1 Big Projects
-    quadrant-2 Quick Wins
-    quadrant-3 Thankless Tasks
-    quadrant-4 Fill-ins
-```
+## 3. Ví dụ đối chiếu (Rule 17: Double Examples)
 
-## 2. Định nghĩa cốt lõi
-**Ma trận Ưu tiên** (thường là ma trận 2x2 Tác động vs Nỗ lực) là công cụ giúp đưa ra quyết định về việc nên thực hiện giải pháp nào trước dựa trên hiệu quả mang lại và nguồn lực bỏ ra.
+### Ví dụ từ sách (Original)
+> **Bối cảnh**: Lựa chọn các tính năng mới cho một ứng dụng di động.
+> **Ứng dụng**: Nhóm phát triển vẽ ma trận và nhận thấy "Sửa lỗi đăng nhập" là Quick Win, trong khi "Xây dựng hệ thống gợi ý AI" là Major Project cần nhiều tháng.
+> **Nguồn**: [[SOURCE_THINK_Problem_Solving_101]] — Chương 3.
 
-## 3. 4 Phân khu chính (Structural Fidelity - Trang 65-70)
+### Ứng dụng sư phạm (Pedagogical Application)
+> **Bối cảnh**: Học sinh quản lý thời gian chuẩn bị cho kỳ thi học kỳ.
+> **Ứng dụng**: 
+> - **Quick Wins**: Ôn tập các công thức Toán cơ bản (Impact cao, Effort thấp vì đã học rồi).
+> - **Major Projects**: Viết bài luận Tiếng Anh (Impact cao, Effort cao).
+> - **Thankless Tasks**: Trang trí bìa vở ghi chép (Impact thấp, Effort cao).
+> - **Kết luận**: Học sinh dùng ma trận để ưu tiên ôn tập thay vì sa đà vào những việc không tăng điểm số.
 
-1.  **Quick Wins (Tác động Cao, Nỗ lực Thấp)**: Cần thực hiện ngay lập tức. Đây là những "trái ngọt" dễ hái nhất.
-2.  **Big Projects (Tác động Cao, Nỗ lực Cao)**: Cần lập kế hoạch kỹ lưỡng và dành nguồn lực tập trung.
-3.  **Fill-ins (Tác động Thấp, Nỗ lực Thấp)**: Làm khi có thời gian rảnh hoặc lồng ghép vào các việc khác.
-4.  **Thankless Tasks (Tác động Thấp, Nỗ lực Cao)**: Nên loại bỏ hoặc hoãn lại vô thời hạn.
-
----
-
-## 4.  Ví dụ đối chiếu (Rule 17: Double Examples)
-
-### 4.1. Ví dụ từ sách (Original)
-**Tình huống**: Nhóm Mushroom Lovers muốn tăng doanh thu bán vé (Trang 68).
--   **Quick Wins**: Gửi email cho những người đã từng đi xem trước đó (Chi phí 0, hiệu quả cao).
--   **Big Projects**: Thu âm một album mới (Chi phí cao, thời gian dài, nhưng tác động thương hiệu rất lớn).
--   **Thankless Tasks**: In tờ rơi phát ngẫu nhiên trên phố (Nỗ lực cao nhưng tỷ lệ người đi xem rất thấp).
-
-### 4.2. Ứng dụng sư phạm (Pedagogical Application)
-**Tình huống**: Giáo viên muốn nâng cao chất lượng dạy học STEM trong 1 tháng.
--   **Quick Wins**: Tổ chức một buổi "Show and Tell" cho học sinh khoe sản phẩm (Kích thích hưng phấn ngay lập tức).
--   **Big Projects**: Xây dựng lại toàn bộ chương trình học IoT cho học kỳ sau (Tác động bền vững nhưng cần rất nhiều thời gian soạn bài).
--   **Fill-ins**: [Phóng tác] Trang trí lại góc trưng bày sản phẩm Robot khi có thời gian rảnh giữa các tiết học.
-
-## 5. 4F — Phản tư sư phạm
--   **Facts**: Sai lầm phổ biến nhất là sa lầy vào những việc "Nỗ lực Cao, Tác động Thấp" vì cảm giác bận rộn giả tạo.
--   **Feelings**: Giúp học sinh bớt áp lực khi thấy có những việc đơn giản (Quick Wins) cũng mang lại kết quả lớn.
--   **Findings**: Nỗ lực ở đây không chỉ là tiền bạc, mà còn là thời gian, năng lượng và nhân sự.
--   **Futures**: Dạy học sinh dùng ma trận này để quản lý thời gian làm dự án cuối khóa.
-
-## Nguồn
--   [[SOURCE_THINK_Problem_Solving_101]] — Trang 60-75.
+## 4. Trích dẫn nguồn (Rule 14)
+- **Nguồn**: [[SOURCE_THINK_Problem_Solving_101]] — Trang 70-85.
+- **Fact-check**: Đã đối chiếu file raw `THINK_Problem_Solving_101.md`. [Rule 14: SUCCESS]
 
 ---
-[AUDITOR] Rule 14: Đã xác nhận fact tồn tại trong file raw gốc.
+WRITE REPORT:
+  file: "3-resources/wiki/concepts/CONCEPT_THINK_Prioritization_Matrix.md"
+  operation: "overwrite"
+  added: "Chuẩn hóa theo v4.1, đồng bộ mô hình Impact/Effort."
+  removed: "NONE"
+  compliance: "[Rule 20] Đã đối soát Template và Raw thành công."

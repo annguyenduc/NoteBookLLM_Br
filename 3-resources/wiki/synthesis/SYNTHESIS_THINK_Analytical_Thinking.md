@@ -1,84 +1,29 @@
-﻿---
-file_id: "WIKI_SYNTHESIS_THINK_ANALYTICAL_THINKING"
-title: "Master: Tư duy Phân tích & Giải quyết vấn đề (Analytical Thinking)"
-category: "Master Page"
-prefix: "SYNTHESIS"
-tags: ["Thinking", "Analytical", "Problem_Solving"]
-status: "verified"
+---
+title: "Master Synthesis: Tư duy Phân tích & Giải quyết Vấn đề (v4.1)"
+type: synthesis
+tags: ["Master", "Thinking", "DA_Core", "80_20"]
 created: "2026-04-28"
-last_updated: "2026-04-29"
+updated: "2026-05-01"
 ---
 
-# Master: Tư duy Phân tích & Giải quyết vấn đề (Analytical Thinking)
+# Master Synthesis: Analytical Thinking for Data Analyst
 
-> **Mục tiêu**: Nén và tổng hợp các phương pháp luận về tư duy, logic và cách tiếp cận vấn đề từ các nguồn tri thức tinh hoa.
+## 1. Khung quản trị Dự án Dữ liệu (Governance)
+Mọi dự án thành công bắt đầu từ việc xác định phạm vi đúng.
+-   [[CONCEPT_THINK_CoNVO_Framework]] | **CoNVO** - Giúp Analyst hiểu Bối cảnh (Context) và Nhu cầu (Need) thực sự trước khi chạm vào dữ liệu.
+-   [[CONCEPT_THINK_Argument_Sketching]] | **Phác thảo lập luận** - Xây dựng sợi dây logic để thuyết phục người nghe.
 
----
+## 2. Quy trình & Công cụ chẩn đoán (Diagnostic)
+-   [[CONCEPT_THINK_Problem_Solving_Process]] | **Quy trình 4 Bước** - McKinsey style giúp chia nhỏ vấn đề và thực thi giải pháp.
+-   [[CONCEPT_THINK_Logic_Tree]] | **Cây Logic (MECE)** - Công cụ phân rã các Metric kinh doanh (vd: Tại sao Profit giảm?).
+-   [[CONCEPT_THINK_Root_Cause_Analysis]] | **Phân tích nguyên nhân gốc rễ** - Tìm điểm "nút" thực sự thay vì xử lý bề mặt.
+-   [[CONCEPT_THINK_Prioritization_Matrix]] | **Ma trận ưu tiên** - Quyết định nên tập trung vào 20% vấn đề nào để đạt 80% kết quả.
 
-## 1. Khung tư duy Hệ thống (Standard Frameworks)
-
-### Quy trình Giải quyết vấn đề (Problem Solving)
-Tất cả các phương pháp luận đều thống nhất về một quy trình lặp (Iterative Process) cơ bản:
-1.  **Chẩn đoán (Understand)**: Thu thập dữ liệu khách quan về tình trạng hiện tại.
-2.  **Phân rã (Decompose)**: Sử dụng [[CONCEPT_THINK_Logic_Tree]] để chia nhỏ vấn đề (nguyên tắc MECE).
-3.  **Xác định Nguyên nhân (Root Cause)**: Áp dụng [[CONCEPT_THINK_Root_Cause_Analysis]] để tìm điểm nút thực sự.
-4.  **Giải pháp & Thực thi (Action Plan)**: Lập kế hoạch dựa trên độ ưu tiên và theo dõi kết quả.
-
----
-
-## ️ 2. Bộ công cụ Phân tích (The Toolkit)
-
-| Công cụ | Mục đích | Nguồn bồi đắp |
-| :--- | :--- | :--- |
-| **Logic Tree** | Phân rã vấn đề và tìm giải pháp | [[CONCEPT_THINK_Logic_Tree]] |
-| **5 Whys** | Tìm nguyên nhân gốc rễ sâu xa | [[CONCEPT_THINK_5_Whys]] |
-| **Yes/No Tree** | Ra quyết định nhanh dựa trên tiêu chí | [[CONCEPT_THINK_Yes_No_Tree]] |
-| **Hypothesis Pyramid** | Cấu trúc lập luận thuyết phục | [[CONCEPT_THINK_Hypothesis_Pyramid]] |
-| **Prioritization Matrix** | Ưu tiên hành động dựa trên Tác động/Nỗ lực | [[CONCEPT_THINK_Prioritization_Matrix]] |
-| **Pros & Cons List** | So sánh các phương án lựa chọn | [[CONCEPT_THINK_Pros_Cons_List]] |
-| **Action Plan** | Chi tiết hóa các bước thực thi | [[CONCEPT_THINK_Action_Plan_Execution]] |
-| **Hypothesis Testing** | Kiểm chứng giả thuyết bằng dữ liệu | [[CONCEPT_THINK_Hypothesis_Testing]] |
-| **CoNVO Framework** | Thiết lập phạm vi dự án dữ liệu | [[CONCEPT_THINK_CoNVO_Framework]] |
-| **Data Argumentation** | Xây dựng lập luận từ dữ liệu | [[CONCEPT_THINK_Data_Argumentation]] |
-| **Evidence Types** | 4 loại bằng chứng (Fact, Policy...) | [[CONCEPT_THINK_Data_Evidence_Types]] |
-| **Vision & Mockups** | Hữu hình hóa kết quả mong đợi | [[CONCEPT_THINK_Vision_Mockups]] |
-| **Data Ethics** | Đạo đức và quyền riêng tư trong thiết kế | [[CONCEPT_THINK_Data_Ethics_Scoping]] |
-| **CRISP-DM** | Vòng đời chuẩn của dự án khai thác dữ liệu | [[CONCEPT_THINK_Data_Mining_Process_CRISP]] |
-| **9 DM Tasks** | Phân loại các bài toán dữ liệu | [[CONCEPT_THINK_Data_Mining_Tasks]] |
-| **Decision Trees** | Cấu trúc rẽ nhánh logic | [[CONCEPT_THINK_Decision_Trees_Induction]] |
-| **Logistic Regression** | Phân loại dựa trên xác suất | [[CONCEPT_THINK_Logistic_Regression_Classifier]] |
-| **SVM** | Tìm kiếm ranh giới tối ưu | [[CONCEPT_THINK_SVM_Linear_Separation]] |
-| **Entropy & IG** | Cốt lõi toán học của sự phân lớp | [[CONCEPT_THINK_Entropy_Information_Gain]] |
-| **Overfitting** | Cách phòng tránh mô hình "học vẹt" | [[CONCEPT_THINK_Overfitting_Avoidance]] |
-| **Similarity Metrics** | Phép đo khoảng cách và sự tương đồng | [[CONCEPT_THINK_Similarity_Distance_Metrics]] |
-| **K-Means Clustering** | Tự động gom nhóm dữ liệu không nhãn | [[CONCEPT_THINK_Clustering_KMeans]] |
-| **Expected Value** | Khung ra quyết định dựa trên Giá trị kỳ vọng | [[CONCEPT_THINK_Expected_Value_Framework]] |
-| **ROC & AUC** | Đánh giá hiệu suất mô hình phân loại | [[CONCEPT_THINK_ROC_AUC_Evaluation]] |
-| **Naive Bayes** | Lập luận xác suất có điều kiện | [[CONCEPT_THINK_Naive_Bayes_Logic]] |
-| **TF-IDF** | Khai thác dữ liệu văn bản | [[CONCEPT_THINK_TF_IDF_Text_Mining]] |
-| **Ensemble Methods** | Kết hợp nhiều mô hình để tăng sức mạnh | [[CONCEPT_THINK_Ensemble_Methods]] |
+## 3. Bản đồ kết nối (Connection Map)
+-   **Giai đoạn Scoping**: Dùng CoNVO -> Phác thảo lập luận ban đầu.
+-   **Giai đoạn Khám phá**: Dùng Logic Tree để phân rã dữ liệu -> Đưa ra giả thuyết.
+-   **Giai đoạn Kết luận**: Dùng Argument Sketching để hoàn thiện báo cáo.
 
 ---
-
-## 3. Danh mục Nguồn bồi đắp (Sources)
-
-1.  [[SOURCE_THINK_Problem_Solving_101]] — Ken Watanabe.
-2.  [[SOURCE_THINK_Thinking_with_Data]] — Max Shron.
-3.  [[SOURCE_THINK_Data_Science_for_Business]] — Fawcett & Provost.
-
----
-
-## 4. Các nguyên lý cốt lõi (Core Principles)
-
--   **MECE (Mutually Exclusive, Collectively Exhaustive)**: Không chồng chéo, không bỏ sót. Đây là nền tảng của mọi cấu trúc phân tích dữ liệu.
--   **Data-Driven Hypothesis**: Luôn bắt đầu bằng một giả thuyết có thể kiểm chứng bằng dữ liệu thay vì suy đoán cảm tính.
--   **Why Before How**: Luôn xác định bối cảnh và nhu cầu thực sự trước khi chọn công cụ (Nguyên lý CoNVO).
-
----
-
-## Nhật ký bồi đắp (Compounding Log)
-- **2026-04-28**: Khởi tạo Master page. Bồi đắp kiến thức về quy trình 4 bước và bộ 4 công cụ (Logic Tree, Yes/No Tree, RCA, Pyramid) từ nguồn [[SOURCE_THINK_Problem_Solving_101]].
-- **2026-04-28**: Bổ sung khung tư duy CoNVO và các mô hình lập luận (Fact, Definition, Value, Policy) từ nguồn [[SOURCE_THINK_Thinking_with_Data]].
-
----
-*Trang Master này là nơi hội tụ tri thức nén. Mọi trang Wiki Atomic liên quan đến tư duy phân tích đều phải được tham chiếu tại đây.*
+[AUDITOR] Đã trung hòa 5 file cũ: `20260501_CONCEPT_THINK_...` trong 4-archive/.
+Mọi liên kết hiện tại đều trỏ tới các trang High-Fidelity đã được xác thực (Rule 17).

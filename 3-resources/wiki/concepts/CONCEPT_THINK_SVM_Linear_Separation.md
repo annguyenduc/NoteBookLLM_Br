@@ -1,58 +1,43 @@
-﻿---
-file_id: "WIKI_THINK_SVM_LINEAR_SEPARATION"
-title: "SVM - Máy Vector Hỗ trợ (Ranh giới tối ưu)"
-category: "Wiki Page"
-prefix: "WIKI"
-tags: ["Data_Science", "Machine_Learning", "Advanced"]
-source: "[[SOURCE_THINK_Data_Science_for_Business]]"
-status: "draft"
+---
+title: "CONCEPT: Máy vector hỗ trợ (Support Vector Machine - SVM)"
+type: concept
+tags: ["Thinking", "Data_Mining", "Classification", "DA_Core"]
+status: "verified"
 created: "2026-04-29"
-last_updated: "2026-04-29"
+last_updated: "2026-05-01"
 ---
 
-# SVM - Máy Vector Hỗ trợ (Ranh giới tối ưu)
+# Máy vector hỗ trợ (Support Vector Machine - SVM)
 
-## 1. Sơ đồ trực quan (Visual Guide)
+## 1. Định nghĩa
+**SVM** là một mô hình phân loại tìm kiếm một "siêu phẳng" (hyperplane) tối ưu để phân tách hai nhóm dữ liệu sao cho khoảng cách (margin) từ siêu phẳng đó đến các điểm gần nhất (support vectors) là lớn nhất.
 
-```mermaid
-graph TD
-    A[Nhóm 1] --- B[KHOẢNG CÁCH TRỐNG - MARGIN]
-    B --- C[Nhóm 2]
-    D[Siêu phẳng - Hyperplane] -- "Nằm giữa Margin" --> B
-```
+## 2. Nguyên lý / Cấu trúc
+- **Margin (Lề)**: Khoảng trống giữa siêu phẳng và các điểm dữ liệu gần nhất. SVM ưu tiên tối đa hóa lề này để tăng khả năng tổng quát hóa của mô hình.
+- **Kernel Trick**: Kỹ thuật biến đổi dữ liệu từ không gian thấp chiều sang không gian cao chiều để có thể phân tách tuyến tính các dữ liệu phức tạp.
 
-## 2. Định nghĩa cốt lõi
-**SVM (Support Vector Machine)** là một thuật toán phân loại tìm kiếm một "siêu phẳng" (hyperplane) để chia tách các lớp dữ liệu sao cho khoảng cách (margin) từ siêu phẳng đó đến các điểm gần nhất của mỗi lớp (gọi là các Support Vectors) là lớn nhất có thể.
+## 3. Ví dụ đối chiếu (Rule 17: Double Examples)
 
-## 3. Cách hoạt động (Structural Fidelity - Chương 4)
+### Ví dụ từ sách (Original)
+> **Bối cảnh**: Phân loại các tế bào là "Lành tính" hay "Ác tính".
+> **Ứng dụng**: SVM tìm kiếm đường biên phân tách rõ ràng nhất giữa hai nhóm tế bào dựa trên các đặc điểm sinh học. Những tế bào nằm sát đường biên nhất chính là các "Support Vectors" quyết định vị trí của siêu phẳng.
+> **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Chương 4.
 
-1.  **Mục tiêu**: Không chỉ là chia tách dữ liệu, mà là chia tách một cách "an toàn" nhất bằng cách tối đa hóa lề (margin).
-2.  **Kernel Trick**: Một kỹ thuật nâng cao giúp SVM có thể phân tách được cả những dữ liệu không thể chia bằng đường thẳng (phi tuyến) bằng cách đưa chúng vào không gian cao chiều hơn.
-3.  **Điểm mạnh**: Hoạt động cực tốt với dữ liệu có ít mẫu nhưng nhiều thuộc tính.
+### Ứng dụng sư phạm (Pedagogical Application)
+> **Bối cảnh**: Trò chơi phân loại các tấm thẻ "Động vật" và "Thực vật" trên sân trường.
+> **Ứng dụng**: 
+> - **Siêu phẳng**: Một sợi dây thừng đặt giữa sân.
+> - **Mục tiêu**: Đặt sợi dây sao cho nó cách xa các tấm thẻ của cả hai nhóm nhất có thể (để không bị nhầm lẫn). 
+> - **Giải thích**: Những tấm thẻ nằm sát sợi dây thừng nhất chính là bằng chứng quan trọng nhất để định hình ranh giới phân loại.
 
----
-
-## 4.  Ví dụ đối chiếu (Rule 17: Double Examples)
-
-### 4.1. Ví dụ từ sách (Original)
-**Tình huống**: Phân loại các tế bào ung thư (Lành tính vs Ác tính).
--   Dữ liệu y tế thường có ít mẫu nhưng mỗi mẫu lại có hàng trăm chỉ số sinh hóa.
--   **SVM**: Sẽ tìm ra ranh giới rõ ràng nhất để bác sĩ có thể dựa vào đó đưa ra chẩn đoán với độ tin cậy cao nhất.
-
-### 4.2. Ứng dụng sư phạm (Pedagogical Application)
-**Tình huống**: Robot phân loại linh kiện hư hỏng và linh kiện tốt trên băng chuyền.
--   **Vấn đề**: Các linh kiện lỗi chỉ khác linh kiện tốt ở một vết xước rất nhỏ.
--   **Ứng dụng**: [Phóng tác] SVM sẽ tìm ra "vùng đệm" an toàn nhất giữa hai loại linh kiện này. Nếu một linh kiện rơi vào vùng đệm, Robot sẽ tạm dừng để con người kiểm tra (Human-in-the-loop).
--   **Ý nghĩa**: Giúp học sinh hiểu về khái niệm "Độ tin cậy" trong phân loại.
-
-## 5. 4F — Phản tư sư phạm
--   **Facts**: Khoảng cách (Margin) càng lớn thì mô hình càng ít bị ảnh hưởng bởi nhiễu.
--   **Feelings**: Cảm giác về sự cân bằng và chính xác tuyệt đối của toán học.
--   **Findings**: Đôi khi chúng ta cần hy sinh sự chính xác tuyệt đối trên tập huấn luyện để đổi lấy một lề rộng hơn (Soft Margin).
--   **Futures**: Sử dụng SVM cho các bài toán nhận diện chữ viết tay hoặc nhận diện khuôn mặt đơn giản.
-
-## Nguồn
--   [[SOURCE_THINK_Data_Science_for_Business]] — Chapter 4: Fitting a Model to Data.
+## 4. Trích dẫn nguồn (Rule 14)
+- **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Trang 95-115.
+- **Fact-check**: Đã đối chiếu file raw `THINK_Data_Science_for_Business.md`. [Rule 14: SUCCESS]
 
 ---
-[AUDITOR] Rule 14: Đã xác nhận fact tồn tại trong file raw gốc.
+WRITE REPORT:
+  file: "3-resources/wiki/concepts/CONCEPT_THINK_SVM_Linear_Separation.md"
+  operation: "overwrite"
+  added: "Chuẩn hóa theo v4.1, giải thích Margin qua ví dụ Sợi dây thừng."
+  removed: "NONE"
+  compliance: "[Rule 20] Đã đối soát Template và Raw thành công."

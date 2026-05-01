@@ -1,32 +1,38 @@
 ---
-source_id: SOURCE_THINK_Thinking_with_Data
-title: "ACAD Thinking with Data"
+source_id: SOURCE_THINK_THINKING_WITH_DATA
+title: "ACAD: Thinking with Data - Phân tích lập luận và đặt câu hỏi"
 author: "Max Shron"
-category: ACAD
-domain: "Data Strategy / Analytical Thinking"
+category: "ACAD"
+domain: "Data Analysis Strategy"
 status: "verified"
-created: "2026-04-29"
-last_updated: "2026-04-29"
+created: "2026-05-01"
+last_updated: "2026-05-01"
 ---
 
-# ACAD THINK Thinking with Data
+# ACAD Thinking with Data
 
 ## 📝 1. Phân tích Ingest (Analysis - Step 1)
-- **Thực thể & Khái niệm then chốt:** CoNVO, Data Arguments, Patterns of Reasoning.
-- **Kết nối Wiki:** Nền tảng nhóm [[Thinking]].
-- **Điểm khác biệt:** Tư duy chiến lược trước khi thực thi.
-- **Đề xuất cấu trúc:** Đồng bộ với SOURCE_THINK_Thinking_with_Data.
+*Phần này ghi lại kết quả phân tích cấu trúc trước khi tạo các trang Concept.*
+
+- **Thực thể & Khái niệm then chốt:** Khung CoNVO (Context, Need, Vision, Outcome), Argument Sketching, Mockups, Pattern of Reasoning.
+- **Kết nối Wiki:** Bổ trợ cho [[CONCEPT_THINK_Problem_Solving_Process]] bằng cách cung cấp công cụ Scoping chi tiết hơn.
+- **Điểm khác biệt/Mâu thuẫn:** Tập trung vào "Tại sao" (Why) thay vì "Làm thế nào" (How). Nhấn mạnh vào việc xây dựng lập luận logic hơn là kỹ thuật thống kê thuần túy.
+- **Đề xuất cấu trúc:**
+    - [[CONCEPT_THINK_CoNVO_Framework]] (Đã tạo)
+    - [[CONCEPT_THINK_Argument_Sketching]] (Đang chờ)
+    - [[CONCEPT_THINK_Sentence_Mockups]]
 
 ## 📖 2. Tổng quan nguồn (Overview - Step 2)
-Hướng dẫn cách tư duy và giao tiếp hiệu quả bằng dữ liệu, tập trung vào việc biến những câu hỏi kinh doanh thành các bài toán dữ liệu có thể giải quyết được.
+Cuốn sách này là kim chỉ nam cho giai đoạn lập kế hoạch (Scoping) của một dự án dữ liệu. Nó cung cấp các khung tư duy như CoNVO để giúp Analyst không chỉ trả lời câu hỏi "Dữ liệu nói gì?" mà còn là "Tại sao chúng ta phải quan tâm đến nó?".
 
 ## 🚀 3. Các Concept đã trích xuất (Rule 14 & 17)
-- [[CONCEPT_THINK_CoNVO_Framework]] | **Khung bối cảnh**.
-- [[CONCEPT_THINK_Data_Argumentation]] | **Lập luận dữ liệu**.
+- [[CONCEPT_THINK_CoNVO_Framework]] | **Khung CoNVO** - Quy trình 4 bước để xác định phạm vi dự án dữ liệu dựa trên bối cảnh và nhu cầu thực tế.
+- [[CONCEPT_THINK_Problem_Solving_Process]] | **Quy trình Giải quyết Vấn đề** - Tích hợp tư duy hệ thống vào việc xử lý dữ liệu.
 
 ## 🔍 4. Review Items (Dành cho Human)
-- [ ] Áp dụng CoNVO vào quy trình tiếp nhận yêu cầu phân tích mới.
+- [ ] Xác nhận khung CoNVO có phù hợp với quy trình làm việc hiện tại của Team DA không?
+- [ ] Kiểm tra tính thực tiễn của ví dụ "Giáo viên dùng Dashboard" trong Concept CoNVO.
 
 --- 
-**Nguồn thô:** `THINK_Thinking_with_Data`
-**Deep Research Query:** `Max Shron Thinking with Data CoNVO summary`
+**Nguồn thô:** `Thinking with Data.pdf`
+**Deep Research Query:** `Max Shron CoNVO framework case studies`
