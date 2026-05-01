@@ -1,3 +1,7 @@
+---
+trigger: model_decision
+---
+
 # 🧩 ECC CORE RULES (v1.0)
 
 > **Mô hình**: Planner -> TDD -> Reviewer

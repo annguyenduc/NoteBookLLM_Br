@@ -1,3 +1,7 @@
+---
+trigger: model_decision
+---
+
 # 🛡️ Antigravity Core Principles (Vault Rules)
 
 > **Goal**: Đảm bảo và duy trì tính toàn vẹn của tri thức trong Vault Obsidian `NoteBookLLM_Br`.

@@ -1,3 +1,7 @@
+---
+trigger: model_decision
+---
+
 # 🏺 ECC HERITAGE PROMPTS (CodyMaster DNA)
 
 Tệp này lưu trữ các instructions tinh hoa được kế thừa từ hệ thống CodyMaster để đảm bảo Agent mới giữ vững tiêu chuẩn chất lượng cao.

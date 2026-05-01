@@ -417,3 +417,17 @@
 - File tạo/sửa: 33 files trong 3-resources/wiki/sources/
 - Lý do: Thực hiện chiến lược Fractal Ingestion, đảm bảo 100% nguồn đạt chuẩn Premium và tuân thủ Rule 10, 13, 19.
 - Template mới: d:\NoteBookLLM_Br\3-resources\QUERY_template.md đã được áp dụng.
+
+## [2026-05-01 14:36] SYSTEM | @pm | Tạo 2 Skills mới: cm-wiki-query + cm-wiki-lint
+- File tạo: `skills/cm-wiki-query/SKILL.md` (NicholasSpisak query pattern + cascade + offer-to-save)
+- File tạo: `skills/cm-wiki-lint/SKILL.md` (script-first + 5 manual checks + Error/Warning/Info report)
+- Lý do: Hoàn thiện bộ 3 Wiki skills action-oriented (ingest/query/lint)
+
+## [2026-05-01 14:33] SYSTEM | @pm | Tạo Skill cm-wiki-ingest
+- File tạo: `C:/Users/anngu/.gemini/antigravity/skills/cm-wiki-ingest/SKILL.md`
+- Lý do: Tạo execution guide action-oriented (NicholasSpisak pattern + 3 Swarm rules) — ingest.md giữ vai trò reference đầy đủ
+
+## [2026-05-01 14:22] SYSTEM | @pm | Merge wiki-ingest.md → ingest.md workflow
+- File sửa: `.agent/workflows/ingest.md` (patch: CHECKPOINT, Auto-detect, Mining Stats, Rule 17, Quality Gate)
+- File lưu trữ: `wiki-ingest.md` → `4-archive/20260501_wiki-ingest.md`
+- Lý do: Thống nhất 2 file cùng mục đích, kết hợp best practices từ NicholasSpisak/second-brain
