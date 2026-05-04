@@ -1,0 +1,6 @@
+interface:
+  display_name: "Wiki Ingest"
+  short_description: "Nap source vao NoteBookLLM_Br wiki"
+  default_prompt: "$.wiki-ingest"
+policy:
+  allow_implicit_invocation: true

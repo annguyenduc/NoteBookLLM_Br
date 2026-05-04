@@ -1,4 +1,4 @@
-﻿# 1. Ignore EVERYTHING
+# 1. Ignore EVERYTHING
 /*
 
 # 2. Whitelist Knowledge + Core Constitution
@@ -12,6 +12,8 @@
 !/USER.md
 !/GEMINI.md
 !/WORKSPACE_OVERVIEW.md
+!/.agent/
+!/scripts/
 
 # 3. Re-ignore heavy/unwanted files inside whitelisted directories
 3-resources/wiki/wiki_brain.db
