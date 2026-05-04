@@ -26,3 +26,41 @@ Inject a list of files linking to the current Atom into the `_backlinks` section
 ## Constraints
 - Do not alter the core content of an Atom when injecting backlinks.
 - Always verify Database integrity before performing a sync.
+description: Use when wiki files, database indexes, or infrastructure views drift out of sync after manual file changes, failed automation, nightly maintenance, or orphan-link repair work.
+---
+
+# Wiki Rebuild
+
+## Overview
+Repair infrastructure state between the filesystem, database, and generated indexes. This is a low-freedom maintenance skill and should not be used for editorial content changes.
+
+## Guardrails
+- Use the main entrypoint first: `rebuild.py`.
+- Treat `--heal-orphans` as a write operation that adds graph edges.
+- Do not use rebuild to bypass the file-first rule; physical markdown remains the source of truth.
+- Expect legacy helper scripts in this folder; prefer the documented entrypoints unless you are debugging the index layer itself.
+
+## Workflow
+1. Confirm the problem is infrastructure drift, not content quality.
+2. Run the main repair:
+   `python .agent/skills/wiki-rebuild/scripts/rebuild.py`
+3. If orphan healing is explicitly needed, run:
+   `python .agent/skills/wiki-rebuild/scripts/rebuild.py --heal-orphans`
+4. Regenerate the human-readable index when needed:
+   `python .agent/skills/wiki-rebuild/scripts/update_wiki_index.py`
+5. Review the DB and generated files before declaring the rebuild complete.
+
+## Quick Reference
+- Main repair:
+  `rebuild.py`
+- Optional orphan healing:
+  `rebuild.py --heal-orphans`
+- Index regeneration:
+  `update_wiki_index.py`
+- Lower-level or legacy helpers:
+  `indexer.py`, `wiki_indexer.py`
+
+## Common Mistakes
+- Using rebuild when the real issue is a bad ingest or cleanup pass.
+- Assuming DB-to-file sync is allowed for anything beyond the approved status flow.
+- Running orphan healing casually and creating weak graph edges without review.

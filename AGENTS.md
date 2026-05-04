@@ -160,6 +160,11 @@ Nếu file chưa có → DỪNG, báo @pm, không tự tiếp tục.
 **R10 — VISUAL PROOF MANDATORY**
 Mọi hành động cào dữ liệu BẮT BUỘC phải đi kèm ảnh chụp bằng chứng (PNG/WebP) **hiển thị rõ nội dung thực tế của trang**. Tuyệt đối KHÔNG dùng ảnh "Generating recording" làm bằng chứng. Nếu không thể chụp ảnh nội dung, phải DỪNG và báo lỗi ngay.
 
+**R11 — NO AUTO-STUB CREATION**
+- `indexer.py` KHÔNG tạo atom cho file < 200 bytes.
+- `rebuild.py` SKIP các file không có frontmatter hợp lệ.
+- Stub files trong `00_Inbox/` được xử lý hàng tuần, KHÔNG index ngay lập tức.
+
 ---
 
 ## CHECKPOINT (Khai báo trước mọi task)

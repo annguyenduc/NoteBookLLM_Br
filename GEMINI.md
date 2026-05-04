@@ -54,6 +54,11 @@ Mọi hành động thu thập dữ liệu web BẮT BUỘC phải tuân thủ q
 - **Cấm 404/Rác**: Tuyệt đối không chụp ảnh trang lỗi 404, trang trắng, CAPTCHA hoặc trang không liên quan.
 - **Vi phạm**: Nếu phát hiện ảnh rác, Agent phải tự động rollback, ghi lỗi vào `3-resources/wiki/log.md` và thực hiện lại cho đến khi có bằng chứng thực.
 
+### R11 — NO AUTO-STUB CREATION
+- `indexer.py` KHÔNG tạo atom cho file < 200 bytes.
+- `rebuild.py` SKIP các file không có frontmatter hợp lệ.
+- Stub files trong `00_Inbox/` được xử lý hàng tuần, KHÔNG index ngay lập tức.
+
 ---
 
 ## 🏗️ QUY ƯỚC WIKI (WIKI CONVENTIONS)

@@ -91,3 +91,52 @@ Write skill trước khi test? Xóa đi. Làm lại.
 Edit skill mà không test? Cùng vi phạm.
 
 Full rationalization table → `references/superpowers-writing-skills.md §Common Rationalizations`
+description: Use when creating, rewriting, or tightening any SKILL.md in `.agent/skills` or `.codex/skills`, especially when a skill triggers poorly, hides important guardrails, or no longer matches the scripts and resources in its folder.
+---
+
+# Write Skill
+
+## Overview
+Write skills as operational guides for another agent, not as project notes. Keep the body short, make the trigger description precise, and only document behavior that is true in the current folder.
+
+## Required Reading
+- Read `.agent/skills/references/superpowers-writing-skills.md`.
+- Read `.agent/skills/references/anthropic-best-practices.md`.
+- Read `.agent/skills/references/testing-skills-subagents.md`.
+
+Do not skip these files when editing a skill family for the first time in a session.
+
+## Workflow
+1. Audit the target folder before writing.
+Read `SKILL.md`, list scripts, references, assets, and note any hard-coded paths, legacy behavior, or safety constraints.
+2. Capture the baseline problem.
+Document why the current skill is weak: bad trigger text, stale commands, missing guardrails, or structure that invites shortcut behavior.
+3. Rewrite the frontmatter.
+Use lowercase hyphenated `name` and a `description` that starts with `Use when...` and focuses on triggering conditions, not the workflow.
+4. Rewrite the body around real execution.
+Prefer `Overview`, `Guardrails`, `Workflow`, `Quick Reference`, and `Common Mistakes`. Reference scripts by path. Move heavy detail into separate files instead of bloating `SKILL.md`.
+5. Validate after editing.
+Re-read the final file for trigger quality, path correctness, and agreement with the actual scripts. If a validator is available, run it.
+
+## Guardrails
+- Do not describe commands or outputs that the folder cannot actually produce.
+- Do not hide critical safety rules inside examples.
+- Do not use `@file` links inside skill prose; use plain paths.
+- Do not summarize the whole workflow in `description`; that encourages the agent to skip the body.
+- Keep references one level deep from `SKILL.md`.
+- Prefer forward-slash paths in documentation, even on Windows.
+
+## Quick Reference
+- Initialize a new skill only when the folder does not already exist:
+  `python D:/anngu/.codex/skills/.system/skill-creator/scripts/init_skill.py <skill-name> --path <parent-dir>`
+- Validate a skill folder:
+  `python D:/anngu/.codex/skills/.system/skill-creator/scripts/quick_validate.py <skill-folder>`
+- Regenerate agent metadata when needed:
+  `python D:/anngu/.codex/skills/.system/skill-creator/scripts/generate_openai_yaml.py <skill-folder> --interface key=value`
+
+## Common Mistakes
+- `description` explains the process instead of the trigger.
+- `SKILL.md` promises behavior that only exists in a legacy script.
+- A write-heavy command is presented without any warning about what it edits.
+- The body duplicates long reference material instead of linking to it.
+- A skill is rewritten in batch without checking each folder's real scripts and constraints.

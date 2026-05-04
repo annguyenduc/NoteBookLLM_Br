@@ -31,19 +31,28 @@ def ingest_file(file_path):
     print(f"--- Ingesting: {file_path} ---")
     
     # Normalize path for comparison
-    file_path = os.path.normpath(file_path)
-    raw_dir_norm = os.path.normpath(RAW_DIR)
+    file_path = os.path.normpath(os.path.abspath(file_path))
+    raw_dir_norm = os.path.normpath(os.path.abspath(RAW_DIR))
     
     if not os.path.exists(file_path):
         print(f"ERROR: File not found {file_path}")
         return False
+
+    # [V2.0] RULE R11: No auto-stub creation (< 200 bytes)
+    # Stub files in 00_Inbox/ are processed weekly, not indexed immediately.
+    if os.path.getsize(file_path) < 200:
+        print(f"Info: Skipping stub file {file_path} (< 200 bytes) per Rule R11.")
+        return True
 
     # 1. Calculate Hash
     file_hash = calculate_hash(file_path)
     print(f"Hash: {file_hash}")
 
     # 2. Check Database for duplicates or modified raw
-    conn = sqlite3.connect(DB_PATH)
+    conn = sqlite3.connect(DB_PATH, timeout=30)
+    conn.execute("PRAGMA busy_timeout = 30000")
+    # Lock early so duplicate checks and insert become one atomic write window.
+    conn.execute("BEGIN IMMEDIATE")
     cursor = conn.cursor()
     
     # Check if this exact path is already in atoms (normalize stored paths if possible, but here we assume stored paths were normalized)
@@ -91,6 +100,16 @@ def ingest_file(file_path):
         return False
     
     print(f"MIME: {routing['mime_type']} | Parser: {routing['parser']}")
+    if routing.get("mime_type") == "unknown" or routing.get("parser") == "unknown":
+        msg = "Routing unresolved (unknown mime/parser). Rejected for safety."
+        print(f"ERROR: {msg}")
+        cursor.execute(
+            "INSERT INTO task_logs (agent_id, action, target_file, status, details) VALUES (?, ?, ?, ?, ?)",
+            ('@engineer', 'ingest', file_path, 'rejected', msg)
+        )
+        conn.commit()
+        conn.close()
+        return False
 
     # 4. Gate 0: Atomic Creation
     # Confidence logic via score_engine

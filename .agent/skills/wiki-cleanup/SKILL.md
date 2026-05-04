@@ -31,3 +31,37 @@ Automatically fix minor issues:
 ## Constraints
 - **NEVER** delete files in `raw/`.
 - All automated changes must be logged in `3-resources/wiki/log.md`.
+description: Use when the wiki needs structural linting for broken links, missing template sections, or consistency drift, especially after batch edits, ingest, absorb, or rebuild work.
+---
+
+# Wiki Cleanup
+
+## Overview
+Audit wiki structure first, then fix only the issues the scripts are designed to handle. The main linter checks links and required template sections; other scripts are support utilities, not a blanket auto-heal system.
+
+## Guardrails
+- Default to read-only linting.
+- `--fix` writes changes into `3-resources/wiki/`; use it only when those changes are intended.
+- Never use this skill against `3-resources/raw/`.
+- Separate structural cleanup from factual review. A clean file can still contain bad claims.
+
+## Workflow
+1. Run the main audit:
+   `python .agent/skills/wiki-cleanup/scripts/lint_engine.py`
+2. Inspect the reported issue types and decide whether scriptable fixes are appropriate.
+3. If the fixes are acceptable, run:
+   `python .agent/skills/wiki-cleanup/scripts/lint_engine.py --fix`
+4. Review the modified files and recent task logs before closing the cleanup pass.
+
+## Quick Reference
+- Main linter:
+  `lint_engine.py`
+- Vault-wide health support:
+  `brain_lint.py`
+- Other support utilities:
+  `dense_linker.py`, `consolidation_engine.py`, `retention_manager.py`
+
+## Common Mistakes
+- Running `--fix` without checking what the script actually edits.
+- Confusing broken-link repair with knowledge reconciliation.
+- Treating missing `4F Reflection` sections as proof of content quality.

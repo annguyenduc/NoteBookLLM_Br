@@ -3,6 +3,18 @@ import subprocess
 import json
 import os
 
+def infer_from_extension(file_path):
+    ext = os.path.splitext(file_path)[1].lower()
+    if ext == ".pdf":
+        return {"mime_type": "application/pdf", "group": "document", "parser": "docling"}
+    if ext in (".md", ".markdown"):
+        return {"mime_type": "text/markdown", "group": "text", "parser": "native"}
+    if ext in (".txt", ".log", ".rst"):
+        return {"mime_type": "text/plain", "group": "text", "parser": "native"}
+    if ext in (".docx", ".pptx", ".xlsx"):
+        return {"mime_type": "application/octet-stream", "group": "office", "parser": "markitdown"}
+    return {"mime_type": "unknown", "group": "unknown", "parser": "unknown"}
+
 def get_file_info(file_path):
     if not os.path.exists(file_path):
         return {"error": f"File not found: {file_path}"}
@@ -22,7 +34,7 @@ def get_file_info(file_path):
         mime_type = file_data.get('output', {}).get('mime_type', 'unknown')
         group = file_data.get('output', {}).get('group', 'unknown')
         
-        # Determine parser
+        # Determine parser from Magika output
         parser = "unknown"
         if mime_type == "application/pdf":
             parser = "docling"
@@ -33,13 +45,33 @@ def get_file_info(file_path):
         elif group == "code":
             parser = "native"
             
-        return {
+        info = {
             "path": file_path,
             "mime_type": mime_type,
             "group": group,
             "parser": parser
         }
+
+        # Fallback when Magika cannot classify correctly.
+        if info["mime_type"] == "unknown" or info["parser"] == "unknown":
+            fallback = infer_from_extension(file_path)
+            info.update(fallback)
+            info["detection_mode"] = "extension_fallback"
+        else:
+            info["detection_mode"] = "magika"
+
+        return info
         
+    except FileNotFoundError:
+        fallback = infer_from_extension(file_path)
+        return {
+            "path": file_path,
+            "mime_type": fallback["mime_type"],
+            "group": fallback["group"],
+            "parser": fallback["parser"],
+            "detection_mode": "extension_fallback",
+            "note": "magika command not found"
+        }
     except Exception as e:
         return {"error": str(e)}
 

@@ -29,6 +29,21 @@ def sync_db_from_files():
         if os.path.exists(path):
             for f in os.listdir(path):
                 if f.endswith(".md"):
+                    file_path = os.path.join(path, f)
+                    
+                    # [V2.0] RULE R11: No auto-stub creation (< 200 bytes)
+                    if os.path.getsize(file_path) < 200:
+                        continue
+                    
+                    # [V2.0] RULE R11: Skip files without valid frontmatter
+                    try:
+                        with open(file_path, "r", encoding="utf-8") as file_obj:
+                            content = file_obj.read()
+                            if not content.startswith("---") or "---" not in content[3:]:
+                                continue
+                    except:
+                        continue
+                        
                     files_on_disk.add(f[:-3])
                     
     cursor.execute("SELECT file_id FROM atoms")
