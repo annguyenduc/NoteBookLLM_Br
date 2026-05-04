@@ -29,3 +29,6 @@ __pycache__/
 .idea/
 *.swp
 *.swo
+# Python cache
+scripts/__pycache__/
+libs/__pycache__/
