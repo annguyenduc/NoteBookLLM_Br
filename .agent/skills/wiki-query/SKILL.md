@@ -1,6 +1,6 @@
 ---
 name: wiki-query
-description: "Truy xuất tri thức từ Wiki thông qua Hybrid Search (FTS5 + Graph Discovery)."
+description: "Use when retrieving concept definitions, tracing source provenance, or discovering connections between Knowledge Atoms via keyword or graph traversal. Use wiki-semantic-search instead when keyword search returns poor results."
 ---
 
 Retrieve knowledge from the Wiki using Hybrid Search (Full-Text Search + Graph Traversal).

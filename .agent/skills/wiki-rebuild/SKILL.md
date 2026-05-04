@@ -1,6 +1,6 @@
 ---
 name: wiki-rebuild
-description: "Đồng bộ hóa hạ tầng tri thức, cập nhật file chỉ mục (Index) và hệ thống liên kết ngược (Backlinks)."
+description: "Use when the database is out of sync with the filesystem, after files are added or deleted manually, or on nightly maintenance. Triggers on /rebuild command or when index.md is stale. Do NOT use for content edits."
 ---
 
 Synchronize knowledge infrastructure, update indices, and manage backlink injection.

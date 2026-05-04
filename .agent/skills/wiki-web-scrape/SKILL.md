@@ -1,6 +1,6 @@
 ---
 name: wiki-web-scrape
-description: "Thu thập dữ liệu thô từ web với tốc độ cao bằng Lightpanda."
+description: "Use when quickly scraping a static or server-rendered URL for raw content. Prefer over wiki-crawl-4ai for simple pages that do not require JavaScript rendering or screenshot evidence. Output goes to raw/ only — not atomized."
 ---
 
 High-speed technical documentation scraping using Lightpanda.

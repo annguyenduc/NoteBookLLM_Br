@@ -1,6 +1,6 @@
 ---
 name: write-skill
-description: Use when creating a new SKILL.md, editing, rewriting, or updating existing skills (sửa lại, viết lại, viết mới, nâng cấp skill). Do NOT use for general wiki maintenance or ingest tasks.
+description: "Use when creating, editing, rewriting, or upgrading any SKILL.md file. Triggers on 'viết skill', 'sửa skill', 'nâng cấp skill'. Do NOT use for wiki content editing, ingest tasks, or general documentation outside .agent/skills/."
 ---
 
 # Write Skill Protocol (NoteBookLLM_Br)

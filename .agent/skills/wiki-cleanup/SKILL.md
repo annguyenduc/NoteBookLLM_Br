@@ -1,6 +1,6 @@
 ---
 name: wiki-cleanup
-description: "Bảo trì và kiểm định chất lượng hệ thống Wiki thông qua bài kiểm tra Steve Jobs và quy trình Linting."
+description: "Use when broken links, stale content (not updated in 30+ days), or structural inconsistencies are detected in Wiki Atoms. Also triggers on /cleanup command or after a large ingest batch."
 ---
 
 Maintain and audit the quality of the Wiki system through linting and structure verification.

@@ -1,6 +1,6 @@
 ---
 name: wiki-status
-description: "Báo cáo sức khỏe hệ thống thông qua Health Dashboard và các chỉ số tri thức."
+description: "Use when the user asks about Wiki health, atom counts, verification rates, or link density. Also use before a large ingest batch to establish a baseline. Triggers on 'wiki status', 'dashboard', or '/status' commands."
 ---
 
 Report system health through a dashboard and knowledge connectivity metrics.

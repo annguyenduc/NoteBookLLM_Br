@@ -1,6 +1,6 @@
 ---
 name: pedagogy
-description: Use when designing lesson plans, pedagogical learning sequences, or exporting teaching materials to PPTX, LMS, and H5P formats.
+description: "Use when designing lesson plans or learning sequences from Wiki Atoms, converting comparison content to PPTX slides, or packaging content for LMS/H5P export. Requires a Trainer Profile before starting. Do NOT use for raw data ingest or routine Wiki maintenance."
 ---
 
 # Pedagogy Protocol

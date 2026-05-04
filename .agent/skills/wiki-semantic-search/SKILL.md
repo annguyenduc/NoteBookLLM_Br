@@ -1,6 +1,6 @@
 ---
 name: wiki-semantic-search
-description: Use when conceptual, abstract, or hybrid (BM25 + Vector) search is required to retrieve and synthesize knowledge from the Wiki 2.0 repository.
+description: "Use when wiki-query (keyword search) returns no results or irrelevant results, when the search intent is conceptual or abstract rather than exact-match, or when the user asks questions using meaning rather than specific terms."
 ---
 
 # Wiki Semantic Search (Local QMD)

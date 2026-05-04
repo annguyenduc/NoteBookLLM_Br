@@ -1,6 +1,6 @@
 ---
 name: wiki-breakdown
-description: "Phát hiện lỗ hổng tri thức (Knowledge Gaps) bằng cách trích xuất danh từ chưa được định nghĩa và tạo các Stubs."
+description: "Use when knowledge gaps need to be identified in the Wiki — specifically when terms are referenced in Atoms but have no corresponding page in concepts/ or entities/. Triggers on /breakdown command."
 ---
 
 Detect knowledge gaps in the Wiki by extracting undefined terms and creating initial stubs.

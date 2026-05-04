@@ -1,6 +1,6 @@
 ---
 name: wiki-absorb
-description: "Nâng cấp và hòa giải các DRAFT atoms thành tri thức chính thức trong Wiki."
+description: "Use when new Wiki Atoms in DRAFT status need to be reconciled against existing knowledge, or when contradictions between sources are detected and require resolution."
 ---
 
 Reconcile and upgrade DRAFT atoms into verified knowledge within the Wiki system.

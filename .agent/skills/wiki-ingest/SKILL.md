@@ -1,6 +1,6 @@
 ---
 name: wiki-ingest
-description: "Nạp nguồn tri thức mới (PDF, Office, Web) vào Wiki Review Queue."
+description: "Use when raw knowledge sources (PDF, Markdown, HTML, Office) need to be atomized, hash-verified, and integrated into the Wiki 2.0 review queue. Triggers on /ingest command or when new files appear in 00_Inbox/ or 3-resources/raw/."
 ---
 
 Standardized ingestion protocol to atomize raw sources with absolute traceability.

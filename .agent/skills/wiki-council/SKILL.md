@@ -1,6 +1,6 @@
 ---
 name: wiki-council
-description: "Giải quyết mâu thuẫn tri thức phức tạp thông qua cơ chế Hội đồng (Council) và biểu quyết (Poll)."
+description: "Use when knowledge contradictions (CONTRADICTS edges) cannot be resolved by automated logic and require multi-agent consensus. Do NOT use for minor conflicts resolvable by wiki-absorb."
 ---
 
 Resolve complex knowledge conflicts through multi-agent consensus and formal voting.

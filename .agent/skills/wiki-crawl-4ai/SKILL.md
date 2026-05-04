@@ -1,6 +1,6 @@
 ---
 name: wiki-crawl-4ai
-description: "Cào dữ liệu web cấu trúc cao (Markdown/Screenshot) bằng Crawl4AI."
+description: "Use when a URL requires high-fidelity Markdown extraction with JavaScript rendering, or when visual screenshot evidence (Rule 10) is mandatory. Prefer over wiki-web-scrape for complex/dynamic pages."
 ---
 
 High-fidelity web crawling for structured markdown and visual evidence.
