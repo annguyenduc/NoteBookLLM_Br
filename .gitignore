@@ -1,12 +1,17 @@
 ﻿# 1. Ignore EVERYTHING
 /*
 
-# 2. Whitelist ONLY knowledge directories
+# 2. Whitelist Knowledge + Core Constitution
 !/1-projects/
 !/2-areas/
 !/3-resources/
 !/.gitignore
 !/README.md
+!/AGENTS.md
+!/SOUL.md
+!/USER.md
+!/GEMINI.md
+!/WORKSPACE_OVERVIEW.md
 
 # 3. Re-ignore heavy/unwanted files inside whitelisted directories
 3-resources/wiki/wiki_brain.db
