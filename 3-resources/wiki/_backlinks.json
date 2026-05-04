@@ -1,0 +1,1281 @@
+{
+  "50": [
+    "CONCEPT_PY_Scikit_Learn_Estimator"
+  ],
+  "9.5, 30": [
+    "CONCEPT_PY_Scikit_Learn_Estimator"
+  ],
+  "AGENTS.md": [
+    "CONCEPT_TOOL_Code_Analysis_Patterns"
+  ],
+  "CASE_STUDY_Churn_Prediction": [
+    "overview",
+    "CONCEPT_DSML_Marketing_Metrics",
+    "SOURCE_DSML_Marketing_Analytics",
+    "SYNTHESIS_DA_Case_Study_Library"
+  ],
+  "CASE_STUDY_Data_Pipeline_Optimization": [
+    "overview",
+    "SYNTHESIS_DA_Case_Study_Library"
+  ],
+  "CASE_STUDY_Teaching_Efficacy": [
+    "overview",
+    "SYNTHESIS_DA_Case_Study_Library"
+  ],
+  "CONCEPT_...": [
+    "CONCEPT_META_Wiki_Query_Patterns"
+  ],
+  "CONCEPT_AIMET_Error_Handling_Patterns": [
+    "CONCEPT_AIMET_Production_Guardrails",
+    "SOURCE_AIMET_AgenticAI_Roadmap_2026"
+  ],
+  "CONCEPT_AIMET_Evaluation_Metrics": [
+    "SYNTHESIS_Agentic_Orchestration_Frameworks"
+  ],
+  "CONCEPT_AIMET_LCEL": [
+    "SOURCE_AIMET_AgenticAI_Roadmap_2026"
+  ],
+  "CONCEPT_AIMET_Memory_Management": [
+    "CONCEPT_AIMET_RAG_Systems",
+    "ENTITY_AIMET_LangGraph",
+    "SOURCE_AIMET_AgenticAI_Roadmap_2026",
+    "SYNTHESIS_Agentic_Orchestration_Frameworks"
+  ],
+  "CONCEPT_AIMET_MultiAgent_Architecture": [
+    "CONCEPT_AIMET_Memory_Management",
+    "CONCEPT_AIMET_ReAct_Pattern",
+    "CONCEPT_AIMET_Tool_Integration",
+    "CONCEPT_TOOL_Gemini_Role_Prompting",
+    "ENTITY_AIMET_CrewAI",
+    "ENTITY_AIMET_LangGraph",
+    "SOURCE_AIMET_AgenticAI_Roadmap_2026",
+    "SYNTHESIS_Agentic_Orchestration_Frameworks"
+  ],
+  "CONCEPT_AIMET_Production_Guardrails": [
+    "CONCEPT_AIMET_Evaluation_Metrics",
+    "SYNTHESIS_Agentic_Orchestration_Frameworks"
+  ],
+  "CONCEPT_AIMET_RAG_Systems": [
+    "CONCEPT_AIMET_Memory_Management",
+    "CONCEPT_AI_Knowledge_Cutoff",
+    "CONCEPT_TOOL_Context_Injection_Techniques",
+    "ENTITY_TOOL_LangChain",
+    "SOURCE_AIMET_AgenticAI_Roadmap_2026",
+    "SYNTHESIS_Agentic_Orchestration_Frameworks"
+  ],
+  "CONCEPT_AIMET_ReAct_Pattern": [
+    "CONCEPT_AIMET_MultiAgent_Architecture",
+    "SOURCE_AIMET_AgenticAI_Roadmap_2026"
+  ],
+  "CONCEPT_AIMET_Runnables": [
+    "CONCEPT_AIMET_Error_Handling_Patterns",
+    "SOURCE_AIMET_AgenticAI_Roadmap_2026"
+  ],
+  "CONCEPT_AIMET_Tool_Integration": [
+    "SOURCE_AIMET_AgenticAI_Roadmap_2026",
+    "SYNTHESIS_Agentic_Orchestration_Frameworks"
+  ],
+  "CONCEPT_AI_Bias_and_Ethics": [
+    "CONCEPT_AI_Knowledge_Cutoff",
+    "SOURCE_coursera-AI-essential-Bias_Drift_Knowledge_Cutoff"
+  ],
+  "CONCEPT_AI_Knowledge_Cutoff": [
+    "SOURCE_coursera-AI-essential-Stay_up_to_date_with_AI"
+  ],
+  "CONCEPT_AI_Prompt_Engineering_Basics": [
+    "CONCEPT_TOOL_Context_Injection_Techniques",
+    "CONCEPT_TOOL_Gemini_Role_Prompting",
+    "SOURCE_coursera-AI-essential-Stay_up_to_date_with_AI"
+  ],
+  "CONCEPT_DE_Batch_vs_Stream_Processing": [
+    "SOURCE_DE_Designing_Data_Intensive_Applications"
+  ],
+  "CONCEPT_DE_Data_Architecture_Basics": [
+    "CONCEPT_DE_Data_Partitioning",
+    "CONCEPT_DE_Data_Quality_Framework",
+    "CONCEPT_DE_ETL_ELT_Workflows",
+    "SOURCE_DE_Data_Warehouse_Toolkit",
+    "SOURCE_DE_Designing_Data_Intensive_Applications",
+    "SOURCE_DE_Fundamentals_of_Data_Engineering",
+    "SYNTHESIS_DA_Core_Workflow"
+  ],
+  "CONCEPT_DE_Data_Engineering_Lifecycle": [
+    "SOURCE_DE_Fundamentals_of_Data_Engineering"
+  ],
+  "CONCEPT_DE_Data_Governance": [
+    "SOURCE_DE_Fundamentals_of_Data_Engineering"
+  ],
+  "CONCEPT_DE_Data_Modeling_Star_Schema": [
+    "CONCEPT_DE_Data_Architecture_Basics",
+    "CONCEPT_DE_Indexing_Optimization",
+    "CONCEPT_DE_SCD_Types",
+    "SOURCE_DE_Data_Warehouse_Toolkit",
+    "SOURCE_DE_Fundamentals_of_Data_Engineering",
+    "SOURCE_VIZ_Analyzing_Data_Power_BI",
+    "SYNTHESIS_DA_Core_Workflow"
+  ],
+  "CONCEPT_DE_Data_Partitioning": [
+    "CONCEPT_DE_Indexing_Optimization",
+    "SYNTHESIS_DA_Core_Workflow"
+  ],
+  "CONCEPT_DE_Data_Quality_Framework": [
+    "CONCEPT_DE_ETL_ELT_Workflows",
+    "SOURCE_DE_Designing_Data_Intensive_Applications",
+    "SYNTHESIS_DA_Core_Workflow"
+  ],
+  "CONCEPT_DE_ETL_ELT_Workflows": [
+    "CONCEPT_DE_Data_Architecture_Basics",
+    "CONCEPT_DE_Data_Quality_Framework",
+    "SOURCE_DE_Fundamentals_of_Data_Engineering",
+    "SYNTHESIS_DA_Core_Workflow"
+  ],
+  "CONCEPT_DE_Indexing_Optimization": [
+    "CONCEPT_DE_Data_Partitioning",
+    "SOURCE_DE_Data_Warehouse_Toolkit",
+    "SOURCE_DE_Designing_Data_Intensive_Applications",
+    "SYNTHESIS_DA_Core_Workflow"
+  ],
+  "CONCEPT_DE_SCD_Types": [
+    "SOURCE_DE_Data_Warehouse_Toolkit"
+  ],
+  "CONCEPT_DSML_Bias_Variance_Tradeoff": [
+    "SOURCE_STAT_Intro_to_Statistical_Learning"
+  ],
+  "CONCEPT_DSML_Clustering_KMeans": [
+    "CONCEPT_DSML_Marketing_Metrics",
+    "SOURCE_DSML_Marketing_Analytics",
+    "SOURCE_DSML_Master_ML_Algorithms",
+    "SOURCE_DS_Python_Data_Science_Handbook",
+    "SOURCE_STAT_Intro_to_Statistical_Learning",
+    "SYNTHESIS_DA_Core_Workflow"
+  ],
+  "CONCEPT_DSML_Decision_Trees_Random_Forest": [
+    "SOURCE_DSML_Master_ML_Algorithms",
+    "SOURCE_STAT_Intro_to_Statistical_Learning",
+    "CASE_STUDY_Churn_Prediction",
+    "SYNTHESIS_DA_Core_Workflow"
+  ],
+  "CONCEPT_DSML_Feature_Engineering_Basics": [
+    "SOURCE_STAT_Intro_to_Statistical_Learning",
+    "CASE_STUDY_Churn_Prediction",
+    "SYNTHESIS_DA_Core_Workflow"
+  ],
+  "CONCEPT_DSML_Marketing_Metrics": [
+    "SOURCE_DSML_Marketing_Analytics"
+  ],
+  "CONCEPT_DSML_Master_ML_Algorithms": [
+    "CONCEPT_META_Bidirectional_Linking",
+    "SOURCE_PY_Python_Data_Science_Handbook"
+  ],
+  "CONCEPT_DSML_Model_Evaluation_Metrics": [
+    "CONCEPT_PY_Time_Series_Basics",
+    "SOURCE_coursera-AI-essential-Bias_Drift_Knowledge_Cutoff",
+    "CASE_STUDY_Churn_Prediction",
+    "SYNTHESIS_DA_Core_Workflow"
+  ],
+  "CONCEPT_DSML_Overfitting_Prevention": [
+    "ENTITY_Data_Science",
+    "SYNTHESIS_DA_Core_Workflow"
+  ],
+  "CONCEPT_DSML_Supervised_vs_Unsupervised": [
+    "CONCEPT_STAT_Linear_Regression",
+    "CASE_STUDY_Churn_Prediction"
+  ],
+  "CONCEPT_EXCEL_Data_Modeling_PowerPivot": [
+    "SYNTHESIS_EXCEL_Mastery"
+  ],
+  "CONCEPT_EXCEL_Optimization_Solver": [
+    "SYNTHESIS_EXCEL_Mastery"
+  ],
+  "CONCEPT_META_Assessment_Integration": [
+    "SYNTHESIS_Wiki_Audit_20260501"
+  ],
+  "CONCEPT_META_Async_Review_System": [
+    "SOURCE_META_NASHUS_LLMWIKI"
+  ],
+  "CONCEPT_META_Atomic_Methodology": [
+    "COMPARE_META_Nashsu_vs_Karpathy",
+    "ENTITY_TOOL_Obsidian",
+    "SOURCE_META_LLM_WIKI",
+    "SYNTHESIS_LLM_Wiki_Standard",
+    "SYNTHESIS_MASTER_Second_Brain_Blueprint"
+  ],
+  "CONCEPT_META_Bidirectional_Linking": [
+    "ENTITY_TOOL_Obsidian",
+    "SOURCE_META_LLM_WIKI"
+  ],
+  "CONCEPT_META_Consolidation_Tiers": [
+    "SOURCE_META_LLM_WIKI_V2"
+  ],
+  "CONCEPT_META_Information_Overload": [
+    "CONCEPT_AI_Knowledge_Cutoff"
+  ],
+  "CONCEPT_META_Ontology_Design": [
+    "SOURCE_META_KARPATHY_KNOWLEDGE_BASES"
+  ],
+  "CONCEPT_META_Post_Code_Workflow": [
+    "ENTITY_TOOL_Gemini",
+    "SOURCE_META_KARPATHY_KNOWLEDGE_BASES"
+  ],
+  "CONCEPT_META_SB3_Graph_Analysis": [
+    "SOURCE_META_NASHUS_LLMWIKI"
+  ],
+  "CONCEPT_META_SB3_Graph_Traversal": [
+    "SOURCE_META_KARPATHY_LLM_WIKI",
+    "SOURCE_META_NASHUS_LLMWIKI"
+  ],
+  "CONCEPT_META_SB3_LLM_Wiki": [
+    "SOURCE_META_KARPATHY_LLM_WIKI"
+  ],
+  "CONCEPT_META_SB3_Louvain_Clustering": [
+    "SOURCE_META_NASHUS_LLMWIKI"
+  ],
+  "CONCEPT_META_SB3_Memory_Tier": [
+    "SOURCE_META_KARPATHY_LLM_WIKI"
+  ],
+  "CONCEPT_META_SB3_Task_Ledger": [
+    "SOURCE_META_KARPATHY_LLM_WIKI"
+  ],
+  "CONCEPT_META_Skill_Modularity": [
+    "graph_insight_report",
+    "ENTITY_TOOL_Claude",
+    "SOURCE_META_KARPATHY_CLAUDE_SKILLS"
+  ],
+  "CONCEPT_META_Typed_Knowledge_Graph": [
+    "SOURCE_META_LLM_WIKI_V2"
+  ],
+  "CONCEPT_META_Wiki_Absorption_Loop": [
+    "ENTITY_TOOL_Claude_Code_Wiki_Gen",
+    "SOURCE_META_WIKI_GEN_CLONE",
+    "SYNTHESIS_Wiki_Intelligence_Architecture"
+  ],
+  "CONCEPT_META_Wiki_Article_Length_Targets": [
+    "SOURCE_META_WIKI_GEN_CLONE",
+    "SYNTHESIS_Wiki_Intelligence_Architecture"
+  ],
+  "CONCEPT_META_Wiki_Breakdown_Mining": [
+    "ENTITY_TOOL_Claude_Code_Wiki_Gen",
+    "SOURCE_META_WIKI_GEN_CLONE",
+    "SYNTHESIS_Wiki_Intelligence_Architecture"
+  ],
+  "CONCEPT_META_Wiki_Cleanup_Audit": [
+    "SOURCE_META_WIKI_GEN_CLONE"
+  ],
+  "CONCEPT_META_Wiki_Concurrency_Safety": [
+    "SYNTHESIS_Wiki_Intelligence_Architecture"
+  ],
+  "CONCEPT_META_Wiki_Directory_Taxonomy": [
+    "SOURCE_META_WIKI_GEN_CLONE",
+    "SYNTHESIS_Wiki_Intelligence_Architecture"
+  ],
+  "CONCEPT_META_Wiki_Gap_Analysis": [
+    "graph_insight_report",
+    "QUERY_META_Query_vs_Gap_Analysis",
+    "SYNTHESIS_Wiki_Audit_20260501",
+    "SYNTHESIS_Wiki_Intelligence_Architecture"
+  ],
+  "CONCEPT_META_Wiki_Generation_Skill": [
+    "SOURCE_AIMET_AgenticAI_Roadmap_2026"
+  ],
+  "CONCEPT_META_Wiki_Granularity_Control": [
+    "SOURCE_META_WIKI_GEN_CLONE",
+    "SYNTHESIS_Wiki_Intelligence_Architecture"
+  ],
+  "CONCEPT_META_Wiki_Index_Synchronization": [
+    "SOURCE_META_WIKI_GEN_CLONE",
+    "SYNTHESIS_Wiki_Intelligence_Architecture"
+  ],
+  "CONCEPT_META_Wiki_Narrative_Coherence": [
+    "SYNTHESIS_Wiki_Intelligence_Architecture"
+  ],
+  "CONCEPT_META_Wiki_Query_Patterns": [
+    "graph_insight_report",
+    "QUERY_META_Query_vs_Gap_Analysis",
+    "SYNTHESIS_Wiki_Intelligence_Architecture"
+  ],
+  "CONCEPT_META_Wiki_Quote_Discipline": [
+    "SOURCE_META_WIKI_GEN_CLONE",
+    "SYNTHESIS_Wiki_Intelligence_Architecture"
+  ],
+  "CONCEPT_META_Wiki_Reorganization": [
+    "SOURCE_META_WIKI_GEN_CLONE"
+  ],
+  "CONCEPT_META_Wiki_Signals": [
+    "graph_insight_report",
+    "COMPARE_META_Nashsu_vs_Karpathy"
+  ],
+  "CONCEPT_META_Wiki_Status_Metrics": [
+    "SOURCE_META_WIKI_GEN_CLONE"
+  ],
+  "CONCEPT_META_Wiki_The_Steve_Jobs_Test": [
+    "SYNTHESIS_Wiki_Intelligence_Architecture"
+  ],
+  "CONCEPT_META_Wiki_Writing_Tone": [
+    "SOURCE_META_WIKI_GEN_CLONE",
+    "SYNTHESIS_Wiki_Intelligence_Architecture"
+  ],
+  "CONCEPT_PY_GroupBy_Mechanics": [
+    "SYNTHESIS_PYTHON_Data_Mastery"
+  ],
+  "CONCEPT_PY_IPython_Magic": [
+    "SYNTHESIS_PYTHON_Data_Mastery"
+  ],
+  "CONCEPT_PY_Matplotlib_Basics": [
+    "CONCEPT_PY_Matplotlib_OO_vs_Pyplot",
+    "SOURCE_PY_Matplotlib_QuickStart",
+    "SOURCE_TOOL_Python_for_Data_Analysis"
+  ],
+  "CONCEPT_PY_Matplotlib_Interfaces": [
+    "SYNTHESIS_PYTHON_Data_Mastery"
+  ],
+  "CONCEPT_PY_Matplotlib_OO_vs_Pyplot": [
+    "SOURCE_PY_Matplotlib_QuickStart"
+  ],
+  "CONCEPT_PY_NumPy_Vectorization": [
+    "SYNTHESIS_PYTHON_Data_Mastery"
+  ],
+  "CONCEPT_PY_Pandas_Aggregation": [
+    "ENTITY_PANDAS",
+    "SOURCE_PY_Python_for_Data_Analysis"
+  ],
+  "CONCEPT_PY_Pandas_Basics": [
+    "CONCEPT_PY_Matplotlib_Basics",
+    "SOURCE_DS_Python_Data_Science_Handbook",
+    "SOURCE_PY_Python_Data_Science_Handbook",
+    "SOURCE_TOOL_Python_for_Data_Analysis"
+  ],
+  "CONCEPT_PY_Pandas_Data_Cleaning": [
+    "CONCEPT_PY_Pandas_Basics",
+    "ENTITY_PANDAS",
+    "SOURCE_PY_Python_for_Data_Analysis",
+    "CASE_STUDY_Churn_Prediction",
+    "SYNTHESIS_DA_Core_Workflow"
+  ],
+  "CONCEPT_PY_Pandas_Data_Transformation": [
+    "CONCEPT_PY_Pandas_Basics",
+    "ENTITY_PANDAS",
+    "SOURCE_PY_Python_for_Data_Analysis"
+  ],
+  "CONCEPT_PY_Pandas_Wrangling_Advanced": [
+    "ENTITY_PANDAS",
+    "SOURCE_PY_Python_for_Data_Analysis"
+  ],
+  "CONCEPT_PY_Scientific_Ecosystem": [
+    "ENTITY_Python",
+    "SYNTHESIS_PYTHON_Data_Mastery"
+  ],
+  "CONCEPT_PY_Scikit_Learn_Estimator": [
+    "SOURCE_TOOL_Python_for_Data_Analysis",
+    "SYNTHESIS_PYTHON_Data_Mastery"
+  ],
+  "CONCEPT_PY_Time_Series_Basics": [
+    "SOURCE_TOOL_Python_for_Data_Analysis"
+  ],
+  "CONCEPT_PY_pandas_Data_Structures": [
+    "ENTITY_PANDAS",
+    "SYNTHESIS_PYTHON_Data_Mastery"
+  ],
+  "CONCEPT_SQL_Advanced_Reporting": [
+    "CONCEPT_SQL_CTEs",
+    "CONCEPT_SQL_Window_Functions",
+    "SOURCE_TOOL_SQL_Cookbook",
+    "SOURCE_TOOL_SQL_for_Data_Analysis",
+    "SOURCE_TOOL_SQL_Getting_Started",
+    "SOURCE_TOOL_SQL_Pocket_Guide",
+    "SYNTHESIS_SQL_Mastery"
+  ],
+  "CONCEPT_SQL_Aggregations": [
+    "CONCEPT_SQL_Case_Statements",
+    "CONCEPT_SQL_Cohort_Analysis",
+    "CONCEPT_SQL_Joins",
+    "ENTITY_SQL",
+    "SYNTHESIS_SQL_Mastery"
+  ],
+  "CONCEPT_SQL_CRUD_Operations": [
+    "SOURCE_TOOL_SQL_Cookbook"
+  ],
+  "CONCEPT_SQL_CTEs": [
+    "CONCEPT_SQL_Performance_Tuning",
+    "CONCEPT_SQL_Window_Functions",
+    "SYNTHESIS_DA_Core_Workflow"
+  ],
+  "CONCEPT_SQL_Case_Statements": [
+    "CONCEPT_SQL_Select_And_Filter",
+    "SYNTHESIS_SQL_Mastery"
+  ],
+  "CONCEPT_SQL_Cohort_Analysis": [
+    "SOURCE_SQL_Cohort_Analysis",
+    "SOURCE_TOOL_SQL_for_Data_Analysis"
+  ],
+  "CONCEPT_SQL_Data_Preparation_Workflow": [
+    "SOURCE_TOOL_SQL_for_Data_Analysis",
+    "SOURCE_TOOL_SQL_Getting_Started",
+    "SOURCE_TOOL_SQL_Pocket_Guide",
+    "SYNTHESIS_DA_Core_Workflow",
+    "SYNTHESIS_SQL_Mastery"
+  ],
+  "CONCEPT_SQL_Data_Shaping_Techniques": [
+    "SYNTHESIS_SQL_Mastery"
+  ],
+  "CONCEPT_SQL_Database_Types_Analysis": [
+    "SYNTHESIS_SQL_Mastery"
+  ],
+  "CONCEPT_SQL_Execution_Order": [
+    "CONCEPT_SQL_Performance_Tuning",
+    "SYNTHESIS_SQL_Mastery"
+  ],
+  "CONCEPT_SQL_Hierarchical_Queries": [
+    "SYNTHESIS_SQL_Mastery"
+  ],
+  "CONCEPT_SQL_Joins": [
+    "ENTITY_SQL",
+    "SYNTHESIS_DA_Core_Workflow",
+    "SYNTHESIS_SQL_Mastery"
+  ],
+  "CONCEPT_SQL_Metadata_Queries": [
+    "SYNTHESIS_SQL_Mastery"
+  ],
+  "CONCEPT_SQL_Performance_Tuning": [
+    "SOURCE_TOOL_SQL_Pocket_Guide"
+  ],
+  "CONCEPT_SQL_Select_And_Filter": [
+    "CONCEPT_SQL_Joins",
+    "ENTITY_SQL",
+    "SYNTHESIS_DA_Core_Workflow",
+    "SYNTHESIS_SQL_Mastery"
+  ],
+  "CONCEPT_SQL_Sublanguages": [
+    "SOURCE_TOOL_SQL_Getting_Started",
+    "SOURCE_TOOL_SQL_Pocket_Guide"
+  ],
+  "CONCEPT_SQL_Window_Functions": [
+    "graph_insight_report",
+    "CONCEPT_SQL_CTEs",
+    "CONCEPT_SQL_Window_Functions_Advanced",
+    "SOURCE_TOOL_SQL_Cookbook",
+    "SOURCE_TOOL_SQL_Pocket_Guide",
+    "SYNTHESIS_DA_Core_Workflow"
+  ],
+  "CONCEPT_SQL_Window_Functions_Advanced": [
+    "SYNTHESIS_SQL_Mastery"
+  ],
+  "CONCEPT_STAT_A_B_Testing": [
+    "SOURCE_STAT_Practical_Statistics_for_Data_Scientists",
+    "SOURCE_TOOL_SQL_for_Data_Analysis"
+  ],
+  "CONCEPT_STAT_Bootstrap_Resampling": [
+    "SOURCE_STAT_Practical_Statistics_for_Data_Scientists"
+  ],
+  "CONCEPT_STAT_Central_Limit_Theorem": [
+    "CONCEPT_STAT_Confidence_Intervals",
+    "CONCEPT_STAT_Probability_Distributions",
+    "CONCEPT_STAT_Sampling_Biases"
+  ],
+  "CONCEPT_STAT_Confidence_Intervals": [
+    "CONCEPT_STAT_Central_Limit_Theorem",
+    "CONCEPT_STAT_Hypothesis_Testing_PValue",
+    "CONCEPT_STAT_T_Test_ANOVA",
+    "SYNTHESIS_DA_Core_Workflow"
+  ],
+  "CONCEPT_STAT_Correlation_vs_Causation": [
+    "SOURCE_STAT_Naked_Statistics"
+  ],
+  "CONCEPT_STAT_Data_Taxonomy": [
+    "CONCEPT_STAT_Estimates_of_Location",
+    "CONCEPT_STAT_Probability_Distributions",
+    "CONCEPT_STAT_Sampling_Biases",
+    "SOURCE_DSML_Data_Analytics_Concepts",
+    "SOURCE_STAT_Essentials_of_Statistics",
+    "SOURCE_STAT_Statistics_in_a_Nutshell"
+  ],
+  "CONCEPT_STAT_Estimates_of_Location": [
+    "CONCEPT_STAT_Data_Taxonomy",
+    "CONCEPT_STAT_Estimates_of_Variability",
+    "SOURCE_STAT_Essentials_of_Statistics",
+    "SOURCE_STAT_Naked_Statistics",
+    "SOURCE_STAT_Practical_Statistics_for_Data_Scientists",
+    "SOURCE_TOOL_Excel_Data_Analysis",
+    "CASE_STUDY_Churn_Prediction",
+    "SYNTHESIS_DA_Core_Workflow"
+  ],
+  "CONCEPT_STAT_Estimates_of_Variability": [
+    "CONCEPT_STAT_Estimates_of_Location",
+    "SYNTHESIS_DA_Core_Workflow"
+  ],
+  "CONCEPT_STAT_Hypothesis_Testing_PValue": [
+    "CONCEPT_STAT_A_B_Testing",
+    "CONCEPT_STAT_Confidence_Intervals",
+    "CONCEPT_STAT_T_Test_ANOVA",
+    "SYNTHESIS_DA_Core_Workflow"
+  ],
+  "CONCEPT_STAT_Linear_Regression": [
+    "SOURCE_STAT_Practical_Statistics_for_Data_Scientists",
+    "SYNTHESIS_DA_Core_Workflow"
+  ],
+  "CONCEPT_STAT_Probability_Distributions": [
+    "CONCEPT_STAT_Central_Limit_Theorem",
+    "CONCEPT_STAT_Data_Taxonomy",
+    "CONCEPT_STAT_Estimates_of_Variability",
+    "CONCEPT_STAT_Linear_Regression",
+    "SOURCE_STAT_Naked_Statistics",
+    "SOURCE_STAT_Practical_Statistics_for_Data_Scientists",
+    "SOURCE_STAT_Statistics_in_a_Nutshell"
+  ],
+  "CONCEPT_STAT_Sampling_Biases": [
+    "SYNTHESIS_DA_Core_Workflow"
+  ],
+  "CONCEPT_STAT_T_Test_ANOVA": [
+    "CONCEPT_STAT_Hypothesis_Testing_PValue",
+    "SOURCE_STAT_Practical_Statistics_for_Data_Scientists",
+    "SOURCE_STAT_Statistics_in_a_Nutshell",
+    "SYNTHESIS_DA_Core_Workflow"
+  ],
+  "CONCEPT_THINK_5_Whys": [
+    "COMPARE_5Whys_vs_RCA"
+  ],
+  "CONCEPT_THINK_Argument_Sketching": [
+    "SOURCE_THINK_Thinking_with_Data",
+    "SYNTHESIS_THINK_Analytical_Thinking"
+  ],
+  "CONCEPT_THINK_Audience_Framing": [
+    "SOURCE_VIZ_Storytelling_with_Data_P1"
+  ],
+  "CONCEPT_THINK_CoNVO_Framework": [
+    "CONCEPT_THINK_Argument_Sketching",
+    "ENTITY_Data_Science",
+    "SOURCE_THINK_Thinking_with_Data",
+    "SYNTHESIS_DA_Core_Workflow",
+    "SYNTHESIS_THINK_Analytical_Thinking"
+  ],
+  "CONCEPT_THINK_Data_Analytic_Thinking": [
+    "SOURCE_THINK_Data_Science_for_Business"
+  ],
+  "CONCEPT_THINK_Data_Ethics_Scoping": [
+    "ENTITY_Data_Science",
+    "SOURCE_coursera-AI-essential-Bias_Drift_Knowledge_Cutoff",
+    "SOURCE_coursera-AI-essential-Stay_up_to_date_with_AI"
+  ],
+  "CONCEPT_THINK_Data_Mining_Process_CRISP": [
+    "ENTITY_Data_Science",
+    "SOURCE_THINK_Data_Science_for_Business"
+  ],
+  "CONCEPT_THINK_Data_Mining_Tasks": [
+    "SYNTHESIS_SQL_Mastery"
+  ],
+  "CONCEPT_THINK_Expected_Value_Framework": [
+    "SOURCE_DSML_Marketing_Analytics",
+    "SOURCE_THINK_Data_Science_for_Business"
+  ],
+  "CONCEPT_THINK_Logic_Tree": [
+    "log",
+    "CONCEPT_THINK_CoNVO_Framework",
+    "SOURCE_THINK_Problem_Solving_101",
+    "SYNTHESIS_THINK_Analytical_Thinking"
+  ],
+  "CONCEPT_THINK_Prioritization_Matrix": [
+    "SOURCE_THINK_Problem_Solving_101",
+    "SYNTHESIS_THINK_Analytical_Thinking"
+  ],
+  "CONCEPT_THINK_Problem_Solving_Process": [
+    "log",
+    "CONCEPT_THINK_CoNVO_Framework",
+    "SOURCE_coursera-AI-essential-Stay_up_to_date_with_AI",
+    "SOURCE_DSML_Data_Analytics_Concepts",
+    "SOURCE_THINK_Problem_Solving_101",
+    "SOURCE_THINK_Thinking_with_Data",
+    "SYNTHESIS_THINK_Analytical_Thinking"
+  ],
+  "CONCEPT_THINK_Root_Cause_Analysis": [
+    "COMPARE_5Whys_vs_RCA",
+    "SYNTHESIS_THINK_Analytical_Thinking"
+  ],
+  "CONCEPT_THINK_Sentence_Mockups": [
+    "CONCEPT_THINK_Argument_Sketching",
+    "SOURCE_THINK_Thinking_with_Data"
+  ],
+  "CONCEPT_TOOL_Code_Analysis_Patterns": [
+    "SOURCE_TOOL_GEMINI_DEVELOPER_CODEX"
+  ],
+  "CONCEPT_TOOL_Context_Injection_Techniques": [
+    "SOURCE_TOOL_GEMINI_DEVELOPER_CODEX"
+  ],
+  "CONCEPT_TOOL_Excel_Pivot_Tables": [
+    "CONCEPT_TOOL_Excel_Power_Query",
+    "SOURCE_TOOL_Excel_Data_Analysis",
+    "SOURCE_TOOL_Excel_PivotTables"
+  ],
+  "CONCEPT_TOOL_Excel_Power_Query": [
+    "CONCEPT_TOOL_Excel_Pivot_Tables",
+    "SOURCE_TOOL_Excel_Data_Analysis",
+    "SOURCE_TOOL_Excel_PowerQuery"
+  ],
+  "CONCEPT_TOOL_Gemini_Role_Prompting": [
+    "CONCEPT_TOOL_Code_Analysis_Patterns",
+    "SOURCE_TOOL_GEMINI_DEVELOPER_CODEX"
+  ],
+  "CONCEPT_VIZ_Avoid_3D_Graphics": [
+    "SOURCE_VIZ_Storytelling_with_Data_P1"
+  ],
+  "CONCEPT_VIZ_Dashboard_Design_Best_Practices": [
+    "SOURCE_VIZ_How_to_Design_a_Dashboard"
+  ],
+  "CONCEPT_VIZ_Dashboard_UX_Checklist": [
+    "SOURCE_VIZ_10_Visualization_Tips",
+    "SOURCE_VIZ_How_to_Design_a_Dashboard"
+  ],
+  "CONCEPT_VIZ_Data_Ink_Ratio": [
+    "SOURCE_VIZ_10_Visualization_Tips",
+    "SOURCE_VIZ_Storytelling_with_Data_P1",
+    "SOURCE_VIZ_Storytelling_with_Data_P2"
+  ],
+  "CONCEPT_VIZ_Data_Storytelling_Framework": [
+    "CONCEPT_VIZ_Focusing_Attention",
+    "CONCEPT_VIZ_Gestalt_Laws_in_Design",
+    "CONCEPT_VIZ_Importance_of_Context",
+    "CONCEPT_VIZ_Interactive_Dashboard_Design",
+    "CONCEPT_VIZ_PowerBI_Basics",
+    "SOURCE_VIZ_Storytelling_with_Data_P3",
+    "SYNTHESIS_DA_Core_Workflow"
+  ],
+  "CONCEPT_VIZ_Design_Principles": [
+    "SYNTHESIS_DA_Core_Workflow"
+  ],
+  "CONCEPT_VIZ_Effective_Visual_Selection": [
+    "SOURCE_VIZ_10_Visualization_Tips",
+    "SOURCE_VIZ_How_to_Design_a_Dashboard"
+  ],
+  "CONCEPT_VIZ_Eliminating_Clutter": [
+    "CONCEPT_VIZ_Effective_Visual_Selection",
+    "SYNTHESIS_DA_Core_Workflow"
+  ],
+  "CONCEPT_VIZ_Focusing_Attention": [
+    "CONCEPT_VIZ_Data_Storytelling_Framework",
+    "CONCEPT_VIZ_Effective_Visual_Selection",
+    "CONCEPT_VIZ_Gestalt_Laws_in_Design",
+    "CONCEPT_VIZ_Importance_of_Context",
+    "SOURCE_VIZ_Storytelling_with_Data_P1",
+    "SOURCE_VIZ_Storytelling_with_Data_P3",
+    "SYNTHESIS_DA_Core_Workflow"
+  ],
+  "CONCEPT_VIZ_Gestalt_Laws_in_Design": [
+    "CONCEPT_VIZ_Focusing_Attention",
+    "CONCEPT_VIZ_Interactive_Dashboard_Design",
+    "SYNTHESIS_DA_Core_Workflow"
+  ],
+  "CONCEPT_VIZ_Gestalt_Principles": [
+    "SOURCE_VIZ_Storytelling_with_Data_P1"
+  ],
+  "CONCEPT_VIZ_Importance_of_Context": [
+    "CONCEPT_VIZ_Data_Storytelling_Framework"
+  ],
+  "CONCEPT_VIZ_Interactive_Dashboard_Design": [
+    "SOURCE_VIZ_How_to_Design_a_Dashboard",
+    "SOURCE_VIZ_Mastering_Tableau_2021",
+    "SOURCE_VIZ_Storytelling_with_Data_P2",
+    "CASE_STUDY_Churn_Prediction",
+    "SYNTHESIS_DA_Core_Workflow"
+  ],
+  "CONCEPT_VIZ_PowerBI_Basics": [
+    "SOURCE_VIZ_Introducing_Power_BI"
+  ],
+  "CONCEPT_VIZ_PowerBI_DAX_Basics": [
+    "SOURCE_VIZ_Analyzing_Data_Power_BI",
+    "SOURCE_VIZ_Introducing_Power_BI"
+  ],
+  "CONCEPT_VIZ_PowerBI_vs_Tableau": [
+    "SOURCE_VIZ_Analyzing_Data_Power_BI",
+    "SOURCE_VIZ_Introducing_Power_BI",
+    "SOURCE_VIZ_Mastering_Tableau_2021",
+    "SYNTHESIS_DA_Core_Workflow"
+  ],
+  "CONCEPT_VIZ_Tableau_LOD_Basics": [
+    "SOURCE_VIZ_Mastering_Tableau_2021"
+  ],
+  "ENTITY_AIMET_CrewAI": [
+    "CONCEPT_AIMET_MultiAgent_Architecture",
+    "ENTITY_AIMET_AutoGen",
+    "SYNTHESIS_Agentic_Orchestration_Frameworks"
+  ],
+  "ENTITY_AIMET_LangGraph": [
+    "CONCEPT_AIMET_Error_Handling_Patterns",
+    "CONCEPT_AIMET_Memory_Management",
+    "CONCEPT_AIMET_MultiAgent_Architecture",
+    "CONCEPT_AIMET_Production_Guardrails",
+    "CONCEPT_AIMET_Tool_Integration",
+    "ENTITY_AIMET_AutoGen",
+    "ENTITY_AIMET_CrewAI",
+    "ENTITY_TECH_LLM",
+    "ENTITY_TOOL_LangChain",
+    "SYNTHESIS_Agentic_Orchestration_Frameworks"
+  ],
+  "ENTITY_Data_Science": [
+    "graph_insight_report",
+    "CONCEPT_DSML_Marketing_Metrics",
+    "CONCEPT_VIZ_PowerBI_Basics",
+    "ENTITY_PANDAS",
+    "ENTITY_Python",
+    "ENTITY_SQL",
+    "SOURCE_coursera-AI-essential-Bias_Drift_Knowledge_Cutoff",
+    "SOURCE_DSML_Data_Analytics_Concepts",
+    "SOURCE_DSML_Marketing_Analytics",
+    "SOURCE_DSML_Master_ML_Algorithms",
+    "SOURCE_DS_Python_Data_Science_Handbook",
+    "SOURCE_PY_Python_Data_Science_Handbook",
+    "SOURCE_STAT_Intro_to_Statistical_Learning",
+    "SOURCE_STAT_Practical_Statistics_for_Data_Scientists",
+    "SOURCE_THINK_Data_Science_for_Business"
+  ],
+  "ENTITY_EXCEL": [
+    "graph_insight_report",
+    "CONCEPT_DE_Data_Architecture_Basics",
+    "CONCEPT_EXCEL_Data_Modeling_PowerPivot",
+    "CONCEPT_EXCEL_Monte_Carlo_Simulation",
+    "CONCEPT_EXCEL_Optimization_Solver",
+    "CONCEPT_EXCEL_Sensitivity_Analysis",
+    "CONCEPT_PY_Pandas_Aggregation",
+    "CONCEPT_PY_Pandas_Data_Cleaning",
+    "CONCEPT_PY_pandas_Data_Structures",
+    "CONCEPT_PY_Scientific_Ecosystem",
+    "CONCEPT_SQL_Advanced_Reporting",
+    "CONCEPT_SQL_Data_Shaping_Techniques",
+    "CONCEPT_STAT_T_Test_ANOVA",
+    "CONCEPT_VIZ_PowerBI_vs_Tableau",
+    "SOURCE_TOOL_Excel_Data_Analysis",
+    "SOURCE_VIZ_Analyzing_Data_Power_BI",
+    "SYNTHESIS_EXCEL_Mastery"
+  ],
+  "ENTITY_PANDAS": [
+    "graph_insight_report",
+    "CONCEPT_PY_GroupBy_Mechanics",
+    "CONCEPT_PY_Pandas_Aggregation",
+    "CONCEPT_PY_Pandas_Basics",
+    "CONCEPT_PY_Pandas_Data_Cleaning",
+    "CONCEPT_PY_pandas_Data_Structures",
+    "CONCEPT_PY_Pandas_Data_Transformation",
+    "CONCEPT_PY_Pandas_Wrangling_Advanced",
+    "CONCEPT_PY_Scientific_Ecosystem",
+    "CONCEPT_PY_Time_Series_Basics",
+    "CONCEPT_TOOL_Data_Analysis_Prompts",
+    "ENTITY_Python",
+    "SOURCE_DS_Python_Data_Science_Handbook",
+    "SOURCE_PY_Python_Data_Science_Handbook",
+    "SOURCE_TOOL_Python_for_Data_Analysis",
+    "SYNTHESIS_DA_Core_Workflow",
+    "SYNTHESIS_PYTHON_Data_Mastery"
+  ],
+  "ENTITY_Python": [
+    "graph_insight_report",
+    "CONCEPT_PY_GroupBy_Mechanics",
+    "CONCEPT_PY_IPython_Magic",
+    "CONCEPT_PY_Matplotlib_Interfaces",
+    "CONCEPT_PY_NumPy_Vectorization",
+    "CONCEPT_PY_Pandas_Aggregation",
+    "CONCEPT_PY_Pandas_Data_Cleaning",
+    "CONCEPT_PY_pandas_Data_Structures",
+    "CONCEPT_PY_Pandas_Data_Transformation",
+    "CONCEPT_PY_Pandas_Wrangling_Advanced",
+    "CONCEPT_PY_Scientific_Ecosystem",
+    "CONCEPT_PY_Scikit_Learn_Estimator",
+    "CONCEPT_PY_Time_Series_Basics",
+    "CONCEPT_STAT_Central_Limit_Theorem",
+    "CONCEPT_THINK_Problem_Solving_Process",
+    "CONCEPT_TOOL_Code_Analysis_Patterns",
+    "CONCEPT_TOOL_Data_Analysis_Prompts",
+    "CONCEPT_VIZ_PowerBI_vs_Tableau",
+    "ENTITY_Data_Science",
+    "ENTITY_PANDAS",
+    "ENTITY_SQL",
+    "SOURCE_AIMET_AgenticAI_Roadmap_2026",
+    "SOURCE_DS_Python_Data_Science_Handbook",
+    "SOURCE_PY_Python_Data_Science_Handbook",
+    "SOURCE_PY_Python_for_Data_Analysis",
+    "SOURCE_STAT_Intro_to_Statistical_Learning",
+    "SOURCE_STAT_Practical_Statistics_for_Data_Scientists",
+    "SOURCE_THINK_Problem_Solving_101",
+    "SOURCE_TOOL_Excel_Data_Analysis",
+    "SOURCE_TOOL_GEMINI_DEVELOPER_CODEX",
+    "SOURCE_TOOL_Python_for_Data_Analysis",
+    "SOURCE_TOOL_SQL_for_Data_Analysis",
+    "CASE_STUDY_Churn_Prediction",
+    "SYNTHESIS_DA_Case_Study_Library",
+    "SYNTHESIS_DA_Core_Workflow",
+    "SYNTHESIS_PYTHON_Data_Mastery"
+  ],
+  "ENTITY_SQL": [
+    "graph_insight_report",
+    "CONCEPT_DE_Data_Architecture_Basics",
+    "CONCEPT_META_Assessment_Integration",
+    "CONCEPT_PY_pandas_Data_Structures",
+    "CONCEPT_PY_Pandas_Wrangling_Advanced",
+    "CONCEPT_PY_Scientific_Ecosystem",
+    "CONCEPT_SQL_Advanced_Reporting",
+    "CONCEPT_SQL_Aggregations",
+    "CONCEPT_SQL_Case_Statements",
+    "CONCEPT_SQL_CRUD_Operations",
+    "CONCEPT_SQL_CTEs",
+    "CONCEPT_SQL_Database_Types_Analysis",
+    "CONCEPT_SQL_Data_Preparation_Workflow",
+    "CONCEPT_SQL_Data_Shaping_Techniques",
+    "CONCEPT_SQL_Execution_Order",
+    "CONCEPT_SQL_Hierarchical_Queries",
+    "CONCEPT_SQL_Joins",
+    "CONCEPT_SQL_Metadata_Queries",
+    "CONCEPT_SQL_Performance_Tuning",
+    "CONCEPT_SQL_RDBMS_Comparison",
+    "CONCEPT_SQL_Select_And_Filter",
+    "CONCEPT_SQL_Set_Operations",
+    "CONCEPT_SQL_Sublanguages",
+    "CONCEPT_SQL_Window_Functions",
+    "CONCEPT_SQL_Window_Functions_Advanced",
+    "CONCEPT_TOOL_Data_Analysis_Prompts",
+    "CONCEPT_TOOL_SQL_Query_Prompts",
+    "CONCEPT_VIZ_PowerBI_Basics",
+    "CONCEPT_VIZ_PowerBI_vs_Tableau",
+    "ENTITY_Data_Science",
+    "ENTITY_PANDAS",
+    "SOURCE_DE_Data_Warehouse_Toolkit",
+    "SOURCE_DE_Designing_Data_Intensive_Applications",
+    "SOURCE_TOOL_Excel_Data_Analysis",
+    "SOURCE_TOOL_GEMINI_DEVELOPER_CODEX",
+    "SOURCE_TOOL_Python_for_Data_Analysis",
+    "SOURCE_TOOL_SQL_Cookbook",
+    "SOURCE_TOOL_SQL_for_Data_Analysis",
+    "SOURCE_TOOL_SQL_Getting_Started",
+    "SOURCE_TOOL_SQL_Pocket_Guide",
+    "SYNTHESIS_DA_Case_Study_Library",
+    "SYNTHESIS_DA_Core_Workflow",
+    "SYNTHESIS_PYTHON_Data_Mastery",
+    "SYNTHESIS_SQL_Mastery"
+  ],
+  "ENTITY_TECH_LLM": [
+    "ENTITY_TOOL_Lightpanda"
+  ],
+  "ENTITY_TOOL_Claude_Code_Wiki_Gen": [
+    "SOURCE_META_WIKI_GEN_CLONE"
+  ],
+  "ENTITY_TOOL_Gemini": [
+    "SOURCE_AIMET_AgenticAI_Roadmap_2026"
+  ],
+  "ENTITY_TOOL_LangChain": [
+    "CONCEPT_AIMET_LCEL",
+    "ENTITY_AIMET_LangGraph",
+    "SYNTHESIS_Agentic_Orchestration_Frameworks"
+  ],
+  "ENTITY_WIKI_AGENT_GUIDE": [
+    "QUERY_Asymptotic_Fractal_Ingestion"
+  ],
+  "QUERY_Asymptotic_Fractal_Ingestion": [
+    "ENTITY_TECH_LLM"
+  ],
+  "QUERY_Production_Guardrails_Research": [
+    "CONCEPT_AIMET_Evaluation_Metrics"
+  ],
+  "SOURCE_AIMET_AgenticAI_Roadmap_2026": [
+    "CONCEPT_AIMET_Error_Handling_Patterns",
+    "CONCEPT_AIMET_Evaluation_Metrics",
+    "CONCEPT_AIMET_LCEL",
+    "CONCEPT_AIMET_Memory_Management",
+    "CONCEPT_AIMET_MultiAgent_Architecture",
+    "CONCEPT_AIMET_Production_Guardrails",
+    "CONCEPT_AIMET_RAG_Systems",
+    "CONCEPT_AIMET_ReAct_Pattern",
+    "CONCEPT_AIMET_Runnables",
+    "CONCEPT_AIMET_Tool_Integration",
+    "ENTITY_AIMET_AutoGen",
+    "ENTITY_AIMET_CrewAI",
+    "ENTITY_AIMET_LangGraph",
+    "ENTITY_TECH_LLM",
+    "ENTITY_TOOL_LangChain",
+    "SYNTHESIS_Agentic_Orchestration_Frameworks"
+  ],
+  "SOURCE_AIMET_Agentic_AI_Roadmap": [
+    "CONCEPT_AIMET_Evaluation_Metrics"
+  ],
+  "SOURCE_DE_Data_Warehouse_Toolkit": [
+    "CONCEPT_DE_SCD_Types"
+  ],
+  "SOURCE_DE_Designing_Data_Intensive_Applications": [
+    "CONCEPT_DE_Batch_vs_Stream_Processing"
+  ],
+  "SOURCE_DE_Fundamentals_of_Data_Engineering": [
+    "CONCEPT_DE_Data_Architecture_Basics",
+    "CONCEPT_DE_Data_Engineering_Lifecycle",
+    "CONCEPT_DE_Data_Governance",
+    "CONCEPT_DE_Data_Modeling_Star_Schema",
+    "CONCEPT_DE_Data_Partitioning",
+    "CONCEPT_DE_Data_Quality_Framework",
+    "CONCEPT_DE_ETL_ELT_Workflows",
+    "CONCEPT_DE_Indexing_Optimization"
+  ],
+  "SOURCE_DSML_Data_Analytics_Concepts": [
+    "CONCEPT_DSML_Clustering_KMeans",
+    "CONCEPT_DSML_Decision_Trees_Random_Forest",
+    "CONCEPT_DSML_Feature_Engineering_Basics",
+    "CONCEPT_DSML_Marketing_Metrics",
+    "CONCEPT_DSML_Master_ML_Algorithms",
+    "CONCEPT_DSML_Model_Evaluation_Metrics",
+    "CONCEPT_DSML_Overfitting_Prevention",
+    "CONCEPT_DSML_Supervised_vs_Unsupervised"
+  ],
+  "SOURCE_DSML_Marketing_Analytics": [
+    "CONCEPT_DSML_Marketing_Metrics"
+  ],
+  "SOURCE_DS_Python_Data_Science_Handbook": [
+    "CONCEPT_PY_IPython_Magic",
+    "CONCEPT_PY_Matplotlib_Interfaces",
+    "CONCEPT_PY_Scikit_Learn_Estimator",
+    "SYNTHESIS_PYTHON_Data_Mastery"
+  ],
+  "SOURCE_META_KARPATHY_CLAUDE_SKILLS": [
+    "CONCEPT_META_Skill_Modularity",
+    "CONCEPT_TOOL_Code_Analysis_Patterns",
+    "ENTITY_TOOL_Claude",
+    "SYNTHESIS_MASTER_Second_Brain_Blueprint",
+    "SYNTHESIS_Second_Brain_Standard_Spec",
+    "SYNTHESIS_ULTIMATE_Second_Brain_Spec"
+  ],
+  "SOURCE_META_KARPATHY_KNOWLEDGE_BASES": [
+    "CONCEPT_META_Ontology_Design",
+    "CONCEPT_META_Post_Code_Workflow",
+    "SYNTHESIS_Second_Brain_Standard_Spec",
+    "SYNTHESIS_ULTIMATE_Second_Brain_Spec"
+  ],
+  "SOURCE_META_KARPATHY_LLM_WIKI": [
+    "COMPARE_META_Nashsu_vs_Karpathy",
+    "CONCEPT_AI_Prompt_Engineering_Basics",
+    "CONCEPT_META_Atomic_Methodology",
+    "CONCEPT_META_Information_Overload",
+    "CONCEPT_META_SB3_Graph_Traversal",
+    "CONCEPT_META_SB3_Memory_Tier",
+    "CONCEPT_META_SB3_Task_Ledger",
+    "CONCEPT_TOOL_Context_Injection_Techniques",
+    "CONCEPT_TOOL_Gemini_Role_Prompting",
+    "SYNTHESIS_LLM_Wiki_Standard",
+    "SYNTHESIS_MASTER_Second_Brain_Blueprint",
+    "SYNTHESIS_Second_Brain_Standard_Spec",
+    "SYNTHESIS_ULTIMATE_Second_Brain_Spec"
+  ],
+  "SOURCE_META_LLM_WIKI": [
+    "CONCEPT_META_Atomic_Methodology",
+    "CONCEPT_META_Bidirectional_Linking",
+    "CONCEPT_META_Idea_File_System",
+    "CONCEPT_META_Information_Overload",
+    "SYNTHESIS_ULTIMATE_Second_Brain_Spec"
+  ],
+  "SOURCE_META_LLM_WIKI_V2": [
+    "CONCEPT_META_Consolidation_Tiers",
+    "CONCEPT_META_Typed_Knowledge_Graph",
+    "CONCEPT_META_Wiki_Retention_Curve",
+    "SYNTHESIS_MASTER_Second_Brain_Blueprint",
+    "SYNTHESIS_ULTIMATE_Second_Brain_Spec",
+    "SYNTHESIS_Wiki_Intelligence_Architecture"
+  ],
+  "SOURCE_META_NASHUS_LLMWIKI": [
+    "COMPARE_META_Nashsu_vs_Karpathy",
+    "CONCEPT_META_Async_Review_System",
+    "CONCEPT_META_Bidirectional_Linking",
+    "CONCEPT_META_Graph_Analysis",
+    "CONCEPT_META_SB3_Graph_Traversal",
+    "CONCEPT_META_SB3_Louvain_Clustering",
+    "CONCEPT_META_Wiki_Query_Patterns",
+    "CONCEPT_META_Wiki_Signals",
+    "SYNTHESIS_LLM_Wiki_Standard",
+    "SYNTHESIS_MASTER_Second_Brain_Blueprint",
+    "SYNTHESIS_Second_Brain_Standard_Spec",
+    "SYNTHESIS_ULTIMATE_Second_Brain_Spec",
+    "SYNTHESIS_Wiki_Intelligence_Architecture"
+  ],
+  "SOURCE_META_WIKI_GEN_CLONE": [
+    "CONCEPT_META_Wiki_Absorption_Loop",
+    "CONCEPT_META_Wiki_Article_Length_Targets",
+    "CONCEPT_META_Wiki_Breakdown_Mining",
+    "CONCEPT_META_Wiki_Cleanup_Audit",
+    "CONCEPT_META_Wiki_Concurrency_Safety",
+    "CONCEPT_META_Wiki_Directory_Taxonomy",
+    "CONCEPT_META_Wiki_Generation_Skill",
+    "CONCEPT_META_Wiki_Granularity_Control",
+    "CONCEPT_META_Wiki_Index_Synchronization",
+    "CONCEPT_META_Wiki_Narrative_Coherence",
+    "CONCEPT_META_Wiki_Narrative_Taxonomy",
+    "CONCEPT_META_Wiki_Quote_Discipline",
+    "CONCEPT_META_Wiki_Reorganization",
+    "CONCEPT_META_Wiki_Status_Metrics",
+    "CONCEPT_META_Wiki_Structure_by_Type",
+    "CONCEPT_META_Wiki_The_Steve_Jobs_Test",
+    "CONCEPT_META_Wiki_Visual_Cloning",
+    "CONCEPT_META_Wiki_Writing_Tone",
+    "ENTITY_TOOL_Claude_Code_Wiki_Gen",
+    "SYNTHESIS_MASTER_Second_Brain_Blueprint",
+    "SYNTHESIS_ULTIMATE_Second_Brain_Spec",
+    "SYNTHESIS_Wiki_Intelligence_Architecture"
+  ],
+  "SOURCE_PY_Matplotlib_QuickStart": [
+    "CONCEPT_PY_Matplotlib_Basics",
+    "CONCEPT_PY_Matplotlib_OO_vs_Pyplot"
+  ],
+  "SOURCE_PY_Python_Data_Science_Handbook": [
+    "SOURCE_DS_Python_Data_Science_Handbook"
+  ],
+  "SOURCE_PY_Python_for_Data_Analysis": [
+    "CONCEPT_PY_Pandas_Basics"
+  ],
+  "SOURCE_SQL_Cohort_Analysis": [
+    "CONCEPT_SQL_Cohort_Analysis"
+  ],
+  "SOURCE_STAT_Intro_to_Statistical_Learning": [
+    "CONCEPT_DSML_Bias_Variance_Tradeoff"
+  ],
+  "SOURCE_STAT_Practical_Statistics_for_Data_Scientists": [
+    "CONCEPT_STAT_A_B_Testing",
+    "CONCEPT_STAT_Bootstrap_Resampling",
+    "CONCEPT_STAT_Central_Limit_Theorem",
+    "CONCEPT_STAT_Confidence_Intervals",
+    "CONCEPT_STAT_Correlation_vs_Causation",
+    "CONCEPT_STAT_Data_Taxonomy",
+    "CONCEPT_STAT_Estimates_of_Location",
+    "CONCEPT_STAT_Estimates_of_Variability",
+    "CONCEPT_STAT_Hypothesis_Testing_PValue",
+    "CONCEPT_STAT_Linear_Regression",
+    "CONCEPT_STAT_Probability_Distributions",
+    "CONCEPT_STAT_Sampling_Biases",
+    "CONCEPT_STAT_T_Test_ANOVA"
+  ],
+  "SOURCE_STAT_Statistics_in_a_Nutshell": [
+    "CONCEPT_PY_Time_Series_Basics"
+  ],
+  "SOURCE_THINK_Data_Science_for_Business": [
+    "CONCEPT_THINK_Data_Analytic_Thinking",
+    "CONCEPT_THINK_Data_Mining_Process_CRISP",
+    "CONCEPT_THINK_Data_Mining_Tasks",
+    "CONCEPT_THINK_Ensemble_Methods",
+    "CONCEPT_THINK_Entropy_Information_Gain",
+    "CONCEPT_THINK_Expected_Value_Framework",
+    "CONCEPT_THINK_Logistic_Regression_Classifier",
+    "CONCEPT_THINK_Naive_Bayes_Logic",
+    "CONCEPT_THINK_ROC_AUC_Evaluation",
+    "CONCEPT_THINK_Similarity_Distance_Metrics",
+    "CONCEPT_THINK_SVM_Linear_Separation",
+    "CONCEPT_THINK_TF_IDF_Text_Mining",
+    "ENTITY_Data_Science"
+  ],
+  "SOURCE_THINK_Problem_Solving_101": [
+    "log",
+    "CONCEPT_THINK_5_Whys",
+    "CONCEPT_THINK_Logic_Tree",
+    "CONCEPT_THINK_Prioritization_Matrix",
+    "CONCEPT_THINK_Problem_Solving_Process",
+    "CONCEPT_THINK_Pros_Cons_List",
+    "CONCEPT_THINK_Root_Cause_Analysis",
+    "CONCEPT_THINK_Yes_No_Tree"
+  ],
+  "SOURCE_THINK_Thinking_with_Data": [
+    "CONCEPT_THINK_Argument_Sketching",
+    "CONCEPT_THINK_Audience_Framing",
+    "CONCEPT_THINK_CoNVO_Framework",
+    "CONCEPT_THINK_Correlation_vs_Causation",
+    "CONCEPT_THINK_Data_Argumentation",
+    "CONCEPT_THINK_Data_Ethics_Scoping",
+    "CONCEPT_THINK_Data_Evidence_Types",
+    "CONCEPT_THINK_Exploration_vs_Confirmation",
+    "CONCEPT_THINK_Hypothesis_Pyramid",
+    "CONCEPT_THINK_Hypothesis_Testing",
+    "CONCEPT_THINK_Patterns_of_Reasoning",
+    "ENTITY_Data_Science",
+    "SOURCE_THINK_Data_Science_for_Business"
+  ],
+  "SOURCE_TOOL_Excel_Data_Analysis": [
+    "CONCEPT_EXCEL_Data_Modeling_PowerPivot",
+    "CONCEPT_EXCEL_Monte_Carlo_Simulation",
+    "CONCEPT_EXCEL_Optimization_Solver",
+    "CONCEPT_EXCEL_Sensitivity_Analysis",
+    "ENTITY_EXCEL",
+    "SYNTHESIS_EXCEL_Mastery"
+  ],
+  "SOURCE_TOOL_Excel_PivotTables": [
+    "CONCEPT_TOOL_Excel_Pivot_Tables"
+  ],
+  "SOURCE_TOOL_Excel_PowerQuery": [
+    "CONCEPT_TOOL_Excel_Power_Query"
+  ],
+  "SOURCE_TOOL_GEMINI_DEVELOPER_CODEX": [
+    "CONCEPT_AI_Prompt_Engineering_Basics",
+    "CONCEPT_META_Wiki_Gap_Analysis",
+    "CONCEPT_META_Wiki_Query_Patterns",
+    "CONCEPT_TOOL_Code_Analysis_Patterns",
+    "CONCEPT_TOOL_Context_Injection_Techniques",
+    "CONCEPT_TOOL_Data_Analysis_Prompts",
+    "CONCEPT_TOOL_Gemini_Role_Prompting",
+    "CONCEPT_TOOL_SQL_Query_Prompts",
+    "ENTITY_TOOL_Gemini"
+  ],
+  "SOURCE_TOOL_Python_for_Data_Analysis": [
+    "CONCEPT_DE_Data_Modeling_Star_Schema",
+    "CONCEPT_PY_GroupBy_Mechanics",
+    "CONCEPT_PY_NumPy_Vectorization",
+    "CONCEPT_PY_Pandas_Aggregation",
+    "CONCEPT_PY_Pandas_Data_Cleaning",
+    "CONCEPT_PY_pandas_Data_Structures",
+    "CONCEPT_PY_Pandas_Data_Transformation",
+    "CONCEPT_PY_Pandas_Wrangling_Advanced",
+    "CONCEPT_PY_Scientific_Ecosystem",
+    "CONCEPT_PY_Time_Series_Basics",
+    "ENTITY_PANDAS",
+    "SYNTHESIS_PYTHON_Data_Mastery"
+  ],
+  "SOURCE_TOOL_SQL_Cookbook": [
+    "CONCEPT_SQL_Advanced_Reporting",
+    "CONCEPT_SQL_CTEs",
+    "CONCEPT_SQL_Hierarchical_Queries",
+    "CONCEPT_SQL_Metadata_Queries",
+    "CONCEPT_SQL_Window_Functions",
+    "SYNTHESIS_SQL_Mastery"
+  ],
+  "SOURCE_TOOL_SQL_Getting_Started": [
+    "CONCEPT_SQL_Aggregations",
+    "CONCEPT_SQL_Case_Statements",
+    "CONCEPT_SQL_Joins",
+    "CONCEPT_SQL_Select_And_Filter",
+    "CONCEPT_SQL_Set_Operations",
+    "ENTITY_SQL",
+    "SYNTHESIS_SQL_Mastery"
+  ],
+  "SOURCE_TOOL_SQL_Pocket_Guide": [
+    "CONCEPT_SQL_CRUD_Operations",
+    "CONCEPT_SQL_Execution_Order",
+    "CONCEPT_SQL_Performance_Tuning",
+    "CONCEPT_SQL_RDBMS_Comparison",
+    "SYNTHESIS_SQL_Mastery"
+  ],
+  "SOURCE_TOOL_SQL_for_Data_Analysis": [
+    "CONCEPT_SQL_Database_Types_Analysis",
+    "CONCEPT_SQL_Data_Preparation_Workflow",
+    "CONCEPT_SQL_Data_Shaping_Techniques",
+    "CONCEPT_SQL_Sublanguages",
+    "CONCEPT_SQL_Window_Functions_Advanced",
+    "SYNTHESIS_SQL_Mastery"
+  ],
+  "SOURCE_VIZ_10_Visualization_Tips": [
+    "CONCEPT_VIZ_Avoid_3D_Graphics",
+    "CONCEPT_VIZ_Data_Ink_Ratio",
+    "CONCEPT_VIZ_Interactive_Dashboard_Design"
+  ],
+  "SOURCE_VIZ_Analyzing_Data_Power_BI": [
+    "CONCEPT_VIZ_PowerBI_Basics",
+    "CONCEPT_VIZ_PowerBI_DAX_Basics",
+    "CONCEPT_VIZ_Tableau_LOD_Basics"
+  ],
+  "SOURCE_VIZ_How_to_Design_a_Dashboard": [
+    "CONCEPT_VIZ_Dashboard_Design_Best_Practices"
+  ],
+  "SOURCE_VIZ_Introducing_Power_BI": [
+    "CONCEPT_VIZ_PowerBI_Basics"
+  ],
+  "SOURCE_VIZ_Storytelling_with_Data": [
+    "CONCEPT_VIZ_Dashboard_UX_Checklist",
+    "CONCEPT_VIZ_Gestalt_Principles"
+  ],
+  "SOURCE_VIZ_Storytelling_with_Data_P1": [
+    "CONCEPT_VIZ_Data_Storytelling_Framework",
+    "CONCEPT_VIZ_Design_Principles",
+    "CONCEPT_VIZ_Effective_Visual_Selection",
+    "CONCEPT_VIZ_Eliminating_Clutter",
+    "CONCEPT_VIZ_Focusing_Attention",
+    "CONCEPT_VIZ_Gestalt_Laws_in_Design",
+    "CONCEPT_VIZ_Importance_of_Context",
+    "SOURCE_VIZ_Storytelling_with_Data_P2"
+  ],
+  "SOURCE_coursera-AI-essential-Bias_Drift_Knowledge_Cutoff": [
+    "CONCEPT_AI_Bias_and_Ethics",
+    "CONCEPT_AI_Knowledge_Cutoff"
+  ],
+  "SOURCE_coursera-AI-essential-Stay_up_to_date_with_AI": [
+    "CONCEPT_AI_Bias_and_Ethics",
+    "CONCEPT_AI_Knowledge_Cutoff",
+    "CONCEPT_DSML_Marketing_Metrics"
+  ],
+  "SYNTHESIS_DA_Case_Study_Library": [
+    "overview",
+    "SOURCE_TOOL_SQL_for_Data_Analysis",
+    "SOURCE_VIZ_Storytelling_with_Data_P2",
+    "CASE_STUDY_Churn_Prediction"
+  ],
+  "SYNTHESIS_DA_Core_Workflow": [
+    "log",
+    "overview",
+    "SOURCE_THINK_Problem_Solving_101",
+    "SYNTHESIS_DA_Case_Study_Library"
+  ],
+  "SYNTHESIS_EXCEL_Mastery": [
+    "ENTITY_EXCEL"
+  ],
+  "SYNTHESIS_MASTER_Second_Brain_Blueprint": [
+    "SYNTHESIS_Second_Brain_Standard_Spec",
+    "SYNTHESIS_ULTIMATE_Second_Brain_Spec",
+    "SYNTHESIS_Wiki_Audit_20260501",
+    "SYNTHESIS_Wiki_Intelligence_Architecture"
+  ],
+  "SYNTHESIS_PYTHON_Data_Mastery": [
+    "ENTITY_Python"
+  ],
+  "SYNTHESIS_SQL_Mastery": [
+    "SYNTHESIS_EXCEL_Mastery",
+    "SYNTHESIS_PYTHON_Data_Mastery"
+  ],
+  "SYNTHESIS_Second_Brain_Standard_Spec": [
+    "SYNTHESIS_MASTER_Second_Brain_Blueprint"
+  ],
+  "SYNTHESIS_THINK_Analytical_Thinking": [
+    "CONCEPT_SQL_Aggregations",
+    "SOURCE_THINK_Data_Science_for_Business"
+  ],
+  "SYNTHESIS_ULTIMATE_Second_Brain_Spec": [
+    "PROPOSAL_Raw_Resources_Organization",
+    "SYNTHESIS_MASTER_Second_Brain_Blueprint"
+  ],
+  "SYNTHESIS_Wiki_Audit_20260501": [
+    "CONCEPT_META_Assessment_Integration",
+    "SYNTHESIS_MASTER_Second_Brain_Blueprint"
+  ],
+  "SYNTHESIS_Wiki_Intelligence_Architecture": [
+    "SYNTHESIS_MASTER_Second_Brain_Blueprint"
+  ],
+  "index": [
+    "overview",
+    "QUERY_Asymptotic_Fractal_Ingestion",
+    "SOURCE_coursera-AI-essential-Bias_Drift_Knowledge_Cutoff",
+    "SOURCE_coursera-AI-essential-Stay_up_to_date_with_AI",
+    "SOURCE_DE_Data_Warehouse_Toolkit",
+    "SOURCE_DE_Designing_Data_Intensive_Applications",
+    "SOURCE_DE_Fundamentals_of_Data_Engineering",
+    "SOURCE_STAT_Essentials_of_Statistics",
+    "SOURCE_STAT_Naked_Statistics",
+    "SOURCE_STAT_Practical_Statistics_for_Data_Scientists",
+    "SOURCE_STAT_Statistics_in_a_Nutshell",
+    "SOURCE_VIZ_10_Visualization_Tips",
+    "SOURCE_VIZ_Analyzing_Data_Power_BI",
+    "SOURCE_VIZ_How_to_Design_a_Dashboard",
+    "SOURCE_VIZ_Mastering_Tableau_2021",
+    "SOURCE_VIZ_Storytelling_with_Data_P1",
+    "SOURCE_VIZ_Storytelling_with_Data_P3",
+    "PROPOSAL_Raw_Resources_Organization",
+    "SYNTHESIS_DA_Case_Study_Library",
+    "SYNTHESIS_MASTER_Second_Brain_Blueprint",
+    "SYNTHESIS_Second_Brain_Standard_Spec",
+    "SYNTHESIS_ULTIMATE_Second_Brain_Spec"
+  ],
+  "link": [
+    "CONCEPT_META_SB3_Graph_Traversal"
+  ],
+  "overview": [
+    "QUERY_Asymptotic_Fractal_Ingestion",
+    "SOURCE_DSML_Data_Analytics_Concepts"
+  ],
+  "target": [
+    "CONCEPT_META_Wiki_Generation_Skill",
+    "CONCEPT_META_Wiki_Query_Patterns",
+    "CONCEPT_META_Wiki_Signals"
+  ],
+  "wikilinks": [
+    "SOURCE_META_NASHUS_LLMWIKI"
+  ]
+}

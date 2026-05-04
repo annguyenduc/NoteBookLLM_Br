@@ -1,0 +1,237 @@
+{
+  "main": {
+    "id": "dd5ff188e1dbab82",
+    "type": "split",
+    "children": [
+      {
+        "id": "4cc222b62cda0913",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2eb393005e8aa9a6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "3-resources/wiki/concepts/CONCEPT_META_Wiki_Query_Patterns.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "CONCEPT_META_Wiki_Query_Patterns"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "5c35e84774d99ee4",
+    "type": "split",
+    "children": [
+      {
+        "id": "270f667011430de9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d091e6ea7a1163d8",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": true
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "adf3560ea5d7a097",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "CONCEPT_META_WIKI_QUERY_PATTERNS",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "byCreatedTime"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "81f73ef4011a6d29",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 444.5
+  },
+  "right": {
+    "id": "ce606e0bbf2fe1a6",
+    "type": "split",
+    "children": [
+      {
+        "id": "67cee581bbd29091",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4bfea77920567644",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "3-resources/wiki/concepts/CONCEPT_META_Wiki_Query_Patterns.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": false
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for CONCEPT_META_Wiki_Query_Patterns"
+            }
+          },
+          {
+            "id": "f267029ef89cb2f4",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "3-resources/wiki/concepts/CONCEPT_META_Wiki_Query_Patterns.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from CONCEPT_META_Wiki_Query_Patterns"
+            }
+          },
+          {
+            "id": "97a7dcdac3218b6b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "80cf44faf5abc5f8",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "230a54c21e94b89f",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "3-resources/wiki/concepts/CONCEPT_META_Wiki_Query_Patterns.md",
+                "followCursor": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of CONCEPT_META_Wiki_Query_Patterns"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 355.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "2eb393005e8aa9a6",
+  "lastOpenFiles": [
+    "3-resources/wiki/concepts/CONCEPT_META_Wiki_Granularity_Control.md",
+    "3-resources/wiki/entities/ENTITY_TOOL_Claude_Code_Wiki_Gen.md",
+    "3-resources/wiki/sources/SOURCE_META_WIKI_GEN_CLONE.md",
+    "3-resources/wiki/concepts/CONCEPT_META_Wiki_Absorption_Loop.md",
+    "3-resources/wiki/concepts/CONCEPT_META_Atomic_Methodology.md",
+    "3-resources/wiki/sources/SOURCE_META_KARPATHY_LLM_WIKI.md",
+    "scratch/filter_meta_quality.py",
+    "3-resources/wiki/concepts/CONCEPT_CONCEPT_META_SB3_LLM_Wiki.md",
+    "3-resources/wiki/concepts/CONCEPT_CONCEPT_META_SB3_Graph_Analysis.md",
+    "3-resources/wiki/synthesis/SYNTHESIS_LLM_Wiki_Standard.md",
+    "3-resources/wiki/synthesis/SYNTHESIS_MASTER_Second_Brain_Blueprint.md",
+    "3-resources/raw/CONCEPT_META_SB3_LLM_Wiki.md",
+    "3-resources/wiki/wiki_brain.db-journal",
+    "scratch/sync_relationships.py",
+    "scratch/check_blueprint_integrity.py",
+    "Untitled.canvas",
+    "AGENTS.md",
+    "scratch/deprecate_empty_synthesis.py",
+    "scratch/step2_check_synthesis.py",
+    "scratch/step1_populate_legacy_fixed.py",
+    "scratch/step1_populate_legacy.py",
+    "scratch/legacy_audit.py",
+    "scratch/verify_and_rule_update.py",
+    "3-resources/wiki/concepts/CONCEPT_Tooling_Stack.md",
+    "3-resources/wiki/concepts/CONCEPT_Wiki_Operations.md",
+    "3-resources/wiki/concepts/CONCEPT_Three_Layer_Architecture.md",
+    "3-resources/wiki/concepts/CONCEPT_Wiki_vs_RAG.md",
+    "3-resources/wiki/concepts/CONCEPT_Karpathy_Idea_File.md",
+    "USER.md",
+    "3-resources/wiki/concepts/CONCEPT_target.md",
+    "3-resources/wiki/concepts/CONCEPT_SOURCE_VIZ_Storytelling_with_Data.md",
+    "3-resources/wiki/concepts/CONCEPT_index.md",
+    "3-resources/wiki/concepts/CONCEPT_TEST_Gap_Testing.md",
+    "3-resources/wiki/decisions/DECISION_20260503_231030_test_absorb_draft_conflict_low.md",
+    "3-resources/raw/sources/test_immutable.md",
+    "scratch/test_ingest/outside.md",
+    "SOUL.md",
+    "scratch/heron_model/docling_heron_400.png",
+    "artifacts/docling_heron_400.png",
+    "artifacts/ds4sd--docling-layout-heron/docling_heron_400.png",
+    "artifacts/docling-project--docling-layout-heron/docling_heron_400.png",
+    "00_Inbox/wiki_system_architecture.svg",
+    "3-resources/wiki/assets/THINK_Yes_No_Tree.png",
+    "3-resources/wiki/assets/THINK_Vision_Mockup.png",
+    "3-resources/wiki/assets/THINK_Root_Cause_Analysis.png",
+    "3-resources/wiki/assets/THINK_Pros_Cons_Scale.png",
+    "3-resources/wiki/assets/THINK_Problem_Solving_Process.png"
+  ]
+}

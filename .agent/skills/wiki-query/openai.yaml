@@ -1,0 +1,6 @@
+interface:
+  display_name: "Wiki Query"
+  short_description: "Answer from existing wiki pages"
+  default_prompt: "$.wiki-query"
+policy:
+  allow_implicit_invocation: true

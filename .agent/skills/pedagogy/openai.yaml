@@ -1,0 +1,6 @@
+interface:
+  display_name: "Pedagogy"
+  short_description: "Design pedagogy and extract EdTech knowledge"
+  default_prompt: "$.pedagogy"
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Wiki Semantic Search"
+  short_description: "Find abstract concepts with hybrid search"
+  default_prompt: "$.wiki-semantic-search"
+policy:
+  allow_implicit_invocation: true
