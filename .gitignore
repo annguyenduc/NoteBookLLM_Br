@@ -1,38 +1,16 @@
-# Database và scripts — không sync lên GitHub
-_db/
+﻿# 1. Ignore EVERYTHING
+/*
+
+# 2. Whitelist ONLY knowledge directories
+!/1-projects/
+!/2-areas/
+!/3-resources/
+!/.gitignore
+!/README.md
+
+# 3. Re-ignore heavy/unwanted files inside whitelisted directories
 3-resources/wiki/wiki_brain.db
 3-resources/wiki/wiki_brain.db-journal
-*.db
-*.db-shm
-*.db-wal
-
-# Agent scripts — không cần trên iPad (Giữ cho Repo nhẹ)
-.agent/skills/*/scripts/
-.agent/mcp/
-scratch/
-tools/cache/
-
-# Obsidian cache
-.obsidian/workspace.json
-.obsidian/cache
-
-# Python & Environments
-.venv/
-env/
-venv/
-__pycache__/
-*.pyc
-*.log
-
-# IDEs
-.vscode/
-.idea/
-*.swp
-*.swo
-# Python cache
-scripts/__pycache__/
-libs/__pycache__/
-
-# Utility Scripts - Kh�ng c?n tr�n iPad
-scripts/
-libs/
+3-resources/wiki/log.md
+**/__pycache__/
+**/*.pyc
