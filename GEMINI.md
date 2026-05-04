@@ -46,6 +46,14 @@ Agent tuyệt đối KHÔNG tự ý thiết lập trạng thái `SYNTHESIZED` ch
 ### R9 — SURGICAL MINIMALISM
 Tuân thủ nghiêm ngặt **Surgical Changes**: Chỉ thay đổi code tối thiểu để giải quyết vấn đề, không over-engineer, không tự ý refactor code lân cận nếu không liên quan trực tiếp đến task.
 
+### R10 — SEARCH & VISUAL VALIDATION PIPELINE (Quy trình 3 bước)
+Mọi hành động thu thập dữ liệu web BẮT BUỘC phải tuân thủ quy trình 3 bước để đảm bảo tính xác thực và tránh rác:
+1. **Bước 1: Discovery (Tìm kiếm)**: Sử dụng `Lightpanda` hoặc `search_web` để tìm kiếm và lọc danh sách URL tiềm năng.
+2. **Bước 2: Verification (Xác thực nội dung)**: BẮT BUỘC truy cập URL bằng `Lightpanda` hoặc `Crawl4AI` ở chế độ trích xuất **Markdown/Text** để xác nhận URL tồn tại (HTTP 200) và chứa đúng nội dung tri thức cần tìm. **TUYỆT ĐỐI KHÔNG** chụp ảnh ở bước này.
+3. **Bước 3: Visual Capture (Chụp ảnh bằng chứng)**: Chỉ thực hiện chụp ảnh (Screenshot) bằng `Crawl4AI` hoặc `Browser Subagent` sau khi Bước 2 xác nhận nội dung **ĐẠT YÊU CẦU**.
+- **Cấm 404/Rác**: Tuyệt đối không chụp ảnh trang lỗi 404, trang trắng, CAPTCHA hoặc trang không liên quan.
+- **Vi phạm**: Nếu phát hiện ảnh rác, Agent phải tự động rollback, ghi lỗi vào `3-resources/wiki/log.md` và thực hiện lại cho đến khi có bằng chứng thực.
+
 ---
 
 ## 🏗️ QUY ƯỚC WIKI (WIKI CONVENTIONS)

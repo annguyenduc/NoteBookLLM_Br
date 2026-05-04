@@ -69,6 +69,16 @@ NoteBookLLM_Br/              ← root
 │   │   │   └── scripts/
 │   │   │       ├── ingest.py
 │   │   │       └── magika_router.py
+│   │   ├── pedagogy/
+│   │   │   ├── SKILL.md
+│   │   │   └── scripts/
+│   │   │       ├── export_comparison_to_pptx.py
+│   │   │       └── convert_h5p.py
+│   │   ├── wiki-rebuild/
+│   │   │   ├── SKILL.md
+│   │   │   └── scripts/
+│   │   │       ├── rebuild.py
+│   │   │       └── indexer.py
 │   │   ├── wiki-absorb/
 │   │   │   ├── SKILL.md
 │   │   │   └── scripts/
@@ -85,22 +95,19 @@ NoteBookLLM_Br/              ← root
 │   │   │       └── lint_engine.py
 │   │   ├── wiki-status/
 │   │   │   └── SKILL.md
-│   │   ├── wiki-rebuild/
-│   │   │   ├── SKILL.md
-│   │   │   └── scripts/
-│   │   │       ├── rebuild.py
-│   │   │       └── indexer.py
 │   │   └── wiki-council/
 │   │       └── SKILL.md
 │   ├── mcp/
-│   │   └── mcp_server.py
+│   │   ├── mcp_server.py
+│   │   └── notebooklm_bridge.py
 │   └── references/                ← chỉ sparse checkout, không load thường trực
 │
 ├── 00_Inbox/
 ├── 1-projects/
 ├── 2-areas/
 ├── 3-resources/
-│   ├── raw/                       ← IMMUTABLE, giữ nguyên
+│   ├── raw/
+│   │   └── MASTER_SOURCE_INDEX.md
 │   └── wiki/
 │       ├── index.md
 │       ├── log.md
@@ -115,7 +122,10 @@ NoteBookLLM_Br/              ← root
 │       ├── session_insights/      ← THÊM MỚI — log_session_insight() output
 │       └── wiki_brain.db
 │
-└── 4-archive/
+├── 4-archive/
+│   └── legacy_scripts/             ← Nơi lưu trữ nợ kỹ thuật
+└── scripts/
+    └── mcp_run_mcp.bat             ← Entry point duy nhất còn lại
 ```
 
 ---
@@ -146,6 +156,9 @@ Encoding bắt buộc: **UTF-8 no BOM**. Nếu dùng PowerShell: luôn thêm `-E
 @designer chỉ bắt đầu khi `Trainer_Profile_[id].md` tồn tại.
 @engineer chỉ bắt đầu khi `Learning_Design_[module].md` tồn tại.
 Nếu file chưa có → DỪNG, báo @pm, không tự tiếp tục.
+
+**R10 — VISUAL PROOF MANDATORY**
+Mọi hành động cào dữ liệu BẮT BUỘC phải đi kèm ảnh chụp bằng chứng (PNG/WebP) **hiển thị rõ nội dung thực tế của trang**. Tuyệt đối KHÔNG dùng ảnh "Generating recording" làm bằng chứng. Nếu không thể chụp ảnh nội dung, phải DỪNG và báo lỗi ngay.
 
 ---
 
