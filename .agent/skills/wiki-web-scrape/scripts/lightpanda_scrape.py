@@ -7,8 +7,17 @@ from playwright.async_api import async_playwright
 async def scrape(url, output_path):
     async with async_playwright() as p:
         try:
-            # Connect to existing Lightpanda server
-            browser = await p.chromium.connect_over_cdp("http://127.0.0.1:9222")
+            # Try to connect to existing Lightpanda server
+            print(f"[*] Attempting to connect to Lightpanda at http://127.0.0.1:9222...")
+            browser = await p.chromium.connect_over_cdp("http://127.0.0.1:9222", timeout=2000)
+            print("[+] Connected to Lightpanda.")
+        except Exception as e:
+            print(f"[!] Lightpanda connection failed: {str(e)}")
+            print("[*] Falling back to standard Chromium launch...")
+            browser = await p.chromium.launch(headless=True)
+            print("[+] Launched standard Chromium.")
+
+        try:
             context = browser.contexts[0] if browser.contexts else await browser.new_context()
             page = await context.new_page()
             

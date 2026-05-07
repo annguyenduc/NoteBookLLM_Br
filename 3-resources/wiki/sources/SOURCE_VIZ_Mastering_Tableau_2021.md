@@ -1,5 +1,6 @@
----
-source_id: SOURCE_VIZ_Mastering_Tableau_2021
+﻿---
+file_id: "SOURCE_VIZ_MASTERING_TABLEAU_2021"
+SOURCE_ID: SOURCE_VIZ_MASTERING_TABLEAU_2021
 title: "TOOL Mastering Tableau 2021"
 author: "Marleen Meier & David Baldwin"
 category: TOOL
@@ -11,24 +12,24 @@ last_updated: "2026-04-29"
 
 # TOOL VIZ Mastering Tableau 2021
 
-## 📝 1. Phân tích Ingest (Analysis - Step 1)
-- **Thực thể & Khái niệm then chốt:** Tableau Desktop, LOD Expressions, Tableau Prep, Storytelling.
-- **Kết nối Wiki:** Chuyên sâu Tableau cho nhóm [[index]].
-- **Điểm khác biệt:** Tập trung vào các kỹ thuật "Advanced Aggregations" (LOD).
-- **Đề xuất cấu trúc:** Tạo trang [[CONCEPT_VIZ_Tableau_LOD_Basics]].
+## ðŸ“ 1. PhÃ¢n tÃ­ch Ingest (Analysis - Step 1)
+- **Thá»±c thá»ƒ & KhÃ¡i niá»‡m then chá»‘t:** Tableau Desktop, LOD Expressions, Tableau Prep, Storytelling.
+- **Káº¿t ná»‘i Wiki:** ChuyÃªn sÃ¢u Tableau cho nhÃ³m [[CONCEPT_index]].
+- **Äiá»ƒm khÃ¡c biá»‡t:** Táº­p trung vÃ o cÃ¡c ká»¹ thuáº­t "Advanced Aggregations" (LOD).
+- **Äá» xuáº¥t cáº¥u trÃºc:** Táº¡o trang [[CONCEPT_VIZ_Tableau_LOD_Basics]].
 
-## 📖 2. Tổng quan nguồn (Overview - Step 2)
-Tài liệu cung cấp hướng dẫn toàn diện để làm chủ Tableau, từ việc xây dựng Dashboard cơ bản đến việc thực hiện các phân tích phức tạp bằng LOD Expressions và Tableau Prep.
+## ðŸ“– 2. Tá»•ng quan nguá»“n (Overview - Step 2)
+TÃ i liá»‡u cung cáº¥p hÆ°á»›ng dáº«n toÃ n diá»‡n Ä‘á»ƒ lÃ m chá»§ Tableau, tá»« viá»‡c xÃ¢y dá»±ng Dashboard cÆ¡ báº£n Ä‘áº¿n viá»‡c thá»±c hiá»‡n cÃ¡c phÃ¢n tÃ­ch phá»©c táº¡p báº±ng LOD Expressions vÃ  Tableau Prep.
 
-## 🚀 3. Các Concept đã trích xuất (Rule 14 & 17)
-- [[CONCEPT_VIZ_PowerBI_vs_Tableau]] | **So sánh công cụ**.
-- [[CONCEPT_VIZ_Interactive_Dashboard_Design]] | **Thiết kế Dashboard**.
+## ðŸš€ 3. CÃ¡c Concept Ä‘Ã£ trÃ­ch xuáº¥t (Rule 14 & 17)
+- CONCEPT_VIZ_PowerBI_vs_Tableau | **So sÃ¡nh cÃ´ng cá»¥**.
+- [[CONCEPT_VIZ_Interactive_Dashboard_Design]] | **Thiáº¿t káº¿ Dashboard**.
 
-## 🔍 4. Review Items (Dành cho Human)
-- [ ] Tối ưu hóa các Dashboard Tableau hiện tại bằng kỹ thuật LOD.
+## ðŸ” 4. Review Items (DÃ nh cho Human)
+- [ ] Tá»‘i Æ°u hÃ³a cÃ¡c Dashboard Tableau hiá»‡n táº¡i báº±ng ká»¹ thuáº­t LOD.
 
 --- 
-**Nguồn thô:** `VIZ_Mastering_Tableau_2021`
+**Nguá»“n thÃ´:** `VIZ_Mastering_Tableau_2021`
 **Deep Research Query:** `Mastering Tableau 2021 summary and key features`
 
 

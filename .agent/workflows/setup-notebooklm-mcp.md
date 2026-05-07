@@ -6,6 +6,22 @@ description: Cài đặt và cấu hình NotebookLM MCP Server cho Antigravity (
 
 Workflow này sẽ tự động cài đặt và cấu hình NotebookLM MCP Server, bao gồm cả việc xử lý lỗi "invalid trailing data" do banner khởi động của server gây ra.
 
+---
+
+## ✅ CHECKPOINT (Bắt buộc trước khi bắt đầu)
+
+```yaml
+CHECKPOINT:
+  agent: "@devops"
+  task: "Cài đặt và cấu hình NotebookLM MCP Server"
+  prerequisites:
+    - environment: "Python 3.10+"
+      ok: "YES"
+  status: "READY"
+```
+
+---
+
 ## Bước 1: Cài đặt package notebooklm-mcp-server
 
 **@devops** thực hiện cài đặt:

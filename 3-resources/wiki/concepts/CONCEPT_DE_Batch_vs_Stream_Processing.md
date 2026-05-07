@@ -8,7 +8,7 @@ status: "verified"
 created: "2026-05-02"
 last_updated: "2026-05-03"
 sources:
-  - "[[SOURCE_DE_Designing_Data_Intensive_Applications]]"
+  - "SOURCE_DE_DESIGNING_DATA_INTENSIVE_APPLICATIONS"
 ---
 
 ## ## For future Claude
@@ -31,10 +31,10 @@ Xử lý dữ liệu liên tục ngay khi nó được tạo ra (real-time).
 
 ## ## Ví dụ đối chiếu (Rule 17)
 - **Ví dụ thực tế (Original)**: Một ngân hàng dùng Batch để đối soát sổ cái vào 12h đêm (không cần gấp), nhưng dùng Stream để cảnh báo tin nhắn biến động số dư ngay khi khách hàng quẹt thẻ (cần ngay lập tức).
-- **Ẩn dụ sư phạm (Pedagogical)**: Batch giống như việc bạn dồn quần áo bẩn cả tuần để giặt một lần vào Chủ Nhật (Tiết kiệm thời gian/điện nước). Stream giống như việc bạn rửa cái bát ngay sau khi ăn xong (Luôn sạch sẽ, không bị dồn ứ, nhưng tốn công đi lại nhiều lần).
+- **Ẩn dụ sư phạm (Pedagogical)**: [Phóng tác] Batch giống như việc bạn dồn quần áo bẩn cả tuần để giặt một lần vào Chủ Nhật (Tiết kiệm thời gian/điện nước). Stream giống như việc bạn rửa cái bát ngay sau khi ăn xong (Luôn sạch sẽ, không bị dồn ứ, nhưng tốn công đi lại nhiều lần).
 
 ## ## Source Tracing
-- **Nguồn**: [[SOURCE_DE_Designing_Data_Intensive_Applications]] — Chapter 10 & 11.
+- **Nguồn**: SOURCE_DE_DESIGNING_DATA_INTENSIVE_APPLICATIONS — Chapter 10 & 11.
 
 ## ## History / Revisions
 - **2026-05-03**: [@engineer] Pressure Chain Healing. Bổ sung Rule 17, 20 và chuẩn hóa metadata.

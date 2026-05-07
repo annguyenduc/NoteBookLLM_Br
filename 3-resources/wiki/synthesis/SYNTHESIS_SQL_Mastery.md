@@ -107,7 +107,7 @@ Làm việc với dữ liệu cấu trúc cây (Sơ đồ tổ chức, BOM):
 ---
 
 ## Liên kết hệ thống
--   **Nguồn tri thức**: [[SOURCE_TOOL_SQL_Getting_Started]], [[SOURCE_TOOL_SQL_for_Data_Analysis]], [[SOURCE_TOOL_SQL_Cookbook]], [[SOURCE_TOOL_SQL_Pocket_Guide]]
+-   **Nguồn tri thức**: SOURCE_TOOL_SQL_GETTING_STARTED, SOURCE_TOOL_SQL_FOR_DATA_ANALYSIS, SOURCE_TOOL_SQL_COOKBOOK, SOURCE_TOOL_SQL_POCKET_GUIDE
 -   **Thực thể nền tảng**: [[ENTITY_SQL]]
 -   **Ứng dụng thực tế**: [[CONCEPT_THINK_Data_Mining_Tasks]]
 

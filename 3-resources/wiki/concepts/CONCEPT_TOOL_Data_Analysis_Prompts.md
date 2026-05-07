@@ -3,7 +3,7 @@ file_id: "CONCEPT_TOOL_DATA_ANALYSIS_PROMPTS"
 title: "Mẫu câu lệnh Phân tích dữ liệu (Data Analysis Prompts)"
 category: "TOOL"
 prefix: "TOOL"
-tags: ["Gemini", "Data_Analysis", "[[ENTITY_Python|Python]]", "[[ENTITY_SQL|SQL]]", "Prompts"]
+tags: ["Gemini", "Data_Analysis", "Python", "[[ENTITY_SQL|SQL]]", "Prompts"]
 source: "[[SOURCE_TOOL_GEMINI_DEVELOPER_CODEX]]"
 status: "verified"
 created: "2026-05-01"
@@ -18,7 +18,7 @@ last_updated: "2026-05-01"
 ## 2. Các mẫu cốt lõi (Patterns)
 
 ### Mẫu 1: Trích xuất & Chuyển đổi (Transformation)
-> **Cấu trúc**: "Acting as a Data Engineer, write a Python script using [[ENTITY_PANDAS|Pandas]] to transform [Source_Format] to [Target_Format]. Specifically, handle missing values by [Strategy] and normalize [Column_Names]."
+> **Cấu trúc**: "Acting as a Data Engineer, write a Python script using [[ENTITY_PANDAS|Pandas]] to transform [SOURCE_FORMAT] to [Target_Format]. Specifically, handle missing values by [Strategy] and normalize [Column_Names]."
 > **Mục tiêu**: Tự động hóa công đoạn chuẩn bị dữ liệu (Data Prep).
 
 ### Mẫu 2: Phân tích Khám phá (EDA)

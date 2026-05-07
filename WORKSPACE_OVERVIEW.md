@@ -1,6 +1,6 @@
 # 🗺️ WORKSPACE OVERVIEW — NoteBookLLM_Br
 > **Dành cho**: AI Agent (đọc trước khi hành động) & User (kiểm tra toàn cảnh).
-> **Cập nhật**: 2026-04-29 | Schema v4.1
+> **Cập nhật**: 2026-05-06 | Schema v5.0 (3-Flatten Architecture)
 
 ---
 
@@ -9,51 +9,39 @@
 ```
 NoteBookLLM_Br/
 │
-├── 📥 00_Inbox/                  ← Files thô từ ngoài vào. Flat, prefix YYYYMMDD_.
-│                                    @librarian xử lý hàng tuần qua /ingest-inbox.
+├── 📥 00_Inbox/                  ← Khu vực chờ. File Markdown sau khi convert từ PDF.
+│                                    Cần qua @wiki-md-auditor trước khi vào raw_ingest/.
 │
-├── 📁 1-projects/                ← Dự án đang active.
-│   ├── 2026_Data_Analyst/        ← DỰ ÁN CHÍNH (80/20 Ingest)
-│   │   └── Ingest_80_20.md       ← Checklist trích xuất concept
-│   ├── 2026_AI_Knowledge_Mining/ ← Nghiên cứu AI
-│   └── 2026_MimiClaw_Inbox/      ← Bot MimiClaw
+├── 📁 1-projects/                ← Các dự án đang thực thi.
 │
-├── 📁 2-areas/                   ← Vùng quản lý liên tục.
-│   ├── Profiles/                 ← Trainer Profile (@profiler ghi)
-│   └── Assessment/               ← Báo cáo đánh giá (@evaluator ghi)
+├── 📁 2-areas/                   ← Vùng quản lý liên tục (Profiles, Assessment).
 │
-├── 📁 3-resources/               ← KHO TRI THỨC TRUNG TÂM
-│   ├── schema.md                 ← Quy ước tên file & liên kết
-│   ├── purpose.md                ← Mục tiêu & câu hỏi nghiên cứu
-│   ├── WIKI_AGENT_GUIDE.md       ← Hướng dẫn tạo Wiki Atom (BẮT BUỘC đọc trước)
+├── 📁 3-resources/               ← HẠ TẦNG TRI THỨC (Source of Truth)
+│   ├── 📂 raw_sources/           ← EVIDENCE — PDF/Video/HTML gốc. IMMUTABLE.
+│   ├── 📂 raw_ingest/            ← FUEL — Markdown đạt chuẩn Auditor. IMMUTABLE.
+│   ├── 📂 raw_assets/            ← VISUAL PROOF — Hình ảnh/Biểu đồ phẳng.
 │   │
-│   ├── 📂 raw/                   ← IMMUTABLE — chỉ User được thêm vào
-│   │   ├── sources/              ← 31 file PDF/MD nguồn (Data Analyst library)
-│   │   └── assets/               ← Hình ảnh, templates, prompts
-│   │
-│   └── 📂 wiki/                  ← KHO WIKI SỐNG (Agent đọc/ghi)
-│       ├── index.md              ← Bản đồ (auto-generated bởi script)
-│       ├── log.md                ← Nhật ký mọi thay đổi (append-only)
-│       ├── overview.md           ← Tóm tắt tổng quan (auto-updated)
-│       ├── concepts/             ← 41 Atomic concept pages (THINK_*, STAT_*, ...)
-│       ├── entities/             ← 3 Entity pages (ENTITY_SQL, Python, Data_Science)
-│       ├── sources/              ← 3 Source summaries (SOURCE_THINK_*)
-│       ├── synthesis/            ← 2 Master synthesis files (THINK_Analytical_Thinking...)
-│       ├── comparisons/          ← 1 Comparison page (COMPARE_*)
-│       └── queries/              ← Kết quả file-back từ research (empty → chờ)
+│   └── 📂 wiki/                  ← KHO WIKI 2.0 (Atomic Knowledge)
+│       ├── index.md              ← Bản đồ đồ thị (generated)
+│       ├── log.md                ← Nhật ký thay đổi (UTF-8 no BOM)
+│       ├── concepts/             ← Atomic concept pages
+│       ├── entities/             ← Entity pages (Tools, People)
+│       ├── sources/              ← Source summaries
+│       ├── synthesis/            ← Human-made synthesis files
+│       ├── decisions/            ← Nhật ký quyết định của @wiki-council
+│       └── review_queue/          ← Nơi chứa Atom mới chờ Duyệt
 │
-├── 📁 4-archive/                 ← Lưu trữ vĩnh viễn. Wikilinks đã trung hòa.
+├── 📁 4-archive/                 ← Lưu trữ vĩnh viễn.
 │
-├── 📁 scripts/                   ← Công cụ tự động hóa
-│   ├── update_wiki_index.py      ← Tái tạo wiki/index.md
-│   ├── brain_lint.py             ← Kiểm tra sức khỏe Wiki
-│   └── maintenance/              ← Các script bảo trì khác
+├── 📁 .agent/                    ← Cấu hình & Kỹ năng (Skills)
+│   ├── skills/                   ← Bộ kỹ năng v2.8 (obsidian-cli, ingest, absorb...)
+│   └── workflows/                ← Các quy trình tự động hóa
 │
-├── 📁 .agent/                    ← Cấu hình Swarm Agent
-│   ├── WORKSPACE_OVERVIEW.md     ← File này ← User review & Agent startup
-│   └── workflows/                ← Workflow files (/ingest, /file-back, /lint...)
-│
-├── AGENTS.md                     ← BỘ LUẬT SWARM (đọc TRƯỚC KHI làm gì)
+├── AGENTS.md                     ← BỘ LUẬT SWARM (BẮT BUỘC ĐỌC)
+├── SOUL.md                       ← Tính cách & Sứ mệnh Agent
+├── USER.md                       ← Hồ sơ & Ranh giới của User
+└── WORKSPACE_OVERVIEW.md         ← File này
+```
 ├── task_plan.md                  ← Kế hoạch hiện tại (v5.3 — Data Analyst 80/20)
 ├── CONTINUITY.md                 ← Ghi nhớ liên phiên (lỗi đã gặp, context)
 └── COMMAND_BOARD.md              ← Bảng điều khiển lệnh nhanh
@@ -61,57 +49,52 @@ NoteBookLLM_Br/
 
 ---
 
-## 2. Workflow Chính (Main Flows)
+## 2. Kiến trúc Hệ thống Wiki 2.0 (Phiên bản Hoàng kim v2.8)
 
-### 2.1 — `/ingest` : Nạp nguồn tài liệu mới (Two-Step CoT)
+Mọi Agent phải tuân thủ luồng runtime này.
 
 ```mermaid
-flowchart TD
-    A[👤 User thêm file vào\n3-resources/raw/sources/] --> B
-
-    subgraph STEP1 ["Step 1 — Analysis (@scout)"]
-        B[Đọc file raw] --> C[Tạo Analysis file\n1-projects/2026_Data_Analyst/\nAnalysis_PREFIX.md]
-        C --> C1[📋 Key entities & concepts]
-        C --> C2[🔗 Connections với Wiki hiện có]
-        C --> C3[⚡ Contradictions & Tensions]
-        C --> C4[🔍 Deep Research Queries]
-        C --> C5[📐 Wiki Structure Recommendations]
+graph TD
+    subgraph "1. TẦNG NẠP (INGEST PIPELINE)"
+        RAW_SOURCE[raw_sources PDF/Video] -->|Convert| INBOX[00_Inbox Markdown]
+        INBOX --> AUDIT[wiki-md-auditor]
+        AUDIT -->|PASS| RAW_INGEST[raw_ingest MD Immutable]
+        RAW_INGEST --> INGEST[wiki-ingest]
     end
 
-    C5 --> D{👤 User duyệt\nbản phân tích?}
-    D -- "Approve" --> E
-
-    subgraph STEP2 ["Step 2 — Generation (@engineer)"]
-        E[Tạo SOURCE_ page\nwiki/sources/] --> F[Tạo/Cập nhật\nConcepts & Entities]
-        F --> G[Direct Compounding\nvào wiki/synthesis/]
-        G --> H[📋 Review Items\ncho Human Judgment]
+    subgraph "2. TẦNG DỮ LIỆU (ATOMIC DATA)"
+        INGEST --> DRAFT[DRAFT Atoms in DB]
     end
 
-    H --> I[@librarian\nchạy update_wiki_index.py]
-    I --> J[@pm ghi log\nvào wiki/log.md]
-    J --> K[✅ Ingest hoàn tất\ngit commit + push]
-```
+    subgraph "3. TẦNG HỢP NHẤT (ABSORB)"
+        DRAFT --> ABSORB[wiki-absorb]
+        ABSORB -->|Phát hiện Conflict| COUNCIL[wiki-council]
+        COUNCIL -->|Ghi log| DECISION[wiki/decisions/]
+        ABSORB --> QUEUE[wiki/review_queue/]
+    end
 
-### 2.2 — `/file-back` : Lưu kết quả research thành Wiki page
+    subgraph "4. TẦNG HUMAN (GOVERNANCE)"
+        QUEUE -->|Human Review| VERIFIED[Status: VERIFIED]
+        VERIFIED -->|Human Synthesis| SYNTH[Status: SYNTHESIZED]
+    end
 
-```mermaid
-flowchart LR
-    A[💬 Chat session\ncó Insight giá trị] --> B[@pm quyết định\nfile-back?]
-    B -- Yes --> C[Tạo page mới\nwiki/queries/ hoặc\nwiki/concepts/]
-    C --> D[Cập nhật\nwiki/index.md]
-    D --> E[Append wiki/log.md]
-    E --> F[✅ git commit]
-```
+    subgraph "5. TẦNG BẢO TRÌ (MAINTENANCE)"
+        SYNTH --> REBUILD[wiki-rebuild]
+        REBUILD --> CLEAN[wiki-cleanup]
+        CLEAN --> STATUS[wiki-status Dashboard]
+    end
 
-### 2.3 — `/lint` : Kiểm tra sức khỏe Wiki
+    subgraph "6. TẦNG TRUY VẤN (ON-DEMAND)"
+        HUMAN((USER)) -->|Hỏi vault| QUERY[wiki-query]
+        HUMAN -->|Tìm gap tri thức| BREAKDOWN[wiki-breakdown]
+        QUERY --> RESPONSE[Trả lời có trích dẫn]
+        BREAKDOWN --> STUB_NEW[Tạo stub mới]
+    end
 
-```mermaid
-flowchart LR
-    A[@librarian chạy\nbrain_lint.py] --> B{Kết quả?}
-    B -- "Broken Links" --> C[@healer sửa links]
-    B -- "Orphan Pages" --> D[Thêm wikilinks]
-    B -- "Stale Claims" --> E[@auditor review\n& update nguồn]
-    B -- "CLEAN ✅" --> F[Ghi log & done]
+    %% Tools & Reference
+    CLI{{obsidian-cli}} -.->|Tool| ABSORB
+    CLI -.->|Tool| REBUILD
+    CLI -.->|Tool| QUERY
 ```
 
 ---
@@ -121,13 +104,13 @@ flowchart LR
 | Agent | Đọc | GHI (được phép) |
 |:---|:---|:---|
 | `@pm` | Tất cả | `wiki/log.md`, `1-projects/`, `CONTINUITY.md` |
-| `@scout` | `raw/`, `1-projects/` | `1-projects/*/Analysis_*.md` (draft) |
-| `@engineer` | `1-projects/`, `wiki/synthesis/` | `1-projects/*/output`, `wiki/concepts/`, `wiki/entities/`, `wiki/sources/` |
-| `@librarian` | Tất cả | `wiki/synthesis/` (sau verify), `wiki/log.md`, `wiki/index.md` |
+| `@scout` | `raw_sources/`, `raw_ingest/` | `1-projects/*/Analysis_*.md` (draft) |
+| `@engineer` | `raw_ingest/`, `wiki/` | `1-projects/*/output`, `wiki/concepts/`, `wiki/entities/` |
+| `@librarian` | Tất cả | `raw_ingest/`, `raw_assets/`, `wiki/synthesis/`, `wiki/index.md` |
 | `@auditor` | Tất cả (read-only) | `wiki/log.md` (append only) |
 | `@devops` | Tất cả | `scripts/`, `tools/` |
 | `@healer` | Tất cả | `wiki/` (sửa links), `scripts/` |
-| **KHÔNG AI ĐƯỢC** | — | `raw/sources/` (IMMUTABLE) |
+| **KHÔNG AI ĐƯỢC** | — | `raw_sources/` (IMMUTABLE EVIDENCE) |
 
 ---
 
@@ -148,10 +131,13 @@ flowchart LR
 
 ```powershell
 # Kiểm tra sức khỏe Wiki
-python scripts/brain_lint.py
+python .agent/skills/wiki-cleanup/scripts/lint_engine.py
 
 # Tái tạo index.md
-python scripts/update_wiki_index.py
+python .agent/skills/wiki-rebuild/scripts/update_wiki_index.py
+
+# Đồng bộ Database (Nightly/Manual)
+python .agent/skills/wiki-rebuild/scripts/rebuild.py
 
 # Git checkpoint
 git add -A && git commit -m "..." && git push

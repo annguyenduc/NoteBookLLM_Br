@@ -8,7 +8,7 @@ status: "verified"
 created: "2026-05-02"
 last_updated: "2026-05-03"
 sources:
-  - "[[SOURCE_DE_Fundamentals_of_Data_Engineering]]"
+  - "SOURCE_DE_FUNDAMENTALS_OF_DATA_ENGINEERING"
 ---
 
 ## ## For future Claude
@@ -27,10 +27,10 @@ Trang này giải thích về Quản trị dữ liệu (Data Governance) - tập
 
 ## ## Ví dụ đối chiếu (Rule 17)
 - **Ví dụ thực tế (Original)**: Sử dụng Metadata Catalog để ghi chú: "Cột `user_email` là dữ liệu nhạy cảm (PII), chỉ người có quyền Admin mới được xem". Nếu không có Governance, dữ liệu này có thể bị rò rỉ ra bên ngoài.
-- **Ẩn dụ sư phạm (Pedagogical)**: Giống như nội quy của một thư viện. Nếu không có thủ thư (Data Steward) và các quy định mượn trả (Governance), sách (Dữ liệu) sẽ bị mất, hư hỏng hoặc đặt sai chỗ, khiến người sau không thể tìm thấy thông tin mình cần.
+- **Ẩn dụ sư phạm (Pedagogical)**: [Phóng tác] Giống như nội quy của một thư viện. Nếu không có thủ thư (Data Steward) và các quy định mượn trả (Governance), sách (Dữ liệu) sẽ bị mất, hư hỏng hoặc đặt sai chỗ, khiến người sau không thể tìm thấy thông tin mình cần.
 
 ## ## Source Tracing
-- **Nguồn**: [[SOURCE_DE_Fundamentals_of_Data_Engineering]] — Chapter 12.
+- **Nguồn**: SOURCE_DE_FUNDAMENTALS_OF_DATA_ENGINEERING — Chapter 12.
 
 ## ## History / Revisions
 - **2026-05-03**: [@engineer] Pressure Chain Healing. Bổ sung Rule 17, 20 và chuẩn hóa metadata.

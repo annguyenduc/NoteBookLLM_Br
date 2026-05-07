@@ -1,4 +1,5 @@
 ---
+file_id: "CONCEPT_THINK_5_Whys"
 title: "CONCEPT: Kỹ thuật 5 Whys (5 Tại sao)"
 type: concept
 tags: ["Thinking", "Problem_Solving", "Root_Cause", "DA_Core"]
@@ -29,7 +30,7 @@ last_updated: "2026-05-01"
 > 4. Tại sao không có tiền? -> Tiêu hết vào thiết bị mới.
 > 5. Tại sao tiêu hết vào thiết bị? -> Không có kế hoạch ngân sách.
 > - **Nguyên nhân gốc rễ**: Thiếu kỹ năng quản lý tài chính.
-> **Nguồn**: [[SOURCE_THINK_Problem_Solving_101]] — Trang 48.
+> **Nguồn**: SOURCE_THINK_PROBLEM_SOLVING_101 — Trang 48.
 
 ### Ứng dụng sư phạm (Pedagogical Application)
 > **Bối cảnh**: Dự án Robot của học sinh liên tục bị cháy cầu chì/mạch.
@@ -42,7 +43,7 @@ last_updated: "2026-05-01"
 > - **Nguyên nhân gốc rễ**: Thiếu module bài giảng về an toàn điện.
 
 ## 4. Trích dẫn nguồn (Rule 14)
-- **Nguồn**: [[SOURCE_THINK_Problem_Solving_101]] — Trang 45-52.
+- **Nguồn**: SOURCE_THINK_PROBLEM_SOLVING_101 — Trang 45-52.
 - **Fact-check**: Đã đối chiếu file raw `THINK_Problem_Solving_101.md`. [Rule 14: SUCCESS]
 
 ---

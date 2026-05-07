@@ -3,8 +3,12 @@ import re
 import shutil
 from datetime import datetime, timedelta
 
-WIKI_DIR = r"d:\NoteBookLLM_Br\3-resources\wiki"
-ARCHIVE_DIR = r"d:\NoteBookLLM_Br\4-archive"
+ROOT_DIR = os.getenv(
+    "NOTEBOOKLLM_ROOT",
+    os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", ".."))
+)
+WIKI_DIR = os.path.join(ROOT_DIR, "3-resources", "wiki")
+ARCHIVE_DIR = os.path.join(ROOT_DIR, "4-archive")
 RETENTION_DAYS = 30
 
 def extract_date(content, field):

@@ -1,4 +1,5 @@
 ---
+file_id: "CONCEPT_THINK_TF_IDF_Text_Mining"
 title: "CONCEPT: Trọng số TF-IDF trong Khai thác Văn bản"
 type: concept
 tags: ["Thinking", "Text_Mining", "NLP", "DA_Core"]
@@ -22,7 +23,7 @@ last_updated: "2026-05-01"
 ### Ví dụ từ sách (Original)
 > **Bối cảnh**: Phân loại các bài báo theo chủ đề.
 > **Ứng dụng**: Từ "Dữ liệu" có thể xuất hiện nhiều trong một bài báo về công nghệ, nhưng vì nó cũng xuất hiện trong hầu hết các bài báo khác cùng tập dữ liệu, nên trọng số TF-IDF của nó sẽ bị hạ thấp. Ngược lại, từ "Hadoop" chỉ xuất hiện trong vài bài, nên nó sẽ có trọng số cao và trở thành từ khóa đặc trưng để phân loại.
-> **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Chương 10.
+> **Nguồn**: SOURCE_THINK_DATA_SCIENCE_FOR_BUSINESS — Chương 10.
 
 ### Ứng dụng sư phạm (Pedagogical Application)
 > **Bối cảnh**: Tóm tắt các chủ đề thảo luận chính trong diễn đàn lớp học.
@@ -32,7 +33,7 @@ last_updated: "2026-05-01"
 > - Từ "Mạch điện", "Arduino" có TF cao trong một số bài cụ thể, giúp giáo viên nhận diện nhanh đây là nhóm thảo luận về chủ đề Kỹ thuật/Robot.
 
 ## 4. Trích dẫn nguồn (Rule 14)
-- **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Trang 250-265.
+- **Nguồn**: SOURCE_THINK_DATA_SCIENCE_FOR_BUSINESS — Trang 250-265.
 - **Fact-check**: Đã đối chiếu file raw `THINK_Data_Science_for_Business.md`. [Rule 14: SUCCESS]
 
 ---

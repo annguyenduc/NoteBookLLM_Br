@@ -1,4 +1,5 @@
 ---
+file_id: "CONCEPT_THINK_Data_Mining_Process_CRISP"
 title: "CONCEPT: Quy trình Khai thác Dữ liệu (CRISP-DM)"
 type: concept
 tags: ["Thinking", "Process", "Standard", "DA_Core"]
@@ -25,7 +26,7 @@ last_updated: "2026-05-01"
 ### Ví dụ từ sách (Original)
 > **Bối cảnh**: Dự án giảm tỷ lệ khách hàng rời bỏ (Customer Churn).
 > **Ứng dụng**: Bắt đầu bằng việc định nghĩa "Churn" (Business Understanding), sau đó thu thập lịch sử cuộc gọi (Data Understanding), làm sạch dữ liệu (Preparation), chạy mô hình dự báo (Modeling), kiểm tra xem mô hình có giúp tiết kiệm tiền không (Evaluation) và tích hợp vào hệ thống CSKH (Deployment).
-> **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Chương 2.
+> **Nguồn**: SOURCE_THINK_DATA_SCIENCE_FOR_BUSINESS — Chương 2.
 
 ### Ứng dụng sư phạm (Pedagogical Application)
 > **Bối cảnh**: Học sinh thực hiện dự án "Tối ưu hóa thực đơn căng tin trường học".
@@ -38,7 +39,7 @@ last_updated: "2026-05-01"
 > 6. **Deployment**: Đề xuất thực đơn cố định hàng tháng cho nhà trường.
 
 ## 4. Trích dẫn nguồn (Rule 14)
-- **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Trang 27-34.
+- **Nguồn**: SOURCE_THINK_DATA_SCIENCE_FOR_BUSINESS — Trang 27-34.
 - **Fact-check**: Đã đối chiếu file raw `THINK_Data_Science_for_Business.md`. [Rule 14: SUCCESS]
 
 ---

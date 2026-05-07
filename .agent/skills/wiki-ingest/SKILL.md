@@ -1,38 +1,6 @@
 ---
 name: wiki-ingest
-description: "Use when raw knowledge sources (PDF, Markdown, HTML, Office) need to be atomized, hash-verified, and integrated into the Wiki 2.0 review queue. Triggers on /ingest command or when new files appear in 00_Inbox/ or 3-resources/raw/."
----
-
-Standardized ingestion protocol to atomize raw sources with absolute traceability.
-
-## Context
-Process raw files from `00_Inbox/` or `3-resources/raw/` into structured Knowledge Atoms (DRAFT).
-
-## Workflow
-
-### Step 1: Content Identification
-Use Magika to identify MIME-types regardless of extension.
-```bash
-python .agent/skills/wiki-ingest/scripts/magika_router.py "path/to/file"
-```
-
-### Step 2: High-Fidelity Extraction
-Use specialized parsers:
-- **PDF**: Docling (preferred).
-- **HTML/URL**: `wiki-crawl-4ai`.
-- **Office**: MarkItDown.
-
-### Step 3: Atomic Registration
-Run `ingest.py` to check for duplicates (SHA-256) and create DRAFT atoms.
-```bash
-python .agent/skills/wiki-ingest/scripts/ingest.py "path/to/file"
-```
-
-## Constraints
-- **Rule 1 - Immutable Raw**: Never modify files in `raw/`.
-- **Rule 3 - Source Tracing**: Every claim must have a valid source link.
-- **Rule 8 - Human Gate**: Default status is always `DRAFT`.
-description: Use when a file already exists in `00_Inbox/` or `3-resources/raw/` and needs routing, duplicate checks, confidence scoring, and DRAFT registration in `wiki_brain.db` and the review queue.
+description: "Use when raw knowledge sources (PDF, Markdown, HTML, Office) need to be atomized, hash-verified, and integrated into the Wiki 2.0 review queue. Triggers on /ingest command or when new files appear in 00_Inbox/, 3-resources/raw_sources/, or 3-resources/raw_ingest/."
 ---
 
 # Wiki Ingest
@@ -41,14 +9,14 @@ description: Use when a file already exists in `00_Inbox/` or `3-resources/raw/`
 Register a source file into the wiki pipeline without altering the raw source. This skill is for file-based ingestion, not for live web crawling.
 
 ## Guardrails
-- Treat `3-resources/raw/` as read-only.
+- Treat `3-resources/raw_*/` as read-only for general agents.
 - For URLs, use `wiki-web-scrape` or `wiki-crawl-4ai` first, save to `00_Inbox/` or another user-approved staging path, then ingest the saved file.
 - Do not claim a source is verified just because ingestion succeeded. `ingest.py` creates `DRAFT`.
 - Preserve source traceability. If the source section is unclear, flag it instead of inventing one.
 
 ## Workflow
 1. Confirm the input path exists and is already on disk.
-Preferred inputs are files in `00_Inbox/` or user-managed files in `3-resources/raw/`.
+Preferred inputs are files in `00_Inbox/`, `3-resources/raw_sources/`, or `3-resources/raw_ingest/`.
 2. Inspect routing before ingestion.
 Run `python .agent/skills/wiki-ingest/scripts/magika_router.py "<path>"` to confirm MIME type and parser choice.
 3. Run the deterministic ingest step.
@@ -65,8 +33,25 @@ Check console output or DB/task logs for one of these outcomes: skipped duplicat
   `score_engine.py` computes confidence.
   `wiki_ingest_helper.py` and `pressure_test.py` are support and test utilities.
 
+## Testing
+This skill uses **TDD** to ensure ingestion safety and duplicate detection logic.
+Run tests from the workspace root:
+```powershell
+$env:PYTHONPATH=".agent/skills/wiki-ingest/scripts"; python .agent/skills/wiki-ingest/tests/test_ingest.py
+```
+
 ## Common Mistakes
 - Trying to ingest a URL directly instead of a saved file.
-- Writing new web output straight into `3-resources/raw/`.
+- Writing new web output straight into `3-resources/raw_*/`.
 - Assuming ingestion updates wiki pages; this step only registers atoms and review items.
 - Ignoring a raw hash mismatch warning, which is a signal to stop.
+
+## Technical Keywords (Audit)
+- **Gate**: TDD standard for operational readiness.
+- **IMMUTABLE**: R1 Safety rule for raw sources.
+
+## Technical Reference
+- Gate -1: Magika content router
+- Gate 0: Parse and create DRAFT atom
+- Gate 1: Score engine (confidence threshold)
+- IMMUTABLE: raw_sources/ must never be modified

@@ -1,10 +1,11 @@
 ---
+file_id: "ENTITY_SQL"
 title: "Thực thể: SQL (Structured Query Language)"
 type: entity
 domain: SQL
 status: verified
 sources:
-  - [[SOURCE_TOOL_SQL_Getting_Started]]
+  - SOURCE_TOOL_SQL_GETTING_STARTED
 tags: [sql, data-science, database, rdbms]
 created: 2026-04-29
 updated: 2026-04-29
@@ -20,7 +21,7 @@ RDBMS là loại cơ sở dữ liệu tổ chức dữ liệu thành các bảng
 
 ## 2. Vai trò trong Data Analyst / [[ENTITY_Data_Science|Data Science]]
 - **Truy vấn dữ liệu**: Trích xuất dữ liệu thô từ các cơ sở dữ liệu. Mọi tác vụ khai thác dữ liệu đều bắt đầu bằng câu lệnh `SELECT`.
-- **Tiền xử lý (Data Prep)**: Lọc (WHERE), gom nhóm (GROUP BY), nối bảng (JOIN) trước khi đưa vào các công cụ phân tích (như Tableau, PowerBI) hoặc [[ENTITY_Python|Python]]/R.
+- **Tiền xử lý (Data Prep)**: Lọc (WHERE), gom nhóm (GROUP BY), nối bảng (JOIN) trước khi đưa vào các công cụ phân tích (như Tableau, PowerBI) hoặc Python/R.
 - **Khám phá dữ liệu (EDA)**: Nhanh chóng thống kê và xem xét các mẫu (patterns) cơ bản thông qua các hàm Aggregate (SUM, AVG).
 
 ## 3. Phân loại Database Engines
@@ -31,7 +32,7 @@ SQL là ngôn ngữ chuẩn, nhưng có nhiều nền tảng (Engines) triển k
  Nguồn: `SQLDB_SQL_Getting_Started.md` — [Page 21-22]
 
 ## 4. Các thực thể & Concept liên quan (Cross-References)
--   **Ngôn ngữ/Công cụ khác**: [[ENTITY_Python]], [[ENTITY_Data_Science]]
+-   **Ngôn ngữ/Công cụ khác**: ENTITY_Python, [[ENTITY_Data_Science]]
 -   **Khái niệm lõi SQL**: [[CONCEPT_SQL_Select_And_Filter]], [[CONCEPT_SQL_Joins]], [[CONCEPT_SQL_Aggregations]]
 
 ---

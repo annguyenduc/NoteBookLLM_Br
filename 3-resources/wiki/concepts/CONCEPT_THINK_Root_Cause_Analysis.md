@@ -1,4 +1,5 @@
 ---
+file_id: "CONCEPT_THINK_Root_Cause_Analysis"
 title: "CONCEPT: Phân tích Nguyên nhân Gốc rễ (Root Cause Analysis - RCA)"
 type: concept
 tags: ["Thinking", "Problem_Solving", "Analysis", "DA_Core"]
@@ -23,7 +24,7 @@ Các kỹ thuật phổ biến trong RCA:
 ### Ví dụ từ sách (Original)
 > **Bối cảnh**: Tỷ lệ sản phẩm lỗi tăng đột biến trong dây chuyền sản xuất.
 > **Ứng dụng**: Thay vì chỉ loại bỏ sản phẩm lỗi (xử lý triệu chứng), Analyst dùng RCA phát hiện ra một chi tiết máy bị mòn do nhà cung cấp thay đổi chất liệu thép. Việc thay thế nhà cung cấp mới là giải pháp gốc rễ.
-> **Nguồn**: [[SOURCE_THINK_Problem_Solving_101]] — Chương 2.
+> **Nguồn**: SOURCE_THINK_PROBLEM_SOLVING_101 — Chương 2.
 
 ### Ứng dụng sư phạm (Pedagogical Application)
 > **Bối cảnh**: Học sinh làm dự án "Hệ thống tưới cây tự động" nhưng cây vẫn bị héo.
@@ -36,7 +37,7 @@ Các kỹ thuật phổ biến trong RCA:
 > - **Gốc rễ**: Ngưỡng tưới (threshold) trong code chưa linh hoạt theo nhiệt độ môi trường.
 
 ## 4. Trích dẫn nguồn (Rule 14)
-- **Nguồn**: [[SOURCE_THINK_Problem_Solving_101]] — Trang 45-60.
+- **Nguồn**: SOURCE_THINK_PROBLEM_SOLVING_101 — Trang 45-60.
 - **Fact-check**: Đã đối chiếu file raw `THINK_Problem_Solving_101.md`. [Rule 14: SUCCESS]
 
 ---

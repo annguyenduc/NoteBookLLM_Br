@@ -5,6 +5,22 @@ description: Kiểm tra định kỳ sức khỏe hệ thống Wiki (Karpathy Li
 Workflow `/lint` thực hiện health-check định kỳ theo Karpathy:
 > *"Look for: contradictions between pages, stale claims, orphan pages with no inbound links, important concepts lacking their own page, missing cross-references."*
 
+---
+
+## ✅ CHECKPOINT (Bắt buộc trước khi bắt đầu)
+
+```yaml
+CHECKPOINT:
+  agent: "@pm"
+  task: "Thực hiện Health Check (Lint) cho Wiki"
+  prerequisites:
+    - file: "3-resources/wiki/index.md"
+      exists: "YES"
+  status: "READY"
+```
+
+---
+
 **Khuyến nghị**: Chạy `/lint` sau mỗi đợt `/ingest` lớn, hoặc ít nhất **1 lần/tuần**.
 
 ---
@@ -15,12 +31,11 @@ Workflow `/lint` thực hiện health-check định kỳ theo Karpathy:
 **Định nghĩa**: Trang Wiki không được bất kỳ trang nào khác liên kết đến.
 
 ```powershell
-# Chạy script lint tự động
-python scripts/brain_lint.py
+/cleanup
 ```
 
-Nếu script chưa tồn tại, @healer thực hiện thủ công:
-- Lấy danh sách tất cả trang từ `3-resources/WIKI_INDEX.md`.
+Nếu lệnh `/cleanup` gặp lỗi, @auditor thực hiện thủ công:
+- Lấy danh sách tất cả trang từ `3-resources/wiki/index.md`.
 - Với mỗi trang, tìm xem có trang nào khác chứa `[[Tên_trang]]` không.
 - Báo cáo danh sách trang có 0 inbound links.
 
@@ -57,7 +72,7 @@ Sau khi hoàn thành, @pm tạo báo cáo theo format:
 - Tổng sức khỏe: [HEALTHY / WARNING / CRITICAL]
 ```
 
-Append vào `3-resources/log.md` và thông báo tóm tắt cho User.
+Append vào `3-resources/wiki/log.md` và thông báo tóm tắt cho User.
 
 ---
 
@@ -75,6 +90,6 @@ Khi **CRITICAL**: Tự động triệu hồi `@healer` để sửa trước khi 
 
 ## 🔗 Liên kết hệ thống
 
-- Script: `scripts/brain_lint.py`
-- Sau Lint: Nếu có orphan pages → `/file-back` để merge insight vào trang hiện có.
-- Mâu thuẫn nghiêm trọng → `@auditor` xử lý theo `AUDITOR_Protocol.md`.
+- Skill vận hành: `wiki-cleanup` (Kích hoạt qua `/cleanup`)
+- Sau Lint: Nếu có orphan pages → cân nhắc merge insight hoặc xóa.
+- Mâu thuẫn nghiêm trọng → `@auditor` xử lý qua `/council`.

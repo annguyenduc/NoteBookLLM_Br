@@ -6,8 +6,12 @@ import json
 import subprocess
 from datetime import datetime
 
-DB_PATH = r"d:\NoteBookLLM_Br\3-resources\wiki\wiki_brain.db"
-RAW_DIR = r"d:\NoteBookLLM_Br\3-resources\raw"
+ROOT_DIR = os.getenv(
+    "NOTEBOOKLLM_ROOT",
+    os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", ".."))
+)
+DB_PATH = os.getenv("WIKI_DB_PATH", os.path.join(ROOT_DIR, "3-resources", "wiki", "wiki_brain.db"))
+RAW_DIR = os.path.join(ROOT_DIR, "3-resources", "raw")
 
 def calculate_hash(file_path):
     sha256_hash = hashlib.sha256()

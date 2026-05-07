@@ -4,7 +4,7 @@ title: "Thực thể: Khoa học Dữ liệu (Data Science)"
 category: "Entity Page"
 prefix: "WIKI"
 tags: ["Data_Science", "Domain", "Overview"]
-source: "[[SOURCE_THINK_Data_Science_for_Business]], [[SOURCE_THINK_Thinking_with_Data]]"
+source: "SOURCE_THINK_DATA_SCIENCE_FOR_BUSINESS, SOURCE_THINK_THINKING_WITH_DATA"
 status: "verified"
 created: "2026-04-29"
 last_updated: "2026-04-29"
@@ -23,7 +23,7 @@ Theo các nguồn tài liệu hiện có, Khoa học Dữ liệu trong kinh doan
 -   **Tư duy Phân tích (Analytic Thinking)**: Khả năng đặt câu hỏi và lập luận. Xem: [[CONCEPT_THINK_CoNVO_Framework]].
 
 ## 3. Các thực thể liên quan (Cross-References)
--   **Công cụ**: [[ENTITY_SQL]], [[ENTITY_Python]] (Sắp tạo).
+-   **Công cụ**: [[ENTITY_SQL]], ENTITY_Python (Sắp tạo).
 -   **Quy trình**: [[CONCEPT_THINK_Data_Mining_Process_CRISP]].
 -   **Đạo đức**: [[CONCEPT_THINK_Data_Ethics_Scoping]].
 

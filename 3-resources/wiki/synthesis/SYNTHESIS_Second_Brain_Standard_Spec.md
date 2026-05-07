@@ -4,8 +4,8 @@ type: synthesis
 tags: ["Standardization", "Schema", "Skills", "Architecture", "DEPRECATED"]
 status: "superseded"
 sources:
-  - "[[SOURCE_META_KARPATHY_LLM_WIKI]]"
-  - "[[SOURCE_META_NASHUS_LLMWIKI]]"
+  - "SOURCE_META_KARPATHY_LLM_WIKI"
+  - "SOURCE_META_NASHUS_LLMWIKI"
   - "[[SOURCE_META_KARPATHY_CLAUDE_SKILLS]]"
   - "[[SOURCE_META_KARPATHY_KNOWLEDGE_BASES]]"
 relationships:
@@ -47,10 +47,10 @@ file_id: "[ID_UNIQUE]"
 title: "[Tên_trang]"
 category: "CONCEPT | ENTITY | SOURCE | SYNTHESIS"
 tags: ["Tag1", "Tag2"]
-source: "[[index]] — [Section/Page]"
+source: "[[CONCEPT_index]] — [Section/Page]"
 relationships:
   - type: "is_a | relates_to | governs"
-    target: "[[index]]"
+    target: "[[CONCEPT_index]]"
 status: "verified | draft | stale"
 ```
 

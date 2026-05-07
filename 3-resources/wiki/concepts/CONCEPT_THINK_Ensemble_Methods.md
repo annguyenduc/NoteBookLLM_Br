@@ -1,4 +1,5 @@
 ---
+file_id: "CONCEPT_THINK_Ensemble_Methods"
 title: "CONCEPT: Phương pháp Học máy Kết hợp (Ensemble Methods)"
 type: concept
 tags: ["Thinking", "Modeling", "Optimization", "DA_Core"]
@@ -22,7 +23,7 @@ Ensemble Methods là kỹ thuật kết hợp nhiều mô hình học máy lại
 ### Ví dụ từ sách (Original)
 > **Bối cảnh**: Cuộc thi Netflix Prize về hệ thống gợi ý phim.
 > **Ứng dụng**: Đội chiến thắng không sử dụng một thuật toán đơn lẻ mà kết hợp hàng trăm mô hình khác nhau (Ensemble). Sự đa dạng của các mô hình giúp bao quát được nhiều khía cạnh khác nhau trong hành vi của người dùng.
-> **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Chương 12.
+> **Nguồn**: SOURCE_THINK_DATA_SCIENCE_FOR_BUSINESS — Chương 12.
 
 ### Ứng dụng sư phạm (Pedagogical Application)
 > **Bối cảnh**: Hội đồng ban giám khảo chấm điểm một cuộc thi Khoa học Kỹ thuật.
@@ -31,7 +32,7 @@ Ensemble Methods là kỹ thuật kết hợp nhiều mô hình học máy lại
 > - **Cơ chế**: Lấy điểm trung bình của 5 người sẽ cho kết quả công bằng và chính xác hơn về năng lực thực sự của học sinh, loại bỏ được các nhận định cực đoan từ cá nhân.
 
 ## 4. Trích dẫn nguồn (Rule 14)
-- **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Trang 310-325.
+- **Nguồn**: SOURCE_THINK_DATA_SCIENCE_FOR_BUSINESS — Trang 310-325.
 - **Fact-check**: Đã đối chiếu file raw `THINK_Data_Science_for_Business.md`. [Rule 14: SUCCESS]
 
 ---

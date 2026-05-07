@@ -7,14 +7,29 @@ Workflow `/file-back` hiện thực hóa nguyên tắc "Query Compounding" của
 
 ---
 
+## ✅ CHECKPOINT (Bắt buộc trước khi bắt đầu)
+
+```yaml
+CHECKPOINT:
+  agent: "@librarian"
+  task: "Thực hiện File-Back insight mới vào Wiki"
+  output_file: "3-resources/wiki/concepts/CONCEPT_[PREFIX]_[Name].md"
+  prerequisites:
+    - file: "3-resources/wiki/index.md"
+      exists: "YES"
+  status: "READY"
+```
+
+---
+
 ## 🎯 Triggers (Khi nào kích hoạt)
 
 Agent **tự động** thực hiện File-Back khi đáp ứng **bất kỳ điều kiện nào** sau đây:
 
 | # | Trigger | Dấu hiệu nhận biết |
 | :--- | :--- | :--- |
-| **T1** | Agent tổng hợp **2+ trang Wiki** để trả lời 1 câu hỏi | Đọc ≥2 file trong `3-resources/wiki/` trong cùng 1 lượt phản hồi |
-| **T2** | Agent tạo ra **bảng so sánh** hoặc **phân tích đối chiếu** mới | Response chứa bảng Markdown với ≥2 cột so sánh và thông tin không có trong wiki đơn lẻ nào |
+| **T1** | Agent tổng hợp **2+ trang Wiki** để trả lời 1 câu hỏi | Đọc ≥2 file trong `3-resources/wiki/concepts/` hoặc `entities/` |
+| **T2** | Agent tạo ra **bảng so sánh** hoặc **phân tích đối chiếu** mới | Response chứa bảng Markdown với ≥2 cột so sánh |
 
 **Không** kích hoạt File-Back khi:
 - Câu trả lời chỉ lặp lại nội dung của 1 trang Wiki duy nhất.
@@ -35,8 +50,8 @@ Trước khi tạo trang mới, Agent **bắt buộc** thực hiện 2 câu hỏ
 - Nếu **Không** (chỉ là tóm tắt lại) → **Dừng. Không File-Back.**
 - Nếu **Có** → Tiếp tục Câu hỏi 2.
 
-**Câu hỏi 2**: *"Insight này đã được lưu trong WIKI_INDEX chưa?"*
-- Đọc **section CONCEPT PAGES** của `3-resources/WIKI_INDEX.md` (chỉ đọc section này, không cần đọc toàn bộ file).
+**Câu hỏi 2**: *"Insight này đã được lưu trong index.md chưa?"*
+- Đọc **section CONCEPT PAGES** của `3-resources/wiki/index.md`.
 - Tìm trang có title/summary tương tự với insight vừa tạo ra.
 - Nếu **đã có** → Cập nhật trang hiện tại (update), không tạo mới.
 - Nếu **chưa có** → Tiếp tục tạo trang mới.
@@ -48,8 +63,8 @@ Trước khi tạo trang mới, Agent **bắt buộc** thực hiện 2 câu hỏ
 Sau khi Judgment xác nhận "insight mới", Agent thực hiện **trong cùng lượt phản hồi**:
 
 ### Bước 1: Đặt tên trang
-- Tên file: `WIKI_[PREFIX]_[Tên_chủ_đề].md` theo chuẩn Rule 7.
-- Ví dụ: `WIKI_ROBOT_Sensor_Comparison.md`, `WIKI_PROMPT_K10_Vector_Exercises.md`
+- Tên file: `CONCEPT_[PREFIX]_[Tên_chủ_đề].md` (hoặc `ENTITY_`) theo chuẩn Rule 7.
+- Ví dụ: `CONCEPT_ROBOT_Sensor_Comparison.md`, `CONCEPT_PROMPT_K10_Vector_Exercises.md`
 
 ### Bước 2: Tạo nội dung với template chuẩn
 ```yaml
@@ -68,17 +83,19 @@ Thêm nội dung phân tích + [[Wikilinks]] đến các trang đã đọc.
 
 ### Bước 3: Ghi file và log
 ```
-write_to_file("3-resources/wiki/WIKI_[PREFIX]_[Tên].md", content)
-Append("3-resources/log.md", "## [YYYY-MM-DD HH:MM] file-back | @[agent] | [Tên trang]")
+write_to_file("3-resources/wiki/concepts/CONCEPT_[PREFIX]_[Tên].md", content)
+Append("3-resources/wiki/log.md", "## [YYYY-MM-DD HH:MM] file-back | @librarian | [Tên trang]")
 ```
 
+**BẮT BUỘC (Rule 17)**: Nội dung file-back phải bao gồm 2 ví dụ đối chiếu (Original + Pedagogical).
+
 ### Bước 4: Thông báo cho User (1 dòng)
-> 📁 **File-Back [T1/T2]**: Đã lưu → [`WIKI_[Tên].md`](file:///d:/NoteBookLLM_Br/3-resources/wiki/WIKI_[Tên].md)
+> 📁 **File-Back [T1/T2]**: Đã lưu → [`CONCEPT_[Tên].md`](file:///d:/NoteBookLLM_Br/3-resources/wiki/concepts/CONCEPT_[Tên].md)
 
 ---
 
 ## 🔗 Liên kết hệ thống
 
 - Triết lý gốc: `llm-wiki.md` dòng 39 — *"Query Compounding"*.
-- Kiểm tra trùng lặp: `3-resources/WIKI_INDEX.md` → section **CONCEPT PAGES** (36 trang, scan nhanh).
-- Dọn dẹp định kỳ: `/lint` — phát hiện mâu thuẫn và trang dư thừa sau File-Back.
+- Kiểm tra trùng lặp: `3-resources/wiki/index.md` → section **CONCEPT PAGES**.
+- Dọn dẹp định kỳ: `/cleanup` — phát hiện mâu thuẫn và trang dư thừa sau File-Back.

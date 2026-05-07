@@ -3,43 +3,6 @@ name: wiki-absorb
 description: "Use when new Wiki Atoms in DRAFT status need to be reconciled against existing knowledge, or when contradictions between sources are detected and require resolution."
 ---
 
-Reconcile and upgrade DRAFT atoms into verified knowledge within the Wiki system.
-
-## Context
-After `wiki-ingest` populates the database with DRAFT atoms, `wiki-absorb` ensures these atoms are correctly integrated without causing contradictions or redundancy.
-
-## Workflow
-
-### Tier 1: Structural Analysis (Automatic)
-1. **Scan**: Retrieve all atoms with `status='DRAFT'`.
-2. **Hash Comparison**: If the hash matches a `VERIFIED/SYNTHESIZED` atom, log as `DUPLICATE` and skip.
-3. **Exact Match**: If the content matches exactly (even if hash differs due to metadata), log as `EXACT` and skip.
-4. **Additive Check**: If no existing atom shares the same title/topic, upgrade to `VERIFIED`.
-
-### Tier 2: Cognitive Reconciliation (LLM-Assisted)
-1. **Contradiction Detection**: Flag atoms with the same title but differing content.
-2. **Reasoning**: Invoke LLM to determine if the new information supplements or replaces the old one.
-3. **Resolution**:
-   - If the new info is superior/updated: Upgrade to `VERIFIED` and mark the old atom as `SUPERSEDES`.
-   - If it's a different perspective: Create a `RELATED_TO` edge.
-
-### Tier 3: Human Governance (Escalation)
-1. **Risk Logging**: For significant contradictions with low confidence sources.
-2. **Decision Recording**: Create `3-resources/wiki/decisions/DECISION_[ID].md`.
-3. **Review Queue**: Set `human_review_flag = 1` for final user approval.
-
-## Execution
-```bash
-python .agent/skills/wiki-absorb/scripts/reconciler.py
-```
-
-## Constraints
-- **Rule 8**: Agents must NEVER set status to `SYNTHESIZED` (Human-only).
-- **Rule 4**: Every DB or file change must be logged in `3-resources/wiki/log.md`.
-- **Traceability**: Always maintain the link to the original `raw/` source.
-description: Use when `DRAFT` atoms in `wiki_brain.db` need deduplication, additive promotion, or conflict escalation before human review, especially after a fresh ingest batch.
----
-
 # Wiki Absorb
 
 ## Overview
@@ -71,3 +34,13 @@ Reconcile `DRAFT` atoms against existing atoms in the database. This is the prom
 - Assuming all same-title atoms should merge automatically.
 - Forgetting that low-confidence conflicts should stay visible for human review.
 - Reporting success without checking whether decision files or queue entries were created.
+
+## Technical Keywords (Audit)
+- **CONTRADICTS**: Edge type for knowledge conflict.
+- **human_review_flag**: Governance gate for manual verification.
+
+## Technical Reference
+- CONTRADICTS: edge type khi 2 atoms mâu thuẫn nhau
+- human_review_flag: set = 1 khi conflict ambiguous
+- ADDITIVE: merge tự động khi không có conflict
+- SYNTHESIZED: chỉ human được set trạng thái này

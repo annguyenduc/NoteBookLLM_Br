@@ -1,4 +1,5 @@
 ---
+file_id: "SYNTHESIS_Wiki_Intelligence_Architecture"
 title: "SYNTHESIS: Wiki Intelligence Architecture (V2.0) [SUPERSEDED]"
 type: synthesis
 tags: ["Architecture", "Skill_Design", "Wiki_Gen", "META", "DEPRECATED"]
@@ -6,7 +7,7 @@ status: "superseded"
 sources:
   - "[[SOURCE_META_WIKI_GEN_CLONE]]"
   - "[[SOURCE_META_LLM_WIKI_V2]]"
-  - "[[SOURCE_META_NASHUS_LLMWIKI]]"
+  - "SOURCE_META_NASHUS_LLMWIKI"
 relationships:
   - type: "superseded_by"
     target: "[[SYNTHESIS_MASTER_Second_Brain_Blueprint]]"
@@ -32,7 +33,7 @@ Hệ thống Wiki Intelligence 2.0 được thiết kế như một **Cơ thể 
 
 ### C. Module Intelligence (Truy vấn & Phân tích)
 - **Chức năng**: Trả lời câu hỏi và phát hiện lỗ hổng tri thức.
-- **Công nghệ**: [[CONCEPT_META_Wiki_Query_Patterns]] và [[CONCEPT_META_Wiki_Gap_Analysis]].
+- **Công nghệ**: CONCEPT_META_Wiki_Query_Patterns và [[CONCEPT_META_Wiki_Gap_Analysis]].
 - **Hành động**: `/wiki query` và `/wiki query --gap`.
 - **Phân biệt với Mining**: Khác với Breakdown (chia tách dữ liệu), Module này tập trung vào **Logic** và **Sự nhất quán** (tìm điểm hụt trong lập luận).
 

@@ -7,7 +7,7 @@ status: "verified"
 created: "2026-05-02"
 last_updated: "2026-05-03"
 sources:
-  - "[[SOURCE_AIMET_Agentic_AI_Roadmap_2026]]"
+  - "[[SOURCE_AIMET_AGENTIC_ROADMAP_2026]]"
 ---
 
 ## ## For future Claude
@@ -35,14 +35,14 @@ Trang này giải thích về LCEL (LangChain Expression Language) - một ngôn
 ### Ví dụ từ sách (Original)
 > **Bối cảnh**: Xây dựng một RAG chain cơ bản.
 > **Ứng dụng**: Sử dụng cú pháp `|` (pipe) để nối: `Prompt | Model | StrOutputParser`. Đây là cách viết sạch và dễ bảo trì hơn so với việc gọi hàm lồng nhau.
-> **Nguồn**: [[SOURCE_AIMET_Agentic_AI_Roadmap_2026]] — Section 5.1
+> **Nguồn**: [[SOURCE_AIMET_AGENTIC_ROADMAP_2026]] — Section 5.1
 
 ### Ứng dụng sư phạm (Pedagogical Application)
 > **Bối cảnh**: Dạy học sinh về "Luồng dữ liệu" (Data Flow) trong STEAM.
 > **Ứng dụng**: Ví LCEL như các khối Lego có các đầu nối tiêu chuẩn. Học sinh chỉ cần lắp ráp: "Khối Lắng nghe | Khối Suy nghĩ | Khối Hành động". Việc thay đổi "Khối Suy nghĩ" (từ GPT-4 sang Claude) không làm hỏng các khối còn lại. Đây là tư duy thiết kế hệ thống (Systems Thinking).
 
 ---
-**Nguồn**: [[SOURCE_AIMET_Agentic_AI_Roadmap_2026]] — Section 4.1
+**Nguồn**: [[SOURCE_AIMET_AGENTIC_ROADMAP_2026]] — Section 4.1
 
 
 ## 4F Reflection

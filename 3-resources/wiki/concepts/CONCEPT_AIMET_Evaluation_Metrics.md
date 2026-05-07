@@ -8,8 +8,8 @@ status: "verified"
 created: "2026-05-02"
 last_updated: "2026-05-03"
 sources:
-  - "[[SOURCE_AIMET_Agentic_AI_Roadmap_2026]]"
-  - "[[QUERY_Production_Guardrails_Research]]"
+  - "[[SOURCE_AIMET_AGENTIC_ROADMAP_2026]]"
+  - "QUERY_Production_Guardrails_Research"
 ---
 
 ## ## For future Claude
@@ -59,13 +59,13 @@ Trang này định nghĩa các chỉ số đo lường (metrics) chuyên biệt 
 
 ---
 **Liên kết**:
-- Đối soát với: [[SOURCE_AIMET_Agentic_AI_Roadmap_2026]]
+- Đối soát với: [[SOURCE_AIMET_AGENTIC_ROADMAP_2026]]
 - Thực thi qua: [[CONCEPT_AIMET_Production_Guardrails]]
 
 ---
 ## ## Source Tracing
-- **Nguồn**: [[QUERY_Production_Guardrails_Research]] — Section 2: Metrics.
-- **Nguồn**: [[SOURCE_AIMET_Agentic_AI_Roadmap_2026]] — Section 5: Evaluation.
+- **Nguồn**: QUERY_Production_Guardrails_Research — Section 2: Metrics.
+- **Nguồn**: [[SOURCE_AIMET_AGENTIC_ROADMAP_2026]] — Section 5: Evaluation.
 
 ## ## History / Revisions
 - **2026-05-03**: [@engineer] Pressure Chain Healing. Bổ sung Rule 17, 20 và chuẩn hóa metadata.

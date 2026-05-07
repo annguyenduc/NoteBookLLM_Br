@@ -8,7 +8,7 @@ status: "verified"
 created: "2026-05-02"
 last_updated: "2026-05-03"
 sources:
-  - "[[SOURCE_DE_Fundamentals_of_Data_Engineering]]"
+  - "SOURCE_DE_FUNDAMENTALS_OF_DATA_ENGINEERING"
 ---
 
 ## ## For future Claude
@@ -28,10 +28,10 @@ Trang này định nghĩa Vòng đời Kỹ thuật Dữ liệu (Data Engineerin
 
 ## ## Ví dụ đối chiếu (Rule 17)
 - **Ví dụ thực tế (Original)**: Quy trình từ lúc khách hàng click mua hàng trên Website (Generation) -> Dữ liệu đẩy vào Kafka (Ingestion) -> Lưu tại S3 (Storage) -> Chạy dbt để tính doanh thu (Transformation) -> Dashboard Tableau (Serving).
-- **Ẩn dụ sư phạm (Pedagogical)**: Giống như hệ thống cung cấp nước sạch. Nước từ sông ngòi (Generation) -> Trạm bơm hút nước (Ingestion) -> Bể chứa (Storage) -> Nhà máy lọc nước (Transformation) -> Vòi nước tại nhà dân (Serving). Nếu bất kỳ giai đoạn nào bị lỗi, người dân sẽ không có nước sạch để dùng.
+- **Ẩn dụ sư phạm (Pedagogical)**: [Phóng tác] Giống như hệ thống cung cấp nước sạch. Nước từ sông ngòi (Generation) -> Trạm bơm hút nước (Ingestion) -> Bể chứa (Storage) -> Nhà máy lọc nước (Transformation) -> Vòi nước tại nhà dân (Serving). Nếu bất kỳ giai đoạn nào bị lỗi, người dân sẽ không có nước sạch để dùng.
 
 ## ## Source Tracing
-- **Nguồn**: [[SOURCE_DE_Fundamentals_of_Data_Engineering]] — Chapter 2.
+- **Nguồn**: SOURCE_DE_FUNDAMENTALS_OF_DATA_ENGINEERING — Chapter 2.
 
 ## ## History / Revisions
 - **2026-05-03**: [@engineer] Pressure Chain Healing. Bổ sung Rule 17, 20 và chuẩn hóa metadata.

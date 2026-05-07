@@ -1,4 +1,5 @@
 ---
+file_id: "CONCEPT_THINK_Data_Analytic_Thinking"
 title: "CONCEPT: Tư duy Phân tích Dữ liệu (Data-Analytic Thinking)"
 type: concept
 tags: ["Thinking", "Strategy", "DA_Core", "80_20"]
@@ -21,7 +22,7 @@ Tư duy Phân tích Dữ liệu là khả năng tiếp cận một vấn đề k
 ### Ví dụ từ sách (Original)
 > **Bối cảnh**: Siêu thị Wal-Mart trước cơn bão Hurricane Frances.
 > **Ứng dụng**: Thay vì chỉ đoán khách hàng sẽ mua thêm nước đóng chai, Wal-Mart phân tích lịch sử giao dịch từ các cơn bão trước đó. Kết quả bất ngờ: Doanh số bia và bánh Pop-Tarts dâu tây tăng vọt. Họ đã chuẩn bị hàng dựa trên "bằng chứng dữ liệu" thay vì "suy luận logic thông thường".
-> **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Page 26-27.
+> **Nguồn**: SOURCE_THINK_DATA_SCIENCE_FOR_BUSINESS — Page 26-27.
 
 ### Ứng dụng sư phạm (Pedagogical Application)
 > **Bối cảnh**: Một trung tâm EdTech muốn giảm tỷ lệ học viên bỏ học (Churn).
@@ -29,7 +30,7 @@ Tư duy Phân tích Dữ liệu là khả năng tiếp cận một vấn đề k
 > **Tư duy DA**: Phân rã bài toán "Học viên bỏ học" thành bài toán "Dự báo xác suất (Probability Estimation)" dựa trên hành vi số. Giáo viên sẽ nhận được danh sách "Cảnh báo đỏ" để can thiệp kịp thời.
 
 ## 4. Trích dẫn nguồn (Rule 14)
-- **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Chapter 1: Introduction.
+- **Nguồn**: SOURCE_THINK_DATA_SCIENCE_FOR_BUSINESS — Chapter 1: Introduction.
 - **Fact-check**: Đã mở file raw và xác nhận ví dụ Hurricane Frances tại Page 26. [Rule 14: SUCCESS]
 
 ---

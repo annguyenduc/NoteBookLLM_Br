@@ -180,8 +180,8 @@ def convert_to_md(docx_path, output_dir, assets_dir, prefix=""):
 def main():
     parser = argparse.ArgumentParser(description="LMS Docx to Markdown Engine v15 (Quantum Flatness)")
     parser.add_argument("--source", required=True, help="Source directory containing .docx files")
-    parser.add_argument("--output", default=r"d:\NoteBookLLM_Br\brain\raw", help="Output directory for MD files")
-    parser.add_argument("--assets", default=r"d:\NoteBookLLM_Br\brain\assets", help="Directory for extracted images")
+    parser.add_argument("--output", default=r"d:\NoteBookLLM_Br\00_Inbox", help="Output directory for MD files")
+    parser.add_argument("--assets", default=r"d:\NoteBookLLM_Br\3-resources\raw_assets", help="Directory for extracted images")
     parser.add_argument("--prefix", default="LMS_", help="Prefix for output filenames")
     
     args = parser.parse_args()

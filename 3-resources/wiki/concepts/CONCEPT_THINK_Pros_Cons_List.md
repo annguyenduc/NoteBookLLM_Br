@@ -1,4 +1,5 @@
 ---
+file_id: "CONCEPT_THINK_Pros_Cons_List"
 title: "CONCEPT: Danh sách Ưu và Nhược điểm (Pros & Cons List)"
 type: concept
 tags: ["Thinking", "Decision_Making", "Logic", "DA_Core"]
@@ -22,7 +23,7 @@ last_updated: "2026-05-01"
 ### Ví dụ từ sách (Original)
 > **Bối cảnh**: Quyết định có nên mua một căn nhà mới hay không.
 > **Ứng dụng**: Liệt kê Pros (Gần chỗ làm, giá tốt) và Cons (Nhà cũ, cần sửa chữa nhiều). Bằng cách gán trọng số cho "Gần chỗ làm" cao hơn "Cần sửa chữa", người mua có thể đưa ra quyết định dựa trên ưu tiên cá nhân.
-> **Nguồn**: [[SOURCE_THINK_Problem_Solving_101]] — Chương 4.
+> **Nguồn**: SOURCE_THINK_PROBLEM_SOLVING_101 — Chương 4.
 
 ### Ứng dụng sư phạm (Pedagogical Application)
 > **Bối cảnh**: Học sinh lựa chọn nền tảng để làm website dự án (Wordpress vs Google Sites).
@@ -32,7 +33,7 @@ last_updated: "2026-05-01"
 > - **Kết luận**: Học sinh gán trọng số 5 cho "Dễ dùng" vì chỉ có 2 ngày để hoàn thành, dẫn đến chọn Google Sites.
 
 ## 4. Trích dẫn nguồn (Rule 14)
-- **Nguồn**: [[SOURCE_THINK_Problem_Solving_101]] — Trang 90-105.
+- **Nguồn**: SOURCE_THINK_PROBLEM_SOLVING_101 — Trang 90-105.
 - **Fact-check**: Đã đối chiếu file raw `THINK_Problem_Solving_101.md`. [Rule 14: SUCCESS]
 
 ---

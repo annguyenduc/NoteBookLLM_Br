@@ -1,4 +1,5 @@
 ---
+file_id: "CONCEPT_THINK_Entropy_Information_Gain"
 title: "CONCEPT: Entropy và Độ lợi Thông tin (Information Gain)"
 type: concept
 tags: ["Thinking", "Data_Mining", "Decision_Tree", "DA_Core"]
@@ -22,7 +23,7 @@ last_updated: "2026-05-01"
 ### Ví dụ từ sách (Original)
 > **Bối cảnh**: Phân loại khách hàng rời bỏ (Churn) dựa trên "Loại hợp đồng" và "Tuổi".
 > **Ứng dụng**: Nếu chia theo "Loại hợp đồng" mà ta thu được các nhóm khách hàng (vd: Hợp đồng 1 năm) đều không rời đi, thì Information Gain là rất cao. Cây quyết định sẽ ưu tiên chia theo thuộc tính này trước.
-> **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Chương 3.
+> **Nguồn**: SOURCE_THINK_DATA_SCIENCE_FOR_BUSINESS — Chương 3.
 
 ### Ứng dụng sư phạm (Pedagogical Application)
 > **Bối cảnh**: Trò chơi **"20 Câu hỏi"** để đoán một con vật.
@@ -32,7 +33,7 @@ last_updated: "2026-05-01"
 > - **Giải thích**: Câu hỏi "Có vú không" mang lại Information Gain cực lớn vì nó làm giảm độ hỗn loạn (số lượng con vật khả thi) một cách nhanh chóng nhất.
 
 ## 4. Trích dẫn nguồn (Rule 14)
-- **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Trang 45-60.
+- **Nguồn**: SOURCE_THINK_DATA_SCIENCE_FOR_BUSINESS — Trang 45-60.
 - **Fact-check**: Đã đối chiếu file raw `THINK_Data_Science_for_Business.md`. [Rule 14: SUCCESS]
 
 ---

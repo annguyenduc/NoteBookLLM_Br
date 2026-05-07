@@ -5,23 +5,25 @@
 
 ---
 
-## 🛡️ 5 HARD STOP RULES (Không thể vi phạm)
+## 🛡️ BỘ QUY TẮC CỐT LÕI (Hard Stop Rules)
 
-### R1 — RAW IS IMMUTABLE
-`3-resources/raw/` là read-only với mọi agent và tool.
+### R1 — RAW IS IMMUTABLE (Append-only)
+`3-resources/raw_*/` là khu vực bất biến.
+- **Phạm vi:** `raw_sources/`, `raw_ingest/`, `raw_assets/`.
+- **Định nghĩa:** Chỉ được thêm mới qua quy trình kiểm định. KHÔNG sửa đổi, KHÔNG xóa bỏ.
+- **Quyền hạn:** `@librarian` (Write/Promote), `@others` (Read-only).
 **Vi phạm → DỪNG ngay, ghi incident vào `3-resources/wiki/log.md`.**
 
 ### R2 — NO FAKE REPORTS
 Tuyệt đối KHÔNG báo "Đã tạo/sửa file" nếu chưa có tool call thành công.
 **Vi phạm → Tự phê bình, ghi lỗi vào `CONTINUITY.md`, thông báo user.**
 
-### R3 — SOURCE TRACING (Chứng cứ thép)
 Mọi claim trong `3-resources/wiki/` phải ghi:
-`Nguồn: [tên file trong raw/] — [section cụ thể]`
+`Nguồn: [tên file trong raw_sources/] — [section cụ thể]`
 Không tìm thấy nguồn → ghi `[KHÔNG TÌM THẤY NGUỒN]`. KHÔNG tự điền thay thế.
 
 ### R4 — LOG EVERY WRITE
-Mọi lần ghi file → append vào `3-resources/wiki/log.md`:
+Mọi lần ghi file (create/modify) vào Wiki BẮT BUỘC phải append vào `3-resources/wiki/log.md`:
 ```
 ## [YYYY-MM-DD HH:MM] <type> | <agent> | <mô tả>
 - File: [đường dẫn]
@@ -29,7 +31,7 @@ Mọi lần ghi file → append vào `3-resources/wiki/log.md`:
 ```
 Encoding bắt buộc: **UTF-8 no BOM**. PowerShell: luôn thêm `-Encoding UTF8`.
 
-### R5 — PREREQUISITE GATE
+### R5 — PREREQUISITE GATE (Pedagogical Pipeline)
 - `@designer` chỉ bắt đầu khi `2-areas/Profiles/Trainer_Profile_[id].md` tồn tại.
 - `@engineer` chỉ bắt đầu khi `1-projects/[Project]/Learning_Design_[module].md` tồn tại.
 - File chưa có → DỪNG, báo `@pm`, không tự tiếp tục.
@@ -59,6 +61,18 @@ Mọi hành động thu thập dữ liệu web BẮT BUỘC phải tuân thủ q
 - `rebuild.py` SKIP các file không có frontmatter hợp lệ.
 - Stub files trong `00_Inbox/` được xử lý hàng tuần, KHÔNG index ngay lập tức.
 
+### R12 — VIETNAMESE ENCODING SAFETY
+- Mọi file tiếng Việt phải đọc/ghi bằng UTF-8 no BOM.
+- Khi ghi file bằng PowerShell: luôn dùng `-Encoding UTF8`.
+- Sau khi sửa file tiếng Việt, phải kiểm tra và đảm bảo không có ký tự lỗi phổ biến (``, `Ã`, `Ä`, `â€™`, `â€œ`, `â€`, `á»`, `áº`).
+- Nếu phát hiện lỗi font/ngữ nghĩa: DỪNG, khôi phục từ phiên bản gần nhất, rồi sửa thủ công nội dung.
+
+### R13 — ATOM STATUS LIFECYCLE
+- Mọi atom tạo mới BẮT BUỘC phải có `status = DRAFT`.
+- **TUYỆT ĐỐI KHÔNG** tự ý set status = VERIFIED/SYNTHESIZED khi tạo atom.
+- Chỉ `ingest.py` và `reconciler.py` được quyền nâng cấp lên **VERIFIED**.
+- Chỉ **HUMAN** được quyền thiết lập trạng thái **SYNTHESIZED**.
+
 ---
 
 ## 🏗️ QUY ƯỚC WIKI (WIKI CONVENTIONS)
@@ -79,15 +93,36 @@ Mọi trang Concept phải tuân thủ cấu trúc 4 tầng:
 
 ## ⚡ LỆNH VẬN HÀNH (Wiki 2.0)
 
-| Lệnh | Agent | Làm gì |
-|---|---|---|
-| `/ingest [file]` | @scout | Nạp raw -> atomic atoms + sơ khởi liên kết |
-| `/absorb` | @librarian | Hợp nhất atoms vào synthesis |
-| `/query [query]` | @librarian | Truy vấn tri thức (Hybrid Search) |
-| `/breakdown` | @scout | Phát hiện lỗ hổng tri thức |
-| `/cleanup` | @auditor | Dọn dẹp & Audit chất lượng |
-| `/status` | @pm | Báo cáo sức khỏe Wiki |
-| `/rebuild` | @engineer | Đồng bộ Index & Backlinks |
+| Lệnh | Agent | Làm gì | Skill trỏ tới |
+|---|---|---|---|
+| `/ingest [file]` | @scout | Nạp raw -> atomic atoms + sơ khởi liên kết | `wiki-ingest` |
+| `/absorb` | @librarian | Hợp nhất atoms vào synthesis (Reconciliation) | `wiki-absorb` |
+| `/query [query]` | @librarian | Truy vấn tri thức (Hybrid Search + Graph) | `wiki-query` |
+| `/breakdown` | @scout | Phát hiện lỗ hổng tri thức (Noun Test) | `wiki-breakdown` |
+| `/cleanup` | @auditor | Dọn dẹp & Audit chất lượng (8 Categories) | `wiki-cleanup` |
+| `/status` | @pm | Báo cáo sức khỏe & Link Density Dashboard | `wiki-status` |
+| `/rebuild` | @engineer | Đồng bộ Index, Backlinks & Infrastructure | `wiki-rebuild` |
+
+---
+
+## 📋 GIAO THỨC BỔ TRỢ
+
+### 1. CHECKPOINT (Khai báo trước mọi task)
+Mọi Agent phải khai báo trạng thái trước khi thực thi task phức tạp:
+```yaml
+CHECKPOINT:
+  agent: "@[tên]"
+  task: "[mô tả cụ thể]"
+  output_file: "[đường dẫn]"
+  prerequisites_ok: "YES | NO — [lý do nếu NO]"
+  status: "READY | BLOCKED"
+```
+
+
+### 3. RULE: Sync direction
+- **DB → File**: CHỈ sync status `SYNTHESIZED` (sau khi human confirm).
+- **File → DB**: `rebuild.py` chạy hàng đêm để cập nhật Index.
+- **DEPRECATED**: Chỉ tồn tại trong DB. KHÔNG sync ngược về file vật lý.
 
 ---
 *Full agent registry + folder map → `AGENTS.md`*

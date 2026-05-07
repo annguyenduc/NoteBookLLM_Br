@@ -2,14 +2,14 @@
 
 ## 🔝 Top các Concept quan trọng (Inbound Links)
 - [[ENTITY_SQL]]: 41 links
-- [[ENTITY_Python]]: 35 links
+- ENTITY_Python: 35 links
 - [[ENTITY_EXCEL]]: 16 links
 - [[ENTITY_PANDAS]]: 14 links
 - [[ENTITY_Data_Science]]: 8 links
-- [[CONCEPT_META_Wiki_Signals]]: 2 links
+- CONCEPT_META_Wiki_Signals: 2 links
 - [[CONCEPT_META_Wiki_Gap_Analysis]]: 2 links
 - [[CONCEPT_SQL_Window_Functions]]: 1 links
-- [[CONCEPT_META_Wiki_Query_Patterns]]: 1 links
+- CONCEPT_META_Wiki_Query_Patterns: 1 links
 - [[CONCEPT_META_Skill_Modularity]]: 1 links
 
 ## 📋 Chi tiết liên kết mới

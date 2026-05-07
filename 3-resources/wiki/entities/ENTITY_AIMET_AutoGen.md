@@ -1,4 +1,5 @@
 ---
+file_id: "ENTITY_AIMET_AutoGen"
 title: "ENTITY: AutoGen (Conversational Multi-Agent Framework)"
 type: entity
 tags: ["Agentic AI", "Framework", "Microsoft", "Multi-Agent", "AIMET"]
@@ -27,7 +28,7 @@ relationships:
 - So với **LangGraph**: AutoGen linh hoạt hơn cho các task không định hình trước, nhưng LangGraph kiểm soát tốt hơn cho production workflows.
 
 ---
-**Nguồn**: [[SOURCE_AIMET_Agentic_AI_Roadmap_2026]] — Section 4
+**Nguồn**: [[SOURCE_AIMET_AGENTIC_ROADMAP_2026]] — Section 4
 
 
 ## 4F Reflection

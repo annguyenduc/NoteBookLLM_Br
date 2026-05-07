@@ -3,6 +3,7 @@ import re
 import sqlite3
 import sys
 import argparse
+import json
 from datetime import datetime, timedelta
 
 # Fix encoding for Windows terminal
@@ -12,9 +13,12 @@ if sys.stdout.encoding != 'utf-8':
     except:
         pass
 
-ROOT_DIR = r"d:\NoteBookLLM_Br"
-WIKI_DIR = os.path.join(ROOT_DIR, "3-resources", "wiki")
-DB_PATH  = os.path.join(WIKI_DIR, "wiki_brain.db")
+ROOT_DIR = os.getenv(
+    "NOTEBOOKLLM_ROOT",
+    os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", ".."))
+)
+WIKI_DIR = os.getenv("WIKI_ROOT_PATH", os.path.join(ROOT_DIR, "3-resources", "wiki"))
+DB_PATH  = os.getenv("WIKI_DB_PATH", os.path.join(WIKI_DIR, "wiki_brain.db"))
 
 WIKI_LINK_RE = re.compile(r"\[\[(.*?)\]\]")
 
@@ -164,9 +168,20 @@ def report_issues(issues, stats, fix=False):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Wiki Cleanup Lint Engine")
     parser.add_argument("--fix", action="store_true", help="Auto-fix issues")
+    parser.add_argument("--json", action="store_true", help="Output lint summary as JSON")
     args = parser.parse_args()
 
-    print(f"Starting wiki-cleanup linting (fix={args.fix}) at {datetime.now()}...")
     all_issues, stats = lint_wiki(fix=args.fix)
-    report_issues(all_issues, stats, fix=args.fix)
-    print("Linting completed.")
+    if args.json:
+        broken_links = sum(1 for i in all_issues if i.get("type") == "BROKEN_LINK")
+        payload = {
+            "scanned": stats["scanned"],
+            "fixed": stats["fixed"],
+            "pending": len(all_issues),
+            "broken_links": broken_links,
+        }
+        print(json.dumps(payload, ensure_ascii=False))
+    else:
+        print(f"Starting wiki-cleanup linting (fix={args.fix}) at {datetime.now()}...")
+        report_issues(all_issues, stats, fix=args.fix)
+        print("Linting completed.")

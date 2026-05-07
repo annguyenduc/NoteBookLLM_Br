@@ -20,7 +20,7 @@ Streamlit là một thư viện Python mã nguồn mở giúp tạo các ứng d
 
 ## Ví dụ đối chiếu (Rule 17)
 - **Ví dụ thực tế (Original)**: Xây dựng một thanh Side-bar để hiển thị "Thought process" của Agent (vd: Log từ LangGraph) giúp người dùng hiểu tại sao Agent đưa ra câu trả lời đó.
-- **Ẩn dụ sư phạm (Pedagogical)**: Giống như một **Kịch bản sân khấu tự viết (Instant Stage)**: Bạn chỉ cần tập trung vào lời thoại và diễn xuất (Logic), còn sân khấu, ánh sáng và đạo cụ (UI) sẽ tự động xuất hiện theo ý muốn mà không cần thuê đội ngũ kỹ thuật phức tạp.
+- **Ẩn dụ sư phạm (Pedagogical)**: [Phóng tác] Giống như một **Kịch bản sân khấu tự viết (Instant Stage)**: Bạn chỉ cần tập trung vào lời thoại và diễn xuất (Logic), còn sân khấu, ánh sáng và đạo cụ (UI) sẽ tự động xuất hiện theo ý muốn mà không cần thuê đội ngũ kỹ thuật phức tạp.
 
 ## 4F Reflection
 - **Facts**: Streamlit thực thi lại toàn bộ script mỗi khi có tương tác, điều này đòi hỏi kỹ thuật Caching (`@st.cache_resource`) để tối ưu hiệu suất.

@@ -1,5 +1,6 @@
----
-source_id: SOURCE_coursera-AI-essential-Stay_up_to_date_with_AI
+﻿---
+file_id: "SOURCE_COURSERA-AI-essential-Stay_up_to_date_with_AI"
+SOURCE_ID: SOURCE_COURSERA-AI-essential-Stay_up_to_date_with_AI
 title: "ACAD AI Essentials: Stay up to date with AI"
 author: "Google / Coursera"
 category: ACAD
@@ -11,25 +12,25 @@ last_updated: "2026-04-29"
 
 # ACAD AI Essential Stay Update
 
-## 📝 1. Phân tích Ingest (Analysis - Step 1)
-- **Thực thể & Khái niệm then chốt:** AI trends, Ethical AI, Prompt Engineering, Continuous learning.
-- **Kết nối Wiki:** Cập nhật xu hướng cho nhóm [[index]]/AI.
-- **Điểm khác biệt:** Tập trung vào các kỹ năng để "Sống sót" trong kỷ nguyên AI.
-- **Đề xuất cấu trúc:** Tạo trang [[CONCEPT_AI_Prompt_Engineering_Basics]].
+## ðŸ“ 1. PhÃ¢n tÃ­ch Ingest (Analysis - Step 1)
+- **Thá»±c thá»ƒ & KhÃ¡i niá»‡m then chá»‘t:** AI trends, Ethical AI, Prompt Engineering, Continuous learning.
+- **Káº¿t ná»‘i Wiki:** Cáº­p nháº­t xu hÆ°á»›ng cho nhÃ³m [[CONCEPT_index]]/AI.
+- **Äiá»ƒm khÃ¡c biá»‡t:** Táº­p trung vÃ o cÃ¡c ká»¹ nÄƒng Ä‘á»ƒ "Sá»‘ng sÃ³t" trong ká»· nguyÃªn AI.
+- **Äá» xuáº¥t cáº¥u trÃºc:** Táº¡o trang [[CONCEPT_AI_Prompt_Engineering_Basics]].
 
-## 📖 2. Tổng quan nguồn (Overview - Step 2)
-Hướng dẫn cách theo dõi và cập nhật các tiến bộ trong lĩnh vực trí tuệ nhân tạo, giúp DA không bị lạc hậu trước sự thay đổi chóng mặt của công nghệ.
+## ðŸ“– 2. Tá»•ng quan nguá»“n (Overview - Step 2)
+HÆ°á»›ng dáº«n cÃ¡ch theo dÃµi vÃ  cáº­p nháº­t cÃ¡c tiáº¿n bá»™ trong lÄ©nh vá»±c trÃ­ tuá»‡ nhÃ¢n táº¡o, giÃºp DA khÃ´ng bá»‹ láº¡c háº­u trÆ°á»›c sá»± thay Ä‘á»•i chÃ³ng máº·t cá»§a cÃ´ng nghá»‡.
 
-## 🚀 3. Các Concept đã trích xuất (Rule 14 & 17)
-- [[CONCEPT_AI_Knowledge_Cutoff]] | **Giới hạn tri thức**.
-- [[CONCEPT_THINK_Data_Ethics_Scoping]] | **Đạo đức dữ liệu**.
-- [[CONCEPT_THINK_Problem_Solving_Process]] | **Giải quyết vấn đề với AI**.
+## ðŸš€ 3. CÃ¡c Concept Ä‘Ã£ trÃ­ch xuáº¥t (Rule 14 & 17)
+- [[CONCEPT_AI_Knowledge_Cutoff]] | **Giá»›i háº¡n tri thá»©c**.
+- [[CONCEPT_THINK_Data_Ethics_Scoping]] | **Äáº¡o Ä‘á»©c dá»¯ liá»‡u**.
+- [[CONCEPT_THINK_Problem_Solving_Process]] | **Giáº£i quyáº¿t váº¥n Ä‘á» vá»›i AI**.
 
-## 🔍 4. Review Items (Dành cho Human)
-- [ ] Thiết lập danh sách các nguồn tin AI uy tín để theo dõi hàng tuần.
+## ðŸ” 4. Review Items (DÃ nh cho Human)
+- [ ] Thiáº¿t láº­p danh sÃ¡ch cÃ¡c nguá»“n tin AI uy tÃ­n Ä‘á»ƒ theo dÃµi hÃ ng tuáº§n.
 
 --- 
-**Nguồn thô:** `coursera-AI-essential-Stay_up_to_date_with_AI`
+**Nguá»“n thÃ´:** `coursera-AI-essential-Stay_up_to_date_with_AI`
 **Deep Research Query:** `How to stay up to date with AI Google essentials`
 
 

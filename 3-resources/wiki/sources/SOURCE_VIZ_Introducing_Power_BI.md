@@ -1,5 +1,6 @@
----
-source_id: SOURCE_VIZ_Introducing_Power_BI
+﻿---
+file_id: "SOURCE_VIZ_INTRODUCING_POWER_BI"
+SOURCE_ID: SOURCE_VIZ_INTRODUCING_POWER_BI
 title: "TOOL Introducing Power BI"
 author: "Microsoft Press (Alberto Ferrari & Marco Russo)"
 category: TOOL
@@ -11,18 +12,18 @@ last_updated: "2026-05-03"
 
 # TOOL Introducing Power BI
 
-Trang nguồn này chứa tóm tắt và danh mục các khái niệm được trích xuất từ tài liệu "Introducing Power BI" của Microsoft Press.
+Trang nguá»“n nÃ y chá»©a tÃ³m táº¯t vÃ  danh má»¥c cÃ¡c khÃ¡i niá»‡m Ä‘Æ°á»£c trÃ­ch xuáº¥t tá»« tÃ i liá»‡u "Introducing Power BI" cá»§a Microsoft Press.
 
-##  Tổng quan
-Tài liệu nhập môn về hệ sinh thái Power BI (Desktop, Service, Mobile). Tập trung vào quy trình kết nối dữ liệu, mô hình hóa cơ bản và sử dụng ngôn ngữ DAX để tạo các chỉ số phân tích.
+##  Tá»•ng quan
+TÃ i liá»‡u nháº­p mÃ´n vá» há»‡ sinh thÃ¡i Power BI (Desktop, Service, Mobile). Táº­p trung vÃ o quy trÃ¬nh káº¿t ná»‘i dá»¯ liá»‡u, mÃ´ hÃ¬nh hÃ³a cÆ¡ báº£n vÃ  sá»­ dá»¥ng ngÃ´n ngá»¯ DAX Ä‘á»ƒ táº¡o cÃ¡c chá»‰ sá»‘ phÃ¢n tÃ­ch.
 
-##  Các Concept đã trích xuất (Rule 14 & 17)
-- [[CONCEPT_VIZ_PowerBI_Basics]] | **Cơ bản về Power BI** - Các bước nhập môn.
-- [[CONCEPT_VIZ_PowerBI_vs_Tableau]] | **So sánh Power BI và Tableau**
-- [[CONCEPT_VIZ_PowerBI_DAX_Basics]] | **DAX cơ bản**
+##  CÃ¡c Concept Ä‘Ã£ trÃ­ch xuáº¥t (Rule 14 & 17)
+- [[CONCEPT_VIZ_PowerBI_Basics]] | **CÆ¡ báº£n vá» Power BI** - CÃ¡c bÆ°á»›c nháº­p mÃ´n.
+- CONCEPT_VIZ_PowerBI_vs_Tableau | **So sÃ¡nh Power BI vÃ  Tableau**
+- [[CONCEPT_VIZ_PowerBI_DAX_Basics]] | **DAX cÆ¡ báº£n**
 
 --- 
-Nguồn thô: `VIZ_Introducing_Power_BI`
+Nguá»“n thÃ´: `VIZ_Introducing_Power_BI`
 
 ## 4F Reflection
 - **Facts**: 

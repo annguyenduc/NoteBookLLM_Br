@@ -1,550 +1,637 @@
-# 📚 LLM WIKI INDEX
+# Wiki Index
+Cập nhật lần cuối: 2026-05-07 06:38:02
 
-> **Auto-generated Catalog of Wiki Knowledge**
-> Bản đồ tri thức tự động nén cho Swarm Agent 4.0.
+## Thống kê nhanh
+- Tổng số Atoms: 623
 
-## 💎 MASTER PAGES (18 file)
-*Nơi bồi đắp tri thức nén, đa chiều.*
+---
 
-- [[SYNTHESIS_PYTHON_Data_Mastery]] | **[[ENTITY_Python|Python]] Mastery: Xử lý & Phân tích dữ liệu với [[ENTITY_PANDAS|pandas]]**
-  > Bản tổng hợp này hệ thống hóa các kỹ năng sử dụng ngôn ngữ lập trình Python và hệ sinh thái thư viện khoa học (NumPy, pa...
-- [[SYNTHESIS_AIMET_Agentic_AI_Interview_Practice]] | **Agentic AI Interview Practice (Q&A Bank)**
-  > Tập hợp các câu hỏi phỏng vấn thực tế và kịch bản giải quyết vấn đề trích xuất từ lộ trình AIMET 2026.
-- [[SYNTHESIS_Wiki_Audit_20260501]] | **Báo cáo Audit Lỗ hổng Tri thức Wiki 2026-05-01 [INCORPORATED]**
-  > target: "[[CONCEPT_META_Assessment_Integration]]"
-- [[CASE_STUDY_Data_Pipeline_Optimization]] | **Case Study: Tối ưu hóa đường ống dữ liệu (Data Pipeline Optimization)**
-  > Phân tích và tối ưu hóa các quy trình ETL/ELT để giảm thời gian xử lý và đảm bảo tính toàn vẹn của dữ liệu trong Data Wa...
-- [[CASE_STUDY_Teaching_Efficacy]] | **Case Study: Đánh giá hiệu quả giảng dạy (Teaching Efficacy)**
-  > Sử dụng Thống kê và Trực quan hóa dữ liệu để đánh giá tác động của các phương pháp dạy học mới đối với kết quả của học s...
-- [[SYNTHESIS_EXCEL_Mastery]] | **Excel Mastery: Business Modeling & Analysis**
-  > Bản tổng hợp này hệ thống hóa các kỹ năng sử dụng Microsoft Excel từ cơ bản đến nâng cao cho mục đích phân tích dữ liệu ...
-- [[SYNTHESIS_LLM_Wiki_Standard]] | **LLM Wiki Golden Standard (Tiêu chuẩn Vàng Wiki 2.0)**
-  > Hệ thống NoteBookLLM_Br không chỉ là một kho lưu trữ (Storage), mà là một thực thể tri thức sống động. Chúng ta kết hợp ...
-- [[SYNTHESIS_THINK_Analytical_Thinking]] | **Master Synthesis: Tư duy Phân tích & Giải quyết Vấn đề (v4.1)**
-  > Mọi dự án thành công bắt đầu từ việc xác định phạm vi đúng.
-- [[SYNTHESIS_SQL_Mastery]] | **Master: Kỹ thuật truy vấn SQL cho Data Analysis**
-  > Mọi quy trình phân tích dữ liệu bằng SQL đều tuân theo lộ trình 4 giai đoạn chính:
-- [[PROPOSAL_Raw_Resources_Organization]] | **PROPOSAL: Reorganizing 3-resources/raw for Wiki 2.0**
-  > Thư mục `3-resources/raw/sources` hiện chứa 114 tệp tin nằm phẳng (flat list), gây khó khăn cho việc:
-- [[SYNTHESIS_DA_Core_Workflow]] | **Quy trình làm việc cốt lõi của Data Analyst (80/20 & Deepening)**
-  > target: "[[ENTITY_PANDAS]]"
-- [[SYNTHESIS_Agentic_Orchestration_Frameworks]] | **SYNTHESIS: Agentic Orchestration Frameworks (LangGraph vs CrewAI vs AutoGen)**
-  > Trang này hợp nhất tri thức về các bộ khung (frameworks) hàng đầu để xây dựng hệ thống Multi-Agent, dựa trên lộ trình kỹ...
-- [[SYNTHESIS_MASTER_Second_Brain_Blueprint]] | **SYNTHESIS: Master Second Brain Blueprint (V3.0 - Unified)**
-  > Tài liệu này là **"Hiến pháp"** tối cao của hệ thống Wiki. Nó hợp nhất mọi phương pháp luận từ Karpathy, Nashsu và Wiki-...
-- [[SYNTHESIS_Second_Brain_Standard_Spec]] | **SYNTHESIS: Second Brain Standard Specification (Karpathy x Nashsu) [SUPERSEDED]**
-  > Bản đặc tả này kết hợp tính **"Low Friction"** (Karpathy) với tính **"High Fidelity Graph"** (Nashsu) để tạo ra một bộ n...
-- [[SYNTHESIS_ULTIMATE_Second_Brain_Spec]] | **SYNTHESIS: The Ultimate Second Brain Specification (V3.0) [SUPERSEDED]**
-  > Tài liệu này là sự hợp nhất của 3 thế hệ phương pháp luận LLM Wiki, tạo ra một hệ thống tri thức không chỉ để lưu trữ mà...
-- [[SYNTHESIS_Wiki_Intelligence_Architecture]] | **SYNTHESIS: Wiki Intelligence Architecture (V2.0) [SUPERSEDED]**
-  > Hệ thống Wiki Intelligence 2.0 được thiết kế như một **Cơ thể sống** có khả năng tự hấp thụ, tự làm sạch và tự phát triể...
-- [[SYNTHESIS_DA_Case_Study_Library]] | **📚 Thư viện Case Study: Phân tích dữ liệu thực chiến**
-  > target: "[[ENTITY_Python]]"
-- [[CASE_STUDY_Churn_Prediction]] | **🕵️ Case Study #1: Dự báo nguy cơ học viên bỏ học (Churn Prediction)**
-  > Một trung tâm EdTech nhận thấy tỷ lệ học viên không gia hạn khóa học tăng cao. Mục tiêu là xây dựng một mô hình dự báo s...
 
-## 🧠 CONCEPTS (207 trang)
-*Các khái niệm, kỹ thuật nguyên tử.*
+### Concepts
+- 📝 [[CONCEPT_SQL_Case_Statements|"Khái niệm: SQL Case Statements (Logic điều kiện)"]]
+- 📝 [[CONCEPT_SQL_Joins|"Khái niệm: SQL Joins (Kết nối bảng)"]]
+- 📝 [[CONCEPT_SQL_Select_And_Filter|"Khái niệm: SQL Select & Filter (Truy xuất và Lọc dữ liệu)"]]
+- 📝 [[CONCEPT_PY_Pandas_Wrangling_Advanced|"Pandas Advanced Wrangling (Hợp nhất và Tái cấu trúc)"]]
+- 📝 [[CONCEPT_PY_Pandas_Aggregation|"Pandas Aggregation (Gom nhóm và Tổng hợp)"]]
+- 📝 [[CONCEPT_PY_Pandas_Data_Cleaning|"Pandas Data Cleaning (Làm sạch dữ liệu)"]]
+- 📝 [[CONCEPT_PY_Pandas_Data_Transformation|"Pandas Data Transformation (Biến đổi dữ liệu)"]]
+- 📝 [[CONCEPT_SQL_Advanced_Reporting|Báo cáo nâng cao (ROLLUP, CUBE & Bucketing)]]
+- 📝 [[CONCEPT_CONCEPT_AIMET_Error_Handling_Patterns|CONCEPT CONCEPT AIMET ERROR HANDLING PATTERNS]]
+- 📝 [[CONCEPT_CONCEPT_AIMET_LCEL|CONCEPT CONCEPT AIMET LCEL]]
+- 📝 [[CONCEPT_CONCEPT_AIMET_RAG_Systems|CONCEPT CONCEPT AIMET RAG SYSTEMS]]
+- 📝 [[CONCEPT_CONCEPT_AIMET_Runnables|CONCEPT CONCEPT AIMET RUNNABLES]]
+- 📝 [[CONCEPT_CONCEPT_EXCEL_Data_Modeling_PowerPivot|CONCEPT CONCEPT EXCEL DATA MODELING POWERPIVOT]]
+- 📝 [[CONCEPT_CONCEPT_EXCEL_Optimization_Solver|CONCEPT CONCEPT EXCEL OPTIMIZATION SOLVER]]
+- 📝 [[CONCEPT_CONCEPT_PY_GroupBy_Mechanics|CONCEPT CONCEPT PY GROUPBY MECHANICS]]
+- 📝 [[CONCEPT_CONCEPT_PY_IPython_Magic|CONCEPT CONCEPT PY IPYTHON MAGIC]]
+- 📝 [[CONCEPT_CONCEPT_PY_Matplotlib_Interfaces|CONCEPT CONCEPT PY MATPLOTLIB INTERFACES]]
+- 📝 [[CONCEPT_CONCEPT_PY_NumPy_Vectorization|CONCEPT CONCEPT PY NUMPY VECTORIZATION]]
+- 📝 [[CONCEPT_CONCEPT_PY_Pandas_Aggregation|CONCEPT CONCEPT PY PANDAS AGGREGATION]]
+- 📝 [[CONCEPT_CONCEPT_PY_Pandas_Data_Cleaning|CONCEPT CONCEPT PY PANDAS DATA CLEANING]]
+- 📝 [[CONCEPT_CONCEPT_PY_pandas_Data_Structures|CONCEPT CONCEPT PY PANDAS DATA STRUCTURES]]
+- 📝 [[CONCEPT_CONCEPT_PY_Pandas_Data_Transformation|CONCEPT CONCEPT PY PANDAS DATA TRANSFORMATION]]
+- 📝 [[CONCEPT_CONCEPT_PY_Pandas_Wrangling_Advanced|CONCEPT CONCEPT PY PANDAS WRANGLING ADVANCED]]
+- 📝 [[CONCEPT_CONCEPT_PY_Scientific_Ecosystem|CONCEPT CONCEPT PY SCIENTIFIC ECOSYSTEM]]
+- 📝 [[CONCEPT_CONCEPT_SQL_Advanced_Reporting|CONCEPT CONCEPT SQL ADVANCED REPORTING]]
+- 📝 [[CONCEPT_CONCEPT_SQL_Case_Statements|CONCEPT CONCEPT SQL CASE STATEMENTS]]
+- 📝 [[CONCEPT_CONCEPT_SQL_CRUD_Operations|CONCEPT CONCEPT SQL CRUD OPERATIONS]]
+- 📝 [[CONCEPT_CONCEPT_SQL_Data_Preparation_Workflow|CONCEPT CONCEPT SQL DATA PREPARATION WORKFLOW]]
+- 📝 [[CONCEPT_CONCEPT_SQL_Data_Shaping_Techniques|CONCEPT CONCEPT SQL DATA SHAPING TECHNIQUES]]
+- 📝 [[CONCEPT_CONCEPT_SQL_Database_Types_Analysis|CONCEPT CONCEPT SQL DATABASE TYPES ANALYSIS]]
+- 📝 [[CONCEPT_CONCEPT_SQL_Execution_Order|CONCEPT CONCEPT SQL EXECUTION ORDER]]
+- 📝 [[CONCEPT_CONCEPT_SQL_Hierarchical_Queries|CONCEPT CONCEPT SQL HIERARCHICAL QUERIES]]
+- 📝 [[CONCEPT_CONCEPT_SQL_Joins|CONCEPT CONCEPT SQL JOINS]]
+- 📝 [[CONCEPT_CONCEPT_SQL_Metadata_Queries|CONCEPT CONCEPT SQL METADATA QUERIES]]
+- 📝 [[CONCEPT_CONCEPT_SQL_Select_And_Filter|CONCEPT CONCEPT SQL SELECT AND FILTER]]
+- 📝 [[CONCEPT_CONCEPT_SQL_Sublanguages|CONCEPT CONCEPT SQL SUBLANGUAGES]]
+- 📝 [[CONCEPT_CONCEPT_SQL_Window_Functions_Advanced|CONCEPT CONCEPT SQL WINDOW FUNCTIONS ADVANCED]]
+- 📝 [[CONCEPT_CONCEPT_STAT_A_B_Testing|CONCEPT CONCEPT STAT A B TESTING]]
+- 📝 [[CONCEPT_ENTITY_PANDAS|CONCEPT ENTITY PANDAS]]
+- 📝 [[CONCEPT_STAT_A_B_Testing|CONCEPT STAT A B Testing]]
+- 📝 [[CONCEPT_PY_pandas_Data_Structures|Các cấu trúc dữ liệu cốt lõi của [[ENTITY_PANDAS|pandas]]]]
+- 📝 [[CONCEPT_SQL_Database_Types_Analysis|Các loại Database cho phân tích dữ liệu]]
+- 📝 [[CONCEPT_PY_IPython_Magic|Các lệnh Magic (Magic Commands) trong IPython]]
+- 📝 [[CONCEPT_SQL_Sublanguages|Các ngôn ngữ con trong [[ENTITY_SQL|SQL]] (SQL Sublanguages)]]
+- 📝 [[CONCEPT_SQL_Set_Operations|Các phép toán tập hợp trong [[ENTITY_SQL|SQL]] (Set Operations)]]
+- 📝 [[CONCEPT_SQL_CRUD_Operations|Các thao tác CRUD trong [[ENTITY_SQL|SQL]]]]
+- 📝 [[CONCEPT_PY_GroupBy_Mechanics|Cơ chế GroupBy: Split-Apply-Combine]]
+- 📝 [[ENTITY_CASE_DATA_PIPELINE_OPTIMIZATION|ENTITY CASE DATA PIPELINE OPTIMIZATION]]
+- 📝 [[ENTITY_CASE_TEACHING_EFFICACY|ENTITY CASE TEACHING EFFICACY]]
+- 📝 [[CONCEPT_PY_Matplotlib_Interfaces|Hai giao diện lập trình của Matplotlib]]
+- 📝 [[CONCEPT_SQL_Window_Functions_Advanced|Hàm cửa sổ nâng cao (Advanced Window Functions)]]
+- 📝 [[CONCEPT_PY_Scientific_Ecosystem|Hệ sinh thái Python dành cho Khoa học Dữ liệu]]
+- 📝 [[index|INDEX]]
+- 📝 [[CONCEPT_SQL_Data_Shaping_Techniques|Kỹ thuật định hình dữ liệu (Pivoting & Unpivoting)]]
+- 📝 [[CONCEPT_EXCEL_Data_Modeling_PowerPivot|Mô hình hóa dữ liệu với PowerPivot và Data Model]]
+- 📝 [[CONCEPT_EXCEL_Monte_Carlo_Simulation|Mô phỏng Monte Carlo trong [[ENTITY_EXCEL|Excel]]]]
+- 📝 [[CONCEPT_EXCEL_Sensitivity_Analysis|Phân tích độ nhạy (Sensitivity Analysis) trong [[ENTITY_EXCEL|Excel]]]]
+- 📝 [[CONCEPT_SQL_Data_Preparation_Workflow|Quy trình chuẩn bị dữ liệu phân tích với [[ENTITY_SQL|SQL]]]]
+- 📝 [[CONCEPT_SQL_RDBMS_Comparison|So sánh cú pháp giữa các hệ quản trị RDBMS]]
+- 📝 [[THINK_Design_Plan|THINK DESIGN PLAN]]
+- 📝 [[THINK_Hypothesis_Testing|THINK HYPOTHESIS TESTING]]
+- 📝 [[THINK_Logic_Tree|THINK LOGIC TREE]]
+- 📝 [[THINK_Prioritization_Matrix|THINK PRIORITIZATION MATRIX]]
+- 📝 [[THINK_Problem_Solving_Mindset|THINK PROBLEM SOLVING MINDSET]]
+- 📝 [[THINK_Problem_Solving_Process|THINK PROBLEM SOLVING PROCESS]]
+- 📝 [[THINK_Yes_No_Tree|THINK YES NO TREE]]
+- 📝 [[ENTITY_PANDAS|Thư viện pandas]]
+- 📝 [[CONCEPT_SQL_Execution_Order|Thứ tự thực thi câu lệnh [[ENTITY_SQL|SQL]] (Order of Execution)]]
+- 📝 [[CONCEPT_SQL_Hierarchical_Queries|Truy vấn phân cấp và đệ quy (Hierarchical & Recursive Queries)]]
+- 📝 [[CONCEPT_SQL_Metadata_Queries|Truy vấn siêu dữ liệu (Metadata Queries)]]
+- 📝 [[CONCEPT_PY_NumPy_Vectorization|Tính toán Vector hóa (Vectorization) trong NumPy]]
+- 📝 [[CONCEPT_EXCEL_Optimization_Solver|Tối ưu hóa bài toán kinh doanh với [[ENTITY_EXCEL|Excel]] Solver]]
+- 📝 [[[ID_DUY_NHAT]_________#_VÍ_DỤ:_CONCEPT_META_AI_FIRST|[ID_DUY_NHAT]"         # VÍ DỤ: CONCEPT_META_AI_FIRST]]
 
-- [[CONCEPT_AI_Abstention_Strategy]] | **Abstention Strategy (Hallucination Mitigation)** **[VERIFIED]**
-  > Abstention Strategy (Chiến lược giữ im lặng) là cơ chế cho phép Agent từ chối trả lời khi nó nhận thấy không đủ dữ liệu ...
-- [[CONCEPT_THINK_Action_Replays]] | **Action Replays (Tái hiện hành động)** **[DRAFT]**
-  > Action Replays là kỹ thuật tái hiện lại một sự kiện đã xảy ra theo cách thức có cấu trúc để làm rõ diễn biến, bộc lộ cảm...
-- [[CONCEPT_THINK_Active_Reviewing]] | **Active Reviewing (Đánh giá chủ động)** **[DRAFT]**
-  > Active Reviewing là phương pháp thu hẹp khoảng cách giữa "thế giới của lời nói" (talk) và "thế giới của hành động" (acti...
-- [[CONCEPT_AI_Agent_Memory_Architecture]] | **Agent Memory Architecture (Kiến trúc bộ nhớ Agent)** **[VERIFIED]**
-  > Trang này mô tả các tầng kiến trúc bộ nhớ cần thiết để Agent duy trì ngữ cảnh qua thời gian. Khác với người dùng cá nhân...
-- [[CONCEPT_AI_Agent_Reasoning_Patterns]] | **Agent Reasoning Patterns (Các mẫu suy luận của Agent)** **[VERIFIED]**
-  > Trang này tổng hợp các Mẫu suy luận (Reasoning Patterns) phổ biến trong kiến trúc Agent. Việc lựa chọn đúng mẫu suy luận...
-- [[CONCEPT_AI_Agentic_Python_Standards]] | **Agentic Python Standards (Tiêu chuẩn Python cho Agent)** **[VERIFIED]**
-  > Trang này định nghĩa các tiêu chuẩn lập trình Python tối ưu để xây dựng hệ thống Agentic AI. Thay vì viết script rời rạc...
-- [[CONCEPT_AI_Bias_and_Ethics]] | **AI Bias and Ethics (Thiên kiến và Đạo đức trong AI)** **[VERIFIED]**
-  > Trang này định nghĩa các vấn đề về thiên kiến (Bias) và đạo đức (Ethics) trong phát triển và triển khai AI. Việc nhận di...
-- [[CONCEPT_AIMET_Learning_Order_Checklist]] | **AIMET Learning Order Checklist (2026)** **[DRAFT]**
-  > This concept captures the recommended sequence to learn Agentic AI engineering from the roadmap,
-- [[CONCEPT_META_Async_Review_System]] | **Async Review System (Hệ thống Duyệt bất đồng bộ)** **[VERIFIED]**
-  > Trang này mô tả cơ chế Duyệt bất đồng bộ (Async Review) - một yếu tố quan trọng để duy trì sự kiểm soát của con người tr...
-- [[CONCEPT_META_Atomic_Methodology]] | **Atomic Methodology (Phương pháp luận Wiki Hạt nhân)** **[VERIFIED]**
-  > Trang này định nghĩa triết lý cốt lõi của NoteBookLLM_Br: Tính hạt nhân (Atomicity). Bằng cách chia nhỏ tri thức thành c...
-- [[CONCEPT_DE_Batch_vs_Stream_Processing]] | **Batch vs Stream Processing (Xử lý theo đợt và Xử lý luồng)** **[VERIFIED]**
-  > Trang này phân tích sự khác biệt giữa hai phương thức xử lý dữ liệu chính: Batch và Stream. Việc hiểu rõ khi nào dùng Ba...
-- [[CONCEPT_DSML_Bias_Variance_Tradeoff]] | **Bias-Variance Tradeoff (Sự đánh đổi Bias-Variance)** **[VERIFIED]**
-  > Trang này giải thích về Bias-Variance Tradeoff - khái niệm nền tảng trong Machine Learning để hiểu về sự đánh đổi giữa t...
-- [[CONCEPT_META_Bidirectional_Linking]] | **Bidirectional Linking (Liên kết hai chiều)** **[VERIFIED]**
-  > Trang này định nghĩa sức mạnh của Liên kết hai chiều (Bidirectional Linking) trong việc biến Wiki từ một tập hợp các tệp...
-- [[CONCEPT_STAT_Bootstrap_Resampling]] | **Bootstrap Resampling (Phương pháp lấy mẫu lại Bootstrap)** **[VERIFIED]**
-  > Trang này định nghĩa phương pháp Bootstrap Resampling - một kỹ thuật thống kê mạnh mẽ để ước lượng các đặc trưng của một...
-- [[CONCEPT_SQL_Advanced_Reporting]] | **Báo cáo nâng cao (ROLLUP, CUBE & Bucketing)** **[VERIFIED]**
-  > SQL hiện đại cung cấp các toán tử mạnh mẽ để tạo ra các báo cáo tổng hợp đa chiều tương tự như Pivot Table trong [[ENTIT...
-- [[CONCEPT_DE_SCD_Types]] | **Chiều thay đổi chậm (Slowly Changing Dimensions - SCD)** **[VERIFIED]**
-  > SCD là tập hợp các kỹ thuật quản lý cách dữ liệu trong các bảng Dimension (chiều) thay đổi theo thời gian, đảm bảo tính ...
-- [[CONCEPT_TOOL_Code_Analysis_Patterns]] | **Code Analysis Patterns (Mẫu phân tích logic mã nguồn)** **[VERIFIED]**
-  > Trang này định nghĩa các mẫu (patterns) để Agent thực hiện phân tích mã nguồn một cách hệ thống. Thay vì chỉ đọc code từ...
-- [[CONCEPT_SQL_CTEs]] | **Common Table Expressions (CTEs)** **[VERIFIED]**
-  > Common Table Expression (CTE) là một tập kết quả tạm thời được đặt tên, tồn tại duy nhất trong phạm vi thực thi của một ...
-- [[CONCEPT_SQL_Aggregations]] | **CONCEPT: [[ENTITY_SQL|SQL]] Aggregations (Gom nhóm & Thống kê)** **[VERIFIED]**
-  > **Aggregations** là quá trình gom nhóm nhiều bản ghi (rows) lại với nhau để thực hiện các phép toán thống kê (như Đếm, T...
-- [[CONCEPT_STAT_A_B_Testing]] | **Concept: A/B Testing (Statistical Experimentation)** **[VERIFIED]**
-  > A/B Testing là một phương pháp thực nghiệm so sánh hai phiên bản (A - Đối chứng và B - Thử nghiệm) để đo lường tác động ...
-- [[CONCEPT_AI_Red_Green_Refactor_Protocol]] | **CONCEPT: AI Red-Green-Refactor Protocol**
-  > agent_id: "@engineer"
-- [[CONCEPT_AI_Skill_Evolution_Loop]] | **CONCEPT: AI Skill Evolution Loop** **[VERIFIED]**
-  > **AI Skill Evolution Loop** là một quy trình tự động hóa việc bảo trì, tối ưu hóa và mở rộng năng lực của AI thông qua v...
-- [[CONCEPT_THINK_Data_Evidence_Types]] | **CONCEPT: Các loại Bằng chứng Dữ liệu (Data Evidence Types)** **[VERIFIED]**
-  > Bằng chứng dữ liệu là những thông tin thực tế được trích xuất từ dữ liệu để củng cố cho các giả thuyết trong lập luận (A...
-- [[CONCEPT_THINK_Patterns_of_Reasoning]] | **CONCEPT: Các Mô hình Lập luận (Patterns of Reasoning)** **[VERIFIED]**
-  > Các Mô hình Lập luận là tập hợp các cấu trúc logic chuẩn giúp Data Analyst kết nối dữ liệu thô với các kết luận có ý ngh...
-- [[CONCEPT_THINK_Data_Mining_Tasks]] | **CONCEPT: Các Tác vụ Khai thác Dữ liệu (Data Mining Tasks)** **[VERIFIED]**
-  > Tác vụ khai thác dữ liệu là những bài toán cụ thể mà Data Analyst cần giải quyết bằng các thuật toán. Việc xác định đúng...
-- [[CONCEPT_THINK_Yes_No_Tree]] | **CONCEPT: Cây Có/Không (Yes/No Tree)** **[VERIFIED]**
-  > **Yes/No Tree** là một dạng sơ đồ luồng logic giúp thu hẹp phạm vi tìm kiếm nguyên nhân hoặc đưa ra quyết định bằng cách...
-- [[CONCEPT_THINK_Logic_Tree]] | **CONCEPT: Cây Logic (Logic Tree)** **[VERIFIED]**
-  > **Logic Tree** là một công cụ phân rã một vấn đề lớn thành các thành phần nhỏ hơn, có thể quản lý được. Đây là công cụ n...
-- [[CONCEPT_THINK_Pros_Cons_List]] | **CONCEPT: Danh sách Ưu và Nhược điểm (Pros & Cons List)** **[VERIFIED]**
-  > Đây là công cụ ra quyết định cơ bản nhất, liệt kê các lợi ích (Pros) và hạn chế (Cons) của một lựa chọn để nhìn nhận vấn...
-- [[CONCEPT_THINK_Entropy_Information_Gain]] | **CONCEPT: Entropy và Độ lợi Thông tin (Information Gain)** **[VERIFIED]**
-  > **Entropy** là thước đo độ hỗn loạn (impurity) của một tập dữ liệu. **Information Gain** là mức độ giảm Entropy sau khi ...
-- [[CONCEPT_TOOL_Excel_Pivot_Tables]] | **Concept: Excel Pivot Tables** **[VERIFIED]**
-  > PivotTable là công cụ tóm tắt dữ liệu tương tác, cho phép xoay (pivot) các chiều dữ liệu để nhìn nhận từ nhiều góc độ kh...
-- [[CONCEPT_THINK_Logistic_Regression_Classifier]] | **CONCEPT: Hồi quy Logistic (Logistic Regression Classifier)** **[VERIFIED]**
-  > Hồi quy Logistic là một mô hình thống kê dùng để dự đoán xác suất của một biến mục tiêu nhị phân (vd: Có/Không, Sống/Chế...
-- [[CONCEPT_Karpathy_Idea_File]] | **CONCEPT: Karpathy Idea File (DRAFT)** **[VERIFIED]**
-  > - “The idea of the idea file is that in this era of LLM agents, there is less of a point/need of sharing the specific co...
-- [[CONCEPT_THINK_Expected_Value_Framework]] | **CONCEPT: Khung Giá trị Kỳ vọng (Expected Value Framework)** **[VERIFIED]**
-  > Khung Giá trị Kỳ vọng (EV) là một cấu trúc toán học giúp định lượng hóa các quyết định kinh doanh bằng cách kết hợp **Xá...
-- [[CONCEPT_THINK_Exploration_vs_Confirmation]] | **CONCEPT: Khám phá và Xác nhận (Exploration vs Confirmation)** **[VERIFIED]**
-  > Sự cân bằng giữa việc lao vào tìm tòi dữ liệu (Exploration) và việc dừng lại để lập kế hoạch/đặt giả thuyết (Confirmatio...
-- [[CONCEPT_THINK_Hypothesis_Pyramid]] | **CONCEPT: Kim tự tháp Giả thuyết (Hypothesis Pyramid)** **[VERIFIED]**
-  > Kim tự tháp Giả thuyết là cách sắp xếp các lập luận và bằng chứng theo thứ tự phân cấp, giúp người phân tích trình bày m...
-- [[CONCEPT_THINK_Hypothesis_Testing]] | **CONCEPT: Kiểm định Giả thuyết (Hypothesis Testing)** **[VERIFIED]**
-  > Kiểm định giả thuyết là một khung logic dùng để đưa ra kết luận về một quần thể dựa trên dữ liệu mẫu. Nó giúp xác định x...
-- [[CONCEPT_THINK_5_Whys]] | **CONCEPT: Kỹ thuật 5 Whys (5 Tại sao)** **[VERIFIED]**
-  > **5 Whys** là một kỹ thuật lặp đơn giản được sử dụng để khám phá các mối quan hệ nguyên nhân - kết quả tiềm ẩn sau một v...
-- [[CONCEPT_THINK_Data_Argumentation]] | **CONCEPT: Lập luận bằng Dữ liệu (Data Argumentation)** **[VERIFIED]**
-  > Lập luận bằng dữ liệu là quá trình sử dụng các bằng chứng định lượng để chứng minh một tuyên bố (Claim) và thuyết phục k...
-- [[CONCEPT_THINK_Prioritization_Matrix]] | **CONCEPT: Ma trận Ưu tiên (Prioritization Matrix / Eisenhower)** **[VERIFIED]**
-  > Ma trận ưu tiên là công cụ giúp sắp xếp các công việc hoặc giải pháp dựa trên hai tiêu chí chính: **Tác động (Impact)** ...
-- [[CONCEPT_PY_Matplotlib_Basics]] | **Concept: Matplotlib Basics (Figure & Axes)** **[VERIFIED]**
-  > Matplotlib vận hành theo mô hình phân tầng (Hierarchical Model). Mọi biểu đồ đều là một **Figure** (khung tranh), bên tr...
-- [[CONCEPT_THINK_SVM_Linear_Separation]] | **CONCEPT: Máy vector hỗ trợ (Support Vector Machine - SVM)** **[VERIFIED]**
-  > **SVM** là một mô hình phân loại tìm kiếm một "siêu phẳng" (hyperplane) tối ưu để phân tách hai nhóm dữ liệu sao cho kho...
-- [[CONCEPT_PY_Matplotlib_OO_vs_Pyplot]] | **Concept: OO Style vs Pyplot Style** **[VERIFIED]**
-  > Matplotlib cung cấp hai giao diện lập trình:
-- [[CONCEPT_THINK_Root_Cause_Analysis]] | **CONCEPT: Phân tích Nguyên nhân Gốc rễ (Root Cause Analysis - RCA)** **[VERIFIED]**
-  > RCA là một phương pháp giải quyết vấn đề nhằm xác định các nguyên nhân cốt lõi gây ra lỗi hoặc sự cố, thay vì chỉ phản ứ...
-- [[CONCEPT_THINK_Ensemble_Methods]] | **CONCEPT: Phương pháp Học máy Kết hợp (Ensemble Methods)** **[VERIFIED]**
-  > Ensemble Methods là kỹ thuật kết hợp nhiều mô hình học máy lại với nhau để tạo ra một mô hình duy nhất có hiệu suất cao ...
-- [[CONCEPT_TOOL_Excel_Power_Query]] | **Concept: Power Query (Get & Transform)** **[VERIFIED]**
-  > Power Query là động cơ kết nối và biến đổi dữ liệu (ETL - Extract, Transform, Load) tích hợp trong Excel. Nó cho phép ng...
-- [[CONCEPT_THINK_Problem_Solving_Process]] | **CONCEPT: Quy trình Giải quyết Vấn đề 4 Bước (Problem Solving Process)** **[VERIFIED]**
-  > target: "[[ENTITY_Python]]"
-- [[CONCEPT_THINK_Data_Mining_Process_CRISP]] | **CONCEPT: Quy trình Khai thác Dữ liệu (CRISP-DM)** **[VERIFIED]**
-  > **CRISP-DM** (Cross-Industry Standard Process for Data Mining) là quy trình tiêu chuẩn hóa cho các dự án khai thác dữ li...
-- [[CONCEPT_SQL_Cohort_Analysis]] | **Concept: SQL Cohort Analysis** **[VERIFIED]**
-  > Phân tích Cohort là kỹ thuật chia người dùng thành các nhóm có chung đặc điểm (thường là thời điểm bắt đầu sử dụng sản p...
-- [[CONCEPT_Three_Layer_Architecture]] | **CONCEPT: Three-Layer Architecture (DRAFT)** **[VERIFIED]**
-  > - Layer 1: **Raw Sources**. Immutable. Articles, papers, images. Source of truth.
-- [[CONCEPT_AIMET_Tool_Integration]] | **CONCEPT: Tool Integration (Custom Tools & Connectors)** **[DRAFT]**
-  > **Tool Integration** là quá trình cho phép LLM agent tương tác với thế giới bên ngoài thông qua các hàm code, API, hoặc ...
-- [[CONCEPT_Tooling_Stack]] | **CONCEPT: Tooling Stack (DRAFT)** **[VERIFIED]**
-  > - **Obsidian**: IDE/viewer for markdown and graph view.
-- [[CONCEPT_THINK_TF_IDF_Text_Mining]] | **CONCEPT: Trọng số TF-IDF trong Khai thác Văn bản** **[VERIFIED]**
-  > **TF-IDF** (Term Frequency - Inverse Document Frequency) là một kỹ thuật thống kê dùng để đánh giá mức độ quan trọng của...
-- [[CONCEPT_THINK_Naive_Bayes_Logic]] | **CONCEPT: Tư duy Naive Bayes (Naive Bayes Logic)** **[VERIFIED]**
-  > Naive Bayes là một thuật toán phân loại dựa trên Định lý Bayes với giả định "ngây ngô" (naive) rằng: tất cả các đặc điểm...
-- [[CONCEPT_THINK_Data_Analytic_Thinking]] | **CONCEPT: Tư duy Phân tích Dữ liệu (Data-Analytic Thinking)** **[VERIFIED]**
-  > Tư duy Phân tích Dữ liệu là khả năng tiếp cận một vấn đề kinh doanh bằng cách phân rã nó thành các thành phần có thể giả...
-- [[CONCEPT_THINK_Correlation_vs_Causation]] | **CONCEPT: Tương quan và Nhân quả (Correlation vs Causation)** **[VERIFIED]**
-  > Tương quan (Correlation) là mối quan hệ thống kê giữa hai biến số khi chúng thay đổi cùng nhau. Nhân quả (Causation) là ...
-- [[CONCEPT_Wiki_Operations]] | **CONCEPT: Wiki Operations (DRAFT)** **[VERIFIED]**
-  > - **Ingest**: Read source -> discuss takeaways -> create/update summary -> update index -> ripple updates to concept/ent...
-- [[CONCEPT_Wiki_vs_RAG]] | **CONCEPT: Wiki vs RAG (DRAFT)** **[VERIFIED]**
-  > - RAG Problem: “The LLM is rediscovering knowledge from scratch on every question. There's no accumulation.”
-- [[CONCEPT_THINK_ROC_AUC_Evaluation]] | **CONCEPT: Đánh giá mô hình bằng ROC và AUC** **[VERIFIED]**
-  > **Đường cong ROC** (Receiver Operating Characteristic) là biểu đồ thể hiện khả năng phân loại của mô hình ở mọi ngưỡng t...
-- [[CONCEPT_THINK_Data_Ethics_Scoping]] | **CONCEPT: Đạo đức Dữ liệu trong Scoping (Data Ethics)** **[VERIFIED]**
-  > Đạo đức dữ liệu là việc xem xét các tác động về quyền riêng tư, sự công bằng và tính minh bạch ngay từ giai đoạn xác địn...
-- [[CONCEPT_THINK_Audience_Framing]] | **CONCEPT: Định hình Khán giả và Niềm tin (Audience Framing)** **[VERIFIED]**
-  > Định hình Khán giả là kỹ thuật đóng gói dữ liệu vào một lập luận (Argument) phù hợp với trình độ, kỳ vọng và niềm tin sẵ...
-- [[CONCEPT_THINK_Similarity_Distance_Metrics]] | **CONCEPT: Độ tương đồng và Khoảng cách (Similarity & Distance)** **[VERIFIED]**
-  > Trong khai thác dữ liệu, "Độ tương đồng" là cách chúng ta định lượng việc hai cá thể giống nhau đến mức nào. "Khoảng các...
-- [[CONCEPT_AIMET_Error_Handling_Patterns]] | **CONCEPT_AIMET_Error_Handling_Patterns**
-  > agent_id: "@engineer"
-- [[CONCEPT_CONCEPT_META_SB3_Graph_Analysis]] | **CONCEPT_META_SB3_Graph_Analysis** **[STUB]**
-  > Chưa có định nghĩa chính thức. Cần được bổ sung từ nguồn RAW.
-- [[CONCEPT_CONCEPT_META_SB3_LLM_Wiki]] | **CONCEPT_META_SB3_LLM_Wiki** **[STUB]**
-  > Chưa có định nghĩa chính thức. Cần được bổ sung từ nguồn RAW.
-- [[CONCEPT_META_Consolidation_Tiers]] | **Consolidation Tiers (Các tầng hợp nhất tri thức)** **[VERIFIED]**
-  > Trang này mô tả mô hình Các tầng hợp nhất tri thức (Consolidation Tiers) - "bộ lọc" để tinh luyện thông tin từ các quan ...
-- [[CONCEPT_AI_Context_Budgeting]] | **Context Budgeting (Quản lý ngân sách ngữ cảnh)** **[VERIFIED]**
-  > Trang này định nghĩa chiến lược Ngân sách ngữ cảnh (Context Budgeting) - nghệ thuật phân bổ tài nguyên Tokens trong cửa ...
-- [[CONCEPT_TOOL_Context_Injection_Techniques]] | **Context Injection Techniques (Kỹ thuật tiêm ngữ cảnh)** **[VERIFIED]**
-  > Trang này định nghĩa các phương pháp tối ưu để đưa dữ liệu bên ngoài vào cửa sổ ngữ cảnh (Context Window) của LLM. Mục t...
-- [[CONCEPT_STAT_Correlation_vs_Causation]] | **Correlation vs Causation (Tương quan và Nhân quả)** **[VERIFIED]**
-  > Trang này phân biệt hai khái niệm dễ nhầm lẫn nhất trong phân tích dữ liệu: Tương quan (Correlation) và Nhân quả (Causat...
-- [[CONCEPT_PY_pandas_Data_Structures]] | **Các cấu trúc dữ liệu cốt lõi của [[ENTITY_PANDAS|pandas]]** **[VERIFIED]**
-  > Thư viện `pandas` cung cấp hai cấu trúc dữ liệu chính được thiết kế để làm việc với dữ liệu bảng và chuỗi thời gian một ...
-- [[CONCEPT_SQL_Database_Types_Analysis]] | **Các loại Database cho phân tích dữ liệu** **[VERIFIED]**
-  > Trong phân tích dữ liệu, việc hiểu cách dữ liệu được lưu trữ vật lý giúp tối ưu hóa tốc độ truy vấn đáng kể.
-- [[CONCEPT_STAT_Sampling_Biases]] | **Các loại sai lệch khi lấy mẫu (Sampling Biases)** **[VERIFIED]**
-  > Dữ liệu chất lượng kém dẫn đến kết quả sai lầm ("Garbage in, Garbage out"). Hiểu về sai lệch giúp chúng ta thiết kế các ...
-- [[CONCEPT_PY_IPython_Magic]] | **Các lệnh Magic (Magic Commands) trong IPython** **[VERIFIED]**
-  > Magic Commands là các lệnh đặc biệt bắt đầu bằng ký tự `%` (line magics) hoặc `%%` (cell magics), được thiết kế để giải ...
-- [[CONCEPT_SQL_Sublanguages]] | **Các ngôn ngữ con trong [[ENTITY_SQL|SQL]] (SQL Sublanguages)** **[VERIFIED]**
-  > SQL không chỉ là một ngôn ngữ đơn nhất mà bao gồm 4 nhóm ngôn ngữ con thực hiện các nhiệm vụ khác nhau trong quản trị và...
-- [[CONCEPT_SQL_Set_Operations]] | **Các phép toán tập hợp trong [[ENTITY_SQL|SQL]] (Set Operations)** **[VERIFIED]**
-  > Toán tử tập hợp cho phép bạn kết hợp kết quả của hai hoặc nhiều truy vấn thành một tập kết quả duy nhất.
-- [[CONCEPT_SQL_CRUD_Operations]] | **Các thao tác CRUD trong [[ENTITY_SQL|SQL]]** **[VERIFIED]**
-  > CRUD là viết tắt của 4 thao tác cơ bản nhất mà bạn có thể thực hiện trên bất kỳ hệ thống lưu trữ dữ liệu nào.
-- [[CONCEPT_VIZ_Gestalt_Laws_in_Design]] | **Các định luật Gestalt trong thiết kế biểu đồ (Gestalt Laws)** **[VERIFIED]**
-  > Định luật Gestalt giúp chúng ta hiểu cách não bộ con người tự động nhóm các yếu tố hình ảnh lại với nhau, từ đó thiết kế...
-- [[CONCEPT_PY_Pandas_Basics]] | **Cơ bản về Pandas (Pandas Basics)** **[VERIFIED]**
-  > **Pandas** là thư viện nền tảng của hệ sinh thái dữ liệu Python, cung cấp các cấu trúc dữ liệu mạnh mẽ để làm việc với d...
-- [[CONCEPT_PY_GroupBy_Mechanics]] | **Cơ chế GroupBy: Split-Apply-Combine** **[VERIFIED]**
-  > Cơ chế GroupBy trong [[ENTITY_PANDAS|pandas]] tuân theo mô hình **Split-Apply-Combine** (Chia - Áp dụng - Kết hợp), được...
-- [[CONCEPT_VIZ_Dashboard_UX_Checklist]] | **Dashboard UX Checklist (Danh mục kiểm tra trải nghiệm người dùng Dashboard)** **[VERIFIED]**
-  > Trang này cung cấp bộ tiêu chuẩn để đánh giá tính hữu dụng của một Dashboard từ góc độ người dùng (UX). Một Dashboard tố...
-- [[CONCEPT_DE_Data_Engineering_Lifecycle]] | **Data Engineering Lifecycle (Vòng đời Kỹ thuật Dữ liệu)** **[VERIFIED]**
-  > Trang này định nghĩa Vòng đời Kỹ thuật Dữ liệu (Data Engineering Lifecycle) - khung sườn để hiểu cách dữ liệu di chuyển ...
-- [[CONCEPT_DE_Data_Governance]] | **Data Governance (Quản trị dữ liệu)** **[VERIFIED]**
-  > Trang này giải thích về Quản trị dữ liệu (Data Governance) - tập hợp các quy tắc và quy trình để đảm bảo tài sản dữ liệu...
-- [[CONCEPT_DSML_Decision_Trees_Random_Forest]] | **Decision Trees & Random Forest (Cây quyết định và Rừng ngẫu nhiên)** **[VERIFIED]**
-  > Trang này giải thích về Cây quyết định (Decision Trees) và Rừng ngẫu nhiên (Random Forest). Đây là những mô hình học máy...
-- [[CONCEPT_TOOL_Docker]] | **Docker (Containerization for AI Agents)** **[VERIFIED]**
-  > Docker cho phép đóng gói toàn bộ môi trường chạy Agent (code, thư viện, biến môi trường) vào một đơn vị duy nhất gọi là ...
-- [[CONCEPT_AIMET_Evaluation_Metrics]] | **Evaluation Metrics (Agentic AI)** **[VERIFIED]**
-  > Trang này định nghĩa các chỉ số đo lường (metrics) chuyên biệt cho Agentic AI, vượt xa các chỉ số NLP truyền thống như B...
-- [[CONCEPT_TOOL_FastAPI]] | **FastAPI (Stub)** **[STUB]**
-  > FastAPI là một web framework hiện đại, hiệu suất cao để xây dựng các API với Python, dựa trên tiêu chuẩn Type Hints. Tro...
-- [[CONCEPT_DSML_Feature_Engineering_Basics]] | **Feature Engineering Basics (Kỹ nghệ đặc trưng cơ bản)** **[VERIFIED]**
-  > Trang này tổng hợp các kỹ thuật Kỹ nghệ đặc trưng (Feature Engineering) cơ bản. Trong khoa học dữ liệu, việc biến đổi dữ...
-- [[CONCEPT_TOOL_Gemini_Role_Prompting]] | **Gemini Role Prompting (Persona Expert Design)** **[VERIFIED]**
-  > Trang này định nghĩa kỹ thuật thiết lập "Persona" (vai trò) cho Gemini để tối ưu hóa đầu ra theo domain cụ thể. Thay vì ...
-- [[CONCEPT_VIZ_Gestalt_Principles]] | **Gestalt Principles (Các nguyên lý Gestalt trong thiết kế)** **[VERIFIED]**
-  > Trang này định nghĩa các nguyên lý Gestalt - nền tảng của tâm lý học thị giác giúp giải thích cách con người nhận diện c...
-- [[CONCEPT_META_Graph_Analysis]] | **Graph Analysis (Phân tích đồ thị tri thức)** **[VERIFIED]**
-  > Trang này giải thích cách sử dụng các thuật toán Đồ thị để phân tích cấu trúc của Wiki. Thông qua việc đo lường mật độ l...
-- [[CONCEPT_META_SB3_Graph_Traversal]] | **Graph Traversal (Truy vết đồ thị tri thức)** **[VERIFIED]**
-  > Trang này định nghĩa **Graph Traversal** - một phương pháp truy xuất tri thức dựa trên cấu trúc liên kết đồ thị thay vì ...
-- [[CONCEPT_AI_Grounded_Generation]] | **Grounded Generation (Sinh nội dung có căn cứ)** **[VERIFIED]**
-  > Trang này định nghĩa nguyên tắc Grounding (Căn cứ hóa) - kỹ thuật đảm bảo câu trả lời của AI luôn dựa trên bằng chứng th...
-- [[CONCEPT_PY_Matplotlib_Interfaces]] | **Hai giao diện lập trình của Matplotlib** **[VERIFIED]**
-  > Matplotlib cung cấp hai cách tiếp cận khác nhau để tạo biểu đồ, điều này thường gây nhầm lẫn cho người mới bắt đầu.
-- [[CONCEPT_SQL_Window_Functions_Advanced]] | **Hàm cửa sổ nâng cao (Advanced Window Functions)** **[VERIFIED]**
-  > Window functions cho phép thực hiện các phép tính trên một tập hợp các hàng liên quan đến hàng hiện tại mà không cần gộp...
-- [[CONCEPT_PY_Scientific_Ecosystem]] | **Hệ sinh thái [[ENTITY_Python|Python]] dành cho Khoa học Dữ liệu** **[VERIFIED]**
-  > Sức mạnh của Python trong phân tích dữ liệu không nằm ở bản thân ngôn ngữ mà ở hệ sinh thái các thư viện mã nguồn mở chu...
-- [[CONCEPT_STAT_Linear_Regression]] | **Hồi quy tuyến tính (Linear Regression)** **[VERIFIED]**
-  > Hồi quy tuyến tính là phương pháp thống kê để mô tả mối quan hệ giữa một biến phụ thuộc (Target) và một hoặc nhiều biến ...
-- [[CONCEPT_META_Idea_File_System]] | **Idea File System (Hệ thống tệp ý tưởng)** **[VERIFIED]**
-  > Trang này định nghĩa Hệ thống Tệp Ý tưởng (Idea File) - "vùng đệm" cho các suy nghĩ thô trước khi chúng được cấu trúc hó...
-- [[CONCEPT_index]] | **index** **[STUB]**
-  > Chưa có định nghĩa chính thức. Cần được bổ sung từ nguồn RAW.
-- [[CONCEPT_META_Information_Overload]] | **Information Overload (Quá tải thông tin)** **[VERIFIED]**
-  > Trang này định nghĩa vấn đề Quá tải thông tin và cách hệ thống Wiki 2.0 giải quyết nó. Bằng cách áp dụng tính hạt nhân (...
-- [[CONCEPT_DSML_Clustering_KMeans]] | **K-Means Clustering (Phân cụm K-Means)** **[VERIFIED]**
-  > Trang này định nghĩa thuật toán K-Means - một trong những kỹ thuật phân cụm (Clustering) phổ biến nhất trong Học không g...
-- [[CONCEPT_STAT_Confidence_Intervals]] | **Khoảng tin cậy (Confidence Intervals)** **[VERIFIED]**
-  > Thay vì chỉ đưa ra một con số ước lượng duy nhất, khoảng tin cậy cung cấp một phạm vi giá trị kèm theo một mức độ chắc c...
-- [[CONCEPT_THINK_CoNVO_Framework]] | **Khung CoNVO (Context, Need, Vision, Outcome)**
-  > **CoNVO** là một khung tư duy (Scoping Framework) giúp xác định mục tiêu và phạm vi của một dự án dữ liệu. Nó giúp Analy...
-- [[CONCEPT_DE_Data_Quality_Framework]] | **Khung quản lý chất lượng dữ liệu (Data Quality Framework)** **[VERIFIED]**
-  > Chất lượng dữ liệu quyết định sự tin cậy của các báo cáo và quyết định kinh doanh. "Garbage in, Garbage out" (Rác vào, R...
-- [[CONCEPT_VIZ_Data_Storytelling_Framework]] | **Khung sườn kể chuyện bằng dữ liệu (Data Storytelling Framework)** **[VERIFIED]**
-  > Kể chuyện bằng dữ liệu không chỉ là trình bày biểu đồ, mà là xây dựng một kịch bản có cao trào để dẫn dắt người nghe đến...
-- [[CONCEPT_SQL_Case_Statements]] | **Khái niệm: SQL Case Statements (Logic điều kiện)** **[VERIFIED]**
-  > - [[SOURCE_TOOL_SQL_Getting_Started]]
-- [[CONCEPT_SQL_Joins]] | **Khái niệm: SQL Joins (Kết nối bảng)** **[VERIFIED]**
-  > - [[SOURCE_TOOL_SQL_Getting_Started]]
-- [[CONCEPT_SQL_Select_And_Filter]] | **Khái niệm: SQL Select & Filter (Truy xuất và Lọc dữ liệu)** **[VERIFIED]**
-  > - [[SOURCE_TOOL_SQL_Getting_Started]]
-- [[CONCEPT_DE_Data_Architecture_Basics]] | **Kiến trúc dữ liệu cơ bản (Warehouse vs Lake vs Lakehouse)** **[VERIFIED]**
-  > target: "[[ENTITY_EXCEL]]"
-- [[CONCEPT_AIMET_MultiAgent_Architecture]] | **Kiến trúc Đa Agent (Multi-Agent Architecture)** **[VERIFIED]**
-  > Kiến trúc Đa Agent là thiết kế hệ thống trong đó nhiều Agent chuyên biệt phối hợp với nhau để giải quyết các tác vụ phức...
-- [[CONCEPT_STAT_Hypothesis_Testing_PValue]] | **Kiểm định giả thuyết và P-Value (Hypothesis Testing & P-Value)** **[VERIFIED]**
-  > Đây là quy trình ra quyết định dựa trên dữ liệu để xác định xem một kết quả quan sát được là thực sự có ý nghĩa hay chỉ ...
-- [[CONCEPT_STAT_T_Test_ANOVA]] | **Kiểm định T-Test và ANOVA** **[VERIFIED]**
-  > target: "[[ENTITY_EXCEL]]"
-- [[CONCEPT_AI_Knowledge_Cutoff]] | **Knowledge Cutoff (Giới hạn tri thức tĩnh)** **[VERIFIED]**
-  > Trang này giải thích khái niệm "Knowledge Cutoff" - thời điểm cuối cùng mà một mô hình LLM được huấn luyện. Mọi sự kiện ...
-- [[CONCEPT_SQL_Data_Shaping_Techniques]] | **Kỹ thuật định hình dữ liệu (Pivoting & Unpivoting)** **[VERIFIED]**
-  > Định hình dữ liệu là việc thay đổi cách biểu diễn dữ liệu giữa hàng và cột để phục vụ các mục đích báo cáo (BI) hoặc mô ...
-- [[CONCEPT_AIMET_LCEL]] | **LCEL (LangChain Expression Language)**
-  > agent_id: "@engineer"
-- [[CONCEPT_META_SB3_Louvain_Clustering]] | **Louvain Clustering (Phân cụm tri thức tự động)** **[VERIFIED]**
-  > Trang này định nghĩa thuật toán **Louvain Clustering** trong bối cảnh quản trị tri thức Wiki. Đây là phương pháp giúp hệ...
-- [[CONCEPT_VIZ_Eliminating_Clutter]] | **Loại bỏ Rác nhiễu (Eliminating Clutter)**
-  > Tải nhận thức là nỗ lực tinh thần cần thiết để xử lý thông tin mới.
-- [[CONCEPT_VIZ_Effective_Visual_Selection]] | **Lựa chọn Biểu đồ Hiệu quả (Effective Visual Selection)** **[DRAFT]**
-  > Không có biểu đồ "đẹp nhất", chỉ có biểu đồ "hiệu quả nhất" cho thông điệp của bạn. Trong thực tế kinh doanh, chỉ có kho...
-- [[CONCEPT_DSML_Marketing_Metrics]] | **Marketing Metrics (Chỉ số đo lường tiếp thị)** **[VERIFIED]**
-  > Trang này tổng hợp các chỉ số (metrics) quan trọng nhất trong Marketing Analytics, giúp chuyển đổi dữ liệu thô từ các ch...
-- [[CONCEPT_DSML_Master_ML_Algorithms]] | **Master ML Algorithms (Tổng quan các thuật toán Machine Learning)** **[VERIFIED]**
-  > Trang này cung cấp cái nhìn tổng quan về hệ sinh thái các thuật toán Machine Learning phổ biến. Việc hiểu rõ phân loại t...
-- [[CONCEPT_AIMET_Memory_Management]] | **Memory Management trong Agentic AI Systems** **[VERIFIED]**
-  > Quản lý bộ nhớ là khả năng lưu trữ, truy xuất và nén thông tin để Agent duy trì ngữ cảnh trong thời gian dài.
-- [[CONCEPT_META_SB3_Memory_Tier]] | **Memory Tier (Cấu trúc phân tầng tri thức)** **[VERIFIED]**
-  > Trang này định nghĩa **Memory Tier** - mô hình phân tầng dữ liệu giúp chuyển hóa thông tin từ dạng thô, hỗn loạn sang dạ...
-- [[CONCEPT_DSML_Model_Evaluation_Metrics]] | **Model Evaluation Metrics (Chỉ số đánh giá mô hình)** **[VERIFIED]**
-  > Trang này định nghĩa các chỉ số đo lường hiệu năng của mô hình Machine Learning. Việc chọn đúng chỉ số đánh giá (ví dụ: ...
-- [[CONCEPT_AI_MultiAgent_Coordination]] | **Multi-Agent Coordination (Phối hợp đa Agent)** **[VERIFIED]**
-  > Trang này mô tả các mô hình phối hợp giữa nhiều Agent chuyên biệt. Khi các bài toán trở nên quá lớn cho một Agent duy nh...
-- [[CONCEPT_EXCEL_Data_Modeling_PowerPivot]] | **Mô hình hóa dữ liệu với PowerPivot và Data Model** **[VERIFIED]**
-  > Excel không chỉ là bảng tính phẳng; với Data Model, nó trở thành một cơ sở dữ liệu quan hệ thu nhỏ (Self-service BI).
-- [[CONCEPT_EXCEL_Monte_Carlo_Simulation]] | **Mô phỏng Monte Carlo trong [[ENTITY_EXCEL|Excel]]** **[VERIFIED]**
-  > Mô phỏng Monte Carlo là một kỹ thuật toán học sử dụng việc lấy mẫu ngẫu nhiên lặp đi lặp lại để mô hình hóa xác suất của...
-- [[CONCEPT_TOOL_Data_Analysis_Prompts]] | **Mẫu câu lệnh Phân tích dữ liệu (Data Analysis Prompts)** **[VERIFIED]**
-  > Đây là tập hợp các cấu trúc câu lệnh được tối ưu hóa để yêu cầu Gemini thực hiện các tác vụ từ làm sạch dữ liệu, biến đổ...
-- [[CONCEPT_TOOL_SQL_Query_Prompts]] | **Mẫu câu lệnh Tối ưu hóa [[ENTITY_SQL|SQL]] (SQL Query Prompts)** **[VERIFIED]**
-  > Tập hợp các prompt giúp Gemini đóng vai trò chuyên gia cơ sở dữ liệu để viết, giải thích và tối ưu hóa các truy vấn phức...
-- [[CONCEPT_VIZ_Design_Principles]] | **Nguyên tắc Thiết kế (Design Principles)**
-  > Affordances là những đặc điểm thiết kế gợi ý cách sử dụng sản phẩm. Trong VIZ, chúng ta dùng các tín hiệu thị giác để hư...
-- [[CONCEPT_VIZ_Dashboard_Design_Best_Practices]] | **Nguyên tắc Thiết kế Dashboard (Dashboard Design Best Practices)**
-  > Để một Dashboard thực sự hiệu quả, nó cần đạt được 4 tiêu chí ACES:
-- [[CONCEPT_META_Ontology_Design]] | **Ontology Design (Thiết kế hệ thống thực thể)** **[VERIFIED]**
-  > Trang này định nghĩa kỹ năng Thiết kế Hệ thống Thực thể (Ontology Design) - xương sống của một kho tri thức thông minh. ...
-- [[CONCEPT_DSML_Overfitting_Prevention]] | **Overfitting Prevention (Phòng tránh quá khớp)** **[VERIFIED]**
-  > Trang này giải thích về Overfitting - "kẻ thù" lớn nhất của các mô hình Machine Learning. Overfitting xảy ra khi mô hình...
-- [[CONCEPT_PY_Pandas_Wrangling_Advanced]] | **Pandas Advanced Wrangling (Hợp nhất và Tái cấu trúc)** **[VERIFIED]**
-  > Tương tự như phép JOIN trong [[ENTITY_SQL|SQL]], kết nối các dòng dựa trên các khóa (keys).
-- [[CONCEPT_PY_Pandas_Aggregation]] | **Pandas Aggregation (Gom nhóm và Tổng hợp)** **[VERIFIED]**
-  > Dữ liệu có thể được gom nhóm theo nhiều cách:
-- [[CONCEPT_PY_Pandas_Data_Cleaning]] | **Pandas Data Cleaning (Làm sạch dữ liệu)** **[VERIFIED]**
-  > Pandas sử dụng `NaN` (Not a Number) làm giá trị sentinel để biểu diễn dữ liệu thiếu cho cả kiểu số và không phải số.
-- [[CONCEPT_PY_Pandas_Data_Transformation]] | **Pandas Data Transformation (Biến đổi dữ liệu)** **[VERIFIED]**
-  > Sử dụng `map` để thực hiện biến đổi trên từng phần tử dựa trên một hàm hoặc một từ điển ánh xạ.
-- [[CONCEPT_THINK_Argument_Sketching]] | **Phác thảo Lập luận (Argument Sketching)**
-  > **Phác thảo lập luận** là quá trình xây dựng một cấu trúc logic để chứng minh một luận điểm (Claim) dựa trên các bằng ch...
-- [[CONCEPT_STAT_Data_Taxonomy]] | **Phân loại dữ liệu (Data Taxonomy)** **[VERIFIED]**
-  > Dữ liệu không chỉ là những con số; việc phân loại đúng loại dữ liệu là bước đầu tiên để chọn phương pháp thống kê và biể...
-- [[CONCEPT_STAT_Probability_Distributions]] | **Phân phối xác suất (Probability Distributions)** **[VERIFIED]**
-  > Phân phối xác suất mô tả tần suất xuất hiện của các giá trị khác nhau trong một tập dữ liệu, giúp chúng ta hiểu về quy l...
-- [[CONCEPT_EXCEL_Sensitivity_Analysis]] | **Phân tích độ nhạy (Sensitivity Analysis) trong [[ENTITY_EXCEL|Excel]]** **[VERIFIED]**
-  > Phân tích độ nhạy giúp người phân tích hiểu được kết quả của một mô hình thay đổi như thế nào khi các giả định đầu vào t...
-- [[CONCEPT_DE_Data_Partitioning]] | **Phân vùng dữ liệu (Data Partitioning)** **[VERIFIED]**
-  > Phân vùng là kỹ thuật chia một bảng dữ liệu khổng lồ thành các phần nhỏ hơn (Partitions) để quản lý dễ dàng hơn và tăng ...
-- [[CONCEPT_META_Post_Code_Workflow]] | **Post-Code Workflow (Luồng công việc Hậu lập trình)** **[VERIFIED]**
-  > Trang này định nghĩa mô hình Hậu lập trình (Post-Code Workflow) - một sự thay đổi tư duy từ việc "viết code" sang "đạo d...
-- [[CONCEPT_VIZ_PowerBI_Basics]] | **Power BI Basics (Cơ bản về Power BI)** **[VERIFIED]**
-  > Trang này định nghĩa các kiến thức cơ bản về Power BI - công cụ BI hàng đầu của Microsoft. Chúng ta tập trung vào quy tr...
-- [[CONCEPT_VIZ_PowerBI_DAX_Basics]] | **Power BI DAX Basics (Cơ bản về ngôn ngữ DAX)** **[VERIFIED]**
-  > Trang này định nghĩa ngôn ngữ DAX (Data Analysis Expressions) - linh hồn của Power BI. DAX cho phép chúng ta thực hiện c...
-- [[CONCEPT_AI_Production_Readiness_for_Agents]] | **Production Readiness for Agents (Tiêu chuẩn triển khai Agent)** **[VERIFIED]**
-  > Trang này cung cấp checklist các tiêu chuẩn cần thiết để chuyển một Agent từ bản demo (PoC) sang môi trường thực tế (Pro...
-- [[CONCEPT_AI_Prompt_Engineering_Basics]] | **Prompt Engineering Basics (Cơ bản về kỹ nghệ gợi nhắc)** **[VERIFIED]**
-  > Trang này định nghĩa các nguyên tắc cơ bản của Prompt Engineering - nghệ thuật giao tiếp hiệu quả với LLM. Bằng cách cấu...
-- [[CONCEPT_TOOL_Pydantic]] | **Pydantic (Data Validation & Settings)** **[STUB]**
-  > Pydantic là thư viện kiểm soát dữ liệu (Data Validation) mạnh mẽ nhất trong Python, đóng vai trò là "xương sống" cho việ...
-- [[CONCEPT_SQL_Data_Preparation_Workflow]] | **Quy trình chuẩn bị dữ liệu phân tích với [[ENTITY_SQL|SQL]]** **[VERIFIED]**
-  > Chuẩn bị dữ liệu chiếm 50-80% thời gian của một Data Analyst. Quy trình này gồm 5 giai đoạn lặp lại:
-- [[CONCEPT_DE_ETL_ELT_Workflows]] | **Quy trình ETL và ELT (ETL vs ELT Workflows)** **[VERIFIED]**
-  > ETL và ELT là hai phương pháp chính để di chuyển và biến đổi dữ liệu từ nguồn thô vào kho lưu trữ để phân tích.
-- [[CONCEPT_PY_Scikit_Learn_Estimator]] | **Quy trình Scikit-Learn Estimator API** **[VERIFIED]**
-  > Sức mạnh của Scikit-Learn nằm ở tính nhất quán. Hầu như mọi thuật toán máy học (Machine Learning) đều tuân theo một giao...
-- [[CONCEPT_AI_RAG_Reranking]] | **RAG Reranking (Optimizing Retrieval Quality)** **[VERIFIED]**
-  > Reranking là bước xử lý hậu kỳ sau khi truy xuất ban đầu (Initial Retrieval). Nó sử dụng một mô hình chuyên biệt (Cross-...
-- [[CONCEPT_AIMET_RAG_Systems]] | **RAG Systems (Retrieval-Augmented Generation)**
-  > agent_id: "@engineer"
-- [[CONCEPT_AIMET_ReAct_Pattern]] | **ReAct Pattern (Reasoning + Acting)** **[VERIFIED]**
-  > ReAct là một mẫu thiết kế (Design Pattern) nơi Agent xen kẽ giữa việc suy luận (Reasoning) và thực hiện hành động (Actin...
-- [[CONCEPT_AIMET_Runnables]] | **Runnables (Standard Execution Units)**
-  > agent_id: "@engineer"
-- [[CONCEPT_AIMET_Production_Guardrails]] | **Rào chắn sản xuất (Production Guardrails)** **[VERIFIED]**
-  > Production Guardrails là tập hợp các rào chắn kiến trúc và logic được thiết kế để kiểm soát tính phi định hướng (non-det...
-- [[CONCEPT_THINK_Sentence_Mockups]] | **Sentence Mockups** **[PERSISTENT]**
-  > **Sentence mockups** là những mô phỏng ở mức độ chi tiết thấp về kết quả cuối cùng của một dự án dữ liệu, được thể hiện ...
-- [[CONCEPT_META_Skill_Modularity]] | **Skill Modularity (Tính Module của Skill)** **[VERIFIED]**
-  > Trang này mô tả nguyên tắc Thiết kế Skill theo dạng Module (Skill Modularity) - chìa khóa để xây dựng các Agent có khả n...
-- [[CONCEPT_SQL_RDBMS_Comparison]] | **So sánh cú pháp giữa các hệ quản trị RDBMS** **[VERIFIED]**
-  > Mặc dù SQL có chuẩn chung (ANSI SQL), mỗi hệ quản trị cơ sở dữ liệu (RDBMS) vẫn có những biến thể cú pháp riêng (Dialect...
-- [[CONCEPT_VIZ_PowerBI_vs_Tableau]] | **So sánh Power BI và Tableau (Power BI vs Tableau)**
-  > target: "[[ENTITY_EXCEL]]"
-- [[CONCEPT_SOURCE_VIZ_Storytelling_with_Data]] | **SOURCE_VIZ_Storytelling_with_Data** **[STUB]**
-  > Chưa có định nghĩa chính thức. Cần được bổ sung từ nguồn RAW.
-- [[CONCEPT_DE_Data_Modeling_Star_Schema]] | **Star Schema Data Modeling (Mô hình hóa dữ liệu hình sao)** **[VERIFIED]**
-  > Trang này định nghĩa mô hình Star Schema - kỹ thuật mô hình hóa dữ liệu tối ưu cho các bài toán phân tích (OLAP). Bằng c...
-- [[CONCEPT_TOOL_Streamlit]] | **Streamlit (Agentic UI Framework)** **[VERIFIED]**
-  > Streamlit là một thư viện Python mã nguồn mở giúp tạo các ứng dụng web cho Machine Learning và Data Science chỉ trong và...
-- [[CONCEPT_DSML_Supervised_vs_Unsupervised]] | **Supervised vs Unsupervised (Học có giám sát và Không giám sát)** **[VERIFIED]**
-  > Trang này phân biệt hai phương pháp học máy cơ bản nhất: Có giám sát và Không giám sát. Việc nắm rõ sự khác biệt về sự t...
-- [[CONCEPT_VIZ_Tableau_LOD_Basics]] | **Tableau LOD Basics (Cơ bản về Level of Detail trong Tableau)** **[VERIFIED]**
-  > Trang này định nghĩa khái niệm Level of Detail (LOD) - một trong những tính năng mạnh mẽ nhất của Tableau để kiểm soát m...
-- [[CONCEPT_target]] | **target** **[STUB]**
-  > Chưa có định nghĩa chính thức. Cần được bổ sung từ nguồn RAW.
-- [[CONCEPT_META_SB3_Task_Ledger]] | **Task Ledger (Nhật ký tác vụ bền vững)** **[VERIFIED]**
-  > Trang này định nghĩa khái niệm **Task Ledger** - một cơ chế ghi chép tác vụ bền vững giúp AI Agent duy trì ngữ cảnh xuyê...
-- [[CONCEPT_TEST_Gap_Testing]] | **Test Concept**
-  > This is a test concept that refers to [[UnknownKnowledge]] and [[Missing_Concept|Display Name]].
-- [[CONCEPT_META_Wiki_The_Steve_Jobs_Test]] | **The Steve Jobs Test (Bài kiểm tra Steve Jobs)** **[VERIFIED]**
-  > Trang này định nghĩa Bài kiểm tra Steve Jobs (The Steve Jobs Test) - một thước đo chất lượng cho sự thấu hiểu tri thức. ...
-- [[CONCEPT_VIZ_Interactive_Dashboard_Design]] | **Thiết kế Dashboard tương tác (Interactive Dashboard Design)** **[VERIFIED]**
-  > Dashboard là một công cụ trực quan hóa dữ liệu tổng hợp, cho phép người dùng khám phá thông tin theo nhu cầu cá nhân thô...
-- [[CONCEPT_SQL_Execution_Order]] | **Thứ tự thực thi câu lệnh [[ENTITY_SQL|SQL]] (Order of Execution)** **[VERIFIED]**
-  > Trong SQL, thứ tự bạn viết các mệnh đề (Lexical Order) không giống với thứ tự mà Database Engine thực thi chúng (Logical...
-- [[CONCEPT_PY_Time_Series_Basics]] | **Time Series Basics (Cơ bản về chuỗi thời gian)** **[VERIFIED]**
-  > Trang này cung cấp các nguyên tử tri thức về xử lý dữ liệu chuỗi thời gian (Time Series) bằng Python, đặc biệt là sử dụn...
-- [[CONCEPT_AI_Tool_Design_Standards]] | **Tool Design Standards (Tiêu chuẩn thiết kế Tool cho Agent)** **[VERIFIED]**
-  > Trang này định nghĩa các tiêu chuẩn để thiết kế các công cụ (Tools) mà AI có thể sử dụng hiệu quả. Một Tool "thân thiện ...
-- [[CONCEPT_SQL_Hierarchical_Queries]] | **Truy vấn phân cấp và đệ quy (Hierarchical & Recursive Queries)** **[VERIFIED]**
-  > Làm việc với dữ liệu có cấu trúc cây (ví dụ: sơ đồ tổ chức công ty, danh mục sản phẩm lồng nhau) yêu cầu các kỹ thuật tr...
-- [[CONCEPT_SQL_Metadata_Queries]] | **Truy vấn siêu dữ liệu (Metadata Queries)** **[VERIFIED]**
-  > Metadata là dữ liệu về dữ liệu. Truy vấn metadata giúp lập trình viên hiểu cấu trúc hệ thống mà không cần dùng công cụ G...
-- [[CONCEPT_VIZ_Avoid_3D_Graphics]] | **Tránh sử dụng đồ họa 3D (Avoid 3D Graphics)** **[VERIFIED]**
-  > Trong trực quan hóa dữ liệu 2D (trên màn hình hoặc giấy), việc sử dụng các hiệu ứng 3D thường gây hại nhiều hơn lợi.
-- [[CONCEPT_META_Typed_Knowledge_Graph]] | **Typed Knowledge Graph (Đồ thị tri thức định kiểu)** **[VERIFIED]**
-  > Trang này mô tả Đồ thị tri thức định kiểu (Typed Knowledge Graph) - lớp cấu trúc hóa ngữ nghĩa cho các trang Wiki. Bằng ...
-- [[CONCEPT_META_Assessment_Integration]] | **Tích hợp Lượng giá (Assessment Integration)** **[VERIFIED]**
-  > target: "[[ENTITY_SQL]]"
-- [[CONCEPT_PY_NumPy_Vectorization]] | **Tính toán Vector hóa (Vectorization) trong NumPy** **[VERIFIED]**
-  > Vectorization là khả năng thực hiện các phép toán trên toàn bộ mảng mà không cần sử dụng vòng lặp `for` tường minh trong...
-- [[CONCEPT_VIZ_Importance_of_Context]] | **Tầm quan trọng của bối cảnh (Importance of Context)** **[VERIFIED]**
-  > Dữ liệu mà không có bối cảnh chỉ là những con số vô hồn. Trước khi bắt đầu vẽ biểu đồ, chúng ta phải trả lời được câu hỏ...
-- [[CONCEPT_EXCEL_Optimization_Solver]] | **Tối ưu hóa bài toán kinh doanh với [[ENTITY_EXCEL|Excel]] Solver** **[VERIFIED]**
-  > Solver là một Add-in cực mạnh dùng để tìm lời giải tối ưu (Cực đại hoặc Cực tiểu) cho một bài toán dựa trên các ràng buộ...
-- [[CONCEPT_DE_Indexing_Optimization]] | **Tối ưu hóa chỉ mục (Indexing & Optimization)** **[VERIFIED]**
-  > Chỉ mục (Index) là cấu trúc dữ liệu giúp tăng tốc độ tìm kiếm bản ghi trong cơ sở dữ liệu mà không cần phải quét toàn bộ...
-- [[CONCEPT_SQL_Performance_Tuning]] | **Tối ưu hóa hiệu năng SQL (SQL Performance Tuning)** **[VERIFIED]**
-  > Tối ưu hóa hiệu năng SQL là nghệ thuật tinh chỉnh các câu lệnh truy vấn để đạt được tốc độ xử lý tối đa với chi phí tài ...
-- [[CONCEPT_VIZ_Data_Ink_Ratio]] | **Tỷ lệ Dữ liệu - Mực (Data-ink Ratio)** **[VERIFIED]**
-  > **Data-ink ratio** là một khái niệm được đưa ra bởi Edward Tufte, nhấn mạnh việc tối giản các yếu tố không cần thiết để ...
-- [[CONCEPT_META_Wiki_Absorption_Loop]] | **Wiki Absorption Loop (Vòng lặp hấp thụ tri thức)** **[VERIFIED]**
-  > Trang này định nghĩa Vòng lặp hấp thụ tri thức (Wiki Absorption Loop) - quy trình tích hợp thông tin mới vào hệ thống hi...
-- [[CONCEPT_META_Wiki_Article_Length_Targets]] | **Wiki Article Length Targets (Mục tiêu độ dài bài viết Wiki)** **[VERIFIED]**
-  > Trang này định nghĩa các ngưỡng độ dài khuyến nghị cho từng loại bài viết trong Wiki. Việc duy trì độ dài hợp lý (không ...
-- [[CONCEPT_META_Wiki_Breakdown_Mining]] | **Wiki Breakdown & Mining (Khai thác và Chia nhỏ Wiki)** **[VERIFIED]**
-  > Trang này mô tả quá trình chủ động tìm kiếm các "lỗ hổng tri thức" thông qua việc khai thác các danh từ cụ thể và các ch...
-- [[CONCEPT_META_Wiki_Cleanup_Audit]] | **Wiki Cleanup Audit (Kiểm toán và Dọn dẹp Wiki)** **[VERIFIED]**
-  > Trang này định nghĩa chu trình bảo trì toàn cục (Cleanup Audit) để rà soát và làm giàu tri thức sau các đợt Ingest. Mục ...
-- [[CONCEPT_META_Wiki_Concurrency_Safety]] | **Wiki Concurrency & Safety (An toàn đồng thời và Quy tắc bảo vệ)** **[VERIFIED]**
-  > Trang này định nghĩa bộ quy tắc bắt buộc để đảm bảo tính toàn vẹn của dữ liệu khi có nhiều tiến trình (Agent hoặc Script...
-- [[CONCEPT_META_Wiki_Directory_Taxonomy]] | **Wiki Directory Taxonomy (Hệ thống phân loại thư mục Wiki)** **[VERIFIED]**
-  > Trang này định nghĩa hệ thống phân loại thư mục dựa trên sự tiến hóa tự nhiên của dữ liệu. Thay vì áp đặt một cấu trúc c...
-- [[CONCEPT_META_Wiki_Gap_Analysis]] | **Wiki Gap Analysis (Phân tích lỗ hổng tri thức)** **[VERIFIED]**
-  > Trang này định nghĩa kỹ thuật Phân tích lỗ hổng tri thức (Knowledge Gap Analysis) - một quy trình "tự soi rọi" của hệ th...
-- [[CONCEPT_META_Wiki_Generation_Skill]] | **Wiki Generation Skill (Kỹ năng khởi tạo Wiki)** **[VERIFIED]**
-  > Trang này mô tả Kỹ năng khởi tạo Wiki (Wiki Generation Skill) - bộ logic hệ thống biến Agent thành một "Kiến trúc sư tri...
-- [[CONCEPT_META_Wiki_Granularity_Control]] | **Wiki Granularity Control (Kiểm soát độ hạt tri thức)** **[VERIFIED]**
-  > Trang này định nghĩa cơ chế Kiểm soát độ hạt (Granularity Control) - nghệ thuật chia nhỏ tri thức. Trong một hệ thống Wi...
-- [[CONCEPT_META_Wiki_Index_Synchronization]] | **Wiki Index Synchronization (Đồng bộ danh mục Wiki)** **[VERIFIED]**
-  > Trang này mô tả cơ chế Đồng bộ danh mục (Wiki Index Synchronization) - hạ tầng tra cứu kép của hệ thống. Việc đồng bộ hó...
-- [[CONCEPT_META_Wiki_Narrative_Coherence]] | **Wiki Narrative Coherence (Tính mạch lạc của mạch truyện Wiki)** **[VERIFIED]**
-  > Trang này định nghĩa tiêu chuẩn Narrative Coherence - "linh hồn" của mọi trang Wiki. Một trang Wiki đạt chuẩn không chỉ ...
-- [[CONCEPT_META_Wiki_Narrative_Taxonomy]] | **Wiki Narrative Taxonomy (Phân loại thực thể dòng chảy)** **[VERIFIED]**
-  > Trang này mô tả Phân loại thực thể dòng chảy (Narrative Taxonomy) - cách chúng ta cấu trúc các khái niệm mang tính tiến ...
-- [[CONCEPT_META_Wiki_Query_Patterns]] | **Wiki Query Patterns (Mẫu câu lệnh truy vấn tri thức)** **[VERIFIED]**
-  > Trang này định nghĩa các Mẫu câu lệnh truy vấn tri thức (Wiki Query Patterns) - công cụ để khai thác tối đa sức mạnh của...
-- [[CONCEPT_META_Wiki_Quote_Discipline]] | **Wiki Quote Discipline (Kỷ luật trích dẫn trực tiếp)** **[VERIFIED]**
-  > Trang này mô tả Kỷ luật trích dẫn (Quote Discipline) - quy tắc để giữ vững giọng văn của Wiki. Trong khi nội dung chính ...
-- [[CONCEPT_META_Wiki_Reorganization]] | **Wiki Reorganization (Tái cấu trúc hệ thống Wiki)** **[VERIFIED]**
-  > Trang này định nghĩa thao tác Tái cấu trúc (Wiki Reorganization) - một hoạt động bảo trì cấp kiến trúc. Khác với việc dọ...
-- [[CONCEPT_META_Wiki_Retention_Curve]] | **Wiki Retention Curve (Đường cong ghi nhớ Wiki)** **[VERIFIED]**
-  > Trang này mô tả Đường cong ghi nhớ (Wiki Retention Curve) - một cơ chế quản trị vòng đời tri thức thông minh. Để tránh v...
-- [[CONCEPT_META_Wiki_Signals]] | **Wiki Signals (Mô hình Tín hiệu Wiki)** **[VERIFIED]**
-  > Trang này định nghĩa Mô hình Tín hiệu Wiki (Wiki Signals) - hệ thống định vị bối cảnh cho Agent AI. Trong một biển tri t...
-- [[CONCEPT_META_Wiki_Status_Metrics]] | **Wiki Status Metrics (Chỉ số sức khỏe Wiki)** **[VERIFIED]**
-  > Trang này định nghĩa bộ chỉ số Wiki Status Metrics - "bảng điều khiển" sức khỏe của kho tri thức. Các chỉ số này giúp ng...
-- [[CONCEPT_META_Wiki_Structure_by_Type]] | **Wiki Structure by Type (Cấu trúc Wiki theo loại thực thể)** **[VERIFIED]**
-  > Trang này định nghĩa các Khung cấu trúc nội dung (Structure by Type) - bộ khung để bộc lộ bản chất tri thức. Bằng cách á...
-- [[CONCEPT_META_Wiki_Visual_Cloning]] | **Wiki Visual Cloning (Tái tạo giao diện Wiki)** **[VERIFIED]**
-  > Trang này định nghĩa kỹ thuật Tái tạo giao diện (Wiki Visual Cloning) - phương pháp sử dụng AI để "nhân bản" trải nghiệm...
-- [[CONCEPT_META_Wiki_Writing_Tone]] | **Wiki Writing Tone (Giọng văn Wiki)** **[VERIFIED]**
-  > Trang này định nghĩa Giọng văn Wiki (Writing Tone) - tiêu chuẩn hành văn khách quan tuyệt đối. Phương châm cốt lõi là **...
-- [[CONCEPT_SQL_Window_Functions]] | **Window Functions (Hàm cửa sổ)** **[VERIFIED]**
-  > Window Functions (còn gọi là hàm phân tích - analytic functions) cho phép thực hiện các phép tính toán trên một tập hợp ...
-- [[CONCEPT_VIZ_Focusing_Attention]] | **Điều hướng sự chú ý (Focusing Attention)** **[VERIFIED]**
-  > Trong một biểu đồ có hàng chục điểm dữ liệu, làm thế nào để người xem nhìn thấy ngay thứ bạn muốn họ thấy? Đó chính là n...
-- [[CONCEPT_STAT_Central_Limit_Theorem]] | **Định lý giới hạn trung tâm (Central Limit Theorem)** **[VERIFIED]**
-  > target: "[[ENTITY_Python]]"
-- [[CONCEPT_STAT_Estimates_of_Variability]] | **Ước lượng sự biến thiên (Estimates of Variability)** **[VERIFIED]**
-  > Biến thiên đo lường mức độ dữ liệu tập trung hay phân tán xung quanh giá trị trung tâm. "Trung bình" thôi là chưa đủ để ...
-- [[CONCEPT_STAT_Estimates_of_Location]] | **Ước lượng vị trí (Estimates of Location)** **[VERIFIED]**
-  > Ước lượng vị trí (hay còn gọi là số đo xu hướng trung tâm) giúp tóm tắt dữ liệu bằng một con số "điển hình" nhất.
+### None
+- [[CONCEPT_AI_Advanced_Prompt_Engineering_Gemini|None]]
+- [[CONCEPT_AI_Agentic_AI_Roadmap_Fundamentals|None]]
+- [[CONCEPT_AI_LLM_Interview_Essentials|None]]
+- [[SOURCE_AIMET_AGENTIC_AI_ROADMAP_2026|None]]
+- [[SOURCE_AIMET_GEMINI_CODEX_850_PROMPTS|None]]
+- [[SOURCE_coursera-AI-essential-Bias_Drift_Knowledge_Cutoff|"ACAD AI Essentials: Bias, Drift, and Knowledge Cutoff"]]
+- [["SOURCE_COURSERA-AI-ESSENTIAL-BIAS_DRIFT_KNOWLEDGE_CUTOFF"|"ACAD AI Essentials: Bias, Drift, and Knowledge Cutoff"]]
+- [[SOURCE_coursera-AI-essential-Stay_up_to_date_with_AI|"ACAD AI Essentials: Stay up to date with AI"]]
+- [["SOURCE_COURSERA-AI-ESSENTIAL-STAY_UP_TO_DATE_WITH_AI"|"ACAD AI Essentials: Stay up to date with AI"]]
+- [[SOURCE_STAT_Intro_to_Statistical_Learning|"ACAD An Introduction to Statistical Learning: with Applications in R/Python"]]
+- [["SOURCE_STAT_INTRO_TO_STATISTICAL_LEARNING"|"ACAD An Introduction to Statistical Learning: with Applications in R/Python"]]
+- [[SOURCE_DE_Designing_Data_Intensive_Applications|"ACAD Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems"]]
+- [["SOURCE_DE_DESIGNING_DATA_INTENSIVE_APPLICATIONS"|"ACAD Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems"]]
+- [[SOURCE_STAT_Essentials_of_Statistics|"ACAD Essentials of Statistics"]]
+- [["SOURCE_STAT_ESSENTIALS_OF_STATISTICS"|"ACAD Essentials of Statistics"]]
+- [[SOURCE_DE_Fundamentals_of_Data_Engineering|"ACAD Fundamentals of Data Engineering"]]
+- [["SOURCE_DE_FUNDAMENTALS_OF_DATA_ENGINEERING"|"ACAD Fundamentals of Data Engineering"]]
+- [[SOURCE_VIZ_How_to_Design_a_Dashboard|"ACAD How to Design a Dashboard: Best Practices and Principles"]]
+- [["SOURCE_VIZ_HOW_TO_DESIGN_A_DASHBOARD"|"ACAD How to Design a Dashboard: Best Practices and Principles"]]
+- [[SOURCE_DSML_Marketing_Analytics|"ACAD Marketing Analytics"]]
+- [["SOURCE_DSML_MARKETING_ANALYTICS"|"ACAD Marketing Analytics"]]
+- [[SOURCE_DSML_Master_ML_Algorithms|"ACAD Mastering Machine Learning Algorithms"]]
+- [["SOURCE_DSML_MASTER_ML_ALGORITHMS"|"ACAD Mastering Machine Learning Algorithms"]]
+- [[SOURCE_STAT_Naked_Statistics|"ACAD Naked Statistics: Stripping the Dread from the Data"]]
+- [["SOURCE_STAT_NAKED_STATISTICS"|"ACAD Naked Statistics: Stripping the Dread from the Data"]]
+- [[SOURCE_STAT_Practical_Statistics_for_Data_Scientists|"ACAD Practical Statistics for Data Scientists"]]
+- [["SOURCE_STAT_PRACTICAL_STATISTICS_FOR_DATA_SCIENTISTS"|"ACAD Practical Statistics for Data Scientists"]]
+- [[SOURCE_STAT_Statistics_in_a_Nutshell|"ACAD Statistics in a Nutshell: A Desktop Quick Reference"]]
+- [["SOURCE_STAT_STATISTICS_IN_A_NUTSHELL"|"ACAD Statistics in a Nutshell: A Desktop Quick Reference"]]
+- [[SOURCE_VIZ_Storytelling_with_Data_P1|"ACAD Storytelling with Data (Part 1)"]]
+- [["SOURCE_VIZ_STORYTELLING_WITH_DATA_P1"|"ACAD Storytelling with Data (Part 1)"]]
+- [[SOURCE_VIZ_Storytelling_with_Data_P2|"ACAD Storytelling with Data (Part 2): Let's Practice"]]
+- [["SOURCE_VIZ_STORYTELLING_WITH_DATA_P2"|"ACAD Storytelling with Data (Part 2): Let's Practice"]]
+- [[SOURCE_VIZ_Storytelling_with_Data_P3|"ACAD Storytelling with Data: A Guide for Business Professionals"]]
+- [["SOURCE_VIZ_STORYTELLING_WITH_DATA_P3"|"ACAD Storytelling with Data: A Guide for Business Professionals"]]
+- [[SOURCE_DE_Data_Warehouse_Toolkit|"ACAD The Data Warehouse Toolkit: The Definitive Guide to Dimensional Modeling"]]
+- [["SOURCE_DE_DATA_WAREHOUSE_TOOLKIT"|"ACAD The Data Warehouse Toolkit: The Definitive Guide to Dimensional Modeling"]]
+- [[SOURCE_THINK_Thinking_with_Data|"ACAD: Thinking with Data - Phân tích lập luận và đặt câu hỏi"]]
+- [["SOURCE_THINK_THINKING_WITH_DATA"|"ACAD: Thinking with Data - Phân tích lập luận và đặt câu hỏi"]]
+- [[SOURCE_THINK_Data_Science_for_Business|"ACAD: [[ENTITY_Data_Science|Data Science]] for Business"]]
+- [["SOURCE_THINK_DATA_SCIENCE_FOR_BUSINESS"|"ACAD: [[ENTITY_Data_Science|Data Science]] for Business"]]
+- [[CONCEPT_AI_BIAS_AND_ETHICS|"AI Bias and Ethics (Thiên kiến và Đạo đức trong AI)"]]
+- [[CONCEPT_AI_Bias_and_Ethics|"AI Bias and Ethics (Thiên kiến và Đạo đức trong AI)"]]
+- [[CONCEPT_AIMET_Learning_Order_Checklist|"AIMET Learning Order Checklist (2026)"]]
+- [[CONCEPT_AI_Abstention_Strategy|"Abstention Strategy (Hallucination Mitigation)"]]
+- [[CONCEPT_AI_Agent_Memory_Architecture|"Agent Memory Architecture (Kiến trúc bộ nhớ Agent)"]]
+- [[ENTITY_TOOL_Agent_Observability_Stack|"Agent Observability Stack (Bộ công cụ giám sát Agent)"]]
+- [[CONCEPT_AI_Agent_Reasoning_Patterns|"Agent Reasoning Patterns (Các mẫu suy luận của Agent)"]]
+- [[SOURCE_AIMET_AGENTIC_ROADMAP_2026|"Agentic AI Engineer Roadmap (2026) - Interview Q&A"]]
+- [[SYNTHESIS_AIMET_AGENTIC_AI_INTERVIEW_PRACTICE|"Agentic AI Interview Practice (Q&A Bank)"]]
+- [[SYNTHESIS_AIMET_Agentic_AI_Interview_Practice|"Agentic AI Interview Practice (Q&A Bank)"]]
+- [[CONCEPT_AI_Agentic_Python_Standards|"Agentic Python Standards (Tiêu chuẩn Python cho Agent)"]]
+- [[ENTITY_TOOL_Claude|"Anthropic Claude (AI Assistant)"]]
+- [[ENTITY_TOOL_CLAUDE|"Anthropic Claude (AI Assistant)"]]
+- [["ENTITY_TOOL_CLAUDE"|"Anthropic Claude (AI Assistant)"]]
+- [[CONCEPT_META_ATOMIC_METHODOLOGY|"Atomic Methodology (Phương pháp luận Wiki Hạt nhân)"]]
+- [[CONCEPT_META_Atomic_Methodology|"Atomic Methodology (Phương pháp luận Wiki Hạt nhân)"]]
+- [[CONCEPT_DE_BATCH_VS_STREAM_PROCESSING|"Batch vs Stream Processing (Xử lý theo đợt và Xử lý luồng)"]]
+- [[CONCEPT_DE_Batch_vs_Stream_Processing|"Batch vs Stream Processing (Xử lý theo đợt và Xử lý luồng)"]]
+- [[CONCEPT_DSML_Bias_Variance_Tradeoff|"Bias-Variance Tradeoff (Sự đánh đổi Bias-Variance)"]]
+- [[CONCEPT_META_Bidirectional_Linking|"Bidirectional Linking (Liên kết hai chiều)"]]
+- [[CONCEPT_STAT_BOOTSTRAP_RESAMPLING|"Bootstrap Resampling (Phương pháp lấy mẫu lại Bootstrap)"]]
+- [[CONCEPT_STAT_Bootstrap_Resampling|"Bootstrap Resampling (Phương pháp lấy mẫu lại Bootstrap)"]]
+- [[CONCEPT_SQL_CTES|"CONCEPT SQL CTES"]]
+- [["CONCEPT_SQL_CTES"|"CONCEPT SQL CTES"]]
+- [[CONCEPT_SQL_WINDOW_FUNCTIONS|"CONCEPT SQL WINDOW FUNCTIONS"]]
+- [["CONCEPT_SQL_WINDOW_FUNCTIONS"|"CONCEPT SQL WINDOW FUNCTIONS"]]
+- [[CONCEPT_THINK_Patterns_of_Reasoning|"CONCEPT: Các Mô hình Lập luận (Patterns of Reasoning)"]]
+- [[CONCEPT_THINK_PATTERNS_OF_REASONING|"CONCEPT: Các Mô hình Lập luận (Patterns of Reasoning)"]]
+- [["CONCEPT_THINK_PATTERNS_OF_REASONING"|"CONCEPT: Các Mô hình Lập luận (Patterns of Reasoning)"]]
+- [[CONCEPT_THINK_Data_Mining_Tasks|"CONCEPT: Các Tác vụ Khai thác Dữ liệu (Data Mining Tasks)"]]
+- [[CONCEPT_THINK_DATA_MINING_TASKS|"CONCEPT: Các Tác vụ Khai thác Dữ liệu (Data Mining Tasks)"]]
+- [["CONCEPT_THINK_DATA_MINING_TASKS"|"CONCEPT: Các Tác vụ Khai thác Dữ liệu (Data Mining Tasks)"]]
+- [[CONCEPT_THINK_Data_Evidence_Types|"CONCEPT: Các loại Bằng chứng Dữ liệu (Data Evidence Types)"]]
+- [[CONCEPT_THINK_DATA_EVIDENCE_TYPES|"CONCEPT: Các loại Bằng chứng Dữ liệu (Data Evidence Types)"]]
+- [["CONCEPT_THINK_DATA_EVIDENCE_TYPES"|"CONCEPT: Các loại Bằng chứng Dữ liệu (Data Evidence Types)"]]
+- [[CONCEPT_THINK_Yes_No_Tree|"CONCEPT: Cây Có/Không (Yes/No Tree)"]]
+- [[CONCEPT_THINK_YES_NO_TREE|"CONCEPT: Cây Có/Không (Yes/No Tree)"]]
+- [["CONCEPT_THINK_YES_NO_TREE"|"CONCEPT: Cây Có/Không (Yes/No Tree)"]]
+- [[CONCEPT_THINK_Logic_Tree|"CONCEPT: Cây Logic (Logic Tree)"]]
+- [[CONCEPT_THINK_LOGIC_TREE|"CONCEPT: Cây Logic (Logic Tree)"]]
+- [["CONCEPT_THINK_LOGIC_TREE"|"CONCEPT: Cây Logic (Logic Tree)"]]
+- [[CONCEPT_THINK_Pros_Cons_List|"CONCEPT: Danh sách Ưu và Nhược điểm (Pros & Cons List)"]]
+- [[CONCEPT_THINK_PROS_CONS_LIST|"CONCEPT: Danh sách Ưu và Nhược điểm (Pros & Cons List)"]]
+- [["CONCEPT_THINK_PROS_CONS_LIST"|"CONCEPT: Danh sách Ưu và Nhược điểm (Pros & Cons List)"]]
+- [[CONCEPT_THINK_Entropy_Information_Gain|"CONCEPT: Entropy và Độ lợi Thông tin (Information Gain)"]]
+- [[CONCEPT_THINK_ENTROPY_INFORMATION_GAIN|"CONCEPT: Entropy và Độ lợi Thông tin (Information Gain)"]]
+- [["CONCEPT_THINK_ENTROPY_INFORMATION_GAIN"|"CONCEPT: Entropy và Độ lợi Thông tin (Information Gain)"]]
+- [[CONCEPT_THINK_Logistic_Regression_Classifier|"CONCEPT: Hồi quy Logistic (Logistic Regression Classifier)"]]
+- [[CONCEPT_THINK_LOGISTIC_REGRESSION_CLASSIFIER|"CONCEPT: Hồi quy Logistic (Logistic Regression Classifier)"]]
+- [["CONCEPT_THINK_LOGISTIC_REGRESSION_CLASSIFIER"|"CONCEPT: Hồi quy Logistic (Logistic Regression Classifier)"]]
+- [[CONCEPT_THINK_Expected_Value_Framework|"CONCEPT: Khung Giá trị Kỳ vọng (Expected Value Framework)"]]
+- [[CONCEPT_THINK_EXPECTED_VALUE_FRAMEWORK|"CONCEPT: Khung Giá trị Kỳ vọng (Expected Value Framework)"]]
+- [["CONCEPT_THINK_EXPECTED_VALUE_FRAMEWORK"|"CONCEPT: Khung Giá trị Kỳ vọng (Expected Value Framework)"]]
+- [[CONCEPT_THINK_Exploration_vs_Confirmation|"CONCEPT: Khám phá và Xác nhận (Exploration vs Confirmation)"]]
+- [[CONCEPT_THINK_EXPLORATION_VS_CONFIRMATION|"CONCEPT: Khám phá và Xác nhận (Exploration vs Confirmation)"]]
+- [["CONCEPT_THINK_EXPLORATION_VS_CONFIRMATION"|"CONCEPT: Khám phá và Xác nhận (Exploration vs Confirmation)"]]
+- [[CONCEPT_THINK_Hypothesis_Pyramid|"CONCEPT: Kim tự tháp Giả thuyết (Hypothesis Pyramid)"]]
+- [[CONCEPT_THINK_HYPOTHESIS_PYRAMID|"CONCEPT: Kim tự tháp Giả thuyết (Hypothesis Pyramid)"]]
+- [["CONCEPT_THINK_HYPOTHESIS_PYRAMID"|"CONCEPT: Kim tự tháp Giả thuyết (Hypothesis Pyramid)"]]
+- [[CONCEPT_THINK_Hypothesis_Testing|"CONCEPT: Kiểm chứng Giả thuyết (Hypothesis Testing)"]]
+- [[CONCEPT_THINK_HYPOTHESIS_TESTING|"CONCEPT: Kiểm chứng Giả thuyết (Hypothesis Testing)"]]
+- [["CONCEPT_THINK_HYPOTHESIS_TESTING"|"CONCEPT: Kiểm chứng Giả thuyết (Hypothesis Testing)"]]
+- [[CONCEPT_THINK_Design_Plan|"CONCEPT: Kế hoạch Thiết kế Giải quyết Vấn đề (Problem-Solving Design Plan)"]]
+- [[CONCEPT_THINK_DESIGN_PLAN|"CONCEPT: Kế hoạch Thiết kế Giải quyết Vấn đề (Problem-Solving Design Plan)"]]
+- [["CONCEPT_THINK_DESIGN_PLAN"|"CONCEPT: Kế hoạch Thiết kế Giải quyết Vấn đề (Problem-Solving Design Plan)"]]
+- [[CONCEPT_THINK_5_Whys|"CONCEPT: Kỹ thuật 5 Whys (5 Tại sao)"]]
+- [[CONCEPT_THINK_5_WHYS|"CONCEPT: Kỹ thuật 5 Whys (5 Tại sao)"]]
+- [["CONCEPT_THINK_5_WHYS"|"CONCEPT: Kỹ thuật 5 Whys (5 Tại sao)"]]
+- [[CONCEPT_THINK_Data_Argumentation|"CONCEPT: Lập luận bằng Dữ liệu (Data Argumentation)"]]
+- [[CONCEPT_THINK_DATA_ARGUMENTATION|"CONCEPT: Lập luận bằng Dữ liệu (Data Argumentation)"]]
+- [["CONCEPT_THINK_DATA_ARGUMENTATION"|"CONCEPT: Lập luận bằng Dữ liệu (Data Argumentation)"]]
+- [[CONCEPT_THINK_Prioritization_Matrix|"CONCEPT: Ma trận Ưu tiên (Prioritization Matrix)"]]
+- [[CONCEPT_THINK_PRIORITIZATION_MATRIX|"CONCEPT: Ma trận Ưu tiên (Prioritization Matrix)"]]
+- [["CONCEPT_THINK_PRIORITIZATION_MATRIX"|"CONCEPT: Ma trận Ưu tiên (Prioritization Matrix)"]]
+- [[CONCEPT_THINK_SVM_Linear_Separation|"CONCEPT: Máy vector hỗ trợ (Support Vector Machine - SVM)"]]
+- [[CONCEPT_THINK_SVM_LINEAR_SEPARATION|"CONCEPT: Máy vector hỗ trợ (Support Vector Machine - SVM)"]]
+- [["CONCEPT_THINK_SVM_LINEAR_SEPARATION"|"CONCEPT: Máy vector hỗ trợ (Support Vector Machine - SVM)"]]
+- [[CONCEPT_THINK_Root_Cause_Analysis|"CONCEPT: Phân tích Nguyên nhân Gốc rễ (Root Cause Analysis - RCA)"]]
+- [[CONCEPT_THINK_ROOT_CAUSE_ANALYSIS|"CONCEPT: Phân tích Nguyên nhân Gốc rễ (Root Cause Analysis - RCA)"]]
+- [["CONCEPT_THINK_ROOT_CAUSE_ANALYSIS"|"CONCEPT: Phân tích Nguyên nhân Gốc rễ (Root Cause Analysis - RCA)"]]
+- [[CONCEPT_THINK_Ensemble_Methods|"CONCEPT: Phương pháp Học máy Kết hợp (Ensemble Methods)"]]
+- [[CONCEPT_THINK_ENSEMBLE_METHODS|"CONCEPT: Phương pháp Học máy Kết hợp (Ensemble Methods)"]]
+- [["CONCEPT_THINK_ENSEMBLE_METHODS"|"CONCEPT: Phương pháp Học máy Kết hợp (Ensemble Methods)"]]
+- [[CONCEPT_THINK_Problem_Solving_Process|"CONCEPT: Quy trình Giải quyết Vấn đề 4 Bước"]]
+- [[CONCEPT_THINK_PROBLEM_SOLVING_PROCESS|"CONCEPT: Quy trình Giải quyết Vấn đề 4 Bước"]]
+- [["CONCEPT_THINK_PROBLEM_SOLVING_PROCESS"|"CONCEPT: Quy trình Giải quyết Vấn đề 4 Bước"]]
+- [[CONCEPT_THINK_Data_Mining_Process_CRISP|"CONCEPT: Quy trình Khai thác Dữ liệu (CRISP-DM)"]]
+- [[CONCEPT_THINK_DATA_MINING_PROCESS_CRISP|"CONCEPT: Quy trình Khai thác Dữ liệu (CRISP-DM)"]]
+- [["CONCEPT_THINK_DATA_MINING_PROCESS_CRISP"|"CONCEPT: Quy trình Khai thác Dữ liệu (CRISP-DM)"]]
+- [[CONCEPT_THINK_Problem_Solving_Mindset|"CONCEPT: Thái độ Giải quyết Vấn đề (Problem Solving Mindset)"]]
+- [[CONCEPT_THINK_PROBLEM_SOLVING_MINDSET|"CONCEPT: Thái độ Giải quyết Vấn đề (Problem Solving Mindset)"]]
+- [["CONCEPT_THINK_PROBLEM_SOLVING_MINDSET"|"CONCEPT: Thái độ Giải quyết Vấn đề (Problem Solving Mindset)"]]
+- [[CONCEPT_AIMET_Tool_Integration|"CONCEPT: Tool Integration (Custom Tools & Connectors)"]]
+- [[CONCEPT_AIMET_TOOL_INTEGRATION|"CONCEPT: Tool Integration (Custom Tools & Connectors)"]]
+- [["CONCEPT_AIMET_TOOL_INTEGRATION"|"CONCEPT: Tool Integration (Custom Tools & Connectors)"]]
+- [[CONCEPT_THINK_TF_IDF_Text_Mining|"CONCEPT: Trọng số TF-IDF trong Khai thác Văn bản"]]
+- [[CONCEPT_THINK_TF_IDF_TEXT_MINING|"CONCEPT: Trọng số TF-IDF trong Khai thác Văn bản"]]
+- [["CONCEPT_THINK_TF_IDF_TEXT_MINING"|"CONCEPT: Trọng số TF-IDF trong Khai thác Văn bản"]]
+- [[CONCEPT_THINK_Naive_Bayes_Logic|"CONCEPT: Tư duy Naive Bayes (Naive Bayes Logic)"]]
+- [[CONCEPT_THINK_NAIVE_BAYES_LOGIC|"CONCEPT: Tư duy Naive Bayes (Naive Bayes Logic)"]]
+- [["CONCEPT_THINK_NAIVE_BAYES_LOGIC"|"CONCEPT: Tư duy Naive Bayes (Naive Bayes Logic)"]]
+- [[CONCEPT_THINK_Data_Analytic_Thinking|"CONCEPT: Tư duy Phân tích Dữ liệu (Data-Analytic Thinking)"]]
+- [[CONCEPT_THINK_DATA_ANALYTIC_THINKING|"CONCEPT: Tư duy Phân tích Dữ liệu (Data-Analytic Thinking)"]]
+- [["CONCEPT_THINK_DATA_ANALYTIC_THINKING"|"CONCEPT: Tư duy Phân tích Dữ liệu (Data-Analytic Thinking)"]]
+- [[CONCEPT_THINK_Correlation_vs_Causation|"CONCEPT: Tương quan và Nhân quả (Correlation vs Causation)"]]
+- [[CONCEPT_THINK_CORRELATION_VS_CAUSATION|"CONCEPT: Tương quan và Nhân quả (Correlation vs Causation)"]]
+- [["CONCEPT_THINK_CORRELATION_VS_CAUSATION"|"CONCEPT: Tương quan và Nhân quả (Correlation vs Causation)"]]
+- [[CONCEPT_SQL_Aggregations|"CONCEPT: [[ENTITY_SQL|SQL]] Aggregations (Gom nhóm & Thống kê)"]]
+- [[CONCEPT_THINK_ROC_AUC_Evaluation|"CONCEPT: Đánh giá mô hình bằng ROC và AUC"]]
+- [[CONCEPT_THINK_ROC_AUC_EVALUATION|"CONCEPT: Đánh giá mô hình bằng ROC và AUC"]]
+- [["CONCEPT_THINK_ROC_AUC_EVALUATION"|"CONCEPT: Đánh giá mô hình bằng ROC và AUC"]]
+- [[CONCEPT_THINK_Data_Ethics_Scoping|"CONCEPT: Đạo đức Dữ liệu trong Scoping (Data Ethics)"]]
+- [[CONCEPT_THINK_DATA_ETHICS_SCOPING|"CONCEPT: Đạo đức Dữ liệu trong Scoping (Data Ethics)"]]
+- [["CONCEPT_THINK_DATA_ETHICS_SCOPING"|"CONCEPT: Đạo đức Dữ liệu trong Scoping (Data Ethics)"]]
+- [[CONCEPT_THINK_Audience_Framing|"CONCEPT: Định hình Khán giả và Niềm tin (Audience Framing)"]]
+- [[CONCEPT_THINK_AUDIENCE_FRAMING|"CONCEPT: Định hình Khán giả và Niềm tin (Audience Framing)"]]
+- [["CONCEPT_THINK_AUDIENCE_FRAMING"|"CONCEPT: Định hình Khán giả và Niềm tin (Audience Framing)"]]
+- [[CONCEPT_THINK_Similarity_Distance_Metrics|"CONCEPT: Độ tương đồng và Khoảng cách (Similarity & Distance)"]]
+- [[CONCEPT_THINK_SIMILARITY_DISTANCE_METRICS|"CONCEPT: Độ tương đồng và Khoảng cách (Similarity & Distance)"]]
+- [["CONCEPT_THINK_SIMILARITY_DISTANCE_METRICS"|"CONCEPT: Độ tương đồng và Khoảng cách (Similarity & Distance)"]]
+- [[CONCEPT_DE_SCD_Types|"Chiều thay đổi chậm (Slowly Changing Dimensions - SCD)"]]
+- [[CONCEPT_META_Consolidation_Tiers|"Consolidation Tiers (Các tầng hợp nhất tri thức)"]]
+- [[CONCEPT_AI_Context_Budgeting|"Context Budgeting (Quản lý ngân sách ngữ cảnh)"]]
+- [[CONCEPT_TOOL_CONTEXT_INJECTION_TECHNIQUES|"Context Injection Techniques (Kỹ thuật tiêm ngữ cảnh)"]]
+- [[CONCEPT_TOOL_Context_Injection_Techniques|"Context Injection Techniques (Kỹ thuật tiêm ngữ cảnh)"]]
+- [[CONCEPT_STAT_CORRELATION_VS_CAUSATION|"Correlation vs Causation (Tương quan và Nhân quả)"]]
+- [[CONCEPT_STAT_Correlation_vs_Causation|"Correlation vs Causation (Tương quan và Nhân quả)"]]
+- [[CONCEPT_STAT_Sampling_Biases|"Các loại sai lệch khi lấy mẫu (Sampling Biases)"]]
+- [[CONCEPT_PY_Pandas_Basics|"Cơ bản về Pandas (Pandas Basics)"]]
+- [[CONCEPT_DE_DATA_ENGINEERING_LIFECYCLE|"Data Engineering Lifecycle (Vòng đời Kỹ thuật Dữ liệu)"]]
+- [[CONCEPT_DE_Data_Engineering_Lifecycle|"Data Engineering Lifecycle (Vòng đời Kỹ thuật Dữ liệu)"]]
+- [[CONCEPT_DE_DATA_GOVERNANCE|"Data Governance (Quản trị dữ liệu)"]]
+- [[CONCEPT_DE_Data_Governance|"Data Governance (Quản trị dữ liệu)"]]
+- [[CONCEPT_DSML_Decision_Trees_Random_Forest|"Decision Trees & Random Forest (Cây quyết định và Rừng ngẫu nhiên)"]]
+- [[CONCEPT_TOOL_DOCKER|"Docker (Containerization for AI Agents)"]]
+- [[CONCEPT_TOOL_Docker|"Docker (Containerization for AI Agents)"]]
+- [[ENTITY_AIMET_AutoGen|"ENTITY: AutoGen (Conversational Multi-Agent Framework)"]]
+- [[ENTITY_AIMET_AUTOGEN|"ENTITY: AutoGen (Conversational Multi-Agent Framework)"]]
+- [["ENTITY_AIMET_AUTOGEN"|"ENTITY: AutoGen (Conversational Multi-Agent Framework)"]]
+- [[ENTITY_CASE_John_Octopus|"ENTITY: Case Study - John Octopus"]]
+- [[ENTITY_CASE_JOHN_OCTOPUS|"ENTITY: Case Study - John Octopus"]]
+- [["ENTITY_CASE_JOHN_OCTOPUS"|"ENTITY: Case Study - John Octopus"]]
+- [[ENTITY_CASE_Kiwi_Brazil|"ENTITY: Case Study - Kiwi (Soccer Player)"]]
+- [[ENTITY_CASE_KIWI_BRAZIL|"ENTITY: Case Study - Kiwi (Soccer Player)"]]
+- [["ENTITY_CASE_KIWI_BRAZIL"|"ENTITY: Case Study - Kiwi (Soccer Player)"]]
+- [[ENTITY_CASE_Mushroom_Lovers|"ENTITY: Case Study - The Mushroom Lovers"]]
+- [[ENTITY_CASE_MUSHROOM_LOVERS|"ENTITY: Case Study - The Mushroom Lovers"]]
+- [["ENTITY_CASE_MUSHROOM_LOVERS"|"ENTITY: Case Study - The Mushroom Lovers"]]
+- [[ENTITY_AIMET_CrewAI|"ENTITY: CrewAI (Role-based Multi-Agent Framework)"]]
+- [[ENTITY_AIMET_CREWAI|"ENTITY: CrewAI (Role-based Multi-Agent Framework)"]]
+- [["ENTITY_AIMET_CREWAI"|"ENTITY: CrewAI (Role-based Multi-Agent Framework)"]]
+- [[ENTITY_PERSON_Ken_Watanabe|"ENTITY: Ken Watanabe (Tác giả)"]]
+- [[ENTITY_PERSON_KEN_WATANABE|"ENTITY: Ken Watanabe (Tác giả)"]]
+- [["ENTITY_PERSON_KEN_WATANABE"|"ENTITY: Ken Watanabe (Tác giả)"]]
+- [[ENTITY_TOOL_LangChain|"ENTITY: LangChain (LLM Application Framework)"]]
+- [[ENTITY_TOOL_LANGCHAIN|"ENTITY: LangChain (LLM Application Framework)"]]
+- [["ENTITY_TOOL_LANGCHAIN"|"ENTITY: LangChain (LLM Application Framework)"]]
+- [[ENTITY_AIMET_LangGraph|"ENTITY: LangGraph (Agent Orchestration Framework)"]]
+- [[ENTITY_TECH_LLM|"ENTITY: Large Language Model (LLM)"]]
+- [["ENTITY_TECH_LLM"|"ENTITY: Large Language Model (LLM)"]]
+- [[ENTITY_ORG_McKinsey|"ENTITY: McKinsey & Company"]]
+- [[ENTITY_ORG_MCKINSEY|"ENTITY: McKinsey & Company"]]
+- [["ENTITY_ORG_MCKINSEY"|"ENTITY: McKinsey & Company"]]
+- [[CONCEPT_AIMET_EVALUATION_METRICS|"Evaluation Metrics (Agentic AI)"]]
+- [[CONCEPT_AIMET_Evaluation_Metrics|"Evaluation Metrics (Agentic AI)"]]
+- [[CONCEPT_TOOL_FASTAPI|"FastAPI (Stub)"]]
+- [[CONCEPT_TOOL_FastAPI|"FastAPI (Stub)"]]
+- [[CONCEPT_DSML_Feature_Engineering_Basics|"Feature Engineering Basics (Kỹ nghệ đặc trưng cơ bản)"]]
+- [[ENTITY_TOOL_GEMINI_PROMPTS_CODEX|"Gemini Prompts Codex (Selected Templates)"]]
+- [[ENTITY_TOOL_Gemini_Prompts_Codex|"Gemini Prompts Codex (Selected Templates)"]]
+- [[CONCEPT_TOOL_GEMINI_ROLE_PROMPTING|"Gemini Role Prompting (Persona Expert Design)"]]
+- [[CONCEPT_TOOL_Gemini_Role_Prompting|"Gemini Role Prompting (Persona Expert Design)"]]
+- [[ENTITY_TOOL_Gemini|"Google Gemini (Multi-modal AI)"]]
+- [[ENTITY_TOOL_GEMINI|"Google Gemini (Multi-modal AI)"]]
+- [["ENTITY_TOOL_GEMINI"|"Google Gemini (Multi-modal AI)"]]
+- [[CONCEPT_STAT_Linear_Regression|"Hồi quy tuyến tính (Linear Regression)"]]
+- [[CONCEPT_META_Idea_File_System|"Idea File System (Hệ thống tệp ý tưởng)"]]
+- [[CONCEPT_META_INFORMATION_OVERLOAD|"Information Overload (Quá tải thông tin)"]]
+- [[CONCEPT_META_Information_Overload|"Information Overload (Quá tải thông tin)"]]
+- [[CONCEPT_DSML_Clustering_KMeans|"K-Means Clustering (Phân cụm K-Means)"]]
+- [[CONCEPT_STAT_Confidence_Intervals|"Khoảng tin cậy (Confidence Intervals)"]]
+- [[CONCEPT_THINK_CoNVO_Framework|"Khung CoNVO (Context, Need, Vision, Outcome)"]]
+- [[CONCEPT_THINK_CONVO_FRAMEWORK|"Khung CoNVO (Context, Need, Vision, Outcome)"]]
+- [["CONCEPT_THINK_CONVO_FRAMEWORK"|"Khung CoNVO (Context, Need, Vision, Outcome)"]]
+- [[CONCEPT_DE_Data_Quality_Framework|"Khung quản lý chất lượng dữ liệu (Data Quality Framework)"]]
+- [[CONCEPT_SQL_Case_Statements_REVIEW|"Khái niệm: SQL Case Statements (Logic điều kiện)"]]
+- [[CONCEPT_SQL_Joins_REVIEW|"Khái niệm: SQL Joins (Kết nối bảng)"]]
+- [[CONCEPT_SQL_Select_And_Filter_REVIEW|"Khái niệm: SQL Select & Filter (Truy xuất và Lọc dữ liệu)"]]
+- [[CONCEPT_DE_Data_Architecture_Basics|"Kiến trúc dữ liệu cơ bản (Warehouse vs Lake vs Lakehouse)"]]
+- [[CONCEPT_AIMET_MultiAgent_Architecture|"Kiến trúc Đa Agent (Multi-Agent Architecture)"]]
+- [[CONCEPT_STAT_T_Test_ANOVA|"Kiểm định T-Test và ANOVA"]]
+- [[CONCEPT_STAT_Hypothesis_Testing_PValue|"Kiểm định giả thuyết và P-Value (Hypothesis Testing & P-Value)"]]
+- [[CONCEPT_AI_KNOWLEDGE_CUTOFF|"Knowledge Cutoff (Giới hạn tri thức tĩnh)"]]
+- [[CONCEPT_AI_Knowledge_Cutoff|"Knowledge Cutoff (Giới hạn tri thức tĩnh)"]]
+- [[ENTITY_TOOL_LangGraph|"LangGraph (Framework điều phối Agent)"]]
+- [[SOURCE_LANGGRAPH_CONCEPTS|"LangGraph Concepts - Official Documentation"]]
+- [[SOURCE_OFFICIAL_LangGraph_Concepts|"LangGraph Concepts - Official Documentation"]]
+- [[CONCEPT_DSML_MARKETING_METRICS|"Marketing Metrics (Chỉ số đo lường tiếp thị)"]]
+- [[CONCEPT_DSML_Marketing_Metrics|"Marketing Metrics (Chỉ số đo lường tiếp thị)"]]
+- [[CONCEPT_DSML_MASTER_ML_ALGORITHMS|"Master ML Algorithms (Tổng quan các thuật toán Machine Learning)"]]
+- [[CONCEPT_DSML_Master_ML_Algorithms|"Master ML Algorithms (Tổng quan các thuật toán Machine Learning)"]]
+- [[SYNTHESIS_SQL_Mastery|"Master: Kỹ thuật truy vấn [[ENTITY_SQL|SQL]] cho Data Analysis"]]
+- [[WIKI_SYNTHESIS_SQL_MASTERY|"Master: Kỹ thuật truy vấn [[ENTITY_SQL|SQL]] cho Data Analysis"]]
+- [["WIKI_SYNTHESIS_SQL_MASTERY"|"Master: Kỹ thuật truy vấn [[ENTITY_SQL|SQL]] cho Data Analysis"]]
+- [[CONCEPT_AIMET_Memory_Management|"Memory Management trong Agentic AI Systems"]]
+- [[CONCEPT_DSML_Model_Evaluation_Metrics|"Model Evaluation Metrics (Chỉ số đánh giá mô hình)"]]
+- [[CONCEPT_AI_MultiAgent_Coordination|"Multi-Agent Coordination (Phối hợp đa Agent)"]]
+- [[CONCEPT_TOOL_Data_Analysis_Prompts|"Mẫu câu lệnh Phân tích dữ liệu (Data Analysis Prompts)"]]
+- [["CONCEPT_TOOL_DATA_ANALYSIS_PROMPTS"|"Mẫu câu lệnh Phân tích dữ liệu (Data Analysis Prompts)"]]
+- [[CONCEPT_TOOL_SQL_Query_Prompts|"Mẫu câu lệnh Tối ưu hóa [[ENTITY_SQL|SQL]] (SQL Query Prompts)"]]
+- [["CONCEPT_TOOL_SQL_QUERY_PROMPTS"|"Mẫu câu lệnh Tối ưu hóa [[ENTITY_SQL|SQL]] (SQL Query Prompts)"]]
+- [[SOURCE_META_LLM_WIKI|"Nashsu LLM Wiki v1"]]
+- [["SOURCE_META_LLM_WIKI"|"Nashsu LLM Wiki v1"]]
+- [[SOURCE_META_LLM_WIKI_V2|"Nashsu LLM Wiki v2 (Extended Patterns)"]]
+- [["SOURCE_META_LLM_WIKI_V2"|"Nashsu LLM Wiki v2 (Extended Patterns)"]]
+- [[CONCEPT_META_Ontology_Design|"Ontology Design (Thiết kế hệ thống thực thể)"]]
+- [[CONCEPT_DSML_Overfitting_Prevention|"Overfitting Prevention (Phòng tránh quá khớp)"]]
+- [[SOURCE_TOOL_GEMINI_DEVELOPER_CODEX|"PDF: Gemini 3 Developer Codex - Ultimate 850 Prompts Edition"]]
+- [["SOURCE_TOOL_GEMINI_DEVELOPER_CODEX"|"PDF: Gemini 3 Developer Codex - Ultimate 850 Prompts Edition"]]
+- [[CONCEPT_PY_Pandas_Wrangling_Advanced_REVIEW|"Pandas Advanced Wrangling (Hợp nhất và Tái cấu trúc)"]]
+- [[CONCEPT_PY_Pandas_Aggregation_REVIEW|"Pandas Aggregation (Gom nhóm và Tổng hợp)"]]
+- [[CONCEPT_PY_Pandas_Data_Cleaning_REVIEW|"Pandas Data Cleaning (Làm sạch dữ liệu)"]]
+- [[CONCEPT_PY_Pandas_Data_Transformation_REVIEW|"Pandas Data Transformation (Biến đổi dữ liệu)"]]
+- [[CONCEPT_THINK_Argument_Sketching|"Phác thảo Lập luận (Argument Sketching)"]]
+- [[CONCEPT_THINK_ARGUMENT_SKETCHING|"Phác thảo Lập luận (Argument Sketching)"]]
+- [["CONCEPT_THINK_ARGUMENT_SKETCHING"|"Phác thảo Lập luận (Argument Sketching)"]]
+- [[CONCEPT_STAT_Data_Taxonomy|"Phân loại dữ liệu (Data Taxonomy)"]]
+- [[CONCEPT_STAT_Probability_Distributions|"Phân phối xác suất (Probability Distributions)"]]
+- [[CONCEPT_DE_Data_Partitioning|"Phân vùng dữ liệu (Data Partitioning)"]]
+- [[CONCEPT_META_Post_Code_Workflow|"Post-Code Workflow (Luồng công việc Hậu lập trình)"]]
+- [[CONCEPT_VIZ_POWERBI_BASICS|"Power BI Basics (Cơ bản về Power BI)"]]
+- [[CONCEPT_VIZ_PowerBI_Basics|"Power BI Basics (Cơ bản về Power BI)"]]
+- [[CONCEPT_VIZ_POWERBI_DAX_BASICS|"Power BI DAX Basics (Cơ bản về ngôn ngữ DAX)"]]
+- [[CONCEPT_VIZ_PowerBI_DAX_Basics|"Power BI DAX Basics (Cơ bản về ngôn ngữ DAX)"]]
+- [[CONCEPT_AI_Production_Readiness_for_Agents|"Production Readiness for Agents (Tiêu chuẩn triển khai Agent)"]]
+- [[CONCEPT_AI_PROMPT_ENGINEERING_BASICS|"Prompt Engineering Basics (Cơ bản về kỹ nghệ gợi nhắc)"]]
+- [[CONCEPT_AI_Prompt_Engineering_Basics|"Prompt Engineering Basics (Cơ bản về kỹ nghệ gợi nhắc)"]]
+- [[CONCEPT_TOOL_PYDANTIC|"Pydantic (Data Validation & Settings)"]]
+- [[CONCEPT_TOOL_Pydantic|"Pydantic (Data Validation & Settings)"]]
+- [[SYNTHESIS_PYTHON_Data_Mastery_REVIEW|"Python Mastery: Xử lý & Phân tích dữ liệu với [[ENTITY_PANDAS|pandas]]"]]
+- [[SYNTHESIS_PYTHON_DATA_MASTERY|"Python Mastery: Xử lý & Phân tích dữ liệu với [[ENTITY_PANDAS|pandas]]"]]
+- [[CONCEPT_DE_ETL_ELT_Workflows|"Quy trình ETL và ELT (ETL vs ELT Workflows)"]]
+- [[CONCEPT_AI_RAG_RERANKING|"RAG Reranking (Optimizing Retrieval Quality)"]]
+- [[CONCEPT_AI_RAG_Reranking|"RAG Reranking (Optimizing Retrieval Quality)"]]
+- [[CONCEPT_AIMET_ReAct_Pattern|"ReAct Pattern (Reasoning + Acting)"]]
+- [[CONCEPT_AIMET_Production_Guardrails|"Rào chắn sản xuất (Production Guardrails)"]]
+- [[SOURCE_THINK_Problem_Solving_101|"SOURCE: Problem Solving 101: A Simple Book for Smart People"]]
+- [["SOURCE_THINK_PROBLEM_SOLVING_101"|"SOURCE: Problem Solving 101: A Simple Book for Smart People"]]
+- [[SYNTHESIS_Agentic_Orchestration_Frameworks|"SYNTHESIS: Agentic Orchestration Frameworks (LangGraph vs CrewAI vs AutoGen)"]]
+- [[SYNTHESIS_AGENTIC_ORCHESTRATION_FRAMEWORKS|"SYNTHESIS: Agentic Orchestration Frameworks (LangGraph vs CrewAI vs AutoGen)"]]
+- [["SYNTHESIS_AGENTIC_ORCHESTRATION_FRAMEWORKS"|"SYNTHESIS: Agentic Orchestration Frameworks (LangGraph vs CrewAI vs AutoGen)"]]
+- [[SYNTHESIS_MASTER_SECOND_BRAIN_BLUEPRINT|"SYNTHESIS: Master Second Brain Blueprint (V3.0 - Unified)"]]
+- [[SYNTHESIS_MASTER_Second_Brain_Blueprint|"SYNTHESIS: Master Second Brain Blueprint (V3.0 - Unified)"]]
+- [[SYNTHESIS_Second_Brain_Standard_Spec|"SYNTHESIS: Second Brain Standard Specification (Karpathy x Nashsu) [SUPERSEDED]"]]
+- [[[ID_UNIQUE]|"SYNTHESIS: Second Brain Standard Specification (Karpathy x Nashsu) [SUPERSEDED]"]]
+- [["[ID_UNIQUE]"|"SYNTHESIS: Second Brain Standard Specification (Karpathy x Nashsu) [SUPERSEDED]"]]
+- [[SYNTHESIS_ULTIMATE_Second_Brain_Spec|"SYNTHESIS: The Ultimate Second Brain Specification (V3.0) [SUPERSEDED]"]]
+- [[[ID_DUY_NHAT]         # VÍ DỤ: CONCEPT_META_AI_FIRST|"SYNTHESIS: The Ultimate Second Brain Specification (V3.0) [SUPERSEDED]"]]
+- [["[ID_DUY_NHAT]"         # VÍ DỤ: CONCEPT_META_AI_FIRST|"SYNTHESIS: The Ultimate Second Brain Specification (V3.0) [SUPERSEDED]"]]
+- [[SYNTHESIS_Wiki_Intelligence_Architecture|"SYNTHESIS: Wiki Intelligence Architecture (V2.0) [SUPERSEDED]"]]
+- [[SYNTHESIS_WIKI_INTELLIGENCE_ARCHITECTURE|"SYNTHESIS: Wiki Intelligence Architecture (V2.0) [SUPERSEDED]"]]
+- [["SYNTHESIS_WIKI_INTELLIGENCE_ARCHITECTURE"|"SYNTHESIS: Wiki Intelligence Architecture (V2.0) [SUPERSEDED]"]]
+- [[CONCEPT_META_Skill_Modularity|"Skill Modularity (Tính Module của Skill)"]]
+- [[CONCEPT_DE_DATA_MODELING_STAR_SCHEMA|"Star Schema Data Modeling (Mô hình hóa dữ liệu hình sao)"]]
+- [[CONCEPT_DE_Data_Modeling_Star_Schema|"Star Schema Data Modeling (Mô hình hóa dữ liệu hình sao)"]]
+- [[CONCEPT_TOOL_STREAMLIT|"Streamlit (Agentic UI Framework)"]]
+- [[CONCEPT_TOOL_Streamlit|"Streamlit (Agentic UI Framework)"]]
+- [[CONCEPT_DSML_Supervised_vs_Unsupervised|"Supervised vs Unsupervised (Học có giám sát và Không giám sát)"]]
+- [[SOURCE_VIZ_10_Visualization_Tips|"TOOL 10 Visualization Tips for Better Data Storytelling"]]
+- [["SOURCE_VIZ_10_VISUALIZATION_TIPS"|"TOOL 10 Visualization Tips for Better Data Storytelling"]]
+- [[SOURCE_VIZ_Analyzing_Data_Power_BI|"TOOL Analyzing Data with Power BI and Power Pivot for [[ENTITY_EXCEL|Excel]]"]]
+- [["SOURCE_VIZ_ANALYZING_DATA_POWER_BI"|"TOOL Analyzing Data with Power BI and Power Pivot for [[ENTITY_EXCEL|Excel]]"]]
+- [[SOURCE_TOOL_SQL_Getting_Started|"TOOL Getting Started with [[ENTITY_SQL|SQL]]: A Hands-On Approach for Beginners"]]
+- [["SOURCE_TOOL_SQL_GETTING_STARTED"|"TOOL Getting Started with [[ENTITY_SQL|SQL]]: A Hands-On Approach for Beginners"]]
+- [[SOURCE_VIZ_Introducing_Power_BI|"TOOL Introducing Power BI"]]
+- [["SOURCE_VIZ_INTRODUCING_POWER_BI"|"TOOL Introducing Power BI"]]
+- [[SOURCE_VIZ_Mastering_Tableau_2021|"TOOL Mastering Tableau 2021"]]
+- [["SOURCE_VIZ_MASTERING_TABLEAU_2021"|"TOOL Mastering Tableau 2021"]]
+- [[SOURCE_TOOL_Excel_Data_Analysis|"TOOL Microsoft [[ENTITY_EXCEL|Excel]] - Data Analysis and Business Modeling"]]
+- [["SOURCE_TOOL_EXCEL_DATA_ANALYSIS"|"TOOL Microsoft [[ENTITY_EXCEL|Excel]] - Data Analysis and Business Modeling"]]
+- [[SOURCE_DS_Python_Data_Science_Handbook|"TOOL Python [[ENTITY_Data_Science|Data Science]] Handbook"]]
+- [["SOURCE_DS_PYTHON_DATA_SCIENCE_HANDBOOK"|"TOOL Python [[ENTITY_Data_Science|Data Science]] Handbook"]]
+- [[SOURCE_PY_Python_Data_Science_Handbook|"TOOL Python [[ENTITY_Data_Science|Data Science]] Handbook: Essential Tools for Working with Data"]]
+- [["SOURCE_PY_PYTHON_DATA_SCIENCE_HANDBOOK"|"TOOL Python [[ENTITY_Data_Science|Data Science]] Handbook: Essential Tools for Working with Data"]]
+- [[SOURCE_TOOL_Python_for_Data_Analysis|"TOOL Python for Data Analysis (3rd Edition)"]]
+- [["SOURCE_TOOL_PYTHON_FOR_DATA_ANALYSIS"|"TOOL Python for Data Analysis (3rd Edition)"]]
+- [[SOURCE_PY_Python_for_Data_Analysis|"TOOL Python for Data Analysis"]]
+- [["SOURCE_PY_PYTHON_FOR_DATA_ANALYSIS"|"TOOL Python for Data Analysis"]]
+- [[SOURCE_TOOL_SQL_Cookbook|"TOOL [[ENTITY_SQL|SQL]] Cookbook: Query Solutions and Techniques for All SQL Users"]]
+- [["SOURCE_TOOL_SQL_COOKBOOK"|"TOOL [[ENTITY_SQL|SQL]] Cookbook: Query Solutions and Techniques for All SQL Users"]]
+- [[SOURCE_TOOL_SQL_Pocket_Guide|"TOOL [[ENTITY_SQL|SQL]] Pocket Guide (4th Edition)"]]
+- [["SOURCE_TOOL_SQL_POCKET_GUIDE"|"TOOL [[ENTITY_SQL|SQL]] Pocket Guide (4th Edition)"]]
+- [[SOURCE_TOOL_SQL_for_Data_Analysis|"TOOL [[ENTITY_SQL|SQL]] for Data Analysis: Advanced Techniques for Transforming Data into Insights"]]
+- [["SOURCE_TOOL_SQL_FOR_DATA_ANALYSIS"|"TOOL [[ENTITY_SQL|SQL]] for Data Analysis: Advanced Techniques for Transforming Data into Insights"]]
+- [[ENTITY_TOOL_Claude_Code_Wiki_Gen|"TOOL: Antigravity Wiki Generation & Intelligence Skill"]]
+- [[ENTITY_TOOL_CLAUDE_CODE_WIKI_GEN|"TOOL: Antigravity Wiki Generation & Intelligence Skill"]]
+- [["ENTITY_TOOL_CLAUDE_CODE_WIKI_GEN"|"TOOL: Antigravity Wiki Generation & Intelligence Skill"]]
+- [[CONCEPT_VIZ_TABLEAU_LOD_BASICS|"Tableau LOD Basics (Cơ bản về Level of Detail trong Tableau)"]]
+- [[CONCEPT_VIZ_Tableau_LOD_Basics|"Tableau LOD Basics (Cơ bản về Level of Detail trong Tableau)"]]
+- [[CONCEPT_META_Wiki_The_Steve_Jobs_Test|"The Steve Jobs Test (Bài kiểm tra Steve Jobs)"]]
+- [[CONCEPT_VIZ_Interactive_Dashboard_Design|"Thiết kế Dashboard tương tác (Interactive Dashboard Design)"]]
+- [[ENTITY_Data_Science|"Thực thể: Khoa học Dữ liệu (Data Science)"]]
+- [["WIKI_ENTITY_DATA_SCIENCE"|"Thực thể: Khoa học Dữ liệu (Data Science)"]]
+- [[ENTITY_SQL|"Thực thể: SQL (Structured Query Language)"]]
+- [["ENTITY_SQL"|"Thực thể: SQL (Structured Query Language)"]]
+- [[CONCEPT_PY_TIME_SERIES_BASICS|"Time Series Basics (Cơ bản về chuỗi thời gian)"]]
+- [[CONCEPT_PY_Time_Series_Basics|"Time Series Basics (Cơ bản về chuỗi thời gian)"]]
+- [[CONCEPT_AI_Tool_Design_Standards|"Tool Design Standards (Tiêu chuẩn thiết kế Tool cho Agent)"]]
+- [[CONCEPT_VIZ_Avoid_3D_Graphics|"Tránh sử dụng đồ họa 3D (Avoid 3D Graphics)"]]
+- [[CONCEPT_META_Typed_Knowledge_Graph|"Typed Knowledge Graph (Đồ thị tri thức định kiểu)"]]
+- [[CONCEPT_DE_Indexing_Optimization|"Tối ưu hóa chỉ mục (Indexing & Optimization)"]]
+- [[CONCEPT_SQL_Performance_Tuning|"Tối ưu hóa hiệu năng SQL (SQL Performance Tuning)"]]
+- [[CONCEPT_VIZ_Data_Ink_Ratio|"Tỷ lệ Dữ liệu - Mực (Data-ink Ratio)"]]
+- [[SOURCE_META_KARPATHY_CLAUDE_SKILLS|"WEB: Karpathy's Claude Skills Guide"]]
+- [["SOURCE_META_KARPATHY_CLAUDE_SKILLS"|"WEB: Karpathy's Claude Skills Guide"]]
+- [[SOURCE_META_KARPATHY_KNOWLEDGE_BASES|"WEB: Post-Code AI Workflow"]]
+- [["SOURCE_META_KARPATHY_KNOWLEDGE_BASES"|"WEB: Post-Code AI Workflow"]]
+- [[SOURCE_META_WIKI_GEN_CLONE|"WEB: Wiki Generation & Personal Knowledge Master Protocol"]]
+- [["SOURCE_META_WIKI_GEN_CLONE"|"WEB: Wiki Generation & Personal Knowledge Master Protocol"]]
+- [[CONCEPT_META_Wiki_Absorption_Loop|"Wiki Absorption Loop (Vòng lặp hấp thụ tri thức)"]]
+- [[CONCEPT_META_Wiki_Article_Length_Targets|"Wiki Article Length Targets (Mục tiêu độ dài bài viết Wiki)"]]
+- [[CONCEPT_META_Wiki_Breakdown_Mining|"Wiki Breakdown & Mining (Khai thác và Chia nhỏ Wiki)"]]
+- [[CONCEPT_META_Wiki_Cleanup_Audit|"Wiki Cleanup Audit (Kiểm toán và Dọn dẹp Wiki)"]]
+- [[CONCEPT_META_Wiki_Concurrency_Safety|"Wiki Concurrency & Safety (An toàn đồng thời và Quy tắc bảo vệ)"]]
+- [[CONCEPT_META_Wiki_Directory_Taxonomy|"Wiki Directory Taxonomy (Hệ thống phân loại thư mục Wiki)"]]
+- [[CONCEPT_META_Wiki_Gap_Analysis|"Wiki Gap Analysis (Phân tích lỗ hổng tri thức)"]]
+- [[CONCEPT_META_Wiki_Generation_Skill|"Wiki Generation Skill (Kỹ năng khởi tạo Wiki)"]]
+- [[CONCEPT_META_Wiki_Granularity_Control|"Wiki Granularity Control (Kiểm soát độ hạt tri thức)"]]
+- [[CONCEPT_META_Wiki_Index_Synchronization|"Wiki Index Synchronization (Đồng bộ danh mục Wiki)"]]
+- [[CONCEPT_META_Wiki_Narrative_Coherence|"Wiki Narrative Coherence (Tính mạch lạc của mạch truyện Wiki)"]]
+- [[CONCEPT_META_Wiki_Narrative_Taxonomy|"Wiki Narrative Taxonomy (Phân loại thực thể dòng chảy)"]]
+- [[CONCEPT_META_Wiki_Quote_Discipline|"Wiki Quote Discipline (Kỷ luật trích dẫn trực tiếp)"]]
+- [[CONCEPT_META_Wiki_Reorganization|"Wiki Reorganization (Tái cấu trúc hệ thống Wiki)"]]
+- [[CONCEPT_META_Wiki_Retention_Curve|"Wiki Retention Curve (Đường cong ghi nhớ Wiki)"]]
+- [[CONCEPT_META_Wiki_Status_Metrics|"Wiki Status Metrics (Chỉ số sức khỏe Wiki)"]]
+- [[CONCEPT_META_Wiki_Structure_by_Type|"Wiki Structure by Type (Cấu trúc Wiki theo loại thực thể)"]]
+- [[CONCEPT_META_Wiki_Visual_Cloning|"Wiki Visual Cloning (Tái tạo giao diện Wiki)"]]
+- [[CONCEPT_META_Wiki_Writing_Tone|"Wiki Writing Tone (Giọng văn Wiki)"]]
+- [[SYNTHESIS_EXCEL_Mastery|"[[ENTITY_EXCEL|Excel]] Mastery: Mô hình hóa & Phân tích kinh doanh"]]
+- [[CONCEPT_STAT_Central_Limit_Theorem|"Định lý giới hạn trung tâm (Central Limit Theorem)"]]
+- [[CONCEPT_STAT_Estimates_of_Variability|"Ước lượng sự biến thiên (Estimates of Variability)"]]
+- [[CONCEPT_STAT_Estimates_of_Location|"Ước lượng vị trí (Estimates of Location)"]]
+- [[CONCEPT_AI_ABSTENTION_STRATEGY|Abstention Strategy (Hallucination Mitigation)]]
+- [[CONCEPT_SQL_Advanced_Reporting_REVIEW|Báo cáo nâng cao (ROLLUP, CUBE & Bucketing)]]
+- [[CONCEPT_index|CONCEPT INDEX]]
+- [[CONCEPT_SQL_CTEs|CONCEPT SQL CTEs]]
+- [[CONCEPT_SQL_Window_Functions|CONCEPT SQL Window Functions]]
+- [[CONCEPT_STAT_A_B_Testing_REVIEW|CONCEPT STAT A B Testing]]
+- [[CONCEPT_TOOL_FastAPI_Conflict|CONCEPT TOOL FastAPI]]
+- [[d:\NoteBookLLM_Br\scratch\..\3-resources\wiki\review_queue\CONCEPT_TOOL_FastAPI_Conflict.md|CONCEPT TOOL FastAPI]]
+- [[CONCEPT_VIZ_Dashboard_Design_Best_Practices|CONCEPT VIZ Dashboard Design Best Practices]]
+- [[CONCEPT_AI_AGENTIC_PYTHON_STANDARDS|CONCEPT_AI_AGENTIC_PYTHON_STANDARDS]]
+- [[CONCEPT_AI_AGENT_MEMORY_ARCHITECTURE|CONCEPT_AI_AGENT_MEMORY_ARCHITECTURE]]
+- [[CONCEPT_AI_AGENT_REASONING_PATTERNS|CONCEPT_AI_AGENT_REASONING_PATTERNS]]
+- [[CONCEPT_AI_CONTEXT_BUDGETING|CONCEPT_AI_CONTEXT_BUDGETING]]
+- [[CONCEPT_AI_GROUNDED_GENERATION|CONCEPT_AI_GROUNDED_GENERATION]]
+- [[CONCEPT_AI_MULTIAGENT_COORDINATION|CONCEPT_AI_MULTIAGENT_COORDINATION]]
+- [[CONCEPT_AI_PRODUCTION_READINESS_FOR_AGENTS|CONCEPT_AI_PRODUCTION_READINESS_FOR_AGENTS]]
+- [[CONCEPT_AI_TOOL_DESIGN_STANDARDS|CONCEPT_AI_TOOL_DESIGN_STANDARDS]]
+- [[CONCEPT_DSML_BIAS_VARIANCE_TRADEOFF|CONCEPT_DSML_BIAS_VARIANCE_TRADEOFF]]
+- [[CONCEPT_DSML_CLUSTERING_KMEANS|CONCEPT_DSML_CLUSTERING_KMEANS]]
+- [[CONCEPT_DSML_DECISION_TREES_RANDOM_FOREST|CONCEPT_DSML_DECISION_TREES_RANDOM_FOREST]]
+- [[CONCEPT_DSML_FEATURE_ENGINEERING_BASICS|CONCEPT_DSML_FEATURE_ENGINEERING_BASICS]]
+- [[CONCEPT_DSML_MODEL_EVALUATION_METRICS|CONCEPT_DSML_MODEL_EVALUATION_METRICS]]
+- [[CONCEPT_DSML_OVERFITTING_PREVENTION|CONCEPT_DSML_OVERFITTING_PREVENTION]]
+- [[CONCEPT_DSML_SUPERVISED_UNSUPERVISED|CONCEPT_DSML_SUPERVISED_UNSUPERVISED]]
+- [[CONCEPT_META_ASYNC_REVIEW_SYSTEM|CONCEPT_META_ASYNC_REVIEW_SYSTEM]]
+- [[CONCEPT_META_BIDIRECTIONAL_LINKING|CONCEPT_META_BIDIRECTIONAL_LINKING]]
+- [[CONCEPT_META_CONSOLIDATION_TIERS|CONCEPT_META_CONSOLIDATION_TIERS]]
+- [[CONCEPT_META_GRAPH_ANALYSIS|CONCEPT_META_GRAPH_ANALYSIS]]
+- [[CONCEPT_META_IDEA_FILE_SYSTEM|CONCEPT_META_IDEA_FILE_SYSTEM]]
+- [[CONCEPT_META_ONTOLOGY_DESIGN|CONCEPT_META_ONTOLOGY_DESIGN]]
+- [[CONCEPT_META_POST_CODE_WORKFLOW|CONCEPT_META_POST_CODE_WORKFLOW]]
+- [[CONCEPT_META_SB3_GRAPH_TRAVERSAL|CONCEPT_META_SB3_GRAPH_TRAVERSAL]]
+- [[CONCEPT_META_SB3_LOUVAIN_CLUSTERING|CONCEPT_META_SB3_LOUVAIN_CLUSTERING]]
+- [[CONCEPT_META_SB3_MEMORY_TIER|CONCEPT_META_SB3_MEMORY_TIER]]
+- [[CONCEPT_META_SB3_TASK_LEDGER|CONCEPT_META_SB3_TASK_LEDGER]]
+- [[CONCEPT_META_SKILL_MODULARITY|CONCEPT_META_SKILL_MODULARITY]]
+- [[CONCEPT_META_TYPED_KNOWLEDGE_GRAPH|CONCEPT_META_TYPED_KNOWLEDGE_GRAPH]]
+- [[CONCEPT_META_WIKI_ABSORPTION_LOOP|CONCEPT_META_WIKI_ABSORPTION_LOOP]]
+- [[CONCEPT_META_WIKI_ARTICLE_LENGTH_TARGETS|CONCEPT_META_WIKI_ARTICLE_LENGTH_TARGETS]]
+- [[CONCEPT_META_WIKI_BREAKDOWN_MINING|CONCEPT_META_WIKI_BREAKDOWN_MINING]]
+- [[CONCEPT_META_WIKI_CLEANUP_AUDIT|CONCEPT_META_WIKI_CLEANUP_AUDIT]]
+- [[CONCEPT_META_WIKI_CONCURRENCY_SAFETY|CONCEPT_META_WIKI_CONCURRENCY_SAFETY]]
+- [[CONCEPT_META_WIKI_DIRECTORY_TAXONOMY|CONCEPT_META_WIKI_DIRECTORY_TAXONOMY]]
+- [[CONCEPT_META_WIKI_GAP_ANALYSIS|CONCEPT_META_WIKI_GAP_ANALYSIS]]
+- [[CONCEPT_META_WIKI_GENERATION_SKILL|CONCEPT_META_WIKI_GENERATION_SKILL]]
+- [[CONCEPT_META_WIKI_GRANULARITY_CONTROL|CONCEPT_META_WIKI_GRANULARITY_CONTROL]]
+- [[CONCEPT_META_WIKI_INDEX_SYNCHRONIZATION|CONCEPT_META_WIKI_INDEX_SYNCHRONIZATION]]
+- [[CONCEPT_META_WIKI_NARRATIVE_COHERENCE|CONCEPT_META_WIKI_NARRATIVE_COHERENCE]]
+- [[CONCEPT_META_WIKI_NARRATIVE_TAXONOMY|CONCEPT_META_WIKI_NARRATIVE_TAXONOMY]]
+- [[CONCEPT_META_WIKI_QUERY_PATTERNS|CONCEPT_META_WIKI_QUERY_PATTERNS]]
+- [[CONCEPT_META_WIKI_QUOTE_DISCIPLINE|CONCEPT_META_WIKI_QUOTE_DISCIPLINE]]
+- [[CONCEPT_META_WIKI_REORGANIZATION|CONCEPT_META_WIKI_REORGANIZATION]]
+- [[CONCEPT_META_WIKI_RETENTION_CURVE|CONCEPT_META_WIKI_RETENTION_CURVE]]
+- [[CONCEPT_META_WIKI_SIGNALS|CONCEPT_META_WIKI_SIGNALS]]
+- [[CONCEPT_META_WIKI_STATUS_METRIC|CONCEPT_META_WIKI_STATUS_METRIC]]
+- [[CONCEPT_META_WIKI_STRUCTURE_BY_TYPE|CONCEPT_META_WIKI_STRUCTURE_BY_TYPE]]
+- [[CONCEPT_META_WIKI_THE_STEVE_JOBS_TEST|CONCEPT_META_WIKI_THE_STEVE_JOBS_TEST]]
+- [[CONCEPT_META_WIKI_VISUAL_CLONING|CONCEPT_META_WIKI_VISUAL_CLONING]]
+- [[CONCEPT_META_WIKI_WRITING_TONE|CONCEPT_META_WIKI_WRITING_TONE]]
+- [[CONCEPT_TOOL_CODE_ANALYSIS_PATTERNS|CONCEPT_TOOL_CODE_ANALYSIS_PATTERNS]]
+- [[CONCEPT_VIZ_DASHBOARD_UX_CHECKLIST|CONCEPT_VIZ_DASHBOARD_UX_CHECKLIST]]
+- [[CONCEPT_VIZ_GESTALT_PRINCIPLES|CONCEPT_VIZ_GESTALT_PRINCIPLES]]
+- [[CASE_STUDY_DATA_PIPELINE_OPTIMIZATION|Case Study: Tối ưu hóa đường ống dữ liệu (Data Pipeline Optimization)]]
+- [[CASE_STUDY_TEACHING_EFFICACY|Case Study: Đánh giá hiệu quả giảng dạy (Teaching Efficacy)]]
+- [[WIKI_CONCEPT_DE_SCD_TYPES|Chiều thay đổi chậm (Slowly Changing Dimensions - SCD)]]
+- [[CONCEPT_PY_pandas_Data_Structures_REVIEW|Các cấu trúc dữ liệu cốt lõi của [[ENTITY_PANDAS|pandas]]]]
+- [[CONCEPT_SQL_Database_Types_Analysis_REVIEW|Các loại Database cho phân tích dữ liệu]]
+- [[WIKI_CONCEPT_STAT_SAMPLING_BIASES|Các loại sai lệch khi lấy mẫu (Sampling Biases)]]
+- [[CONCEPT_PY_IPython_Magic_REVIEW|Các lệnh Magic (Magic Commands) trong IPython]]
+- [[CONCEPT_SQL_Sublanguages_REVIEW|Các ngôn ngữ con trong [[ENTITY_SQL|SQL]] (SQL Sublanguages)]]
+- [[CONCEPT_SQL_Set_Operations_REVIEW|Các phép toán tập hợp trong [[ENTITY_SQL|SQL]] (Set Operations)]]
+- [[CONCEPT_SQL_CRUD_Operations_REVIEW|Các thao tác CRUD trong [[ENTITY_SQL|SQL]]]]
+- [[WIKI_CONCEPT_VIZ_GESTALT_LAWS|Các định luật Gestalt trong thiết kế biểu đồ (Gestalt Laws)]]
+- [[WIKI_CONCEPT_PY_PANDAS_BASICS|Cơ bản về Pandas (Pandas Basics)]]
+- [[CONCEPT_PY_GroupBy_Mechanics_REVIEW|Cơ chế GroupBy: Split-Apply-Combine]]
+- [[ENTITY_TOOL_Hardware_Profile_GTX1650|ENTITY TOOL HARDWARE PROFILE GTX1650]]
+- [[ENTITY_TOOL_AGENT_OBSERVABILITY_STACK|ENTITY_TOOL_AGENT_OBSERVABILITY_STACK]]
+- [[ENTITY_TOOL_LANGGRAPH|ENTITY_TOOL_LANGGRAPH]]
+- [[CONCEPT_PY_Matplotlib_Interfaces_REVIEW|Hai giao diện lập trình của Matplotlib]]
+- [[CONCEPT_SQL_Window_Functions_Advanced_REVIEW|Hàm cửa sổ nâng cao (Advanced Window Functions)]]
+- [[CONCEPT_PY_Scientific_Ecosystem_REVIEW|Hệ sinh thái Python dành cho Khoa học Dữ liệu]]
+- [[WIKI_CONCEPT_STAT_LINEAR_REGRESSION|Hồi quy tuyến tính (Linear Regression)]]
+- [[WIKI_CONCEPT_STAT_CONFIDENCE_INTERVALS|Khoảng tin cậy (Confidence Intervals)]]
+- [[WIKI_CONCEPT_DE_DATA_QUALITY_FRAMEWORK|Khung quản lý chất lượng dữ liệu (Data Quality Framework)]]
+- [[WIKI_CONCEPT_VIZ_STORYTELLING_FRAMEWORK|Khung sườn kể chuyện bằng dữ liệu (Data Storytelling Framework)]]
+- [[WIKI_CONCEPT_DE_DATA_ARCHITECTURE|Kiến trúc dữ liệu cơ bản (Warehouse vs Lake vs Lakehouse)]]
+- [[WIKI_CONCEPT_AIMET_MULTIAGENT_ARCHITECTURE|Kiến trúc Đa Agent (Multi-Agent Architecture)]]
+- [[WIKI_CONCEPT_STAT_T_TEST_ANOVA|Kiểm định T-Test và ANOVA]]
+- [[WIKI_CONCEPT_STAT_HYPOTHESIS_TESTING_PVALUE|Kiểm định giả thuyết và P-Value]]
+- [[CONCEPT_SQL_Data_Shaping_Techniques_REVIEW|Kỹ thuật định hình dữ liệu (Pivoting & Unpivoting)]]
+- [[WIKI_CONCEPT_AIMET_MEMORY_MANAGEMENT|Memory Management trong Agentic AI Systems]]
+- [[ENTITY_EXCEL|Microsoft Excel]]
+- [[CONCEPT_EXCEL_Data_Modeling_PowerPivot_REVIEW|Mô hình hóa dữ liệu với PowerPivot và Data Model]]
+- [[CONCEPT_EXCEL_Monte_Carlo_Simulation_REVIEW|Mô phỏng Monte Carlo trong [[ENTITY_EXCEL|Excel]]]]
+- [[CONCEPT_TOOL_DATA_ANALYSIS_PROMPTS|Mẫu câu lệnh Phân tích dữ liệu (Data Analysis Prompts)]]
+- [[CONCEPT_TOOL_SQL_QUERY_PROMPTS|Mẫu câu lệnh Tối ưu hóa SQL (SQL Query Prompts)]]
+- [[QUERY_Production_Guardrails_Research|Nghiên cứu chuyên sâu: Production Guardrails & Evaluation Metrics]]
+- [[QUERY_META_Query_vs_Gap_Analysis|Phân biệt: Wiki Query Patterns vs Wiki Gap Analysis]]
+- [[WIKI_CONCEPT_STAT_DATA_TAXONOMY|Phân loại dữ liệu (Data Taxonomy)]]
+- [[WIKI_CONCEPT_STAT_PROBABILITY_DISTRIBUTIONS|Phân phối xác suất (Probability Distributions)]]
+- [[CONCEPT_EXCEL_Sensitivity_Analysis_REVIEW|Phân tích độ nhạy (Sensitivity Analysis) trong [[ENTITY_EXCEL|Excel]]]]
+- [[WIKI_CONCEPT_DE_DATA_PARTITIONING|Phân vùng dữ liệu (Data Partitioning)]]
+- [[WIKI_CONCEPT_DE_ETL_ELT_WORKFLOWS|Quy trình ETL và ELT (ETL vs ELT Workflows)]]
+- [[CONCEPT_SQL_Data_Preparation_Workflow_REVIEW|Quy trình chuẩn bị dữ liệu phân tích với [[ENTITY_SQL|SQL]]]]
+- [[WIKI_CONCEPT_AIMET_REACT_PATTERN|ReAct Pattern (Reasoning + Acting)]]
+- [[WIKI_CONCEPT_AIMET_PRODUCTION_GUARDRAILS|Rào chắn sản xuất (Production Guardrails)]]
+- [[SOURCE_DE_DATA_WAREHOUSE_TOOLKIT|SOURCE DE Data Warehouse Toolkit]]
+- [[SOURCE_DE_DESIGNING_DATA_INTENSIVE_APPLICATIONS|SOURCE DE Designing Data Intensive Applications]]
+- [[SOURCE_DE_FUNDAMENTALS_OF_DATA_ENGINEERING|SOURCE DE Fundamentals of Data Engineering]]
+- [[SOURCE_DS_PYTHON_DATA_SCIENCE_HANDBOOK|SOURCE DS Python Data Science Handbook]]
+- [[SOURCE_DSML_MARKETING_ANALYTICS|SOURCE DSML Marketing Analytics]]
+- [[SOURCE_DSML_MASTER_ML_ALGORITHMS|SOURCE DSML Master ML Algorithms]]
+- [[SOURCE_OFFICIAL_LANGGRAPH_CONCEPTS|SOURCE OFFICIAL LangGraph Concepts]]
+- [[SOURCE_PY_PYTHON_DATA_SCIENCE_HANDBOOK|SOURCE PY Python Data Science Handbook]]
+- [[SOURCE_PY_PYTHON_FOR_DATA_ANALYSIS|SOURCE PY Python for Data Analysis]]
+- [[SOURCE_STAT_ESSENTIALS_OF_STATISTICS|SOURCE STAT Essentials of Statistics]]
+- [[SOURCE_STAT_INTRO_TO_STATISTICAL_LEARNING|SOURCE STAT Intro to Statistical Learning]]
+- [[SOURCE_STAT_NAKED_STATISTICS|SOURCE STAT Naked Statistics]]
+- [[SOURCE_STAT_PRACTICAL_STATISTICS_FOR_DATA_SCIENTISTS|SOURCE STAT Practical Statistics for Data Scientists]]
+- [[SOURCE_STAT_STATISTICS_IN_A_NUTSHELL|SOURCE STAT Statistics in a Nutshell]]
+- [[SOURCE_THINK_DATA_SCIENCE_FOR_BUSINESS|SOURCE THINK Data Science for Business]]
+- [[SOURCE_THINK_PROBLEM_SOLVING_101|SOURCE THINK Problem Solving 101]]
+- [[SOURCE_THINK_THINKING_WITH_DATA|SOURCE THINK Thinking with Data]]
+- [[SOURCE_TOOL_EXCEL_DATA_ANALYSIS|SOURCE TOOL Excel Data Analysis]]
+- [[SOURCE_TOOL_PYTHON_FOR_DATA_ANALYSIS|SOURCE TOOL Python for Data Analysis]]
+- [[SOURCE_TOOL_SQL_COOKBOOK|SOURCE TOOL SQL Cookbook]]
+- [[SOURCE_TOOL_SQL_GETTING_STARTED|SOURCE TOOL SQL Getting Started]]
+- [[SOURCE_TOOL_SQL_POCKET_GUIDE|SOURCE TOOL SQL Pocket Guide]]
+- [[SOURCE_TOOL_SQL_FOR_DATA_ANALYSIS|SOURCE TOOL SQL for Data Analysis]]
+- [[SOURCE_VIZ_10_VISUALIZATION_TIPS|SOURCE VIZ 10 Visualization Tips]]
+- [[SOURCE_VIZ_ANALYZING_DATA_POWER_BI|SOURCE VIZ Analyzing Data Power BI]]
+- [[SOURCE_VIZ_HOW_TO_DESIGN_A_DASHBOARD|SOURCE VIZ How to Design a Dashboard]]
+- [[SOURCE_VIZ_INTRODUCING_POWER_BI|SOURCE VIZ Introducing Power BI]]
+- [[SOURCE_VIZ_MASTERING_TABLEAU_2021|SOURCE VIZ Mastering Tableau 2021]]
+- [[SOURCE_VIZ_STORYTELLING_WITH_DATA_P1|SOURCE VIZ Storytelling with Data P1]]
+- [[SOURCE_VIZ_STORYTELLING_WITH_DATA_P2|SOURCE VIZ Storytelling with Data P2]]
+- [[SOURCE_VIZ_STORYTELLING_WITH_DATA_P3|SOURCE VIZ Storytelling with Data P3]]
+- [[SOURCE_COURSERA-AI-ESSENTIAL-BIAS_DRIFT_KNOWLEDGE_CUTOFF|SOURCE coursera-AI-essential-Bias Drift Knowledge Cutoff]]
+- [[SOURCE_COURSERA-AI-ESSENTIAL-STAY_UP_TO_DATE_WITH_AI|SOURCE coursera-AI-essential-Stay up to date with AI]]
+- [[CONCEPT_SQL_RDBMS_Comparison_REVIEW|So sánh cú pháp giữa các hệ quản trị RDBMS]]
+- [[SOURCE_TOOL_EXCEL_PIVOTTABLES|Source: Excel Pivot Tables Guide]]
+- [[SOURCE_TOOL_EXCEL_POWERQUERY|Source: Excel Power Query Guide]]
+- [[SOURCE_PY_MATPLOTLIB_QUICKSTART|Source: Matplotlib Quick Start Guide]]
+- [[SOURCE_SQL_COHORT_ANALYSIS|Source: SQL Cohort Analysis Framework]]
+- [[WIKI_CONCEPT_VIZ_INTERACTIVE_DASHBOARD|Thiết kế Dashboard tương tác (Interactive Dashboard Design)]]
+- [[ENTITY_PANDAS_REVIEW|Thư viện pandas]]
+- [[CONCEPT_SQL_Execution_Order_REVIEW|Thứ tự thực thi câu lệnh [[ENTITY_SQL|SQL]] (Order of Execution)]]
+- [[WIKI_ENTITY_DATA_SCIENCE|Thực thể: Khoa học Dữ liệu (Data Science)]]
+- [[SYNTHESIS_LLM_WIKI_STANDARD|Tiêu chuẩn Vàng Wiki 2.0: Hợp nhất Karpathy & Nashus]]
+- [[CONCEPT_SQL_Hierarchical_Queries_REVIEW|Truy vấn phân cấp và đệ quy (Hierarchical & Recursive Queries)]]
+- [[CONCEPT_SQL_Metadata_Queries_REVIEW|Truy vấn siêu dữ liệu (Metadata Queries)]]
+- [[CONCEPT_META_ASSESSMENT_INTEGRATION|Tích hợp Lượng giá (Assessment Integration)]]
+- [[CONCEPT_PY_NumPy_Vectorization_REVIEW|Tính toán Vector hóa (Vectorization) trong NumPy]]
+- [[WIKI_CONCEPT_VIZ_IMPORTANCE_OF_CONTEXT|Tầm quan trọng của bối cảnh (Importance of Context)]]
+- [[CONCEPT_EXCEL_Optimization_Solver_REVIEW|Tối ưu hóa bài toán kinh doanh với [[ENTITY_EXCEL|Excel]] Solver]]
+- [[WIKI_CONCEPT_DE_INDEXING_OPTIMIZATION|Tối ưu hóa chỉ mục (Indexing & Optimization)]]
+- [[WIKI_CONCEPT_SQL_PERFORMANCE_TUNING|Tối ưu hóa hiệu năng SQL (SQL Performance Tuning)]]
+- [[WIKI_CONCEPT_VIZ_FOCUSING_ATTENTION|Điều hướng sự chú ý (Focusing Attention)]]
+- [[WIKI_CONCEPT_STAT_CENTRAL_LIMIT_THEOREM|Định lý giới hạn trung tâm (Central Limit Theorem)]]
+- [[WIKI_CONCEPT_STAT_ESTIMATES_VARIABILITY|Ước lượng sự biến thiên (Estimates of Variability)]]
+- [[WIKI_CONCEPT_STAT_ESTIMATES_LOCATION|Ước lượng vị trí (Estimates of Location)]]
 
-## 🏢 ENTITIES (19)
-- [[ENTITY_TOOL_Agent_Observability_Stack]] | **Agent Observability Stack (Bộ công cụ giám sát Agent)**
-- [[ENTITY_TOOL_Claude]] | **Anthropic Claude (AI Assistant)**
-- [[ENTITY_AIMET_AutoGen]] | **ENTITY: AutoGen (Conversational Multi-Agent Framework)**
-- [[ENTITY_AIMET_CrewAI]] | **ENTITY: CrewAI (Role-based Multi-Agent Framework)**
-- [[ENTITY_TOOL_LangChain]] | **ENTITY: LangChain (LLM Application Framework)**
-- [[ENTITY_AIMET_LangGraph]] | **ENTITY: LangGraph (Agent Orchestration Framework)**
-- [[ENTITY_TECH_LLM]] | **ENTITY: Large Language Model (LLM)**
-- [[ENTITY_TOOL_Lightpanda]] | **ENTITY: Lightpanda Browser**
-- [[ENTITY_TOOL_Gemini_Prompts_Codex]] | **Gemini Prompts Codex (Selected Templates)**
-- [[ENTITY_TOOL_Gemini]] | **Google Gemini (Multi-modal AI)**
-- [[ENTITY_TOOL_LangGraph]] | **LangGraph (Framework điều phối Agent)**
-- [[ENTITY_EXCEL]] | **Microsoft Excel**
-- [[ENTITY_Python]] | **Ngôn ngữ lập trình Python**
-- [[ENTITY_TOOL_Obsidian]] | **Obsidian (Knowledge Management)**
-- [[ENTITY_PANDAS]] | **Thư viện pandas**
-- [[ENTITY_Data_Science]] | **Thực thể: Khoa học Dữ liệu (Data Science)**
-- [[ENTITY_SQL]] | **Thực thể: SQL (Structured Query Language)**
-- [[ENTITY_TOOL_Claude_Code_Wiki_Gen]] | **TOOL: Antigravity Wiki Generation & Intelligence Skill**
-- [[ENTITY_WIKI_AGENT_GUIDE]] | **Wiki Agent Guide**
-
-## 📖 SOURCES (49)
-- [[SOURCE_coursera-AI-essential-Bias_Drift_Knowledge_Cutoff]] | **ACAD AI Essentials: Bias, Drift, and Knowledge Cutoff**
-- [[SOURCE_coursera-AI-essential-Stay_up_to_date_with_AI]] | **ACAD AI Essentials: Stay up to date with AI**
-- [[SOURCE_STAT_Intro_to_Statistical_Learning]] | **ACAD An Introduction to Statistical Learning: with Applications in R/[[ENTITY_Python|Python]]**
-- [[SOURCE_DSML_Data_Analytics_Concepts]] | **ACAD Data Analytics Concepts**
-- [[SOURCE_DE_Designing_Data_Intensive_Applications]] | **ACAD Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems**
-- [[SOURCE_STAT_Essentials_of_Statistics]] | **ACAD Essentials of Statistics**
-- [[SOURCE_DE_Fundamentals_of_Data_Engineering]] | **ACAD Fundamentals of Data Engineering**
-- [[SOURCE_VIZ_How_to_Design_a_Dashboard]] | **ACAD How to Design a Dashboard: Best Practices and Principles**
-- [[SOURCE_DSML_Marketing_Analytics]] | **ACAD Marketing Analytics**
-- [[SOURCE_DSML_Master_ML_Algorithms]] | **ACAD Mastering Machine Learning Algorithms**
-- [[SOURCE_STAT_Naked_Statistics]] | **ACAD Naked Statistics: Stripping the Dread from the Data**
-- [[SOURCE_STAT_Practical_Statistics_for_Data_Scientists]] | **ACAD Practical Statistics for Data Scientists**
-- [[SOURCE_STAT_Statistics_in_a_Nutshell]] | **ACAD Statistics in a Nutshell: A Desktop Quick Reference**
-- [[SOURCE_VIZ_Storytelling_with_Data_P1]] | **ACAD Storytelling with Data (Part 1)**
-- [[SOURCE_VIZ_Storytelling_with_Data_P2]] | **ACAD Storytelling with Data (Part 2): Let's Practice**
-- [[SOURCE_VIZ_Storytelling_with_Data_P3]] | **ACAD Storytelling with Data: A Guide for Business Professionals**
-- [[SOURCE_DE_Data_Warehouse_Toolkit]] | **ACAD The Data Warehouse Toolkit: The Definitive Guide to Dimensional Modeling**
-- [[SOURCE_THINK_Data_Science_for_Business]] | **ACAD: [[ENTITY_Data_Science|Data Science]] for Business**
-- [[SOURCE_THINK_Problem_Solving_101]] | **ACAD: Problem Solving 101 - Tư duy giải quyết vấn đề kiểu McKinsey**
-- [[SOURCE_THINK_Thinking_with_Data]] | **ACAD: Thinking with Data - Phân tích lập luận và đặt câu hỏi**
-- [[SOURCE_AIMET_AGENTIC_ROADMAP_2026]] | **Agentic AI Engineer Roadmap (2026) - Interview Q&A**
-- [[SOURCE_TOOL_Excel_PivotTables]] | **Excel Pivot Tables Guide**
-- [[SOURCE_TOOL_Excel_PowerQuery]] | **Excel Power Query Guide**
-- [[SOURCE_OFFICIAL_LangGraph_Concepts]] | **LangGraph Concepts - Official Documentation**
-- [[SOURCE_PY_Matplotlib_QuickStart]] | **Matplotlib Quick Start Guide**
-- [[SOURCE_META_LLM_WIKI]] | **Nashsu LLM Wiki v1**
-- [[SOURCE_META_LLM_WIKI_V2]] | **Nashsu LLM Wiki v2 (Extended Patterns)**
-- [[SOURCE_TOOL_GEMINI_DEVELOPER_CODEX]] | **PDF: Gemini 3 Developer Codex - Ultimate 850 Prompts Edition**
-- [[SOURCE_CODYMASTER_README]] | **SOURCE: CodyMaster README (Tody Le)**
-- [[SOURCE_SUPERPOWERS_README]] | **SOURCE: Superpowers README (Jesse Vincent)**
-- [[SOURCE_SQL_Cohort_Analysis]] | **SQL Cohort Analysis Framework**
-- [[SOURCE_VIZ_10_Visualization_Tips]] | **TOOL 10 Visualization Tips for Better Data Storytelling**
-- [[SOURCE_DS_Python_Data_Science_Handbook]] | **TOOL [[ENTITY_Python|Python]] [[ENTITY_Data_Science|Data Science]] Handbook**
-- [[SOURCE_PY_Python_Data_Science_Handbook]] | **TOOL [[ENTITY_Python|Python]] [[ENTITY_Data_Science|Data Science]] Handbook: Essential Tools for Working with Data**
-- [[SOURCE_PY_Python_for_Data_Analysis]] | **TOOL [[ENTITY_Python|Python]] for Data Analysis**
-- [[SOURCE_TOOL_Python_for_Data_Analysis]] | **TOOL [[ENTITY_Python|Python]] for Data Analysis (3rd Edition)**
-- [[SOURCE_TOOL_SQL_Cookbook]] | **TOOL [[ENTITY_SQL|SQL]] Cookbook: Query Solutions and Techniques for All SQL Users**
-- [[SOURCE_TOOL_SQL_for_Data_Analysis]] | **TOOL [[ENTITY_SQL|SQL]] for Data Analysis: Advanced Techniques for Transforming Data into Insights**
-- [[SOURCE_TOOL_SQL_Pocket_Guide]] | **TOOL [[ENTITY_SQL|SQL]] Pocket Guide (4th Edition)**
-- [[SOURCE_VIZ_Analyzing_Data_Power_BI]] | **TOOL Analyzing Data with Power BI and Power Pivot for [[ENTITY_EXCEL|Excel]]**
-- [[SOURCE_TOOL_SQL_Getting_Started]] | **TOOL Getting Started with [[ENTITY_SQL|SQL]]: A Hands-On Approach for Beginners**
-- [[SOURCE_VIZ_Introducing_Power_BI]] | **TOOL Introducing Power BI**
-- [[SOURCE_VIZ_Mastering_Tableau_2021]] | **TOOL Mastering Tableau 2021**
-- [[SOURCE_TOOL_Excel_Data_Analysis]] | **TOOL Microsoft [[ENTITY_EXCEL|Excel]] - Data Analysis and Business Modeling**
-- [[SOURCE_META_KARPATHY_LLM_WIKI]] | **WEB: Andrej Karpathy's [[CONCEPT_META_SB3_LLM_Wiki|LLM Wiki Pattern]] (Gist Guide)**
-- [[SOURCE_META_KARPATHY_CLAUDE_SKILLS]] | **WEB: Karpathy's Claude Skills Guide**
-- [[SOURCE_META_NASHUS_LLMWIKI]] | **WEB: Nashus [[CONCEPT_META_SB3_Graph_Analysis|LLM Wiki Methodology]] (System Guide)**
-- [[SOURCE_META_KARPATHY_KNOWLEDGE_BASES]] | **WEB: Post-Code AI Workflow**
-- [[SOURCE_META_WIKI_GEN_CLONE]] | **WEB: Wiki Generation & Personal Knowledge Master Protocol**
-
-## ⚖️ COMPARISONS (2)
-- [[COMPARE_META_Nashsu_vs_Karpathy]] | **Hợp nhất Phương pháp luận: Nashsu vs Karpathy**
-- [[COMPARE_5Whys_vs_RCA]] | **So sánh: 5 Whys vs. RCA Hệ thống**
-
-## 🔍 QUERIES (3)
-*Các cuộc nghiên cứu, research chuyên sâu.*
-
-- [[QUERY_Asymptotic_Fractal_Ingestion]] | **Kỹ thuật Hấp thụ Fractal Tiệm cận (Asymptotic Fractal Ingestion)**
-- [[QUERY_META_Query_vs_Gap_Analysis]] | **Phân biệt: [[CONCEPT_META_Wiki_Query_Patterns|Wiki Query Patterns]] vs [[CONCEPT_META_Wiki_Gap_Analysis|Wiki Gap Analysis]]**
-- [[QUERY_Production_Guardrails_Research]] | **QUERY: Production Guardrails & Eval Metrics Research (DEEP DIVE)**
-
-## ⚛️ ATOM PAGES (0 atoms)
-*Dữ liệu chi tiết, câu hỏi trắc nghiệm.*
-
-*Tổng số 0 câu hỏi đã được phân rã.*
+### source
+- [[D:\NoteBookLLM_Br\3-resources\raw_ingest\THINK_Data_Science_for_Business_HD.md|THINK_Data_Science_for_Business_HD.md]]
+- [[D:\NoteBookLLM_Br\3-resources\raw_ingest\THINK_Problem_Solving_101.md|THINK_Problem_Solving_101.md]]
+- [[d:\NoteBookLLM_Br\3-resources\raw_ingest\THINK_Problem_Solving_101.md|THINK_Problem_Solving_101.md]]
+- [[D:\NoteBookLLM_Br\3-resources\raw_ingest\THINK_Problem_Solving_101_HD.md|THINK_Problem_Solving_101_HD.md]]
+- [[D:\NoteBookLLM_Br\3-resources\raw_ingest\THINK_The_Design_Thinking_Playbook.md|THINK_The_Design_Thinking_Playbook.md]]
+- [[D:\NoteBookLLM_Br\3-resources\raw_ingest\THINK_Thinking_with_Data.md|THINK_Thinking_with_Data.md]]

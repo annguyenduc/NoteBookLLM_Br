@@ -1,4 +1,5 @@
 ---
+file_id: "CONCEPT_THINK_Patterns_of_Reasoning"
 title: "CONCEPT: Các Mô hình Lập luận (Patterns of Reasoning)"
 type: concept
 tags: ["Thinking", "Logic", "Argumentation", "DA_Core"]
@@ -25,7 +26,7 @@ Các mô hình suy luận đặc thù: **Tối ưu hóa (Optimization)**, **Phâ
 ### Ví dụ từ sách (Original)
 > **Bối cảnh**: Tối ưu hóa chi phí quảng cáo (Optimization).
 > **Ứng dụng**: Nhà phân tích đi từ **Fact** (Chi phí cao) -> **Value** (Hiệu suất chưa đạt) -> **Policy** (Dịch chuyển ngân sách), sử dụng **Cost/Benefit Analysis** để chứng minh tính hiệu quả của lựa chọn mới.
-> **Nguồn**: [[SOURCE_THINK_Thinking_with_Data]] — Chương 3 & 4.
+> **Nguồn**: SOURCE_THINK_THINKING_WITH_DATA — Chương 3 & 4.
 
 ### Ứng dụng sư phạm (Pedagogical Application)
 > **Bối cảnh**: Thuyết phục Ban giám hiệu đầu tư mua thêm kit Robot cho phòng Lab.
@@ -35,7 +36,7 @@ Các mô hình suy luận đặc thù: **Tối ưu hóa (Optimization)**, **Phâ
 > - **Policy**: Đề xuất mua thêm 10 bộ kit để đạt tỷ lệ 2 em/kit, tăng hiệu quả học tập lên 250%.
 
 ## 4. Trích dẫn nguồn (Rule 14)
-- **Nguồn**: [[SOURCE_THINK_Thinking_with_Data]] — Chương 3 & 4 (Trang 35-60).
+- **Nguồn**: SOURCE_THINK_THINKING_WITH_DATA — Chương 3 & 4 (Trang 35-60).
 - **Fact-check**: Đã đối chiếu file raw `THINK_Thinking_with_Data.md`. [Rule 14: SUCCESS]
 
 ---

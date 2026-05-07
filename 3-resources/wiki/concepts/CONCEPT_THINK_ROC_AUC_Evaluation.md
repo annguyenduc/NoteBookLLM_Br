@@ -1,4 +1,5 @@
 ---
+file_id: "CONCEPT_THINK_ROC_AUC_Evaluation"
 title: "CONCEPT: Đánh giá mô hình bằng ROC và AUC"
 type: concept
 tags: ["Thinking", "Evaluation", "Metrics", "DA_Core"]
@@ -23,7 +24,7 @@ last_updated: "2026-05-01"
 ### Ví dụ từ sách (Original)
 > **Bối cảnh**: So sánh hai mô hình dự đoán gian lận tín dụng.
 > **Ứng dụng**: Mô hình A có độ chính xác (Accuracy) 90% nhưng AUC chỉ 0.6. Mô hình B có Accuracy 85% nhưng AUC lên đến 0.8. Tác giả khuyên dùng mô hình B vì nó ổn định hơn trong việc phân tách các nhóm đối tượng ở các ngưỡng rủi ro khác nhau.
-> **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Chương 7 & 8.
+> **Nguồn**: SOURCE_THINK_DATA_SCIENCE_FOR_BUSINESS — Chương 7 & 8.
 
 ### Ứng dụng sư phạm (Pedagogical Application)
 > **Bối cảnh**: Đánh giá một bài kiểm tra trắc nghiệm giúp phân loại học sinh "Đạt" và "Không đạt".
@@ -32,7 +33,7 @@ last_updated: "2026-05-01"
 > - Một bài kiểm tra chất lượng (AUC cao) sẽ giúp giáo viên tự tin rằng những em đạt điểm cao thực sự nắm vững kiến thức hơn những em điểm thấp.
 
 ## 4. Trích dẫn nguồn (Rule 14)
-- **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Trang 180-205.
+- **Nguồn**: SOURCE_THINK_DATA_SCIENCE_FOR_BUSINESS — Trang 180-205.
 - **Fact-check**: Đã đối chiếu file raw `THINK_Data_Science_for_Business.md`. [Rule 14: SUCCESS]
 
 ---

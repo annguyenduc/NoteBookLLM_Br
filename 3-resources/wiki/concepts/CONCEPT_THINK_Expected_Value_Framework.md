@@ -1,4 +1,5 @@
 ---
+file_id: "CONCEPT_THINK_Expected_Value_Framework"
 title: "CONCEPT: Khung Giá trị Kỳ vọng (Expected Value Framework)"
 type: concept
 tags: ["Thinking", "Evaluation", "DA_Core", "80_20"]
@@ -27,7 +28,7 @@ Hầu hết các mô hình Machine Learning chỉ đưa ra xác suất (vd: Khá
 > **Ứng dụng**: Chi phí gửi thư là $1. Nếu người nhận phản hồi, họ thường đóng góp $20. 
 > - Nếu gửi bừa bãi: Tỷ lệ phản hồi 1% -> $EV = 0.01 \times 20 + 0.99 \times (-1) = -0.79$ (Lỗ).
 > - Nếu dùng mô hình DA: Chọn nhóm có xác suất phản hồi > 5% -> $EV = 0.05 \times 20 + 0.95 \times (-1) = +0.05$ (Lãi).
-> **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Page 194-195.
+> **Nguồn**: SOURCE_THINK_DATA_SCIENCE_FOR_BUSINESS — Page 194-195.
 
 ### Ứng dụng sư phạm (Pedagogical Application)
 > **Bối cảnh**: Tặng buổi học kèm 1:1 miễn phí để giữ chân học viên sắp nghỉ.
@@ -39,7 +40,7 @@ Hầu hết các mô hình Machine Learning chỉ đưa ra xác suất (vd: Khá
 > **Kết luận**: Chỉ cần học viên có > 4% cơ hội ở lại sau khi can thiệp, việc tặng buổi học là có lãi về mặt chiến lược.
 
 ## 4. Trích dẫn nguồn (Rule 14)
-- **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Chapter 7 & 11.
+- **Nguồn**: SOURCE_THINK_DATA_SCIENCE_FOR_BUSINESS — Chapter 7 & 11.
 - **Fact-check**: Đã xác nhận công thức và ví dụ Charity Mailing tại Page 194. [Rule 14: SUCCESS]
 
 ---

@@ -71,7 +71,7 @@ Ngân hàng các mẫu prompt tối ưu cho Gemini trích xuất từ Codex 850 
 
 ## Ví dụ đối chiếu (Rule 17)
 - **Ví dụ thực tế (Original)**: Sử dụng cấu trúc `[Role] [Task] [Constraint] [Input]` để ép Gemini vào trạng thái "Deep Thinking".
-- **Ẩn dụ sư phạm (Pedagogical)**: Giống như việc bạn cấp một "Bộ khuôn đúc" (Templates) cho một nghệ nhân: Nghệ nhân có thể rất giỏi, nhưng bộ khuôn giúp mọi tác phẩm họ tạo ra đều có hình khối chuẩn xác và đồng nhất về chất lượng.
+- **Ẩn dụ sư phạm (Pedagogical)**: [Phóng tác] Giống như việc bạn cấp một "Bộ khuôn đúc" (Templates) cho một nghệ nhân: Nghệ nhân có thể rất giỏi, nhưng bộ khuôn giúp mọi tác phẩm họ tạo ra đều có hình khối chuẩn xác và đồng nhất về chất lượng.
 
 ## Nguồn tham khảo
 - [[SOURCE_TOOL_GEMINI_DEVELOPER_CODEX]] — Phân đoạn Prompts cho Developer.

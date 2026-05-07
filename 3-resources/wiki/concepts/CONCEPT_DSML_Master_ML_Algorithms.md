@@ -8,7 +8,7 @@ status: "verified"
 created: "2026-05-02"
 last_updated: "2026-05-03"
 sources:
-  - "[[SOURCE_DSML_Data_Analytics_Concepts]]"
+  - "SOURCE_DSML_DATA_ANALYTICS_CONCEPTS"
 ---
 
 ## ## For future Claude
@@ -28,10 +28,10 @@ Trang này cung cấp cái nhìn tổng quan về hệ sinh thái các thuật t
 
 ## ## Ví dụ đối chiếu (Rule 17)
 - **Ví dụ thực tế (Original)**: Sử dụng Logistic Regression để phân loại Email là "Spam" hay "Không Spam" dựa trên tần suất xuất hiện của các từ khóa nhất định.
-- **Ẩn dụ sư phạm (Pedagogical)**: Thuật toán ML giống như một "Bộ dụng cụ sửa chữa". Bạn không dùng búa (Regression) để vặn vít (Clustering). Mỗi công cụ có một chức năng riêng và người thợ giỏi là người biết khi nào dùng công cụ nào.
+- **Ẩn dụ sư phạm (Pedagogical)**: [Phóng tác] Thuật toán ML giống như một "Bộ dụng cụ sửa chữa". Bạn không dùng búa (Regression) để vặn vít (Clustering). Mỗi công cụ có một chức năng riêng và người thợ giỏi là người biết khi nào dùng công cụ nào.
 
 ## ## Source Tracing
-- **Nguồn**: [[SOURCE_DSML_Data_Analytics_Concepts]] — Overview Section.
+- **Nguồn**: SOURCE_DSML_DATA_ANALYTICS_CONCEPTS — Overview Section.
 
 ## ## History / Revisions
 - **2026-05-03**: [@engineer] Pressure Chain Healing. Bổ sung Rule 17, 20 và chuẩn hóa metadata.

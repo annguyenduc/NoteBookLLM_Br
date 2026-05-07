@@ -8,8 +8,8 @@ status: "verified"
 created: "2026-05-03"
 last_updated: "2026-05-03"
 sources:
-  - "[[SOURCE_DSML_Marketing_Analytics]]"
-  - "[[SOURCE_coursera-AI-essential-Stay_up_to_date_with_AI]]"
+  - "SOURCE_DSML_MARKETING_ANALYTICS"
+  - "SOURCE_COURSERA-AI-essential-Stay_up_to_date_with_AI"
 ---
 
 ## ## For future Claude
@@ -34,12 +34,12 @@ Các chỉ số cốt lõi cần nắm vững:
 
 ## ## Relationships
 - `part_of` -> [[ENTITY_Data_Science]]
-- `supports` -> [[CASE_STUDY_Churn_Prediction]]
+- `supports` -> CASE_STUDY_Churn_Prediction
 - `uses` -> [[CONCEPT_DSML_Clustering_KMeans]] (để phân nhóm khách hàng theo CLV)
 
 ## ## Source Tracing
-- **Nguồn**: [[SOURCE_DSML_Marketing_Analytics]] — Section: Core Marketing KPIs.
-- **Nguồn**: [[SOURCE_DSML_Data_Analytics_Concepts]] — Framework: Conversion Funnels.
+- **Nguồn**: SOURCE_DSML_MARKETING_ANALYTICS — Section: Core Marketing KPIs.
+- **Nguồn**: SOURCE_DSML_DATA_ANALYTICS_CONCEPTS — Framework: Conversion Funnels.
 
 ## ## History / Revisions
 - **2026-05-03**: [@engineer] Chuyển đổi từ stub sang verified, bổ sung Rule 17 và Rule 20.

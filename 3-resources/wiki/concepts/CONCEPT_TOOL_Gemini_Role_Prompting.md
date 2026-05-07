@@ -9,7 +9,7 @@ created: "2026-05-03"
 last_updated: "2026-05-03"
 sources:
   - "[[SOURCE_TOOL_GEMINI_DEVELOPER_CODEX]]"
-  - "[[SOURCE_META_KARPATHY_LLM_WIKI]]"
+  - "SOURCE_META_KARPATHY_LLM_WIKI"
 ---
 
 ## ## For future Claude
@@ -34,11 +34,11 @@ Role Prompting trong Gemini 1.5 Pro và Flash tận dụng khả năng Long Cont
 ## ## Relationships
 - `part_of` -> [[CONCEPT_AI_Prompt_Engineering_Basics]]
 - `enables` -> [[CONCEPT_AIMET_MultiAgent_Architecture]]
-- `source_of` -> [[SOURCE_TOOL_GEMINI_DEVELOPER_CODEX]]
+- `SOURCE_OF` -> [[SOURCE_TOOL_GEMINI_DEVELOPER_CODEX]]
 
 ## ## Source Tracing
 - **Nguồn**: [[SOURCE_TOOL_GEMINI_DEVELOPER_CODEX]] — Section 2: Role Prompting Patterns.
-- **Nguồn**: [[SOURCE_META_KARPATHY_LLM_WIKI]] — Triết lý về "Low Friction" và "Expert persona".
+- **Nguồn**: SOURCE_META_KARPATHY_LLM_WIKI — Triết lý về "Low Friction" và "Expert persona".
 
 ## ## History / Revisions
 - **2026-05-03**: [@engineer] Chuyển đổi từ stub sang verified, bổ sung Rule 17 và Rule 20.

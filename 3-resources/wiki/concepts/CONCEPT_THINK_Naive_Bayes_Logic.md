@@ -1,4 +1,5 @@
 ---
+file_id: "CONCEPT_THINK_Naive_Bayes_Logic"
 title: "CONCEPT: Tư duy Naive Bayes (Naive Bayes Logic)"
 type: concept
 tags: ["Thinking", "Probability", "Classification", "DA_Core"]
@@ -22,7 +23,7 @@ Naive Bayes là một thuật toán phân loại dựa trên Định lý Bayes v
 ### Ví dụ từ sách (Original)
 > **Bối cảnh**: Bộ lọc thư rác (Spam Filter).
 > **Ứng dụng**: Nếu email chứa các từ "Viagra", "Free", "Money", Naive Bayes sẽ tính xác suất email đó là Spam dựa trên tần suất các từ này xuất hiện trong tập dữ liệu thư rác đã biết trước đó.
-> **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Chương 9.
+> **Nguồn**: SOURCE_THINK_DATA_SCIENCE_FOR_BUSINESS — Chương 9.
 
 ### Ứng dụng sư phạm (Pedagogical Application)
 > **Bối cảnh**: Phân loại cảm xúc (Sentiment Analysis) từ phản hồi của học sinh về buổi học.
@@ -32,7 +33,7 @@ Naive Bayes là một thuật toán phân loại dựa trên Định lý Bayes v
 > - **Kết quả**: Hệ thống tự động dán nhãn "Tích cực" cho phản hồi này để giáo viên tổng hợp nhanh.
 
 ## 4. Trích dẫn nguồn (Rule 14)
-- **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Trang 235-245.
+- **Nguồn**: SOURCE_THINK_DATA_SCIENCE_FOR_BUSINESS — Trang 235-245.
 - **Fact-check**: Đã đối chiếu file raw `THINK_Data_Science_for_Business.md`. [Rule 14: SUCCESS]
 
 ---

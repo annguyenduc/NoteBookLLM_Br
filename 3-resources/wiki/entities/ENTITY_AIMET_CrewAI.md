@@ -1,4 +1,5 @@
 ---
+file_id: "ENTITY_AIMET_CrewAI"
 title: "ENTITY: CrewAI (Role-based Multi-Agent Framework)"
 type: entity
 tags: ["Agentic AI", "Framework", "Multi-Agent", "Role-based"]
@@ -35,10 +36,10 @@ relationships:
 
 - [[CONCEPT_AIMET_MultiAgent_Architecture]] — supervisor patterns
 - [[ENTITY_AIMET_LangGraph]] — so sánh trực tiếp
-- [[SOURCE_AIMET_Agentic_AI_Roadmap_2026]] — nguồn gốc
+- [[SOURCE_AIMET_AGENTIC_ROADMAP_2026]] — nguồn gốc
 
 ---
-**Nguồn**: [[SOURCE_AIMET_Agentic_AI_Roadmap_2026]] — Section 4 (Pick a Framework)
+**Nguồn**: [[SOURCE_AIMET_AGENTIC_ROADMAP_2026]] — Section 4 (Pick a Framework)
 
 
 ## 4F Reflection

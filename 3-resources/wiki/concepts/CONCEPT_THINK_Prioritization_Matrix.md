@@ -1,53 +1,23 @@
 ---
-title: "CONCEPT: Ma trận Ưu tiên (Prioritization Matrix / Eisenhower)"
+file_id: "CONCEPT_THINK_Prioritization_Matrix"
+title: "CONCEPT: Ma trận Ưu tiên (Prioritization Matrix)"
 type: concept
-tags: ["Thinking", "Planning", "Productivity", "DA_Core"]
-status: "verified"
-created: "2026-04-29"
-last_updated: "2026-05-01"
+status: "DRAFT"
 ---
 
 # Ma trận Ưu tiên (Prioritization Matrix)
 
-## 1. Định nghĩa
-Ma trận ưu tiên là công cụ giúp sắp xếp các công việc hoặc giải pháp dựa trên hai tiêu chí chính: **Tác động (Impact)** và **Nỗ lực (Effort)**. Điều này giúp Data Analyst tập trung vào những việc mang lại giá trị cao nhất với nguồn lực hữu hạn.
+## 1. Core Principle
+Là công cụ đánh giá và lựa chọn các hành động dựa trên hai tiêu chí: Mức độ tác động (Impact) và Độ dễ thực hiện (Ease of Implementation). Những giải pháp có Impact cao và Dễ thực hiện (High Impact, Easy) luôn được ưu tiên làm trước.
 
-## 2. Nguyên lý / Cấu trúc (4 Ô vuông)
-- **High Impact, Low Effort (Quick Wins)**: Làm ngay lập tức.
-- **High Impact, High Effort (Major Projects)**: Lập kế hoạch kỹ lưỡng.
-- **Low Impact, Low Effort (Fill-ins)**: Làm khi rảnh.
-- **Low Impact, High Effort (Thankless Tasks)**: Loại bỏ hoặc hoãn vô thời hạn.
+## 2. Ví dụ đối chiếu (Rule 17: Double Examples)
+- **Original Example (Từ gốc):** Vẽ poster quảng cáo (Impact cao) ban đầu nằm ở ô "Khó thực hiện" vì ban nhạc vẽ xấu. Nhưng khi nhờ bạn [[ENTITY_CASE_John_Octopus]] vẽ hộ, giải pháp này dịch chuyển sang ô "Dễ thực hiện" và được ưu tiên triển khai ngay.
+- **Pedagogical Metaphor:** Khi dọn dẹp một căn nhà bừa bộn. "Tác động cao + Dễ làm" là việc dọn rác ở phòng khách (nhanh chóng thấy sạch). "Tác động thấp + Khó làm" là việc lau chùi mặt sau của chiếc tủ lạnh nặng nề. Hãy bắt đầu từ phòng khách.
 
-## 3. Ví dụ đối chiếu (Rule 17: Double Examples)
+## 3. 4F Reflection
+- **Facts:** Nguồn lực (thời gian, tiền bạc) luôn có hạn, nên không thể làm mọi thứ.
+- **Feelings:** Giúp giảm bớt sự choáng ngợp khi có quá nhiều ý tưởng (brainstorming overload).
+- **Findings:** Ma trận này rất linh hoạt. Có thể biến một việc "Khó" thành "Dễ" bằng cách nhờ sự trợ giúp của người khác (Delegation).
+- **Futures:** Là công cụ kinh điển trong quản lý dự án và ra quyết định chiến lược.
 
-### Ví dụ từ sách (Original)
-> **Bối cảnh**: Lựa chọn các tính năng mới cho một ứng dụng di động.
-> **Ứng dụng**: Nhóm phát triển vẽ ma trận và nhận thấy "Sửa lỗi đăng nhập" là Quick Win, trong khi "Xây dựng hệ thống gợi ý AI" là Major Project cần nhiều tháng.
-> **Nguồn**: [[SOURCE_THINK_Problem_Solving_101]] — Chương 3.
-
-### Ứng dụng sư phạm (Pedagogical Application)
-> **Bối cảnh**: Học sinh quản lý thời gian chuẩn bị cho kỳ thi học kỳ.
-> **Ứng dụng**: 
-> - **Quick Wins**: Ôn tập các công thức Toán cơ bản (Impact cao, Effort thấp vì đã học rồi).
-> - **Major Projects**: Viết bài luận Tiếng Anh (Impact cao, Effort cao).
-> - **Thankless Tasks**: Trang trí bìa vở ghi chép (Impact thấp, Effort cao).
-> - **Kết luận**: Học sinh dùng ma trận để ưu tiên ôn tập thay vì sa đà vào những việc không tăng điểm số.
-
-## 4. Trích dẫn nguồn (Rule 14)
-- **Nguồn**: [[SOURCE_THINK_Problem_Solving_101]] — Trang 70-85.
-- **Fact-check**: Đã đối chiếu file raw `THINK_Problem_Solving_101.md`. [Rule 14: SUCCESS]
-
----
-WRITE REPORT:
-  file: "3-resources/wiki/concepts/CONCEPT_THINK_Prioritization_Matrix.md"
-  operation: "overwrite"
-  added: "Chuẩn hóa theo v4.1, đồng bộ mô hình Impact/Effort."
-  removed: "NONE"
-  compliance: "[Rule 20] Đã đối soát Template và Raw thành công."
-
-
-## 4F Reflection
-- **Facts**: 
-- **Feelings**: 
-- **Findings**: 
-- **Futures**: 
+**Nguồn:** `3-resources/raw_ingest/THINK_Problem_Solving_101_HD.md` — 2B. PRIORITIZE THE ACTIONS

@@ -1,4 +1,5 @@
 ---
+file_id: "CONCEPT_THINK_Similarity_Distance_Metrics"
 title: "CONCEPT: Độ tương đồng và Khoảng cách (Similarity & Distance)"
 type: concept
 tags: ["Thinking", "Data_Mining", "Math", "DA_Core"]
@@ -22,7 +23,7 @@ Trong khai thác dữ liệu, "Độ tương đồng" là cách chúng ta địn
 ### Ví dụ từ sách (Original)
 > **Bối cảnh**: Hệ thống gợi ý bài hát (vd: Spotify).
 > **Ứng dụng**: Nếu bài hát A và bài hát B có cùng thể loại (Pop), cùng nhịp độ (BPM), và cùng nghệ sĩ, khoảng cách giữa chúng trong không gian đặc trưng (Feature space) sẽ rất nhỏ. Hệ thống sẽ gợi ý bài B cho người vừa nghe bài A.
-> **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Chương 6.
+> **Nguồn**: SOURCE_THINK_DATA_SCIENCE_FOR_BUSINESS — Chương 6.
 
 ### Ứng dụng sư phạm (Pedagogical Application)
 > **Bối cảnh**: Giáo viên tìm kiếm các tài liệu học tập tương đồng để gợi ý cho học sinh.
@@ -30,7 +31,7 @@ Trong khai thác dữ liệu, "Độ tương đồng" là cách chúng ta địn
 > - Nếu học sinh đang đọc một bài báo về "Robot cứu hộ", hệ thống dùng **Cosine Similarity** để tìm các bài báo khác có tập hợp từ khóa (keywords) tương tự như "Cảm biến", "Động cơ servo", "Tự hành" để giới thiệu thêm.
 
 ## 4. Trích dẫn nguồn (Rule 14)
-- **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Trang 141-155.
+- **Nguồn**: SOURCE_THINK_DATA_SCIENCE_FOR_BUSINESS — Trang 141-155.
 - **Fact-check**: Đã đối chiếu file raw `THINK_Data_Science_for_Business.md`. [Rule 14: SUCCESS]
 
 ---

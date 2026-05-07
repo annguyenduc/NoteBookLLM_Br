@@ -1,8 +1,9 @@
 ---
+file_id: "CONCEPT_SQL_Window_Functions"
 entity: concept
 type: technical
 tags: [[ENTITY_SQL|sql]], window_functions, analytics]
-source: [[SOURCE_TOOL_SQL_Cookbook]]
+source: SOURCE_TOOL_SQL_COOKBOOK
 status: verified
 last_updated: 2026-04-29
 ---
@@ -12,7 +13,7 @@ last_updated: 2026-04-29
 ## 1. Định nghĩa
 Window Functions (còn gọi là hàm phân tích - analytic functions) cho phép thực hiện các phép tính toán trên một tập hợp các dòng có liên quan đến dòng hiện tại. Khác với `GROUP BY`, Window Functions không làm gộp (collapse) các dòng vào một dòng duy nhất; mỗi dòng trong kết quả truy vấn vẫn giữ nguyên định danh của nó trong khi vẫn mang theo kết quả tính toán của "cửa sổ" đó.
 
-**Nguồn**: [[SOURCE_TOOL_SQL_Cookbook]] — Phụ lục A (Xác nhận Rule 14 từ: [[SOURCE_TOOL_SQL_Cookbook]])
+**Nguồn**: SOURCE_TOOL_SQL_COOKBOOK — Phụ lục A (Xác nhận Rule 14 từ: SOURCE_TOOL_SQL_COOKBOOK)
 
 ## 2. Cấu trúc cơ bản
 ```sql

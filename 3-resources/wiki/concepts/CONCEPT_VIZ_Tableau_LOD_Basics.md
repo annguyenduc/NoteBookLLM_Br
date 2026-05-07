@@ -8,7 +8,7 @@ status: "verified"
 created: "2026-04-29"
 last_updated: "2026-05-03"
 sources:
-  - "[[SOURCE_VIZ_Analyzing_Data_Power_BI]]"
+  - "SOURCE_VIZ_ANALYZING_DATA_POWER_BI"
 ---
 
 ## ## For future Claude
@@ -21,10 +21,10 @@ Trang này định nghĩa khái niệm Level of Detail (LOD) - một trong nhữ
 
 ## ## Ví dụ đối chiếu (Rule 17)
 - **Ví dụ thực tế (Original)**: Sử dụng `{ FIXED [Province] : SUM([Sales]) }` để tính tổng doanh thu theo từng Tỉnh. Dù người dùng có đang lọc xem chi tiết theo Quận hay Huyện, con số tổng của Tỉnh vẫn được giữ nguyên để so sánh tỷ trọng.
-- **Ẩn dụ sư phạm (Pedagogical)**: LOD giống như việc bạn đeo một chiếc "kính viễn vọng" đặc biệt. Bình thường bạn chỉ thấy được những gì ngay trước mắt (mức độ chi tiết của biểu đồ), nhưng khi đeo kính LOD, bạn có thể nhìn thấy bức tranh tổng thể của cả một khu vực lớn từ xa, ngay cả khi bạn đang đứng ở một góc phố nhỏ hẹp.
+- **Ẩn dụ sư phạm (Pedagogical)**: [Phóng tác] LOD giống như việc bạn đeo một chiếc "kính viễn vọng" đặc biệt. Bình thường bạn chỉ thấy được những gì ngay trước mắt (mức độ chi tiết của biểu đồ), nhưng khi đeo kính LOD, bạn có thể nhìn thấy bức tranh tổng thể của cả một khu vực lớn từ xa, ngay cả khi bạn đang đứng ở một góc phố nhỏ hẹp.
 
 ## ## Source Tracing
-- **Nguồn**: [[SOURCE_VIZ_Analyzing_Data_Power_BI]] — Section: Advanced Visualization Techniques.
+- **Nguồn**: SOURCE_VIZ_ANALYZING_DATA_POWER_BI — Section: Advanced Visualization Techniques.
 
 ## ## History / Revisions
 - **2026-05-03**: [@engineer] Pressure Chain Healing. Bổ sung Rule 17, 20 và chuẩn hóa metadata.

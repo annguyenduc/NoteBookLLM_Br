@@ -7,7 +7,7 @@ status: "verified"
 created: "2026-05-02"
 last_updated: "2026-05-03"
 sources:
-  - "[[SOURCE_AIMET_Agentic_AI_Roadmap_2026]]"
+  - "[[SOURCE_AIMET_AGENTIC_ROADMAP_2026]]"
 ---
 
 ## ## For future Claude
@@ -35,14 +35,14 @@ Trang này định nghĩa khái niệm Runnable - giao diện thực thi tiêu c
 ### Ví dụ từ sách (Original)
 > **Bối cảnh**: Chuẩn hóa việc gọi Model và Tool.
 > **Ứng dụng**: Coi Model là một Runnable. Thay vì gọi `model.predict()`, ta dùng `model.invoke(input)`. Điều này cho phép hệ thống tự động thêm `retry_policy` vào bất kỳ Runnable nào mà không cần sửa code bên trong.
-> **Nguồn**: [[SOURCE_AIMET_Agentic_AI_Roadmap_2026]] — Section 5.2
+> **Nguồn**: [[SOURCE_AIMET_AGENTIC_ROADMAP_2026]] — Section 5.2
 
 ### Ứng dụng sư phạm (Pedagogical Application)
 > **Bối cảnh**: Giảng dạy về Hàm (Functions) trong lập trình cơ bản.
 > **Ứng dụng**: Runnable giống như một "Cỗ máy vạn năng" có 1 miệng nạp nguyên liệu và 1 cửa xuất sản phẩm. Dù bên trong máy là "Xay thịt" hay "Ép trái cây", cách vận hành bên ngoài là như nhau. Học sinh học được cách trừu tượng hóa (Abstraction) — tập trung vào đầu vào/đầu ra thay vì chi tiết cài đặt.
 
 ---
-**Nguồn**: [[SOURCE_AIMET_Agentic_AI_Roadmap_2026]] — Section 4.2
+**Nguồn**: [[SOURCE_AIMET_AGENTIC_ROADMAP_2026]] — Section 4.2
 
 
 ## 4F Reflection

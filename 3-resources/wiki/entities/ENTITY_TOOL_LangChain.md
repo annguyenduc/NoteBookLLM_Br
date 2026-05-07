@@ -1,4 +1,5 @@
 ---
+file_id: "ENTITY_TOOL_LangChain"
 title: "ENTITY: LangChain (LLM Application Framework)"
 type: entity
 tags: ["Agentic AI", "Framework", "LangChain", "LLM"]
@@ -30,7 +31,7 @@ relationships:
 - [[CONCEPT_AIMET_RAG_Systems]] — LangChain cung cấp nhiều retrievers chuẩn.
 
 ---
-**Nguồn**: [[SOURCE_AIMET_Agentic_AI_Roadmap_2026]] — Section 4
+**Nguồn**: [[SOURCE_AIMET_AGENTIC_ROADMAP_2026]] — Section 4
 
 
 ## 4F Reflection

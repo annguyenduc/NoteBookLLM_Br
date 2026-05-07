@@ -1,8 +1,8 @@
 ---
 type: query
-title: "Phân biệt: [[CONCEPT_META_Wiki_Query_Patterns|Wiki Query Patterns]] vs [[CONCEPT_META_Wiki_Gap_Analysis|Wiki Gap Analysis]]"
+title: "Phân biệt: Wiki Query Patterns vs [[CONCEPT_META_Wiki_Gap_Analysis|Wiki Gap Analysis]]"
 tags: ["Comparison", "Methodology", "Prompt_Engineering", "Governance"]
-related: ["[[CONCEPT_META_Wiki_Query_Patterns]]", "[[CONCEPT_META_Wiki_Gap_Analysis]]"]
+related: ["CONCEPT_META_Wiki_Query_Patterns", "[[CONCEPT_META_Wiki_Gap_Analysis]]"]
 source_tool: "Internal Synthesis (Rule 19)"
 status: "verified"
 created: "2026-05-01"

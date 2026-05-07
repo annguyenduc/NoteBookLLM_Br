@@ -1,4 +1,5 @@
 ---
+file_id: "CONCEPT_THINK_CoNVO_Framework"
 title: "Khung CoNVO (Context, Need, Vision, Outcome)"
 type: concept
 sources: ["THINK_Thinking_with_Data.pdf"]
@@ -45,7 +46,7 @@ updated: "2026-05-01"
 -   [[CONCEPT_THINK_Logic_Tree]]
 
 ## Nguồn
--   [[SOURCE_THINK_Thinking_with_Data]] — Page 15-30.
+-   SOURCE_THINK_THINKING_WITH_DATA — Page 15-30.
 
 ---
 [AUDITOR] Rule 14: Đã xác nhận fact tồn tại trong file raw gốc.

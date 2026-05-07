@@ -1,4 +1,5 @@
 ---
+file_id: "CONCEPT_AIMET_Tool_Integration"
 title: "CONCEPT: Tool Integration (Custom Tools & Connectors)"
 type: concept
 tags: ["Agentic AI", "Tools", "Integration", "Pydantic", "AIMET"]
@@ -37,7 +38,7 @@ class SearchArgs(BaseModel):
 ### Ví dụ từ sách (Original)
 > **Bối cảnh**: Agent cần lấy dữ liệu thời tiết thực tế
 > **Ứng dụng**: Tạo một `GetWeather` tool với input là `city`. LLM đọc mô tả tool → suy luận cần city → gọi tool với `city="Hanoi"` → nhận kết quả Observation.
-> **Nguồn**: [[SOURCE_AIMET_Agentic_AI_Roadmap_2026]] — Section 7 (Tool Integration)
+> **Nguồn**: [[SOURCE_AIMET_AGENTIC_ROADMAP_2026]] — Section 7 (Tool Integration)
 
 ### Ứng dụng sư phạm (Pedagogical Application)
 > **Bối cảnh**: Học sinh lớp 9 làm dự án IOT Robot
@@ -50,7 +51,7 @@ class SearchArgs(BaseModel):
 - **Futures**: Tích hợp với [[ENTITY_AIMET_LangGraph]] để handle tool errors (Self-healing).
 
 ## 5. Trích dẫn nguồn (Rule 14)
-- **Nguồn**: [[SOURCE_AIMET_Agentic_AI_Roadmap_2026]] — Section 7, trang 15
+- **Nguồn**: [[SOURCE_AIMET_AGENTIC_ROADMAP_2026]] — Section 7, trang 15
 - **Fact-check**: Đã đối chiếu PDF trang 15: "Use Pydantic models for schemas... reduce hallucinated parameters"
 
 ---

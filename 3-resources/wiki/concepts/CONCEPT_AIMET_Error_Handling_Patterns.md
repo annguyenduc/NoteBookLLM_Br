@@ -7,7 +7,7 @@ status: "verified"
 created: "2026-05-02"
 last_updated: "2026-05-03"
 sources:
-  - "[[SOURCE_AIMET_Agentic_AI_Roadmap_2026]]"
+  - "[[SOURCE_AIMET_AGENTIC_ROADMAP_2026]]"
 ---
 
 ## ## For future Claude
@@ -45,7 +45,7 @@ Trang này tổng hợp các kỹ thuật xử lý lỗi trong kiến trúc Agen
 ### Ví dụ từ sách (Original)
 > **Bối cảnh**: Thiết kế workflow cho Agent gọi API thời tiết.
 > **Ứng dụng**: Phân loại lỗi: Timeout API -> Retry; Sai tham số -> Repair Node; Model hallucinate -> Fallback to human.
-> **Nguồn**: [[SOURCE_AIMET_Agentic_AI_Roadmap_2026]] — Section 4.3 & 4.6
+> **Nguồn**: [[SOURCE_AIMET_AGENTIC_ROADMAP_2026]] — Section 4.3 & 4.6
 
 ### Ứng dụng sư phạm (Pedagogical Application)
 > **Bối cảnh**: Dạy học sinh về "Sự kiên trì" thông qua lập trình Robot.
@@ -56,7 +56,7 @@ Trang này tổng hợp các kỹ thuật xử lý lỗi trong kiến trúc Agen
 > Đây là cách dạy tư duy giải quyết vấn đề (Computational Thinking) một cách trực quan.
 
 ---
-**Nguồn**: [[SOURCE_AIMET_Agentic_AI_Roadmap_2026]] — Section 4.3, 4.6
+**Nguồn**: [[SOURCE_AIMET_AGENTIC_ROADMAP_2026]] — Section 4.3, 4.6
 
 
 ## 4F Reflection

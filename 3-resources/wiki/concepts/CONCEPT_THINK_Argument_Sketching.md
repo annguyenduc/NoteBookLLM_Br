@@ -1,4 +1,5 @@
 ---
+file_id: "CONCEPT_THINK_Argument_Sketching"
 title: "Phác thảo Lập luận (Argument Sketching)"
 type: concept
 sources: ["THINK_Thinking_with_Data.pdf"]
@@ -41,10 +42,10 @@ updated: "2026-05-01"
 
 ## 5. Liên kết tư duy
 -   [[CONCEPT_THINK_CoNVO_Framework]]
--   [[CONCEPT_THINK_Sentence_Mockups]]
+-   CONCEPT_THINK_Sentence_Mockups
 
 ## Nguồn
--   [[SOURCE_THINK_Thinking_with_Data]] — Page 24-35.
+-   SOURCE_THINK_THINKING_WITH_DATA — Page 24-35.
 
 ---
 [AUDITOR] Rule 14: Đã xác nhận fact tồn tại trong file raw gốc.

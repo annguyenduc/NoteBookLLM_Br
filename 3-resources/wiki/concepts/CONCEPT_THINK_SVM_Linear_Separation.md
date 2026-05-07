@@ -1,4 +1,5 @@
 ---
+file_id: "CONCEPT_THINK_SVM_Linear_Separation"
 title: "CONCEPT: Máy vector hỗ trợ (Support Vector Machine - SVM)"
 type: concept
 tags: ["Thinking", "Data_Mining", "Classification", "DA_Core"]
@@ -21,7 +22,7 @@ last_updated: "2026-05-01"
 ### Ví dụ từ sách (Original)
 > **Bối cảnh**: Phân loại các tế bào là "Lành tính" hay "Ác tính".
 > **Ứng dụng**: SVM tìm kiếm đường biên phân tách rõ ràng nhất giữa hai nhóm tế bào dựa trên các đặc điểm sinh học. Những tế bào nằm sát đường biên nhất chính là các "Support Vectors" quyết định vị trí của siêu phẳng.
-> **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Chương 4.
+> **Nguồn**: SOURCE_THINK_DATA_SCIENCE_FOR_BUSINESS — Chương 4.
 
 ### Ứng dụng sư phạm (Pedagogical Application)
 > **Bối cảnh**: Trò chơi phân loại các tấm thẻ "Động vật" và "Thực vật" trên sân trường.
@@ -31,7 +32,7 @@ last_updated: "2026-05-01"
 > - **Giải thích**: Những tấm thẻ nằm sát sợi dây thừng nhất chính là bằng chứng quan trọng nhất để định hình ranh giới phân loại.
 
 ## 4. Trích dẫn nguồn (Rule 14)
-- **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Trang 95-115.
+- **Nguồn**: SOURCE_THINK_DATA_SCIENCE_FOR_BUSINESS — Trang 95-115.
 - **Fact-check**: Đã đối chiếu file raw `THINK_Data_Science_for_Business.md`. [Rule 14: SUCCESS]
 
 ---

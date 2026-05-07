@@ -18,7 +18,7 @@ Microsoft Excel là một ứng dụng bảng tính mạnh mẽ, công cụ khô
 
 ## Liên kết
 - [[SYNTHESIS_EXCEL_Mastery]]
-- [[SOURCE_TOOL_Excel_Data_Analysis]]
+- SOURCE_TOOL_EXCEL_DATA_ANALYSIS
 
 
 ## 4F Reflection

@@ -8,8 +8,8 @@ status: "verified"
 created: "2026-05-03"
 last_updated: "2026-05-03"
 sources:
-  - "[[SOURCE_VIZ_Introducing_Power_BI]]"
-  - "[[SOURCE_VIZ_Analyzing_Data_Power_BI]]"
+  - "SOURCE_VIZ_INTRODUCING_POWER_BI"
+  - "SOURCE_VIZ_ANALYZING_DATA_POWER_BI"
 ---
 
 ## ## For future Claude
@@ -34,11 +34,11 @@ Các thành phần cốt lõi của Power BI:
 ## ## Relationships
 - `part_of` -> [[ENTITY_Data_Science]]
 - `uses` -> [[ENTITY_SQL]]
-- `relates_to` -> [[CONCEPT_VIZ_Data_Storytelling_Framework]]
+- `relates_to` -> CONCEPT_VIZ_Data_Storytelling_Framework
 
 ## ## Source Tracing
-- **Nguồn**: [[SOURCE_VIZ_Introducing_Power_BI]] — Section 1: Introduction.
-- **Nguồn**: [[SOURCE_VIZ_Analyzing_Data_Power_BI]] — Chapter 2: Data Transformation.
+- **Nguồn**: SOURCE_VIZ_INTRODUCING_POWER_BI — Section 1: Introduction.
+- **Nguồn**: SOURCE_VIZ_ANALYZING_DATA_POWER_BI — Chapter 2: Data Transformation.
 
 ## ## History / Revisions
 - **2026-05-03**: [@engineer] Chuyển đổi từ stub sang verified, bổ sung Rule 17 và Rule 20.

@@ -6,11 +6,10 @@ ai-first: true
 confidence: high
 status: "verified"
 sources:
-  - "[[SOURCE_META_KARPATHY_LLM_WIKI]]"
-  - "[[SOURCE_META_NASHUS_LLMWIKI]]"
+  - "SOURCE_META_KARPATHY_LLM_WIKI"
+  - "SOURCE_META_NASHUS_LLMWIKI"
   - "[[SOURCE_META_KARPATHY_CLAUDE_SKILLS]]"
   - "[[SOURCE_META_WIKI_GEN_CLONE]]"
-  - [[SOURCE_META_KARPATHY_LLM_WIKI]]
 relationships:
   - type: "supersedes"
     target: "[[SYNTHESIS_ULTIMATE_Second_Brain_Spec]]"
@@ -19,7 +18,7 @@ relationships:
   - type: "supersedes"
     target: "[[SYNTHESIS_Wiki_Intelligence_Architecture]]"
   - type: "incorporates"
-    target: "[[SYNTHESIS_Wiki_Audit_20260501]]"
+    target: "SYNTHESIS_Wiki_Audit_20260501"
 created: "2026-05-02"
 last_reconciled: "2026-05-02"
 ---
@@ -84,7 +83,7 @@ Dựa trên kết quả kiểm toán, hệ thống cần tập trung vào:
 - [ ] **Rule 7 Compliance**: Hoàn tất việc chuẩn hóa Prefix cho toàn bộ `raw/sources/`.
 
 ## ## Relationships
-- `governs` -> [[index]]
+- `governs` -> [[CONCEPT_index]]
 - `supersedes` -> [[SYNTHESIS_ULTIMATE_Second_Brain_Spec]]
 - `supersedes` -> [[SYNTHESIS_Second_Brain_Standard_Spec]]
 - `supersedes` -> [[SYNTHESIS_Wiki_Intelligence_Architecture]]
@@ -92,8 +91,8 @@ Dựa trên kết quả kiểm toán, hệ thống cần tập trung vào:
 
 ## ## Source Tracing
 - **Nguồn**: [[SOURCE_META_WIKI_GEN_CLONE]] — Lệnh & Taxonomy.
-- **Nguồn**: [[SOURCE_META_KARPATHY_LLM_WIKI]] — AI-First & Extensions.
-- **Nguồn**: [[SOURCE_META_NASHUS_LLMWIKI]] — High Fidelity Graph.
+- **Nguồn**: SOURCE_META_KARPATHY_LLM_WIKI — AI-First & Extensions.
+- **Nguồn**: SOURCE_META_NASHUS_LLMWIKI — High Fidelity Graph.
 - **Nguồn**: [[SOURCE_META_LLM_WIKI_V2]] — Consolidation Tiers.
 
 ## ## History / Revisions
@@ -104,5 +103,5 @@ Dựa trên kết quả kiểm toán, hệ thống cần tập trung vào:
 ## 4F Reflection
 - **Facts**: Hệ thống build được đầy đủ về kỹ thuật nhưng 289 atoms cũ không có content thật. Agent hallucinate nếu không có human check.
 - **Feelings**: Hứng thú ban đầu → thực tế phức tạp hơn. Cần kiểm soát nhiều hơn tưởng.
-- **Findings**: Human Gate không phải optional — là thứ duy nhất ngăn vault đầy rác. Hiểu lý do agents sai quan trọng hơn biết agents làm gì.
+- **Findings**: Human Gate không phải optional — là thứ duy nhất ngăn vault đầy rác. Hiểu lý do agents sai quan trọng hơn biết agents làm gì. **[2026-05-07]**: Agent suggest fix không phải lúc nào cũng đúng. `human_review_flag = 0` cho Inbox là đúng vì confidence threshold đã handle việc routing. Không fix thứ không broken.
 - **Futures**: Tuần tới: ingest có chọn lọc thay vì bulk. Mỗi atom phải qua mắt mình trước khi VERIFIED.

@@ -3,9 +3,12 @@ import sqlite3
 import glob
 from datetime import datetime
 
-ROOT_DIR = r"d:\NoteBookLLM_Br"
+ROOT_DIR = os.getenv(
+    "NOTEBOOKLLM_ROOT",
+    os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", ".."))
+)
 WIKI_DIR = os.path.join(ROOT_DIR, "3-resources", "wiki")
-RAW_DIR = os.path.join(ROOT_DIR, "3-resources", "raw")
+RAW_DIR = os.path.join(ROOT_DIR, "3-resources", "raw_sources")
 DB_PATH  = os.path.join(WIKI_DIR, "wiki_brain.db")
 WIKI_INDEX_PATH = os.path.join(WIKI_DIR, "index.md")
 RAW_INDEX_PATH = os.path.join(RAW_DIR, "MASTER_SOURCE_INDEX.md")
@@ -57,7 +60,7 @@ def update_wiki_index():
     print(f"Successfully updated {WIKI_INDEX_PATH}")
 
 def update_raw_index():
-    """Cập nhật file 3-resources/raw/MASTER_SOURCE_INDEX.md (Logic từ update_master_index.py)."""
+    """Cập nhật file 3-resources/raw_sources/MASTER_SOURCE_INDEX.md (Logic từ update_master_index.py)."""
     print("Updating Master Source Index (Raw)...")
     md_files = [f for f in glob.glob(os.path.join(RAW_DIR, "*.md")) if "MASTER_SOURCE_INDEX.md" not in f]
     other_files = [f for f in glob.glob(os.path.join(RAW_DIR, "*")) if not f.endswith(".md") and os.path.isfile(f)]

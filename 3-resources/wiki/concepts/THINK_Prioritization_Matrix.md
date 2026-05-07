@@ -1,0 +1,22 @@
+---
+file_id: THINK_Prioritization_Matrix
+category: "Wiki Page"
+prefix: "WIKI"
+agent_id: "@scout"
+status: "STUB"
+confidence: 0.10
+---
+
+# THINK_Prioritization_Matrix
+
+> [!NOTE]
+> Đây là trang tri thức tạm thời (STUB) được tạo tự động vì có nhiều liên kết trỏ đến thuật ngữ này.
+
+## Core Principle
+Chưa có định nghĩa chính thức. Cần được bổ sung từ nguồn RAW.
+
+## 4F Reflection
+- **Facts**: Được phát hiện qua phân tích lỗ hổng tri thức (Breakdown).
+- **Feelings**: 
+- **Findings**: 
+- **Futures**: 

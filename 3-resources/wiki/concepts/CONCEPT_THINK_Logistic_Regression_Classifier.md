@@ -1,4 +1,5 @@
 ---
+file_id: "CONCEPT_THINK_Logistic_Regression_Classifier"
 title: "CONCEPT: Hồi quy Logistic (Logistic Regression Classifier)"
 type: concept
 tags: ["Thinking", "Modeling", "Classification", "DA_Core"]
@@ -22,7 +23,7 @@ Hồi quy Logistic là một mô hình thống kê dùng để dự đoán xác 
 ### Ví dụ từ sách (Original)
 > **Bối cảnh**: Dự đoán khả năng một người phản hồi lại thư mời mở thẻ tín dụng.
 > **Ứng dụng**: Mô hình tính toán dựa trên thu nhập và lịch sử chi tiêu. Kết quả trả về là 0.75 (tức 75% khả năng sẽ phản hồi). Dựa trên con số này, ngân hàng quyết định gửi thư mời.
-> **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Chương 4.
+> **Nguồn**: SOURCE_THINK_DATA_SCIENCE_FOR_BUSINESS — Chương 4.
 
 ### Ứng dụng sư phạm (Pedagogical Application)
 > **Bối cảnh**: Dự đoán khả năng một học sinh nộp bài tập đúng hạn dựa trên số giờ online trên LMS.
@@ -32,7 +33,7 @@ Hồi quy Logistic là một mô hình thống kê dùng để dự đoán xác 
 > - **Kết quả**: Nếu mô hình báo xác suất < 0.3, hệ thống tự động gửi tin nhắn nhắc nhở "Đừng quên hạn nộp bài nhé!".
 
 ## 4. Trích dẫn nguồn (Rule 14)
-- **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Trang 90-110.
+- **Nguồn**: SOURCE_THINK_DATA_SCIENCE_FOR_BUSINESS — Trang 90-110.
 - **Fact-check**: Đã đối chiếu file raw `THINK_Data_Science_for_Business.md`. [Rule 14: SUCCESS]
 
 ---

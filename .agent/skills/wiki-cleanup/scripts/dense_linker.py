@@ -3,7 +3,11 @@ import re
 import sys
 import yaml
 
-WIKI_DIR = r"d:\NoteBookLLM_Br\3-resources\wiki"
+ROOT_DIR = os.getenv(
+    "NOTEBOOKLLM_ROOT",
+    os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", ".."))
+)
+WIKI_DIR = os.path.join(ROOT_DIR, "3-resources", "wiki")
 CONCEPTS_DIR = os.path.join(WIKI_DIR, "concepts")
 
 def get_all_concepts():

@@ -1,54 +1,23 @@
 ---
+file_id: "CONCEPT_THINK_Logic_Tree"
 title: "CONCEPT: Cây Logic (Logic Tree)"
 type: concept
-tags: ["Thinking", "Problem_Solving", "Structure", "DA_Core"]
-status: "verified"
-created: "2026-04-28"
-last_updated: "2026-05-01"
+status: "DRAFT"
 ---
 
 # Cây Logic (Logic Tree)
 
-## 1. Định nghĩa
-**Logic Tree** là một công cụ phân rã một vấn đề lớn thành các thành phần nhỏ hơn, có thể quản lý được. Đây là công cụ nền tảng để thực hiện tư duy MECE (Mutually Exclusive, Collectively Exhaustive - Không trùng lặp, Không bỏ sót).
+## 1. Core Principle
+Cây logic là một công cụ trực quan giúp phân rã một vấn đề lớn thành các thành phần nhỏ hơn, tuân theo nguyên tắc MECE (Mutually Exclusive, Collectively Exhaustive - Không trùng lặp, Không bỏ sót). Nó giúp xác định mọi nguyên nhân gốc rễ tiềm năng hoặc tạo ra nhiều giải pháp sáng tạo.
 
-## 2. Nguyên lý / Cấu trúc
-- **Rễ (Root)**: Vấn đề chính hoặc mục tiêu.
-- **Nhánh (Branches)**: Các nguyên nhân hoặc giải pháp tiềm năng.
-- **Lá (Leaves)**: Các hành động cụ thể hoặc dữ liệu cần thu thập.
-- **Quy tắc vàng**: Đảm bảo tính MECE ở mỗi cấp độ phân rã.
+## 2. Ví dụ đối chiếu (Rule 17: Double Examples)
+- **Original Example (Từ gốc):** Phân loại một lớp học sinh. Có thể chia theo giới tính (nam, nữ), theo chiều cao (trên 1m2, dưới 1m2), hoặc theo tay thuận (trái, phải, cả hai). Các nhánh không được phép giao nhau và phải bao trùm toàn bộ lớp.
+- **Pedagogical Metaphor:** Giống như việc bóc một củ hành tây. Bạn lột từng lớp một từ ngoài vào trong một cách hệ thống, đảm bảo không phần nào của củ hành bị bỏ sót mà cũng không bị đếm hai lần.
 
-## 3. Ví dụ đối chiếu (Rule 17: Double Examples)
+## 3. 4F Reflection
+- **Facts:** Cây logic phát triển từ trái sang phải, từ vấn đề rộng đến các khía cạnh hẹp hơn.
+- **Feelings:** Có thể hơi khó khăn lúc đầu, nhưng mang lại sự rõ ràng tuyệt đối khi hoàn thành.
+- **Findings:** Công cụ này khắc phục tư duy đường thẳng, ép bộ não phải tìm kiếm các giải pháp song song (lateral thinking).
+- **Futures:** Rất hữu ích khi kết hợp với [[THINK_Yes_No_Tree]] để loại trừ các giả thuyết sai.
 
-### Ví dụ từ sách (Original)
-> **Bối cảnh**: Cách tăng doanh số cho một cửa hàng.
-> **Ứng dụng**: Phân rã Doanh số = (Số lượng khách hàng) x (Chi tiêu trung bình/khách). Tiếp tục phân rã Số lượng khách hàng = (Khách cũ quay lại) + (Khách mới). Việc này giúp xác định chính xác nên tập trung vào marketing kéo khách mới hay chương trình khách hàng thân thiết.
-> **Nguồn**: [[SOURCE_THINK_Problem_Solving_101]] — Page 30-35.
-
-### Ứng dụng sư phạm (Pedagogical Application)
-> **Bối cảnh**: Học sinh thiết kế Logic Tree để giải quyết vấn đề "Rác thải nhựa trong trường học".
-> **Ứng dụng**: 
-> - **Root**: Giảm rác thải nhựa.
-> - **Branch 1**: Giảm đầu vào (vd: Căng tin không dùng ống hút nhựa).
-> - **Branch 2**: Tăng đầu ra/tái chế (vd: Đặt thùng rác phân loại).
-> - **Branch 3**: Tăng nhận thức (vd: Chiến dịch truyền thông).
-> - **Kết quả**: Giúp học sinh thấy rõ các nhóm giải pháp khác nhau thay vì chỉ nghĩ đến việc "nhặt rác".
-
-## 4. Trích dẫn nguồn (Rule 14)
-- **Nguồn**: [[SOURCE_THINK_Problem_Solving_101]] — Trang 28-40.
-- **Fact-check**: Đã đối chiếu file raw `THINK_Problem_Solving_101.md`. [Rule 14: SUCCESS]
-
----
-WRITE REPORT:
-  file: "3-resources/wiki/concepts/CONCEPT_THINK_Logic_Tree.md"
-  operation: "overwrite"
-  added: "Chuẩn hóa theo v4.1, áp dụng Rule 17 với ví dụ EdTech."
-  removed: "NONE"
-  compliance: "[Rule 20] Đã đối soát Template và Raw thành công."
-
-
-## 4F Reflection
-- **Facts**: 
-- **Feelings**: 
-- **Findings**: 
-- **Futures**: 
+**Nguồn:** `3-resources/raw_ingest/THINK_Problem_Solving_101_HD.md` — PROBLEM-SOLVING TOOL BOX: LOGIC TREE

@@ -1,4 +1,5 @@
 ---
+file_id: "ENTITY_TOOL_Gemini"
 entity_id: ENTITY_TOOL_GEMINI
 title: "Google Gemini (Multi-modal AI)"
 type: "TOOL"

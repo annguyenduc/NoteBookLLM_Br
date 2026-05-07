@@ -20,7 +20,7 @@ Reranking là bước xử lý hậu kỳ sau khi truy xuất ban đầu (Initia
 
 ## Ví dụ đối chiếu (Rule 17)
 - **Ví dụ thực tế (Original)**: Sử dụng **Cohere Rerank API** hoặc mô hình **BGE-Reranker** sau khi lấy ra Top 10 chunks từ ChromaDB, sau đó chỉ lấy Top 3 chunks có điểm cao nhất để nạp vào LLM.
-- **Ẩn dụ sư phạm (Pedagogical)**: Giống như một **Bộ lọc của Giám khảo (Jury Filter)**: Vòng sơ tuyển (Vector Search) chọn ra 100 thí sinh có ngoại hình phù hợp. Nhưng vòng phỏng vấn chuyên sâu (Reranking) mới thực sự tìm ra 3 người có năng lực chuyên môn tốt nhất để vào vòng chung kết.
+- **Ẩn dụ sư phạm (Pedagogical)**: [Phóng tác] Giống như một **Bộ lọc của Giám khảo (Jury Filter)**: Vòng sơ tuyển (Vector Search) chọn ra 100 thí sinh có ngoại hình phù hợp. Nhưng vòng phỏng vấn chuyên sâu (Reranking) mới thực sự tìm ra 3 người có năng lực chuyên môn tốt nhất để vào vòng chung kết.
 
 ## 4F Reflection
 - **Facts**: Reranking tốn tài nguyên và thời gian hơn Vector Search nhưng mang lại hiệu quả vượt trội về chất lượng câu trả lời.

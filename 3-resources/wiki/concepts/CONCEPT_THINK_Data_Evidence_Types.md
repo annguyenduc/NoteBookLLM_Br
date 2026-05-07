@@ -1,4 +1,5 @@
 ---
+file_id: "CONCEPT_THINK_Data_Evidence_Types"
 title: "CONCEPT: Các loại Bằng chứng Dữ liệu (Data Evidence Types)"
 type: concept
 tags: ["Thinking", "Argumentation", "Evidence", "DA_Core"]
@@ -27,7 +28,7 @@ Bằng chứng dữ liệu là những thông tin thực tế được trích xu
 > - *So sánh*: Cao hơn 20% so với chiến dịch tháng trước.
 > - *Tương quan*: Ngân sách quảng cáo tỷ lệ thuận với số lượt click.
 > - *Nhân quả*: Thử nghiệm A/B cho thấy nhóm xem quảng cáo có tỷ lệ mua hàng cao hơn hẳn nhóm không xem.
-> **Nguồn**: [[SOURCE_THINK_Thinking_with_Data]] — Chương 3.
+> **Nguồn**: SOURCE_THINK_THINKING_WITH_DATA — Chương 3.
 
 ### Ứng dụng sư phạm (Pedagogical Application)
 > **Bối cảnh**: Học sinh trình bày kết quả dự án "Ảnh hưởng của ánh sáng đến sự phát triển của cây".
@@ -38,7 +39,7 @@ Bằng chứng dữ liệu là những thông tin thực tế được trích xu
 > - *Nhân quả*: Vì cây ngoài nắng có quá trình quang hợp diễn ra mạnh hơn (dựa trên đo lường diệp lục), dẫn đến tốc độ sinh trưởng nhanh hơn.
 
 ## 4. Trích dẫn nguồn (Rule 14)
-- **Nguồn**: [[SOURCE_THINK_Thinking_with_Data]] — Trang 30-40.
+- **Nguồn**: SOURCE_THINK_THINKING_WITH_DATA — Trang 30-40.
 - **Fact-check**: Đã đối chiếu file raw `THINK_Thinking_with_Data.md`. [Rule 14: SUCCESS]
 
 ---

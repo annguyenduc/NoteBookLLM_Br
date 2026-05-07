@@ -20,7 +20,7 @@ Docker cho phép đóng gói toàn bộ môi trường chạy Agent (code, thư 
 
 ## Ví dụ đối chiếu (Rule 17)
 - **Ví dụ thực tế (Original)**: Sử dụng `Docker Compose` để chạy đồng thời Agent API (FastAPI), Vector Database (Qdrant) và UI (Streamlit) chỉ bằng một câu lệnh.
-- **Ẩn dụ sư phạm (Pedagogical)**: Giống như một **Container vận chuyển tiêu chuẩn**: Dù bên trong là hàng hóa gì (Python code, C++ libs), nó vẫn có thể đặt lên bất kỳ con tàu hay xe tải nào (AWS, Azure, Local Server) và vận hành một cách trơn tru mà không sợ bị hỏng hóc do môi trường khác biệt.
+- **Ẩn dụ sư phạm (Pedagogical)**: [Phóng tác] Giống như một **Container vận chuyển tiêu chuẩn**: Dù bên trong là hàng hóa gì (Python code, C++ libs), nó vẫn có thể đặt lên bất kỳ con tàu hay xe tải nào (AWS, Azure, Local Server) và vận hành một cách trơn tru mà không sợ bị hỏng hóc do môi trường khác biệt.
 
 ## 4F Reflection
 - **Facts**: Docker giúp loại bỏ hoàn toàn câu nói "Chạy tốt trên máy tôi mà!" (It works on my machine).

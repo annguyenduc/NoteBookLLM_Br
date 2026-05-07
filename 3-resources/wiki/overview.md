@@ -57,14 +57,14 @@ graph TD
 
 ## 🚀 Lộ trình ứng dụng (Vòng 3: Case Studies)
 Chúng ta đang chuyển dịch từ việc tích lũy khái niệm sang việc ứng dụng tổng hợp thông qua các Case Study thực chiến:
-- [[CASE_STUDY_Churn_Prediction]]: Kết nối SQL, Python và DSML.
-- [[CASE_STUDY_Teaching_Efficacy]]: Kết nối Stats và Visualization.
-- [[CASE_STUDY_Data_Pipeline_Optimization]]: Kết nối DE và SQL.
+- CASE_STUDY_Churn_Prediction: Kết nối SQL, Python và DSML.
+- CASE_STUDY_Teaching_Efficacy: Kết nối Stats và Visualization.
+- CASE_STUDY_Data_Pipeline_Optimization: Kết nối DE và SQL.
 
 ## 🔗 Các liên kết Master
 - [[index]] | Mục lục toàn cầu.
-- [[SYNTHESIS_DA_Core_Workflow]] | Quy trình làm việc chuẩn của DA.
-- [[SYNTHESIS_DA_Case_Study_Library]] | Thư viện kịch bản thực tế.
+- SYNTHESIS_DA_Core_Workflow | Quy trình làm việc chuẩn của DA.
+- SYNTHESIS_DA_Case_Study_Library | Thư viện kịch bản thực tế.
 
 ---
 *Cập nhật lần cuối bởi @pm vào 2026-05-02. Hệ thống đã được làm sạch khỏi 1.600 file nhiễu.*

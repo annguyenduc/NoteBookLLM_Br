@@ -7,7 +7,7 @@ status: "verified"
 created: "2026-05-02"
 last_updated: "2026-05-03"
 sources:
-  - "[[SOURCE_AIMET_Agentic_AI_Roadmap_2026]]"
+  - "[[SOURCE_AIMET_AGENTIC_ROADMAP_2026]]"
 ---
 
 ## ## For future Claude
@@ -47,7 +47,7 @@ Query → Embed → Vector Search → Retrieve Chunks → Augment Context → Ge
 ### Ví dụ từ sách (Original)
 > **Bối cảnh**: Agent trả lời câu hỏi về tài liệu nội bộ công ty (không có trong training data)
 > **Ứng dụng**: Embed toàn bộ tài liệu → lưu vào Chroma → khi user hỏi, retrieve top-5 chunks → LLM generate câu trả lời có citation. "Grounded generation" đảm bảo câu trả lời chỉ dựa trên tài liệu thực
-> **Nguồn**: [[SOURCE_AIMET_Agentic_AI_Roadmap_2026]] — Section 8 (RAG Systems)
+> **Nguồn**: [[SOURCE_AIMET_AGENTIC_ROADMAP_2026]] — Section 8 (RAG Systems)
 
 ### Ứng dụng sư phạm (Pedagogical Application)
 > **Bối cảnh**: Chatbot hỗ trợ giáo viên tra cứu tài liệu chương trình STEAM Quốc gia
@@ -60,7 +60,7 @@ Query → Embed → Vector Search → Retrieve Chunks → Augment Context → Ge
 - **Futures**: Kết hợp với [[CONCEPT_AIMET_Memory_Management]] → RAG làm long-term memory có semantic retrieval
 
 ## 5. Trích dẫn nguồn (Rule 14)
-- **Nguồn**: [[SOURCE_AIMET_Agentic_AI_Roadmap_2026]] — Section 8, trang 17-18
+- **Nguồn**: [[SOURCE_AIMET_AGENTIC_ROADMAP_2026]] — Section 8, trang 17-18
 - **Fact-check**: Đã đối chiếu PDF trang 18: "grounded generation and citations in RAG"
 
 ---

@@ -16,11 +16,12 @@ async def main():
     parser.add_argument("--url", required=True, help="URL to crawl")
     parser.add_argument("--output", required=True, help="Output file path (.md)")
     parser.add_argument("--screenshot", action="store_true", help="Capture a high-fidelity screenshot")
+    parser.add_argument("--headless", action="store_true", default=False, help="Run in headless mode")
     args = parser.parse_args()
 
-    # METHOD 1: Headless = False (Trình duyệt có giao diện thật)
+    # Browser Configuration
     browser_config = BrowserConfig(
-        headless=False, # Hiển thị trình duyệt để vượt qua Canvas Fingerprinting
+        headless=args.headless, 
         verbose=True
     )
 

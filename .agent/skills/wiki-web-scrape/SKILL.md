@@ -1,53 +1,38 @@
 ---
 name: wiki-web-scrape
-description: "Use when quickly scraping a static or server-rendered URL for raw content. Prefer over wiki-crawl-4ai for simple pages that do not require JavaScript rendering or screenshot evidence. Output goes to raw/ only — not atomized."
+description: Use when capturing text-only content from static URLs for knowledge ingestion. MANDATORY: Use ONLY for staging content to 00_Inbox/. Prohibited for direct writing to 3-resources/raw_*/.
 ---
 
-High-speed technical documentation scraping using Lightpanda.
-
-## Context
-Acquire raw data from URLs quickly. This skill is for data acquisition only; use `wiki-ingest` for atomization.
-
-## Workflow
-1. Provide a target URL.
-2. Run the Lightpanda scraper.
-3. Save the raw output to `3-resources/raw/`.
-
-## Execution
-```bash
-python .agent/skills/wiki-web-scrape/scripts/lightpanda_scrape.py "URL"
-```
-
-## Constraints
-- Do not use for authenticated pages.
-- Respect robots.txt.
-description: Use when a simple public page needs fast text extraction without heavy rendering and screenshot evidence is not required; prefer this before `wiki-crawl-4ai` for straightforward pages.
----
-
-# Wiki Web Scrape
+# Wiki Web Scrape (Resilient/Hybrid)
 
 ## Overview
-Use the Lightpanda-based scraper for quick acquisition of simple page text. This is a staging skill for raw capture, not a direct ingest or synthesis step.
+A resilient staging skill that captures raw page text. It prefers **Lightpanda** (via CDP) for lightweight execution but automatically falls back to **Standard Chromium** if the Lightpanda server is unavailable. Its sole purpose is to move external data into the `00_Inbox/` for human review and formal ingestion.
+
+## Testing
+This skill uses **TDD** to ensure scraping resilience.
+Run tests from the workspace root:
+```powershell
+python .agent/skills/wiki-web-scrape/tests/test_scrape.py
+```
 
 ## Guardrails
-- Save output to `00_Inbox/` or another user-approved staging location, not directly into `3-resources/raw/`.
-- Do not use this skill for authenticated pages or for pages that require Rule 10 screenshot evidence.
-- If the page is dynamic or badly rendered, stop and switch to `wiki-crawl-4ai`.
+- **STAGING BOUNDARY**: NEVER write directly to `3-resources/raw_*/`. This area is immutable for agents (Rule R1).
+- **STAGING TARGET**: All outputs MUST be saved in `00_Inbox/`.
+- **NO VISUALS**: If the task requires visual evidence (Rule R10), STOP and use `wiki-crawl-4ai`.
 
 ## Workflow
-1. Confirm the page is public and simple enough for lightweight scraping.
-2. Run:
-   `python .agent/skills/wiki-web-scrape/scripts/lightpanda_scrape.py --url "<url>" --output "00_Inbox/page.md"`
-3. Inspect the captured markdown/text for completeness.
-4. If the capture is good, pass the saved file to `wiki-ingest`.
+1. Verify the URL is static and public.
+2. Run staging command:
+   `python .agent/skills/wiki-web-scrape/scripts/lightpanda_scrape.py --url "<url>" --output "00_Inbox/<filename>.md"`
+3. Verify output quality in the inbox.
+4. Pass verified file to `wiki-ingest`.
 
 ## Quick Reference
-- Required arguments:
-  `--url`, `--output`
-- Runtime assumption:
-  the script connects to an existing Lightpanda CDP endpoint at `http://127.0.0.1:9222`
+- `python .agent/skills/wiki-web-scrape/scripts/lightpanda_scrape.py --url <URL> --output 00_Inbox/<name>.md`
 
-## Common Mistakes
-- Writing directly into the immutable raw area.
-- Using the fast scraper for JavaScript-heavy or visually sensitive pages.
-- Forgetting that this step only captures content; it does not register atoms.
+## Common Mistakes & Rationalizations
+| Excuse | Reality |
+|--------|---------|
+| "It's faster to write to raw/" | Violation of R1/R12. Speed does not justify breaking system integrity. |
+| "I'll review it later in raw/" | Raw is the Source of Truth; it must be clean *before* entry. |
+| "The page looks simple enough" | If it has complex JS, Lightpanda will return empty text. Switch to crawl-4ai. |

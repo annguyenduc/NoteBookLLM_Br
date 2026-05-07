@@ -9,7 +9,7 @@ created: "2026-05-03"
 last_updated: "2026-05-03"
 sources:
   - "[[SOURCE_TOOL_GEMINI_DEVELOPER_CODEX]]"
-  - "[[SOURCE_META_KARPATHY_LLM_WIKI]]"
+  - "SOURCE_META_KARPATHY_LLM_WIKI"
 ---
 
 ## ## For future Claude
@@ -21,7 +21,7 @@ Trang này định nghĩa các phương pháp tối ưu để đưa dữ liệu 
 3.  **Dynamic Pruning**: Chỉ tiêm các phần dữ liệu thực sự liên quan (thông qua RAG hoặc phân tích tiền xử lý) thay vì tiêm toàn bộ tài liệu.
 
 ## ## Ví dụ đối chiếu (Rule 17)
--   **Ví dụ thực tế (Original)**: Sử dụng XML tags để tiêm code: `<source_code> [Nội dung code] </source_code>`. Điều này giúp Gemini phân biệt rõ đâu là chỉ dẫn của lập trình viên và đâu là dữ liệu cần được phân tích.
+-   **Ví dụ thực tế (Original)**: Sử dụng XML tags để tiêm code: `<SOURCE_CODE> [Nội dung code] </SOURCE_CODE>`. Điều này giúp Gemini phân biệt rõ đâu là chỉ dẫn của lập trình viên và đâu là dữ liệu cần được phân tích.
 -   **Ẩn dụ sư phạm (Pedagogical)**: Giống như việc bạn gửi một tập hồ sơ cho sếp. Thay vì ném một đống giấy lộn xộn lên bàn, bạn kẹp chúng vào các bìa hồ sơ có dán nhãn màu sắc rõ ràng (XML tags) và đặt bản tóm tắt quan trọng nhất lên trên cùng (Strategic Placement). Việc này giúp sếp xử lý công việc nhanh và chính xác hơn rất nhiều.
 
 ## ## Detailed Analysis
@@ -34,11 +34,11 @@ Các kỹ thuật cụ thể:
 ## ## Relationships
 - `part_of` -> [[CONCEPT_AI_Prompt_Engineering_Basics]]
 - `enables` -> [[CONCEPT_AIMET_RAG_Systems]]
-- `source_of` -> [[SOURCE_TOOL_GEMINI_DEVELOPER_CODEX]]
+- `SOURCE_OF` -> [[SOURCE_TOOL_GEMINI_DEVELOPER_CODEX]]
 
 ## ## Source Tracing
 - **Nguồn**: [[SOURCE_TOOL_GEMINI_DEVELOPER_CODEX]] — Section 3: Context Management.
-- **Nguồn**: [[SOURCE_META_KARPATHY_LLM_WIKI]] — Triết lý về "Low Friction" và "Contextual Recall".
+- **Nguồn**: SOURCE_META_KARPATHY_LLM_WIKI — Triết lý về "Low Friction" và "Contextual Recall".
 
 ## ## History / Revisions
 - **2026-05-03**: [@engineer] Chuyển đổi từ stub sang verified, bổ sung Rule 17 và Rule 20.

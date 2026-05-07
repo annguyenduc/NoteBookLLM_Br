@@ -1,4 +1,5 @@
 ---
+file_id: "SYNTHESIS_Agentic_Orchestration_Frameworks"
 title: "SYNTHESIS: Agentic Orchestration Frameworks (LangGraph vs CrewAI vs AutoGen)"
 type: synthesis
 tags: ["Agentic AI", "Comparison", "Frameworks", "Orchestration", "AIMET"]
@@ -44,7 +45,7 @@ Trang này hợp nhất tri thức về các bộ khung (frameworks) hàng đầ
 
 ## 🔍 5. Trích dẫn nguồn (Rule 14)
 
-- **Nguồn chính**: [[SOURCE_AIMET_Agentic_AI_Roadmap_2026]] — Section 4 & 5.
+- **Nguồn chính**: [[SOURCE_AIMET_AGENTIC_ROADMAP_2026]] — Section 4 & 5.
 - **Nguồn bổ trợ**: [[ENTITY_AIMET_LangGraph]], [[ENTITY_AIMET_CrewAI]].
 - **Fact-check**: Đã đối chiếu sự khác biệt giữa "deterministic workflows" và "conversational autonomy" (Roadmap 2026).
 

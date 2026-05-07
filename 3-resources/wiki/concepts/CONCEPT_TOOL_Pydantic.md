@@ -20,7 +20,7 @@ Pydantic là thư viện kiểm soát dữ liệu (Data Validation) mạnh mẽ 
 
 ## Ví dụ đối chiếu (Rule 17)
 - **Ví dụ thực tế (Original)**: Khi định nghĩa một công cụ lấy thời tiết, Pydantic đảm bảo tham số `city` phải là String và `days` phải là Integer từ 1-7.
-- **Ẩn dụ sư phạm (Pedagogical)**: Giống như một "Cửa an ninh" tại sân bay: Chỉ những hành khách có giấy tờ (dữ liệu) đúng quy chuẩn mới được đi qua. Nếu thiếu hoặc sai, cửa sẽ báo động (Error) và yêu cầu cung cấp lại chính xác.
+- **Ẩn dụ sư phạm (Pedagogical)**: [Phóng tác] Giống như một "Cửa an ninh" tại sân bay: Chỉ những hành khách có giấy tờ (dữ liệu) đúng quy chuẩn mới được đi qua. Nếu thiếu hoặc sai, cửa sẽ báo động (Error) và yêu cầu cung cấp lại chính xác.
 
 ## 4F Reflection
 - **Facts**: Pydantic v2 (viết bằng Rust) nhanh hơn gấp nhiều lần so với v1.

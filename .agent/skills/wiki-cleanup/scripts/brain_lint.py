@@ -12,7 +12,13 @@ from pathlib import Path
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 
-WIKI_DIR = Path(r"d:\NoteBookLLM_Br\3-resources\wiki")
+ROOT_DIR = Path(
+    os.getenv(
+        "NOTEBOOKLLM_ROOT",
+        os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", ".."))
+    )
+)
+WIKI_DIR = ROOT_DIR / "3-resources" / "wiki"
 SYSTEM_STEMS = {"log", "index", "overview", "WIKI_INDEX"}
 
 def _read_safe(file_path: Path) -> tuple[str | None, str | None]:

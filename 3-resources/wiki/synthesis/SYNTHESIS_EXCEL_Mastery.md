@@ -39,7 +39,7 @@ Biến Excel thành một công cụ tư vấn chiến lược:
 ---
 
 ## Liên kết hệ thống
-- **Nguồn tri thức**: [[SOURCE_TOOL_Excel_Data_Analysis]]
+- **Nguồn tri thức**: SOURCE_TOOL_EXCEL_DATA_ANALYSIS
 - **Thực thể nền tảng**: [[ENTITY_EXCEL]]
 - **Kỹ năng liên quan**: [[SYNTHESIS_SQL_Mastery]]
 

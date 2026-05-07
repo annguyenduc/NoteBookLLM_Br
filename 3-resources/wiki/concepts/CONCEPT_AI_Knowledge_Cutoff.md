@@ -8,8 +8,8 @@ status: "verified"
 created: "2026-05-03"
 last_updated: "2026-05-03"
 sources:
-  - "[[SOURCE_coursera-AI-essential-Bias_Drift_Knowledge_Cutoff]]"
-  - "[[SOURCE_coursera-AI-essential-Stay_up_to_date_with_AI]]"
+  - "SOURCE_COURSERA-AI-essential-Bias_Drift_Knowledge_Cutoff"
+  - "SOURCE_COURSERA-AI-essential-Stay_up_to_date_with_AI"
 ---
 
 ## ## For future Claude
@@ -41,8 +41,8 @@ Knowledge Cutoff ảnh hưởng trực tiếp đến độ tin cậy của AI tr
 - `causes` -> [[CONCEPT_META_Information_Overload]] (nếu không được kiểm soát)
 
 ## ## Source Tracing
-- **Nguồn**: [[SOURCE_coursera-AI-essential-Bias_Drift_Knowledge_Cutoff]] — Section: LLM Limitations.
-- **Nguồn**: [[SOURCE_coursera-AI-essential-Stay_up_to_date_with_AI]] — Concept: Understanding AI constraints.
+- **Nguồn**: SOURCE_COURSERA-AI-essential-Bias_Drift_Knowledge_Cutoff — Section: LLM Limitations.
+- **Nguồn**: SOURCE_COURSERA-AI-essential-Stay_up_to_date_with_AI — Concept: Understanding AI constraints.
 
 ## ## History / Revisions
 - **2026-05-03**: [@engineer] Chuyển đổi từ stub sang verified, bổ sung Rule 17 và Rule 20.

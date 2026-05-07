@@ -1,7 +1,11 @@
 import os
 import re
 
-WIKI_DIR = r"d:\NoteBookLLM_Br\3-resources\wiki"
+ROOT_DIR = os.getenv(
+    "NOTEBOOKLLM_ROOT",
+    os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", ".."))
+)
+WIKI_DIR = os.path.join(ROOT_DIR, "3-resources", "wiki")
 INSIGHT_REPORT = os.path.join(WIKI_DIR, "graph_insight_report.md")
 PROPOSAL_REPORT = os.path.join(WIKI_DIR, "consolidation_proposals.md")
 THRESHOLD_PROMOTION = 3

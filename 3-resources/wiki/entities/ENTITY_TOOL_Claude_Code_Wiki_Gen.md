@@ -1,4 +1,5 @@
 ---
+file_id: "ENTITY_TOOL_Claude_Code_Wiki_Gen"
 entity_id: ENTITY_TOOL_Antigravity_Wiki_Gen
 title: "TOOL: Antigravity Wiki Generation & Intelligence Skill"
 type: tool

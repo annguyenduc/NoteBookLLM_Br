@@ -20,7 +20,7 @@ FastAPI là một web framework hiện đại, hiệu suất cao để xây dự
 
 ## Ví dụ đối chiếu (Rule 17)
 - **Ví dụ thực tế (Original)**: Xây dựng một endpoint `/chat` chấp nhận tin nhắn người dùng, gọi LangGraph để xử lý và trả về phản hồi dạng Stream (Streaming Response).
-- **Ẩn dụ sư phạm (Pedagogical)**: Giống như một **Nhà điều phối không lưu (Air Traffic Controller)**: FastAPI không trực tiếp lái máy bay (Agent), nhưng nó điều phối tất cả các luồng cất cánh/hạ cánh (API Requests), đảm bảo mọi thứ đi đúng đường và có đầy đủ thông tin liên lạc.
+- **Ẩn dụ sư phạm (Pedagogical)**: [Phóng tác] Giống như một **Nhà điều phối không lưu (Air Traffic Controller)**: FastAPI không trực tiếp lái máy bay (Agent), nhưng nó điều phối tất cả các luồng cất cánh/hạ cánh (API Requests), đảm bảo mọi thứ đi đúng đường và có đầy đủ thông tin liên lạc.
 
 ## 4F Reflection
 - **Facts**: FastAPI là một trong những framework nhanh nhất hiện nay nhờ sử dụng Starlette và Pydantic.

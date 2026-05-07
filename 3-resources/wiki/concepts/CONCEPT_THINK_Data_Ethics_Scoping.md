@@ -1,4 +1,5 @@
 ---
+file_id: "CONCEPT_THINK_Data_Ethics_Scoping"
 title: "CONCEPT: Đạo đức Dữ liệu trong Scoping (Data Ethics)"
 type: concept
 tags: ["Thinking", "Ethics", "Privacy", "DA_Core"]
@@ -23,7 +24,7 @@ last_updated: "2026-05-01"
 ### Ví dụ từ sách (Original)
 > **Bối cảnh**: Sử dụng dữ liệu mạng xã hội để dự đoán khuynh hướng chính trị của người dùng.
 > **Ứng dụng**: Dù kỹ thuật có thể thực hiện được, nhưng việc này vi phạm đạo đức nếu không có sự đồng ý của người dùng, dẫn đến sự thao túng thông tin và xâm phạm quyền tự do cá nhân.
-> **Nguồn**: [[SOURCE_THINK_Thinking_with_Data]] — Chương 1 & Case Studies.
+> **Nguồn**: SOURCE_THINK_THINKING_WITH_DATA — Chương 1 & Case Studies.
 
 ### Ứng dụng sư phạm (Pedagogical Application)
 > **Bối cảnh**: Nhà trường sử dụng AI để dự đoán "Học sinh có khả năng vi phạm kỷ luật cao".
@@ -32,7 +33,7 @@ last_updated: "2026-05-01"
 > - **Giải pháp**: Chỉ sử dụng dữ liệu hành vi thực tế (điểm số, chuyên cần) và luôn có sự thẩm định của con người (Giáo viên/Chuyên gia tâm lý) trước khi đưa ra kết luận.
 
 ## 4. Trích dẫn nguồn (Rule 14)
-- **Nguồn**: [[SOURCE_THINK_Thinking_with_Data]] — Trang 12-15.
+- **Nguồn**: SOURCE_THINK_THINKING_WITH_DATA — Trang 12-15.
 - **Fact-check**: Đã đối chiếu file raw `THINK_Thinking_with_Data.md`. [Rule 14: SUCCESS]
 
 ---

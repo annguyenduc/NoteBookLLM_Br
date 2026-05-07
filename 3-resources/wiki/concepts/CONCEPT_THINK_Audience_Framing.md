@@ -1,4 +1,5 @@
 ---
+file_id: "CONCEPT_THINK_Audience_Framing"
 title: "CONCEPT: Định hình Khán giả và Niềm tin (Audience Framing)"
 type: concept
 tags: ["Thinking", "Argumentation", "Psychology", "DA_Core"]
@@ -22,7 +23,7 @@ last_updated: "2026-05-01"
 ### Ví dụ từ sách (Original)
 > **Bối cảnh**: Thuyết phục về tính an toàn của một cảm biến thử nghiệm trên tên lửa.
 > **Ứng dụng**: Thay vì đi thẳng vào kết luận "Tên lửa an toàn", người phân tích phải bắt đầu từ các luật vật lý mà khán giả đã tin (Prior Beliefs). Sau đó, dành thời gian chứng minh độ tin cậy của bộ dữ liệu từ cảm biến mới (điều họ chưa tin) trước khi đưa ra kết luận cuối cùng.
-> **Nguồn**: [[SOURCE_THINK_Thinking_with_Data]] — Chương 3: Arguments (Trang 32).
+> **Nguồn**: SOURCE_THINK_THINKING_WITH_DATA — Chương 3: Arguments (Trang 32).
 
 ### Ứng dụng sư phạm (Pedagogical Application)
 > **Bối cảnh**: Giáo viên EdTech thuyết phục nhà trường áp dụng Minecraft vào giảng dạy Lịch sử.
@@ -32,7 +33,7 @@ last_updated: "2026-05-01"
 > - **New Beliefs**: Minecraft là công cụ giáo dục hiệu quả, không chỉ là trò chơi.
 
 ## 4. Trích dẫn nguồn (Rule 14)
-- **Nguồn**: [[SOURCE_THINK_Thinking_with_Data]] — Trang 31-32.
+- **Nguồn**: SOURCE_THINK_THINKING_WITH_DATA — Trang 31-32.
 - **Fact-check**: Đã đối chiếu file raw `THINK_Thinking_with_Data.md` (Chương 3). [Rule 14: SUCCESS]
 
 ---

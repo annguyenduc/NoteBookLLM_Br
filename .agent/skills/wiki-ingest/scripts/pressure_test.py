@@ -4,9 +4,12 @@ import sqlite3
 import shutil
 
 # Paths
-BASE_DIR = r"d:\NoteBookLLM_Br"
+BASE_DIR = os.getenv(
+    "NOTEBOOKLLM_ROOT",
+    os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", ".."))
+)
 INGEST_SCRIPT = os.path.join(BASE_DIR, ".agent/skills/wiki-ingest/scripts/ingest.py")
-RAW_DIR = os.path.join(BASE_DIR, "3-resources/raw/sources")
+RAW_DIR = os.path.join(BASE_DIR, "3-resources/raw_sources")
 SCRATCH_DIR = os.path.join(BASE_DIR, "scratch/test_ingest")
 DB_PATH = os.path.join(BASE_DIR, "3-resources/wiki/wiki_brain.db")
 

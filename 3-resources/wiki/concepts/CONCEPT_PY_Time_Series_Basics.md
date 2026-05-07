@@ -8,8 +8,8 @@ status: "verified"
 created: "2026-05-03"
 last_updated: "2026-05-03"
 sources:
-  - "[[SOURCE_TOOL_Python_for_Data_Analysis]]"
-  - "[[SOURCE_STAT_Statistics_in_a_Nutshell]]"
+  - "SOURCE_TOOL_PYTHON_FOR_DATA_ANALYSIS"
+  - "SOURCE_STAT_STATISTICS_IN_A_NUTSHELL"
 ---
 
 ## ## For future Claude
@@ -33,13 +33,13 @@ Các khái niệm quan trọng trong Time Series với Pandas:
 - **Window Functions**: Tính toán trung bình trượt (`rolling()`) để làm mịn dữ liệu và loại bỏ nhiễu.
 
 ## ## Relationships
-- `part_of` -> [[ENTITY_Python]]
+- `part_of` -> ENTITY_Python
 - `uses` -> [[ENTITY_PANDAS]]
 - `supports` -> [[CONCEPT_DSML_Model_Evaluation_Metrics]]
 
 ## ## Source Tracing
-- **Nguồn**: [[SOURCE_TOOL_Python_for_Data_Analysis]] — Chapter 11: Time Series.
-- **Nguồn**: [[SOURCE_STAT_Statistics_in_a_Nutshell]] — Section: Seasonal Decomposition.
+- **Nguồn**: SOURCE_TOOL_PYTHON_FOR_DATA_ANALYSIS — Chapter 11: Time Series.
+- **Nguồn**: SOURCE_STAT_STATISTICS_IN_A_NUTSHELL — Section: Seasonal Decomposition.
 
 ## ## History / Revisions
 - **2026-05-03**: [@engineer] Chuyển đổi từ stub sang verified, bổ sung Rule 17 và Rule 20.

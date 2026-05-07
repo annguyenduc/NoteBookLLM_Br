@@ -1,6 +1,6 @@
 ---
 file_id: SYNTHESIS_PYTHON_Data_Mastery
-title: "[[ENTITY_Python|Python]] Mastery: Xử lý & Phân tích dữ liệu với [[ENTITY_PANDAS|pandas]]"
+title: "Python Mastery: Xử lý & Phân tích dữ liệu với [[ENTITY_PANDAS|pandas]]"
 category: SYNTHESIS
 domain: Python
 status: verified
@@ -42,7 +42,7 @@ Trọng tâm của công việc Data Analyst trong Python:
 
 ## 4. Machine Learning Foundation
 Sử dụng Scikit-Learn để xây dựng mô hình dự báo:
-- **Estimator API**: Quy trình Fit-Predict nhất quán. [[CONCEPT_PY_Scikit_Learn_Estimator]]
+- **Estimator API**: Quy trình Fit-Predict nhất quán. CONCEPT_PY_Scikit_Learn_Estimator
 - **Model Validation**: Đánh giá độ chính xác và tối ưu siêu tham số.
 
 ---
@@ -53,8 +53,8 @@ Sử dụng Scikit-Learn để xây dựng mô hình dự báo:
 ---
 
 ## Liên kết hệ thống
-- **Nguồn tri thức**: [[SOURCE_TOOL_Python_for_Data_Analysis]], [[SOURCE_DS_Python_Data_Science_Handbook]]
-- **Thực thể nền tảng**: [[ENTITY_Python]]
+- **Nguồn tri thức**: SOURCE_TOOL_PYTHON_FOR_DATA_ANALYSIS, SOURCE_DS_PYTHON_DATA_SCIENCE_HANDBOOK
+- **Thực thể nền tảng**: ENTITY_Python
 - **Mối quan hệ**: [[ENTITY_SQL|SQL]] (Dùng để kéo dữ liệu) -> [[SYNTHESIS_SQL_Mastery]] -> Python (Dùng để xử lý chuyên sâu & Machine Learning).
 
 

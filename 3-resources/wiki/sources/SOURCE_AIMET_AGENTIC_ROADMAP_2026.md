@@ -1,4 +1,4 @@
----
+﻿---
 file_id: SOURCE_AIMET_AGENTIC_ROADMAP_2026
 title: "Agentic AI Engineer Roadmap (2026) - Interview Q&A"
 category: "Source Summary"
@@ -8,7 +8,7 @@ status: "DRAFT"
 created: "2026-05-03"
 last_updated: "2026-05-05"
 raw_sha256: "941eb79b2c6b399cfcbacdcdbaeb4de73651e6a12eccf587e465b0f91bab7818"
-source_type: "PDF Roadmap"
+SOURCE_TYPE: "PDF Roadmap"
 author: "Lamhot Siagian"
 year: 2026
 ---
@@ -37,8 +37,8 @@ framework selection, LCEL/runnables, memory, tools, RAG, multi-agent orchestrati
 - [[CONCEPT_AIMET_Learning_Order_Checklist]]
 
 ## Source tracing
-- Raw file A: `3-resources/raw/sources/AIMET_AgenticAI_Roadmap_2026.pdf`
-- Raw file B: `3-resources/raw/sources/AIMET_Complete_Roadmap_to_Become_an_Agentic_AI_Engineer.pdf`
+- Raw file A: `3-resources/raw_sources/AIMET_AgenticAI_Roadmap_2026.pdf`
+- Raw file B: `3-resources/raw_sources/AIMET_Complete_Roadmap_to_Become_an_Agentic_AI_Engineer.pdf`
 - Duplicate note: both files have the same SHA-256 and represent the same content.
 - Section anchors used in this summary:
   - TOC and topic scope: page 3

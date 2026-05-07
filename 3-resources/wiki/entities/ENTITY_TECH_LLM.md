@@ -1,4 +1,5 @@
 ---
+file_id: "ENTITY_TECH_LLM"
 title: "ENTITY: Large Language Model (LLM)"
 type: entity
 tags: ["AI", "LLM", "Agentic_AI", "Cognitive_Core", "MCP", "AIMET"]
@@ -33,8 +34,8 @@ Trong bối cảnh năm 2026, LLM không còn là một chatbot đơn lẻ mà �
 
 ---
 **Nguồn**:
-- [[QUERY_Asymptotic_Fractal_Ingestion]] — Research qua Search Web (2026-05-02).
-- [[SOURCE_AIMET_Agentic_AI_Roadmap_2026]] — Section 1: Foundation.
+- QUERY_Asymptotic_Fractal_Ingestion — Research qua Search Web (2026-05-02).
+- [[SOURCE_AIMET_AGENTIC_ROADMAP_2026]] — Section 1: Foundation.
 
 ---
 WRITE REPORT:

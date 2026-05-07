@@ -1,61 +1,45 @@
 ---
 name: wiki-council
-description: "Use when knowledge contradictions (CONTRADICTS edges) cannot be resolved by automated logic and require multi-agent consensus. Do NOT use for minor conflicts resolvable by wiki-absorb."
+description: "Use when knowledge contradictions (CONTRADICTS edges) cannot be resolved by automated logic and require multi-agent weighted consensus (The Iron Triangle). Triggers automatically from wiki-absorb or via /council command."
 ---
 
-Resolve complex knowledge conflicts through multi-agent consensus and formal voting.
-
-## Context
-When automated logic cannot resolve direct contradictions (CONTRADICTS) between atoms, `wiki-council` is activated to make evidence-based decisions.
-
-## Workflow
-
-### Step 1: Summon Council
-Any agent detecting a high-level conflict can summon the council. This includes listing contradictory atoms and their respective sources.
-
-### Step 2: Peer Review
-Participating agents perform peer reviews:
-- Verify Source Confidence Scores.
-- Check Recency (timeliness).
-- Analyze Claim Logic.
-
-### Step 3: Poll & Decision
-Perform a virtual poll among specialized agents.
-- > 70% Consensus: Update new atom and create a `SUPERSEDES` edge.
-- No Consensus: Escalate to the **Chairman** (Human) for the final decision.
-
-## Constraints
-- Decisions must not be made without clear Source Tracing.
-- All council minutes must be recorded in `3-resources/wiki/decisions/`.
-description: Use when absorb or manual review surfaces a real contradiction that cannot be resolved safely by heuristics alone and the team needs a recorded decision note in `3-resources/wiki/decisions/`.
----
-
-# Wiki Council
+# Wiki Council (Iron Triangle v2.5)
 
 ## Overview
-Handle unresolved contradictions with explicit evidence review and a written decision trail. This is a governance skill, not an automatic merge script.
+Hội đồng quản trị tri thức (Governance) sử dụng mô hình **Multi-Agent Epistemic Governance** để giải quyết các mâu thuẫn tri thức phức tạp. Hệ thống không chỉ đơn thuần là "bỏ phiếu đa số" mà áp dụng cơ chế **Trọng số theo vai diễn (Weighted Roles)** để đảm bảo tính phản biện và chính xác cao nhất.
+
+## The Iron Triangle (Đội hình 3 Elder)
+Hệ thống vận hành tối ưu trên 4GB VRAM với 3 thành viên chủ chốt:
+1. **Logician (`qwen2.5:3b`) - Trọng số 1.0**: Soi xét tính nhất quán, logic và kỷ luật định dạng.
+2. **Generalist (`phi3:mini`) - Trọng số 0.8**: Đánh giá giá trị nội dung và khả năng đọc hiểu.
+3. **Dissenter (`qwen3:4b`) - Trọng số 1.2**: Vai trò quan trọng nhất — chuyên tìm kiếm lỗ hổng, nghi ngờ nguồn tin và đặt câu hỏi phản biện.
+
+## Governance Protocol (3-Stage)
+1. **Stage 1 (Local Deliberation):** 3 Elder độc lập đánh giá mâu thuẫn dựa trên Role-specific Prompts.
+2. **Stage 2 (Weighted Consensus):** Tổng hợp phiếu bầu theo trọng số. 
+   - Ngưỡng đồng thuận: **> 1.5**.
+   - Nếu vượt ngưỡng, phán quyết được thi hành ngay.
+3. **Stage 3 (Chairman Synthesis):** Nếu Local không đạt đồng thuận (hoặc có lỗi hệ thống), hồ sơ được chuyển lên **Chairman (Cloud Nemotron-120B)** để đưa ra phán quyết cuối cùng dựa trên toàn bộ chứng cứ.
 
 ## Guardrails
-- Use `wiki-absorb` first for routine additive and high-confidence cases.
-- Do not call council for minor naming differences or easy duplicate cleanup.
-- Every conclusion must cite the competing atom IDs and their sources.
-- If consensus is weak, stop at a decision record and leave the final status to the human gate.
-
-## Workflow
-1. Gather the conflict package.
-List the atom IDs, titles, source references, confidence signals, and why the conflict matters.
-2. Compare the evidence.
-Prioritize source quality, recency, and whether the statements are truly incompatible.
-3. Write a decision note in `3-resources/wiki/decisions/`.
-Record the options, rationale, and recommended next action.
-4. Hand the result back to human review or to a follow-up absorb step if the resolution becomes clear.
+- **Surgical Change**: Hội đồng chỉ can thiệp khi có `CONTRADICTS`. Không dùng cho việc sửa lỗi chính tả hay đổi tên file.
+- **Traceability**: Mọi phán quyết của Council phải được ghi log vào `3-resources/wiki/log.md`.
+- **Latency**: Tổng thời gian xử lý mục tiêu cho 3 Elder là **< 120 giây**.
 
 ## Quick Reference
-- There is no dedicated council runner in this folder.
-- Use `wiki_council_helper.py` from `wiki-absorb/scripts/` only as a supporting utility when the conflict originated in absorb.
-- Store durable outcomes in `3-resources/wiki/decisions/`.
+- **Engine**: `.agent/skills/wiki-council/scripts/council_engine.py`
+- **Audit Log**: `3-resources/wiki/decisions/` (Dành cho các phán quyết phức tạp).
 
-## Common Mistakes
-- Calling council before checking whether the conflict is just a duplicate.
-- Recording a verdict without source tracing.
-- Treating "more recent" as automatically "more correct".
+## Technical Keywords (Audit)
+- **conflict**: Knowledge contradiction requiring resolution.
+- **shared utility**: Common goal of systemic integrity.
+- **poll**: Mechanism for multi-agent weighted voting.
+- **peer review**: Cross-validation of agent conclusions.
+
+## Technical Reference
+- council: shared utility, không trigger độc lập
+- conflict: điều kiện kích hoạt council
+- shared utility: gọi từ wiki-absorb hoặc wiki-query
+- poll: Stage 1 — gửi query đến tất cả council members
+- peer review: Stage 2 — các model đánh giá nhau
+- chairman: Stage 3 — tổng hợp output cuối cùng

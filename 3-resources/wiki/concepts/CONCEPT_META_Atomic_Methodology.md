@@ -9,7 +9,7 @@ created: "2026-05-01"
 last_updated: "2026-05-03"
 sources:
   - "[[SOURCE_META_LLM_WIKI]]"
-  - "[[SOURCE_META_KARPATHY_LLM_WIKI]]"
+  - "SOURCE_META_KARPATHY_LLM_WIKI"
 ---
 
 ## ## For future Claude
@@ -48,7 +48,7 @@ Wiki Hạt nhân là cách tiếp cận quản trị tri thức trong đó mỗi
 ### Ví dụ từ Công nghệ (Original)
 > **Bối cảnh**: Quản lý một repository mã nguồn lớn.
 > **Ứng dụng**: Thay vì viết một file `utils.py` dài 5000 dòng, chúng ta chia nhỏ thành các module hạt nhân: `date_utils.py`, `string_utils.py`, `auth_utils.py`. Khi cần sửa logic ngày tháng, chúng ta chỉ tác động vào một "atom" duy nhất mà không làm hỏng toàn bộ hệ thống.
-> **Nguồn**: [[SOURCE_META_KARPATHY_LLM_WIKI]] — Section: Idea Files.
+> **Nguồn**: SOURCE_META_KARPATHY_LLM_WIKI — Section: Idea Files.
 
 ### Ứng dụng sư phạm (Pedagogical Application)
 > **Bối cảnh**: Thiết kế bài giảng STEAM về Robotics.
@@ -57,7 +57,7 @@ Wiki Hạt nhân là cách tiếp cận quản trị tri thức trong đó mỗi
 
 ## ## Source Tracing
 - **Nguồn**: [[SOURCE_META_LLM_WIKI]] — Section: Atomicity 1.2.
-- **Nguồn**: [[SOURCE_META_KARPATHY_LLM_WIKI]] — Concept: Expert Persona & Low Friction.
+- **Nguồn**: SOURCE_META_KARPATHY_LLM_WIKI — Concept: Expert Persona & Low Friction.
 
 ## ## History / Revisions
 - **2026-05-03**: [@engineer] Pressure Chain Healing. Bổ sung Rule 17, 20 và chuẩn hóa metadata.

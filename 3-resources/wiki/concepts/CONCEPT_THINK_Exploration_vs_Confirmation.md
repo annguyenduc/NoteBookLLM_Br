@@ -1,4 +1,5 @@
 ---
+file_id: "CONCEPT_THINK_Exploration_vs_Confirmation"
 title: "CONCEPT: Khám phá và Xác nhận (Exploration vs Confirmation)"
 type: concept
 tags: ["Thinking", "Planning", "Exploration", "DA_Core"]
@@ -22,7 +23,7 @@ Sự cân bằng giữa việc lao vào tìm tòi dữ liệu (Exploration) và 
 ### Ví dụ từ sách (Original)
 > **Bối cảnh**: Phân tích mối quan hệ giữa giá thuê nhà và ga tàu điện ngầm.
 > **Ứng dụng**: Thay vì xây dựng mô hình học máy hàng chục biến, Analyst xây dựng "Scaffolding" bằng cách vẽ biểu đồ scatterplot đơn giản giữa giá và khoảng cách ga tàu để xác nhận trực giác ban đầu trong vài giờ thay vì vài tuần.
-> **Nguồn**: [[SOURCE_THINK_Thinking_with_Data]] — Chương 2: What Next? (Trang 25-26).
+> **Nguồn**: SOURCE_THINK_THINKING_WITH_DATA — Chương 2: What Next? (Trang 25-26).
 
 ### Ứng dụng sư phạm (Pedagogical Application)
 > **Bối cảnh**: Học sinh làm dự án Khoa học (Science Fair) về nhiệt độ phòng học.
@@ -31,7 +32,7 @@ Sự cân bằng giữa việc lao vào tìm tòi dữ liệu (Exploration) và 
 > - **Scaffolding**: Giáo viên hướng dẫn lập giả thuyết "Phòng hướng Tây nóng hơn", sau đó đo thử 2 phòng đại diện trong 1 ngày để xác nhận xu hướng trước khi triển khai quy mô lớn.
 
 ## 4. Trích dẫn nguồn (Rule 14)
-- **Nguồn**: [[SOURCE_THINK_Thinking_with_Data]] — Trang 17-26.
+- **Nguồn**: SOURCE_THINK_THINKING_WITH_DATA — Trang 17-26.
 - **Fact-check**: Đã đối chiếu file raw `THINK_Thinking_with_Data.md` (Chương 2). [Rule 14: SUCCESS]
 
 ---

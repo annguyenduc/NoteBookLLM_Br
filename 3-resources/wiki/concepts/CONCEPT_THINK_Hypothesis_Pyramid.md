@@ -1,4 +1,5 @@
 ---
+file_id: "CONCEPT_THINK_Hypothesis_Pyramid"
 title: "CONCEPT: Kim tự tháp Giả thuyết (Hypothesis Pyramid)"
 type: concept
 tags: ["Thinking", "Argumentation", "Structure", "DA_Core"]
@@ -25,7 +26,7 @@ Kim tự tháp Giả thuyết là cách sắp xếp các lập luận và bằng
 > - **Đỉnh**: Nên mở rộng sang Đông Nam Á.
 > - **Thân**: Thị trường đang tăng trưởng nhanh; Đối thủ chưa mạnh; Chi phí vận hành thấp.
 > - **Đáy**: Số liệu CAGR 15%; Danh sách 2 đối thủ địa phương; Báo cáo chi phí nhân công.
-> **Nguồn**: [[SOURCE_THINK_Thinking_with_Data]] — Chương 3.
+> **Nguồn**: SOURCE_THINK_THINKING_WITH_DATA — Chương 3.
 
 ### Ứng dụng sư phạm (Pedagogical Application)
 > **Bối cảnh**: Học sinh trình bày dự án "Tại sao nên thay thế túi nilon bằng túi vải tại căng tin".
@@ -35,7 +36,7 @@ Kim tự tháp Giả thuyết là cách sắp xếp các lập luận và bằng
 > - **Đáy**: Khối lượng rác nilon đo được (2kg/ngày); Đơn giá túi vải vs túi nilon; Kết quả khảo sát 80% học sinh ủng hộ.
 
 ## 4. Trích dẫn nguồn (Rule 14)
-- **Nguồn**: [[SOURCE_THINK_Thinking_with_Data]] — Trang 45-55.
+- **Nguồn**: SOURCE_THINK_THINKING_WITH_DATA — Trang 45-55.
 - **Fact-check**: Đã đối chiếu file raw `THINK_Thinking_with_Data.md`. [Rule 14: SUCCESS]
 
 ---

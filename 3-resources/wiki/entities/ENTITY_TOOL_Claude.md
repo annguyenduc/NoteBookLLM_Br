@@ -1,4 +1,5 @@
 ---
+file_id: "ENTITY_TOOL_Claude"
 entity_id: ENTITY_TOOL_CLAUDE
 title: "Anthropic Claude (AI Assistant)"
 type: "TOOL"

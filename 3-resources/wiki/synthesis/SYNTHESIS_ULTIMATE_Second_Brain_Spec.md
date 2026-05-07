@@ -4,14 +4,14 @@ type: synthesis
 tags: ["Standardization", "Architecture", "AI-First", "Automation", "Wiki-Gen", "DEPRECATED"]
 status: "superseded"
 sources:
-  - "[[SOURCE_META_KARPATHY_LLM_WIKI]]"
-  - "[[SOURCE_META_NASHUS_LLMWIKI]]"
+  - "SOURCE_META_KARPATHY_LLM_WIKI"
+  - "SOURCE_META_NASHUS_LLMWIKI"
   - "[[SOURCE_META_KARPATHY_CLAUDE_SKILLS]]"
   - "[[SOURCE_META_KARPATHY_KNOWLEDGE_BASES]]"
   - "[[SOURCE_META_WIKI_GEN_CLONE]]"
   - "[[SOURCE_META_LLM_WIKI]]"
   - "[[SOURCE_META_LLM_WIKI_V2]]"
-  - "[[SOURCE_META_KARPATHY_LLM_WIKI]]"
+  - "SOURCE_META_KARPATHY_LLM_WIKI"
 relationships:
   - type: "superseded_by"
     target: "[[SYNTHESIS_MASTER_Second_Brain_Blueprint]]"
@@ -41,10 +41,10 @@ type: "concept | entity | source | synthesis | query"
 ai-first: true                   # Đánh dấu trang đã được tối ưu cho AI
 confidence: "low | mid | high"   # Độ tin cậy của thông tin
 status: "draft | verified | stale | superseded"
-source: "[[index]] — [Section]" 
+source: "[[CONCEPT_index]] — [Section]" 
 relationships:                   # Danh sách liên kết có định dạng (Typed Links)
   - type: "is_a | relates_to | governs | supersedes | fixed_by"
-    target: "[[index]]"
+    target: "[[CONCEPT_index]]"
 last_reconciled: "YYYY-MM-DD"    # Ngày cuối cùng thực hiện hòa giải tri thức
 ```
 
@@ -107,7 +107,7 @@ Một trang Wiki lý tưởng phải tuân thủ thứ tự sau:
 
 ## 6. Trích dẫn nguồn
 - **Nguồn**: [[SOURCE_META_WIKI_GEN_CLONE]] — Lệnh & Taxonomy.
-- **Nguồn**: [[SOURCE_META_KARPATHY_LLM_WIKI]] — AI-First Principle & Extensions.
+- **Nguồn**: SOURCE_META_KARPATHY_LLM_WIKI — AI-First Principle & Extensions.
 - **Nguồn**: [[SOURCE_META_LLM_WIKI_V2]] — Consolidation Tiers.
 
 

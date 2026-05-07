@@ -1,5 +1,6 @@
----
-source_id: SOURCE_STAT_Naked_Statistics
+﻿---
+file_id: "SOURCE_STAT_NAKED_STATISTICS"
+SOURCE_ID: SOURCE_STAT_NAKED_STATISTICS
 title: "ACAD Naked Statistics: Stripping the Dread from the Data"
 author: "Charles Wheelan"
 category: ACAD
@@ -11,26 +12,26 @@ last_updated: "2026-04-29"
 
 # ACAD Naked Statistics
 
-## 📝 1. Phân tích Ingest (Analysis - Step 1)
-- **Thực thể & Khái niệm then chốt:** GIGO (Garbage In, Garbage Out), Regression analysis, Central Limit Theorem, Statistical Signiﬁcance, Probability.
-- **Kết nối Wiki:** Cung cấp các ví dụ minh họa trực quan cho nhóm [[index]]. Kết nối mật thiết với [[CONCEPT_STAT_Estimates_of_Location]] và [[CONCEPT_STAT_Probability_Distributions]].
-- **Điểm khác biệt/Mâu thuẫn:** Tập trung vào việc "Tại sao chúng ta làm thống kê" hơn là "Làm như thế nào". Phơi bày các lỗi ngụy biện phổ biến trong phân tích dữ liệu.
-- **Đề xuất cấu trúc:** Sử dụng các ví dụ của Wheelan (như ví dụ về Bill Gates bước vào quán bar) để giải thích về Median vs Mean trong các trang Concept tương ứng.
+## ðŸ“ 1. PhÃ¢n tÃ­ch Ingest (Analysis - Step 1)
+- **Thá»±c thá»ƒ & KhÃ¡i niá»‡m then chá»‘t:** GIGO (Garbage In, Garbage Out), Regression analysis, Central Limit Theorem, Statistical Signiï¬cance, Probability.
+- **Káº¿t ná»‘i Wiki:** Cung cáº¥p cÃ¡c vÃ­ dá»¥ minh há»a trá»±c quan cho nhÃ³m [[CONCEPT_index]]. Káº¿t ná»‘i máº­t thiáº¿t vá»›i [[CONCEPT_STAT_Estimates_of_Location]] vÃ  [[CONCEPT_STAT_Probability_Distributions]].
+- **Äiá»ƒm khÃ¡c biá»‡t/MÃ¢u thuáº«n:** Táº­p trung vÃ o viá»‡c "Táº¡i sao chÃºng ta lÃ m thá»‘ng kÃª" hÆ¡n lÃ  "LÃ m nhÆ° tháº¿ nÃ o". PhÆ¡i bÃ y cÃ¡c lá»—i ngá»¥y biá»‡n phá»• biáº¿n trong phÃ¢n tÃ­ch dá»¯ liá»‡u.
+- **Äá» xuáº¥t cáº¥u trÃºc:** Sá»­ dá»¥ng cÃ¡c vÃ­ dá»¥ cá»§a Wheelan (nhÆ° vÃ­ dá»¥ vá» Bill Gates bÆ°á»›c vÃ o quÃ¡n bar) Ä‘á»ƒ giáº£i thÃ­ch vá» Median vs Mean trong cÃ¡c trang Concept tÆ°Æ¡ng á»©ng.
 
-## 📖 2. Tổng quan nguồn (Overview - Step 2)
-Một cuốn sách tuyệt vời để xóa bỏ nỗi sợ hãi về thống kê. Bằng cách sử dụng các ví dụ hài hước và thực tế, Charles Wheelan giúp người đọc nắm bắt được những khái niệm cốt lõi nhất của xác suất thống kê mà không cần phải vật lộn với các công thức toán học phức tạp.
+## ðŸ“– 2. Tá»•ng quan nguá»“n (Overview - Step 2)
+Má»™t cuá»‘n sÃ¡ch tuyá»‡t vá»i Ä‘á»ƒ xÃ³a bá» ná»—i sá»£ hÃ£i vá» thá»‘ng kÃª. Báº±ng cÃ¡ch sá»­ dá»¥ng cÃ¡c vÃ­ dá»¥ hÃ i hÆ°á»›c vÃ  thá»±c táº¿, Charles Wheelan giÃºp ngÆ°á»i Ä‘á»c náº¯m báº¯t Ä‘Æ°á»£c nhá»¯ng khÃ¡i niá»‡m cá»‘t lÃµi nháº¥t cá»§a xÃ¡c suáº¥t thá»‘ng kÃª mÃ  khÃ´ng cáº§n pháº£i váº­t lá»™n vá»›i cÃ¡c cÃ´ng thá»©c toÃ¡n há»c phá»©c táº¡p.
 
-## 🚀 3. Các Concept đã trích xuất (Rule 14 & 17)
-- [[CONCEPT_STAT_Estimates_of_Location]] | **Ước lượng vị trí** - Tại sao Median quan trọng hơn Mean trong một số trường hợp.
-- [[CONCEPT_STAT_Probability_Distributions]] | **Phân phối xác suất** - Cách xác suất vận hành trong đời thực.
-- [[CONCEPT_STAT_Correlation_vs_Causation]] | **Tương quan và Hệ quả** - Phân biệt để tránh kết luận sai lầm.
+## ðŸš€ 3. CÃ¡c Concept Ä‘Ã£ trÃ­ch xuáº¥t (Rule 14 & 17)
+- [[CONCEPT_STAT_Estimates_of_Location]] | **Æ¯á»›c lÆ°á»£ng vá»‹ trÃ­** - Táº¡i sao Median quan trá»ng hÆ¡n Mean trong má»™t sá»‘ trÆ°á»ng há»£p.
+- [[CONCEPT_STAT_Probability_Distributions]] | **PhÃ¢n phá»‘i xÃ¡c suáº¥t** - CÃ¡ch xÃ¡c suáº¥t váº­n hÃ nh trong Ä‘á»i thá»±c.
+- [[CONCEPT_STAT_Correlation_vs_Causation]] | **TÆ°Æ¡ng quan vÃ  Há»‡ quáº£** - PhÃ¢n biá»‡t Ä‘á»ƒ trÃ¡nh káº¿t luáº­n sai láº§m.
 
-## 🔍 4. Review Items (Dành cho Human)
-- [ ] Sử dụng các ví dụ trong sách để viết nội dung giải thích cho học sinh/sinh viên trong dự án EdTech.
-- [ ] Kiểm tra xem các bẫy thống kê được nhắc đến trong sách có đang tồn tại trong các báo cáo hiện tại không.
+## ðŸ” 4. Review Items (DÃ nh cho Human)
+- [ ] Sá»­ dá»¥ng cÃ¡c vÃ­ dá»¥ trong sÃ¡ch Ä‘á»ƒ viáº¿t ná»™i dung giáº£i thÃ­ch cho há»c sinh/sinh viÃªn trong dá»± Ã¡n EdTech.
+- [ ] Kiá»ƒm tra xem cÃ¡c báº«y thá»‘ng kÃª Ä‘Æ°á»£c nháº¯c Ä‘áº¿n trong sÃ¡ch cÃ³ Ä‘ang tá»“n táº¡i trong cÃ¡c bÃ¡o cÃ¡o hiá»‡n táº¡i khÃ´ng.
 
 --- 
-**Nguồn thô:** `STAT_Naked_Statistics`
+**Nguá»“n thÃ´:** `STAT_Naked_Statistics`
 **Deep Research Query:** `Charles Wheelan Naked Statistics summary and key examples for data analysis`
 
 ## 4F Reflection

@@ -1,8 +1,9 @@
 ---
+file_id: "CONCEPT_SQL_CTEs"
 entity: concept
 type: technical
 tags: [[ENTITY_SQL|sql]], cte, recursion, performance]
-source: [[SOURCE_TOOL_SQL_Cookbook]]
+source: SOURCE_TOOL_SQL_COOKBOOK
 status: verified
 last_updated: 2026-04-29
 ---
@@ -12,7 +13,7 @@ last_updated: 2026-04-29
 ## 1. Định nghĩa
 Common Table Expression (CTE) là một tập kết quả tạm thời được đặt tên, tồn tại duy nhất trong phạm vi thực thi của một câu lệnh SQL (SELECT, INSERT, UPDATE, hoặc DELETE). CTE giúp mã nguồn SQL trở nên sạch sẽ, dễ đọc và hỗ trợ các truy vấn đệ quy phức tạp.
 
-**Nguồn**: [[SOURCE_TOOL_SQL_Cookbook]] — Phụ lục B (Xác nhận Rule 14 từ: [[SOURCE_TOOL_SQL_Cookbook]])
+**Nguồn**: SOURCE_TOOL_SQL_COOKBOOK — Phụ lục B (Xác nhận Rule 14 từ: SOURCE_TOOL_SQL_COOKBOOK)
 
 ## 2. Cấu trúc cơ bản
 ```sql

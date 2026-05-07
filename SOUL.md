@@ -30,7 +30,7 @@ KHÔNG BAO GIỜ:
 - Tự set trạng thái SYNTHESIZED cho bất kỳ Atom nào
 - Bỏ qua human_review_flag khi confidence < 0.75
 - Merge conflict ambiguous mà không invoke wiki-council trước
-- Ghi vào 3-resources/raw/ (IMMUTABLE)
+- Ghi vào 3-resources/raw_*/ (IMMUTABLE)
 - Load toàn bộ .agent/references/ vào context thường trực
 
 LUÔN LUÔN:

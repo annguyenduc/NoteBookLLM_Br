@@ -3,36 +3,17 @@ name: wiki-rebuild
 description: "Use when the database is out of sync with the filesystem, after files are added or deleted manually, or on nightly maintenance. Triggers on /rebuild command or when index.md is stale. Do NOT use for content edits."
 ---
 
-Synchronize knowledge infrastructure, update indices, and manage backlink injection.
-
-## Context
-As the volume of atoms grows, manual index maintenance becomes impossible. `wiki-rebuild` maintains a live knowledge map and enables deep traceability via backlinks.
-
-## Workflow
-
-### Step 1: Structural Sync
-Synchronize the state between the filesystem and the database.
-```bash
-python .agent/skills/wiki-rebuild/scripts/rebuild.py
-```
-This should be run **nightly** for maintenance.
-
-### Step 2: Index Generation
-Update the central `index.md` at `3-resources/wiki/index.md`. Categories include Concepts, Entities, Sources, and Synthesis.
-
-### Step 3: Backlinks Injection
-Inject a list of files linking to the current Atom into the `_backlinks` section at the end of each Markdown file.
-
-## Constraints
-- Do not alter the core content of an Atom when injecting backlinks.
-- Always verify Database integrity before performing a sync.
-description: Use when wiki files, database indexes, or infrastructure views drift out of sync after manual file changes, failed automation, nightly maintenance, or orphan-link repair work.
----
-
-# Wiki Rebuild
+# Wiki Rebuild (Resilient/Sync)
 
 ## Overview
-Repair infrastructure state between the filesystem, database, and generated indexes. This is a low-freedom maintenance skill and should not be used for editorial content changes.
+Repair infrastructure state between the filesystem and database. This skill ensures that physical markdown files are correctly mirrored in the DB, and atoms whose files are missing on disk are marked as **DEPRECATED**.
+
+## Testing
+This skill uses **TDD** to ensure synchronization integrity.
+Run tests from the workspace root:
+```powershell
+python .agent/skills/wiki-rebuild/tests/test_rebuild.py
+```
 
 ## Guardrails
 - Use the main entrypoint first: `rebuild.py`.
@@ -64,3 +45,12 @@ Repair infrastructure state between the filesystem, database, and generated inde
 - Using rebuild when the real issue is a bad ingest or cleanup pass.
 - Assuming DB-to-file sync is allowed for anything beyond the approved status flow.
 - Running orphan healing casually and creating weak graph edges without review.
+
+## Technical Keywords (Audit)
+- **_backlinks**: Indexing feature for bidirectional discovery.
+
+## Technical Reference
+- _backlinks.json: file lưu backlink graph của vault
+- index.md: file index tổng hợp toàn bộ vault
+- sync: đồng bộ DB với filesystem
+- nightly: chạy tự động mỗi đêm qua cron

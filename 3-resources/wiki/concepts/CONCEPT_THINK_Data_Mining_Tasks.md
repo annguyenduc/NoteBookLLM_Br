@@ -1,4 +1,5 @@
 ---
+file_id: "CONCEPT_THINK_Data_Mining_Tasks"
 title: "CONCEPT: Các Tác vụ Khai thác Dữ liệu (Data Mining Tasks)"
 type: concept
 tags: ["Thinking", "Data_Mining", "Tasks", "DA_Core"]
@@ -27,7 +28,7 @@ Tác vụ khai thác dữ liệu là những bài toán cụ thể mà Data Anal
 ### Ví dụ từ sách (Original)
 > **Bối cảnh**: Hệ thống gợi ý của Amazon.
 > **Ứng dụng**: Sử dụng *Co-occurrence Grouping* để biết khách hàng mua "Sách lập trình" thường mua kèm "Chuột máy tính". Sử dụng *Similarity Matching* để gợi ý các cuốn sách cùng chủ đề.
-> **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Chương 2.
+> **Nguồn**: SOURCE_THINK_DATA_SCIENCE_FOR_BUSINESS — Chương 2.
 
 ### Ứng dụng sư phạm (Pedagogical Application)
 > **Bối cảnh**: Phân tích dữ liệu học tập của học sinh trên LMS.
@@ -37,7 +38,7 @@ Tác vụ khai thác dữ liệu là những bài toán cụ thể mà Data Anal
 > - **Profiling**: Phác họa chân dung "Học sinh tích cực" (vd: Đăng nhập hàng ngày, tham gia thảo luận).
 
 ## 4. Trích dẫn nguồn (Rule 14)
-- **Nguồn**: [[SOURCE_THINK_Data_Science_for_Business]] — Trang 19-26.
+- **Nguồn**: SOURCE_THINK_DATA_SCIENCE_FOR_BUSINESS — Trang 19-26.
 - **Fact-check**: Đã đối chiếu file raw `THINK_Data_Science_for_Business.md`. [Rule 14: SUCCESS]
 
 ---
