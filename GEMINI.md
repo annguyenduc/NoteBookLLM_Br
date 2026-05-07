@@ -12,7 +12,7 @@
 - **Phạm vi:** `raw_sources/`, `raw_ingest/`, `raw_assets/`.
 - **Định nghĩa:** Chỉ được thêm mới qua quy trình kiểm định. KHÔNG sửa đổi, KHÔNG xóa bỏ.
 - **Quyền hạn:** `@librarian` (Write/Promote), `@others` (Read-only).
-**Vi phạm → DỪNG ngay, ghi incident vào `3-resources/wiki/log.md`.**
+**Vi phạm → DỪNG ngay, ghi incident vào file log tháng hiện tại trong `3-resources/wiki/logs/`.**
 
 ### R2 — NO FAKE REPORTS
 Tuyệt đối KHÔNG báo "Đã tạo/sửa file" nếu chưa có tool call thành công.
@@ -22,14 +22,14 @@ Mọi claim trong `3-resources/wiki/` phải ghi:
 `Nguồn: [tên file trong raw_sources/] — [section cụ thể]`
 Không tìm thấy nguồn → ghi `[KHÔNG TÌM THẤY NGUỒN]`. KHÔNG tự điền thay thế.
 
-### R4 — LOG EVERY WRITE
-Mọi lần ghi file (create/modify) vào Wiki BẮT BUỘC phải append vào `3-resources/wiki/log.md`:
+### R4 — LOG EVERY WRITE & ROTATION
+Mọi lần ghi file (create/modify) vào Wiki BẮT BUỘC phải append vào file nhật ký ngày hiện tại: `3-resources/wiki/logs/log_YYYY_MM_DD.md`.
 ```
 ## [YYYY-MM-DD HH:MM] <type> | <agent> | <mô tả>
 - File: [đường dẫn]
 - Lý do: [1 câu]
 ```
-Encoding bắt buộc: **UTF-8 no BOM**. PowerShell: luôn thêm `-Encoding UTF8`.
+**BẮT BUỘC**: Chỉ dùng Python `with open(..., 'a', encoding='utf-8')` để ghi log. Tuyệt đối CẤM dùng PowerShell (`Add-Content`) cho các file nhật ký.
 
 ### R5 — PREREQUISITE GATE (Pedagogical Pipeline)
 - `@designer` chỉ bắt đầu khi `2-areas/Profiles/Trainer_Profile_[id].md` tồn tại.
@@ -54,17 +54,17 @@ Mọi hành động thu thập dữ liệu web BẮT BUỘC phải tuân thủ q
 2. **Bước 2: Verification (Xác thực nội dung)**: BẮT BUỘC truy cập URL bằng `Lightpanda` hoặc `Crawl4AI` ở chế độ trích xuất **Markdown/Text** để xác nhận URL tồn tại (HTTP 200) và chứa đúng nội dung tri thức cần tìm. **TUYỆT ĐỐI KHÔNG** chụp ảnh ở bước này.
 3. **Bước 3: Visual Capture (Chụp ảnh bằng chứng)**: Chỉ thực hiện chụp ảnh (Screenshot) bằng `Crawl4AI` hoặc `Browser Subagent` sau khi Bước 2 xác nhận nội dung **ĐẠT YÊU CẦU**.
 - **Cấm 404/Rác**: Tuyệt đối không chụp ảnh trang lỗi 404, trang trắng, CAPTCHA hoặc trang không liên quan.
-- **Vi phạm**: Nếu phát hiện ảnh rác, Agent phải tự động rollback, ghi lỗi vào `3-resources/wiki/log.md` và thực hiện lại cho đến khi có bằng chứng thực.
+- **Vi phạm**: Nếu phát hiện ảnh rác, Agent phải tự động rollback, ghi lỗi vào file log tháng hiện tại và thực hiện lại cho đến khi có bằng chứng thực.
 
 ### R11 — NO AUTO-STUB CREATION
 - `indexer.py` KHÔNG tạo atom cho file < 200 bytes.
 - `rebuild.py` SKIP các file không có frontmatter hợp lệ.
 - Stub files trong `00_Inbox/` được xử lý hàng tuần, KHÔNG index ngay lập tức.
 
-### R12 — VIETNAMESE ENCODING SAFETY
+### R12 — VIETNAMESE ENCODING & REPAIR SAFETY
 - Mọi file tiếng Việt phải đọc/ghi bằng UTF-8 no BOM.
-- Khi ghi file bằng PowerShell: luôn dùng `-Encoding UTF8`.
-- Sau khi sửa file tiếng Việt, phải kiểm tra và đảm bảo không có ký tự lỗi phổ biến (``, `Ã`, `Ä`, `â€™`, `â€œ`, `â€`, `á»`, `áº`).
+- Tuyệt đối CẤM dùng các script "Aggressive Healing" hoặc Regex để xóa dấu cách thừa/sửa font tự động trên file nhật ký.
+- Mọi hành động sửa file nhật ký quy mô lớn phải có backup và validate kích thước file đầu ra (Size Out >= Size In).
 - Nếu phát hiện lỗi font/ngữ nghĩa: DỪNG, khôi phục từ phiên bản gần nhất, rồi sửa thủ công nội dung.
 
 ### R13 — ATOM STATUS LIFECYCLE
@@ -72,6 +72,26 @@ Mọi hành động thu thập dữ liệu web BẮT BUỘC phải tuân thủ q
 - **TUYỆT ĐỐI KHÔNG** tự ý set status = VERIFIED/SYNTHESIZED khi tạo atom.
 - Chỉ `ingest.py` và `reconciler.py` được quyền nâng cấp lên **VERIFIED**.
 - Chỉ **HUMAN** được quyền thiết lập trạng thái **SYNTHESIZED**.
+
+### R14 — LOG ROTATION PROTOCOL
+- Nhật ký hệ thống được phân mảnh theo ngày: `3-resources/wiki/logs/log_YYYY_MM_DD.md`.
+- File `3-resources/wiki/log.md` đóng vai trò là Index dẫn đến các file log tháng.
+- Khi bước sang tháng mới, Agent đầu tiên thực hiện task phải khởi tạo file log cho tháng đó dựa trên template chuẩn.
+
+### R15 — OBSIDIAN-CLI USAGE
+- Dùng obsidian-cli KHI: cần set property, append content, search vault đang mở.
+- Dùng filesystem KHI: Obsidian không mở hoặc cần batch operation trên nhiều files.
+
+### R16 — CHECKPOINT PROTOCOL
+- Mọi Agent phải khai báo trạng thái trước khi thực thi task phức tạp.
+
+### R17 — SYNC DIRECTION (Source of Truth)
+- **DB → File**: CHỈ sync status `SYNTHESIZED` (sau khi human confirm).
+- **File → DB**: `rebuild.py` chạy hàng đêm để cập nhật Index.
+
+### R18 — EXAMPLES MANDATORY (Chống tự diễn giải)
+- Mọi Agent BẮT BUỘC phải đọc `EXAMPLES.md` ngay khi khởi động phiên làm việc.
+- Đối chiếu mẫu ✅ Đúng trong `EXAMPLES.md` trước khi code.
 
 ---
 
