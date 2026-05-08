@@ -1,18 +1,14 @@
 ---
-file_id: "ENTITY_TOOL_Claude_Code_Wiki_Gen"
-entity_id: ENTITY_TOOL_Antigravity_Wiki_Gen
+file_id: ENTITY_TOOL_Claude_Code_Wiki_Gen
 title: "TOOL: Antigravity Wiki Generation & Intelligence Skill"
 type: tool
-category: "AI Agent Skill"
-tags: ["Antigravity", "KM", "Automation", "Intelligence_2.0"]
-status: "verified"
-relationships:
-  - type: "implements"
-    target: "[[CONCEPT_META_Wiki_Absorption_Loop]]"
-  - type: "implements"
-    target: "[[CONCEPT_META_Wiki_Breakdown_Mining]]"
-created: "2026-05-01"
-last_updated: "2026-05-02"
+status: VERIFIED
+tags: 
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-01
+last_updated: 2026-05-02
 ---
 
 # Antigravity Wiki Generation & Intelligence Skill
@@ -24,7 +20,7 @@ last_updated: "2026-05-02"
 Dưới đây là bộ lệnh đầy đủ được hiện thực hóa trong Antigravity:
 
 | Lệnh | Chức năng | Trạng thái |
-|---|---|---|
+||---|
 | `/wiki ingest` | Chuyển đổi dữ liệu thô (JSON, CSV, iMessage, Notes) thành các entry MD có timestamp và metadata. | **Sắp triển khai (Custom Script)** |
 | `/wiki absorb [all/range]` | **Writer's Synthesis**: Hấp thụ tri thức theo dòng thời gian, thực hiện quy trình Rewrite bài viết để đảm bảo tính mạch lạc. | **Sắp triển khai** |
 | `/wiki query <question>` | Truy vấn sâu dựa trên Navigating Wiki: Đọc Index, Check Backlinks và tổng hợp đa nguồn. | **Đang nâng cấp** |
@@ -38,7 +34,7 @@ Dưới đây là bộ lệnh đầy đủ được hiện thực hóa trong Ant
 - **Surgical Writing**: Thay vì append dữ liệu, Antigravity thực hiện đọc-hiểu toàn bộ file và viết lại (Rewrite) để giữ Narrative Coherence.
 - **Relationship-Aware**: Tự động gợi ý Metadata `relationships` dựa trên nội dung bài viết.
 
-## 4. Trích dẫn nguồn (Rule 14)
+## 4. Trích dẫn nguồn (R3)
 - **Nguồn**: [[SOURCE_META_WIKI_GEN_CLONE]] — Toàn bộ tài liệu AIMET_wiki-gen-skill.md.
 - **Fact-check**: Đã đối soát và ánh xạ đầy đủ các lệnh thực thi sang môi trường Antigravity.
 
@@ -47,4 +43,4 @@ Dưới đây là bộ lệnh đầy đủ được hiện thực hóa trong Ant
 - **Facts**: 
 - **Feelings**: 
 - **Findings**: 
-- **Futures**: 
+- **Futures**:

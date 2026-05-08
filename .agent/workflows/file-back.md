@@ -1,9 +1,10 @@
 ---
-description: Tự động lưu kết quả phân tích có giá trị thành Wiki page mới (Karpathy File-Back Pattern)
+description: Thăng cấp (Promote) kết quả phân tích có giá trị thành Wiki page mới (Wiki 2.0 File-Back Pattern)
 ---
 
-Workflow `/file-back` hiện thực hóa nguyên tắc "Query Compounding" của Karpathy:
+Workflow `/file-back` hiện thực hóa nguyên tắc "Query Compounding" của Karpathy trong môi trường Wiki 2.0:
 > *"Good answers can be filed back into the wiki as new pages. These are valuable and shouldn't disappear into chat history."*
+Tuy nhiên, mọi tri thức được File-Back phải đi qua cơ chế DRAFT để ngăn chặn Hallucination Loop.
 
 ---
 
@@ -12,8 +13,8 @@ Workflow `/file-back` hiện thực hóa nguyên tắc "Query Compounding" của
 ```yaml
 CHECKPOINT:
   agent: "@librarian"
-  task: "Thực hiện File-Back insight mới vào Wiki"
-  output_file: "3-resources/wiki/concepts/CONCEPT_[PREFIX]_[Name].md"
+  task: "Thăng cấp Insight/Query thành Wiki Atom chính thức"
+  output_file: "3-resources/wiki/.../[Name].md"
   prerequisites:
     - file: "3-resources/wiki/index.md"
       exists: "YES"
@@ -24,73 +25,65 @@ CHECKPOINT:
 
 ## 🎯 Triggers (Khi nào kích hoạt)
 
-Agent **tự động** thực hiện File-Back khi đáp ứng **bất kỳ điều kiện nào** sau đây:
+Agent **tuyệt đối KHÔNG tự động** thực hiện File-Back để tránh sinh rác (Spam). Workflow này chỉ được kích hoạt chủ động (Explicitly):
 
 | # | Trigger | Dấu hiệu nhận biết |
 | :--- | :--- | :--- |
-| **T1** | Agent tổng hợp **2+ trang Wiki** để trả lời 1 câu hỏi | Đọc ≥2 file trong `3-resources/wiki/concepts/` hoặc `entities/` |
-| **T2** | Agent tạo ra **bảng so sánh** hoặc **phân tích đối chiếu** mới | Response chứa bảng Markdown với ≥2 cột so sánh |
+| **T1** | Lệnh trực tiếp từ User | User gõ `/file-back` hoặc yêu cầu rõ ràng: *"Lưu bài chat này thành concept"* |
+| **T2** | Thăng cấp (Promotion) | User yêu cầu: *"Kiểm tra thư mục `queries/` hoặc `session_insights/` xem có insight nào đủ tốt để file-back không?"* |
 
 **Không** kích hoạt File-Back khi:
 - Câu trả lời chỉ lặp lại nội dung của 1 trang Wiki duy nhất.
 - Response là debug, sửa lỗi kỹ thuật, hoặc điều hướng hệ thống.
-- Sau khi thực hiện "Judgment" (bước dưới), phát hiện insight đã tồn tại trong Index.
+- User chưa đưa ra lệnh phê duyệt.
 
 > [!NOTE]
-> **Không dùng**: Phát hiện mâu thuẫn → đây là nhiệm vụ của `/lint`, không phải File-Back.
-> **Không dùng**: Đợi User xác nhận từ khóa → mục tiêu là hệ thống tự vận hành.
+> **Luật R8 (Human Supremacy)**: Mọi thao tác File-Back đều phải có sự ủy quyền của con người. Không tự ý nhét file vào Database.
 
 ---
 
-## 🧠 Judgment Process (Phán xét nội tại — bắt buộc trước khi ghi)
+## 🛡️ Pre-flight Check (Kiểm tra trước khi thực thi)
 
-Trước khi tạo trang mới, Agent **bắt buộc** thực hiện 2 câu hỏi sau:
+Dù được User ra lệnh (T1/T2), Agent vẫn phải rà soát nhanh để tránh làm bẩn Database:
 
-**Câu hỏi 1**: *"Nội dung tôi vừa tổng hợp có tạo ra một insight KHÔNG có trong bất kỳ trang nào tôi đã đọc không?"*
-- Nếu **Không** (chỉ là tóm tắt lại) → **Dừng. Không File-Back.**
-- Nếu **Có** → Tiếp tục Câu hỏi 2.
+**1. Kiểm tra Trùng lặp (Duplication Check)**:
+- Kiểm tra nhanh (hoặc đọc `3-resources/wiki/index.md`) xem khái niệm này đã tồn tại chưa.
+- Nếu **đã có** → Đề xuất: *"Trang này đã tồn tại, tôi đề xuất cập nhật (Update) file cũ thay vì tạo file mới"*. Không được tự ý ghi đè.
+- Nếu **chưa có** → Tiến hành tạo trang mới.
 
-**Câu hỏi 2**: *"Insight này đã được lưu trong index.md chưa?"*
-- Đọc **section CONCEPT PAGES** của `3-resources/wiki/index.md`.
-- Tìm trang có title/summary tương tự với insight vừa tạo ra.
-- Nếu **đã có** → Cập nhật trang hiện tại (update), không tạo mới.
-- Nếu **chưa có** → Tiếp tục tạo trang mới.
+**2. Đảm bảo chất lượng (Quality Check - Luật R11)**:
+- Nếu nội dung quá mỏng (< 200 bytes) hoặc chỉ là chat vụn vặt, Agent phải cảnh báo: *"Nội dung này chưa đủ điều kiện để file-back thành Atom Wiki."*.
 
 ---
 
 ## ⚙️ Quy trình thực thi (Execution Flow)
 
-Sau khi Judgment xác nhận "insight mới", Agent thực hiện **trong cùng lượt phản hồi**:
+Sau khi User xác nhận "insight mới", Agent thực hiện:
 
-### Bước 1: Đặt tên trang
-- Tên file: `CONCEPT_[PREFIX]_[Tên_chủ_đề].md` (hoặc `ENTITY_`) theo chuẩn Rule 7.
-- Ví dụ: `CONCEPT_ROBOT_Sensor_Comparison.md`, `CONCEPT_PROMPT_K10_Vector_Exercises.md`
+### Bước 1: Quyết định đích đến & Đặt tên trang
+- Kiến thức nguyên tử: Lưu vào `concepts/CONCEPT_[PREFIX]_[Tên].md`.
+- Bài tổng hợp dài: Lưu vào `synthesis/SYNTHESIS_[Tên].md`.
 
-### Bước 2: Tạo nội dung với template chuẩn
-```yaml
----
-file_id: "[ID]"
-title: "[Tiêu đề phân tích]"
-category: "File-Back Insight"
-tags: ["[tag1]", "[tag2]"]
-source: "Chat synthesis — [ngày]"
-trigger: "[T1|T2]"
-status: "draft"
-created: "[YYYY-MM-DD]"
----
+### Bước 2: Tạo nội dung với template chuẩn (Luật R13)
+**BẮT BUỘC:** Đọc và áp dụng đúng cấu trúc của Template tương ứng trước khi viết file:
+- Kiến thức nguyên tử: Xem `D:\NoteBookLLM_Br\.agent\skills\references\CONCEPT_TEMPLATE.md`
+- Bài tổng hợp dài: Xem `D:\NoteBookLLM_Br\.agent\skills\references\SYNTHESIS_TEMPLATE.md`
+
+**BẮT BUỘC:** `status` phải là `DRAFT` để đưa vào Review Queue chờ Human Review.
+Thêm nội dung phân tích + [[Wikilinks]] đến các trang gốc đã tham khảo.
+
+### Bước 3: Ghi file và Cập nhật Log (Tuân thủ Luật R14)
+```text
+# Lưu file đúng định dạng
+write_to_file("3-resources/wiki/concepts/CONCEPT_[PREFIX]_[Tên].md", content) 
+# HOẶC "3-resources/wiki/synthesis/SYNTHESIS_[Tên].md"
+
+# Ghi nhật ký vào đúng file của ngày hôm nay (Phân mảnh Log)
+Append("3-resources/wiki/logs/log_YYYY_MM_DD.md", "## [HH:MM] file-back | @librarian | [Tên trang]")
 ```
-Thêm nội dung phân tích + [[Wikilinks]] đến các trang đã đọc.
-
-### Bước 3: Ghi file và log
-```
-write_to_file("3-resources/wiki/concepts/CONCEPT_[PREFIX]_[Tên].md", content)
-Append("3-resources/wiki/log.md", "## [YYYY-MM-DD HH:MM] file-back | @librarian | [Tên trang]")
-```
-
-**BẮT BUỘC (Rule 17)**: Nội dung file-back phải bao gồm 2 ví dụ đối chiếu (Original + Pedagogical).
 
 ### Bước 4: Thông báo cho User (1 dòng)
-> 📁 **File-Back [T1/T2]**: Đã lưu → [`CONCEPT_[Tên].md`](file:///d:/NoteBookLLM_Br/3-resources/wiki/concepts/CONCEPT_[Tên].md)
+> 📁 **File-Back**: Đã lưu (DRAFT) → [`[Tên].md`](file:///d:/NoteBookLLM_Br/3-resources/wiki/concepts/[Tên].md). Đang chờ Human Review.
 
 ---
 

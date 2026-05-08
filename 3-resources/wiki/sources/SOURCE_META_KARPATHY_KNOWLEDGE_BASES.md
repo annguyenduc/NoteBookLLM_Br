@@ -1,39 +1,36 @@
-﻿---
-file_id: "SOURCE_META_KARPATHY_KNOWLEDGE_BASES"
-SOURCE_ID: SOURCE_META_KARPATHY_KNOWLEDGE_BASES
+---
+file_id: SOURCE_META_KARPATHY_KNOWLEDGE_BASES
 title: "WEB: Post-Code AI Workflow"
-author: "Andrej Karpathy"
-category: "WEB"
-domain: "AI Workflow"
-status: "verified"
-created: "2026-05-01"
-last_updated: "2026-05-01"
+type: source
+status: VERIFIED
+tags:
+  - WEB
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-01
+last_updated: 2026-05-01
 ---
 
-relationships:
-  - type: "relates_to"
-    target: "[[CONCEPT_META_Ontology_Design]]"
-  - type: "relates_to"
-    target: "[[CONCEPT_META_Post_Code_Workflow]]"
 # WEB Post-Code AI Workflow
 
-## ðŸ“ 1. PhÃ¢n tÃ­ch Ingest (Analysis - Step 1)
-- **Thá»±c thá»ƒ & KhÃ¡i niá»‡m then chá»‘t:** Post-code Era, [[CONCEPT_META_Ontology_Design|Ontology Design]], Structured Context.
-- **Káº¿t ná»‘i Wiki:** LÃ  cÆ¡ sá»Ÿ lÃ½ luáº­n cho kiáº¿n trÃºc NoteBookLLM_Br trong viá»‡c tá»‘i Æ°u hÃ³a bá»‘i cáº£nh (context) cho Agent.
-- **Äiá»ƒm khÃ¡c biá»‡t/MÃ¢u thuáº«n:** Chuyá»ƒn trá»ng tÃ¢m tá»« "Ká»¹ nÄƒng láº­p trÃ¬nh" sang "Ká»¹ nÄƒng thiáº¿t káº¿ há»‡ thá»‘ng tri thá»©c".
-- **Äá» xuáº¥t cáº¥u trÃºc:** ÄÃ£ tÃ­ch há»£p vÃ o cÃ¡c concept chung vá» Post-code Workflow.
+## 🔍 Phân tích Ingest
+- **Thực thể & Khái niệm then chốt:** Post-code Era, [[CONCEPT_META_Ontology_Design|Ontology Design]], Structured Context.
+- **Kết nối Wiki:** Là cơ sở lý luận cho kiến trúc NoteBookLLM_Br trong việc tối ưu hóa bối cảnh (context) cho Agent.
+- **Điểm khác biệt/Mâu thuẫn:** Chuyển trọng tâm từ "Kỹ năng lập trình" sang "Kỹ năng thiết kế hệ thống tri thức".
+- **Đề xuất cấu trúc:** Đã tích hợp vào các concept chung về Post-code Workflow.
 
-## ðŸ“– 2. Tá»•ng quan nguá»“n (Overview - Step 2)
-BÃ i viáº¿t tháº£o luáº­n vá» tÆ°Æ¡ng lai cá»§a ngÃ nh pháº§n má»m, nÆ¡i con ngÆ°á»i Ä‘Ã³ng vai trÃ² lÃ  "NgÆ°á»i quáº£n trá»‹ tri thá»©c" cung cáº¥p bá»‘i cáº£nh cho cÃ¡c Agent AI tá»± thá»±c thi.
+## 📖 Tổng quan nguồn
+Bài viết thảo luận về tương lai của ngành phần mềm, nơi con người đóng vai trò là "Người quản trị tri thức" cung cấp bối cảnh cho các Agent AI tự thực thi.
 
-## ðŸš€ 3. CÃ¡c Concept Ä‘Ã£ trÃ­ch xuáº¥t (Rule 14 & 17)
-- (Äang cáº­p nháº­t cÃ¡c Concept chi tiáº¿t tá»« nguá»“n nÃ y).
+## 🚀 Các Concept đã trích xuất
+- (Đang cập nhật các Concept chi tiết từ nguồn này).
 
-## ðŸ” 4. Review Items (DÃ nh cho Human)
-- [ ] Tháº£o luáº­n vá» viá»‡c má»Ÿ rá»™ng prefix tri thá»©c sang cÃ¡c máº£ng chuyÃªn mÃ´n ngoÃ i DA.
+## 🕵️ Review Items
+- [ ] Thảo luận về việc mở rộng prefix tri thức sang các mảng chuyên môn ngoài DA.
 
---- 
-**Nguá»“n thÃ´:** `AIMET_Karpathys_LLM_Knowledge_Bases.md`
+***
+**Nguồn thô:** `AIMET_Karpathys_LLM_Knowledge_Bases.md`
 **Deep Research Query:** `Karpathy post-code AI workflow knowledge base design`
 
 

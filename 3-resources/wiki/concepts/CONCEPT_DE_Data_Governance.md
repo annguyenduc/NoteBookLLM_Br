@@ -1,14 +1,15 @@
 ---
-file_id: CONCEPT_DE_DATA_GOVERNANCE
-title: "Data Governance (Quản trị dữ liệu)"
-category: "Wiki Page"
-prefix: "WIKI"
-agent_id: "@engineer"
-status: "verified"
-created: "2026-05-02"
-last_updated: "2026-05-03"
-sources:
-  - "SOURCE_DE_FUNDAMENTALS_OF_DATA_ENGINEERING"
+file_id: CONCEPT_DE_Data_Governance
+title: Data Governance (Quản trị dữ liệu)
+type: concept
+status: VERIFIED
+tags:
+  - Wiki Page
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-02
+last_updated: 2026-05-03
 ---
 
 ## ## For future Claude
@@ -25,7 +26,7 @@ Trang này giải thích về Quản trị dữ liệu (Data Governance) - tập
 - **Data Privacy**: Tuân thủ các quy định bảo mật thông tin cá nhân.
 - **Data Lineage**: Theo dõi nguồn gốc và sự biến đổi của dữ liệu.
 
-## ## Ví dụ đối chiếu (Rule 17)
+## ## Ví dụ đối chiếu (R18)
 - **Ví dụ thực tế (Original)**: Sử dụng Metadata Catalog để ghi chú: "Cột `user_email` là dữ liệu nhạy cảm (PII), chỉ người có quyền Admin mới được xem". Nếu không có Governance, dữ liệu này có thể bị rò rỉ ra bên ngoài.
 - **Ẩn dụ sư phạm (Pedagogical)**: [Phóng tác] Giống như nội quy của một thư viện. Nếu không có thủ thư (Data Steward) và các quy định mượn trả (Governance), sách (Dữ liệu) sẽ bị mất, hư hỏng hoặc đặt sai chỗ, khiến người sau không thể tìm thấy thông tin mình cần.
 
@@ -33,7 +34,7 @@ Trang này giải thích về Quản trị dữ liệu (Data Governance) - tập
 - **Nguồn**: SOURCE_DE_FUNDAMENTALS_OF_DATA_ENGINEERING — Chapter 12.
 
 ## ## History / Revisions
-- **2026-05-03**: [@engineer] Pressure Chain Healing. Bổ sung Rule 17, 20 và chuẩn hóa metadata.
+- **2026-05-03**: [@engineer] Pressure Chain Healing. Bổ sung R18, 20 và chuẩn hóa metadata.
 
 
 ## 4F Reflection

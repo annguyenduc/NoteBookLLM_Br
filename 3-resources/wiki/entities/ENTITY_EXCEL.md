@@ -1,10 +1,17 @@
-﻿---
-file_id: ENTITY_EXCEL
-title: Microsoft Excel
-category: ENTITY
-domain: Excel
-status: verified
 ---
+file_id: ENTITY_EXCEL
+title: ENTITY EXCEL
+type: entity
+status: DRAFT
+tags:
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-08
+last_updated: 2026-05-08
+---
+
+﻿
 
 # Microsoft Excel
 
@@ -25,4 +32,4 @@ Microsoft Excel là một ứng dụng bảng tính mạnh mẽ, công cụ khô
 - **Facts**: 
 - **Feelings**: 
 - **Findings**: 
-- **Futures**: 
+- **Futures**:

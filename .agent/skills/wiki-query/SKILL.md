@@ -13,6 +13,8 @@ Use this skill for direct, read-only lookup of indexed wiki knowledge. Start wit
 - Prefer `SYNTHESIZED` and `VERIFIED` material over `DRAFT`.
 - If the query is conceptual or fuzzy, switch to `wiki-semantic-search` instead of forcing keyword search.
 - The helper script uses the legacy `nodes_fts` index; confirm real files before relying on snippets.
+- When saving persistent research results to a file, use the template at `.agent/skills/references/QUERY_TEMPLATE.md`.
+
 
 ## Workflow
 1. Start with a narrow keyword query.
@@ -36,10 +38,10 @@ Use this skill for direct, read-only lookup of indexed wiki knowledge. Start wit
 - **FTS5**: SQLite Full-Text Search engine.
 - **confidence**: Score used to rank query results.
 - **USER.md**: Persona-based query tailoring.
-- **Rule 14**: Always validate source metadata.
+- **R3**: Always validate source metadata.
 
 ## Technical Reference
 - FTS5: SQLite Full-Text Search engine (BM25 ranking)
 - confidence: score threshold cho reranking kết quả
 - USER.md: đọc trước mọi LLM call để giới hạn output
-- Rule 14: mọi output phải có trích dẫn nguồn tuyệt đối
+- R3: mọi output phải có trích dẫn nguồn tuyệt đối

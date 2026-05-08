@@ -1,48 +1,38 @@
 ---
-file_id: "CONCEPT_THINK_ROC_AUC_Evaluation"
-title: "CONCEPT: Đánh giá mô hình bằng ROC và AUC"
+file_id: CONCEPT_THINK_ROC_AUC_Evaluation
+title: CONCEPT Đánh giá Mô hình bằng ROC và AUC (ROC/AUC Evaluation)
 type: concept
-tags: ["Thinking", "Evaluation", "Metrics", "DA_Core"]
-status: "verified"
-created: "2026-04-29"
-last_updated: "2026-05-01"
+status: VERIFIED
+tags:
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-01
+last_updated: 2026-05-07
 ---
 
-# Đánh giá mô hình bằng ROC và AUC
+# Đánh giá Mô hình bằng ROC và AUC (ROC/AUC Evaluation)
 
 ## 1. Định nghĩa
-**Đường cong ROC** (Receiver Operating Characteristic) là biểu đồ thể hiện khả năng phân loại của mô hình ở mọi ngưỡng threshold. **AUC** (Area Under the Curve) là diện tích dưới đường cong đó, đại diện cho xác suất mô hình xếp hạng một cá thể dương tính cao hơn một cá thể âm tính.
+- **ROC Curve** (Receiver Operating Characteristic): Đồ thị biểu diễn hiệu suất của mô hình phân loại tại tất cả các ngưỡng (thresholds) khác nhau. Nó vẽ tỷ lệ **True Positive Rate (TPR)** so với **False Positive Rate (FPR)**.
+- **AUC** (Area Under the Curve): Diện tích dưới đường cong ROC. AUC cung cấp một giá trị duy nhất (từ 0 đến 1) để tóm tắt hiệu suất của mô hình. AUC càng gần 1, mô hình càng tốt.
 
-## 2. Nguyên lý / Cấu trúc
-- **Trục tung (Y)**: True Positive Rate (Sensitivity) - Khả năng tìm thấy đúng người có bệnh.
-- **Trục hoành (X)**: False Positive Rate (1 - Specificity) - Tỷ lệ báo động nhầm.
-- **AUC = 1.0**: Mô hình hoàn hảo.
-- **AUC = 0.5**: Mô hình tương đương với việc tung đồng xu (ngẫu nhiên).
+## 2. Tại sao quan trọng?
+ROC/AUC giúp Analyst đánh giá khả năng phân biệt (Separation power) của mô hình giữa hai lớp (ví dụ: Churn vs No Churn) mà không bị phụ thuộc vào việc chọn một ngưỡng cụ thể nào đó. Điều này rất hữu ích khi tập dữ liệu bị mất cân bằng (Imbalanced data).
 
-## 3. Ví dụ đối chiếu (Rule 17: Double Examples)
+## 3. Ví dụ đối chiếu (R18: Double Examples)
 
 ### Ví dụ từ sách (Original)
-> **Bối cảnh**: So sánh hai mô hình dự đoán gian lận tín dụng.
-> **Ứng dụng**: Mô hình A có độ chính xác (Accuracy) 90% nhưng AUC chỉ 0.6. Mô hình B có Accuracy 85% nhưng AUC lên đến 0.8. Tác giả khuyên dùng mô hình B vì nó ổn định hơn trong việc phân tách các nhóm đối tượng ở các ngưỡng rủi ro khác nhau.
-> **Nguồn**: SOURCE_THINK_DATA_SCIENCE_FOR_BUSINESS — Chương 7 & 8.
+> **Bối cảnh**: Mô hình phát hiện gian lận thẻ tín dụng.
+> **Ứng dụng**: Sử dụng AUC để so sánh hai thuật toán khác nhau. Thuật toán A có AUC = 0.85, thuật toán B có AUC = 0.75. Kết luận: Thuật toán A có khả năng phát hiện gian lận tốt hơn trên mọi ngưỡng lựa chọn.
+> **Nguồn**: [[SOURCE_Data_Science_For_Business]].
 
 ### Ứng dụng sư phạm (Pedagogical Application)
-> **Bối cảnh**: Đánh giá một bài kiểm tra trắc nghiệm giúp phân loại học sinh "Đạt" và "Không đạt".
-> **Ứng dụng**: 
-> - Nếu một bài kiểm tra có AUC thấp, nghĩa là câu hỏi quá dễ hoặc quá khó đến mức không phân biệt được học sinh giỏi và học sinh yếu.
-> - Một bài kiểm tra chất lượng (AUC cao) sẽ giúp giáo viên tự tin rằng những em đạt điểm cao thực sự nắm vững kiến thức hơn những em điểm thấp.
+> **Bối cảnh**: Mô hình dự báo học sinh sẽ trượt kỳ thi cuối kỳ.
+> **Ứng dụng**: Nhà trường có thể chọn ngưỡng "an toàn" cao (để không bỏ sót ai) hoặc ngưỡng "chi phí thấp" (chỉ hỗ trợ những em chắc chắn trượt). Đường cong ROC cho thấy sự đánh đổi giữa việc "Bắt đúng học sinh trượt" và "Bắt nhầm học sinh đỗ". AUC cao chứng tỏ mô hình có độ tin cậy tốt để nhà trường đầu tư nguồn lực can thiệp.
 
-## 4. Trích dẫn nguồn (Rule 14)
-- **Nguồn**: SOURCE_THINK_DATA_SCIENCE_FOR_BUSINESS — Trang 180-205.
-- **Fact-check**: Đã đối chiếu file raw `THINK_Data_Science_for_Business.md`. [Rule 14: SUCCESS]
-
----
-WRITE REPORT:
-  file: "3-resources/wiki/concepts/CONCEPT_THINK_ROC_AUC_Evaluation.md"
-  operation: "overwrite"
-  added: "Chuẩn hóa theo v4.1, giải thích trực giác AUC qua chất lượng bài kiểm tra."
-  removed: "NONE"
-  compliance: "[Rule 20] Đã đối soát Template và Raw thành công."
+## 4. Trích dẫn nguồn
+- **Nguồn**: [[SOURCE_Data_Science_For_Business]].
 
 
 ## 4F Reflection

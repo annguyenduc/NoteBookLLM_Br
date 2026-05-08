@@ -1,12 +1,14 @@
 ---
-file_id: SYNTHESIS_AIMET_AGENTIC_AI_INTERVIEW_PRACTICE
-title: "Agentic AI Interview Practice (Q&A Bank)"
-category: "Synthesis"
-prefix: "SYNTHESIS"
-agent_id: "@engineer"
-status: "verified"
-tags: ["Interview", "Agentic AI", "Python", "RAG", "Multi-Agent"]
-source: "[[SOURCE_AIMET_AGENTIC_ROADMAP_2026]]"
+file_id: SYNTHESIS_AIMET_Agentic_AI_Interview_Practice
+title: Agentic AI Interview Practice (Q&A Bank)
+type: synthesis
+status: VERIFIED
+tags: 
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-08
+last_updated: 2026-05-08
 ---
 
 # Agentic AI Interview Practice (Q&A Bank)
@@ -29,7 +31,7 @@ Tập hợp các câu hỏi phỏng vấn thực tế và kịch bản giải qu
 - **Q: "Lost in the middle" là hiện tượng gì?**
   - **A**: LLM có xu hướng ghi nhớ tốt thông tin ở đầu và cuối ngữ cảnh nhưng bỏ sót thông tin ở giữa. Giải pháp: Sử dụng Re-ranking để đẩy thông tin quan trọng nhất lên đầu.
 
-## Ví dụ đối chiếu (Rule 17)
+## Ví dụ đối chiếu (R18)
 - **Ví dụ thực tế (Original)**: Sử dụng kịch bản "Self-Correction" - Nếu Agent gọi Tool bị lỗi, hệ thống sẽ gửi thông báo lỗi ngược lại cho Agent để nó tự sửa tham số và gọi lại.
 - **Ẩn dụ sư phạm (Pedagogical)**: Giống như một buổi thi vấn đáp: Không chỉ là việc bạn thuộc lòng (LLM Knowledge), mà là cách bạn xử lý khi giám khảo đưa cho bạn một tài liệu mới (RAG) và yêu cầu bạn sử dụng các công cụ có sẵn để giải quyết một bài toán thực tế (Tool Use).
 

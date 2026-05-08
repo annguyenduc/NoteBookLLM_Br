@@ -1,12 +1,12 @@
 ---
 name: wiki-crawl-4ai
-description: Use when capturing dynamic URL content or when visual screenshot evidence (Rule 10) is mandatory. MANDATORY: Use ONLY for staging to 00_Inbox/. Prohibited for direct raw/ writing.
+description: "Use when capturing dynamic URL content or when visual screenshot evidence (R10) is mandatory. MANDATORY: Use ONLY for staging to 00_Inbox/. Prohibited for direct raw/ writing."
 ---
 
 # Wiki Crawl 4AI (Flexible/Visual)
 
 ## Overview
-A high-fidelity staging skill for capturing dynamic content and visual proof. It supports both **Headful** (for bot-bypass) and **Headless** (for speed/automation) modes. Essential for fulfilling **Rule 10 (Search & Visual Validation)**.
+A high-fidelity staging skill for capturing dynamic content and visual proof. It supports both **Headful** (for bot-bypass) and **Headless** (for speed/automation) modes. Essential for fulfilling **R10 (Search & Visual Validation)**.
 
 ## Testing
 This skill uses **TDD** to ensure visual evidence capture.
@@ -17,7 +17,7 @@ python .agent/skills/wiki-crawl-4ai/tests/test_crawl.py
 
 ## Guardrails
 - **STAGING BOUNDARY**: NEVER save output directly into `3-resources/raw_*/`. Always use `00_Inbox/`.
-- **VISUAL MANDATE**: The `--screenshot` flag is REQUIRED when Rule 10 applies.
+- **VISUAL MANDATE**: The `--screenshot` flag is REQUIRED when R10 applies.
 - **AUDIT GATE**: You MUST open and verify the `.png` screenshot for quality (no blank pages/404s) before passing to ingest.
 
 ## Workflow
@@ -34,5 +34,5 @@ python .agent/skills/wiki-crawl-4ai/tests/test_crawl.py
 | Excuse | Reality |
 |--------|---------|
 | "The site is public, no need for inbox" | All external data must be staged for audit. No exceptions. |
-| "I'll skip the screenshot to save time" | Violation of Rule 10. Visual proof is mandatory for truth-seeking. |
+| "I'll skip the screenshot to save time" | Violation of R10. Visual proof is mandatory for truth-seeking. |
 | "The screenshot is generated, so it's fine" | Automation can fail. You must verify the actual image content. |

@@ -1,14 +1,14 @@
 ---
-file_id: CONCEPT_AIMET_LEARNING_ORDER_CHECKLIST
-title: "AIMET Learning Order Checklist (2026)"
-category: "Wiki Page"
-prefix: "WIKI"
-tags: ["Agentic AI", "Learning Path", "Roadmap", "AIMET"]
-source: "SOURCE_AIMET_AGENTIC_ROADMAP_2026"
-status: "DRAFT"
-created: "2026-05-05"
-last_updated: "2026-05-05"
-agent_id: "@engineer"
+file_id: CONCEPT_AIMET_Learning_Order_Checklist
+title: AIMET Learning Order Checklist (2026)
+type: concept
+status: DRAFT
+tags: 
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-05
+last_updated: 2026-05-05
 ---
 
 # AIMET Learning Order Checklist (2026)

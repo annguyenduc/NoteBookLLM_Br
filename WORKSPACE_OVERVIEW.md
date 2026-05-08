@@ -40,8 +40,7 @@ NoteBookLLM_Br/
 ├── AGENTS.md                     ← BỘ LUẬT SWARM (BẮT BUỘC ĐỌC)
 ├── SOUL.md                       ← Tính cách & Sứ mệnh Agent
 ├── USER.md                       ← Hồ sơ & Ranh giới của User
-└── WORKSPACE_OVERVIEW.md         ← File này
-```
+├── WORKSPACE_OVERVIEW.md         ← File này
 ├── task_plan.md                  ← Kế hoạch hiện tại (v5.3 — Data Analyst 80/20)
 ├── CONTINUITY.md                 ← Ghi nhớ liên phiên (lỗi đã gặp, context)
 └── COMMAND_BOARD.md              ← Bảng điều khiển lệnh nhanh
@@ -56,32 +55,32 @@ Mọi Agent phải tuân thủ luồng runtime này.
 ```mermaid
 graph TD
     subgraph "1. TẦNG NẠP (INGEST PIPELINE)"
-        RAW_SOURCE[raw_sources PDF/Video] -->|Convert| INBOX[00_Inbox Markdown]
+        RAW_SOURCE["raw_sources (PDF/Video)"] -->|Convert| INBOX["00_Inbox Markdown"]
         INBOX --> AUDIT[wiki-md-auditor]
-        AUDIT -->|PASS| RAW_INGEST[raw_ingest MD Immutable]
+        AUDIT -->|PASS| RAW_INGEST["raw_ingest MD Immutable"]
         RAW_INGEST --> INGEST[wiki-ingest]
     end
 
     subgraph "2. TẦNG DỮ LIỆU (ATOMIC DATA)"
-        INGEST --> DRAFT[DRAFT Atoms in DB]
+        INGEST --> DRAFT["DRAFT Atoms in DB"]
     end
 
     subgraph "3. TẦNG HỢP NHẤT (ABSORB)"
         DRAFT --> ABSORB[wiki-absorb]
         ABSORB -->|Phát hiện Conflict| COUNCIL[wiki-council]
-        COUNCIL -->|Ghi log| DECISION[wiki/decisions/]
-        ABSORB --> QUEUE[wiki/review_queue/]
+        COUNCIL -->|Ghi log| DECISION["wiki/decisions/"]
+        ABSORB --> QUEUE["wiki/review_queue/"]
     end
 
     subgraph "4. TẦNG HUMAN (GOVERNANCE)"
-        QUEUE -->|Human Review| VERIFIED[Status: VERIFIED]
-        VERIFIED -->|Human Synthesis| SYNTH[Status: SYNTHESIZED]
+        QUEUE -->|Human Review| VERIFIED["Status: VERIFIED"]
+        VERIFIED -->|Human Synthesis| SYNTH["Status: SYNTHESIZED"]
     end
 
     subgraph "5. TẦNG BẢO TRÌ (MAINTENANCE)"
         SYNTH --> REBUILD[wiki-rebuild]
         REBUILD --> CLEAN[wiki-cleanup]
-        CLEAN --> STATUS[wiki-status Dashboard]
+        CLEAN --> STATUS["wiki-status Dashboard"]
     end
 
     subgraph "6. TẦNG TRUY VẤN (ON-DEMAND)"

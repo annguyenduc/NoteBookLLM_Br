@@ -1,12 +1,14 @@
 ---
-file_id: ENTITY_TOOL_GEMINI_PROMPTS_CODEX
-title: "Gemini Prompts Codex (Selected Templates)"
-category: "Entity"
-prefix: "ENTITY"
-agent_id: "@engineer"
-status: "verified"
-tags: ["Gemini", "Prompts", "Templates", "Coding", "Debug"]
-source: "[[SOURCE_TOOL_GEMINI_DEVELOPER_CODEX]]"
+file_id: ENTITY_TOOL_Gemini_Prompts_Codex
+title: Gemini Prompts Codex (Selected Templates)
+type: entity
+status: VERIFIED
+tags: 
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-08
+last_updated: 2026-05-08
 ---
 
 # Gemini Prompts Codex (Selected Templates)
@@ -69,7 +71,7 @@ Ngân hàng các mẫu prompt tối ưu cho Gemini trích xuất từ Codex 850 
 [Input: <paste_html_here>]
 ```
 
-## Ví dụ đối chiếu (Rule 17)
+## Ví dụ đối chiếu (R18)
 - **Ví dụ thực tế (Original)**: Sử dụng cấu trúc `[Role] [Task] [Constraint] [Input]` để ép Gemini vào trạng thái "Deep Thinking".
 - **Ẩn dụ sư phạm (Pedagogical)**: [Phóng tác] Giống như việc bạn cấp một "Bộ khuôn đúc" (Templates) cho một nghệ nhân: Nghệ nhân có thể rất giỏi, nhưng bộ khuôn giúp mọi tác phẩm họ tạo ra đều có hình khối chuẩn xác và đồng nhất về chất lượng.
 

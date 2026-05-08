@@ -1,17 +1,18 @@
 ---
-file_id: "SYNTHESIS_Wiki_Intelligence_Architecture"
-title: "SYNTHESIS: Wiki Intelligence Architecture (V2.0) [SUPERSEDED]"
+file_id: SYNTHESIS_Wiki_Intelligence_Architecture
+title: "SYNTHESIS: Wiki Intelligence Architecture V3.0 (Master Blueprint)"
 type: synthesis
-tags: ["Architecture", "Skill_Design", "Wiki_Gen", "META", "DEPRECATED"]
-status: "superseded"
+status: VERIFIED
+tags: 
+  - "Architecture"
+  - "System-Design"
+ai-first: true
+confidence: 1.0
+last_reconciled: 2026-05-08
+created: 2026-05-02
+last_updated: 2026-05-08
 sources:
-  - "[[SOURCE_META_WIKI_GEN_CLONE]]"
-  - "[[SOURCE_META_LLM_WIKI_V2]]"
-  - "SOURCE_META_NASHUS_LLMWIKI"
-relationships:
-  - type: "superseded_by"
-    target: "[[SYNTHESIS_MASTER_Second_Brain_Blueprint]]"
-created: "2026-05-02"
+  - "[[log_2026_05_08]]"
 ---
 
 # Wiki Intelligence Architecture (Bản thiết kế Hệ thống Wiki Thông minh)
@@ -57,7 +58,7 @@ Mọi output của hệ thống phải tuân thủ:
 ## 4. Kế hoạch chuẩn hóa Skills (Standardization Plan)
 
 | Skill Module | Lệnh tương ứng | Trọng tâm chuẩn hóa (Standardization Focus) |
-|---|---|---|
+||---|
 | **`wiki-ingest`** | `/wiki ingest` | **Parsing**: Tự động gán Taxonomy và tách Atom từ nguồn thô (JSON, CSV, MD). |
 | **`wiki-absorb`** | `/wiki absorb` | **Synthesis**: Áp dụng Rewrite Engine để tích hợp tri thức vào các trang hiện có. |
 | **`wiki-query`** | `/wiki query` | **Discovery**: Truy vấn đồ thị (Graph Traversal) và tổng hợp đa nguồn. |
@@ -81,4 +82,4 @@ Mọi output của hệ thống phải tuân thủ:
 - **Facts**: 
 - **Feelings**: 
 - **Findings**: 
-- **Futures**: 
+- **Futures**:

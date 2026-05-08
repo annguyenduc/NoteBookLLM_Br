@@ -1,15 +1,15 @@
 ---
-file_id: CONCEPT_AI_KNOWLEDGE_CUTOFF
-title: "Knowledge Cutoff (Giới hạn tri thức tĩnh)"
-category: "Wiki Page"
-prefix: "WIKI"
-agent_id: "@engineer"
-status: "verified"
-created: "2026-05-03"
-last_updated: "2026-05-03"
-sources:
-  - "SOURCE_COURSERA-AI-essential-Bias_Drift_Knowledge_Cutoff"
-  - "SOURCE_COURSERA-AI-essential-Stay_up_to_date_with_AI"
+file_id: CONCEPT_AI_Knowledge_Cutoff
+title: Knowledge Cutoff (Giới hạn tri thức tĩnh)
+type: concept
+status: VERIFIED
+tags:
+  - Wiki Page
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-03
+last_updated: 2026-05-03
 ---
 
 ## ## For future Claude
@@ -20,7 +20,7 @@ Trang này giải thích khái niệm "Knowledge Cutoff" - thời điểm cuối
 2.  **Date Awareness**: Người dùng cần kiểm tra ngày cutoff của mô hình (ví dụ: GPT-4o, Gemini 1.5 Pro) trước khi thực hiện các tác vụ liên quan đến tin tức hoặc công nghệ mới.
 3.  **RAG Solution**: Kỹ thuật Retrieval-Augmented Generation (RAG) là giải pháp chính để vượt qua giới hạn cutoff này.
 
-## ## Ví dụ đối chiếu (Rule 17)
+## ## Ví dụ đối chiếu (R18)
 -   **Ví dụ thực tế (Original)**: Một mô hình có cutoff vào tháng 1/2024 sẽ không biết về một thư viện Python mới ra mắt vào tháng 3/2024. Nếu hỏi về nó, mô hình có thể bịa đặt (hallucinate) ra cú pháp dựa trên các thư viện tương tự.
 -   **Ẩn dụ sư phạm (Pedagogical)**: Giống như một cuốn bách khoa toàn thư đã được in ấn và đóng tập. Bạn có thể tra cứu mọi thứ trong đó, nhưng nếu có một quốc gia mới được thành lập sau ngày cuốn sách được in, bạn sẽ không bao giờ tìm thấy nó trong các trang giấy đó trừ khi bạn kẹp thêm một tờ báo mới vào giữa các trang sách (RAG).
 
@@ -45,7 +45,7 @@ Knowledge Cutoff ảnh hưởng trực tiếp đến độ tin cậy của AI tr
 - **Nguồn**: SOURCE_COURSERA-AI-essential-Stay_up_to_date_with_AI — Concept: Understanding AI constraints.
 
 ## ## History / Revisions
-- **2026-05-03**: [@engineer] Chuyển đổi từ stub sang verified, bổ sung Rule 17 và Rule 20.
+- **2026-05-03**: [@engineer] Chuyển đổi từ stub sang verified, bổ sung R18 và Rule 20.
 
 
 ## 4F Reflection

@@ -1,13 +1,14 @@
 ---
-file_id: "ENTITY_TOOL_Gemini"
-entity_id: ENTITY_TOOL_GEMINI
-title: "Google Gemini (Multi-modal AI)"
-type: "TOOL"
-category: "AI_Model"
-tags: ["LLM", "Google", "Multi-modal", "Long_Context"]
-status: "verified"
-created: "2026-05-01"
-last_updated: "2026-05-01"
+file_id: ENTITY_TOOL_Gemini
+title: Google Gemini (Multi-modal AI)
+type: tool
+status: VERIFIED
+tags: 
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-01
+last_updated: 2026-05-01
 ---
 
 # Google Gemini

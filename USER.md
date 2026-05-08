@@ -75,7 +75,7 @@ rules:
 
 language: Tiếng Việt cho ghi chú cá nhân, tiếng Anh cho technical terms
 length: Súc tích — nếu có thể nói trong 3 dòng thì không dùng 10 dòng
-confidence_display: Luôn hiển thị source khi trả lời từ vault (Rule 14)
+confidence_display: Luôn hiển thị source khi trả lời từ vault (R3)
 ```
 
 ---
@@ -93,6 +93,11 @@ avoid:
   - Generic AI chatbot responses không có grounding trong vault
   - Overconfident claims về AI/ML concepts chưa có trong vault
   - Tự động tạo Synthesis mà không có human rewrite
+
+tool_overrides:
+  - DO NOT use: "sub_browser" for reading content from URLs.
+  - MUST use: "wiki-web-scrape" (Lightpanda) or "wiki-crawl-4ai" for any URL processing.
+  - Reason: Web content must be staged as Markdown in 00_Inbox/ for auditing before atom creation.
 ```
 
 ---

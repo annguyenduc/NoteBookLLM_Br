@@ -1,13 +1,14 @@
 ---
-file_id: "CONCEPT_TOOL_SQL_QUERY_PROMPTS"
-title: "Mẫu câu lệnh Tối ưu hóa [[ENTITY_SQL|SQL]] (SQL Query Prompts)"
-category: "TOOL"
-prefix: "TOOL"
-tags: ["SQL", "Query_Optimization", "Database", "Gemini", "Prompts"]
-source: "[[SOURCE_TOOL_GEMINI_DEVELOPER_CODEX]]"
-status: "verified"
-created: "2026-05-01"
-last_updated: "2026-05-01"
+file_id: CONCEPT_TOOL_SQL_Query_Prompts
+title: Mẫu câu lệnh Tối ưu hóa [[ENTITY_SQL|SQL]] (SQL Query Prompts)
+type: concept
+status: VERIFIED
+tags: 
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-01
+last_updated: 2026-05-01
 ---
 
 # Mẫu câu lệnh Tối ưu hóa SQL (SQL Query Prompts)
@@ -25,7 +26,7 @@ Tập hợp các prompt giúp Gemini đóng vai trò chuyên gia cơ sở dữ l
 > **Cấu trúc**: "Role: Lead Data Engineer. Context: [Table Schema]. Task: Outline a data masking and encryption strategy using [Target_DB, e.g., BigQuery] features to ensure GDPR compliance for this specific schema."
 > **Mục tiêu**: Thiết kế lớp bảo mật cho dữ liệu nhạy cảm thông qua SQL.
 
-## 3. Ví dụ đối chiếu (Rule 17: Double Examples)
+## 3. Ví dụ đối chiếu (R18: Double Examples)
 
 ### Ví dụ kỹ thuật (Technical)
 > **Bối cảnh**: Tối ưu hóa một câu lệnh JOIN phức tạp trong PostgreSQL.

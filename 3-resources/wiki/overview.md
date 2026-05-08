@@ -1,10 +1,10 @@
 ---
-file_id: WIKI_OVERVIEW
+file_id: "overview"
 title: "Tổng quan tri thức Wiki 2.0"
 category: "Global Overview"
-prefix: "WIKI"
-tags: ["Meta", "Summary", "Data_Analyst", "Knowledge_Graph"]
-status: "verified"
+prefix: "ENTITY"
+tags: "["Meta", "Summary", "Data_Analyst", "Knowledge_Graph"]"
+status: "VERIFIED"
 created: "2026-04-29"
 last_updated: "2026-05-02"
 ---
@@ -17,16 +17,16 @@ Chào mừng bạn đến với hệ thống tri thức **Wiki 2.0**. Đây là 
 Hệ thống hiện tại bao gồm **133 trang tri thức nguyên tử**, được phân loại thành 8 nhóm cốt lõi:
 
 | Nhóm tri thức | Số lượng trang | Trạng thái | Trọng tâm |
-| :--- | :--- | :--- | :--- |
-| **--- CLUSTER 1 ---** | **Quản trị & Phương pháp** | | |
+| : | : |
+| **** | **Quản trị & Phương pháp** | | |
 | **🛠️ Meta** |  33  | 🟢 Hoàn tất | Phương pháp luận LLM Wiki, quản trị hệ thống. |
 | **📚 Sources** |  43  | 🔵 Đã chuẩn hóa | Danh mục nguồn sách và khóa học. |
 | **🧠 Thinking** |  47  | 🟢 Hoàn tất 80/20 | Tư duy phản biện, Problem Solving, CoNVO. |
-| **--- CLUSTER 2 ---** | **Hạ tầng & Kỹ thuật** | | |
+| **** | **Hạ tầng & Kỹ thuật** | | |
 | **💾 SQL** |  18  | 🟢 Hoàn tất | Truy vấn, tối ưu hóa, Window Functions. |
 | **🐍 Python** |  7  | 🟡 Đang mở rộng | Pandas, NumPy, Scikit-Learn. |
 | **⚙️ Data Engineering** |  6  | 🟡 Cơ bản | ETL/ELT, Data Modeling, Data Quality. |
-| **--- CLUSTER 3 ---** | **Phân tích & Trí tuệ** | | |
+| **** | **Phân tích & Trí tuệ** | | |
 | **🔢 Stats** |  10  | 🟡 Đang đào sâu | Thống kê mô tả, kiểm định giả thuyết. |
 | **📊 Visualization** |  12  | 🟢 Hoàn tất | Tufte principles, Storytelling. |
 | **🤖 DSML** |  6  | 🟡 Cơ bản | Thuật toán học máy, Evaluation Metrics. |

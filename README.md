@@ -43,12 +43,12 @@ Dự án vận hành theo mô hình Swarm với hệ thống Phân loại thông
 | **@scout** | Researcher | Nghiên cứu tri thức & Audit nguồn. |
 | **@engineer** | Executioner | Viết mã nguồn & Thực thi TDD. |
 | **@librarian** | Reviewer | Rà soát chất lượng & Quản lý Wiki. |
-| **@auditor** | Integrity | Kiểm định tính xác thực (Rule 10). |
+| **@auditor** | Integrity | Kiểm định tính xác thực (R10). |
 | **@designer** | ID Expert | Thiết kế learning sequence (5E/UDL). |
 
 ---
 
-## 🔄 Pipeline Sư phạm (Rule 11 — Bắt buộc)
+## 🔄 Pipeline Sư phạm (R11 — Bắt buộc)
 
 ```
 @profiler → @designer → @engineer → @evaluator
@@ -132,7 +132,7 @@ python .agent/skills/wiki-status/scripts/dashboard.py
 
 - [x] Swarm Agent Registry v4.0 Supreme
 - [x] LLM Client với fallback chain thông minh (404/429/502)
-- [x] Pedagogical Pipeline (Rule 11)
+- [x] Pedagogical Pipeline (R11)
 - [x] Anti-Hallucination Protocol
 - [ ] Chunked Engineer Script
 - [ ] Ping Free Tier Script

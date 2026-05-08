@@ -1,13 +1,14 @@
 ---
-file_id: "ENTITY_TOOL_Claude"
-entity_id: ENTITY_TOOL_CLAUDE
-title: "Anthropic Claude (AI Assistant)"
-type: "TOOL"
-category: "AI_Model"
-tags: ["LLM", "Anthropic", "Coding", "Reasoning"]
-status: "verified"
-created: "2026-05-01"
-last_updated: "2026-05-01"
+file_id: ENTITY_TOOL_Claude
+title: Anthropic Claude (AI Assistant)
+type: tool
+status: VERIFIED
+tags: 
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-01
+last_updated: 2026-05-01
 ---
 
 # Anthropic Claude

@@ -1,8 +1,14 @@
 ---
-file_id: "ENTITY_CASE_Kiwi_Brazil"
+file_id: ENTITY_CASE_Kiwi_Brazil
 title: "ENTITY: Case Study - Kiwi (Soccer Player)"
 type: entity
-status: "DRAFT"
+status: DRAFT
+tags:
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-08
+last_updated: 2026-05-08
 ---
 
 # Case Study: Kiwi (Soccer Player)
@@ -13,6 +19,13 @@ Kiwi là một nữ cầu thủ bóng đá đầy khát vọng. Mục tiêu củ
 ## 2. Role in the Wiki
 - (Ghi chú: Nội dung chi tiết về Kiwi nằm ở các chương sau của cuốn sách, phần này chỉ giới thiệu nhân vật).
 - Minh họa cho quá trình ra quyết định khi có nhiều sự lựa chọn (pros & cons).
-- Đại diện cho khía cạnh đánh giá thông tin của [[THINK_Problem_Solving_Process]].
+- Đại diện cho khía cạnh đánh giá thông tin của [[CONCEPT_THINK_Problem_Solving_Process]].
 
 **Nguồn:** `3-resources/raw_ingest/THINK_Problem_Solving_101_HD.md` — PROBLEM-SOLVING KIDS AND COMPANY
+
+
+## 4F Reflection
+- **Facts**: 
+- **Feelings**: 
+- **Findings**: 
+- **Futures**: 

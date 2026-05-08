@@ -1,40 +1,20 @@
-file_id: CONCEPT_AIMET_RAG_SYSTEMS
-title: "RAG Systems (Retrieval-Augmented Generation)"
-category: "Wiki Page"
-prefix: "WIKI"
-agent_id: "@engineer"
-status: "verified"
-created: "2026-05-02"
-last_updated: "2026-05-03"
-sources:
-  - "[[SOURCE_AIMET_AGENTIC_ROADMAP_2026]]"
 ---
-
-## ## For future Claude
-Trang này định nghĩa kiến trúc RAG (Retrieval-Augmented Generation) - giải pháp cốt lõi để giải quyết vấn đề Knowledge Cutoff và Hallucination trong LLM. RAG cho phép Agent truy cập vào các kho tri thức động và khổng lồ mà không cần huấn luyện lại mô hình, tạo ra các câu trả lời có tính xác thực và dẫn nguồn cao.
-
-## ## Key Claims / Summary
-1.  **Knowledge Augmentation**: LLM được cung cấp thêm dữ liệu bên ngoài (Context) ngay tại thời điểm thực thi.
-2.  **Groundedness**: Ép LLM chỉ trả lời dựa trên những gì tìm thấy trong tài liệu truy xuất được để chống bịa đặt.
-3.  **Two-Stage Process**: Gồm giai đoạn Truy xuất (Retrieval - tìm thông tin) và giai đoạn Sinh (Generation - tổng hợp câu trả lời).
-
-## ## Detailed Analysis
+file_id: CONCEPT_AIMET_RAG_Systems
+title: CONCEPT AIMET RAG Systems Architecture
+type: concept
+status: VERIFIED
+tags:
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-01
+last_updated: 2026-05-07
+---
 
 # RAG Systems (Retrieval-Augmented Generation)
 
-## 1. Định nghĩa
-
-**RAG** là kiến trúc bổ sung khả năng tra cứu tài liệu ngoài vào quá trình sinh text của LLM. Thay vì chỉ dựa vào training data (có thể cũ hoặc thiếu), agent **retrieve** đoạn văn bản liên quan từ Vector Store và đưa vào context trước khi generate.
-
-```
-Query → Embed → Vector Search → Retrieve Chunks → Augment Context → Generate
-```
-
-## 2. Nguyên lý / Cấu trúc
-
-| Thành phần | Vai trò | Ví dụ tool |
-|---|---|---|
 | **Embedder** | Chuyển text → vector | OpenAI Ada, BGE, E5 |
+| :--- | :--- | :--- |
 | **Vector Store** | Lưu + tìm kiếm vector | Pinecone, Chroma, Weaviate |
 | **Retriever** | Query → top-k chunks | Similarity search, MMR |
 | **Reranker** | Sắp xếp lại kết quả | Cohere Rerank, cross-encoder |
@@ -42,7 +22,7 @@ Query → Embed → Vector Search → Retrieve Chunks → Augment Context → Ge
 
 **Retrieval Strategies**: Dense (semantic), Sparse (BM25/keyword), Hybrid (cả hai).
 
-## 3. Ví dụ đối chiếu (Rule 17: Double Examples)
+## 3. Ví dụ đối chiếu (R18: Double Examples)
 
 ### Ví dụ từ sách (Original)
 > **Bối cảnh**: Agent trả lời câu hỏi về tài liệu nội bộ công ty (không có trong training data)
@@ -59,16 +39,12 @@ Query → Embed → Vector Search → Retrieve Chunks → Augment Context → Ge
 - **Findings**: Hybrid search (dense + sparse) thường tốt hơn pure semantic search cho domain-specific content
 - **Futures**: Kết hợp với [[CONCEPT_AIMET_Memory_Management]] → RAG làm long-term memory có semantic retrieval
 
-## 5. Trích dẫn nguồn (Rule 14)
+## 5. Trích dẫn nguồn (R3)
 - **Nguồn**: [[SOURCE_AIMET_AGENTIC_ROADMAP_2026]] — Section 8, trang 17-18
 - **Fact-check**: Đã đối chiếu PDF trang 18: "grounded generation and citations in RAG"
 
----
-WRITE REPORT:
-  file: "3-resources/wiki/concepts/CONCEPT_AIMET_RAG_Systems.md"
-  operation: "create"
-  added: "Atomic concept về RAG pipeline, 5 components, retrieval strategies"
-  compliance: "Rule 20 OK"
+***
+*Sơ đồ kiến trúc RAG chuẩn Agentic AI.*
 
 
 ## 4F Reflection

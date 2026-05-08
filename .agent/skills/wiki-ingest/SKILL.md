@@ -13,6 +13,11 @@ Register a source file into the wiki pipeline without altering the raw source. T
 - For URLs, use `wiki-web-scrape` or `wiki-crawl-4ai` first, save to `00_Inbox/` or another user-approved staging path, then ingest the saved file.
 - Do not claim a source is verified just because ingestion succeeded. `ingest.py` creates `DRAFT`.
 - Preserve source traceability. If the source section is unclear, flag it instead of inventing one.
+- **Templates**: Mọi Atom tạo mới phải tuân thủ các template tại `.agent/skills/references/`:
+    - `SOURCE_TEMPLATE.md`
+    - `CONCEPT_TEMPLATE.md`
+    - `ENTITY_TEMPLATE.md`
+
 
 ## Workflow
 1. Confirm the input path exists and is already on disk.

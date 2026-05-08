@@ -1,11 +1,15 @@
 ---
-file_id: CONCEPT_TOOL_STREAMLIT
-title: "Streamlit (Agentic UI Framework)"
-category: "Wiki Page"
-prefix: "WIKI"
-agent_id: "@scout"
-status: "verified"
-source: "[[SOURCE_AIMET_AGENTIC_ROADMAP_2026]]"
+file_id: CONCEPT_TOOL_Streamlit
+title: Streamlit (Agentic UI Framework)
+type: concept
+status: VERIFIED
+tags:
+  - Wiki Page
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-08
+last_updated: 2026-05-08
 ---
 
 # Streamlit (Agentic UI Framework)
@@ -18,7 +22,7 @@ Streamlit là một thư viện Python mã nguồn mở giúp tạo các ứng d
 2. **Chat Elements**: Cung cấp sẵn các thành phần như `st.chat_message` và `st.chat_input` để xây dựng giao diện hội thoại chuyên nghiệp.
 3. **Session State**: Quản lý lịch sử hội thoại và trạng thái của Agent một cách dễ dàng qua `st.session_state`.
 
-## Ví dụ đối chiếu (Rule 17)
+## Ví dụ đối chiếu (R18)
 - **Ví dụ thực tế (Original)**: Xây dựng một thanh Side-bar để hiển thị "Thought process" của Agent (vd: Log từ LangGraph) giúp người dùng hiểu tại sao Agent đưa ra câu trả lời đó.
 - **Ẩn dụ sư phạm (Pedagogical)**: [Phóng tác] Giống như một **Kịch bản sân khấu tự viết (Instant Stage)**: Bạn chỉ cần tập trung vào lời thoại và diễn xuất (Logic), còn sân khấu, ánh sáng và đạo cụ (UI) sẽ tự động xuất hiện theo ý muốn mà không cần thuê đội ngũ kỹ thuật phức tạp.
 

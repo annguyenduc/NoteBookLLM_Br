@@ -28,7 +28,7 @@ def sync_db_from_files():
     cursor = conn.cursor()
     
     files_on_disk = set()
-    scan_folders = ["concepts", "entities", "sources", "synthesis", "decisions", "review_queue"]
+    scan_folders = ["concepts", "entities", "sources", "synthesis", "decisions", "review_queue", "session_insights"]
     for folder in scan_folders:
         path = os.path.join(WIKI_DIR, folder)
         if os.path.exists(path):
@@ -36,31 +36,47 @@ def sync_db_from_files():
                 if f.endswith(".md"):
                     file_path = os.path.join(path, f)
                     
-                    # [V2.0] RULE R11: No auto-stub creation (< 200 bytes)
+                    # [V2.0] R11: No auto-stub creation (< 200 bytes)
                     if os.path.getsize(file_path) < 200:
                         continue
                     
-                    # [V2.0] RULE R11: Skip files without valid frontmatter
+                    # [V2.0] R11: Skip files without valid frontmatter
                     try:
                         with open(file_path, "r", encoding="utf-8-sig") as file_obj:
                             content = file_obj.read().lstrip()
                             if not content.startswith("---") or "---" not in content[3:]:
                                 continue
                             
-                            # [V2.0] Trích xuất file_id từ frontmatter (Ưu tiên số 1)
+                            # [V2.1] Chỉ trích xuất từ khối Frontmatter thực sự
                             file_id_from_fm = None
-                            fid_match = re.search(r"^file_id:\s*(.*)$", content, re.MULTILINE)
-                            if fid_match: file_id_from_fm = fid_match.group(1).strip().upper()
+                            title = f[:-3].replace("_", " ")
+                            status = "DRAFT"
+                            
+                            fm_match = re.search(r"^---\s*\n(.*?)\n---\s*\n", content, re.DOTALL | re.MULTILINE)
+                            if fm_match:
+                                fm_content = fm_match.group(1)
+                                fid_m = re.search(r"^file_id:\s*(.*)$", fm_content, re.MULTILINE)
+                                if fid_m: file_id_from_fm = fid_m.group(1).strip().strip('"\'')
+                                
+                                title_m = re.search(r"^title:\s*(.*)$", fm_content, re.MULTILINE)
+                                if title_m: title = title_m.group(1).strip().strip('"\'')
+                                
+                                status_m = re.search(r"^status:\s*(.*)$", fm_content, re.MULTILINE)
+                                if status_m: status = status_m.group(1).strip().strip('"\'')
+                            
+                            # [V2.2] Determine type from folder name
+                            type_map = {
+                                "concepts": "Concept",
+                                "entities": "Entity",
+                                "sources": "Source",
+                                "synthesis": "Synthesis",
+                                "decisions": "Decision",
+                                "review_queue": "Review",
+                                "session_insights": "Insight"
+                            }
+                            atom_type = type_map.get(folder, folder.capitalize())
                             
                             actual_fid = file_id_from_fm if file_id_from_fm else f[:-3]
-                            
-                            # Trích xuất Title và Status cơ bản
-                            title = actual_fid.replace("_", " ")
-                            status = "DRAFT"
-                            title_match = re.search(r"^title:\s*(.*)$", content, re.MULTILINE)
-                            if title_match: title = title_match.group(1).strip()
-                            status_match = re.search(r"^status:\s*(.*)$", content, re.MULTILINE)
-                            if status_match: status = status_match.group(1).strip()
                                 
                             # Tính toán File Hash
                             file_hash = hashlib.md5(content.encode('utf-8')).hexdigest()
@@ -73,12 +89,12 @@ def sync_db_from_files():
                                 # [V2.0] Reset human_review_flag if human has verified/synthesized in Obsidian
                                 new_flag = 0 if status.upper() in ['VERIFIED', 'SYNTHESIZED'] else None
                                 if new_flag == 0:
-                                    cursor.execute("UPDATE atoms SET title = ?, status = ?, file_hash = ?, human_review_flag = 0 WHERE file_id = ?", (title, status, file_hash, db_fid))
+                                    cursor.execute("UPDATE atoms SET title = ?, status = ?, type = ?, file_hash = ?, human_review_flag = 0 WHERE file_id = ?", (title, status, atom_type, file_hash, db_fid))
                                 else:
-                                    cursor.execute("UPDATE atoms SET title = ?, status = ?, file_hash = ? WHERE file_id = ?", (title, status, file_hash, db_fid))
+                                    cursor.execute("UPDATE atoms SET title = ?, status = ?, type = ?, file_hash = ? WHERE file_id = ?", (title, status, atom_type, file_hash, db_fid))
                                 files_on_disk.add(db_fid)
                             else:
-                                cursor.execute("INSERT INTO atoms (file_id, title, status, file_hash) VALUES (?, ?, ?, ?)", (actual_fid, title, status, file_hash))
+                                cursor.execute("INSERT INTO atoms (file_id, title, type, status, file_hash) VALUES (?, ?, ?, ?, ?)", (actual_fid, title, atom_type, status, file_hash))
                                 files_on_disk.add(actual_fid)
                     except Exception as e:
                         print(f"Error indexing {f}: {e}")
@@ -182,7 +198,7 @@ def refresh_search_index():
     cursor.execute("DELETE FROM atom_search")
     
     # Duyệt qua các file và nạp vào FTS5
-    scan_folders = ["concepts", "entities", "sources", "synthesis", "review_queue"]
+    scan_folders = ["concepts", "entities", "sources", "synthesis", "decisions", "review_queue", "session_insights"]
     for folder in scan_folders:
         folder_path = os.path.join(WIKI_DIR, folder)
         if not os.path.exists(folder_path): continue

@@ -1,11 +1,15 @@
 ---
-file_id: CONCEPT_TOOL_PYDANTIC
-title: "Pydantic (Data Validation & Settings)"
-category: "Wiki Page"
-prefix: "WIKI"
-agent_id: "@scout"
-status: "stub"
-source: "[[SOURCE_AIMET_AGENTIC_ROADMAP_2026]]"
+file_id: CONCEPT_TOOL_Pydantic
+title: Pydantic (Data Validation & Settings)
+type: concept
+status: DRAFT
+tags:
+  - Wiki Page
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-08
+last_updated: 2026-05-08
 ---
 
 # Pydantic (Data Validation & Settings)
@@ -18,7 +22,7 @@ Pydantic là thư viện kiểm soát dữ liệu (Data Validation) mạnh mẽ 
 2. **Structured Output**: Ép LLM trả về dữ liệu định dạng JSON hợp lệ thông qua `BaseModel`.
 3. **Error Handling**: Tự động phát hiện lỗi khi LLM truyền sai tham số và cung cấp thông báo lỗi có cấu trúc để Agent tự sửa (Self-correction).
 
-## Ví dụ đối chiếu (Rule 17)
+## Ví dụ đối chiếu (R18)
 - **Ví dụ thực tế (Original)**: Khi định nghĩa một công cụ lấy thời tiết, Pydantic đảm bảo tham số `city` phải là String và `days` phải là Integer từ 1-7.
 - **Ẩn dụ sư phạm (Pedagogical)**: [Phóng tác] Giống như một "Cửa an ninh" tại sân bay: Chỉ những hành khách có giấy tờ (dữ liệu) đúng quy chuẩn mới được đi qua. Nếu thiếu hoặc sai, cửa sẽ báo động (Error) và yêu cầu cung cấp lại chính xác.
 

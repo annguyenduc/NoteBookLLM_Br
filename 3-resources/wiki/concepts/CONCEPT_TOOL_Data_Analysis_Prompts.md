@@ -1,13 +1,14 @@
 ---
-file_id: "CONCEPT_TOOL_DATA_ANALYSIS_PROMPTS"
-title: "Mẫu câu lệnh Phân tích dữ liệu (Data Analysis Prompts)"
-category: "TOOL"
-prefix: "TOOL"
-tags: ["Gemini", "Data_Analysis", "Python", "[[ENTITY_SQL|SQL]]", "Prompts"]
-source: "[[SOURCE_TOOL_GEMINI_DEVELOPER_CODEX]]"
-status: "verified"
-created: "2026-05-01"
-last_updated: "2026-05-01"
+file_id: CONCEPT_TOOL_Data_Analysis_Prompts
+title: Mẫu câu lệnh Phân tích dữ liệu (Data Analysis Prompts)
+type: concept
+status: VERIFIED
+tags: 
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-01
+last_updated: 2026-05-01
 ---
 
 # Mẫu câu lệnh Phân tích dữ liệu (Data Analysis Prompts)
@@ -25,7 +26,7 @@ last_updated: "2026-05-01"
 > **Cấu trúc**: "Analyze the provided dataset schema. Suggest 5 key hypotheses I should test and provide the Python code to generate the descriptive statistics for each."
 > **Mục tiêu**: Khai phá ý tưởng phân tích từ Schema thô.
 
-## 3. Ví dụ đối chiếu (Rule 17: Double Examples)
+## 3. Ví dụ đối chiếu (R18: Double Examples)
 
 ### Ví dụ kỹ thuật (Technical)
 > **Bối cảnh**: Chuyển đổi dữ liệu JSON lồng nhau sang DataFrame phẳng.

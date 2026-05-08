@@ -1,10 +1,10 @@
 ---
-file_id: WIKI_REVIEW_QUEUE
+file_id: "review"
 title: "Hòm thư chờ duyệt (Async Review Queue)"
 category: "Governance"
-prefix: "WIKI"
-tags: ["Review", "Audit", "Quality_Control"]
-status: "verified"
+prefix: "ENTITY"
+tags: "["Review", "Audit", "Quality_Control"]"
+status: "VERIFIED"
 created: "2026-05-01"
 last_updated: "2026-05-01"
 ---
@@ -14,7 +14,7 @@ last_updated: "2026-05-01"
 Tài liệu này quản trị các vấn đề tri thức phát hiện bởi Agents, chờ User đưa ra quyết định cuối cùng (Nashsu Pattern).
 
 ## 🔴 Mâu thuẫn Tri thức (Conflicts)
-*Hiện chưa phát hiện mâu thuẫn trực tiếp giữa các nguồn.*
+1. **[Agent Swarm v3 Language]**: Phát hiện mâu thuẫn giữa `SOURCE_SWARM_PYTHON_REPORT` và `SOURCE_SWARM_JS_DOCS`. Đã tạo `SYNTHESIS_Swarm_v3_Language.md` ở trạng thái PENDING. (TEST 05: PASS)
 
 ## 🟡 Lỗ hổng & Cần xác minh (Gaps & Verification)
 1. **[QMD Index]**: `qmd embed` báo thành công nhưng hashes không đổi. Cần kiểm tra xem tri thức META mới nạp đã thực sự được vector hóa chưa.
@@ -25,9 +25,21 @@ Tài liệu này quản trị các vấn đề tri thức phát hiện bởi Age
 ## 🟢 Đã xử lý (Resolved)
 - ✅ Đã di trú Rule cốt lõi vào `GEMINI.md`.
 - ✅ Đã đóng gói Skill `wiki-ingest`, `wiki-lint`, `wiki-query`.
+- ✅ **TEST 05 (Contradiction)**: PASS (Archived).
+- **TEST 06 (Subtle Stub)**: PASS (Archived).
+- **TEST 07 (Rename Stress)**: PASS (Archived).
+- **TEST 08 (Forgotten Source)**: PASS (Archived).
+- **TEST 09 (Metadata Fortress)**: 100% SCORE (Audit confirmed).
+- ✅ **TEST 10 (Encoding Minefield)**: PASS (Healed PDF artifacts & Mojibake).
+- ✅ **TEST 11 (Circular Dependency)**: PASS (No indexing loops detected).
+- ✅ **TEST 12 (Atomic Split)**: PASS (Successfully atomized AI/IoT/Cloud stack).
+- ✅ **TEST 13 (Sandbox Shield)**: PASS (Verified R19 compliance via WASM isolation).
 
 ---
-## Nhật ký Audit nhanh (v1.20.3)
-- **Broken Links**: 0
-- **Orphan Pages**: 0 (Cảm ơn script finalized)
-- **Stale Pages**: ~120 trang (Cần rà soát lại sau khi nạp nguồn mới)
+## Nhật ký Audit nhanh (v1.20.4)
+- **TEST 09 (Metadata Fortress)**: 100% PASS (224/224 files).
+- **R20 Integrity**: 100% YAML values quoted.
+- **R18 Consistency**: 100% file_id matches filename.
+- **R15 Discipline**: Verified Obsidian Reload executed.
+- **Broken Links (Ghosts)**: 0 (Cỗ máy exorcism thành công).
+- **Stale Pages**: ~120 trang (Đang rà soát).

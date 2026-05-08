@@ -1,15 +1,15 @@
 ---
-file_id: CONCEPT_DSML_MARKETING_METRICS
-title: "Marketing Metrics (Chỉ số đo lường tiếp thị)"
-category: "Wiki Page"
-prefix: "WIKI"
-agent_id: "@engineer"
-status: "verified"
-created: "2026-05-03"
-last_updated: "2026-05-03"
-sources:
-  - "SOURCE_DSML_MARKETING_ANALYTICS"
-  - "SOURCE_COURSERA-AI-essential-Stay_up_to_date_with_AI"
+file_id: CONCEPT_DSML_Marketing_Metrics
+title: Marketing Metrics (Chỉ số đo lường tiếp thị)
+type: concept
+status: VERIFIED
+tags:
+  - Wiki Page
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-03
+last_updated: 2026-05-03
 ---
 
 ## ## For future Claude
@@ -20,7 +20,7 @@ Trang này tổng hợp các chỉ số (metrics) quan trọng nhất trong Mark
 2.  **Conversion Funnel**: Các chỉ số phải được theo dõi xuyên suốt phễu chuyển đổi (AARRR Framework).
 3.  **ROI-Centric**: Mục tiêu cuối cùng của mọi metric là chứng minh và tối ưu hóa lợi nhuận trên vốn đầu tư (ROI).
 
-## ## Ví dụ đối chiếu (Rule 17)
+## ## Ví dụ đối chiếu (R18)
 -   **Ví dụ thực tế (Original)**: `CAC (Customer Acquisition Cost)` của một khóa học là $50, trong khi `CLV (Customer Lifetime Value)` trung bình chỉ là $40. Đây là dấu hiệu của một mô hình kinh doanh không bền vững, cần tối ưu hóa quảng cáo hoặc tăng giá trị vòng đời khách hàng.
 -   **Ẩn dụ sư phạm (Pedagogical)**: Marketing metrics giống như các "đồng hồ đo" trên bảng điều khiển của một chiếc xe đua. Nếu bạn chỉ nhìn vào "tốc độ" (Số lượng click) mà không nhìn vào "kim xăng" (Chi phí bỏ ra) hoặc "nhiệt độ động cơ" (Tỷ lệ churn), bạn có thể cán đích sớm nhưng chiếc xe sẽ hỏng ngay sau đó.
 
@@ -42,7 +42,7 @@ Các chỉ số cốt lõi cần nắm vững:
 - **Nguồn**: SOURCE_DSML_DATA_ANALYTICS_CONCEPTS — Framework: Conversion Funnels.
 
 ## ## History / Revisions
-- **2026-05-03**: [@engineer] Chuyển đổi từ stub sang verified, bổ sung Rule 17 và Rule 20.
+- **2026-05-03**: [@engineer] Chuyển đổi từ stub sang verified, bổ sung R18 và Rule 20.
 
 
 ## 4F Reflection

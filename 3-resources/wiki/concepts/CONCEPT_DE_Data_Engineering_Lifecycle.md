@@ -1,14 +1,15 @@
 ---
-file_id: CONCEPT_DE_DATA_ENGINEERING_LIFECYCLE
-title: "Data Engineering Lifecycle (Vòng đời Kỹ thuật Dữ liệu)"
-category: "Wiki Page"
-prefix: "WIKI"
-agent_id: "@engineer"
-status: "verified"
-created: "2026-05-02"
-last_updated: "2026-05-03"
-sources:
-  - "SOURCE_DE_FUNDAMENTALS_OF_DATA_ENGINEERING"
+file_id: CONCEPT_DE_Data_Engineering_Lifecycle
+title: Data Engineering Lifecycle (Vòng đời Kỹ thuật Dữ liệu)
+type: concept
+status: VERIFIED
+tags:
+  - Wiki Page
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-02
+last_updated: 2026-05-03
 ---
 
 ## ## For future Claude
@@ -26,7 +27,7 @@ Trang này định nghĩa Vòng đời Kỹ thuật Dữ liệu (Data Engineerin
 4.  **Transformation**: Làm sạch, biến đổi và mô hình hóa dữ liệu.
 5.  **Serving**: Cung cấp dữ liệu cho Analytics, ML hoặc các ứng dụng khác.
 
-## ## Ví dụ đối chiếu (Rule 17)
+## ## Ví dụ đối chiếu (R18)
 - **Ví dụ thực tế (Original)**: Quy trình từ lúc khách hàng click mua hàng trên Website (Generation) -> Dữ liệu đẩy vào Kafka (Ingestion) -> Lưu tại S3 (Storage) -> Chạy dbt để tính doanh thu (Transformation) -> Dashboard Tableau (Serving).
 - **Ẩn dụ sư phạm (Pedagogical)**: [Phóng tác] Giống như hệ thống cung cấp nước sạch. Nước từ sông ngòi (Generation) -> Trạm bơm hút nước (Ingestion) -> Bể chứa (Storage) -> Nhà máy lọc nước (Transformation) -> Vòi nước tại nhà dân (Serving). Nếu bất kỳ giai đoạn nào bị lỗi, người dân sẽ không có nước sạch để dùng.
 
@@ -34,7 +35,7 @@ Trang này định nghĩa Vòng đời Kỹ thuật Dữ liệu (Data Engineerin
 - **Nguồn**: SOURCE_DE_FUNDAMENTALS_OF_DATA_ENGINEERING — Chapter 2.
 
 ## ## History / Revisions
-- **2026-05-03**: [@engineer] Pressure Chain Healing. Bổ sung Rule 17, 20 và chuẩn hóa metadata.
+- **2026-05-03**: [@engineer] Pressure Chain Healing. Bổ sung R18, 20 và chuẩn hóa metadata.
 
 
 ## 4F Reflection

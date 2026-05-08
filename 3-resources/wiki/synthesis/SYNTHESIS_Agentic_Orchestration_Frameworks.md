@@ -1,61 +1,38 @@
 ---
-file_id: "SYNTHESIS_Agentic_Orchestration_Frameworks"
-title: "SYNTHESIS: Agentic Orchestration Frameworks (LangGraph vs CrewAI vs AutoGen)"
+file_id: SYNTHESIS_Agentic_Orchestration_Frameworks
+title: SYNTHESIS Khung điều phối Agentic AI (Orchestration Frameworks)
 type: synthesis
-tags: ["Agentic AI", "Comparison", "Frameworks", "Orchestration", "AIMET"]
-status: "verified"
-created: "2026-05-02"
-last_updated: "2026-05-02"
+status: VERIFIED
+tags:
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-01
+last_updated: 2026-05-07
 ---
 
-# Agentic Orchestration Frameworks
+# Khung điều phối Agentic AI (Orchestration Frameworks)
 
-Trang này hợp nhất tri thức về các bộ khung (frameworks) hàng đầu để xây dựng hệ thống Multi-Agent, dựa trên lộ trình kỹ thuật năm 2026.
+## 1. Tổng quan
+Sự chuyển dịch từ các ứng dụng LLM đơn lẻ sang các hệ thống đa Agent (Multi-Agent Systems) đòi hỏi các khung điều phối mạnh mẽ để quản lý hội thoại, phân chia nhiệm vụ và kiểm soát luồng thực thi.
 
-## ⚖️ 1. Ma trận so sánh (Decision Matrix)
+## 2. Đối chiếu các Framework phổ biến
 
-| Tiêu chí | [[ENTITY_AIMET_LangGraph|LangGraph]] | [[ENTITY_AIMET_CrewAI|CrewAI]] | [[ENTITY_TOOL_LangChain|LangChain]] |
-|---|---|---|---|
-| **Mô hình chính** | State Machine (Graph) | Role-based (Crew) | Chains (Sequential) |
-| **Độ kiểm soát** | Tối đa (Explicit Edges) | Trung bình (Opinionated) | Thấp (Implicit) |
-| **Độ phức tạp** | Cao | Thấp | Trung bình |
-| **Lý tưởng cho** | Production, Long-running | Rapid Prototyping | Standard RAG |
+| Tiêu chí | [[ENTITY_AIMET_AutoGen|AutoGen]] | [[ENTITY_AIMET_CrewAI|CrewAI]] | [[ENTITY_TOOL_LangChain|LangGraph]] |
+| : | : |
+| **Triết lý** | Hội thoại (Conversational) | Vai trò & Quy trình (Role/Process) | Đồ thị trạng thái (State Graph) |
+| **Điểm mạnh** | Linh hoạt cao, hội thoại tự nhiên | Dễ cấu hình cho quy trình doanh nghiệp | Kiểm soát trạng thái chặt chẽ |
+| **Độ phức tạp** | Trung bình | Thấp | Cao |
 
-## 🧩 2. Các Pattern tích hợp (Rule 3: Knowledge Compounding)
+## 3. Kết luận chiến lược
+- Dùng **AutoGen** khi cần sự tương tác linh hoạt và giải quyết vấn đề sáng tạo.
+- Dùng **CrewAI** khi muốn tự động hóa các quy trình hành chính hoặc nghiên cứu có cấu trúc.
+- Dùng **LangGraph** (thuộc hệ sinh thái LangChain) khi cần độ tin cậy và khả năng kiểm soát tuyệt đối trong môi trường sản xuất (Production).
 
-### Supervisor Pattern
-Ứng dụng [[CONCEPT_AIMET_MultiAgent_Architecture]] để phân quyền. 
-- Trong **LangGraph**, Supervisor là một node điều hướng (router).
-- Trong **CrewAI**, Supervisor là một thuộc tính `manager_llm`.
-
-### Memory & Persistence
-- **LangGraph** dẫn đầu với cơ chế **Checkpointing** ([[CONCEPT_AIMET_Memory_Management]]), cho phép lưu trạng thái của toàn bộ đồ thị tri thức.
-- **CrewAI** sử dụng bộ nhớ ngắn hạn và dài hạn dựa trên Vector Store ([[CONCEPT_AIMET_RAG_Systems]]).
-
-## 🛠 3. Lộ trình triển khai (Best Practices)
-
-1. **Giai đoạn 1**: Prototype bằng **CrewAI** để định hình các vai trò (Roles) và Tasks.
-2. **Giai đoạn 2**: Nếu cần độ tin cậy cao và xử lý lỗi phức tạp, chuyển đổi sang **LangGraph** để model dưới dạng State Machine.
-3. **Giai đoạn 3**: Tích hợp các công cụ chuyên biệt qua **Tool schemas** ([[CONCEPT_AIMET_Tool_Integration]]).
-
-## 4. Production & Safety (The 2026 Mandate)
-Để đưa các framework trên vào thực tế, hệ sinh thái 2026 bổ sung 2 lớp kiểm soát:
-- **Security**: Áp dụng [[CONCEPT_AIMET_Production_Guardrails]] để ngăn chặn Prompt Injection và bảo vệ dữ liệu nhạy cảm thông qua cấu trúc Graph định hướng.
-- **Evaluation**: Sử dụng [[CONCEPT_AIMET_Evaluation_Metrics]] (RAGAS, DeepEval) làm thước đo định lượng cho sự thành công của Agent, chuyển dịch từ đánh giá định tính sang kiểm định CI/CD tự động.
-
-## 🔍 5. Trích dẫn nguồn (Rule 14)
-
-- **Nguồn chính**: [[SOURCE_AIMET_AGENTIC_ROADMAP_2026]] — Section 4 & 5.
-- **Nguồn bổ trợ**: [[ENTITY_AIMET_LangGraph]], [[ENTITY_AIMET_CrewAI]].
-- **Fact-check**: Đã đối chiếu sự khác biệt giữa "deterministic workflows" và "conversational autonomy" (Roadmap 2026).
-
----
-WRITE REPORT:
-  file: "3-resources/wiki/synthesis/SYNTHESIS_Agentic_Orchestration_Frameworks.md"
-  operation: "create"
-  added: "TRIGGER: Synthesis Hook (>=3 sources). Hợp nhất tri thức frameworks."
-  compliance: "Rule 3 & Rule 14 OK."
-
+## 4. Trích dẫn nguồn
+- [[ENTITY_AIMET_AutoGen]]
+- [[ENTITY_AIMET_CrewAI]]
+- [[ENTITY_TOOL_LangChain]]
 
 ## 4F Reflection
 - **Facts**: 

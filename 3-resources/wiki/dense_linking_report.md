@@ -1,3 +1,9 @@
+---
+file_id: "dense_linking_report"
+title: "dense linking report"
+status: "STUB"
+---
+
 # Báo cáo Đề xuất Liên kết Dày đặc (Dense Linking)
 
 Dưới đây là danh sách các từ khóa được tìm thấy trong các trang nhưng chưa được liên kết Wiki.

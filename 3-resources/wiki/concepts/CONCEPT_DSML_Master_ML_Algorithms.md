@@ -1,14 +1,15 @@
 ---
-file_id: CONCEPT_DSML_MASTER_ML_ALGORITHMS
-title: "Master ML Algorithms (Tổng quan các thuật toán Machine Learning)"
-category: "Wiki Page"
-prefix: "WIKI"
-agent_id: "@engineer"
-status: "verified"
-created: "2026-05-02"
-last_updated: "2026-05-03"
-sources:
-  - "SOURCE_DSML_DATA_ANALYTICS_CONCEPTS"
+file_id: CONCEPT_DSML_Master_ML_Algorithms
+title: Master ML Algorithms (Tổng quan các thuật toán Machine Learning)
+type: concept
+status: VERIFIED
+tags:
+  - Wiki Page
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-02
+last_updated: 2026-05-03
 ---
 
 ## ## For future Claude
@@ -26,7 +27,7 @@ Trang này cung cấp cái nhìn tổng quan về hệ sinh thái các thuật t
 4.  **Clustering**: K-Means, Hierarchical Clustering, DBSCAN.
 5.  **Dimensionality Reduction**: PCA (Principal Component Analysis), t-SNE.
 
-## ## Ví dụ đối chiếu (Rule 17)
+## ## Ví dụ đối chiếu (R18)
 - **Ví dụ thực tế (Original)**: Sử dụng Logistic Regression để phân loại Email là "Spam" hay "Không Spam" dựa trên tần suất xuất hiện của các từ khóa nhất định.
 - **Ẩn dụ sư phạm (Pedagogical)**: [Phóng tác] Thuật toán ML giống như một "Bộ dụng cụ sửa chữa". Bạn không dùng búa (Regression) để vặn vít (Clustering). Mỗi công cụ có một chức năng riêng và người thợ giỏi là người biết khi nào dùng công cụ nào.
 
@@ -34,7 +35,7 @@ Trang này cung cấp cái nhìn tổng quan về hệ sinh thái các thuật t
 - **Nguồn**: SOURCE_DSML_DATA_ANALYTICS_CONCEPTS — Overview Section.
 
 ## ## History / Revisions
-- **2026-05-03**: [@engineer] Pressure Chain Healing. Bổ sung Rule 17, 20 và chuẩn hóa metadata.
+- **2026-05-03**: [@engineer] Pressure Chain Healing. Bổ sung R18, 20 và chuẩn hóa metadata.
 
 
 ## 4F Reflection

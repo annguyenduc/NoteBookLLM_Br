@@ -1,15 +1,15 @@
 ---
-file_id: CONCEPT_TOOL_GEMINI_ROLE_PROMPTING
-title: "Gemini Role Prompting (Persona Expert Design)"
-category: "Wiki Page"
-prefix: "WIKI"
-agent_id: "@engineer"
-status: "verified"
-created: "2026-05-03"
-last_updated: "2026-05-03"
-sources:
-  - "[[SOURCE_TOOL_GEMINI_DEVELOPER_CODEX]]"
-  - "SOURCE_META_KARPATHY_LLM_WIKI"
+file_id: CONCEPT_TOOL_Gemini_Role_Prompting
+title: Gemini Role Prompting (Persona Expert Design)
+type: concept
+status: VERIFIED
+tags:
+  - Wiki Page
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-03
+last_updated: 2026-05-03
 ---
 
 ## ## For future Claude
@@ -18,9 +18,9 @@ Trang này định nghĩa kỹ thuật thiết lập "Persona" (vai trò) cho Ge
 ## ## Key Claims / Summary
 1.  **Expert Persona**: Việc gán vai trò chuyên gia (Senior Engineer, Auditor) giúp giảm tỷ lệ hallucination và tăng độ sâu của câu trả lời.
 2.  **Constraint Enforcement**: Role Prompting không chỉ là "là ai" mà còn là "làm gì/không làm gì" (Constraints).
-3.  **Context Alignment**: Giúp mô hình ưu tiên các bộ quy tắc cụ thể (ví dụ: Rule 17, Rule 20) trong quá trình thực thi.
+3.  **Context Alignment**: Giúp mô hình ưu tiên các bộ quy tắc cụ thể (ví dụ: R18, Rule 20) trong quá trình thực thi.
 
-## ## Ví dụ đối chiếu (Rule 17)
+## ## Ví dụ đối chiếu (R18)
 -   **Ví dụ thực tế (Original)**: `Bạn là một Senior Python Engineer với 10 năm kinh nghiệm. Hãy review đoạn code sau theo tiêu chuẩn PEP8 và tối ưu hóa Big O.`
 -   **Ẩn dụ sư phạm (Pedagogical)**: Giống như việc yêu cầu một người đeo "chiếc mặt nạ" của một chuyên gia trước khi bước vào phòng họp. Chiếc mặt nạ không chỉ thay đổi diện mạo mà còn thay đổi cả cách họ phát ngôn và hành xử để phù hợp với kỳ vọng của căn phòng đó.
 
@@ -41,7 +41,7 @@ Role Prompting trong Gemini 1.5 Pro và Flash tận dụng khả năng Long Cont
 - **Nguồn**: SOURCE_META_KARPATHY_LLM_WIKI — Triết lý về "Low Friction" và "Expert persona".
 
 ## ## History / Revisions
-- **2026-05-03**: [@engineer] Chuyển đổi từ stub sang verified, bổ sung Rule 17 và Rule 20.
+- **2026-05-03**: [@engineer] Chuyển đổi từ stub sang verified, bổ sung R18 và Rule 20.
 
 
 ## 4F Reflection

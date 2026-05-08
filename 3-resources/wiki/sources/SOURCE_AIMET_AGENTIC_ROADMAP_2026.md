@@ -1,17 +1,17 @@
-﻿---
-file_id: SOURCE_AIMET_AGENTIC_ROADMAP_2026
-title: "Agentic AI Engineer Roadmap (2026) - Interview Q&A"
-category: "Source Summary"
-prefix: "SOURCE"
-agent_id: "@engineer"
-status: "DRAFT"
-created: "2026-05-03"
-last_updated: "2026-05-05"
-raw_sha256: "941eb79b2c6b399cfcbacdcdbaeb4de73651e6a12eccf587e465b0f91bab7818"
-SOURCE_TYPE: "PDF Roadmap"
-author: "Lamhot Siagian"
-year: 2026
 ---
+file_id: SOURCE_AIMET_AGENTIC_ROADMAP_2026
+title: SOURCE AIMET AGENTIC ROADMAP 2026
+type: source
+status: DRAFT
+tags:
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-08
+last_updated: 2026-05-08
+---
+
+﻿
 
 ## For future Claude
 This source is a 23-page interview-oriented roadmap for becoming an Agentic AI Engineer in 2026.

@@ -1,11 +1,15 @@
 ---
-file_id: CONCEPT_AI_RAG_RERANKING
-title: "RAG Reranking (Optimizing Retrieval Quality)"
-category: "Wiki Page"
-prefix: "WIKI"
-agent_id: "@scout"
-status: "verified"
-source: "[[SOURCE_AIMET_AGENTIC_ROADMAP_2026]]"
+file_id: CONCEPT_AI_RAG_Reranking
+title: RAG Reranking (Optimizing Retrieval Quality)
+type: concept
+status: VERIFIED
+tags:
+  - Wiki Page
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-08
+last_updated: 2026-05-08
 ---
 
 # RAG Reranking (Optimizing Retrieval Quality)
@@ -18,7 +22,7 @@ Reranking là bước xử lý hậu kỳ sau khi truy xuất ban đầu (Initia
 2. **Giảm nhiễu (Noise Reduction)**: Loại bỏ các đoạn văn bản có độ tương đồng vector cao nhưng nội dung thực tế không liên quan.
 3. **Cải thiện độ chính xác**: Giúp Agent đưa ra câu trả lời dựa trên bằng chứng (Evidence) mạnh mẽ nhất.
 
-## Ví dụ đối chiếu (Rule 17)
+## Ví dụ đối chiếu (R18)
 - **Ví dụ thực tế (Original)**: Sử dụng **Cohere Rerank API** hoặc mô hình **BGE-Reranker** sau khi lấy ra Top 10 chunks từ ChromaDB, sau đó chỉ lấy Top 3 chunks có điểm cao nhất để nạp vào LLM.
 - **Ẩn dụ sư phạm (Pedagogical)**: [Phóng tác] Giống như một **Bộ lọc của Giám khảo (Jury Filter)**: Vòng sơ tuyển (Vector Search) chọn ra 100 thí sinh có ngoại hình phù hợp. Nhưng vòng phỏng vấn chuyên sâu (Reranking) mới thực sự tìm ra 3 người có năng lực chuyên môn tốt nhất để vào vòng chung kết.
 

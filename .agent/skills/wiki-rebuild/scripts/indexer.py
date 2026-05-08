@@ -19,7 +19,7 @@ def get_atoms_by_type():
     try:
         conn = sqlite3.connect(DB_PATH)
         cursor = conn.cursor()
-        rows = cursor.execute("SELECT file_id, title, type, status FROM atoms ORDER BY title ASC").fetchall()
+        rows = cursor.execute("SELECT file_id, title, type, status FROM atoms WHERE status != 'DEPRECATED' ORDER BY title ASC").fetchall()
         for file_id, title, atom_type, status in rows:
             if atom_type not in categories:
                 categories[atom_type] = []
@@ -44,7 +44,8 @@ def update_wiki_index():
     order = ["Concept", "Entity", "Source", "Synthesis", "Decision"]
     for cat in order:
         if cat in categories:
-            lines.append(f"\n### {cat}s")
+            header = f"{cat}s" if not cat.endswith('s') and cat != "Entity" else "Entities" if cat == "Entity" else cat
+            lines.append(f"\n### {header}")
             for atom in categories[cat]:
                 status_icon = "✅" if atom["status"] in ["VERIFIED", "SYNTHESIZED"] else "📝"
                 lines.append(f"- {status_icon} [[{atom['id']}|{atom['title']}]]")

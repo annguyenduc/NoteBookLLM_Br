@@ -1,26 +1,14 @@
 ---
-file_id: SYNTHESIS_MASTER_SECOND_BRAIN_BLUEPRINT
+file_id: SYNTHESIS_MASTER_Second_Brain_Blueprint
 title: "SYNTHESIS: Master Second Brain Blueprint (V3.0 - Unified)"
 type: synthesis
+status: VERIFIED
+tags:
 ai-first: true
 confidence: high
-status: "verified"
-sources:
-  - "SOURCE_META_KARPATHY_LLM_WIKI"
-  - "SOURCE_META_NASHUS_LLMWIKI"
-  - "[[SOURCE_META_KARPATHY_CLAUDE_SKILLS]]"
-  - "[[SOURCE_META_WIKI_GEN_CLONE]]"
-relationships:
-  - type: "supersedes"
-    target: "[[SYNTHESIS_ULTIMATE_Second_Brain_Spec]]"
-  - type: "supersedes"
-    target: "[[SYNTHESIS_Second_Brain_Standard_Spec]]"
-  - type: "supersedes"
-    target: "[[SYNTHESIS_Wiki_Intelligence_Architecture]]"
-  - type: "incorporates"
-    target: "SYNTHESIS_Wiki_Audit_20260501"
-created: "2026-05-02"
-last_reconciled: "2026-05-02"
+last_reconciled: 2026-05-02
+created: 2026-05-02
+last_updated: 2026-05-08
 ---
 
 # Master Second Brain Blueprint (Đại bản thiết kế Bộ não thứ hai)
@@ -56,7 +44,7 @@ Bắt buộc có: `file_id`, `type`, `ai-first: true`, `source`, `relationships`
 2. `## Key Claims / Summary`
 3. `## Detailed Analysis` (Sử dụng Recency Markers)
 4. `## Relationships` (Visual list)
-5. `## Source Tracing` (Rule 14 compliance)
+5. `## Source Tracing` (R3 compliance)
 6. `## History / Revisions`
 
 ### 3. Hệ thống 7 Lệnh vận hành (Operational Protocol)
@@ -83,7 +71,7 @@ Dựa trên kết quả kiểm toán, hệ thống cần tập trung vào:
 - [ ] **Rule 7 Compliance**: Hoàn tất việc chuẩn hóa Prefix cho toàn bộ `raw/sources/`.
 
 ## ## Relationships
-- `governs` -> [[CONCEPT_index]]
+- `governs` -> [[index]]
 - `supersedes` -> [[SYNTHESIS_ULTIMATE_Second_Brain_Spec]]
 - `supersedes` -> [[SYNTHESIS_Second_Brain_Standard_Spec]]
 - `supersedes` -> [[SYNTHESIS_Wiki_Intelligence_Architecture]]

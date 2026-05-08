@@ -4,6 +4,7 @@ import hashlib
 import sqlite3
 import json
 import subprocess
+import argparse
 from datetime import datetime
 
 ROOT_DIR = os.getenv(
@@ -31,7 +32,7 @@ def get_routing_info(file_path):
         return json.loads(result.stdout)
     return None
 
-def ingest_file(file_path):
+def ingest_file(file_path, learning=False):
     print(f"--- Ingesting: {file_path} ---")
     
     # Normalize path for comparison
@@ -42,10 +43,10 @@ def ingest_file(file_path):
         print(f"ERROR: File not found {file_path}")
         return False
 
-    # [V2.0] RULE R11: No auto-stub creation (< 200 bytes)
+    # [V2.0] R11: No auto-stub creation (< 200 bytes)
     # Stub files in 00_Inbox/ are processed weekly, not indexed immediately.
     if os.path.getsize(file_path) < 200:
-        print(f"Info: Skipping stub file {file_path} (< 200 bytes) per Rule R11.")
+        print(f"Info: Skipping stub file {file_path} (< 200 bytes) per R11.")
         return True
 
     # 1. Calculate Hash
@@ -150,11 +151,12 @@ def ingest_file(file_path):
     file_type = "source" # Default for ingestion
     
     try:
+        learning_flag = 1 if learning else 0
         # Insert into atoms
         cursor.execute("""
             INSERT INTO atoms (file_id, title, type, status, confidence, learning_source, file_hash, agent_id)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-        """, (file_path, title, file_type, 'DRAFT', confidence, 0, file_hash, '@engineer'))
+        """, (file_path, title, file_type, 'DRAFT', confidence, learning_flag, file_hash, '@engineer'))
         
         # Insert into review_queue
         cursor.execute("INSERT INTO review_queue (item_id, reason) VALUES (?, ?)", 
@@ -177,8 +179,9 @@ def ingest_file(file_path):
     return True
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Usage: python ingest.py <file_path>")
-        sys.exit(1)
+    parser = argparse.ArgumentParser(description="Ingest a file into the Wiki.")
+    parser.add_argument("file_path", help="Path to the file to ingest")
+    parser.add_argument("--learning", action="store_true", default=False, help="Mark as learning source")
+    args = parser.parse_args()
         
-    ingest_file(sys.argv[1])
+    ingest_file(args.file_path, learning=args.learning)

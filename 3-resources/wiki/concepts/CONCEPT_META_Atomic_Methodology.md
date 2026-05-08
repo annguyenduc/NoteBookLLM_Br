@@ -1,15 +1,15 @@
 ---
-file_id: CONCEPT_META_ATOMIC_METHODOLOGY
-title: "Atomic Methodology (Phương pháp luận Wiki Hạt nhân)"
-category: "Wiki Page"
-prefix: "WIKI"
-agent_id: "@engineer"
-status: "verified"
-created: "2026-05-01"
-last_updated: "2026-05-03"
-sources:
-  - "[[SOURCE_META_LLM_WIKI]]"
-  - "SOURCE_META_KARPATHY_LLM_WIKI"
+file_id: CONCEPT_META_Atomic_Methodology
+title: Atomic Methodology (Phương pháp luận Wiki Hạt nhân)
+type: concept
+status: VERIFIED
+tags:
+  - Wiki Page
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-01
+last_updated: 2026-05-03
 ---
 
 ## ## For future Claude
@@ -43,7 +43,7 @@ Wiki Hạt nhân là cách tiếp cận quản trị tri thức trong đó mỗi
 - **Granularity**: Độ chi tiết vừa đủ để LLM có thể xử lý trong một cửa sổ ngữ cảnh nhỏ.
 - **Compounding Knowledge**: Tri thức được "biên dịch" một lần và tích lũy theo thời gian, thay vì phải khám phá lại từ đầu như mô hình RAG truyền thống.
 
-## 4. Ví dụ đối chiếu (Rule 17: Double Examples)
+## 4. Ví dụ đối chiếu (R18: Double Examples)
 
 ### Ví dụ từ Công nghệ (Original)
 > **Bối cảnh**: Quản lý một repository mã nguồn lớn.
@@ -60,7 +60,7 @@ Wiki Hạt nhân là cách tiếp cận quản trị tri thức trong đó mỗi
 - **Nguồn**: SOURCE_META_KARPATHY_LLM_WIKI — Concept: Expert Persona & Low Friction.
 
 ## ## History / Revisions
-- **2026-05-03**: [@engineer] Pressure Chain Healing. Bổ sung Rule 17, 20 và chuẩn hóa metadata.
+- **2026-05-03**: [@engineer] Pressure Chain Healing. Bổ sung R18, 20 và chuẩn hóa metadata.
 
 
 ## 4F Reflection

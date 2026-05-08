@@ -1,48 +1,37 @@
 ---
-file_id: "CONCEPT_THINK_Naive_Bayes_Logic"
-title: "CONCEPT: Tư duy Naive Bayes (Naive Bayes Logic)"
+file_id: CONCEPT_THINK_Naive_Bayes_Logic
+title: CONCEPT Thuật toán Naive Bayes
 type: concept
-tags: ["Thinking", "Probability", "Classification", "DA_Core"]
-status: "verified"
-created: "2026-04-29"
-last_updated: "2026-05-01"
+status: VERIFIED
+tags:
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-01
+last_updated: 2026-05-07
 ---
 
-# Tư duy Naive Bayes (Naive Bayes Logic)
+# Thuật toán Naive Bayes
 
 ## 1. Định nghĩa
-Naive Bayes là một thuật toán phân loại dựa trên Định lý Bayes với giả định "ngây ngô" (naive) rằng: tất cả các đặc điểm (features) đều độc lập với nhau. Dù giả định này thường sai trong thực tế, thuật toán vẫn hoạt động cực kỳ hiệu quả trong việc phân loại văn bản.
+Naive Bayes là một nhóm các thuật toán phân loại dựa trên **Định lý Bayes**. Nó được gọi là "Naive" (Ngây thơ) vì nó giả định rằng các đặc trưng (features) của dữ liệu là hoàn toàn độc lập với nhau, mặc dù trong thực tế chúng thường có liên quan.
 
-## 2. Nguyên lý / Cấu trúc
-- **Xác suất hậu nghiệm (Posterior)**: Xác suất một sự kiện xảy ra khi đã biết bằng chứng (evidence).
-- **Tính độc lập**: Coi mỗi từ trong một email là một bằng chứng độc lập cho việc email đó là "Spam" hay "Không Spam".
-- **Ưu điểm**: Cực nhanh, cần ít dữ liệu huấn luyện, hoạt động tốt với dữ liệu dạng văn bản (Text mining).
+## 2. Nguyên lý
+Thuật toán tính toán xác suất hậu nghiệm (Posterior Probability) của một lớp dựa trên các bằng chứng quan sát được. Nó cực kỳ hiệu quả cho việc phân loại văn bản và xử lý các tập dữ liệu có số lượng chiều (features) lớn.
 
-## 3. Ví dụ đối chiếu (Rule 17: Double Examples)
+## 3. Ví dụ đối chiếu (R18: Double Examples)
 
 ### Ví dụ từ sách (Original)
-> **Bối cảnh**: Bộ lọc thư rác (Spam Filter).
-> **Ứng dụng**: Nếu email chứa các từ "Viagra", "Free", "Money", Naive Bayes sẽ tính xác suất email đó là Spam dựa trên tần suất các từ này xuất hiện trong tập dữ liệu thư rác đã biết trước đó.
-> **Nguồn**: SOURCE_THINK_DATA_SCIENCE_FOR_BUSINESS — Chương 9.
+> **Bối cảnh**: Phân loại email là Spam hay Ham (không phải spam).
+> **Ứng dụng**: Nếu email chứa từ "Viagra" và "Million dollars", Naive Bayes tính xác suất email đó là Spam dựa trên tần suất xuất hiện của các từ này trong các email spam đã biết. Dù hai từ này có thể đi cùng nhau (không độc lập), thuật toán vẫn cho kết quả phân loại rất tốt.
+> **Nguồn**: [[SOURCE_Data_Science_For_Business]].
 
 ### Ứng dụng sư phạm (Pedagogical Application)
-> **Bối cảnh**: Phân loại cảm xúc (Sentiment Analysis) từ phản hồi của học sinh về buổi học.
-> **Ứng dụng**: 
-> - **Input**: "Bài giảng hôm nay rất vui và dễ hiểu".
-> - **Naive Bayes**: Coi "vui" và "dễ hiểu" là hai bằng chứng độc lập của cảm xúc "Tích cực". 
-> - **Kết quả**: Hệ thống tự động dán nhãn "Tích cực" cho phản hồi này để giáo viên tổng hợp nhanh.
+> **Bối cảnh**: Tự động phân loại câu hỏi của học sinh vào các môn học (Toán, Lý, Hóa).
+> **Ứng dụng**: Nếu câu hỏi chứa từ "đạo hàm" và "tích phân", thuật toán tính xác suất và kết luận đây là câu hỏi môn Toán. Tính đơn giản của Naive Bayes giúp hệ thống phản hồi cực nhanh ngay khi học sinh vừa gõ xong câu hỏi.
 
-## 4. Trích dẫn nguồn (Rule 14)
-- **Nguồn**: SOURCE_THINK_DATA_SCIENCE_FOR_BUSINESS — Trang 235-245.
-- **Fact-check**: Đã đối chiếu file raw `THINK_Data_Science_for_Business.md`. [Rule 14: SUCCESS]
-
----
-WRITE REPORT:
-  file: "3-resources/wiki/concepts/CONCEPT_THINK_Naive_Bayes_Logic.md"
-  operation: "overwrite"
-  added: "Chuẩn hóa theo v4.1, giải thích tính ngây ngô (Naive) của thuật toán."
-  removed: "NONE"
-  compliance: "[Rule 20] Đã đối soát Template và Raw thành công."
+## 4. Trích dẫn nguồn
+- **Nguồn**: [[SOURCE_Data_Science_For_Business]].
 
 
 ## 4F Reflection

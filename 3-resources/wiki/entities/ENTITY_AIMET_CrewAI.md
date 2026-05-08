@@ -1,45 +1,32 @@
 ---
-file_id: "ENTITY_AIMET_CrewAI"
-title: "ENTITY: CrewAI (Role-based Multi-Agent Framework)"
+file_id: ENTITY_AIMET_CrewAI
+title: ENTITY CrewAI
 type: entity
-tags: ["Agentic AI", "Framework", "Multi-Agent", "Role-based"]
-status: "draft"
-created: "2026-05-02"
-relationships:
-  - type: "supports"
-    target: "[[CONCEPT_AIMET_MultiAgent_Architecture]]"
-  - type: "contradicts"
-    target: "[[ENTITY_AIMET_LangGraph]]"
+status: VERIFIED
+tags:
+  - TOOL
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-01
+last_updated: 2026-05-07
 ---
 
 # CrewAI
 
-**CrewAI** là framework multi-agent thiết kế theo mô hình **role-based collaboration** — mỗi agent có một "role" (researcher, writer, analyst...) và phối hợp với nhau để hoàn thành task phức tạp.
+## 1. Định nghĩa
+CrewAI là một khung điều phối các Agent AI đóng vai trò khác nhau để làm việc cùng nhau một cách nhịp nhàng. Nó tập trung vào việc tạo ra các "phi đội" (Crews) thực hiện các quy trình làm việc (Workflows) phức tạp.
 
-## Đặc điểm cốt lõi
+## 2. Đặc điểm chính
+- **Role-Based Agents**: Mỗi Agent có một vai trò, mục tiêu và lý lịch cụ thể.
+- **Process Driven**: Hỗ trợ các quy trình làm việc tuần tự (Sequential) hoặc đồng thuận (Consensus).
+- **Task Delegation**: Các Agent có thể tự động phân chia công việc cho nhau.
 
-| Thuộc tính | Mô tả |
-|---|---|
-| **Paradigm** | Role-based agent collaboration |
-| **Strength** | Opinionated, dễ setup, natural language task assignment |
-| **Best for** | Autonomous collaborative tasks, creative pipelines |
-| **vs LangGraph** | Opinionated vs explicit graph control |
-| **vs AutoGen** | Role-first vs conversation-first |
+## 3. Vai trò trong Wiki
+Được sử dụng để nghiên cứu về khả năng tự động hóa các quy trình nghiên cứu tri thức trong Wiki 2.0. Tham chiếu: [[SYNTHESIS_Agentic_Orchestration_Frameworks]].
 
-## Khi nào dùng CrewAI
-
-- Task cần phân chia vai trò rõ ràng (researcher → writer → reviewer)
-- Team cần prototype nhanh mà không cần explicit state machine
-- Conversational autonomy quan trọng hơn deterministic control
-
-## Liên kết
-
-- [[CONCEPT_AIMET_MultiAgent_Architecture]] — supervisor patterns
-- [[ENTITY_AIMET_LangGraph]] — so sánh trực tiếp
-- [[SOURCE_AIMET_AGENTIC_ROADMAP_2026]] — nguồn gốc
-
----
-**Nguồn**: [[SOURCE_AIMET_AGENTIC_ROADMAP_2026]] — Section 4 (Pick a Framework)
+## 4. Trích dẫn nguồn
+- **Nguồn**: CrewAI Official Documentation.
 
 
 ## 4F Reflection

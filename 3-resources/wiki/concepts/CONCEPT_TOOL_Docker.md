@@ -1,11 +1,15 @@
 ---
-file_id: CONCEPT_TOOL_DOCKER
-title: "Docker (Containerization for AI Agents)"
-category: "Wiki Page"
-prefix: "WIKI"
-agent_id: "@scout"
-status: "verified"
-source: "[[SOURCE_AIMET_AGENTIC_ROADMAP_2026]]"
+file_id: CONCEPT_TOOL_Docker
+title: Docker (Containerization for AI Agents)
+type: concept
+status: VERIFIED
+tags:
+  - Wiki Page
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-08
+last_updated: 2026-05-08
 ---
 
 # Docker (Containerization for AI Agents)
@@ -18,7 +22,7 @@ Docker cho phép đóng gói toàn bộ môi trường chạy Agent (code, thư 
 2. **Non-root User**: Luôn chạy container với quyền người dùng thông thường để đảm bảo an ninh (Security-first).
 3. **Environment Isolation**: Tách biệt API Keys và Database URL thông qua file `.env` hoặc Docker Secrets.
 
-## Ví dụ đối chiếu (Rule 17)
+## Ví dụ đối chiếu (R18)
 - **Ví dụ thực tế (Original)**: Sử dụng `Docker Compose` để chạy đồng thời Agent API (FastAPI), Vector Database (Qdrant) và UI (Streamlit) chỉ bằng một câu lệnh.
 - **Ẩn dụ sư phạm (Pedagogical)**: [Phóng tác] Giống như một **Container vận chuyển tiêu chuẩn**: Dù bên trong là hàng hóa gì (Python code, C++ libs), nó vẫn có thể đặt lên bất kỳ con tàu hay xe tải nào (AWS, Azure, Local Server) và vận hành một cách trơn tru mà không sợ bị hỏng hóc do môi trường khác biệt.
 

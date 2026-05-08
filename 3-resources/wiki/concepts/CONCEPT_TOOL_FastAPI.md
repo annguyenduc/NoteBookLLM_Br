@@ -1,11 +1,15 @@
 ---
-file_id: CONCEPT_TOOL_FASTAPI
-title: "FastAPI (Stub)"
-category: "Wiki Page"
-prefix: "WIKI"
-agent_id: "@scout"
-status: "stub"
-source: "[[SOURCE_AIMET_AGENTIC_ROADMAP_2026]]"
+file_id: CONCEPT_TOOL_FastAPI
+title: FastAPI (Stub)
+type: concept
+status: DRAFT
+tags:
+  - Wiki Page
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-08
+last_updated: 2026-05-08
 ---
 
 # FastAPI (Agent Backend Architecture)
@@ -18,7 +22,7 @@ FastAPI là một web framework hiện đại, hiệu suất cao để xây dự
 2. **OpenAPI Generation**: Tự động tạo tài liệu Swagger/ReDoc, giúp các nhà phát triển dễ dàng kiểm thử các Tool Endpoints.
 3. **Dependency Injection**: Quản lý các tài nguyên như kết nối Database hoặc Vector Store một cách hiệu quả.
 
-## Ví dụ đối chiếu (Rule 17)
+## Ví dụ đối chiếu (R18)
 - **Ví dụ thực tế (Original)**: Xây dựng một endpoint `/chat` chấp nhận tin nhắn người dùng, gọi LangGraph để xử lý và trả về phản hồi dạng Stream (Streaming Response).
 - **Ẩn dụ sư phạm (Pedagogical)**: [Phóng tác] Giống như một **Nhà điều phối không lưu (Air Traffic Controller)**: FastAPI không trực tiếp lái máy bay (Agent), nhưng nó điều phối tất cả các luồng cất cánh/hạ cánh (API Requests), đảm bảo mọi thứ đi đúng đường và có đầy đủ thông tin liên lạc.
 

@@ -1,37 +1,39 @@
-﻿---
-file_id: "SOURCE_TOOL_SQL_POCKET_GUIDE"
-SOURCE_ID: SOURCE_TOOL_SQL_POCKET_GUIDE
-title: "TOOL [[ENTITY_SQL|SQL]] Pocket Guide (4th Edition)"
-author: "Alice Zhao"
-category: TOOL
-domain: "Database / SQL"
-status: "verified"
-created: "2026-04-29"
-last_updated: "2026-04-29"
+---
+file_id: SOURCE_TOOL_SQL_Pocket_Guide
+title: TOOL [[ENTITY_SQL|SQL]] Pocket Guide (4th Edition)
+type: source
+status: VERIFIED
+tags:
+  - TOOL
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-04-29
+last_updated: 2026-04-29
 ---
 
 # TOOL SQL Pocket Guide (4th Edition)
 
-## ðŸ“ 1. PhÃ¢n tÃ­ch Ingest (Analysis - Step 1)
-- **Thá»±c thá»ƒ & KhÃ¡i niá»‡m then chá»‘t:** SELECT statements, Joins, Aggregations, Window Functions, CTEs, Subqueries, SQL Performance.
-- **Káº¿t ná»‘i Wiki:** LÃ  tÃ i liá»‡u tham chiáº¿u ká»¹ thuáº­t cho nhÃ³m [[ENTITY_SQL]]. Cung cáº¥p cÃ¡c vÃ­ dá»¥ thá»±c táº¿ cho [[CONCEPT_SQL_Advanced_Reporting]] vÃ  [[CONCEPT_SQL_Data_Preparation_Workflow]].
-- **Äiá»ƒm khÃ¡c biá»‡t/MÃ¢u thuáº«n:** So sÃ¡nh song song cÃº phÃ¡p cá»§a 5 há»‡ quáº£n trá»‹ CSDL lá»›n nháº¥t, giÃºp giáº£i quyáº¿t cÃ¡c lá»—i "cÃº phÃ¡p khÃ´ng tÆ°Æ¡ng thÃ­ch" khi chuyá»ƒn Ä‘á»•i mÃ´i trÆ°á»ng.
-- **Äá» xuáº¥t cáº¥u trÃºc:** XÃ¢y dá»±ng thÃªm cÃ¡c trang vá» [[CONCEPT_SQL_Performance_Tuning]] Ä‘á»ƒ giÃºp DA viáº¿t query tá»‘i Æ°u hÆ¡n.
+## 🔍 Phân tích Ingest
+- **Thực thể & Khái niệm then chốt:** SELECT statements, Joins, Aggregations, Window Functions, CTEs, Subqueries, SQL Performance.
+- **Kết nối Wiki:** Là tài liệu tham chiếu kỹ thuật cho nhóm [[ENTITY_SQL]]. Cung cấp các ví dụ thực tế cho [[CONCEPT_SQL_Advanced_Reporting]] và [[CONCEPT_SQL_Data_Preparation_Workflow]].
+- **Điểm khác biệt/Mâu thuẫn:** So sánh song song cú pháp của 5 hệ quản trị CSDL lớn nhất, giúp giải quyết các lỗi "cú pháp không tương thích" khi chuyển đổi môi trường.
+- **Đề xuất cấu trúc:** Xây dựng thêm các trang về [[CONCEPT_SQL_Performance_Tuning]] để giúp DA viết query tối ưu hơn.
 
-## ðŸ“– 2. Tá»•ng quan nguá»“n (Overview - Step 2)
-Má»™t cuá»‘n sá»• tay thá»±c dá»¥ng vÃ  sÃºc tÃ­ch dÃ nh cho báº¥t ká»³ ai lÃ m viá»‡c vá»›i dá»¯ liá»‡u. TÃ i liá»‡u nÃ y khÃ´ng chá»‰ giáº£i thÃ­ch cÃ¡c lá»‡nh SQL tá»« cÆ¡ báº£n Ä‘áº¿n nÃ¢ng cao mÃ  cÃ²n cung cáº¥p cÃ¡c máº¹o xá»­ lÃ½ dá»¯ liá»‡u thá»±c táº¿ vÃ  cÃ¡ch viáº¿t code linh hoáº¡t giá»¯a cÃ¡c há»‡ quáº£n trá»‹ CSDL khÃ¡c nhau.
+## 📖 Tổng quan nguồn
+Một cuốn sổ tay thực dụng và súc tích dành cho bất kỳ ai làm việc với dữ liệu. Tài liệu này không chỉ giải thích các lệnh SQL từ cơ bản đến nâng cao mà còn cung cấp các mẹo xử lý dữ liệu thực tế và cách viết code linh hoạt giữa các hệ quản trị CSDL khác nhau.
 
-## ðŸš€ 3. CÃ¡c Concept Ä‘Ã£ trÃ­ch xuáº¥t (Rule 14 & 17)
-- [[CONCEPT_SQL_Sublanguages]] | **CÃ¡c ngÃ´n ngá»¯ con trong SQL** - DDL, DML, DQL, DCL, TCL.
-- [[CONCEPT_SQL_Window_Functions]] | **HÃ m cá»­a sá»•** - PhÃ¢n tÃ­ch dá»¯ liá»‡u nÃ¢ng cao khÃ´ng cáº§n Group By.
-- [[CONCEPT_SQL_Advanced_Reporting]] | **BÃ¡o cÃ¡o nÃ¢ng cao** - Sá»­ dá»¥ng CTEs vÃ  Subqueries Ä‘á»ƒ xÃ¢y dá»±ng bÃ¡o cÃ¡o phá»©c táº¡p.
+## 🚀 Các Concept đã trích xuất
+- [[CONCEPT_SQL_Sublanguages]] | **Các ngôn ngữ con trong SQL** - DDL, DML, DQL, DCL, TCL.
+- [[CONCEPT_SQL_Window_Functions]] | **Hàm cửa sổ** - Phân tích dữ liệu nâng cao không cần Group By.
+- [[CONCEPT_SQL_Advanced_Reporting]] | **Báo cáo nâng cao** - Sử dụng CTEs và Subqueries để xây dựng báo cáo phức tạp.
 
-## ðŸ” 4. Review Items (DÃ nh cho Human)
-- [ ] Kiá»ƒm tra xem phiÃªn báº£n PostgreSQL trong dá»± Ã¡n cÃ³ tÆ°Æ¡ng thÃ­ch vá»›i cÃ¡c vÃ­ dá»¥ trong sÃ¡ch khÃ´ng.
-- [ ] XÃ¡c Ä‘á»‹nh danh sÃ¡ch cÃ¡c Window Functions quan trá»ng nháº¥t cáº§n Ä‘Ã o táº¡o cho Ä‘á»™i ngÅ© DA má»›i.
+## 🕵️ Review Items
+- [ ] Kiểm tra xem phiên bản PostgreSQL trong dự án có tương thích với các ví dụ trong sách không.
+- [ ] Xác định danh sách các Window Functions quan trọng nhất cần đào tạo cho đội ngũ DA mới.
 
---- 
-**Nguá»“n thÃ´:** `TOOL_SQL_Pocket_Guide`
+***
+**Nguồn thô:** `TOOL_SQL_Pocket_Guide`
 **Deep Research Query:** `SQL Pocket Guide Alice Zhao cheatsheet PDF`
 
 

@@ -1,22 +1,18 @@
 ---
-title: "SYNTHESIS: The Ultimate Second Brain Specification (V3.0) [SUPERSEDED]"
+file_id: SYNTHESIS_ULTIMATE_Second_Brain_Spec
+title: "SYNTHESIS: The Ultimate Second Brain Specification (V3.0)"
 type: synthesis
-tags: ["Standardization", "Architecture", "AI-First", "Automation", "Wiki-Gen", "DEPRECATED"]
-status: "superseded"
-sources:
-  - "SOURCE_META_KARPATHY_LLM_WIKI"
-  - "SOURCE_META_NASHUS_LLMWIKI"
-  - "[[SOURCE_META_KARPATHY_CLAUDE_SKILLS]]"
-  - "[[SOURCE_META_KARPATHY_KNOWLEDGE_BASES]]"
-  - "[[SOURCE_META_WIKI_GEN_CLONE]]"
-  - "[[SOURCE_META_LLM_WIKI]]"
-  - "[[SOURCE_META_LLM_WIKI_V2]]"
-  - "SOURCE_META_KARPATHY_LLM_WIKI"
-relationships:
-  - type: "superseded_by"
-    target: "[[SYNTHESIS_MASTER_Second_Brain_Blueprint]]"
-created: "2026-05-02"
+status: VERIFIED
+tags: 
+ai-first: true
+confidence: 1.0
+last_reconciled: 2026-05-08
+created: 2026-05-02
+last_updated: 2026-05-08
 ---
+
+## For future Claude (AI Preamble)
+> [Bản đặc tả tối thượng quy định mọi khía cạnh vận hành của Second Brain V3.0. Tập trung vào kiến trúc AI-First, hệ thống 7 lệnh vận hành, và quy trình hòa giải tri thức chủ động. Đây là Source of Truth cho việc thiết lập Agent và xây dựng Wiki Atoms.]
 
 # Đại bản đặc tả Second Brain (The Ultimate Specification)
 
@@ -35,16 +31,16 @@ Hệ thống sử dụng một Schema chặt chẽ để biến các tệp Markd
 ### A. Metadata (Frontmatter) nâng cao
 Mọi tệp trong `wiki/` bắt buộc phải có các trường sau:
 ```yaml
-file_id: "[ID_DUY_NHAT]"         # Ví dụ: CONCEPT_META_AI_FIRST
-title: "[Tên_trang_đầy_đủ]"
+file_id: CONCEPT_META_AI_FIRST_TEMPLATE         # Ví dụ: CONCEPT_META_AI_FIRST
+title: [Tên_trang_đầy_đủ]
 type: "concept | entity | source | synthesis | query"
 ai-first: true                   # Đánh dấu trang đã được tối ưu cho AI
 confidence: "low | mid | high"   # Độ tin cậy của thông tin
-status: "draft | verified | stale | superseded"
-source: "[[CONCEPT_index]] — [Section]" 
+status: "DRAFT | VERIFIED | DEPRECATED | superseded
+source"
 relationships:                   # Danh sách liên kết có định dạng (Typed Links)
   - type: "is_a | relates_to | governs | supersedes | fixed_by"
-    target: "[[CONCEPT_index]]"
+    target: "[[index]]"
 last_reconciled: "YYYY-MM-DD"    # Ngày cuối cùng thực hiện hòa giải tri thức
 ```
 
@@ -54,7 +50,7 @@ Một trang Wiki lý tưởng phải tuân thủ thứ tự sau:
 2.  **## Key Claims / Summary**: Các khẳng định cốt lõi hoặc tóm tắt nội dung.
 3.  **## Detailed Analysis**: Nội dung chi tiết, sử dụng **Recency Markers** (ví dụ: `[Fact_A] (Updated: 2026-04)`).
 4.  **## Relationships**: Liệt kê trực quan các liên kết quan trọng.
-5.  **## Source Tracing**: Danh sách các trích dẫn nguồn thực tế (Rule 14).
+5.  **## Source Tracing**: Danh sách các trích dẫn nguồn thực tế (R3).
 6.  **## History / Revisions**: Nhật ký thay đổi (Archive các thông tin cũ đã bị Rewrite).
 
 ### C. Danh mục các loại liên kết (Relationship Types)

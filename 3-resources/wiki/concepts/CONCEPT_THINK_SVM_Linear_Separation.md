@@ -1,47 +1,39 @@
 ---
-file_id: "CONCEPT_THINK_SVM_Linear_Separation"
-title: "CONCEPT: Máy vector hỗ trợ (Support Vector Machine - SVM)"
+file_id: CONCEPT_THINK_SVM_Linear_Separation
+title: CONCEPT Máy Vector Hỗ trợ và Phân tách Tuyến tính (SVM)
 type: concept
-tags: ["Thinking", "Data_Mining", "Classification", "DA_Core"]
-status: "verified"
-created: "2026-04-29"
-last_updated: "2026-05-01"
+status: VERIFIED
+tags:
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-01
+last_updated: 2026-05-07
 ---
 
-# Máy vector hỗ trợ (Support Vector Machine - SVM)
+# Máy Vector Hỗ trợ và Phân tách Tuyến tính (SVM)
 
 ## 1. Định nghĩa
-**SVM** là một mô hình phân loại tìm kiếm một "siêu phẳng" (hyperplane) tối ưu để phân tách hai nhóm dữ liệu sao cho khoảng cách (margin) từ siêu phẳng đó đến các điểm gần nhất (support vectors) là lớn nhất.
+SVM (Support Vector Machine) là một thuật toán phân loại mạnh mẽ tìm kiếm một **Siêu phẳng (Hyperplane)** để phân chia các điểm dữ liệu của hai lớp khác nhau với khoảng cách (Margin) lớn nhất có thể.
 
-## 2. Nguyên lý / Cấu trúc
-- **Margin (Lề)**: Khoảng trống giữa siêu phẳng và các điểm dữ liệu gần nhất. SVM ưu tiên tối đa hóa lề này để tăng khả năng tổng quát hóa của mô hình.
-- **Kernel Trick**: Kỹ thuật biến đổi dữ liệu từ không gian thấp chiều sang không gian cao chiều để có thể phân tách tuyến tính các dữ liệu phức tạp.
+## 2. Nguyên lý
+- **Support Vectors**: Là các điểm dữ liệu nằm gần siêu phẳng phân chia nhất. Nếu thay đổi các điểm này, vị trí siêu phẳng sẽ thay đổi.
+- **Maximum Margin**: SVM cố gắng tạo ra "con đường" rộng nhất giữa hai lớp để giảm thiểu sai sót khi có dữ liệu mới.
+- **Kernel Trick**: Kỹ thuật biến đổi dữ liệu từ không gian thấp chiều sang không gian cao chiều để có thể phân tách chúng một cách tuyến tính.
 
-## 3. Ví dụ đối chiếu (Rule 17: Double Examples)
+## 3. Ví dụ đối chiếu (R18: Double Examples)
 
 ### Ví dụ từ sách (Original)
-> **Bối cảnh**: Phân loại các tế bào là "Lành tính" hay "Ác tính".
-> **Ứng dụng**: SVM tìm kiếm đường biên phân tách rõ ràng nhất giữa hai nhóm tế bào dựa trên các đặc điểm sinh học. Những tế bào nằm sát đường biên nhất chính là các "Support Vectors" quyết định vị trí của siêu phẳng.
-> **Nguồn**: SOURCE_THINK_DATA_SCIENCE_FOR_BUSINESS — Chương 4.
+> **Bối cảnh**: Nhận dạng chữ viết tay (Digit Recognition).
+> **Ứng dụng**: SVM tìm cách phân biệt giữa chữ số "0" và "8". Mặc dù chúng trông khá giống nhau, SVM tìm ra các đặc trưng hình học tinh vi (các vector hỗ trợ) để tạo ra ranh giới phân chia rõ ràng nhất giữa hai tập hợp ảnh này.
+> **Nguồn**: [[SOURCE_Data_Science_For_Business]].
 
 ### Ứng dụng sư phạm (Pedagogical Application)
-> **Bối cảnh**: Trò chơi phân loại các tấm thẻ "Động vật" và "Thực vật" trên sân trường.
-> **Ứng dụng**: 
-> - **Siêu phẳng**: Một sợi dây thừng đặt giữa sân.
-> - **Mục tiêu**: Đặt sợi dây sao cho nó cách xa các tấm thẻ của cả hai nhóm nhất có thể (để không bị nhầm lẫn). 
-> - **Giải thích**: Những tấm thẻ nằm sát sợi dây thừng nhất chính là bằng chứng quan trọng nhất để định hình ranh giới phân loại.
+> **Bối cảnh**: Phân loại học sinh có năng khiếu nghệ thuật và năng khiếu logic.
+> **Ứng dụng**: Dựa trên dữ liệu điểm số các môn học. SVM tìm ra một ranh giới (siêu phẳng) tối ưu để tách biệt hai nhóm. Những học sinh nằm sát ranh giới (Vector hỗ trợ) là những em có năng khiếu hỗn hợp, cần được giáo viên quan tâm định hướng kỹ hơn.
 
-## 4. Trích dẫn nguồn (Rule 14)
-- **Nguồn**: SOURCE_THINK_DATA_SCIENCE_FOR_BUSINESS — Trang 95-115.
-- **Fact-check**: Đã đối chiếu file raw `THINK_Data_Science_for_Business.md`. [Rule 14: SUCCESS]
-
----
-WRITE REPORT:
-  file: "3-resources/wiki/concepts/CONCEPT_THINK_SVM_Linear_Separation.md"
-  operation: "overwrite"
-  added: "Chuẩn hóa theo v4.1, giải thích Margin qua ví dụ Sợi dây thừng."
-  removed: "NONE"
-  compliance: "[Rule 20] Đã đối soát Template và Raw thành công."
+## 4. Trích dẫn nguồn
+- **Nguồn**: [[SOURCE_Data_Science_For_Business]].
 
 
 ## 4F Reflection

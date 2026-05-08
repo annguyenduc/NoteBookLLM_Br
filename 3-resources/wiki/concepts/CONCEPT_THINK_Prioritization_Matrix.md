@@ -1,8 +1,14 @@
 ---
-file_id: "CONCEPT_THINK_Prioritization_Matrix"
+file_id: CONCEPT_THINK_Prioritization_Matrix
 title: "CONCEPT: Ma trận Ưu tiên (Prioritization Matrix)"
 type: concept
-status: "DRAFT"
+status: DRAFT
+tags:
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-08
+last_updated: 2026-05-08
 ---
 
 # Ma trận Ưu tiên (Prioritization Matrix)
@@ -10,7 +16,7 @@ status: "DRAFT"
 ## 1. Core Principle
 Là công cụ đánh giá và lựa chọn các hành động dựa trên hai tiêu chí: Mức độ tác động (Impact) và Độ dễ thực hiện (Ease of Implementation). Những giải pháp có Impact cao và Dễ thực hiện (High Impact, Easy) luôn được ưu tiên làm trước.
 
-## 2. Ví dụ đối chiếu (Rule 17: Double Examples)
+## 2. Ví dụ đối chiếu (R18: Double Examples)
 - **Original Example (Từ gốc):** Vẽ poster quảng cáo (Impact cao) ban đầu nằm ở ô "Khó thực hiện" vì ban nhạc vẽ xấu. Nhưng khi nhờ bạn [[ENTITY_CASE_John_Octopus]] vẽ hộ, giải pháp này dịch chuyển sang ô "Dễ thực hiện" và được ưu tiên triển khai ngay.
 - **Pedagogical Metaphor:** Khi dọn dẹp một căn nhà bừa bộn. "Tác động cao + Dễ làm" là việc dọn rác ở phòng khách (nhanh chóng thấy sạch). "Tác động thấp + Khó làm" là việc lau chùi mặt sau của chiếc tủ lạnh nặng nề. Hãy bắt đầu từ phòng khách.
 
@@ -21,3 +27,10 @@ Là công cụ đánh giá và lựa chọn các hành động dựa trên hai t
 - **Futures:** Là công cụ kinh điển trong quản lý dự án và ra quyết định chiến lược.
 
 **Nguồn:** `3-resources/raw_ingest/THINK_Problem_Solving_101_HD.md` — 2B. PRIORITIZE THE ACTIONS
+
+
+## 4F Reflection
+- **Facts**: 
+- **Feelings**: 
+- **Findings**: 
+- **Futures**: 

@@ -1,47 +1,39 @@
 ---
-file_id: "CONCEPT_THINK_Ensemble_Methods"
-title: "CONCEPT: Phương pháp Học máy Kết hợp (Ensemble Methods)"
+file_id: CONCEPT_THINK_Ensemble_Methods
+title: CONCEPT Các phương pháp Kết hợp Mô hình (Ensemble Methods)
 type: concept
-tags: ["Thinking", "Modeling", "Optimization", "DA_Core"]
-status: "verified"
-created: "2026-04-29"
-last_updated: "2026-05-01"
+status: VERIFIED
+tags:
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-01
+last_updated: 2026-05-07
 ---
 
-# Phương pháp Học máy Kết hợp (Ensemble Methods)
+# Các phương pháp Kết hợp Mô hình (Ensemble Methods)
 
 ## 1. Định nghĩa
-Ensemble Methods là kỹ thuật kết hợp nhiều mô hình học máy lại với nhau để tạo ra một mô hình duy nhất có hiệu suất cao hơn, ổn định hơn và ít thiên kiến hơn so với bất kỳ mô hình riêng lẻ nào.
+Ensemble Methods là kỹ thuật kết hợp dự báo từ nhiều mô hình khác nhau để tạo ra một mô hình tổng hợp có độ chính xác cao hơn và ổn định hơn bất kỳ mô hình đơn lẻ nào. Triết lý là "Trí tuệ tập thể" (The wisdom of the crowd).
 
 ## 2. Các kỹ thuật phổ biến
-- **Bagging (Bootstrap Aggregating)**: Xây dựng nhiều mô hình độc lập và lấy trung bình kết quả (vd: Random Forest). Giúp giảm phương sai (variance).
-- **Boosting**: Xây dựng các mô hình nối tiếp nhau, mô hình sau tập trung sửa lỗi của mô hình trước (vd: XGBoost). Giúp giảm độ chệch (bias).
-- **Stacking**: Dùng kết quả đầu ra của các mô hình cơ sở làm đầu vào cho một mô hình cuối cùng để đưa ra dự đoán.
+- **Bagging (Bootstrap Aggregating)**: Huấn luyện nhiều mô hình song song trên các tập con dữ liệu khác nhau (ví dụ: Random Forest).
+- **Boosting**: Huấn luyện các mô hình nối tiếp nhau, mô hình sau tập trung sửa lỗi cho mô hình trước (ví dụ: XGBoost, Gradient Boosting).
+- **Stacking**: Sử dụng một mô hình "Meta" để tổng hợp kết quả từ các mô hình cơ sở khác nhau.
 
-## 3. Ví dụ đối chiếu (Rule 17: Double Examples)
+## 3. Ví dụ đối chiếu (R18: Double Examples)
 
 ### Ví dụ từ sách (Original)
-> **Bối cảnh**: Cuộc thi Netflix Prize về hệ thống gợi ý phim.
-> **Ứng dụng**: Đội chiến thắng không sử dụng một thuật toán đơn lẻ mà kết hợp hàng trăm mô hình khác nhau (Ensemble). Sự đa dạng của các mô hình giúp bao quát được nhiều khía cạnh khác nhau trong hành vi của người dùng.
-> **Nguồn**: SOURCE_THINK_DATA_SCIENCE_FOR_BUSINESS — Chương 12.
+> **Bối cảnh**: Dự báo thị trường chứng khoán.
+> **Ứng dụng**: Thay vì tin vào một thuật toán duy nhất, nhà đầu tư kết hợp kết quả từ 10 mô hình khác nhau. Mặc dù từng mô hình có thể sai, nhưng giá trị trung bình hoặc kết quả theo số đông (Voting) thường bám sát diễn biến thực tế hơn.
+> **Nguồn**: [[SOURCE_Data_Science_For_Business]].
 
 ### Ứng dụng sư phạm (Pedagogical Application)
-> **Bối cảnh**: Hội đồng ban giám khảo chấm điểm một cuộc thi Khoa học Kỹ thuật.
-> **Ứng dụng**: 
-> - Thay vì chỉ dựa vào ý kiến của 1 giám khảo (có thể thiên kiến), cuộc thi sử dụng 5 giám khảo (Ensemble).
-> - **Cơ chế**: Lấy điểm trung bình của 5 người sẽ cho kết quả công bằng và chính xác hơn về năng lực thực sự của học sinh, loại bỏ được các nhận định cực đoan từ cá nhân.
+> **Bối cảnh**: Đánh giá năng lực của một giáo viên.
+> **Ứng dụng**: Thay vì chỉ dựa vào điểm số của học sinh (mô hình 1), nhà trường kết hợp thêm: (2) Kết quả dự giờ của đồng nghiệp, (3) Khảo sát mức độ hài lòng của phụ huynh, (4) Đánh giá từ hội đồng chuyên môn. Việc kết hợp nhiều "nguồn đánh giá" (Ensemble) giúp đưa ra kết luận công bằng và chính xác hơn về năng lực thực tế của giáo viên.
 
-## 4. Trích dẫn nguồn (Rule 14)
-- **Nguồn**: SOURCE_THINK_DATA_SCIENCE_FOR_BUSINESS — Trang 310-325.
-- **Fact-check**: Đã đối chiếu file raw `THINK_Data_Science_for_Business.md`. [Rule 14: SUCCESS]
-
----
-WRITE REPORT:
-  file: "3-resources/wiki/concepts/CONCEPT_THINK_Ensemble_Methods.md"
-  operation: "overwrite"
-  added: "Chuẩn hóa theo v4.1, dùng ví dụ Hội đồng ban giám khảo để giải thích Ensemble."
-  removed: "NONE"
-  compliance: "[Rule 20] Đã đối soát Template và Raw thành công."
+## 4. Trích dẫn nguồn
+- **Nguồn**: [[SOURCE_Data_Science_For_Business]].
 
 
 ## 4F Reflection

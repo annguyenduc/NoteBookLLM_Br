@@ -1,51 +1,51 @@
 ---
-file_id: "CONCEPT_THINK_Hypothesis_Pyramid"
-title: "CONCEPT: Kim tự tháp Giả thuyết (Hypothesis Pyramid)"
+file_id: CONCEPT_THINK_Hypothesis_Pyramid
+title: CONCEPT Kim tự tháp Giả thuyết (Hypothesis Pyramid)
 type: concept
-tags: ["Thinking", "Argumentation", "Structure", "DA_Core"]
-status: "verified"
-created: "2026-04-29"
-last_updated: "2026-05-01"
+status: VERIFIED
+tags:
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-01
+last_updated: 2026-05-07
 ---
 
 # Kim tự tháp Giả thuyết (Hypothesis Pyramid)
 
 ## 1. Định nghĩa
-Kim tự tháp Giả thuyết là cách sắp xếp các lập luận và bằng chứng theo thứ tự phân cấp, giúp người phân tích trình bày một kết luận thuyết phục dựa trên dữ liệu.
+Kim tự tháp Giả thuyết (hay Cây Giả thuyết) là một cấu trúc phân cấp giúp phân rã một câu hỏi lớn thành các giả thuyết nhỏ hơn, có thể kiểm chứng được. Phương pháp này đảm bảo tính toàn diện (MECE) và giúp định hướng thu thập dữ liệu một cách hiệu quả.
 
-## 2. Nguyên lý / Cấu trúc (Từ trên xuống)
-1.  **Kết luận (Conclusion)**: Câu trả lời chính cho vấn đề.
-2.  **Giả thuyết hỗ trợ (Supporting Hypotheses)**: Các lý lẽ chính củng cố cho kết luận.
-3.  **Dữ liệu/Bằng chứng (Data/Evidence)**: Các số liệu, sự thật cụ thể chứng minh cho từng giả thuyết.
+## 2. Cấu trúc
+- **Đỉnh**: Câu hỏi trung tâm hoặc mục tiêu chính.
+- **Tầng 1**: Các nhánh giả thuyết lớn (ví dụ: Tăng doanh thu qua khách mới vs Tăng doanh thu qua khách cũ).
+- **Tầng 2**: Các giả thuyết chi tiết hơn (ví dụ: Tăng khách mới qua Facebook Ads vs Tăng khách mới qua SEO).
 
-## 3. Ví dụ đối chiếu (Rule 17: Double Examples)
+## 3. Ví dụ đối chiếu (R18: Double Examples)
 
 ### Ví dụ từ sách (Original)
-> **Bối cảnh**: Chứng minh rằng công ty nên mở rộng sang thị trường mới.
-> **Ứng dụng**: 
-> - **Đỉnh**: Nên mở rộng sang Đông Nam Á.
-> - **Thân**: Thị trường đang tăng trưởng nhanh; Đối thủ chưa mạnh; Chi phí vận hành thấp.
-> - **Đáy**: Số liệu CAGR 15%; Danh sách 2 đối thủ địa phương; Báo cáo chi phí nhân công.
-> **Nguồn**: SOURCE_THINK_THINKING_WITH_DATA — Chương 3.
+> **Mục tiêu**: Giảm chi phí vận hành kho bãi.
+> **Phân rã**:
+> 1. Giảm chi phí nhân sự.
+>    - Tự động hóa khâu đóng gói.
+>    - Tối ưu hóa ca trực.
+> 2. Giảm chi phí lưu kho.
+>    - Loại bỏ hàng tồn kho quá 6 tháng.
+>    - Đàm phán lại giá thuê kho.
+> **Nguồn**: [[SOURCE_Problem_Solving_101]].
 
 ### Ứng dụng sư phạm (Pedagogical Application)
-> **Bối cảnh**: Học sinh trình bày dự án "Tại sao nên thay thế túi nilon bằng túi vải tại căng tin".
-> **Ứng dụng**: 
-> - **Đỉnh**: Túi vải mang lại lợi ích lâu dài cho trường.
-> - **Thân**: Giảm rác thải; Tiết kiệm chi phí mua túi nilon hàng ngày; Xây dựng hình ảnh trường học xanh.
-> - **Đáy**: Khối lượng rác nilon đo được (2kg/ngày); Đơn giá túi vải vs túi nilon; Kết quả khảo sát 80% học sinh ủng hộ.
+> **Mục tiêu**: Cải thiện điểm số trung bình môn Toán của cả lớp.
+> **Phân rã**:
+> 1. Cải thiện kỹ năng cơ bản.
+>    - Tăng số giờ luyện tập tính toán nhanh.
+>    - Ôn tập lại các công thức cốt lõi.
+> 2. Cải thiện phương pháp làm bài.
+>    - Hướng dẫn cách phân bổ thời gian trong phòng thi.
+>    - Cách trình bày bài giải logic.
 
-## 4. Trích dẫn nguồn (Rule 14)
-- **Nguồn**: SOURCE_THINK_THINKING_WITH_DATA — Trang 45-55.
-- **Fact-check**: Đã đối chiếu file raw `THINK_Thinking_with_Data.md`. [Rule 14: SUCCESS]
-
----
-WRITE REPORT:
-  file: "3-resources/wiki/concepts/CONCEPT_THINK_Hypothesis_Pyramid.md"
-  operation: "overwrite"
-  added: "Chuẩn hóa theo v4.1, đồng bộ cấu trúc Top-down."
-  removed: "NONE"
-  compliance: "[Rule 20] Đã đối soát Template và Raw thành công."
+## 4. Trích dẫn nguồn
+- **Nguồn**: [[SOURCE_Problem_Solving_101]].
 
 
 ## 4F Reflection

@@ -1,6 +1,6 @@
 ---
 name: wiki-web-scrape
-description: Use when capturing text-only content from static URLs for knowledge ingestion. MANDATORY: Use ONLY for staging content to 00_Inbox/. Prohibited for direct writing to 3-resources/raw_*/.
+description: Use when the user provides a URL (like Wikipedia, articles, web pages) to read, analyze, or create atoms. SUPERSEDES sub_browser. This tool safely extracts Markdown via Lightpanda and stages it to 00_Inbox/. Prohibited for direct writing to 3-resources/raw_*/.
 ---
 
 # Wiki Web Scrape (Resilient/Hybrid)
@@ -16,9 +16,9 @@ python .agent/skills/wiki-web-scrape/tests/test_scrape.py
 ```
 
 ## Guardrails
-- **STAGING BOUNDARY**: NEVER write directly to `3-resources/raw_*/`. This area is immutable for agents (Rule R1).
+- **STAGING BOUNDARY**: NEVER write directly to `3-resources/raw_*/`. This area is immutable for agents (R1).
 - **STAGING TARGET**: All outputs MUST be saved in `00_Inbox/`.
-- **NO VISUALS**: If the task requires visual evidence (Rule R10), STOP and use `wiki-crawl-4ai`.
+- **NO VISUALS**: If the task requires visual evidence (R10), STOP and use `wiki-crawl-4ai`.
 
 ## Workflow
 1. Verify the URL is static and public.
@@ -33,6 +33,6 @@ python .agent/skills/wiki-web-scrape/tests/test_scrape.py
 ## Common Mistakes & Rationalizations
 | Excuse | Reality |
 |--------|---------|
-| "It's faster to write to raw/" | Violation of R1/R12. Speed does not justify breaking system integrity. |
+| "It's faster to write to raw/" | Violation of R1/R4. Speed does not justify breaking system integrity. |
 | "I'll review it later in raw/" | Raw is the Source of Truth; it must be clean *before* entry. |
 | "The page looks simple enough" | If it has complex JS, Lightpanda will return empty text. Switch to crawl-4ai. |

@@ -79,28 +79,64 @@ NoteBookLLM_Br/              ← root
 │       ├── review_queue/    ← PENDING: Atom chờ duyệt
 │       ├── session_insights/ ← Audit log & Insight phiên làm việc
 │       └── wiki_brain.db    ← DATABASE: Vector & Graph Index
-└── scripts/
+├── scripts/                ← PRODUCTION: Tooling, Maintenance, Official Tests.
+└── scratch/                ← SANDBOX: Debug, Quick tests, One-off scripts.
 ```
 
 ---
 
-## 🛡️ BỘ QUY TẮC QUẢN TRỊ (R1-R18)
+
+## HẠ TẦNG KỸ THUẬT (Infrastructure)
+- **Runtime:** Python 3.11 (Core) / Python 3.12 (Sandbox/Harness).
+- **Sandbox:** Localsandbox (WASM) + Deno Runtime (Đã kiểm thử thành công).
+- **Database:** SQLite 3 (wiki_brain.db).
+- **Encoding:** UTF-8 no BOM (Bắt buộc).
+
+
+## ⚡ GIAO THỨC VẬN HÀNH (Operation Protocols)
+
+### P1 — CHECKPOINT PROTOCOL
+- Khai báo trạng thái READY/BLOCKED trước khi thực hiện task phức tạp.
+
+### P2 — VISIBILITY (Safe-Diff Workflow)
+- **Tạo mới:** Agent tạo file mồi -> Sửa nội dung để User thấy Diff xanh.
+- **Sửa đổi:** Ưu tiên dùng công cụ hiện Diff (UI) cho User review.
+
+### P3 — SAFETY (Encoding Guard)
+- BẮT BUỘC hậu kiểm bằng Python cho mọi file có Tiếng Việt.
+- Cấm mọi hình thức lỗi font: Unicode Escape, Mojibake, ký tự rác.
+
+### P4 — ISOLATION (Sandbox First)
+- BẮT BUỘC chạy code thử nghiệm trong Localsandbox (WASM).
+
+### P5 — SYNC DIRECTION
+- **File vật lý là Source of Truth**. Sync từ File vào Database hàng đêm.
+
+## 🛡️ BỘ QUY TẢC QUẢN TRỊ (R1-R20)
 > Codex/Antigravity BẮT BUỘC tuân thủ. Chi tiết kỹ thuật & Template tại [[GEMINI.md]].
 
 | Rule | Tên Luật | Hành vi BẮT BUỘC / CẤM | Chi tiết |
 |---|---|---|---|
-| **R1** | Raw Immutable | CẤM sửa/xóa trong `3-resources/raw_*/`. | [[GEMINI.md#R1]] |
-| **R2** | No Fake Report | CẤM báo cáo ảo khi chưa có tool call thành công. | [[GEMINI.md#R2]] |
-| **R3** | Source Tracing | Mọi claim phải có Nguồn rõ ràng. | [[GEMINI.md#R3]] |
-| **R4** | Safe Logging | Ghi log bằng Python (UTF-8). CẤM PowerShell. | [[GEMINI.md#R4]] |
-| **R5** | Prereq Gate | Kiểm tra Trainer Profile/Design trước khi chạy. | [[GEMINI.md#R5]] |
+| **R1** | Raw Immutable | CẤM sửa/xóa trong `raw_*/`. | [[GEMINI.md#R1]] |
+| **R2** | Proactive Integrity | CẤM báo cáo ảo. BẮT BUỘC ghi log trước. | [[GEMINI.md#R2]] |
+| **R3** | Source Tracing | Mọi trích dẫn phải có Link Nguồn (Source Node). | [[GEMINI.md#R3]] |
+| **R4** | Structure & Encoding | BẮT BUỘC Python UTF-8 & Surgical Diff. CẤM tạo file mới tại Root. | [[GEMINI.md#R4]] |
+| **R5** | Prereq Gate | Lệnh sản xuất (Design/Task) phải rõ ràng trước khi chạy. | [[GEMINI.md#R5]] |
+| **R6** | Phased Execution | Phải xong Phase 1 mới được viết Skill (Phase 2). | [[GEMINI.md#R6]] |
+| **R7** | Stress Testing | BẮT BUỘC Stress Test sau mỗi Skill/Script. | [[GEMINI.md#R7]] |
+| **R8** | Human Supremacy | CHỈ User mới được set trạng thái `SYNTHESIZED`. | [[GEMINI.md#R8]] |
 | **R9** | Surgical Min | Chỉ thay đổi code tối thiểu (Surgical Changes). | [[GEMINI.md#R9]] |
 | **R10** | 3-Step Search | Tìm kiếm -> Xác thực (MD) -> Chụp ảnh (Screenshot). | [[GEMINI.md#R10]] |
-| **R12** | Encoding Safety | Mọi file Tiếng Việt phải là UTF-8 no BOM. | [[GEMINI.md#R12]] |
+| **R11** | Density Filter | KHÔNG tạo atom cho file < 200 bytes. | [[GEMINI.md#R11]] |
+| **R12** | Example Adherence | BẮT BUỘC đối soát với `EXAMPLES.md` & `@/obsidian-markdown`. | [[GEMINI.md#R12]] |
+| **R13** | Atom Lifecycle | Mọi atom mới mặc định `status = DRAFT`. | [[GEMINI.md#R13]] |
 | **R14** | Log Rotation | Log phân mảnh theo ngày: `log_YYYY_MM_DD.md`. | [[GEMINI.md#R14]] |
+| **R15** | Peer-layer Sync | BẮT BUỘC dùng `@obsidian-cli` để reload Metadata. | [[GEMINI.md#R15]] |
 | **R16** | Checkpoint | Khai báo trạng thái (READY/BLOCKED) trước task. | [[GEMINI.md#R16]] |
-| **R17** | Sync Direction | File vật lý là Source of Truth. | [[GEMINI.md#R17]] |
-| **R18** | Mandat. Examples | BẮT BUỘC đối soát với [[EXAMPLES.md]]. | [[GEMINI.md#R18]] |
+| **R17** | Sync Direction | File vật lý là Source of Truth duy nhất. | [[GEMINI.md#R17]] |
+| **R18** | Double Examples | BẮT BUỘC mỗi Atom phải có 2 ví dụ đối chiếu (Sách + Sư phạm). | [[GEMINI.md#R18]] |
+| **R19** | Sandbox Protocol | BẮT BUỘC chạy code thử nghiệm trong Localsandbox (WASM). | [[GEMINI.md#R19]] |
+| **R20** | YAML Validity | Dấu `:` trong Metadata phải để trong ngoặc kép "". | [[GEMINI.md#R20]] |
 
 ---
 

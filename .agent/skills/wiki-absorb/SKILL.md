@@ -10,6 +10,7 @@ Reconcile `DRAFT` atoms against existing atoms in the database. This is the prom
 
 ## Guardrails
 - Only `reconciler.py` should promote items from `DRAFT` to `VERIFIED`.
+- **MANDATORY**: Never physically move files out of the `review_queue/` directory during the absorb process. Promotion to root folders is a separate step triggered ONLY by human approval.
 - Never set `SYNTHESIZED`; that remains human-only.
 - Use this skill for DB reconciliation, not for editing wiki markdown by hand.
 - If confidence is low or the conflict is ambiguous, leave a decision trail instead of forcing a merge.

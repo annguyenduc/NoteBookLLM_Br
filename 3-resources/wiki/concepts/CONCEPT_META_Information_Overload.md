@@ -1,15 +1,15 @@
 ---
-file_id: CONCEPT_META_INFORMATION_OVERLOAD
-title: "Information Overload (Quá tải thông tin)"
-category: "Wiki Page"
-prefix: "WIKI"
-agent_id: "@engineer"
-status: "verified"
-created: "2026-05-03"
-last_updated: "2026-05-03"
-sources:
-  - "[[SOURCE_META_LLM_WIKI]]"
-  - "SOURCE_META_KARPATHY_LLM_WIKI"
+file_id: CONCEPT_META_Information_Overload
+title: Information Overload (Quá tải thông tin)
+type: concept
+status: VERIFIED
+tags:
+  - Wiki Page
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-03
+last_updated: 2026-05-03
 ---
 
 ## ## For future Claude
@@ -25,7 +25,7 @@ Trang này định nghĩa vấn đề Quá tải thông tin và cách hệ thố
 - **Granularity Control**: Chỉ lưu trữ những thông tin cần thiết nhất, loại bỏ các chi tiết vụn vặt không đóng góp vào hiểu biết chung.
 - **Synthesis Tier**: Sử dụng các trang tổng hợp để kết nối các node lẻ thành một bức tranh toàn cảnh mà không làm người đọc bị lạc trong chi tiết.
 
-## ## Ví dụ đối chiếu (Rule 17)
+## ## Ví dụ đối chiếu (R18)
 - **Ví dụ thực tế (Original)**: Thay vì lưu toàn bộ 500 trang PDF về Kỹ thuật dữ liệu, chúng ta chỉ trích xuất 20 concepts quan trọng nhất. Khi cần chi tiết hơn, Agent sẽ dùng RAG để tra cứu sâu vào raw files thay vì làm đầy Wiki bằng các thông tin ít dùng.
 - **Ẩn dụ sư phạm (Pedagogical)**: [Phóng tác] Giống như việc bạn đi ăn buffet. Nếu bạn cố gắng ăn tất cả các món (Information Overload), bạn sẽ bị đầy bụng và không cảm nhận được vị ngon của món nào. Một người sành ăn sẽ chỉ chọn những món tinh túy nhất (Atomic Knowledge) để thưởng thức một cách trọn vẹn.
 
@@ -34,7 +34,7 @@ Trang này định nghĩa vấn đề Quá tải thông tin và cách hệ thố
 - **Nguồn**: SOURCE_META_KARPATHY_LLM_WIKI — Concept: Signal-to-Noise Ratio.
 
 ## ## History / Revisions
-- **2026-05-03**: [@engineer] Pressure Chain Healing. Bổ sung Rule 17, 20 và chuẩn hóa metadata.
+- **2026-05-03**: [@engineer] Pressure Chain Healing. Bổ sung R18, 20 và chuẩn hóa metadata.
 
 
 ## 4F Reflection

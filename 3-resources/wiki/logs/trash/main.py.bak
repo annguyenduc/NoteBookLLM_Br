@@ -1,0 +1,15 @@
+import machine
+import time
+from pid_control import PID
+
+# Thiết lập chân GPIO giả định
+led = machine.Pin(2, machine.Pin.OUT)
+sensor = machine.ADC(machine.Pin(34))
+
+pid = PID(Kp=1.0, Ki=0.1, Kd=0.05, setpoint=500)
+
+while True:
+    val = sensor.read()
+    control = pid.update(val, 0.1)
+    print("Control Output:", control)
+    time.sleep(0.1)

@@ -1,47 +1,42 @@
 ---
-file_id: "CONCEPT_THINK_Exploration_vs_Confirmation"
-title: "CONCEPT: Khám phá và Xác nhận (Exploration vs Confirmation)"
+file_id: CONCEPT_THINK_Exploration_vs_Confirmation
+title: CONCEPT Khám phá và Xác nhận (Exploration vs Confirmation)
 type: concept
-tags: ["Thinking", "Planning", "Exploration", "DA_Core"]
-status: "verified"
-created: "2026-04-29"
-last_updated: "2026-05-01"
+status: VERIFIED
+tags:
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-01
+last_updated: 2026-05-07
 ---
 
 # Khám phá và Xác nhận (Exploration vs Confirmation)
 
 ## 1. Định nghĩa
-Sự cân bằng giữa việc lao vào tìm tòi dữ liệu (Exploration) và việc dừng lại để lập kế hoạch/đặt giả thuyết (Confirmation/Planning). Tác giả gọi việc bị cuốn vào dữ liệu không mục đích là "bài ca nàng tiên cá" (Siren song).
+- **Exploratory Data Analysis (EDA)**: Quá trình tìm tòi, quan sát dữ liệu để phát hiện ra các mẫu (Patterns), xu hướng hoặc điểm bất thường mà chúng ta chưa biết trước.
+- **Confirmatory Data Analysis (CDA)**: Quá trình kiểm chứng một giả thuyết cụ thể đã được đặt ra từ trước bằng các phương pháp thống kê nghiêm ngặt.
 
-## 2. Nguyên lý / Cấu trúc (Scaffolding)
-- **Scaffolding (Giàn giáo)**: Ưu tiên các mục tiêu nhỏ, dùng công cụ đơn giản (scatterplot, bảng tần suất) để xây dựng trực giác nhanh trước khi dùng mô hình phức tạp.
-- **Kitchen sink interrogation**: Hỏi tất cả các câu hỏi có thể nghĩ ra về dữ liệu.
-- **Working backward**: Tư duy ngược từ kết quả đầu ra (Outcome) mong muốn để điều hướng quá trình khám phá.
+## 2. Quy trình phối hợp
+1.  **Exploration**: "Dữ liệu đang nói điều gì?".
+2.  **Hypothesis**: Đưa ra giả thuyết từ kết quả khám phá.
+3.  **Confirmation**: "Giả thuyết này có đúng trên diện rộng hay không?".
 
-## 3. Ví dụ đối chiếu (Rule 17: Double Examples)
+## 3. Ví dụ đối chiếu (R18: Double Examples)
 
 ### Ví dụ từ sách (Original)
-> **Bối cảnh**: Phân tích mối quan hệ giữa giá thuê nhà và ga tàu điện ngầm.
-> **Ứng dụng**: Thay vì xây dựng mô hình học máy hàng chục biến, Analyst xây dựng "Scaffolding" bằng cách vẽ biểu đồ scatterplot đơn giản giữa giá và khoảng cách ga tàu để xác nhận trực giác ban đầu trong vài giờ thay vì vài tuần.
-> **Nguồn**: SOURCE_THINK_THINKING_WITH_DATA — Chương 2: What Next? (Trang 25-26).
+> **Bối cảnh**: Phân tích dữ liệu bán hàng.
+> **EDA**: Phát hiện thấy doanh số bán tã giấy và bia thường tăng cùng nhau vào chiều tối thứ Sáu.
+> **CDA**: Đưa ra giả thuyết "Các ông bố đi mua tã tiện tay mua bia" và kiểm chứng bằng cách chạy một thí nghiệm thay đổi vị trí kệ hàng hoặc phân tích dữ liệu trên tập khách hàng lớn hơn để xác nhận tính ổn định của quy luật này.
+> **Nguồn**: [[SOURCE_Data_Science_For_Business]].
 
 ### Ứng dụng sư phạm (Pedagogical Application)
-> **Bối cảnh**: Học sinh làm dự án Khoa học (Science Fair) về nhiệt độ phòng học.
-> **Ứng dụng**: 
-> - **Lỗi**: Học sinh đo hàng ngàn điểm dữ liệu bừa bãi (Quá thiên về Exploration).
-> - **Scaffolding**: Giáo viên hướng dẫn lập giả thuyết "Phòng hướng Tây nóng hơn", sau đó đo thử 2 phòng đại diện trong 1 ngày để xác nhận xu hướng trước khi triển khai quy mô lớn.
+> **Bối cảnh**: Phân tích hành vi học tập của sinh viên.
+> **EDA**: Nhận thấy sinh viên học vào lúc 10h đêm có kết quả thi tốt hơn.
+> **CDA**: Kiểm chứng giả thuyết bằng cách so sánh điểm số của hai nhóm (nhóm học khuya và nhóm học ban ngày) trên một tập mẫu lớn hơn, loại bỏ các yếu tố gây nhiễu để xác định xem thời gian học có thực sự là yếu tố quyết định hay không.
 
-## 4. Trích dẫn nguồn (Rule 14)
-- **Nguồn**: SOURCE_THINK_THINKING_WITH_DATA — Trang 17-26.
-- **Fact-check**: Đã đối chiếu file raw `THINK_Thinking_with_Data.md` (Chương 2). [Rule 14: SUCCESS]
-
----
-WRITE REPORT:
-  file: "3-resources/wiki/concepts/CONCEPT_THINK_Exploration_vs_Confirmation.md"
-  operation: "overwrite"
-  added: "Chuẩn hóa theo v4.1, tích hợp khái niệm Scaffolding vào cấu trúc chính."
-  removed: "NONE"
-  compliance: "[Rule 20] Đã đối soát Template và Raw thành công."
+## 4. Trích dẫn nguồn
+- **Nguồn**: [[SOURCE_Data_Science_For_Business]].
 
 
 ## 4F Reflection

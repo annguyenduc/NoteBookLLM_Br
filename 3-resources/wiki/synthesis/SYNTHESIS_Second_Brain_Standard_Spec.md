@@ -1,17 +1,14 @@
 ---
+file_id: SYNTHESIS_Second_Brain_Standard_Spec
 title: "SYNTHESIS: Second Brain Standard Specification (Karpathy x Nashsu) [SUPERSEDED]"
 type: synthesis
-tags: ["Standardization", "Schema", "Skills", "Architecture", "DEPRECATED"]
-status: "superseded"
-sources:
-  - "SOURCE_META_KARPATHY_LLM_WIKI"
-  - "SOURCE_META_NASHUS_LLMWIKI"
-  - "[[SOURCE_META_KARPATHY_CLAUDE_SKILLS]]"
-  - "[[SOURCE_META_KARPATHY_KNOWLEDGE_BASES]]"
-relationships:
-  - type: "superseded_by"
-    target: "[[SYNTHESIS_MASTER_Second_Brain_Blueprint]]"
-created: "2026-05-02"
+status: DRAFT
+tags: 
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-02
+last_updated: 2026-05-08
 ---
 
 # Bản đặc tả Second Brain (Standard Specification)
@@ -43,16 +40,15 @@ Một Second Brain hoàn chỉnh phải có 7 "bộ kỹ năng" đóng gói (Mod
 ### B. Cấu trúc Metadata (YAML Frontmatter)
 Mọi file trong `wiki/` phải chứa:
 ```yaml
-file_id: "[ID_UNIQUE]"
-title: "[Tên_trang]"
+file_id: SYNTHESIS_SB_STANDARD_SPEC_TEMPLATE
+title: [Tên_trang]
 category: "CONCEPT | ENTITY | SOURCE | SYNTHESIS"
 tags: ["Tag1", "Tag2"]
-source: "[[CONCEPT_index]] — [Section/Page]"
+source: "[[index]] — [Section/Page]"
 relationships:
   - type: "is_a | relates_to | governs"
-    target: "[[CONCEPT_index]]"
-status: "verified | draft | stale"
-```
+    target: "[[index]]"
+status: "VERIFIED | DRAFT | DEPRECATED"
 
 ## 3. Nguyên tắc vận hành (Core Principles)
 1.  **Atomic Fidelity**: Một trang, một khái niệm. Không trộn lẫn nhiều chủ đề.

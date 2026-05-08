@@ -1,3 +1,9 @@
+---
+title: "DECISION 20260506 124720 CONCEPT TOOL FastAPI Conflict"
+type: "decision"
+status: "DRAFT"
+file_id: "DECISION_20260506_124720_CONCEPT_TOOL_FastAPI_Conflict"
+---
 # Conflict Decision Required: CONCEPT TOOL FastAPI
 
 **Council Decision**: REJECT BOTH

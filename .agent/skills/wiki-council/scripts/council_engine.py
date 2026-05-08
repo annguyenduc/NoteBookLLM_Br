@@ -5,6 +5,7 @@ from collections import Counter
 import random
 import time
 import re
+import datetime
 # --- PHOENIX SETUP ---
 try:
     from opentelemetry.instrumentation.requests import RequestsInstrumentor
@@ -50,7 +51,16 @@ OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 OLLAMA_URL = "http://localhost:11434/v1/chat/completions"
 
-# --- CONFIGURATION: ROLE-BASED COUNCIL (v2.6 - Iron Triangle) ---
+# --- CONFIGURATION: ROLE-BASED COUNCIL (v3.0 - R21 Compliant) ---
+def check_r21_compliance():
+    """Verify that a log entry exists for today before proceeding (R21)."""
+    today = datetime.date.today().strftime("%Y_%m_%d")
+    log_path = f"d:\\NoteBookLLM_Br\\3-resources\\wiki\\logs\\log_{today}.md"
+    if not os.path.exists(log_path):
+        print("CRITICAL: Rule R21 violation. No daily log found.")
+        return False
+    return True
+
 COUNCIL_MEMBERS = {
     "local/qwen2.5:3b": {
         "role": "Logician",

@@ -371,7 +371,7 @@
   "CONCEPT_PY_Time_Series_Basics": [
     "SOURCE_TOOL_Python_for_Data_Analysis"
   ],
-  "CONCEPT_PY_pandas_Data_Structures": [
+  "CONCEPT_PY_Pandas_Core_Structures": [
     "ENTITY_PANDAS",
     "SYNTHESIS_PYTHON_Data_Mastery"
   ],
@@ -734,7 +734,7 @@
     "CONCEPT_EXCEL_Sensitivity_Analysis",
     "CONCEPT_PY_Pandas_Aggregation",
     "CONCEPT_PY_Pandas_Data_Cleaning",
-    "CONCEPT_PY_pandas_Data_Structures",
+    "CONCEPT_PY_Pandas_Core_Structures",
     "CONCEPT_PY_Scientific_Ecosystem",
     "CONCEPT_SQL_Advanced_Reporting",
     "CONCEPT_SQL_Data_Shaping_Techniques",
@@ -750,7 +750,7 @@
     "CONCEPT_PY_Pandas_Aggregation",
     "CONCEPT_PY_Pandas_Basics",
     "CONCEPT_PY_Pandas_Data_Cleaning",
-    "CONCEPT_PY_pandas_Data_Structures",
+    "CONCEPT_PY_Pandas_Core_Structures",
     "CONCEPT_PY_Pandas_Data_Transformation",
     "CONCEPT_PY_Pandas_Wrangling_Advanced",
     "CONCEPT_PY_Scientific_Ecosystem",
@@ -771,7 +771,7 @@
     "CONCEPT_PY_NumPy_Vectorization",
     "CONCEPT_PY_Pandas_Aggregation",
     "CONCEPT_PY_Pandas_Data_Cleaning",
-    "CONCEPT_PY_pandas_Data_Structures",
+    "CONCEPT_PY_Pandas_Core_Structures",
     "CONCEPT_PY_Pandas_Data_Transformation",
     "CONCEPT_PY_Pandas_Wrangling_Advanced",
     "CONCEPT_PY_Scientific_Ecosystem",
@@ -805,7 +805,7 @@
     "graph_insight_report",
     "CONCEPT_DE_Data_Architecture_Basics",
     "CONCEPT_META_Assessment_Integration",
-    "CONCEPT_PY_pandas_Data_Structures",
+    "CONCEPT_PY_Pandas_Core_Structures",
     "CONCEPT_PY_Pandas_Wrangling_Advanced",
     "CONCEPT_PY_Scientific_Ecosystem",
     "CONCEPT_SQL_Advanced_Reporting",

@@ -1,15 +1,15 @@
 ---
-file_id: CONCEPT_PY_TIME_SERIES_BASICS
-title: "Time Series Basics (Cơ bản về chuỗi thời gian)"
-category: "Wiki Page"
-prefix: "WIKI"
-agent_id: "@engineer"
-status: "verified"
-created: "2026-05-03"
-last_updated: "2026-05-03"
-sources:
-  - "SOURCE_TOOL_PYTHON_FOR_DATA_ANALYSIS"
-  - "SOURCE_STAT_STATISTICS_IN_A_NUTSHELL"
+file_id: CONCEPT_PY_Time_Series_Basics
+title: Time Series Basics (Cơ bản về chuỗi thời gian)
+type: concept
+status: VERIFIED
+tags:
+  - Wiki Page
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-03
+last_updated: 2026-05-03
 ---
 
 ## ## For future Claude
@@ -20,7 +20,7 @@ Trang này cung cấp các nguyên tử tri thức về xử lý dữ liệu chu
 2.  **Resampling**: Khả năng chuyển đổi tần suất dữ liệu (ví dụ: từ dữ liệu theo giờ sang dữ liệu theo ngày) là kỹ thuật quan trọng nhất trong phân tích xu hướng.
 3.  **Indexing & Slicing**: Sử dụng thời gian làm chỉ mục (Index) cho phép truy xuất dữ liệu cực kỳ linh hoạt (ví dụ: `df['2026-05']`).
 
-## ## Ví dụ đối chiếu (Rule 17)
+## ## Ví dụ đối chiếu (R18)
 -   **Ví dụ thực tế (Original)**: `df.resample('M').mean()` - Lệnh này chuyển đổi dữ liệu thô (ví dụ: số lượt đăng nhập mỗi ngày) thành dữ liệu trung bình theo tháng để quan sát sự tăng trưởng dài hạn.
 -   **Ẩn dụ sư phạm (Pedagogical)**: Giống như việc bạn quay một bộ phim "Time-lapse" về sự phát triển của một cái cây. Bạn chụp ảnh mỗi phút (Dữ liệu gốc), sau đó bạn chỉ chọn lọc các bức ảnh theo từng tuần để ghép lại thành một đoạn phim ngắn (Resampling), giúp bạn nhìn rõ sự thay đổi mà không bị rối bởi quá nhiều chi tiết nhỏ nhặt hàng ngày.
 
@@ -42,7 +42,7 @@ Các khái niệm quan trọng trong Time Series với Pandas:
 - **Nguồn**: SOURCE_STAT_STATISTICS_IN_A_NUTSHELL — Section: Seasonal Decomposition.
 
 ## ## History / Revisions
-- **2026-05-03**: [@engineer] Chuyển đổi từ stub sang verified, bổ sung Rule 17 và Rule 20.
+- **2026-05-03**: [@engineer] Chuyển đổi từ stub sang verified, bổ sung R18 và Rule 20.
 
 
 ## 4F Reflection

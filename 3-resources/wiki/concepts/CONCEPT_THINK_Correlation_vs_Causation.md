@@ -1,47 +1,42 @@
 ---
-file_id: "CONCEPT_THINK_Correlation_vs_Causation"
-title: "CONCEPT: Tương quan và Nhân quả (Correlation vs Causation)"
+file_id: CONCEPT_THINK_Correlation_vs_Causation
+title: CONCEPT Tương quan và Hệ quả (Correlation vs Causation)
 type: concept
-tags: ["Thinking", "Causality", "Logic", "DA_Core"]
-status: "verified"
-created: "2026-04-29"
-last_updated: "2026-05-01"
+status: VERIFIED
+tags:
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-01
+last_updated: 2026-05-07
 ---
 
-# Tương quan và Nhân quả (Correlation vs Causation)
+# Tương quan và Hệ quả (Correlation vs Causation)
 
 ## 1. Định nghĩa
-Tương quan (Correlation) là mối quan hệ thống kê giữa hai biến số khi chúng thay đổi cùng nhau. Nhân quả (Causation) là mối quan hệ mà trong đó một biến thực sự gây ra sự thay đổi ở biến kia. Sai lầm phổ biến nhất của DA là nhầm lẫn giữa tương quan và nhân quả.
+- **Tương quan (Correlation)**: Hai biến số có xu hướng thay đổi cùng nhau (ví dụ: Cùng tăng hoặc cùng giảm).
+- **Hệ quả (Causation)**: Một sự kiện thực sự gây ra sự kiện kia (A dẫn tới B).
+- **Nguyên tắc vàng**: "Correlation does not imply causation" (Tương quan không có nghĩa là hệ quả).
 
-## 2. Nguyên lý / Cấu trúc (Thiết kế nghiên cứu)
-- **Intervention Designs (Thiết kế can thiệp)**: Sử dụng Thử nghiệm ngẫu nhiên có đối chứng (RCT) để gán ngẫu nhiên đối tượng, loại bỏ biến gây nhiễu (Confounders).
-- **Observational Designs (Thiết kế quan sát)**: Dùng khi không thể can thiệp (phi đạo đức/tốn kém). Sử dụng Thí nghiệm tự nhiên (Natural Experiments) hoặc Đối sánh (Matching).
+## 2. Tại sao quan trọng trong DA?
+Data Analyst thường mắc lỗi khi thấy hai đồ thị đi lên cùng nhau và kết luận rằng cái này gây ra cái kia. Điều này dẫn tới các quyết định kinh doanh sai lầm (ví dụ: Tắt quảng cáo vì thấy doanh thu giảm, nhưng thực tế doanh thu giảm do yếu tố mùa vụ chứ không phải do quảng cáo).
 
-## 3. Ví dụ đối chiếu (Rule 17: Double Examples)
+## 3. Ví dụ đối chiếu (R18: Double Examples)
 
-### Ví dụ từ sách (Original)
-> **Bối cảnh**: Nghiên cứu tác động của việc bị kết án thời trung học đối với thu nhập sau này.
-> **Ứng dụng**: Không thể ép học sinh phạm tội để nghiên cứu. Do đó, tác giả đề xuất so sánh những người bị bắt nhưng không bị kết án với những người bị bắt và bị kết án để loại trừ bớt biến gây nhiễu về "môi trường sống".
-> **Nguồn**: SOURCE_THINK_THINKING_WITH_DATA — Chương 5: Causality (Trang 63-64).
+### Ví dụ kinh điển (Original)
+> **Sự kiện**: Doanh số bán kem và số vụ đuối nước thường tăng cùng nhau vào mùa hè.
+> **Lập luận sai**: Ăn kem gây ra đuối nước.
+> **Thực tế**: Có biến ẩn (Confounding variable) là "Nhiệt độ". Khi trời nóng, người ta ăn kem nhiều hơn VÀ đi bơi nhiều hơn, dẫn tới số vụ đuối nước tăng.
+> **Nguồn**: [[SOURCE_Data_Science_For_Business]].
 
 ### Ứng dụng sư phạm (Pedagogical Application)
-> **Bối cảnh**: Học sinh nhận thấy "khi doanh số bán kem tăng thì số vụ đuối nước cũng tăng".
-> **Ứng dụng**: 
-> - **Lập luận**: "Cấm bán kem để giảm đuối nước" (Sai lầm Causation).
-> - **Phân tích**: Biến gây nhiễu (Confounder) là "Nhiệt độ mùa hè". Khi trời nóng, người ta vừa ăn kem nhiều vừa đi bơi nhiều.
-> - **Kết luận**: Tương quan giữa kem và đuối nước là do một nguyên nhân thứ ba.
+> **Bối cảnh**: Phân tích dữ liệu học tập trên App.
+> **Sự kiện**: Những học sinh hay dùng tính năng "Chat với AI" thường có điểm số cao hơn.
+> **Lập luận sai**: Chat với AI giúp học sinh thông minh hơn.
+> **Thực tế**: Có thể là những học sinh chăm chỉ sẵn (biến ẩn) thì sẽ có xu hướng thử mọi tính năng trên App bao gồm cả Chat AI, và họ có điểm cao vì họ chăm chỉ, không hẳn vì tính năng Chat AI.
 
-## 4. Trích dẫn nguồn (Rule 14)
-- **Nguồn**: SOURCE_THINK_THINKING_WITH_DATA — Trang 57-66.
-- **Fact-check**: Đã đối chiếu file raw `THINK_Thinking_with_Data.md` (Chương 5). [Rule 14: SUCCESS]
-
----
-WRITE REPORT:
-  file: "3-resources/wiki/concepts/CONCEPT_THINK_Correlation_vs_Causation.md"
-  operation: "overwrite"
-  added: "Chuẩn hóa theo v4.1, áp dụng Triple-View Protocol."
-  removed: "NONE"
-  compliance: "[Rule 20] Đã đối soát Template và Raw thành công."
+## 4. Trích dẫn nguồn
+- **Nguồn**: [[SOURCE_Data_Science_For_Business]].
 
 
 ## 4F Reflection

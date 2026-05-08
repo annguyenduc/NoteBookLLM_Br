@@ -1,3 +1,9 @@
+---
+file_id: "graph_insight_report"
+title: "graph insight report"
+status: "STUB"
+---
+
 # Báo cáo Phân tích Đồ thị Tri thức (Graph Insight)
 
 ## 🔝 Top các Concept quan trọng (Inbound Links)
@@ -33,7 +39,7 @@
 - **CONCEPT_PY_IPython_Magic.md**: python
 - **CONCEPT_PY_Matplotlib_Interfaces.md**: python
 - **CONCEPT_PY_NumPy_Vectorization.md**: python
-- **CONCEPT_PY_pandas_Data_Structures.md**: excel, pandas, python, sql
+- **CONCEPT_PY_Pandas_Core_Structures.md**: excel, pandas, python, sql
 - **CONCEPT_PY_Scientific_Ecosystem.md**: excel, pandas, python, sql
 - **CONCEPT_PY_Scikit_Learn_Estimator.md**: python
 - **CONCEPT_SQL_Advanced_Reporting.md**: excel, sql

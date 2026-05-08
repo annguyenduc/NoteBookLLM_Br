@@ -1,35 +1,37 @@
-﻿---
-file_id: "SOURCE_DSML_MARKETING_ANALYTICS"
-SOURCE_ID: SOURCE_DSML_MARKETING_ANALYTICS
-title: "ACAD Marketing Analytics"
-author: "Industry Standard"
-category: ACAD
-domain: "Data Analysis / Marketing"
-status: "verified"
-created: "2026-04-29"
-last_updated: "2026-04-29"
+---
+file_id: SOURCE_DSML_Marketing_Analytics
+title: ACAD Marketing Analytics
+type: source
+status: VERIFIED
+tags:
+  - ACAD
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-04-29
+last_updated: 2026-04-29
 ---
 
 # ACAD DSML Marketing Analytics
 
-## ðŸ“ 1. PhÃ¢n tÃ­ch Ingest (Analysis - Step 1)
-- **Thá»±c thá»ƒ & KhÃ¡i niá»‡m then chá»‘t:** Customer Lifetime Value (CLV), Churn Rate, Marketing ROI, Attribution Modeling.
-- **Káº¿t ná»‘i Wiki:** ChuyÃªn biá»‡t cho lÄ©nh vá»±c Marketing trong nhÃ³m [[ENTITY_Data_Science]]. Há»— trá»£ CASE_STUDY_Churn_Prediction.
-- **Äiá»ƒm khÃ¡c biá»‡t:** Táº­p trung vÃ o cÃ¡c chá»‰ sá»‘ kinh doanh Ä‘áº·c thÃ¹ cá»§a ngÃ nh Marketing.
-- **Äá» xuáº¥t cáº¥u trÃºc:** Táº¡o trang [[CONCEPT_DSML_Marketing_Metrics]].
+## 🔍 Phân tích Ingest
+- **Thực thể & Khái niệm then chốt:** Customer Lifetime Value (CLV), Churn Rate, Marketing ROI, Attribution Modeling.
+- **Kết nối Wiki:** Chuyên biệt cho lĩnh vực Marketing trong nhóm [[ENTITY_Data_Science]]. Hỗ trợ CASE_STUDY_Churn_Prediction.
+- **Điểm khác biệt:** Tập trung vào các chỉ số kinh doanh đặc thù của ngành Marketing.
+- **Đề xuất cấu trúc:** Tạo trang [[CONCEPT_DSML_Marketing_Metrics]].
 
-## ðŸ“– 2. Tá»•ng quan nguá»“n (Overview - Step 2)
-TÃ i liá»‡u hÆ°á»›ng dáº«n á»©ng dá»¥ng phÃ¢n tÃ­ch dá»¯ liá»‡u Ä‘á»ƒ tá»‘i Æ°u hÃ³a cÃ¡c chiáº¿n dá»‹ch marketing, hiá»ƒu rÃµ hÃ nh vi khÃ¡ch hÃ ng vÃ  tá»‘i Ä‘a hÃ³a lá»£i nhuáº­n trÃªn má»—i Ä‘á»“ng chi phÃ­ quáº£ng cÃ¡o.
+## 📖 Tổng quan nguồn
+Tài liệu hướng dẫn ứng dụng phân tích dữ liệu để tối ưu hóa các chiến dịch marketing, hiểu rõ hành vi khách hàng và tối đa hóa lợi nhuận trên mỗi đồng chi phí quảng cáo.
 
-## ðŸš€ 3. CÃ¡c Concept Ä‘Ã£ trÃ­ch xuáº¥t (Rule 14 & 17)
-- [[CONCEPT_DSML_Clustering_KMeans]] | **PhÃ¢n khÃºc khÃ¡ch hÃ ng** - RFM Analysis.
-- [[CONCEPT_THINK_Expected_Value_Framework]] | **GiÃ¡ trá»‹ ká»³ vá»ng** - TÃ­nh toÃ¡n ROI.
+## 🚀 Các Concept đã trích xuất
+- [[CONCEPT_DSML_Clustering_KMeans]] | **Phân khúc khách hàng** - RFM Analysis.
+- [[CONCEPT_THINK_Expected_Value_Framework]] | **Giá trị kỳ vọng** - Tính toán ROI.
 
-## ðŸ” 4. Review Items (DÃ nh cho Human)
-- [ ] Ãp dá»¥ng mÃ´ hÃ¬nh CLV Ä‘á»ƒ xÃ¡c Ä‘á»‹nh nhÃ³m há»c viÃªn tiá»m nÄƒng nháº¥t trÃªn LMS.
+## 🕵️ Review Items
+- [ ] Áp dụng mô hình CLV để xác định nhóm học viên tiềm năng nhất trên LMS.
 
---- 
-**Nguá»“n thÃ´:** `DSML_Marketing_Analytics`
+***
+**Nguồn thô:** `DSML_Marketing_Analytics`
 **Deep Research Query:** `Marketing analytics key metrics and case studies`
 
 

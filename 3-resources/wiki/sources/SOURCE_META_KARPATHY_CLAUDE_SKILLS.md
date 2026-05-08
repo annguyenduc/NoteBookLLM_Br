@@ -1,37 +1,36 @@
-﻿---
-file_id: "SOURCE_META_KARPATHY_CLAUDE_SKILLS"
-SOURCE_ID: SOURCE_META_KARPATHY_CLAUDE_SKILLS
+---
+file_id: SOURCE_META_KARPATHY_CLAUDE_SKILLS
 title: "WEB: Karpathy's Claude Skills Guide"
-author: "Andrej Karpathy"
-category: "WEB"
-domain: "AI Engineering / Skills Architecture"
-status: "verified"
-created: "2026-05-01"
-last_updated: "2026-05-01"
+type: source
+status: VERIFIED
+tags:
+  - WEB
+ai-first: true
+confidence: 0.8
+last_reconciled: 2026-05-08
+created: 2026-05-01
+last_updated: 2026-05-01
 ---
 
-relationships:
-  - type: "relates_to"
-    target: "[[CONCEPT_META_Skill_Modularity]]"
 # WEB Karpathy's Claude Skills Guide
 
-## ðŸ“ 1. PhÃ¢n tÃ­ch Ingest (Analysis - Step 1)
-- **Thá»±c thá»ƒ & KhÃ¡i niá»‡m then chá»‘t:** Skill Folders, CLAUDE.md, scripts/resources separation, Standardized Interface.
-- **Káº¿t ná»‘i Wiki:** Äá»‹nh hÃ¬nh cáº¥u trÃºc cho thÆ° má»¥c `.agent/skills/` hiá»‡n táº¡i cá»§a NoteBookLLM_Br.
-- **Äiá»ƒm khÃ¡c biá»‡t/MÃ¢u thuáº«n:** Æ¯u tiÃªn tÃ­nh module hÃ³a tuyá»‡t Ä‘á»‘i cá»§a cÃ´ng cá»¥ thay vÃ¬ nhá»“i nhÃ©t logic vÃ o system prompt.
-- **Äá» xuáº¥t cáº¥u trÃºc:** Táº¡o trang Concept vá» [[CONCEPT_META_Skill_Modularity|Skill Modularity]].
+## 🔍 Phân tích Ingest
+- **Thực thể & Khái niệm then chốt:** Skill Folders, CLAUDE.md, scripts/resources separation, Standardized Interface.
+- **Kết nối Wiki:** Định hình cấu trúc cho thư mục `.agent/skills/` hiện tại của NoteBookLLM_Br.
+- **Điểm khác biệt/Mâu thuẫn:** Ưu tiên tính module hóa tuyệt đối của công cụ thay vì nhồi nhét logic vào system prompt.
+- **Đề xuất cấu trúc:** Tạo trang Concept về [[CONCEPT_META_Skill_Modularity|Skill Modularity]].
 
-## ðŸ“– 2. Tá»•ng quan nguá»“n (Overview - Step 2)
-HÆ°á»›ng dáº«n cá»§a Karpathy vá» viá»‡c Ä‘Ã³ng gÃ³i cÃ¡c kháº£ nÄƒng cá»§a Agent thÃ nh cÃ¡c Skill Ä‘á»™c láº­p, giÃºp há»‡ thá»‘ng dá»… báº£o trÃ¬, má»Ÿ rá»™ng vÃ  giáº£m táº£i cá»­a sá»• ngá»¯ cáº£nh.
+## 📖 Tổng quan nguồn
+Hướng dẫn của Karpathy về việc đóng gói các khả năng của Agent thành các Skill độc lập, giúp hệ thống dễ bảo trì, mở rộng và giảm tải cửa sổ ngữ cảnh.
 
-## ðŸš€ 3. CÃ¡c Concept Ä‘Ã£ trÃ­ch xuáº¥t (Rule 14 & 17)
-- [[CONCEPT_META_Skill_Modularity]] | **[[CONCEPT_META_Skill_Modularity|Skill Modularity]]** - NguyÃªn táº¯c Ä‘Ã³ng gÃ³i kháº£ nÄƒng Agent thÃ nh module.
+## 🚀 Các Concept đã trích xuất
+- [[CONCEPT_META_Skill_Modularity]] | **Skill Modularity** - Nguyên tắc đóng gói khả năng Agent thành module.
 
-## ðŸ” 4. Review Items (DÃ nh cho Human)
-- [ ] User rÃ  soÃ¡t xem cÃ¡c Skill folder hiá»‡n táº¡i (.agent/skills/) Ä‘Ã£ cÃ³ Ä‘á»§ 3 thÃ nh pháº§n (scripts, resources, SKILL.md) chÆ°a.
+## 🕵️ Review Items
+- [ ] User rà soát xem các Skill folder hiện tại (.agent/skills/) đã có đủ 3 thành phần (scripts, resources, SKILL.md) chưa.
 
---- 
-**Nguá»“n thÃ´:** `AIMET_Karpathys_CLAUDE_Skills_Guide.md`
+***
+**Nguồn thô:** `AIMET_Karpathys_CLAUDE_Skills_Guide.md`
 **Deep Research Query:** `Andrej Karpathy Claude Skills architecture pattern`
 
 
