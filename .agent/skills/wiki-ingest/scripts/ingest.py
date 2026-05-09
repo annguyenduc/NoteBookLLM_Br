@@ -166,10 +166,26 @@ def ingest_file(file_path, learning=False):
         cursor.execute("INSERT INTO task_logs (agent_id, action, target_file, status, details) VALUES (?, ?, ?, ?, ?)",
                        ('@engineer', 'ingest', file_path, 'success', f"MIME: {routing['mime_type']}"))
         
+        # 5. [V2.0] Post-Ingest Gate: Automatic Audit for raw_ingest promotion
+        if "3-resources" in file_path and "raw_ingest" in file_path:
+            audit_script = os.path.join(ROOT_DIR, "scripts", "maintenance", "audit_raw_ingest.py")
+            print(f"--- Running Post-Ingest Audit for: {title} ---")
+            result = subprocess.run(
+                [sys.executable, audit_script, "--file", file_path],
+                capture_output=True,
+                text=True
+            )
+            print(result.stdout)
+            if result.returncode != 0:
+                print("WARNING: Post-Ingest Audit FAILED. Content needs remediation.")
+            else:
+                print("SUCCESS: Post-Ingest Audit PASSED.")
+
         conn.commit()
         print(f"SUCCESS: Atom created in DRAFT status. Added to review_queue.")
         
     except Exception as e:
+
         print(f"ERROR: Database update failed: {e}")
         conn.rollback()
         return False

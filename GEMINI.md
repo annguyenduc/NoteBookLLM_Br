@@ -32,6 +32,8 @@ Trong mọi trường hợp, các luật R1 đến R21 là TUYỆT ĐỐI. Nếu
 | | **R18** | Double Examples | BẮT BUỘC mỗi Atom phải có 2 ví dụ đối chiếu (Sách + Sư phạm). |
 | | **R19** | Sandbox Protocol | BẮT BUỘC chạy code thử nghiệm trong Localsandbox (WASM). |
 | | **R20** | YAML Validity | Metadata có dấu `:` phải để trong ngoặc kép "". |
+| | **R21** | Self-Auditing Gate | BẮT BUỘC pass `audit_raw_ingest.py` khi vào `raw_ingest`. |
+
 
 ---
 ## HARD STOP RULES - CẬP NHẬT THÁNG 5/2026
@@ -228,5 +230,11 @@ CHECKPOINT:
 - **Luật**: Mọi giá trị Metadata có chứa dấu `:` BẮT BUỘC phải để trong ngoặc kép `""`.
 - **Hậu quả vi phạm**: Ghost Atoms (Atom ma) và hỏng liên kết Graph.
 
+#### R21 — SELF-AUDITING GATE (Cổng tự hậu kiểm)
+- **Luật**: Mọi file khi được đưa vào `3-resources/raw_ingest/` BẮT BUỘC phải pass qua script `audit_raw_ingest.py`. 
+- **Trigger**: Script này được kích hoạt tự động bởi skill `wiki-ingest` hoặc chạy thủ công bởi `@auditor`.
+- **Hành động**: Nếu Status là `FAILED`, Atom tương ứng trong Database sẽ bị đánh dấu `status: REJECTED` hoặc `status: DRAFT` kèm cảnh báo remediation. Tuyệt đối KHÔNG được tiến hành `breakdown` hay `absorb` nếu chưa pass audit.
+
 ---
-*Phiên bản 3.5 — Bản Hiến Chương Diễn Giải Toàn Diện.*
+*Phiên bản 3.6 — Bản Hiến Chương Diễn Giải Toàn Diện.*
+
