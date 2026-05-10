@@ -1,5 +1,7 @@
 ---
 file_id: "ENTITY_[CATEGORY]_[Name]"
+# CATEGORY must be one of: AI | EDU | STEAM | TOOL | VIZ | SYS | MGT | BIZ | MISC
+# Use MISC only if no category fits — flag for human review.
 title: "[Entity Name]"
 type: "entity"
 status: "DRAFT"
@@ -8,6 +10,7 @@ tags:
 ai-first: true
 confidence: 0.0
 entity_type: "tool | language | person | org | framework"
+kwsr_type: "knowledge"  # knowledge | workflow | skill | rule
 ecosystem: "ecosystem_name (e.g., Python, Google AI)"
 version: "v1.0.0"
 affiliation: "organization_name"
@@ -15,6 +18,8 @@ relationships:
   - type: "part_of | instance_of | relates_to"
     target: "[[ENTITY_ID]]"
 last_reconciled: "2026-05-08"
+source_file: ""    # RAW_YYYY-MM-DD_filename.md that this Atom was created from
+source_ref: ""     # [[SOURCE_CATEGORY_Name]] — link to the Source Atom
 created: "2026-05-08"
 last_updated: "2026-05-08"
 ---

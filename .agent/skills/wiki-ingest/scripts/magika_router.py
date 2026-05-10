@@ -1,7 +1,12 @@
+import os
 import sys
 import subprocess
 import json
-import os
+
+ROOT_DIR = os.getenv(
+    "NOTEBOOKLLM_ROOT",
+    os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", ".."))
+)
 
 def infer_from_extension(file_path):
     ext = os.path.splitext(file_path)[1].lower()
@@ -20,9 +25,13 @@ def get_file_info(file_path):
         return {"error": f"File not found: {file_path}"}
 
     try:
+        # Determine magika executable path
+        venv_magika = os.path.join(ROOT_DIR, ".venv", "Scripts", "magika.exe")
+        magika_cmd = venv_magika if os.path.exists(venv_magika) else 'magika'
+
         # Run magika with json output
         result = subprocess.run(
-            ['magika', '--json', file_path],
+            [magika_cmd, '--json', file_path],
             capture_output=True,
             text=True,
             check=True
@@ -31,8 +40,13 @@ def get_file_info(file_path):
         
         # Magika output is a list of results
         file_data = data[0]
-        mime_type = file_data.get('output', {}).get('mime_type', 'unknown')
-        group = file_data.get('output', {}).get('group', 'unknown')
+        # Handle the nested structure of Magika JSON output
+        result_value = file_data.get('result', {}).get('value', {})
+        if not result_value: # Try older structure just in case
+             result_value = file_data
+             
+        mime_type = result_value.get('output', {}).get('mime_type', 'unknown')
+        group = result_value.get('output', {}).get('group', 'unknown')
         
         # Determine parser from Magika output
         parser = "unknown"

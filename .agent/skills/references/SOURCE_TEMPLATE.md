@@ -1,5 +1,7 @@
 ---
 file_id: "SOURCE_[CATEGORY]_[Name]"
+# CATEGORY must be one of: AI | EDU | STEAM | TOOL | VIZ | SYS | MGT | BIZ | MISC
+# Use MISC only if no category fits — flag for human review.
 title: "[Full Original Title]"
 type: "source"
 status: "VERIFIED"

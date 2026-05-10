@@ -12,17 +12,26 @@ This skill leverages the **Docling Engine** (IBM) to convert complex PDF documen
 - **R1 — Immutable Raw**: NEVER write results directly to `3-resources/raw_*/`. Always output to `00_Inbox/Converted_Sources/` for user review.
 - **R12 — Vietnamese Safety**: All output Markdown files MUST be saved with **UTF-8 no BOM** encoding.
 - **Asset Integrity**: Extracted images must be stored in an `images/` subfolder relative to the Markdown file to maintain linking integrity.
+- **R-NAMING**: Output files without the RAW_ prefix will be rejected by wiki-md-auditor.
+
 
 ## Workflow
-1. **Identification**: Identify the target PDF in `3-resources/raw_sources/`.
+1. **Identification**: Identify the target PDF in `00_Inbox/`. The PDF stays here until conversion is complete.
 2. **Execution**: Run `hd_converter.py` with the PDF path.
 3. **Verification**: Check the generated Markdown in `00_Inbox` to ensure `<!-- image -->` placeholders are replaced with actual image links (e.g., `![Image](images/chart_0.png)`).
+4. **Archiving**: After successful conversion, move the original PDF from `00_Inbox/` to `3-resources/raw_sources/` to satisfy R1 (Immutable Raw).
+
+## Output Naming Convention
+All converted Markdown files output to `00_Inbox/Converted_Sources/` must be named using this pattern:
+`RAW_[YYYY-MM-DD]_[original-filename].md`
+Example: `00_Inbox/UNESCO_AI_Framework.pdf` → `00_Inbox/Converted_Sources/RAW_2026-05-09_UNESCO_AI_Framework.md`
+The date must be the conversion date (today), not the PDF's creation date.
 
 ## Quick Reference
 
 ### Convert PDF to HD Markdown
 ```powershell
-python .agent/skills/wiki-hd-convert/scripts/hd_converter.py "path/to/source.pdf"
+.\.venv\Scripts\python.exe .agent/skills/wiki-hd-convert/scripts/hd_converter.py "path/to/source.pdf"
 ```
 
 ## Common Mistakes

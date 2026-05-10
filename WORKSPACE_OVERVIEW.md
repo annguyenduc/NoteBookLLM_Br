@@ -1,6 +1,6 @@
 # 🗺️ WORKSPACE OVERVIEW — NoteBookLLM_Br
 > **Dành cho**: AI Agent (đọc trước khi hành động) & User (kiểm tra toàn cảnh).
-> **Cập nhật**: 2026-05-09 | Schema v5.2 (Governance Architecture + ARCH Collection)
+> **Cập nhật**: 2026-05-10 | Schema v5.4 (Phase 2 Analysis Transparency + SCOUT Flow)
 
 ---
 
@@ -9,10 +9,13 @@
 ```
 NoteBookLLM_Br/
 │
-├── 📥 00_Inbox/                  ← Khu vực chờ. File Markdown sau khi convert từ PDF/Web.
-│                                    Cần qua @wiki-md-auditor trước khi vào raw_ingest/.
+├── 📥 00_Inbox/                  ← Khu vực chờ.
+│   ├── 📁 Converted_Sources/     ← Output từ PDF Router (Markdown + Images).
+│   └── 📁 _deprecated/           ← Bản lưu tạm trước khi xóa Inbox.
 │
 ├── 📁 1-projects/                ← Các dự án đang thực thi.
+│   └── 📁 ARCH_Ingestion/        ← Scout analysis drafts
+│       └── Analysis_*.md         ← Giai đoạn 2: bản phân tích chờ duyệt
 │
 ├── 📁 2-areas/                   ← Vùng quản lý liên tục (Profiles, Assessment).
 │
@@ -42,6 +45,8 @@ NoteBookLLM_Br/
 │
 ├── 📁 .agent/                    ← Cấu hình & Kỹ năng (Skills)
 │   ├── skills/                   ← Bộ kỹ năng v3.0 (TDD enforced)
+│   │   ├── 🛠️ wiki-hd-convert/   ← Tích hợp pdf_router.py (TEXT/SCANNED detection)
+│   │   └── 🛠️ wiki-md-auditor/   ← Tích hợp promote.py (Promotion logic)
 │   └── workflows/                ← Các quy trình tự động hóa (/ingest, /lint)
 │
 ├── AGENTS.md                     ← BỘ LUẬT SWARM (BẮT BUỘC ĐỌC)
@@ -49,13 +54,13 @@ NoteBookLLM_Br/
 ├── SOUL.md                       ← Tính cách & Sứ mệnh Agent
 ├── USER.md                       ← Hồ sơ & Ranh giới của User
 ├── WORKSPACE_OVERVIEW.md         ← File này
-├── task_plan.md                  ← Kế hoạch hiện tại (v5.4 — ARCH Extraction)
+├── task_plan.md                  ← Kế hoạch hiện tại (v5.5 — ARCH Atomization)
 ├── CONTINUITY.md                 ← Ghi nhớ liên phiên (Context Management)
 └── COMMAND_BOARD.md              ← Bảng điều khiển lệnh nhanh
 ```
 
 > [!NOTE]
-> **Cập nhật v5.2**: Chính thức áp dụng **Rule R21 (Audit Gate)**. Mọi file trong `raw_ingest` phải vượt qua `audit_raw_ingest.py` trước khi Ingest. Bổ sung prefix `ARCH` cho hệ thống tệp.
+> **Cập nhật v5.3**: Triển khai `pdf_router.py` tự động phân loại PDF. Tối ưu hóa `verify_convert.py` cho các file text-only (PyMuPDF). Hoàn tất Promote 4/4 tài liệu ARCH vào `raw_ingest/`.
 
 ---
 
@@ -67,12 +72,16 @@ Mọi Agent phải tuân thủ luồng runtime này.
 graph TD
     subgraph "1. TẦNG NẠP (INGEST PIPELINE)"
         direction LR
-        RAW_SOURCE["raw_sources\n(PDF/Video/HTML)"] -->|wiki-web-scrape| INBOX["00_Inbox/\nMarkdown thô"]
-        INBOX --> AUDIT1["wiki-md-auditor\n(Fix ligatures)"]
-        AUDIT1 -->|status: AUDITED| RAW_INGEST["raw_ingest/\nMarkdown chuẩn"]
-        RAW_INGEST --> AUDIT2["audit_raw_ingest.py\n(Rule R21 — Check Links)"]
-        AUDIT2 -->|PASS| INGEST["wiki-ingest\n(Atomize)"]
-        INGEST -->|status: DRAFT| ATOMS["Atoms mới\nconcepts/ entities/ sources/"]
+        RAW_SOURCE["raw_sources\n(PDF gốc)"] -->|pdf-router| ROUTE{Mode?}
+        ROUTE -->|TEXT| PYMUPDF["pymupdf4llm\n(High Speed)"]
+        ROUTE -->|SCANNED| DOCLING["docling\n(High Fidelity OCR)"]
+        PYMUPDF --> VERIFY["verify_convert.py\n(Audit Stamp)"]
+        DOCLING --> VERIFY
+        VERIFY -->|status: PASSED| PROMOTE["promote.py\n(Promotion)"]
+        PROMOTE -->|fuel| RAW_INGEST["raw_ingest/\nMarkdown chuẩn"]
+        RAW_INGEST --> SCOUT["@scout\nAnalysis_*.md"]
+        SCOUT -->|"Human Review\n(duyệt analysis)"| ENGINEER["@engineer\nAtomize"]
+        ENGINEER --> ATOMS["Atoms mới\nconcepts/ entities/ sources/"]
     end
 
     subgraph "2. TẦNG HỢP NHẤT (ABSORB & CONFLICT)"
@@ -134,12 +143,13 @@ graph TD
 
 | Tầng | Skill / Tool | Vai trò | Input → Output |
 |:---|:---|:---|:---|
+| **Ingest** | `pdf_router.py` | **MỚI**: Tự động phân loại & điều hướng engine | PDF → `00_Inbox/` |
 | **Ingest** | `wiki-web-scrape` | Cào URL tĩnh → Markdown | URL → `00_Inbox/` |
 | **Ingest** | `wiki-crawl-4ai` | Cào URL động + screenshot | URL → `00_Inbox/` |
 | **Ingest** | `wiki-hd-convert` | PDF có biểu đồ → Markdown + ảnh | PDF → `00_Inbox/` |
-| **Ingest** | `wiki-md-auditor` | Audit + fix ligatures | `00_Inbox/` → `raw_ingest/` |
-| **Governance**| `audit_raw_ingest.py` | **Rule R21**: Kiểm tra link & metadata | `raw_ingest/` → `PASS/FAIL` |
-| **Ingest** | `wiki-ingest` | Atomize → DRAFT | `raw_ingest/` → `concepts/` `entities/` `sources/` |
+| **Ingest** | `verify_convert.py`| **Audit Stamp**: Xác thực độ lưu giữ (Retention) | MD → `Audit Block` |
+| **Ingest** | `promote.py` | **MỚI**: Di chuyển file an toàn vào hạ tầng | `Inbox` → `raw_ingest/` |
+| **Ingest** | `wiki-ingest` | Atomize → DRAFT | `raw_ingest/` → `Atoms` |
 | **Absorb** | `wiki-absorb` | So sánh, phát hiện conflict | Atoms → `review_queue/` |
 | **Absorb** | `wiki-council` | Multi-agent phân xử xung đột | Conflict → `decisions/` |
 | **Query** | `wiki-query` | Keyword + graph traversal | Vault → `queries/` |
@@ -148,7 +158,6 @@ graph TD
 | **Maintenance** | `wiki-rebuild` | Sync filesystem → `wiki_brain.db` | Vault → DB |
 | **Maintenance** | `wiki-cleanup` | Sửa broken links | Vault → `review_queue/` |
 | **Maintenance** | `wiki-status` | Dashboard sức khỏe vault | DB → Console |
-| **Learning** | `wiki-learning-audit` | Kiểm tra Atoms `learning_source=true` chưa verify | Vault → `review_queue/` |
 | **Meta** | `/file-back` | Ghi session insight, tạo SOP | Chat → `session_insights/` |
 | **Tool** | `obsidian-cli` | CLI interface với Obsidian vault | Cross-cutting |
 
@@ -174,31 +183,32 @@ graph TD
 | Nhóm | Chủ đề | Prefix | Source Nodes | Concepts | Trạng thái |
 |:---|:---|:---:|:---:|:---:|:---|
 | **Nhóm 1** | Tư duy & Problem Solving | `THINK` | ✅ 3/3 | ✅ 15 | **COMPLETED** |
-| **Nhóm 2** | Infrastructure & Systems | `ARCH` | 📝 4/4 | ⏳ 0 | **IN PROGRESS (Phase 2)** |
+| **Nhóm 2** | Infrastructure & Systems | `ARCH` | ✅ 4/4 | ⏳ 0 | **IN PROGRESS (Phase 3)** |
 | **Nhóm 3** | Agentic AI & LLM | `AIMET` | ❌ 0 | ❌ 0 | 🔴 Pending |
 | **Nhóm 4** | Data Engineering / SQL | `DE` | ❌ 0 | ❌ 0 | 🔴 Pending |
 
-**Current Focus**: Bóc tách nguyên tử (Extraction) cho bộ sưu tập `ARCH` (Thinking in Systems, Event-Driven Architecture).
+**Current Focus**: Bóc tách nguyên tử (Atomization) cho bộ sưu tập `ARCH` (Thinking in Systems, DDIA, OSTEP, EDA).
 
 ---
 
-## 6. Các lệnh quan trọng (v5.2)
+## 6. Các lệnh quan trọng (v5.3)
 
 ```powershell
-# 1. Hậu kiểm Rule R21 (Bắt buộc cho raw_ingest)
-python scripts/maintenance/audit_raw_ingest.py --file [path_to_file]
+# 1. Nạp PDF thông minh (Tự chọn engine)
+python .agent/skills/wiki-hd-convert/scripts/pdf_router.py "00_Inbox/file.pdf"
 
-# 2. Đồng bộ Database & Index (R15)
+# 2. Audit & Promote (Sau khi convert)
+python .agent/skills/wiki-md-auditor/scripts/md_auditor.py "00_Inbox/Converted_Sources/folder/file.md" --fix
+python .agent/skills/wiki-md-auditor/scripts/promote.py "00_Inbox/Converted_Sources/folder/file.md"
+
+# 3. Đồng bộ Database & Index (R15)
 python .agent/skills/wiki-rebuild/scripts/rebuild.py
 python .agent/skills/wiki-rebuild/scripts/update_wiki_index.py
 obsidian reload
 
-# 3. Làm sạch Link gãy
+# 4. Làm sạch Link gãy
 python .agent/skills/wiki-cleanup/scripts/lint_engine.py
-
-# 4. Learning Audit (Cuối tuần)
-python .agent/skills/wiki-learning-audit/scripts/audit.py
 ```
 
 ---
-*File này được bảo trì bởi @pm. Lần cuối cập nhật: 2026-05-09.*
+*File này được bảo trì bởi @pm. Lần cuối cập nhật: 2026-05-10.*

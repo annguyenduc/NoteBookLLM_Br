@@ -1,7 +1,10 @@
 ---
 file_id: "CONCEPT_[CATEGORY]_[Name]"
+# CATEGORY must be one of: AI | EDU | STEAM | TOOL | VIZ | SYS | MGT | BIZ | MISC
+# Use MISC only if no category fits — flag for human review.
 title: "[Concept Name]"
 type: "concept"
+kwsr_type: "knowledge"  # knowledge | workflow | skill | rule
 status: "DRAFT"
 tags:
   - "category"
@@ -12,6 +15,8 @@ relationships:
   - type: "is_a | part_of | prerequisite_of | supports | contradicts"
     target: "[[CONCEPT_ID]]"
 last_reconciled: "2026-05-08"
+source_file: ""    # RAW_YYYY-MM-DD_filename.md that this Atom was created from
+source_ref: ""     # [[SOURCE_CATEGORY_Name]] — link to the Source Atom
 created: "2026-05-08"
 last_updated: "2026-05-08"
 ---

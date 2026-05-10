@@ -1,5 +1,7 @@
 ---
-file_id: "COMPARISON_[A]_vs_[B]"
+file_id: "COMPARISON_[CATEGORY]_[A]_vs_[B]"
+# CATEGORY must be one of: AI | EDU | STEAM | TOOL | VIZ | SYS | MGT | BIZ | MISC
+# Use MISC only if no category fits — flag for human review.
 title: "[Original Title - Keep English if alphabet]"
 type: "comparison"
 tags:

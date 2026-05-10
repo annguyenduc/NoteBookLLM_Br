@@ -31,9 +31,9 @@ Check console output or DB/task logs for one of these outcomes: skipped duplicat
 
 ## Quick Reference
 - Route a file:
-  `python .agent/skills/wiki-ingest/scripts/magika_router.py "00_Inbox/example.pdf"`
+  `.\.venv\Scripts\python.exe .agent/skills/wiki-ingest/scripts/magika_router.py "00_Inbox/example.pdf"`
 - Ingest a file:
-  `python .agent/skills/wiki-ingest/scripts/ingest.py "00_Inbox/example.pdf"`
+  `.\.venv\Scripts\python.exe .agent/skills/wiki-ingest/scripts/ingest.py "00_Inbox/example.pdf"`
 - Supporting scripts:
   `score_engine.py` computes confidence.
   `wiki_ingest_helper.py` and `pressure_test.py` are support and test utilities.

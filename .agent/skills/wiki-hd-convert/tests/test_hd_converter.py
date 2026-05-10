@@ -5,7 +5,7 @@ from scripts.hd_converter import convert_pdf_to_hd_markdown
 
 class TestHDConverter(unittest.TestCase):
     def setUp(self):
-        self.test_pdf = "3-resources/raw_sources/VIZ_10_Visualization_Tips.pdf"
+        self.test_pdf = "00_Inbox/VIZ_10_Visualization_Tips.pdf"
         self.output_root = "00_Inbox/Converted_Sources/TEST_HD"
         if os.path.exists(self.output_root):
             shutil.rmtree(self.output_root)
