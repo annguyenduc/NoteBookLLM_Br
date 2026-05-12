@@ -1,6 +1,8 @@
 ---
 file_id: "overview"
 title: "Tổng quan tri thức Wiki 2.0"
+type: "knowledge"
+kwsr_type: "knowledge"  # knowledge | workflow | skill | rule
 category: "Global Overview"
 prefix: "ENTITY"
 tags: "["Meta", "Summary", "Data_Analyst", "Knowledge_Graph"]"

@@ -32,7 +32,7 @@ def verify(pdf_path: str, md_path: str) -> bool:
             md_content = f.read()
 
         # Metric 1: Page Coverage
-        md_sections = len(re.findall(r'^## ', md_content, re.MULTILINE))
+        md_sections = len(re.findall(r'^## |<!-- PAGE_START_', md_content, re.MULTILINE))
         coverage = (md_sections / pdf_pages * 100) if pdf_pages > 0 else 100
         
         status_cov = "✅" if coverage >= 80 else ("⚠️" if coverage >= 50 else "❌")
@@ -53,7 +53,7 @@ def verify(pdf_path: str, md_path: str) -> bool:
             ret_label = f"{retention:.0f}%"
 
         # Metric 3: Image Coverage
-        md_images = len(re.findall(r'!\[.*?\]\(.*?\)', md_content))
+        md_images = len(re.findall(r'!\[\[(.*?)\]\]|!\[.*?\]\(.*?\)', md_content))
         
         is_pymupdf = 'converted_by: "pymupdf4llm"' in md_content
         

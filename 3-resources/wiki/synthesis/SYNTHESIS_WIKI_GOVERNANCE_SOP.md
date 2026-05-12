@@ -2,6 +2,7 @@
 file_id: WIKI_GOVERNANCE_SOP
 title: Quy trình Vận hành Tiêu chuẩn Wiki 2.0
 type: synthesis
+kwsr_type: "knowledge"  # knowledge | workflow | skill | rule
 status: verified
 tags: ["SOP", "Workflow", "Manual", "Architecture"]
 ai-first: true
@@ -48,3 +49,10 @@ Dùng để biến nội dung chat hoặc kết quả phân tích thành trang W
 
 ---
 **Lưu ý:** Mọi hành động vi phạm SOP này sẽ bị Agent cảnh báo dựa trên Luật R8 (Human Supremacy).
+
+
+## 4F Reflection
+- **Facts**: 
+- **Feelings**: 
+- **Findings**: 
+- **Futures**: 

@@ -1,6 +1,7 @@
 # 🗺️ WORKSPACE OVERVIEW — NoteBookLLM_Br
-> **Dành cho**: AI Agent (đọc trước khi hành động) & User (kiểm tra toàn cảnh).
-> **Cập nhật**: 2026-05-10 | Schema v5.4 (Phase 2 Analysis Transparency + SCOUT Flow)
+> [!IMPORTANT]
+> **MANDATORY READ FOR ALL AGENTS**: Tài liệu này cùng với `AGENTS.md` và `GEMINI.md` là bộ ba "Source of Truth" tối cao. Mọi hành động Ingest/Atomize phải đối soát với sơ đồ tại Mục 2 và SOP tại Mục 3.
+> **Cập nhật**: 2026-05-12 | Schema v6.1 (Phase 4 — Governance Hardening & Auto-revert)
 
 ---
 
@@ -9,19 +10,19 @@
 ```
 NoteBookLLM_Br/
 │
-├── 📥 00_Inbox/                  ← Khu vực chờ.
-│   ├── 📁 Converted_Sources/     ← Output từ PDF Router (Markdown + Images).
+├── 📥 00_Inbox/                  ← QUARANTINE: Khu vực cách ly & xử lý thô.
+│   ├── 📁 Converted_Sources/     ← Output từ PDF Router (Markdown HD + Images).
+│   ├── 📁 gap_candidates/        ← Local AI audit output (PENDING_REVIEW).
 │   └── 📁 _deprecated/           ← Bản lưu tạm trước khi xóa Inbox.
 │
-├── 📁 1-projects/                ← Các dự án đang thực thi.
-│   └── 📁 ARCH_Ingestion/        ← Scout analysis drafts
-│       └── Analysis_*.md         ← Giai đoạn 2: bản phân tích chờ duyệt
+├── 📁 1-projects/                ← ACTIVE PROJECTS: Drafts & Analysis.
+│   └── 📄 Analysis_[ID]_*.md     ← Scout analysis drafts (Thiết kế Atom).
 │
 ├── 📁 2-areas/                   ← Vùng quản lý liên tục (Profiles, Assessment).
 │
 ├── 📁 3-resources/               ← HẠ TẦNG TRI THỨC (Source of Truth)
-│   ├── 📂 raw_sources/           ← EVIDENCE — PDF/Video/HTML gốc. IMMUTABLE (R1).
-│   ├── 📂 raw_ingest/            ← FUEL — Markdown đạt chuẩn R21 Audit. IMMUTABLE.
+│   ├── 📂 raw_sources/           ← EVIDENCE — PDF/Video gốc. IMMUTABLE (R1).
+│   ├── 📂 raw_ingest/            ← FUEL — MD đã qua Audit (R21). Sẵn sàng bóc tách.
 │   ├── 📂 raw_assets/            ← VISUAL PROOF — Hình ảnh/Biểu đồ phẳng.
 │   ├── 📂 _deprecated/           ← ARCHIVE — Các file cũ hoặc bị lỗi link đã thay thế.
 │   │
@@ -45,170 +46,135 @@ NoteBookLLM_Br/
 │
 ├── 📁 .agent/                    ← Cấu hình & Kỹ năng (Skills)
 │   ├── skills/                   ← Bộ kỹ năng v3.0 (TDD enforced)
-│   │   ├── 🛠️ wiki-hd-convert/   ← Tích hợp pdf_router.py (TEXT/SCANNED detection)
-│   │   └── 🛠️ wiki-md-auditor/   ← Tích hợp promote.py (Promotion logic)
 │   └── workflows/                ← Các quy trình tự động hóa (/ingest, /lint)
+│
+├── 📁 .kiro/                     ← Agent Kiro Infrastructure (Circuit Breaker & Logs).
 │
 ├── AGENTS.md                     ← BỘ LUẬT SWARM (BẮT BUỘC ĐỌC)
 ├── GEMINI.md                     ← HIẾN PHÁP (R1-R21) — Tối cao
-├── SOUL.md                       ← Tính cách & Sứ mệnh Agent
-├── USER.md                       ← Hồ sơ & Ranh giới của User
-├── WORKSPACE_OVERVIEW.md         ← File này
-├── task_plan.md                  ← Kế hoạch hiện tại (v5.5 — ARCH Atomization)
-├── CONTINUITY.md                 ← Ghi nhớ liên phiên (Context Management)
-└── COMMAND_BOARD.md              ← Bảng điều khiển lệnh nhanh
+├── task_plan.md                  ← Kế hoạch hiện tại (v6.0 — Phase 4 Hardening)
+└── WORKSPACE_OVERVIEW.md         ← File này
 ```
-
-> [!NOTE]
-> **Cập nhật v5.3**: Triển khai `pdf_router.py` tự động phân loại PDF. Tối ưu hóa `verify_convert.py` cho các file text-only (PyMuPDF). Hoàn tất Promote 4/4 tài liệu ARCH vào `raw_ingest/`.
 
 ---
 
-## 2. Kiến trúc Hệ thống Wiki 2.0 (Phiên bản v3.0)
+## 2. Kiến trúc Hệ thống Wiki 2.0 (Pipeline V2.0)
 
 Mọi Agent phải tuân thủ luồng runtime này.
 
 ```mermaid
 graph TD
-    subgraph "1. TẦNG NẠP (INGEST PIPELINE)"
-        direction LR
-        RAW_SOURCE["raw_sources\n(PDF gốc)"] -->|pdf-router| ROUTE{Mode?}
-        ROUTE -->|TEXT| PYMUPDF["pymupdf4llm\n(High Speed)"]
-        ROUTE -->|SCANNED| DOCLING["docling\n(High Fidelity OCR)"]
-        PYMUPDF --> VERIFY["verify_convert.py\n(Audit Stamp)"]
-        DOCLING --> VERIFY
-        VERIFY -->|status: PASSED| PROMOTE["promote.py\n(Promotion)"]
-        PROMOTE -->|fuel| RAW_INGEST["raw_ingest/\nMarkdown chuẩn"]
-        RAW_INGEST --> SCOUT["@scout\nAnalysis_*.md"]
-        SCOUT -->|"Human Review\n(duyệt analysis)"| ENGINEER["@engineer\nAtomize"]
-        ENGINEER --> ATOMS["Atoms mới\nconcepts/ entities/ sources/"]
+    subgraph "1. TẦNG CÁCH LY & CHUYỂN ĐỔI (CONVERSION - 00_INBOX)"
+        USER_IN["00_Inbox\n(File thô từ User)"] -->|hd_converter.py| STAGE["00_Inbox/Converted_Sources/\n(MD Chunks + Images)"]
+        STAGE --> AUDIT["md_auditor.py\n(Audit Stamp R21)"]
+        AUDIT -->|status: PASSED| PROMOTE["promote.py\n(Gate 1: Promotion)"]
+        
+        CB["circuit_breaker.py\n(.kiro/error_log.md)"] -.->|Oversight| USER_IN
+        CB -.->|Oversight| AUDIT
     end
 
-    subgraph "2. TẦNG HỢP NHẤT (ABSORB & CONFLICT)"
+    subgraph "2. TẦNG LƯU TRỮ & ĐĂNG KÝ (PERMANENT - 3-RESOURCES)"
+        PROMOTE -->|Move PDF| RAW["raw_sources/\n(Bằng chứng gốc)"]
+        PROMOTE -->|Move MD| FUEL["raw_ingest/\n(Nhiên liệu sạch)"]
+        PROMOTE -->|Move IMG| ASSETS["raw_assets/\n(Visual Proof)"]
+        
+        FUEL --> INGEST["wiki-ingest\n(ingest.py)"]
+        INGEST --> ATOMS["Atoms mới (DRAFT)"]
+        
+        ATOMS --> SCOUT["@scout\nAnalysis_*.md"]
+    end
+
+    subgraph "2.5. TẦNG LOCAL AI AUDIT (GAP-CHECK)"
+        SCOUT -->|Extract atoms| GAP_CHECK["gap_check.py\nOllama gemma3:4b"]
+        GAP_CHECK -->|Non-blocking| GAP_CAND["00_Inbox/gap_candidates/\nPENDING_REVIEW"]
+        GAP_CAND -->|Human Review| ENGINEER["@engineer\nAtomize"]
+        GAP_CHECK -.->|Offline: skip| ENGINEER
+        
+        SOP_GAP["SOP_Weekly_Gap_Review.md"] -.->|Protocol| GAP_CAND
+    end
+
+    subgraph "3. TẦNG HỢP NHẤT (ABSORB & CONFLICT)"
         ATOMS --> ABSORB["wiki-absorb\n(So sánh với vault)"]
         ABSORB -->|Không xung đột| QUEUE["review_queue/\n(Chờ Human duyệt)"]
-        ABSORB -->|Phát hiện Conflict| COUNCIL["wiki-council\n(Multi-agent consensus)"]
+        ABSORB -->|Phát hiện Conflict| COUNCIL["wiki-council\n(Consensus)"]
         COUNCIL -->|Ghi phán quyết| DECISION["decisions/\nstatus: verified"]
         COUNCIL -->|Cách ly 2 phía| QUEUE
     end
 
-    subgraph "3. TẦNG HUMAN — GOVERNANCE ★"
-        QUEUE -->|"Human Review\n(verify facts)"| VERIFIED["status: VERIFIED\nconcepts/ entities/"]
-        DECISION -->|"Human Review\n(chọn phán quyết)"| VERIFIED
-        VERIFIED -->|"Human Synthesis\n(/file-back)"| SYNTH_DRAFT["comparisons/ synthesis/\nstatus: DRAFT"]
-        SYNTH_DRAFT -->|"Human Approval"| SYNTHESIZED["status: SYNTHESIZED\n(Tri thức chính thức)"]
+    subgraph "4. TẦNG HUMAN — GOVERNANCE ★"
+        QUEUE -->|"Human Review\n(verify facts)"| VERIFIED["status: VERIFIED"]
+        DECISION -->|"Human Review"| VERIFIED
+        VERIFIED -->|"Human Synthesis"| SYNTH_DRAFT["synthesis/\nstatus: DRAFT"]
+        SYNTH_DRAFT -->|"Human Approval\n(synthesis_guard.py)"| SYNTHESIZED["status: SYNTHESIZED"]
     end
 
-    subgraph "4. TẦNG BẢO TRÌ (MAINTENANCE)"
+    subgraph "5. TẦNG BẢO TRÌ (MAINTENANCE)"
         SYNTHESIZED --> REBUILD["wiki-rebuild\n(Sync filesystem → DB)"]
-        REBUILD --> CLEAN["wiki-cleanup\n(Broken links → review_queue)"]
+        REBUILD --> CLEAN["wiki-cleanup\n(Broken links)"]
         CLEAN --> STATUS["wiki-status\nDashboard"]
     end
-
-    subgraph "5. TẦNG TRUY VẤN (ON-DEMAND)"
-        USER((👤 USER)) -->|"Hỏi bằng từ khóa"| QUERY["wiki-query\n(Keyword + Graph)"]
-        USER -->|"Hỏi theo nghĩa / concept"| SEMANTIC["wiki-semantic-search\n(Fallback khi query miss)"]
-        USER -->|"Tìm gap tri thức"| BREAKDOWN["wiki-breakdown\n(Noun-Test + Blocklist)"]
-        QUERY -->|"Kết quả có trích dẫn"| RESPONSE["queries/\n(Tái dùng để tiết kiệm token)"]
-        SEMANTIC --> RESPONSE
-        BREAKDOWN -->|"Stub mới (nếu qua Noun-Test)"| ATOMS
-    end
-
-    subgraph "6. TẦNG SIÊU TRI THỨC (META-KNOWLEDGE)"
-        USER -->|"/file-back sau phiên"| INSIGHT["session_insights/\nstatus: verified"]
-        INSIGHT -->|"Promotion (nếu có SOP mới)"| SOP["GEMINI.md / SOP files\nstatus: FINAL"]
-    end
-
-    subgraph "7. TẦNG KIỂM ĐỊNH HỌC TẬP (LEARNING AUDIT)"
-        LRN["Atoms với\nlearning_source=true"] -->|"Hàng tuần"| LAUDIT["wiki-learning-audit\n(Tìm unverified atoms)"]
-        LAUDIT -->|"Chưa kiểm chứng qua thực hành"| QUEUE
-        LAUDIT -->|"Đã kiểm chứng"| VERIFIED
-    end
-
-    %% Cross-cutting tool
-    CLI{{obsidian-cli}} -.->|Tool| ABSORB
-    CLI -.->|Tool| REBUILD
-    CLI -.->|Tool| QUERY
-    CLI -.->|Tool| BREAKDOWN
 ```
 
-> [!IMPORTANT]
-> **Tầng 3 — Human Governance** là cổng duy nhất nâng status lên `VERIFIED` và `SYNTHESIZED`. Không Agent nào có quyền bỏ qua tầng này.
->
-> **Tầng 7 — Learning Audit** là cơ chế mới (v5.1): phân biệt kiến thức đang học (`learning_source=true`, confidence -0.1) với kiến thức đã kiểm chứng qua thực hành. Bao gồm cả **kiến thức thường thức** (`source_type: general_knowledge`) — ưu tiên tạo **link** sang domain Atoms thay vì mở rộng độc lập.
+---
+
+## 3. Quy tắc Ingest chuẩn (Pipeline V2.0 SOP)
+
+Mọi dữ liệu phải tuân thủ quy trình "Cách ly tuyệt đối" trước khi trở thành Source of Truth:
+
+1.  **Giai đoạn 1: Chuyển đổi (Conversion - 00_Inbox)**:
+    -   **HD Convert**: Chạy `hd_converter.py` với Docling. Toàn bộ Markdown và Hình ảnh (`images/`) phải nằm trong thư mục con của `00_Inbox/Converted_Sources/[SOURCE_NAME]/`.
+    -   **Audit**: Chạy `md_auditor.py --fix` trên các file Markdown tại chỗ. Kiểm tra tính toàn vẹn và đóng dấu **Audit Stamp**.
+2.  **Giai đoạn 2: Nhập kho (Promotion - Gate 1)**:
+    -   Chạy `promote.py`. Script này di chuyển nguyên tử (Atomic Move) từ Inbox vào `raw_*`.
+3.  **Giai đoạn 3: Đăng ký (Ingestion)**:
+    -   `ingest.py` đăng ký "Nhiên liệu sạch" từ `raw_ingest` vào Database Wiki.
+4.  **Giai đoạn 4: Phân tích (Atomization)**:
+    -   `@scout` phân tích Atoms dựa trên bản nạp đã được đăng ký.
 
 ---
 
-## 3. Skill Registry (v3.0 — Đầy đủ)
+## 4. Skill Registry (v3.0 — High-Fidelity)
 
-| Tầng | Skill / Tool | Vai trò | Input → Output |
-|:---|:---|:---|:---|
-| **Ingest** | `pdf_router.py` | **MỚI**: Tự động phân loại & điều hướng engine | PDF → `00_Inbox/` |
-| **Ingest** | `wiki-web-scrape` | Cào URL tĩnh → Markdown | URL → `00_Inbox/` |
-| **Ingest** | `wiki-crawl-4ai` | Cào URL động + screenshot | URL → `00_Inbox/` |
-| **Ingest** | `wiki-hd-convert` | PDF có biểu đồ → Markdown + ảnh | PDF → `00_Inbox/` |
-| **Ingest** | `verify_convert.py`| **Audit Stamp**: Xác thực độ lưu giữ (Retention) | MD → `Audit Block` |
-| **Ingest** | `promote.py` | **MỚI**: Di chuyển file an toàn vào hạ tầng | `Inbox` → `raw_ingest/` |
-| **Ingest** | `wiki-ingest` | Atomize → DRAFT | `raw_ingest/` → `Atoms` |
-| **Absorb** | `wiki-absorb` | So sánh, phát hiện conflict | Atoms → `review_queue/` |
-| **Absorb** | `wiki-council` | Multi-agent phân xử xung đột | Conflict → `decisions/` |
-| **Query** | `wiki-query` | Keyword + graph traversal | Vault → `queries/` |
-| **Query** | `wiki-semantic-search` | Fallback ngữ nghĩa khi query miss | Vault → `queries/` |
-| **Query** | `wiki-breakdown` | Tìm gap + tạo Stub (có Noun-Test) | Vault → Stub Atoms |
-| **Maintenance** | `wiki-rebuild` | Sync filesystem → `wiki_brain.db` | Vault → DB |
-| **Maintenance** | `wiki-cleanup` | Sửa broken links | Vault → `review_queue/` |
-| **Maintenance** | `wiki-status` | Dashboard sức khỏe vault | DB → Console |
-| **Meta** | `/file-back` | Ghi session insight, tạo SOP | Chat → `session_insights/` |
-| **Tool** | `obsidian-cli` | CLI interface với Obsidian vault | Cross-cutting |
+| Tầng | Skill / Tool | Vai trò | Input → Output | Path |
+|:---|:---|:---|:---|:---|
+| **Conversion** | `hd_converter.py`| **HD Docling**: PDF/Office → MD Chunks | PDF → `00_Inbox/` | `.agent/skills/wiki-hd-convert/scripts/` |
+| **Audit** | `md_auditor.py` | **Audit Stamp**: Xác thực chuẩn R21 | MD → `Audit Block` | `scripts/maintenance/` |
+| **Promotion** | `promote.py` | **Promotion**: Di chuyển file an toàn | `00_Inbox` → `3-resources` | `scripts/maintenance/` |
+| **Gap-Check** | `gap_check.py` | **Local Audit**: Phát hiện tri thức bỏ sót | `Atoms` → `00_Inbox/gap_candidates/` | `.agent/skills/wiki-ingest/scripts/` |
+| **Governance** | `synthesis_guard.py`| **R8 Enforcement**: Chống Agent tự synthesize | `Proposed` → `Revert/Approve` | `scripts/maintenance/` |
+| **Maintenance** | `wiki-status` | **Dashboard**: Báo cáo sức khỏe | `/status` | `scripts/` |
+| **Ingest** | `wiki-ingest` | **Ingestion**: Nạp tài liệu & atom hóa | `/ingest` | `.agent/skills/wiki-ingest/scripts/` |
+| **Monitor** | `circuit_breaker.py`| **Circuit Breaker**: Giám sát lỗi | Process → `error_log.md` | `.kiro/` |
+| **Maintenance** | `wiki-rebuild` | **Rebuild**: Sync filesystem → DB | Vault → DB | `scripts/` |
 
 ---
 
-## 4. Phân quyền Agent (Quick Reference)
-
-| Agent | Đọc | GHI (được phép) |
-|:---|:---|:---|
-| `@pm` | Tất cả | `wiki/log.md`, `1-projects/`, `CONTINUITY.md` |
-| `@scout` | `raw_sources/`, `raw_ingest/` | `1-projects/*/Analysis_*.md` (draft) |
-| `@engineer` | `raw_ingest/`, `wiki/` | `1-projects/*/output`, `wiki/concepts/`, `wiki/entities/` |
-| `@librarian` | Tất cả | `raw_ingest/`, `raw_assets/`, `wiki/synthesis/`, `wiki/comparisons/`, `wiki/index.md` |
-| `@auditor` | Tất cả (read-only) | `wiki/log.md` (append only) |
-| `@devops` | Tất cả | `scripts/`, `tools/` |
-| `@healer` | Tất cả | `wiki/` (sửa links), `scripts/` |
-| **KHÔNG AI ĐƯỢC** | — | `raw_sources/` (IMMUTABLE EVIDENCE) |
-
----
-
-## 5. Trạng thái Ingest (Lộ trình 2026)
-
-| Nhóm | Chủ đề | Prefix | Source Nodes | Concepts | Trạng thái |
-|:---|:---|:---:|:---:|:---:|:---|
-| **Nhóm 1** | Tư duy & Problem Solving | `THINK` | ✅ 3/3 | ✅ 15 | **COMPLETED** |
-| **Nhóm 2** | Infrastructure & Systems | `ARCH` | ✅ 4/4 | ⏳ 0 | **IN PROGRESS (Phase 3)** |
-| **Nhóm 3** | Agentic AI & LLM | `AIMET` | ❌ 0 | ❌ 0 | 🔴 Pending |
-| **Nhóm 4** | Data Engineering / SQL | `DE` | ❌ 0 | ❌ 0 | 🔴 Pending |
-
-**Current Focus**: Bóc tách nguyên tử (Atomization) cho bộ sưu tập `ARCH` (Thinking in Systems, DDIA, OSTEP, EDA).
-
----
-
-## 6. Các lệnh quan trọng (v5.3)
+## 5. Các lệnh vận hành (v6.1)
 
 ```powershell
-# 1. Nạp PDF thông minh (Tự chọn engine)
-python .agent/skills/wiki-hd-convert/scripts/pdf_router.py "00_Inbox/file.pdf"
+# 1. HD Convert & Chunking
+python .agent/skills/wiki-hd-convert/scripts/hd_converter.py "00_Inbox/[FILE].pdf" --chunk-size 15
 
-# 2. Audit & Promote (Sau khi convert)
-python .agent/skills/wiki-md-auditor/scripts/md_auditor.py "00_Inbox/Converted_Sources/folder/file.md" --fix
-python .agent/skills/wiki-md-auditor/scripts/promote.py "00_Inbox/Converted_Sources/folder/file.md"
+# 2. Audit & Promote (Gate 1)
+python scripts/maintenance/md_auditor.py "00_Inbox/Converted_Sources/[SOURCE_NAME]/" --fix
+python .kiro/circuit_breaker.py promote --source "00_Inbox/Converted_Sources/[SOURCE_NAME]/" --target "3-resources/raw_ingest"
 
-# 3. Đồng bộ Database & Index (R15)
+# 3. Đăng ký Ingest & Gap-Check
+python .agent/skills/wiki-ingest/scripts/ingest.py "3-resources/raw_ingest/[SOURCE_FILE].md"
+python .agent/skills/wiki-ingest/scripts/gap_check.py --source "[SOURCE_NAME]" --chunk [N] --atoms '[JSON_LIST]'
+
+# 4. Gap Review (SOP)
+/gap-summary
+/gap-promote [NAME]
+
+# 5. Đồng bộ Database & Index (R15)
 python .agent/skills/wiki-rebuild/scripts/rebuild.py
-python .agent/skills/wiki-rebuild/scripts/update_wiki_index.py
 obsidian reload
 
-# 4. Làm sạch Link gãy
-python .agent/skills/wiki-cleanup/scripts/lint_engine.py
+# 6. Governance & R8 Enforcement
+python scripts/maintenance/synthesis_guard.py scan              # Quét toàn wiki tìm vi phạm R8
+python scripts/maintenance/synthesis_guard.py approve <file>    # Phê duyệt (CHỈ Human chạy terminal)
 ```
 
 ---
-*File này được bảo trì bởi @pm. Lần cuối cập nhật: 2026-05-10.*
+*File này được bảo trì bởi @pm. Lần cuối cập nhật: 2026-05-11.*

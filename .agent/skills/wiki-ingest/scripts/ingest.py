@@ -6,7 +6,6 @@ import json
 import subprocess
 import argparse
 from datetime import datetime
-
 ROOT_DIR = os.getenv(
     "NOTEBOOKLLM_ROOT",
     os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", ".."))
@@ -21,7 +20,7 @@ def calculate_hash(file_path):
             sha256_hash.update(byte_block)
     return sha256_hash.hexdigest()
 
-def get_routing_info(file_path):
+def get_routing_info(file_path): 
     router_script = os.path.join(os.path.dirname(__file__), "magika_router.py")
     result = subprocess.run(
         [sys.executable, router_script, file_path],
@@ -42,6 +41,14 @@ def ingest_file(file_path, learning=False):
     if not os.path.exists(file_path):
         print(f"ERROR: File not found {file_path}")
         return False
+
+    # 1. Gate -1: Routing
+    routing = get_routing_info(file_path)
+    if not routing or "error" in routing:
+        print(f"ERROR: Routing failed: {routing}")
+        return False
+    
+    print(f"MIME: {routing['mime_type']} | Parser: {routing['parser']}")
 
     # [V2.0] R11: No auto-stub creation (< 200 bytes)
     # Stub files in 00_Inbox/ are processed weekly, not indexed immediately.

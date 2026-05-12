@@ -10,7 +10,6 @@ tags:
 ai-first: true
 confidence: 0.0
 entity_type: "tool | language | person | org | framework"
-kwsr_type: "knowledge"  # knowledge | workflow | skill | rule
 ecosystem: "ecosystem_name (e.g., Python, Google AI)"
 version: "v1.0.0"
 affiliation: "organization_name"

@@ -1,0 +1,6 @@
+CHECKPOINT:
+  agent: "@engineer"
+  task: "Cập nhật AGENTS.md và WORKSPACE_OVERVIEW.md để tích hợp SOP Gap Review vào luồng vận hành chính thức."
+  output_file: "AGENTS.md, WORKSPACE_OVERVIEW.md"
+  prerequisites_ok: "YES"
+  status: "READY"

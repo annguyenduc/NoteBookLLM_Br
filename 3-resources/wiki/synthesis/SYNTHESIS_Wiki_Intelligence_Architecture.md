@@ -2,6 +2,7 @@
 file_id: SYNTHESIS_Wiki_Intelligence_Architecture
 title: "SYNTHESIS: Wiki Intelligence Architecture V3.0 (Master Blueprint)"
 type: synthesis
+kwsr_type: "knowledge"  # knowledge | workflow | skill | rule
 status: VERIFIED
 tags: 
   - "Architecture"

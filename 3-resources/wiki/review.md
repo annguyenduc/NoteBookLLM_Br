@@ -1,6 +1,8 @@
 ---
 file_id: "review"
 title: "Hòm thư chờ duyệt (Async Review Queue)"
+type: "knowledge"
+kwsr_type: "knowledge"  # knowledge | workflow | skill | rule
 category: "Governance"
 prefix: "ENTITY"
 tags: "["Review", "Audit", "Quality_Control"]"

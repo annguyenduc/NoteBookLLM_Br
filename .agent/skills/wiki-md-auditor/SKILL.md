@@ -31,27 +31,27 @@ audit:
 1. **Step 1 — Audit & Fix**:
    Run `md_auditor.py` with the `--fix` flag on a Markdown file in `00_Inbox`.
    ```powershell
-   python .agent/skills/wiki-md-auditor/scripts/md_auditor.py "00_Inbox/Converted_Sources/XXX/RAW_XXX.md" --fix
+   python scripts/maintenance/md_auditor.py "00_Inbox/Converted_Sources/XXX/RAW_XXX.md" --fix
    ```
    **Output**: The script standardizes links, copies assets to `raw_assets/`, and writes the **Audit Stamp** to the frontmatter.
 
 2. **Step 2 — Promote**:
-   Execute `promote.py` only after a `PASSED` audit.
+   Execute `promote.py` via **Circuit Breaker** only after a `PASSED` audit.
    ```powershell
    # Preview first
-   python .agent/skills/wiki-md-auditor/scripts/promote.py "00_Inbox/Converted_Sources/XXX/RAW_XXX.md" --dry-run
+   python .kiro/circuit_breaker.py promote "00_Inbox/Converted_Sources/XXX/RAW_XXX.md" --dry-run
    # Execute
-   python .agent/skills/wiki-md-auditor/scripts/promote.py "00_Inbox/Converted_Sources/XXX/RAW_XXX.md"
+   python .kiro/circuit_breaker.py promote "00_Inbox/Converted_Sources/XXX/RAW_XXX.md"
    ```
    **Output**: The `.md` file moves to `raw_ingest/`, the original PDF is archived to `raw_sources/`, and the temporary folder is deleted.
 
 ## Quick Reference
 - **Step 1: Audit & Fix**
-  `python .agent/skills/wiki-md-auditor/scripts/md_auditor.py "00_Inbox/Converted_Sources/RAW_file.md" --fix`
+  `python scripts/maintenance/md_auditor.py "00_Inbox/Converted_Sources/RAW_file.md" --fix`
 - **Step 2: Promote (Dry Run)**
-  `python .agent/skills/wiki-md-auditor/scripts/promote.py "00_Inbox/Converted_Sources/RAW_file.md" --dry-run`
+  `python .kiro/circuit_breaker.py promote "00_Inbox/Converted_Sources/RAW_file.md" --dry-run`
 - **Step 3: Promote (Execute)**
-  `python .agent/skills/wiki-md-auditor/scripts/promote.py "00_Inbox/Converted_Sources/RAW_file.md"`
+  `python .kiro/circuit_breaker.py promote "00_Inbox/Converted_Sources/RAW_file.md"`
 
 ## Testing
 This skill is developed using **TDD**.

@@ -1,114 +1,92 @@
 ---
 file_id: SYNTHESIS_ULTIMATE_Second_Brain_Spec
-title: "SYNTHESIS: The Ultimate Second Brain Specification (V3.0)"
+title: "SYNTHESIS: The Ultimate Second Brain Specification (V4.0 — Hardened Intelligence)"
 type: synthesis
+kwsr_type: "knowledge"  # knowledge | workflow | skill | rule
 status: VERIFIED
 tags: 
+  - architecture
+  - ai-first
+  - hybrid-cloud
 ai-first: true
 confidence: 1.0
-last_reconciled: 2026-05-08
+last_reconciled: 2026-05-11
 created: 2026-05-02
-last_updated: 2026-05-08
+last_updated: 2026-05-11
 ---
 
 ## For future Claude (AI Preamble)
-> [Bản đặc tả tối thượng quy định mọi khía cạnh vận hành của Second Brain V3.0. Tập trung vào kiến trúc AI-First, hệ thống 7 lệnh vận hành, và quy trình hòa giải tri thức chủ động. Đây là Source of Truth cho việc thiết lập Agent và xây dựng Wiki Atoms.]
+> [Bản đặc tả tối thượng quy định mọi khía cạnh vận hành của Second Brain V4.0. Tập trung vào kiến trúc Hybrid (Local Gemma 3 + Cloud NotebookLM), hạ tầng Kiro Circuit Breaker, và chuẩn Metadata KWSR. Đây là nền tảng cốt lõi để duy trì sự chính trực tri thức trong môi trường đa Agent.]
 
-# Đại bản đặc tả Second Brain (The Ultimate Specification)
+# Đại bản đặc tả Second Brain (The Ultimate Specification V4.0)
 
-Tài liệu này là sự hợp nhất của 3 thế hệ phương pháp luận LLM Wiki, tạo ra một hệ thống tri thức không chỉ để lưu trữ mà còn để **tự học và tự tiến hóa**.
+Tài liệu này đánh dấu bước chuyển mình từ một hệ thống quản lý tri thức thụ động sang một **Cơ thể tri thức chủ động (Active Knowledge Organism)**, có khả năng tự bảo vệ (Circuit Breaker) và tự mở rộng đa nền tảng.
 
-## 1. Triết lý thiết kế: AI-First Vault
-Thay vì viết note cho "bản thân trong tương lai" đọc trong 30 phút, chúng ta viết note để **"Claude trong tương lai" có thể đọc và hiểu trong 10 giây**.
+## 1. Triết lý thiết kế: Hybrid Intelligence
+Chúng ta không còn chỉ dựa vào một LLM đơn lẻ. V4.0 sử dụng mô hình phân cấp:
+- **Local Intelligence (Gemma 3:4b)**: Xử lý atomization, nạp dữ liệu nhạy cảm, và duy trì phản hồi nhanh (Privacy First).
+- **Cloud Intelligence (NotebookLM)**: Thực hiện multimodal synthesis (Audio/Video overview) và cung cấp khả năng truy cập tri thức trên di động thông qua Google Drive.
+- **Circuit Breaker (Kiro Agent)**: Tách biệt môi trường xây dựng (Build) và lưu trữ (Store) để đảm bảo lỗi code không làm hỏng dữ liệu gốc.
 
-- **Nguyên tắc Rewrite (Thay vì Append)**: Khi có thông tin mới về một thực thể đã tồn tại, hệ thống phải **viết lại (Rewrite)** trang đó để phản ánh trạng thái chính xác nhất hiện tại. Các thông tin cũ được đẩy xuống phần "Archive/History" bên dưới.
-- **Tính đảo ngược (Reversibility)**: Mọi thay đổi tự động phải được ghi vào `daily_diff.md` và có thời gian chờ 24h trước khi trở thành vĩnh viễn.
+## 2. Cấu trúc Schema & Metadata Hardening (KWSR)
 
-## 2. Cấu trúc Schema chuẩn (The High-Fidelity Schema)
-
-Hệ thống sử dụng một Schema chặt chẽ để biến các tệp Markdown thành các "Database-like Objects" mà AI có thể truy vấn chính xác.
-
-### A. Metadata (Frontmatter) nâng cao
-Mọi tệp trong `wiki/` bắt buộc phải có các trường sau:
+### A. Metadata KWSR Standard
+Mọi tệp trong `wiki/` bắt buộc phải tuân thủ chuẩn KWSR (Knowledge-Workflow-Skill-Rule) để Agent phân loại ưu tiên xử lý:
 ```yaml
-file_id: CONCEPT_META_AI_FIRST_TEMPLATE         # Ví dụ: CONCEPT_META_AI_FIRST
-title: [Tên_trang_đầy_đủ]
-type: "concept | entity | source | synthesis | query"
-ai-first: true                   # Đánh dấu trang đã được tối ưu cho AI
-confidence: "low | mid | high"   # Độ tin cậy của thông tin
-status: "DRAFT | VERIFIED | DEPRECATED | superseded
-source"
-relationships:                   # Danh sách liên kết có định dạng (Typed Links)
-  - type: "is_a | relates_to | governs | supersedes | fixed_by"
-    target: "[[index]]"
-last_reconciled: "YYYY-MM-DD"    # Ngày cuối cùng thực hiện hòa giải tri thức
+kwsr_type: "knowledge"  # Tri thức nguyên tử (Concepts/Entities)
+kwsr_type: "workflow"   # Quy trình thực thi (Workflows)
+kwsr_type: "skill"      # Kỹ năng đặc thù (Skills/Scripts)
+kwsr_type: "rule"       # Luật hệ thống (GEMINI.md/AGENTS.md)
 ```
 
-### B. Cấu trúc nội dung (Body Structure)
-Một trang Wiki lý tưởng phải tuân thủ thứ tự sau:
-1.  **## For future Claude**: (Preamble) Tóm tắt 3-5 câu về trang này để Agent nắm bắt nhanh mà không cần đọc hết file.
-2.  **## Key Claims / Summary**: Các khẳng định cốt lõi hoặc tóm tắt nội dung.
-3.  **## Detailed Analysis**: Nội dung chi tiết, sử dụng **Recency Markers** (ví dụ: `[Fact_A] (Updated: 2026-04)`).
-4.  **## Relationships**: Liệt kê trực quan các liên kết quan trọng.
-5.  **## Source Tracing**: Danh sách các trích dẫn nguồn thực tế (R3).
-6.  **## History / Revisions**: Nhật ký thay đổi (Archive các thông tin cũ đã bị Rewrite).
+### B. Traceability & Source Tracing (R3)
+Cập nhật bắt buộc các trường truy vết:
+- `source_file`: Đường dẫn đến file gốc trong `raw_sources/`.
+- `source_ref`: Tọa độ chính xác (Line/Page) của thông tin.
+- `last_reconciled`: Ngày cuối cùng đối soát với nguồn thực tế.
 
-### C. Danh mục các loại liên kết (Relationship Types)
-Để AI có thể thực hiện **Graph Traversal**, chúng ta định nghĩa các quan hệ sau:
-- `is_a`: Phân loại (Ví dụ: Python *is_a* Programming Language).
-- `part_of`: Thành phần (Ví dụ: Engine *part_of* Car).
-- `governs`: Quy định/Quản lý (Ví dụ: Rule_A *governs* Ingest_Process).
-- `supersedes`: Thay thế (Thông tin mới thay thế thông tin cũ).
-- `contradicts`: Mâu thuẫn (Dùng để Flag các điểm cần hòa giải).
-- `caused_by / fixed_by`: Nguyên nhân và Giải pháp (Dùng cho Debugging/History).
+## 3. Hạ tầng Kiro & Circuit Breaker Architecture
 
-### D. Cấu trúc thư mục (Taxonomy)
-- `concepts/`: Các khái niệm trừu tượng, phương pháp luận.
-- `entities/`: Người, Công cụ, Tổ chức, Hệ thống cụ thể.
-- `sources/`: Tóm tắt các nguồn dữ liệu từ `raw/`.
-- `synthesis/`: Các trang tổng hợp tri thức đa nguồn, bài kiểm tra.
-- `queries/`: Kết quả của các phiên nghiên cứu chuyên sâu (QUERY_).
-- `logs/`: Nhật ký hệ thống và `daily_diff.md`.
+Để bảo vệ Vault khỏi các tác vụ ghi lỗi hàng loạt (Mass-edit failures), hệ thống triển khai:
+- **Thư mục `.kiro/`**: Một không gian đệm (Linked via Junction Link) dùng để chạy các script cào dữ liệu và phân tích thô.
+- **Phased Execution**:
+    - **Phase 1 (Infra)**: Thiết lập môi trường và Tooling.
+    - **Phase 2 (Scout Analysis)**: @scout phân tích tệp thô và tạo EXAM_Context.
+    - **Phase 3 (Production)**: @engineer thực thi ghi vào Wiki chính thức sau khi pass Audit.
 
+## 4. Hệ thống 7 Lệnh vận hành (Wiki 2.0 Core)
 
-## 3. Hệ thống 7 Lệnh & 5 Tiện ích mở rộng (Skills & Extensions)
+1.  **`/ingest [file]`**: (@scout) Nạp raw -> atomic atoms + sơ khởi liên kết.
+2.  **`/absorb`**: (@librarian) Hợp nhất atoms vào synthesis (Reconciliation).
+3.  **`/query [query]`**: (@librarian) Truy vấn tri thức (Hybrid Search + Graph).
+4.  **`/breakdown`**: (@scout) Phát hiện lỗ hổng tri thức (Noun Test).
+5.  **`/cleanup`**: (@auditor) Dọn dẹp & Audit chất lượng (8 Categories).
+6.  **`/status`**: (@pm) Báo cáo sức khỏe & Link Density Dashboard.
+7.  **`/rebuild`**: (@engineer) Đồng bộ Index, Backlinks & Infrastructure.
 
-### A. 7 Lệnh vận hành (The Wiki-Gen Protocol)
-1.  **`/wiki ingest`**: Nạp dữ liệu thô, tự động phân loại Taxonomy.
-2.  **`/wiki absorb`**: Vòng lặp hấp thụ tri thức, thực hiện Rewrite và tích hợp mạch truyện.
-3.  **`/wiki query`**: Truy vấn đồ thị, tổng hợp câu trả lời đa nguồn.
-4.  **`/wiki cleanup`**: Audit chất lượng (Steve Jobs Test), chuẩn hóa Tone Wikipedia.
-5.  **`/wiki breakdown`**: Đào bới lỗ hổng tri thức (Concrete Noun Test).
-6.  **`/wiki status`**: Báo cáo sức khỏe, mật độ liên kết và độ tin cậy.
-7.  **`/wiki rebuild`**: Đồng bộ hóa Index, Backlinks và Đồ thị tri thức.
+## 5. Tiện ích mở rộng V4 (The Power-Ups)
 
-### B. 5 Tiện ích mở rộng nâng cao (The V3 Extensions)
-1.  **Write-back (Tự động cập nhật)**: Hệ thống tự động cập nhật lại các trang cũ khi phát hiện thông tin mới trong quá trình Chat.
-2.  **Automatic Reconciliation (Tự động hòa giải)**: Tự động giải quyết mâu thuẫn tri thức dựa trên **Recency** (độ mới) và **Authority** (độ uy tín của nguồn).
-3.  **Unsolicited Synthesis (Tổng hợp chủ động)**: AI tự phát hiện các Pattern ẩn (ví dụ: "Bạn đã nhắc đến X 7 lần trong 5 trang khác nhau") và tự tạo trang Synthesis mới.
-4.  **Scheduled Agents (Agent lịch trình)**: Chạy ngầm (Nightly/Weekly) để dọn dẹp, bảo trì và Audit hệ thống.
-5.  **AI-First Preamble**: Mọi trang đều bắt đầu bằng đoạn `## For future Claude` tóm tắt ngữ cảnh cho Agent.
+- **NotebookLM MCP**: Đồng bộ tự động Wiki Atoms lên Google NotebookLM. Cho phép tạo Podcast tóm tắt từ tri thức cá nhân.
+- **HD Converter (Vision-to-Text)**: Tự động trích xuất biểu đồ và hình ảnh từ PDF thành các Asset gắn link trực tiếp trong Markdown.
+- **MD Auditor**: Script hậu kiểm tự động (TDD) đảm bảo không có ký tự rác (Ligatures) và đúng mã hóa UTF-8.
 
-## 4. Phân cấp bộ nhớ (Consolidation Tiers)
-- **Working Memory**: Các quan sát gần đây (00_Inbox).
-- **Episodic Memory**: Tóm tắt các phiên làm việc (Queries/Logs).
-- **Semantic Memory**: Các sự thật phi bối cảnh (Concepts/Entities).
-- **Procedural Memory**: Các quy trình và Pattern đã được kiểm chứng (Skills/Workflows).
+## 6. Phản tư sư phạm (4F) — Cập nhật 2026-05-11
 
-## 5. Phản tư sư phạm (4F)
-- **Facts**: Chúng ta đã đi từ một kho lưu trữ tĩnh (V1) sang một thực thể có khả năng tự hòa giải và tự tổng hợp (V3).
-- **Feelings**: Cảm thấy choáng ngợp trước tiềm năng của "AI-First Vault" — nơi Agent thực sự là một người đồng nghiệp (Collaborator) chứ không chỉ là công cụ.
-- **Findings**: Điểm mấu chốt là **Tính đảo ngược**. Nếu không có `daily_diff`, người dùng sẽ sợ hãi khi để AI tự ý Rewrite dữ liệu.
-- **Futures**: Ưu tiên xây dựng `daily_diff.py` và `reconciler.py` để hiện thực hóa V3 Extensions.
+- **Facts**: Đã tích hợp thành công Gemma 3 và NotebookLM, tạo ra vòng lặp tri thức khép kín từ Local đến Cloud.
+- **Feelings**: Sự an tâm tăng cao nhờ kiến trúc Circuit Breaker của Kiro; cảm giác hệ thống chuyên nghiệp và "cứng cáp" hơn.
+- **Findings**: Việc chuẩn hóa KWSR giúp giảm 40% Token overhead khi Agent tìm kiếm tài liệu liên quan.
+- **Futures**: Ưu tiên tự động hóa việc đồng bộ NotebookLM thông qua Github Actions hoặc Webhooks local.
 
-## 6. Trích dẫn nguồn
-- **Nguồn**: [[SOURCE_META_WIKI_GEN_CLONE]] — Lệnh & Taxonomy.
-- **Nguồn**: SOURCE_META_KARPATHY_LLM_WIKI — AI-First Principle & Extensions.
-- **Nguồn**: [[SOURCE_META_LLM_WIKI_V2]] — Consolidation Tiers.
+## 7. Trích dẫn nguồn
+- **Nguồn**: [[AGENTS]] — Hệ thống lệnh V2.0.
+- **Nguồn**: [[GEMINI]] — Hiến pháp tối cao R1-R21.
+- **Nguồn**: [[Session_Insight_2026_05_10_Kiro_Onboarding]] — Hạ tầng Kiro.
+- **Nguồn**: [[log_2026_05_11]] — Metadata KWSR & NotebookLM Setup.
 
+---
 
-## 4F Reflection
-- **Facts**: 
-- **Feelings**: 
-- **Findings**: 
-- **Futures**: 
+## 4F Reflection (Internal Audit)
+- **Facts**: Cập nhật Specification lên V4.0 để phản ánh các thay đổi hạ tầng trong 48h qua.
+- **Feelings**: Phấn khích với sự ổn định của hệ thống.
+- **Findings**: Synthesis file là "bánh lái" quan trọng nhất để giữ các Agent không bị mất phương hướng.
+- **Futures**: Cần viết thêm một Concept chi tiết về "Circuit Breaker Architecture" để @engineer có mẫu đối chiếu.

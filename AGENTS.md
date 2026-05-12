@@ -7,23 +7,29 @@
 
 ## STARTUP (Bắt buộc mỗi phiên)
 
-1. Đọc `AGENTS.md`, `GEMINI.md` (Hiến pháp), `SOUL.md`, `USER.md` và `WORKSPACE_OVERVIEW.md`
-2. Khai báo CHECKPOINT (xem cuối file) trước khi bắt đầu task
-3. Ghi log vào file nhật ký tháng hiện tại trong `3-resources/wiki/logs/` sau khi hoàn thành
+1. Đọc `AGENTS.md`, `.agent/rules/CORE.md` (4 luật sinh tử), `SOUL.md`, `USER.md` và `WORKSPACE_OVERVIEW.md`
+2. Đọc file rules tương ứng với agent đang hoạt động (xem bảng Agent Rules bên dưới)
+3. Khai báo CHECKPOINT (xem cuối file) trước khi bắt đầu task
+4. Ghi log vào file nhật ký ngày hiện tại trong `3-resources/wiki/logs/` sau khi hoàn thành
+
+> **Tra cứu toàn bộ 27 rules và diễn giải chi tiết**: [[GEMINI.md]]
 
 ---
 
 ## AGENTS
 
-| Agent | Gọi bằng | Làm gì |
-|---|---|---|
-| **@pm** | `@pm` | Lập kế hoạch, phân task, quản lý pipeline |
-| **@scout** | `@scout` | Nghiên cứu, phân tích raw file, tạo EXAM_Context |
-| **@engineer** | `@engineer` | Viết code, tạo wiki atoms, thực thi task |
-| **@librarian** | `@librarian` | Quản lý wiki, cập nhật index, synthesis |
-| **@auditor** | `@auditor` | Kiểm định nguồn, reverse tracing, lint |
-| **@designer** | `@designer` | Thiết kế learning sequence (cần Trainer Profile trước) |
-| **@healer** | `@healer` | Sửa lỗi link, rollback vi phạm |
+| Agent | Gọi bằng | Làm gì | Rules |
+|---|---|---|---|
+| **@pm** | `@pm` | Lập kế hoạch, phân task, quản lý pipeline | `.agent/rules/pm.md` |
+| **@scout** | `@scout` | Nghiên cứu, phân tích raw file, tạo EXAM_Context | `.agent/rules/scout.md` |
+| **@engineer** | `@engineer` | Viết code, tạo wiki atoms, thực thi task | `.agent/rules/engineer.md` |
+| **@librarian** | `@librarian` | Quản lý wiki, cập nhật index, synthesis | `.agent/rules/librarian.md` |
+| **@auditor** | `@auditor` | Kiểm định nguồn, reverse tracing, lint | `.agent/rules/auditor.md` |
+| **@designer** | `@designer` | Thiết kế learning sequence (cần Trainer Profile trước) | `.agent/rules/CORE.md` |
+| **@healer** | `@healer` | Sửa lỗi link, rollback vi phạm | `.agent/rules/CORE.md` + [[GEMINI.md#R9]] + [[GEMINI.md#R15]] |
+
+> **Nguyên tắc**: Mỗi agent chỉ đọc rules của mình + CORE.md.
+> Khi gặp tình huống phức tạp cần tra cứu chéo → đọc [[GEMINI.md]] đầy đủ.
 
 ---
 
@@ -44,6 +50,9 @@
 | `/cleanup` | @auditor | Dọn dẹp & Audit chất lượng (8 Categories) | `wiki-cleanup` |
 | `/status` | @pm | Báo cáo sức khỏe & Link Density Dashboard | `wiki-status` |
 | `/rebuild` | @engineer | Đồng bộ Index, Backlinks & Infrastructure | `wiki-rebuild` |
+| `/gap-summary` | @librarian | Tổng hợp danh sách gap candidates hiện tại | `SOP_Weekly_Gap_Review` |
+| `/gap-promote` | @engineer | Thăng cấp candidate thành Atom nháp (review_queue) | `SOP_Weekly_Gap_Review` |
+| `/gap-cleanup` | @auditor | Dọn dẹp sạch inbox gap candidates | `SOP_Weekly_Gap_Review` |
 
 ---
 
@@ -53,7 +62,7 @@
 NoteBookLLM_Br/              ← root
 │
 ├── AGENTS.md                ← root level
-├── GEMINI.md                ← Hiến pháp tối cao (R1-R18)
+├── GEMINI.md                ← Hiến pháp tối cao (R1-R27)
 ├── EXAMPLES.md              ← Ví dụ đối chiếu mẫu
 ├── SOUL.md                  ← Linh hồn hệ thống
 ├── USER.md                  ← Chân dung User
@@ -112,31 +121,43 @@ NoteBookLLM_Br/              ← root
 ### P5 — SYNC DIRECTION
 - **File vật lý là Source of Truth**. Sync từ File vào Database hàng đêm.
 
-## 🛡️ BỘ QUY TẢC QUẢN TRỊ (R1-R20)
-> Codex/Antigravity BẮT BUỘC tuân thủ. Chi tiết kỹ thuật & Template tại [[GEMINI.md]].
+### P6 — STAGING-PROMOTE GATE (R22 Enforcement)
+- **Mọi Agent** (@scout, @engineer, @pm) tuyệt đối không được tự ý ghi đè file vào `3-resources` thủ công.
+- Dữ liệu thô mới phải được xử lý tại `00_Inbox` cho đến khi đạt trạng thái **VERIFIED** (Audit Stamp).
+- Chỉ sử dụng `scripts/promote.py` để thăng cấp dữ liệu vào kho lưu trữ chính thức.
 
-| Rule | Tên Luật | Hành vi BẮT BUỘC / CẤM | Chi tiết |
-|---|---|---|---|
-| **R1** | Raw Immutable | CẤM sửa/xóa trong `raw_*/`. | [[GEMINI.md#R1]] |
-| **R2** | Proactive Integrity | CẤM báo cáo ảo. BẮT BUỘC ghi log trước. | [[GEMINI.md#R2]] |
-| **R3** | Source Tracing | Mọi trích dẫn phải có Link Nguồn (Source Node). | [[GEMINI.md#R3]] |
-| **R4** | Structure & Encoding | BẮT BUỘC Python UTF-8 & Surgical Diff. CẤM tạo file mới tại Root. | [[GEMINI.md#R4]] |
-| **R5** | Prereq Gate | Lệnh sản xuất (Design/Task) phải rõ ràng trước khi chạy. | [[GEMINI.md#R5]] |
-| **R6** | Phased Execution | Phải xong Phase 1 mới được viết Skill (Phase 2). | [[GEMINI.md#R6]] |
-| **R7** | Stress Testing | BẮT BUỘC Stress Test sau mỗi Skill/Script. | [[GEMINI.md#R7]] |
-| **R8** | Human Supremacy | CHỈ User mới được set trạng thái `SYNTHESIZED`. | [[GEMINI.md#R8]] |
-| **R9** | Surgical Min | Chỉ thay đổi code tối thiểu (Surgical Changes). | [[GEMINI.md#R9]] |
-| **R10** | 3-Step Search | Tìm kiếm -> Xác thực (MD) -> Chụp ảnh (Screenshot). | [[GEMINI.md#R10]] |
-| **R11** | Density Filter | KHÔNG tạo atom cho file < 200 bytes. | [[GEMINI.md#R11]] |
-| **R12** | Example Adherence | BẮT BUỘC đối soát với `EXAMPLES.md` & `@/obsidian-markdown`. | [[GEMINI.md#R12]] |
-| **R13** | Atom Lifecycle | Mọi atom mới mặc định `status = DRAFT`. | [[GEMINI.md#R13]] |
-| **R14** | Log Rotation | Log phân mảnh theo ngày: `log_YYYY_MM_DD.md`. | [[GEMINI.md#R14]] |
-| **R15** | Peer-layer Sync | BẮT BUỘC dùng `@obsidian-cli` để reload Metadata. | [[GEMINI.md#R15]] |
-| **R16** | Checkpoint | Khai báo trạng thái (READY/BLOCKED) trước task. | [[GEMINI.md#R16]] |
-| **R17** | Sync Direction | File vật lý là Source of Truth duy nhất. | [[GEMINI.md#R17]] |
-| **R18** | Double Examples | BẮT BUỘC mỗi Atom phải có 2 ví dụ đối chiếu (Sách + Sư phạm). | [[GEMINI.md#R18]] |
-| **R19** | Sandbox Protocol | BẮT BUỘC chạy code thử nghiệm trong Localsandbox (WASM). | [[GEMINI.md#R19]] |
-| **R20** | YAML Validity | Dấu `:` trong Metadata phải để trong ngoặc kép "". | [[GEMINI.md#R20]] |
+## 🛡️ BỘ QUY TẮC QUẢN TRỊ
+
+> **Kiến trúc phân tầng** — Rules được phân bổ theo agent, không nhồi vào một chỗ.
+> Chi tiết đầy đủ 27 rules và diễn giải: [[GEMINI.md]]
+
+### Tầng 1 — Constitutional Rules (Mọi agent, mọi lúc)
+Xem: `.agent/rules/CORE.md`
+- **R1** Raw Immutable | **R2** Proactive Integrity | **R5** Prereq Gate | **R8** Human Supremacy
+
+### Tầng 2 — Agent-Scoped Rules (Chỉ đọc khi là agent đó)
+
+| Agent | File | Rules |
+|---|---|---|
+| @scout | `.agent/rules/scout.md` | R10, R11, R13, R24, R25 |
+| @engineer | `.agent/rules/engineer.md` | R4, R9, R12, R18, R19, R26 |
+| @auditor | `.agent/rules/auditor.md` | R3, R20, R21, R27 |
+| @librarian | `.agent/rules/librarian.md` | R13, R14, R15, R17, R26 |
+| @pm | `.agent/rules/pm.md` | R5, R6, R7, R16 |
+
+### Tầng 3 — Enforcement bằng Code (Không cần Agent nhớ)
+
+| Rule | Enforced bởi |
+|---|---|
+| R8 Human Supremacy | `synthesis_guard.py check <file>` — BLOCKED nếu write vào `synthesis/` hoặc modify SYNTHESIZED atom |
+| R8 Human Approve | `synthesis_guard.py approve <file>` — CHỈ Human gọi để set SYNTHESIZED |
+| R22 Staging-Promote | `circuit_breaker.py` chặn write trực tiếp vào `3-resources/` |
+| R23 Promotion Gate | `promote.py` là wrapper duy nhất được phép move file |
+| R20 YAML Validity | `ingest.py` schema validation — tự reject nếu YAML invalid |
+| R14 Log Rotation | `session_seal.py` tự tạo file log đúng tên |
+
+### Tầng 4 — Reference (Tra cứu khi cần, không inject mặc định)
+[[GEMINI.md]] — Toàn bộ 27 rules + WikiCouncil 2.0 + diễn giải chi tiết.
 
 ---
 

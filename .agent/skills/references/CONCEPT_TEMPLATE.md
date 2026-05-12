@@ -4,7 +4,6 @@ file_id: "CONCEPT_[CATEGORY]_[Name]"
 # Use MISC only if no category fits — flag for human review.
 title: "[Concept Name]"
 type: "concept"
-kwsr_type: "knowledge"  # knowledge | workflow | skill | rule
 status: "DRAFT"
 tags:
   - "category"

@@ -1,43 +1,46 @@
 ---
 file_id: "SOURCE_SYS_OSTEP"
-title: "Operating Systems: Principles & Practice Volume I: Kernels and Processes"
+title: "Operating Systems: Three Easy Pieces"
 type: "source"
 status: "VERIFIED"
 tags:
-  - "Operating_Systems"
-  - "System_Design"
+  - "OS"
+  - "Kernel"
+  - "Architecture"
 ai-first: true
 confidence: 1.0
 source_type: "pdf"
-author: "Thomas Anderson, Mike Dahlin"
-url: "https://recursivebooks.com"
-publisher: "Recursive Books"
-last_reconciled: "2026-05-10"
-created: "2026-05-10"
-last_updated: "2026-05-10"
+author: "Remzi Arpaci-Dusseau, Andrea Arpaci-Dusseau"
+url: "https://ostep.org"
+publisher: "Arpaci-Dusseau Books"
+last_reconciled: "2026-05-11"
+created: "2026-05-11"
+last_updated: "2026-05-11"
 ---
 
 ## For future Claude (AI Preamble)
-> Tài liệu này là tập đầu tiên trong bộ sách về Hệ điều hành của Anderson và Dahlin, tập trung vào kiến trúc Nhân (Kernel) và quy trình (Processes). Đây là nguồn tri thức cốt lõi để hiểu về sự cô lập, bảo vệ và các cơ chế cơ bản mà hệ điều hành sử dụng để quản lý tài nguyên phần cứng một cách an toàn.
+> Đây là một trong những giáo trình kinh điển và phổ biến nhất về Hệ điều hành hiện nay. Tài liệu này cung cấp cái nhìn sâu sắc về các cơ chế cơ bản của OS thông qua ba khái niệm chính: Ảo hóa (Virtualization), Đồng thời (Concurrency) và Lưu trữ (Persistence). Giá trị cốt lõi của nó nằm ở cách giải thích đơn giản nhưng kỹ thuật, đi kèm với các ví dụ code thực tế.
 
-# Operating Systems: Principles & Practice Volume I: Kernels and Processes
+# Operating Systems: Three Easy Pieces
 
 ## 1. Executive Summary
-Cuốn sách trình bày các nguyên lý cơ bản của hệ điều hành hiện đại, tập trung vào vai trò của Kernel trong việc cung cấp sự bảo vệ và cô lập. Nội dung nhấn mạnh vào "Kernel Abstraction" - cơ chế cho phép nhiều ứng dụng và người dùng chia sẻ cùng một phần cứng mà không gây hại cho nhau. Các khái niệm chính bao gồm tiến trình (process), luồng (thread), chế độ hoạt động kép (dual-mode operation), và các cơ chế chuyển đổi chế độ an toàn.
+Cuốn sách "Operating Systems: Three Easy Pieces" (OSTEP) giới thiệu các nguyên lý cơ bản của hệ điều hành hiện đại. Cách tiếp cận của tác giả tập trung vào việc giải quyết các vấn đề thiết kế thông qua ba "mảnh ghép" đơn giản:
+- **Virtualization**: Biến một tài nguyên vật lý (như CPU hoặc bộ nhớ) thành một dạng ảo, cho phép nhiều chương trình chạy như thể chúng có toàn quyền truy cập vào tài nguyên đó.
+- **Concurrency**: Giải quyết các thách thức khi nhiều dòng lệnh thực thi cùng lúc và chia sẻ dữ liệu (Race conditions, Deadlocks).
+- **Persistence**: Đảm bảo dữ liệu được lưu trữ an toàn trên các thiết bị lưu trữ không bay hơi (I/O, File Systems, RAID).
 
 ## 2. Các chủ đề chính (Key Topics Indexed)
-- [[CONCEPT_SYS_Process_Abstraction]]: Khái niệm về một tiến trình như một thực thể thực thi bị giới hạn quyền.
-- [[CONCEPT_SYS_Dual_Mode_Operation]]: Cơ chế phần cứng phân chia User Mode và Kernel Mode.
-- [[CONCEPT_SYS_Secure_System_Calls]]: Cách thức ứng dụng yêu cầu dịch vụ từ Kernel một cách an toàn.
+- [[CONCEPT_ARCH_Process_Abstraction]]: Cách OS quản lý các chương trình đang chạy.
+- [[CONCEPT_ARCH_Address_Space]]: Cơ chế ảo hóa bộ nhớ.
+- [[CONCEPT_ARCH_Scheduling]]: Các thuật toán điều phối tài nguyên.
+- [[CONCEPT_ARCH_Locking]]: Đồng bộ hóa tiến trình và luồng.
+- [[CONCEPT_ARCH_File_Systems]]: Cấu trúc và quản lý dữ liệu trên đĩa.
 
 ## 3. Đánh giá chất lượng (Source Audit)
-- **Tính cập nhật**: Tái bản lần thứ hai (Second Edition), vẫn giữ nguyên giá trị lý thuyết nền tảng.
-- **Độ tin cậy**: Tác giả từ các đại học danh tiếng (Washington, Texas) và Google, được bình duyệt kỹ lưỡng.
-- **Mức độ bao phủ**: Cung cấp kiến thức từ mức thấp (phần cứng) đến trừu tượng (phần mềm).
+- **Tính cập nhật**: Tài liệu liên tục được cập nhật bởi tác giả (bản online miễn phí).
+- **Độ tin cậy**: Rất cao, được sử dụng làm giáo trình tại nhiều đại học hàng đầu thế giới (Wisconsin-Madison).
+- **Mức độ bao phủ**: Toàn diện về các nguyên lý cơ bản của OS, đặc biệt mạnh về cơ chế thực thi.
 
 ## 4. Ghi chú bổ sung
-- Nguồn PDF: `ARCH_Operating_Systems_Three_Easy_Pieces.pdf`
-- Phân loại: Hệ thống (SYS)
-
----
-*Phiên bản Template V3.0 (Language Aligned).*
+- Tài liệu đã được HD-Converted sang Markdown và chia thành 4 chunks để dễ dàng atomization.
+- Chứa nhiều sơ đồ và ví dụ code C/UNIX quan trọng.

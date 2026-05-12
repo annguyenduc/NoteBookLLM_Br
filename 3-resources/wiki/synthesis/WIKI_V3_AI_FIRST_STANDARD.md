@@ -2,6 +2,7 @@
 file_id: WIKI_V3_AI_FIRST_STANDARD
 title: "Tiêu chuẩn Wiki V3.0: Master Schema & Metadata Philosophy"
 type: synthesis
+kwsr_type: "knowledge"  # knowledge | workflow | skill | rule
 status: VERIFIED
 tags: 
 ai-first: true
@@ -88,3 +89,10 @@ Nội dung bên dưới Frontmatter được thiết kế dựa trên vai trò c
 
 ---
 *Phê duyệt bởi: @pm (Antigravity)*
+
+
+## 4F Reflection
+- **Facts**: 
+- **Feelings**: 
+- **Findings**: 
+- **Futures**: 

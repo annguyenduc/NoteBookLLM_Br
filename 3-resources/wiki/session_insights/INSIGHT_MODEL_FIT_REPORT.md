@@ -1,6 +1,7 @@
 ---
 title: "Báo cáo Phân tích Độ tương thích Mô hình (Model Fit Report)"
 type: "insight"
+kwsr_type: "knowledge"  # knowledge | workflow | skill | rule
 status: "VERIFIED"
 file_id: "INSIGHT_MODEL_FIT_REPORT"
 created: 2026-05-01

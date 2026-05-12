@@ -233,4 +233,14 @@ if __name__ == "__main__":
         
     run_indexer()
     log_rebuild(msg)
+
+    # R8 Compliance: Auto-scan sau rebuild
+    print("\n[REBUILD] Running R8 Compliance scan...")
+    subprocess.run(
+        [sys.executable,
+         os.path.join(ROOT_DIR, "scripts", "maintenance", "synthesis_guard.py"),
+         "scan"],
+        capture_output=False
+    )
+
     print(f"--- Wiki Rebuild Completed ---")

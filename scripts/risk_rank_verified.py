@@ -10,15 +10,12 @@ def compute_risk(row):
     reasons = []
 
     confidence = row["confidence"] if row["confidence"] is not None else 0.0
-    if confidence < 0.6:
-        score += 45
-        reasons.append("very_low_confidence")
-    elif confidence < 0.75:
-        score += 30
-        reasons.append("low_confidence")
-    elif confidence < 0.85:
-        score += 15
-        reasons.append("medium_confidence")
+    if confidence < 0.85:
+        score += 50
+        reasons.append("confidence_violation_low")
+    elif confidence < 0.90:
+        score += 20
+        reasons.append("borderline_confidence")
 
     if row["learning_source"] == 1:
         score += 20
