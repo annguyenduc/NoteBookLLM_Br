@@ -6,9 +6,9 @@
 ---
 
 ## R1 — RAW IMMUTABLE
-**CẤM tuyệt đối** sửa/xóa/ghi thủ công vào `raw_sources/`, `raw_ingest/`, `raw_assets/`.
-Chỉ scripts chính thức (`promote.py`, `ingest.py`) được phép ghi vào các thư mục này.
-Vi phạm = mất bằng chứng gốc vĩnh viễn, không thể phục hồi.
+Vùng `raw_*/` là vùng cấm tuyệt đối. **NGHIÊM CẤM** thực thi các lệnh xóa (`rm`), di chuyển (`mv`), hoặc đổi tên (`ren`/`rename`) đối với bất kỳ file nào trong `3-resources/`.
+Chỉ scripts chính thức (`promote.py`, `ingest.py`) được phép thực hiện các thao tác thay đổi trạng thái tại đây thông qua cơ chế **Kernel Bridge**.
+Vi phạm = Phá vỡ tính bất biến của tri thức, dẫn đến lỗi hệ thống không thể phục hồi.
 
 ## R2 — PROACTIVE INTEGRITY
 **CẤM báo cáo ảo.** BẮT BUỘC ghi log trước khi thực hiện bất kỳ tool call nào thay đổi hệ thống.
@@ -27,6 +27,20 @@ Agent chỉ được set `DRAFT` (tạo mới) hoặc `VERIFIED` (sau audit).
 > Agent TUYỆT ĐỐI KHÔNG được gọi lệnh này dưới bất kỳ hình thức nào,
 > kể cả subprocess, shell command, hay python import. Không có workaround hợp lệ. Không có exception. Hướng dẫn User tự mở file và sửa trực tiếp.
 > Đây là ranh giới không thể vượt qua. Không có ngoại lệ.
+
+## HEALER PROTOCOL
+`@healer` là agent duy nhất được phép thực thi rollback khi phát hiện vi phạm R1, R22, R23 hoặc lỗi liên kết hệ thống.
+- **Phạm vi**: Thao tác trong `00_Inbox/`, `00_Inbox/failed_queue/` và `3-resources/wiki/` (chỉ dành cho sửa lỗi link và phục hồi R8).
+- **Giới hạn**: KHÔNG được promote trực tiếp vào `raw_*/` — mọi file thô sau khi heal phải quay về `00_Inbox/`.
+- **Mục tiêu**: Đảm bảo hệ thống luôn có khả năng tự phục hồi (Healing Loop) mà không làm phá vỡ các chốt chặn bảo mật.
+
+---
+
+## TERMINAL PROTOCOL
+- Mọi file operation: BẮT BUỘC dùng Python UTF-8 (`encoding="utf-8"`) kết hợp **Surgical Diff** (chỉ sửa vùng cần thiết).
+- CẤM dùng các lệnh hệ điều hành trực tiếp (`mv`, `rm`, `del`, `ren`, `rename`) đối với bất kỳ tệp tin nào trong `3-resources/`. Mọi biến động phải thông qua `promote.py`.
+- CẤM dùng PowerShell `Out-File`, `Set-Content` hoặc redirect `>` để ghi file có tiếng Việt.
+- Lý do: Đảm bảo tính bất biến (Immutability), tính toàn vẹn encoding và tính minh bạch (Auditability).
 
 ---
 

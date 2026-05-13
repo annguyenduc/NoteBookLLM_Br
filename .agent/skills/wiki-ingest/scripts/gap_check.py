@@ -25,7 +25,9 @@ import argparse
 import logging
 import urllib.request
 import urllib.error
-from datetime import datetime
+import yaml
+import shutil
+from datetime import datetime, timezone
 
 # --- Cấu hình ---
 OLLAMA_URL    = "http://localhost:11434/api/generate"
@@ -36,6 +38,7 @@ ROOT_DIR      = os.getenv(
     os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", ".."))
 )
 OUTPUT_DIR    = os.path.join(ROOT_DIR, "00_Inbox", "gap_candidates")
+FAILED_DIR    = os.path.join(ROOT_DIR, "00_Inbox", "failed_queue")
 
 # --- Logger --- stdout UTF-8 để tránh cp1252 trên Windows terminal
 logging.basicConfig(
@@ -74,8 +77,10 @@ STRICT RULES:
 4. If the chunk is in Vietnamese, respond in Vietnamese. If English, respond in English.
 
 Format (STRICTLY follow this):
-- [Concept] Leverage Points: Points in a system where a small shift in one thing can produce big changes in everything.
-- [Entity] World Bank: An international financial institution that provides loans to countries.
+- [Concept] <name>: <1 sentence value>
+- [Entity] <name>: <1 sentence role>
+- [Mental Model] <name>: <1 sentence application>
+- [Relationship] <name>: <1 sentence connection>
 """
 
 
@@ -87,6 +92,27 @@ def read_chunk_file(path: str) -> str:
     """Đọc chunk text từ file tạm hoặc trực tiếp."""
     with open(path, "r", encoding="utf-8") as f:
         return f.read()
+
+
+def validate_yaml_gate(content: str) -> tuple[bool, str | None]:
+    """
+    Kiểm tra tính hợp lệ của YAML Frontmatter.
+    Trả về (True, None) nếu hợp lệ hoặc không có frontmatter.
+    Trả về (False, error_msg) nếu YAML lỗi.
+    """
+    if not content.startswith("---"):
+        return True, None # Không có frontmatter thì bỏ qua validation này
+    
+    parts = content.split("---", 2)
+    if len(parts) < 3:
+        return True, None # Không đủ cặp --- thì không phải frontmatter chuẩn
+    
+    yaml_text = parts[1]
+    try:
+        yaml.safe_load(yaml_text)
+        return True, None
+    except Exception as e:
+        return False, str(e)
 
 
 def call_ollama(prompt: str) -> str | None:
@@ -126,6 +152,41 @@ def call_ollama(prompt: str) -> str | None:
         return None
 
 
+def save_to_failed_queue(source: str, chunk_num: int, error_msg: str, atoms_json: str, chunk_path: str = None, chunk_text: str = None):
+    """Ghi nhận lỗi vào Dead-Letter Queue (DLQ) để xử lý sau."""
+    os.makedirs(FAILED_DIR, exist_ok=True)
+    safe_source = "".join(c if c.isalnum() or c in "-_" else "_" for c in os.path.basename(source))
+    fail_file = os.path.join(FAILED_DIR, f"{safe_source}_chunk_{chunk_num:03d}.failed")
+    
+    # Xây dựng command retry
+    retry_cmd = f"python .agent/skills/wiki-ingest/scripts/gap_check.py --source \"{source}\" --chunk-num {chunk_num} --atoms '{atoms_json}'"
+    
+    temp_text_path = None
+    if chunk_path:
+        retry_cmd += f" --chunk \"{chunk_path}\""
+    elif chunk_text:
+        # Lưu text trực tiếp vào file tạm để retry
+        temp_text_path = os.path.join(FAILED_DIR, f"{safe_source}_chunk_{chunk_num:03d}.txt")
+        with open(temp_text_path, "w", encoding="utf-8") as f:
+            f.write(chunk_text)
+        retry_cmd += f" --chunk \"{temp_text_path}\""
+
+    error_data = {
+        "timestamp": datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
+        "source": source,
+        "chunk_num": chunk_num,
+        "error": error_msg,
+        "status": "REQUIRES_RETRY",
+        "retry_command": retry_cmd
+    }
+    if temp_text_path:
+        error_data["chunk_text_saved_to"] = temp_text_path
+
+    with open(fail_file, "w", encoding="utf-8") as f:
+        json.dump(error_data, f, indent=2, ensure_ascii=False)
+    log.warning(f"[DLQ] Gap-check failed. Logged to: {fail_file}")
+
+
 def extract_bullets(text: str) -> str:
     """
     Hậu xử lý response: Lọc lấy các dòng bắt đầu bằng dấu gạch ngang.
@@ -160,6 +221,8 @@ chunk: {chunk_num}
 date: {datetime.now().strftime('%Y-%m-%d')}
 model: {GAP_MODEL}
 status: PENDING_REVIEW
+audit_stamp: true
+audit_timestamp: {datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')}
 ---
 
 ## Candidates bị bỏ sót
@@ -196,16 +259,43 @@ def main():
         sys.exit(0)
 
     # --- Đọc chunk text ---
+    source_file_path = None
     if args.chunk_text:
         chunk_text = args.chunk_text
     elif args.chunk:
-        if not os.path.exists(args.chunk):
-            log.warning(f"Chunk file not found: {args.chunk}. Skipping gap-check.")
+        source_file_path = os.path.normpath(args.chunk)
+        if not os.path.exists(source_file_path):
+            log.warning(f"Chunk file not found: {source_file_path}. Skipping gap-check.")
             sys.exit(0)
-        chunk_text = read_chunk_file(args.chunk)
+        chunk_text = read_chunk_file(source_file_path)
     else:
         log.warning("Need --chunk or --chunk-text. Skipping gap-check.")
         sys.exit(0)
+
+    # --- YAML Validation Gate (Kernel Bridge Hardening) ---
+    is_valid, yaml_error = validate_yaml_gate(chunk_text)
+    if not is_valid:
+        log.error(f"[BLOCKED] File bị từ chối do YAML không hợp lệ: {source_file_path if source_file_path else 'direct input'}")
+        
+        if source_file_path:
+            # DLQ Logic: Move file to failed_queue and log error
+            os.makedirs(FAILED_DIR, exist_ok=True)
+            filename = os.path.basename(source_file_path)
+            error_log_path = os.path.join(FAILED_DIR, f"{filename}.error.log")
+            
+            with open(error_log_path, "w", encoding="utf-8") as f:
+                f.write(f"Timestamp: {datetime.now(timezone.utc).isoformat()}\n")
+                f.write(f"File: {source_file_path}\n")
+                f.write(f"YAML Error:\n{yaml_error}\n")
+            
+            dest_path = os.path.join(FAILED_DIR, filename)
+            try:
+                shutil.move(source_file_path, dest_path)
+                log.error(f"[DLQ] Đã chuyển file lỗi vào failed_queue/: {dest_path}")
+            except Exception as move_err:
+                log.error(f"Failed to move file to DLQ: {move_err}")
+        
+        sys.exit(0) # Non-blocking for the batch process
 
     # --- Parse atoms list ---
     try:
@@ -238,7 +328,15 @@ def main():
     response = call_ollama(prompt)
 
     if response is None:
-        # Ollama offline — log warning đã xử lý trong call_ollama(), exit 0
+        # Ollama offline hoặc lỗi — Ghi vào DLQ
+        save_to_failed_queue(
+            source=args.source,
+            chunk_num=args.chunk_num,
+            error_msg="Ollama offline or Connection Timeout",
+            atoms_json=args.atoms,
+            chunk_path=args.chunk,
+            chunk_text=args.chunk_text if not args.chunk else None
+        )
         sys.exit(0)
 
     if response.upper() == "NONE":

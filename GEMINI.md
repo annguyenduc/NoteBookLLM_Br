@@ -12,10 +12,10 @@ Trong mọi trường hợp, các luật R1 đến R27 là TUYỆT ĐỐI. Nếu
 
 | Nhóm | Rule | Tên Luật | Hành vi BẮT BUỘC / CẤM |
 |---|---|---|---|
-| **I. Quản trị** | **R1** | Raw Immutable | CẤM sửa/xóa/ghi thủ công trong `raw_*/`. |
+| **I. Quản trị** | **R1** | Raw Immutable | Vùng `raw_*/` là vùng cấm tuyệt đối. NGHIÊM CẤM thực thi các lệnh xóa (`rm`), di chuyển (`mv`), hoặc đổi tên (`ren`/`rename`) đối với bất kỳ file nào trong `3-resources/`. |
 | | **R2** | Proactive Integrity | CẤM báo cáo ảo. BẮT BUỘC ghi log trước khi thực hiện (Logging First). |
 | | **R3** | Source Tracing | Mọi trích dẫn phải có Link Nguồn (Source Node). |
-| | **R4** | Structure & Encoding | BẮT BUỘC Python UTF-8 & Surgical Diff. CẤM tạo file mới tại Root. |
+| | **R4** | Structure & Encoding | BẮT BUỘC Python UTF-8 & Surgical Diff. CẤM dùng PowerShell ghi file tiếng Việt & CẤM file mới tại Root. |
 | | **R5** | Prereq Gate | Lệnh sản xuất (Design/Task) phải rõ ràng trước khi chạy. |
 | **II. Thực thi** | **R6** | Phased Execution | Tuyệt đối KHÔNG viết Skill khi chưa xong Phase 1. |
 | | **R7** | Stress Testing | BẮT BUỘC Stress Test sau mỗi Skill/Script. |
@@ -40,6 +40,7 @@ Trong mọi trường hợp, các luật R1 đến R27 là TUYỆT ĐỐI. Nếu
 | | **R25** | Local AI Audit — Non-blocking | Nếu Ollama offline hoặc gemma3:4b lỗi → WARNING + tiếp tục. CẤM block pipeline chính. |
 | | **R26** | Local AI Audit — Human Gate | `gap_candidates/` chỉ dành cho Human Review. @engineer không được tự ý dùng output này nếu chưa có Human approve. |
 | | **R27** | Local AI Audit — Scope Isolation | CHỈ dùng Gap-Check cho `DRAFT` atoms. Tuyệt đối KHÔNG dùng cho `synthesis/` hoặc `verified` content. |
+| **V. Recovery** | **R28** | Healer Scope | `@healer` được phép thao tác trong `00_Inbox/`, `failed_queue/` và `3-resources/wiki/` (chỉ để sửa lỗi link/R8 rollback). KHÔNG được promote thẳng vào `raw_*/`. Ghi log vào R14. |
 
 
 ---
@@ -47,6 +48,11 @@ Trong mọi trường hợp, các luật R1 đến R27 là TUYỆT ĐỐI. Nếu
 
 ### 0. General Rules (Thêm)
 - **DỪNG-STOP**: Nếu có thông báo vi phạm Rule. Dừng tiến trình lại và thông báo User không được làm gì tiếp.
+
+### 00. Terminal Protocol (Reinforced)
+- **File Operation**: Mọi thao tác ghi file (Write) BẮT BUỘC thông qua Python với `encoding="utf-8"` và sử dụng **Surgical Diff** (chỉ thay đổi tối thiểu).
+- **PowerShell Prohibition**: Tuyệt đối không dùng `Out-File`, `Set-Content` hoặc chuyển hướng `>` từ terminal để ghi nội dung có tiếng Việt vào file.
+- **Environment**: Luôn đảm bảo `$env:PYTHONIOENCODING = "utf-8"` (đã cấu hình trong Profile).
 
 ## WikiCouncil 2.0 - 7 Level Audit
 
@@ -118,165 +124,8 @@ Trong mọi trường hợp, các luật R1 đến R27 là TUYỆT ĐỐI. Nếu
         - Nếu `word_count` sai lệch quá 10%: Sửa lại và ghi log.
         - Nếu `categories` không phù hợp: Đề xuất thay đổi và yêu cầu `@human` phê duyệt.
 
-## 📋 DIỄN GIẢI CHI TIẾT HIẾN PHÁP (Constitutional Jurisprudence)
-
-### 1. QUẢN TRỊ & CHÍNH TRỰC (Governance & Integrity)
-
-#### R1 — RAW IS IMMUTABLE (Bảo vệ bằng chứng gốc)
-- **Triết lý**: Dữ liệu thô là bằng chứng vật lý duy nhất. Mọi sự thay đổi (kể cả append) đều làm thay đổi dấu vân tay (hash) của tài liệu.
-- **Diễn giải**: Các thư mục `raw_*/` là khu vực "Cấm xâm phạm thủ công". Chỉ có các script Ingest chính thức mới có quyền ghi (Write/Append). Con người không được tự ý sửa lỗi chính tả hay định dạng trong các file này để bảo toàn tính nguyên bản.
-
-#### R2 — PROACTIVE INTEGRITY (Chính trực báo cáo & Nhật ký)
-- **Luật (Proactive Logging)**: Mọi Task bắt đầu bằng việc tạo entry "Mục tiêu" trong nhật ký ngày. Agent **BẮT BUỘC** phải ghi log trước khi thực hiện bất kỳ tool call nào thay đổi (write/edit/run) hệ thống.
-- **Diễn giải**: Tuyệt đối không báo cáo "Đã hoàn thành" hoặc "Đã kiểm tra" nếu chưa thực hiện tool call thành công.
-- **Cơ chế Hard Stop (Session Seal)**: Trước khi báo cáo hoàn thành, Agent phải chạy `scripts/maintenance/session_seal.py` để xác nhận mọi thay đổi file đều đã được mô tả trong log. Nếu seal thất bại, task được coi là **CHƯA HOÀN THÀNH**.
-
-#### R3 — SOURCE TRACING (Truy vết nguồn gốc)
-- **CẤM TẠO NGUỒN ẢO**
-- **Quy tắc**: Mọi thông tin trong Atom phải có Link dẫn về Source Node tương ứng nằm trong thư mục `3-resources/wiki/sources/`. Source Node bắt buộc phải xuất phát từ một tài liệu vật lý/URL có thật trong `3-resources/raw_sources/`.
-- **Mục tiêu**: Đảm bảo tính minh bạch và khả năng kiểm chứng chéo (Cross-verify) giữa tri thức nguyên tử và bằng chứng gốc.
-
-#### R4 — STRUCTURE & ENCODING (Pháo đài bảo vệ dữ liệu & Vùng lõi)
-- **1. Hiển thị Diff (Visibility)**: Khi tạo file mới, Agent PHẢI tạo file mồi (empty) trước, sau đó mới dùng `edit_file` để điền nội dung.
-- **2. Root Sanitization**: Tuyệt đối KHÔNG được tạo file code (`.py`, `.js`, `.json`) trực tiếp tại thư mục gốc. 
-    - Code production -> `scripts/`
-    - Code nháp/test -> `scratch/`
-    - File cấu hình dự án -> `3-resources/assets/configs/`
-- **3. Bắt buộc Python**: Mọi thao tác ghi/sửa phải dùng Python UTF-8. CẤM PowerShell.
-- **4. Tự phục hồi (Auto-heal)**: Mọi script sửa file hàng loạt phải quét tìm và dọn dẹp "Ký tự rác".
-
-#### R5 — PREREQUISITE GATE (Cổng kiểm soát điều kiện)
-- **1. Quy tắc Phân luồng**: 
-    - **Tác vụ Sư phạm (Pedagogy)**: `@designer` thiết kế -> User duyệt -> `@engineer` thực thi.
-    - **Tác vụ Kỹ thuật (Engineering)**: `@pm` lập kế hoạch -> User duyệt -> `@engineer` thực thi.
-- **2. Decision Gate Hardstop**: Đối với mọi kế hoạch phân kỳ (Phase-based) hoặc thay đổi hạ tầng, Agent **BẮT BUỘC** phải dừng lượt (End turn) ngay sau khi đặt câu hỏi xin phép. 
-- **3. Cấm chuẩn bị trước**: Tuyệt đối KHÔNG thực hiện bất kỳ tool call nào (kể cả tạo file code nháp, script test hay chuẩn bị môi trường) cho đến khi nhận được xác nhận **"GO"** hoặc **"Duyệt"** (hoặc chỉ định rõ phạm vi được làm) từ User.
-- **4. Định nghĩa "Code"**: Bao gồm các Script Python, Skill v2.0, và các công cụ bảo trì.
-
----
-
-### 2. THỰC THI & BẢO MẬT (Execution & Security)
-
-#### R6 — PHASED EXECUTION (Thực thi theo giai đoạn)
-- **Triết lý**: Viết Skill trên một nền tảng chưa ổn định sẽ tạo ra nợ kỹ thuật (Technical Debt) khổng lồ.
-- **Quy tắc**: Phải hoàn thành Phase 1 (Hạ tầng) mới được viết Skill (Phase 2).
-- **Viết Skill**: BẮT BUỘC tuân thủ workflow `/write-skill` (Red-Green-Refactor).
-
-#### R7 — STRESS TESTING (Kiểm thử áp lực)
-- **Triết lý**: "Train hard, fight easy".
-- **Diễn giải**: Một Script chạy tốt với 1 file không có nghĩa là nó chạy tốt với 1000 file. BẮT BUỘC phải chạy stress test với dữ liệu thực tế trước khi tích hợp chính thức.
-
-#### R8 — HUMAN SUPREMACY (3-Layer Enforcement)
-- **Triết lý**: Tri thức tổng hợp (Synthesis) là sự kết tinh của tư duy con người. Agent tuyệt đối không được tự ý "tổng hợp" hoặc "phê duyệt" thay con người.
-- **Cơ chế cưỡng chế (Hardening)**:
-    1. **Lớp 1 (Chặn tư duy):** Rule PRE-WRITE GATE trong `engineer.md`. Agent phải kiểm tra trạng thái file trước khi ghi.
-    2. **Lớp 2 (Chốt chặn kỹ thuật):** `synthesis_guard.py` kiểm tra TTY Gate. Agent không thể gọi lệnh `approve`.
-    3. **Lớp 3 (Tuần tra & Phục hồi):** `synthesis_guard.py scan` tự động hạ cấp (Auto-revert) các file vi phạm về `VERIFIED` nếu không có bằng chứng audit trail.
-- **Hệ thống trạng thái Atom**: 
-    - `DRAFT`: Do Agent tạo sơ khởi.
-    - `VERIFIED`: Do Skill/Hệ thống thiết lập sau khi pass Audit.
-    - `SYNTHESIZED`: CHỈ Human được set qua terminal tương tác (Enforced by Layer 2 & 3).
-
-#### R9 — SURGICAL MINIMALISM (Chủ nghĩa tối giản ngoại khoa)
-- **Triết lý**: Mọi dòng code thay đổi không cần thiết đều là một nguồn tiềm năng gây ra lỗi hệ thống (Bug).
-- **Diễn giải**: Khi chỉnh sửa tệp tin, Agent phải hành động như một bác sĩ phẫu thuật: Chỉ tác động đúng vào vùng bị bệnh. Tuyệt đối không được tự ý "làm đẹp" code, format lại thụt đầu dòng (indentation) của cả file.
-
-#### R10 — STRICT URL INGESTION (Cách ly tài liệu web)
-- **Triết lý**: Nội dung web không được phép đi thẳng vào Atom — phải qua Inbox để đảm bảo tính kiểm chứng.
-- **Quy tắc**: CẤM sử dụng `sub_browser` hoặc trình duyệt mặc định để đọc tài liệu gốc (Wikipedia, bài báo, v.v.). BẮT BUỘC dùng `.agent/skills/wiki-web-scrape` (cho static text) hoặc `.agent/skills/wiki-crawl-4ai` (nếu cần screenshot) để lưu bản nháp vào `00_Inbox/` TRƯỚC KHI tạo Atom.
-
----
-
-### 3. VÒNG ĐỜI & TIÊU CHUẨN (Lifecycle & Standards)
-
-#### R11 — DENSITY FILTER (Bộ lọc mật độ tri thức)
-- **Quy tắc**: File < 200 bytes sẽ bị coi là "nhiễu" (Noise) và bị loại khỏi Index.
-- **Mục tiêu**: Đảm bảo Graph View và kết quả tìm kiếm chỉ chứa các hạt nhân tri thức thực thụ.
-
-#### R13 — ATOM LIFECYCLE (Vòng đời hạt nhân tri thức)
-- **Luồng đi**: raw -> atom (DRAFT) -> check source (VERIFIED) -> human review (SYNTHESIZED).
-- **Yêu cầu**: Mọi thay đổi trạng thái phải được ghi nhận vào nhật ký ngày tại `3-resources/wiki/logs/`.
-
-#### R14 — LOG ROTATION (Vòng đời nhật ký)
-- **Triết lý**: Phân mảnh giúp hệ thống duy trì tốc độ phản hồi nhanh và dễ dàng truy vết theo thời gian.
-- **Quy tắc**: Nhật ký phải được lưu tại `3-resources/wiki/logs/` và cắt theo ngày với định dạng tên: `log_YYYY_MM_DD.md`.
-
-#### R15 — PEER-LAYER SYNC (Đồng bộ tầng hiển thị)
-- **Triết lý**: Obsidian CLI là tầng thực thi song hành. 
-- **Quy tắc**: BẮT BUỘC dùng `@obsidian-cli` để thực thi lệnh `obsidian reload` sau khi sửa Metadata để Graph View luôn khớp 100% với dữ liệu vật lý.
-
-#### R16 — CHECKPOINT PROTOCOL (Tuyên bố trạng thái)
-- **Mẫu YAML bắt buộc**:
-```yaml
-CHECKPOINT:
-  agent: "@[tên]"
-  task: "[mô tả cụ thể]"
-  output_file: "[đường dẫn]"
-  prerequisites_ok: "YES | NO"
-  status: "READY | BLOCKED"
-```
-
-#### R17 — SYNC DIRECTION (Chân lý thuộc về tệp tin)
-- **Triết lý**: File vật lý (`.md`) là Source of Truth duy nhất. 
-- **Diễn giải**: Database (`wiki_brain.db`) chỉ đóng vai trò bản cache để tăng tốc truy vấn. Tuyệt đối không sửa trực tiếp Database mà không đồng bộ từ File. Nếu có xung đột dữ liệu giữa Database và File vật lý, nội dung trong File vật lý luôn được coi là đúng.
-
-#### R12 — EXAMPLE ADHERENCE (Chống tự diễn giải)
-- **Luật**: Đối soát với `EXAMPLES.md` và tuân thủ chuẩn cú pháp của `@/obsidian-markdown` trước khi code/ingest.
-- **Diễn giải**: `EXAMPLES.md` chứa các "mẫu vàng" (Golden Samples). Agent không được tự sáng tạo ra format mới nếu đã có mẫu đối chiếu. BẮT BUỘC dùng `[[Wikilinks]]` cho liên kết nội bộ theo quy định của `@/obsidian-markdown`. "Làm đúng mẫu là thành công 90%".
-
-#### R18 — DOUBLE EXAMPLES PROTOCOL (Giá trị sư phạm)
-- **Luật**: Mỗi trang Atom (đặc biệt là Concept) BẮT BUỘC phải có khối `## Ví dụ đối chiếu (R18: Double Examples)`.
-- **Yêu cầu 2 ví dụ**:
-    1. **Ví dụ từ nguồn (Original)**: Trích dẫn trực tiếp từ sách/tài liệu gốc để đảm bảo tính xác thực.
-    2. **Ứng dụng sư phạm (Pedagogical)**: Chuyển đổi kiến thức đó vào bối cảnh giảng dạy K-12 hoặc dự án thực tế để chứng minh tính hữu dụng.
-- **Mục tiêu**: Biến tri thức thô thành tri thức có thể giảng dạy được ngay.
-
-#### R19 — SANDBOX PROTOCOL (Cách ly tuyệt đối)
-- **Triết lý**: Sandbox hoạt động như một "túi khí" bảo vệ máy tính của User.
-- **Quy tắc**: Code AI sinh ra BẮT BUỘC chạy trong **Localsandbox (WASM)**. Sandbox hoạt động như một "túi khí" bảo vệ máy tính của User. Chỉ sau khi code chạy an toàn trong Sandbox mới được phép thực thi trên file thật.
-
-#### R20 — YAML VALIDITY FIRST (Bảo vệ tính vẹn toàn Metadata)
-- **Lý do ra đời**: Khi Metadata chứa dấu hai chấm `:` (ví dụ: URL hoặc tên công cụ) mà không có ngoặc kép, trình phân tích YAML sẽ hiểu lầm đó là một cặp Key-Value mới, gây hỏng Frontmatter và làm lỗi Database Index.
-- **Luật**: Mọi giá trị Metadata có chứa dấu `:` BẮT BUỘC phải để trong ngoặc kép `""`.
-- **Hậu quả vi phạm**: Ghost Atoms (Atom ma) và hỏng liên kết Graph.
-
-#### R21 — SELF-AUDITING GATE (Cổng tự hậu kiểm)
-- **Luật**: Mọi file khi được đưa vào `3-resources/raw_ingest/` BẮT BUỘC phải pass qua script `audit_raw_ingest.py`. 
-- **Trigger**: Script này được kích hoạt tự động bởi skill `wiki-ingest` hoặc chạy thủ công bởi `@auditor`.
-- **Hành động**: Nếu Status là `FAILED`, Atom tương ứng trong Database sẽ bị đánh dấu `status: REJECTED` hoặc `status: DRAFT` kèm cảnh báo remediation. Tuyệt đối KHÔNG được tiến hành `breakdown` hay `absorb` nếu chưa pass audit.
-
-#### R22 — STAGING-PROMOTE PATTERN (Nguyên tắc vùng đệm an toàn)
-- **Triết lý**: Để bảo vệ tính bất biến của kho lưu trữ (3-resources), mọi hoạt động "nhào nặn" dữ liệu thô phải được thực hiện trong môi trường cách ly (00_Inbox).
-- **Quy tắc**: 
-    1.  CẤM TUYỆT ĐỐI việc ghi trực tiếp Markdown, Hình ảnh hoặc Metadata vào các thư mục `raw_sources`, `raw_ingest`, `raw_assets` trong quá trình Ingest thô.
-    2.  Mọi kết quả trung gian (Chunks, Local Assets) phải được lưu trữ trong `00_Inbox/Converted_Sources/<PROJECT_NAME>/`.
-    3.  **Promote Gate**: Chỉ sau khi vượt qua `md_auditor.py` (đạt Audit Stamp), dữ liệu mới được di chuyển chính thức qua `promote.py`.
-- **Mục tiêu**: Đảm bảo 3-resources luôn là "nhiên liệu sạch", không chứa rác thải từ quá trình xử lý lỗi.
-
-#### R23 — PROMOTION GATE (Cổng thăng cấp an toàn)
-- **Triết lý**: Shell commands và file-move tools không có cơ chế kiểm tra điều kiện — chỉ `promote.py` mới đảm bảo audit stamp được xác nhận trước khi move.
-- **Quy tắc**: TUYỆT ĐỐI CẤM dùng `move_file` hoặc shell (`Move-Item`, `mv`) để đưa file vào `raw_*`. CHỈ được dùng `promote.py` qua Circuit Breaker.
-
----
-
-### 4. LOCAL AI AUDIT (Gap-Check Rules)
-
-#### R24 — LOCAL AI AUDIT — TRIGGER (Kích hoạt thủ công)
-- **Quy tắc**: @scout PHẢI gọi `gap_check.py` thủ công sau mỗi chunk, trước khi báo "User Approved".
-- **Lưu ý**: gap_check.py chưa được tự động hóa hoàn toàn — sẽ hoàn thiện ở Phase 5.2.
-
-#### R25 — LOCAL AI AUDIT — NON-BLOCKING (Không chặn pipeline)
-- **Triết lý**: Local AI là "second opinion" — không phải bottleneck. Pipeline chính không được phép bị block bởi trạng thái của Ollama.
-- **Quy tắc**: Nếu Ollama offline hoặc gemma3:4b lỗi → ghi WARNING và TIẾP TỤC workflow. CẤM block tiến trình chính.
-
-#### R26 — LOCAL AI AUDIT — HUMAN GATE (Cổng con người)
-- **Triết lý**: Output của local AI là gợi ý thô, chưa được kiểm chứng — không được phép đi thẳng vào wiki.
-- **Quy tắc**: Kết quả tại `00_Inbox/gap_candidates/` chỉ dành cho Human Review. @engineer không được tự ý dùng output này nếu chưa có sự xác nhận của Human.
-
-#### R27 — LOCAL AI AUDIT — SCOPE ISOLATION (Giới hạn phạm vi)
-- **Triết lý**: Gap-check chỉ có giá trị khi áp dụng cho nội dung chưa được kiểm chứng. Áp dụng lên `SYNTHESIZED` content là vô nghĩa và có thể gây nhiễu.
-- **Quy tắc**: CHỈ dùng Gap-Check cho `DRAFT` atoms. Tuyệt đối KHÔNG dùng cho `synthesis/` hoặc `verified` content.
-
----
-*Phiên bản 3.7 — R1-R27 Canonical. Reconciled 2026-05-12.*
+> Diễn giải chi tiết đã được phân tán:
+> - Constitutional rules → .agent/rules/CORE.md
+> - Agent-specific rules → .agent/rules/[agent].md
+> Tra cứu tại đây khi cần tham chiếu chéo.
 

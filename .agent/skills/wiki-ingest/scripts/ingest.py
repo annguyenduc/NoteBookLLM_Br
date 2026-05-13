@@ -34,6 +34,19 @@ def get_routing_info(file_path):
 def ingest_file(file_path, learning=False):
     print(f"--- Ingesting: {file_path} ---")
     
+    # [Task 2B] Security Gate: audit_stamp check for Markdown files
+    if file_path.lower().endswith(".md"):
+        try:
+            with open(file_path, 'r', encoding='utf-8', errors='replace') as f:
+                header = f.read(1024)
+                if "audit_stamp: true" not in header:
+                    print(f"WARNING: [Security Violation] Missing 'audit_stamp: true' in {file_path}. Skipping.")
+                    return False
+                print("SUCCESS: Audit stamp verified.")
+        except Exception as e:
+            print(f"ERROR: Failed to read audit stamp: {e}")
+            return False
+
     # Normalize path for comparison
     file_path = os.path.normpath(os.path.abspath(file_path))
     raw_dir_norm = os.path.normpath(os.path.abspath(RAW_DIR))

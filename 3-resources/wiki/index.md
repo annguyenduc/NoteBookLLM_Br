@@ -1,17 +1,23 @@
 # Wiki Index
-Cập nhật lần cuối: 2026-05-12 12:45:13
+Cập nhật lần cuối: 2026-05-13 14:15:00
 
 ## Thống kê nhanh
-- Tổng số Atoms: 13
+- Tổng số Atoms: 17
 
 ---
 
 
 ### Concepts
 - ✅ [[CONCEPT_test|CONCEPT test]]
+- 📝 [[CONCEPT_ARCH_TIS_System_Structure|ARCH_TIS: System Structure]]
 
 ### Sources
 - ✅ [[SOURCE_SYS_OSTEP|Operating Systems: Three Easy Pieces]]
+- 📝 [[SOURCE_ARCH_Thinking_in_Systems|Thinking in Systems: A Primer]]
+
+### Entities
+- 📝 [[ENTITY_ARCH_TIS_Donella_Meadows|Donella H. Meadows]]
+- 📝 [[ENTITY_ARCH_TIS_Sustainability_Institute|Sustainability Institute]]
 
 ### Synthesis
 - 📝 [[WIKI_GOVERNANCE_SOP|Quy trình Vận hành Tiêu chuẩn Wiki 2.0]]

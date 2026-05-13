@@ -9,6 +9,11 @@ logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
 class MarkdownAuditor:
     def __init__(self):
+        _secret = os.environ.get("KIRO_AUDIT_SECRET")
+        if not _secret:
+            raise EnvironmentError("KIRO_AUDIT_SECRET is not set. Cannot initialize auditor.")
+        self.hmac_key = _secret.encode("utf-8")
+        
         # Improved ligature pattern: common OCR failures like "e?ciency"
         self.ligature_pattern = re.compile(r'[a-zA-Z]\?[a-zA-Z]')
         self.img_pattern = re.compile(r'!\[\[(.*?)\]\]|!\[.*?\]\((.*?)\)')
@@ -115,6 +120,10 @@ class MarkdownAuditor:
             score -= min(0.5, missing_count * 0.1)
         score = round(max(0.0, score), 2)
         
+        import hmac, hashlib
+        msg = f"{pathlib.Path(md_path).stem}-{score:.2f}-{today}-v1.0".encode("utf-8")
+        signature = hmac.new(self.hmac_key, msg, hashlib.sha256).hexdigest()
+        
         status = "PASSED" if score >= 0.9 else "FAILED"
         
         # Step A: Detect Source PDF
@@ -166,7 +175,8 @@ class MarkdownAuditor:
             f"  status: \"{status}\"",
             "  auditor: \"v1.0\"",
             f"  verify_result: \"{verify_result}\"",
-            f"  verify_gaps: {verify_gaps}"
+            f"  verify_gaps: {verify_gaps}",
+            f"  signature: \"{signature}\""
         ]
         stamp_text = "\n".join(stamp_lines)
 

@@ -14,6 +14,9 @@ INBOX_DIR = ROOT_DIR / "00_Inbox"
 RAW_INGEST = ROOT_DIR / "3-resources/raw_ingest"
 RAW_SOURCES = ROOT_DIR / "3-resources/raw_sources"
 RAW_ASSETS = ROOT_DIR / "3-resources/raw_assets"
+WIKI_CONCEPTS = ROOT_DIR / "3-resources/wiki/concepts"
+WIKI_ENTITIES = ROOT_DIR / "3-resources/wiki/entities"
+WIKI_SOURCES = ROOT_DIR / "3-resources/wiki/sources"
 
 # ---------------------------------------------------------------------------
 # 1. CIRCUIT BREAKER GATE (REQ-CB)
@@ -41,13 +44,33 @@ def get_audit_info(md_path):
         if not audit_match:
             return None
         
+        sig_match = re.search(r'audit:.*?signature:\s*"([a-f0-9]+)"', content, re.DOTALL)
+        
         return {
             "score": float(audit_match.group(1)),
             "date": audit_match.group(2),
-            "status": audit_match.group(3)
+            "status": audit_match.group(3),
+            "signature": sig_match.group(1) if sig_match else None
         }
     except Exception:
         return None
+
+def verify_hmac_signature(md_path: pathlib.Path, audit: dict) -> bool:
+    import hmac, hashlib
+    secret = os.environ.get("KIRO_AUDIT_SECRET")
+    if not secret:
+        print("BLOCKED: KIRO_AUDIT_SECRET not set.")
+        return False
+    stored_sig = audit.get("signature")
+    if not stored_sig:
+        print(f"BLOCKED: No signature in {md_path.name}.")
+        return False
+    msg = f"{md_path.stem}-{audit['score']:.2f}-{audit['date']}-v1.0".encode("utf-8")
+    expected = hmac.new(secret.encode("utf-8"), msg, hashlib.sha256).hexdigest()
+    if not hmac.compare_digest(stored_sig, expected):
+        print(f"BLOCKED: CRITICAL - Invalid HMAC Signature. Tampering detected on {md_path.name}!")
+        return False
+    return True
 
 def get_source_pdf(md_path):
     """Detects source PDF name from Markdown body."""
@@ -98,6 +121,10 @@ def promote(md_path_str, dry_run=False):
         if (date.today() - audit_date).days > 7:
             print(f"BLOCKED: Audit stamp is stale ({audit['date']}). Re-audit required.")
             return False
+        
+        # --- HMAC Signature Check ---
+        if not verify_hmac_signature(md_path, audit):
+            return False
     except ValueError:
         print(f"ERROR: Malformed audit date: {audit['date']}")
         return False
@@ -112,7 +139,16 @@ def promote(md_path_str, dry_run=False):
             break
 
     # Define targets
-    dest_md = RAW_INGEST / md_path.name
+    # Define targets with smart routing
+    if md_path.name.startswith("CONCEPT_"):
+        dest_md = WIKI_CONCEPTS / md_path.name
+    elif md_path.name.startswith("ENTITY_"):
+        dest_md = WIKI_ENTITIES / md_path.name
+    elif md_path.name.startswith("SOURCE_"):
+        dest_md = WIKI_SOURCES / md_path.name
+    else:
+        dest_md = RAW_INGEST / md_path.name
+        
     dest_pdf = RAW_SOURCES / pdf_name if pdf_name else None
     
     assets_to_move = []
@@ -151,6 +187,9 @@ def promote(md_path_str, dry_run=False):
         RAW_INGEST.mkdir(parents=True, exist_ok=True)
         RAW_SOURCES.mkdir(parents=True, exist_ok=True)
         RAW_ASSETS.mkdir(parents=True, exist_ok=True)
+        WIKI_CONCEPTS.mkdir(parents=True, exist_ok=True)
+        WIKI_ENTITIES.mkdir(parents=True, exist_ok=True)
+        WIKI_SOURCES.mkdir(parents=True, exist_ok=True)
 
         # 1. Move MD
         shutil.move(str(md_path), str(dest_md))

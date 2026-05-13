@@ -7,12 +7,13 @@
 
 ## STARTUP (Bắt buộc mỗi phiên)
 
-1. Đọc `AGENTS.md`, `.agent/rules/CORE.md` (4 luật sinh tử), `SOUL.md`, `USER.md` và `WORKSPACE_OVERVIEW.md`
-2. Đọc file rules tương ứng với agent đang hoạt động (xem bảng Agent Rules bên dưới)
+1. Đọc `AGENTS.md`, `.agent/rules/CORE.md` (Hard Stop Rules), và `WORKSPACE_OVERVIEW.md` (Pipeline Architecture).
+   → `GEMINI.md`: CHỈ đọc khi gặp tình huống phức tạp cần tra cứu chéo. KHÔNG inject mặc định.
+2. Inject Scoped Context: Đọc `SOUL.md`, `USER.md` và file rules tương ứng với agent đang hoạt động (`.agent/rules/[agent].md`).
 3. Khai báo CHECKPOINT (xem cuối file) trước khi bắt đầu task
 4. Ghi log vào file nhật ký ngày hiện tại trong `3-resources/wiki/logs/` sau khi hoàn thành
 
-> **Tra cứu toàn bộ 27 rules và diễn giải chi tiết**: [[GEMINI.md]]
+> **Tra cứu Bản đồ 27 rules và WikiCouncil 2.0**: [[GEMINI.md]]
 
 ---
 
@@ -26,7 +27,7 @@
 | **@librarian** | `@librarian` | Quản lý wiki, cập nhật index, synthesis | `.agent/rules/librarian.md` |
 | **@auditor** | `@auditor` | Kiểm định nguồn, reverse tracing, lint | `.agent/rules/auditor.md` |
 | **@designer** | `@designer` | Thiết kế learning sequence (cần Trainer Profile trước) | `.agent/rules/CORE.md` |
-| **@healer** | `@healer` | Sửa lỗi link, rollback vi phạm | `.agent/rules/CORE.md` + [[GEMINI.md#R9]] + [[GEMINI.md#R15]] |
+| **@healer** | `@healer` | Sửa lỗi link, rollback vi phạm | `.agent/rules/healer.md` + [[GEMINI.md#R28]] |
 
 > **Nguyên tắc**: Mỗi agent chỉ đọc rules của mình + CORE.md.
 > Khi gặp tình huống phức tạp cần tra cứu chéo → đọc [[GEMINI.md]] đầy đủ.
@@ -53,6 +54,7 @@
 | `/gap-summary` | @librarian | Tổng hợp danh sách gap candidates hiện tại | `SOP_Weekly_Gap_Review` |
 | `/gap-promote` | @engineer | Thăng cấp candidate thành Atom nháp (review_queue) | `SOP_Weekly_Gap_Review` |
 | `/gap-cleanup` | @auditor | Dọn dẹp sạch inbox gap candidates | `SOP_Weekly_Gap_Review` |
+| `/gap-retry` | @scout | Xử lý lại các task gap-check bị lỗi trong DLQ | `SOP_DLQ_Recovery` |
 
 ---
 
@@ -157,7 +159,7 @@ Xem: `.agent/rules/CORE.md`
 | R14 Log Rotation | `session_seal.py` tự tạo file log đúng tên |
 
 ### Tầng 4 — Reference (Tra cứu khi cần, không inject mặc định)
-[[GEMINI.md]] — Toàn bộ 27 rules + WikiCouncil 2.0 + diễn giải chi tiết.
+[[GEMINI.md]] — Toàn bộ 27 rules + WikiCouncil 2.0 (Bản đồ Hiến pháp).
 
 ---
 
