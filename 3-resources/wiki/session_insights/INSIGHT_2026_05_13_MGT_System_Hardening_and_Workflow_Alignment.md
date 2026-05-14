@@ -1,3 +1,9 @@
+---
+title: "Session Insight: System Hardening & Workflow Alignment"
+type: insight
+status: VERIFIED
+last_reconciled: "2026-05-14"
+---
 # Session Insight: System Hardening & Workflow Alignment
 **Ngày**: 2026-05-13 | **Agent**: @scout, @engineer, @pm
 **Chủ đề**: Gia cố an ninh HMAC, Phân tách vai trò Agent và Chuẩn hóa Pipeline ARCH_TIS.

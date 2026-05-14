@@ -1,3 +1,9 @@
+---
+title: "SOP: Weekly Gap Review Workflow (Wiki 2.0)"
+type: synthesis
+status: VERIFIED
+last_reconciled: "2026-05-14"
+---
 # SOP: Weekly Gap Review Workflow (Wiki 2.0)
 
 ## 1. Mục đích

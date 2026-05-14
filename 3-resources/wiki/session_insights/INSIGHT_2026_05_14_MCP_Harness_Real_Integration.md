@@ -1,3 +1,9 @@
+---
+title: "Session Insight: MCP Harness Real Integration & Tool-Skill Duality"
+type: insight
+status: VERIFIED
+last_reconciled: "2026-05-14"
+---
 # Session Insight: MCP Harness Real Integration & Tool-Skill Duality
 
 **Date:** 2026-05-14

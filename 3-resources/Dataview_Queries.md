@@ -1,144 +1,124 @@
 ---
 file_id: "DATAVIEW_QUERIES"
 title: "Bộ truy vấn Dataview cho Wiki NoteBookLLM_Br"
-category: "System"
+type: synthesis
+status: VERIFIED
 created: "2026-04-29"
-last_updated: "2026-04-29"
+last_updated: "2026-05-14"
 ---
 
-# 🔍 Dataview Queries — NoteBookLLM_Br
+# 🔍 Dataview Queries — NoteBookLLM_Br (v2.0)
 
-> **Hướng dẫn dùng**: Cài plugin **Dataview** trong Obsidian (Settings → Community Plugins → Tìm "Dataview" → Enable). Mỗi block `dataview` dưới đây sẽ tự động render thành bảng khi mở file này trong Obsidian.
+> **Hướng dẫn dùng**: File này chứa các truy vấn động để tổng hợp tri thức từ thư mục `3-resources/wiki/`. Dữ liệu sẽ tự động cập nhật khi bạn tạo hoặc sửa các Atoms.
 
 ---
 
-## 📋 1. Tất cả trang cần Review (status: draft)
+## 📋 1. Review Queue (Status: DRAFT)
+*Các trang mới ingest hoặc đang chờ kiểm định.*
 
 ```dataview
-TABLE title AS "Tên trang", source AS "Nguồn", last_updated AS "Cập nhật lần cuối"
+TABLE 
+    title AS "Tiêu đề", 
+    type AS "Loại", 
+    source_file AS "Nguồn gốc", 
+    last_reconciled AS "Cập nhật"
 FROM "3-resources/wiki"
-WHERE status = "draft"
-SORT last_updated DESC
+WHERE icontains(status, "draft")
+SORT last_reconciled DESC
 ```
 
 ---
 
-## ✅ 2. Các trang đã xác thực (status: verified)
+## ✅ 2. Tri thức đã xác thực (Status: VERIFIED)
+*Kho tri thức tin cậy đã qua kiểm định.*
 
 ```dataview
-TABLE title AS "Tên trang", category AS "Loại", source AS "Nguồn"
+TABLE 
+    title AS "Tiêu đề", 
+    type AS "Loại", 
+    tags AS "Tags"
 FROM "3-resources/wiki"
-WHERE status = "verified"
-SORT title ASC
+WHERE icontains(status, "verified") OR icontains(status, "synthesized")
+SORT type ASC, title ASC
 ```
 
 ---
 
-## 📚 3. Tiến độ Ingest theo Nguồn sách
+## 💡 3. Nhật ký làm việc (Session Insights)
+*Các bài học và ghi chép hệ thống rút ra từ mỗi phiên.*
 
 ```dataview
-TABLE rows.file.link AS "Các trang Wiki", length(rows) AS "Số trang"
+TABLE 
+    title AS "Nội dung Insight", 
+    last_reconciled AS "Ngày ghi",
+    tags AS "Tags"
+FROM "3-resources/wiki/session_insights"
+SORT last_reconciled DESC
+```
+
+---
+
+## 📚 4. Thống kê theo Nguồn (Provenance Tracking)
+*Xem mỗi nguồn tài liệu đã đóng góp bao nhiêu Atoms.*
+
+```dataview
+TABLE 
+    length(rows) AS "Số lượng Atoms",
+    rows.file.link AS "Danh sách Atoms"
 FROM "3-resources/wiki"
-WHERE source != null
-GROUP BY source
+WHERE source_file != null
+GROUP BY source_file
 SORT length(rows) DESC
 ```
 
 ---
 
-## 🏷️ 4. Phân loại theo Tag
-
-```dataview
-TABLE rows.title AS "Trang", rows.status AS "Trạng thái"
-FROM "3-resources/wiki"
-WHERE tags != null
-FLATTEN tags AS tag
-GROUP BY tag
-SORT length(rows) DESC
-```
-
----
-
-## 🗺️ 5. Tất cả trang Summary (Nguồn sách đã Ingest)
-
-```dataview
-TABLE title AS "Tên sách", last_updated AS "Ngày hoàn tất"
-FROM "3-resources/wiki"
-WHERE category = "Source Summary"
-SORT last_updated DESC
-```
-
----
-
-## 🏢 6. Tất cả trang Entity
-
-```dataview
-TABLE title AS "Thực thể", last_updated AS "Cập nhật"
-FROM "3-resources/wiki"
-WHERE category = "Entity Page"
-SORT title ASC
-```
-
----
-
-## 🆕 7. Trang mới nhất (7 ngày gần nhất)
-
-```dataview
-TABLE title AS "Tên trang", category AS "Loại", created AS "Ngày tạo"
-FROM "3-resources/wiki"
-WHERE date(created) >= date(today) - dur(7 days)
-SORT created DESC
-```
-
----
-
-## 📊 8. Dashboard — Tổng quan toàn Wiki
+## 📊 5. Dashboard — Tổng quan hệ thống
+*Bản đồ mật độ tri thức theo từng phân loại.*
 
 ```dataview
 TABLE WITHOUT ID
-  "**Wiki Pages**" AS "Loại",
-  length(rows) AS "Số lượng"
+    type AS "Phân loại tri thức",
+    length(rows) AS "Số lượng",
+    choice(type = "concept", "🧠", choice(type = "insight", "💡", choice(type = "synthesis", "🧱", "📄"))) AS "Icon"
 FROM "3-resources/wiki"
-GROUP BY category
+WHERE type != null
+GROUP BY type
 SORT length(rows) DESC
 ```
 
 ---
 
-## 🔗 9. Trang THINK — Nhóm tư duy phân tích
+## 🔗 6. Nhóm Tư duy Hệ thống (Systems Thinking)
+*Lọc các khái niệm có tag systems_thinking.*
 
 ```dataview
-TABLE title AS "Công cụ", status AS "Trạng thái", source AS "Nguồn"
+TABLE 
+    title AS "Khái niệm", 
+    status AS "Trạng thái", 
+    source_ref AS "Tham chiếu"
 FROM "3-resources/wiki"
-WHERE contains(file.name, "THINK")
-SORT file.name ASC
+WHERE contains(tags, "systems_thinking")
+SORT title ASC
 ```
 
 ---
 
-## ⚠️ 10. Cảnh báo: Trang tạo từ lâu chưa update (30+ ngày)
+## ⚠️ 7. Cảnh báo: Tri thức "nguội" (Stale Content)
+*Các bản nháp chưa được động đến trên 30 ngày.*
 
 ```dataview
-TABLE title AS "Tên trang", last_updated AS "Cập nhật lần cuối"
+TABLE 
+    title AS "Tiêu đề", 
+    last_reconciled AS "Cập nhật lần cuối"
 FROM "3-resources/wiki"
-WHERE date(last_updated) < date(today) - dur(30 days)
-  AND status = "draft"
-SORT last_updated ASC
+WHERE date(last_reconciled) < date(today) - dur(30 days)
+  AND icontains(status, "draft")
+SORT last_reconciled ASC
 ```
 
 ---
 
-## 📖 Distilled Master Pages
-
-```dataview
-TABLE title AS "Tên trang", last_updated AS "Cập nhật"
-FROM "3-resources/distilled"
-SORT last_updated DESC
-```
-
----
-
-> 💡 **Mẹo cho người mới dùng Obsidian**:
-> - Nhấn `Ctrl + P` → gõ "Graph" → mở **Graph View** để xem toàn bộ mạng lưới liên kết.
-> - Trong Graph View, tắt filter "Existing files only" để thấy các trang được **nhắc đến qua Wikilinks nhưng chưa được tạo** (node màu đỏ/xám).
-> - Dùng **Local Graph** (click phải vào tab bất kỳ) để xem kết nối của từng trang Wiki riêng lẻ.
+> 💡 **Mẹo vận hành**:
+> - Dùng lệnh `/status` của Antigravity để xem báo cáo sức khỏe chi tiết hơn (Link Density).
+> - Nếu một file không hiện ở đây, hãy kiểm tra xem nó đã có đủ khối `---` frontmatter ở đầu file chưa.

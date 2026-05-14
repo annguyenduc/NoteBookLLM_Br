@@ -26,7 +26,7 @@
 | **@engineer** | `@engineer` | Viết code, tạo wiki atoms, thực thi task | `.agent/rules/engineer.md` |
 | **@librarian** | `@librarian` | Quản lý wiki, cập nhật index, synthesis | `.agent/rules/librarian.md` |
 | **@auditor** | `@auditor` | Kiểm định nguồn, reverse tracing, lint | `.agent/rules/auditor.md` |
-| **@designer** | `@designer` | Thiết kế learning sequence (cần Trainer Profile trước) | `.agent/rules/CORE.md` |
+| **@designer** | `@designer` | Thiết kế learning sequence (cần Trainer Profile trước) | `.agent/rules/designer.md` |
 | **@healer** | `@healer` | Sửa lỗi link, rollback vi phạm | `.agent/rules/healer.md` + [[GEMINI.md#R28]] |
 
 > **Nguyên tắc**: Mỗi agent chỉ đọc rules của mình + CORE.md.

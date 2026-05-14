@@ -1,3 +1,9 @@
+---
+title: "Session Insight: Vi phạm Quy trình Quản trị & Hạ tầng (2026-05-11)"
+type: insight
+status: VERIFIED
+last_reconciled: "2026-05-14"
+---
 # Session Insight: Vi phạm Quy trình Quản trị & Hạ tầng (2026-05-11)
 
 ## 1. Bối cảnh (Context)

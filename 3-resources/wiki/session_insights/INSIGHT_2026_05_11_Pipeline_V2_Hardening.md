@@ -1,3 +1,9 @@
+---
+title: "🧠 Session Insight: Pipeline V2.0 Hardening (Separation of Concerns)"
+type: insight
+status: VERIFIED
+last_reconciled: "2026-05-14"
+---
 # 🧠 Session Insight: Pipeline V2.0 Hardening (Separation of Concerns)
 **Ngày**: 2026-05-11 | **Bối cảnh**: Nâng cấp hệ thống nạp dữ liệu từ "One-long-chain" sang "Modular Pipeline".
 

@@ -1,3 +1,9 @@
+---
+title: "INSIGHT: Rollback Hệ thống & Hardening Quy trình (2026-05-11)"
+type: insight
+status: VERIFIED
+last_reconciled: "2026-05-14"
+---
 # INSIGHT: Rollback Hệ thống & Hardening Quy trình (2026-05-11)
 
 ## 1. Bối cảnh
