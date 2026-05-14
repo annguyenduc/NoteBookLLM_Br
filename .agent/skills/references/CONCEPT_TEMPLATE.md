@@ -53,4 +53,6 @@ last_updated: "2026-05-08"
 - **Fact-check**: [Xác nhận đã đối chiếu file raw thành công]
 
 ---
-*Phiên bản Template V3.0 (Language Aligned).*
+*Phiên bản Template V3.1 (Audit Aligned).*
+
+**Source PDF:** [filename.pdf]

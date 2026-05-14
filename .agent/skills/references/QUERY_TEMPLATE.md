@@ -5,14 +5,19 @@ type: "query"
 tags:
   - "Domain"
   - "Topic"
-status: "VERIFIED"
+status: "DRAFT"
 related:
   - "[[WIKI_PAGE_1]]"
 source_tool: "NotebookLM | Antigravity"
 sources: []
+source_file: ""    # RAW_YYYY-MM-DD_filename.md that this Atom was created from
+source_ref: ""     # [[SOURCE_CATEGORY_Name]] — link to the Source Atom
 created: "YYYY-MM-DD"
 last_updated: "YYYY-MM-DD"
 ---
+
+## For future Claude (AI Preamble)
+> [Tóm tắt 3-5 câu bằng Tiếng Việt về câu hỏi nghiên cứu, phạm vi dữ liệu đã quét và kết luận sơ bộ để Agent có thể tiếp tục mạch tư duy.]
 
 # 🔍 QUERY: [Original Title]
 
@@ -33,3 +38,5 @@ last_updated: "YYYY-MM-DD"
 
 ---
 **Workflow:** Research -> Synthesis -> File-back using this template.
+
+**Source PDF:** [filename.pdf]

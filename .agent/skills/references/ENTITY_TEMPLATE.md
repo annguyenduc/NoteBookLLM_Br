@@ -34,9 +34,16 @@ last_updated: "2026-05-08"
 ## 2. Khả năng & Đặc tính
 [Liệt kê các tính năng cốt lõi (nếu là Tool) hoặc thành tựu/chuyên môn (nếu là Person).]
 
-## 3. Ví dụ ứng dụng (R18: Practical Use)
-> **Bối cảnh**: [Mô tả tình huống sử dụng thực tế]
-> **Thực thi**: [Cách thực thể này giải quyết vấn đề]
+## 3. Ví dụ đối chiếu (R18: Double Examples)
+
+### Ví dụ từ sách (Original)
+> **Bối cảnh**: [Mô tả tình huống sử dụng trong tài liệu gốc]
+> **Thực thi**: [Cách thực thể này giải quyết vấn đề trong sách]
+> **Nguồn**: [[SOURCE_...]] — [Trang/Chương]
+
+### Ứng dụng sư phạm (Pedagogical Application)
+> **Bối cảnh**: [Tình huống dạy học / STEAM / EdTech / Doanh nghiệp thực tế]
+> **Thực thi**: [Cách ứng dụng thực thể này vào giáo dục hoặc dự án thực tiễn.]
 
 ## 4. Phản tư (4F)
 - **Facts**: [Dữ liệu khách quan về thực thể]
@@ -45,4 +52,6 @@ last_updated: "2026-05-08"
 - **Future**: [Kế hoạch tích hợp thực thể này vào workflow tiếp theo]
 
 ---
-*Phiên bản Template V3.0 (Language Aligned).*
+*Phiên bản Template V3.1 (R18 Aligned).*
+
+**Source PDF:** [filename.pdf]

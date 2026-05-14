@@ -8,9 +8,14 @@ tags:
   - "Comparison"
   - "Domain"
 status: "DRAFT"
+source_file: ""    # RAW_YYYY-MM-DD_filename.md that this Atom was created from
+source_ref: ""     # [[SOURCE_CATEGORY_Name]] — link to the Source Atom
 created: "YYYY-MM-DD"
 last_updated: "YYYY-MM-DD"
 ---
+
+## For future Claude (AI Preamble)
+> [Tóm tắt 3-5 câu về mục đích so sánh, các đối tượng chính và giá trị cốt lõi của bản đối chiếu này bằng Tiếng Việt.]
 
 # So sánh: [Original Title]
 
@@ -36,3 +41,5 @@ last_updated: "YYYY-MM-DD"
 ---
 **Nguồn tham khảo:** 
 - [[SOURCE_1]]
+
+**Source PDF:** [filename.pdf]

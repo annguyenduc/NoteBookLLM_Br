@@ -14,6 +14,8 @@ summary_of:
   - "[[CONCEPT_ID_2]]"
 target_audience: "human | agent | beginner | expert"
 last_reconciled: "2026-05-08"
+source_file: ""    # RAW_YYYY-MM-DD_filename.md that this Atom was created from
+source_ref: ""     # [[SOURCE_CATEGORY_Name]] — link to the Source Atom
 created: "2026-05-08"
 last_updated: "2026-05-08"
 ---
@@ -38,4 +40,6 @@ last_updated: "2026-05-08"
 - [ ] [Hành động 2: vd Ứng dụng vào dự án Y]
 
 ---
-*Phiên bản Template V3.0 (Language Aligned).*
+*Phiên bản Template V3.1 (Audit Aligned).*
+
+**Source PDF:** [filename.pdf]

@@ -5,10 +5,15 @@ type: "decision"
 tags:
   - "Wiki_Council"
   - "Conflict_Resolution"
-status: "VERIFIED"
+status: "DRAFT"
+source_file: ""    # RAW_YYYY-MM-DD_filename.md that this Atom was created from
+source_ref: ""     # [[SOURCE_CATEGORY_Name]] — link to the Source Atom
 created: "YYYY-MM-DD"
 last_updated: "YYYY-MM-DD"
 ---
+
+## For future Claude (AI Preamble)
+> [Tóm tắt 3-5 câu bằng Tiếng Việt về mâu thuẫn tri thức đã giải quyết, lý do đưa ra phán quyết này và tầm quan trọng của nó đối với sự nhất quán của Wiki.]
 
 # Biên bản Phán Quyết: [Original Title]
 
@@ -34,3 +39,5 @@ last_updated: "YYYY-MM-DD"
 
 ## 4. Hành động thực thi (Action Items)
 - [ ] Cập nhật lại [[CONCEPT_A]] theo phán quyết.
+
+**Source PDF:** [filename.pdf]

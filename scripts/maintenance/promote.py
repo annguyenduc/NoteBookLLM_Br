@@ -18,6 +18,12 @@ WIKI_CONCEPTS = ROOT_DIR / "3-resources/wiki/concepts"
 WIKI_ENTITIES = ROOT_DIR / "3-resources/wiki/entities"
 WIKI_SOURCES = ROOT_DIR / "3-resources/wiki/sources"
 
+WIKI_COMPARISONS = ROOT_DIR / "3-resources/wiki/comparisons"
+WIKI_SYNTHESIS = ROOT_DIR / "3-resources/wiki/synthesis"
+WIKI_DECISIONS = ROOT_DIR / "3-resources/wiki/decisions"
+WIKI_QUERIES = ROOT_DIR / "3-resources/wiki/queries"
+WIKI_INSIGHTS = ROOT_DIR / "3-resources/wiki/session_insights"
+
 # ---------------------------------------------------------------------------
 # 1. CIRCUIT BREAKER GATE (REQ-CB)
 # ---------------------------------------------------------------------------
@@ -138,7 +144,6 @@ def promote(md_path_str, dry_run=False):
             pdf_src_path = p
             break
 
-    # Define targets
     # Define targets with smart routing
     if md_path.name.startswith("CONCEPT_"):
         dest_md = WIKI_CONCEPTS / md_path.name
@@ -146,6 +151,16 @@ def promote(md_path_str, dry_run=False):
         dest_md = WIKI_ENTITIES / md_path.name
     elif md_path.name.startswith("SOURCE_"):
         dest_md = WIKI_SOURCES / md_path.name
+    elif md_path.name.startswith("COMPARISON_"):
+        dest_md = WIKI_COMPARISONS / md_path.name
+    elif md_path.name.startswith("SYNTHESIS_"):
+        dest_md = WIKI_SYNTHESIS / md_path.name
+    elif md_path.name.startswith("DECISION_"):
+        dest_md = WIKI_DECISIONS / md_path.name
+    elif md_path.name.startswith("QUERY_"):
+        dest_md = WIKI_QUERIES / md_path.name
+    elif md_path.name.startswith("INSIGHT_"):
+        dest_md = WIKI_INSIGHTS / md_path.name
     else:
         dest_md = RAW_INGEST / md_path.name
         

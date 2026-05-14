@@ -5,10 +5,15 @@ type: "insight"
 tags:
   - "Session_Log"
   - "System_Audit"
-status: "VERIFIED"
+status: "DRAFT"
+source_file: ""    # RAW_YYYY-MM-DD_filename.md that this Atom was created from
+source_ref: ""     # [[SOURCE_CATEGORY_Name]] — link to the Source Atom
 created: "YYYY-MM-DD"
 last_updated: "YYYY-MM-DD"
 ---
+
+## For future Claude (AI Preamble)
+> [Tóm tắt 3-5 câu bằng Tiếng Việt về những phát hiện quan trọng nhất trong phiên làm việc, các lỗi hệ thống đã sửa và "Instinct" mới cần ghi nhớ.]
 
 # Nhật ký & Bài học hệ thống (Session Insight)
 
@@ -29,3 +34,5 @@ last_updated: "YYYY-MM-DD"
 
 ## 5. Đề xuất cho phiên sau (Next Steps)
 - [ ] [Nhiệm vụ còn tồn đọng 1]
+
+**Source PDF:** [filename.pdf]

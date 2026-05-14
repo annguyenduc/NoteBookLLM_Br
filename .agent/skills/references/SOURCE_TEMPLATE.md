@@ -4,7 +4,7 @@ file_id: "SOURCE_[CATEGORY]_[Name]"
 # Use MISC only if no category fits — flag for human review.
 title: "[Full Original Title]"
 type: "source"
-status: "VERIFIED"
+status: "DRAFT"
 tags:
   - "domain"
 ai-first: true
@@ -39,4 +39,6 @@ last_updated: "2026-05-08"
 [Các thông tin khác như số trang, thời lượng video hoặc hướng dẫn cách truy cập.]
 
 ---
-*Phiên bản Template V3.0 (Language Aligned).*
+*Phiên bản Template V3.1 (Audit Aligned).*
+
+**Source PDF:** [filename.pdf]
