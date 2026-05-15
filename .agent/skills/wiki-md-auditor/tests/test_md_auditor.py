@@ -47,7 +47,8 @@ class TestMarkdownAuditor(unittest.TestCase):
         with open(output_md, "r", encoding="utf-8") as f:
             content = f.read()
         
-        self.assertIn(f"../raw_assets/{prefix}_fig_00.png", content)
+        self.assertIn(f"![[{prefix}_fig_00.png]]", content)
+        self.assertTrue((vault / f"{prefix}_fig_00.png").exists())
 
     def tearDown(self):
         # Clean up test data if needed

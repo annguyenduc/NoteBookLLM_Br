@@ -13,6 +13,7 @@ class TestPromote(unittest.TestCase):
         
         self.md_file = self.test_root / "RAW_TEST_FILE.md"
         self.pdf_file = pathlib.Path("00_Inbox/test_source.pdf")
+        self.lock_file = pathlib.Path(".kiro/session.lock")
         
         # Create a dummy PDF
         with open(self.pdf_file, "w") as f:
@@ -21,19 +22,27 @@ class TestPromote(unittest.TestCase):
         # Target directories
         self.ingest_dir = pathlib.Path("3-resources/raw_ingest")
         self.sources_dir = pathlib.Path("3-resources/raw_sources")
+        self.lock_file.parent.mkdir(parents=True, exist_ok=True)
+        self.lock_file.write_text("TEST", encoding="utf-8")
+        os.environ["KIRO_CB_ACTIVE"] = "1"
+        os.environ.pop("KIRO_AUDIT_SECRET", None)
 
     def create_md(self, status="PASSED", audit_date=None):
         if not audit_date:
             audit_date = date.today().strftime("%Y-%m-%d")
         
-        content = f"""# TEST
-Source PDF: test_source.pdf
+        content = f"""---
+audit_stamp: true
 audit:
   score: 0.95
   date: "{audit_date}"
   status: "{status}"
   auditor: "v1.0"
+  signature: "UNSIGNED"
 ---
+
+# TEST
+Source PDF: test_source.pdf
 Body content here.
 """
         with open(self.md_file, "w", encoding="utf-8") as f:
@@ -84,7 +93,8 @@ Body content here.
         # Cleanup
         for p in [self.test_root, self.pdf_file, 
                   self.ingest_dir / "RAW_TEST_FILE.md", 
-                  self.sources_dir / "test_source.pdf"]:
+                  self.sources_dir / "test_source.pdf",
+                  self.lock_file]:
             p = pathlib.Path(p)
             if p.exists():
                 if p.is_dir():

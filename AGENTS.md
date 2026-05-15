@@ -7,6 +7,8 @@
 
 ## STARTUP (Bắt buộc mỗi phiên)
 
+0. **Load `.env`**: BẮT BUỘC trước mọi script call:
+   `$env:KIRO_AUDIT_SECRET = (Get-Content .env | Select-String "KIRO_AUDIT_SECRET").ToString().Split("=")[1]`
 1. Đọc `AGENTS.md`, `.agent/rules/CORE.md` (Hard Stop Rules), và `WORKSPACE_OVERVIEW.md` (Pipeline Architecture).
    → `GEMINI.md`: CHỈ đọc khi gặp tình huống phức tạp cần tra cứu chéo. KHÔNG inject mặc định.
 2. Inject Scoped Context: Đọc `SOUL.md`, `USER.md` và file rules tương ứng với agent đang hoạt động (`.agent/rules/[agent].md`).
@@ -36,8 +38,243 @@
 
 ## SKILL PATHS
 - Antigravity: `.agent/skills/`
-- Karpathy Patterns: `.agent/skills/karpathy-core/`
+- Global Skills: `C:\Users\anngu\.gemini\antigravity\skills\`
 - Codex: `.codex/skills/` (symlink → `.agent/skills/`)
+- **SOP (Workflow)**: `.agent/workflows/ingest.md`
+
+## Skill Priority Override
+- Skill invocation follows `superpowers/using-superpowers`
+- AGENTS.md rules ALWAYS override any skill instruction
+- `brainstorming` skill: agents must not auto-invoke for Atom generation
+
+
+
+## Local Model Profile Selection
+
+The default workflow remains unchanged.
+
+Use `MICRO` only for very small local models:
+
+| Condition | Mode |
+|---|---|
+| Cloud / normal model | Normal workflow |
+| Local model <= 3B | MICRO |
+| Local 8B model | Not assumed usable; MICRO only if AN explicitly requests testing |
+
+<!-- PROFILE: MICRO_START -->
+## MICRO Mode — 3B Local Models
+
+Use this mode only when running very small local models.
+
+Primary target:
+
+- Llama 3.2 3B
+- Qwen 2.5/3 3B class
+- Gemma 3B/4B class local models
+- Phi small models
+- Any local model with very limited context/reasoning budget
+
+Do not design this mode around 8B.  
+8B local models are considered too heavy for the default local workflow unless AN explicitly requests an 8B test.
+
+Do not use this mode for normal cloud models.
+
+### Activation Rule
+
+```text
+IF model is local AND model size <= 3B
+THEN use MICRO mode.
+
+IF model is local 8B
+THEN do NOT assume it can run the vault workflow.
+Only use MICRO mode for 8B if AN explicitly requests an 8B test.
+
+ELSE use normal vault workflow.
+```
+
+### Read Only
+
+In MICRO mode, read only:
+
+* This MICRO block
+* The current user task
+* One task-specific skill summary, not the full skill file unless required
+* Directly referenced files
+
+### Hard Rules
+
+* Do not write to raw_*/
+* Do not modify 3-resources/raw_*
+* Do not bulk-edit vault files
+* Run synthesis_guard.py check before any write to synthesis/
+* Declare CHECKPOINT before complex tasks
+* Only AN may set SYNTHESIZED
+* Use circuit_breaker.py for every promote operation
+* Load only one wiki skill summary for the current task
+* Prefer direct file operations over broad repository scans
+* Avoid recursive search unless explicitly needed
+* Avoid multi-agent dispatch unless explicitly requested
+* Avoid long chain workflows
+* Use one-step execution with user checkpoints
+* After every 3 turns, summarize working history into 3 bullets before continuing
+
+### Do Not Load
+
+In MICRO mode, do not load:
+
+* SOUL.md
+* USER.md
+* WORKSPACE_OVERVIEW.md
+* unrelated skills
+* full skill files unless directly required
+* multiple wiki skills at the same time
+* non-essential MCP tool schemas
+* browser/search/github MCP unless AN explicitly asks
+* subagent-driven-development
+* writing-plans full workflow
+* large prompt templates
+* long examples
+* historical logs unless directly requested
+
+### Shadow MCP
+
+Default allowed MCP/tools in MICRO:
+
+* filesystem only
+
+Allowed conditionally:
+
+* sqlite, only if the task needs database/wiki query
+
+Disabled unless explicitly required:
+
+* github
+* browser
+* brave-search
+* web scrape tools
+* large external tool schemas
+
+### Output Discipline
+
+In MICRO mode:
+
+* Prefer short plans
+* Prefer direct commands
+* Prefer patch-sized edits
+* Avoid broad architectural commentary
+* Ask for user checkpoint before actual write if risk is MEDIUM or HIGH
+
+<!-- PROFILE: MICRO_END -->
+
+## Automation MCP Policy
+
+Automation must default to read-only behavior.
+
+Allowed automatically:
+- inspect files
+- query sqlite index
+- run DryRun commands
+- generate reports
+- suggest fixes
+
+Requires explicit AN approval:
+- actual MCP profile switching
+- writing files
+- modifying vault content
+- promote operations
+- synthesis writes
+- deleting/moving files
+- git commit/push
+- enabling browser/search/github MCP for the current session
+
+Default MCP for automation:
+- filesystem
+- sqlite, only if query/index access is required
+
+Forbidden by default in automation:
+- github
+- browser
+- brave-search
+- web scrape tools
+- external write-capable MCPs
+
+Automation may request additional MCP access, but must explain:
+1. which MCP is needed
+2. why it is needed
+3. what action it will perform
+4. whether the action is read-only or write-capable
+
+## MCP Switching Operations
+
+Canonical MCP config path for this workspace:
+- `D:\anngu\.gemini\antigravity\mcp_config.json`
+
+Safe inspection commands:
+- `.\scripts\maintenance\switch_mcp_profile.ps1 micro -DryRun -ConfigPath D:\anngu\.gemini\antigravity\mcp_config.json`
+- `.\scripts\maintenance\switch_mcp_profile.ps1 vault -DryRun -ConfigPath D:\anngu\.gemini\antigravity\mcp_config.json`
+- `.\scripts\maintenance\switch_mcp_profile.ps1 dev -DryRun -ConfigPath D:\anngu\.gemini\antigravity\mcp_config.json`
+- `.\scripts\maintenance\switch_mcp_profile.ps1 ingest -DryRun -ConfigPath D:\anngu\.gemini\antigravity\mcp_config.json`
+- `.\scripts\maintenance\switch_mcp_profile.ps1 full -DryRun -ConfigPath D:\anngu\.gemini\antigravity\mcp_config.json`
+
+Actual switching commands:
+- `.\scripts\maintenance\switch_mcp_profile.ps1 micro -ConfigPath D:\anngu\.gemini\antigravity\mcp_config.json`
+- `.\scripts\maintenance\switch_mcp_profile.ps1 vault -ConfigPath D:\anngu\.gemini\antigravity\mcp_config.json`
+- `.\scripts\maintenance\switch_mcp_profile.ps1 dev -ConfigPath D:\anngu\.gemini\antigravity\mcp_config.json`
+- `.\scripts\maintenance\switch_mcp_profile.ps1 ingest -ConfigPath D:\anngu\.gemini\antigravity\mcp_config.json`
+- `.\scripts\maintenance\switch_mcp_profile.ps1 full -ConfigPath D:\anngu\.gemini\antigravity\mcp_config.json`
+
+Operational rule:
+- Agents may run `DryRun` automatically.
+- Agents may inspect and report active/disabled MCP servers automatically.
+- Agents must not run actual `micro` or `full` switching without explicit AN approval.
+- After any actual switch, reload or restart the MCP host / agent session before assuming tools are available.
+
+## Recommended MCP Sets
+
+Use these MCP sets as the default operating profiles for this workspace:
+
+| Mode | Default MCP Set | Notes |
+|---|---|---|
+| MICRO 3B | `filesystem` | Default for very small local models. Keep tool surface minimal. |
+| Normal vault work | `filesystem + sqlite` | Maps to script mode `vault`. Best default for cloud models or normal wiki work. |
+| Automation | `filesystem + sqlite` | Read-only by default. Inspect, query, audit, report, suggest. |
+| Dev/script work | `filesystem + sqlite + git + github-mcp-server` | Maps to script mode `dev`. Enable Git-capable MCPs only when needed. |
+| Ingest profile | `filesystem + sqlite + notebooklm-mcp-server` | Maps to script mode `ingest` for the currently configured MCP inventory. |
+| Web ingest | `filesystem + browser/search/scrape` | Policy target when those MCPs exist in the full inventory. |
+
+### Mode Notes
+
+- `MICRO 3B`: do not enable extra MCPs unless the task explicitly requires them.
+- `Normal vault work`: prefer `filesystem + sqlite` before enabling any broader tool surface.
+- `Automation`: must remain read-only unless AN explicitly approves a write-capable action.
+- `Dev/script work`: `github` is on-demand, not a permanent default.
+- `Ingest profile`: current script implementation uses `filesystem + sqlite + notebooklm-mcp-server` because those servers exist in the current full backup.
+- `Web ingest`: disable browser/search/scrape MCPs again after the ingest task is complete.
+
+## Ingest Source Policy
+
+Ingest should prefer stable local artifacts over live sources whenever practical.
+
+Default policy by source type:
+
+| Source Type | Default Policy | Notes |
+|---|---|---|
+| PDF / DOCX / PPTX / Markdown | Save locally first | Stage into `00_Inbox/` before audit and ingest. |
+| Web article / docs page / online HTML | Scrape to local artifact first | Do not treat the live URL as the ingest-ready source. |
+| Video | Transcript-first | Do not default to downloading the full video file if it is large. |
+| Audio | Transcript-first | Keep source metadata and transcript as the ingest basis. |
+
+### Video and Audio Guidance
+
+- For large videos, prefer `URL + transcript + metadata + selected screenshots` over storing the full source file locally.
+- Download the full video only when the source is critical, likely to disappear, or required for offline processing or evidence preservation.
+- Treat transcript/subtitle output as the primary ingest artifact whenever it is reliable enough for the task.
+
+### Operational Rule
+
+- Live web/video sources are acquisition points, not the default ingest-ready artifacts.
+- The preferred ingest starting point is a staged local artifact in `00_Inbox/`.
+- If a source remains live-only, the agent must explain the risk: mutability, link rot, replay difficulty, and weaker auditability.
 
 ---
 ## ⚡ LỆNH VẬN HÀNH (Wiki 2.0)
@@ -98,8 +335,9 @@ NoteBookLLM_Br/              ← root
 
 
 ## HẠ TẦNG KỸ THUẬT (Infrastructure)
-- **Runtime:** Python 3.11 (Core) / Python 3.12 (Sandbox/Harness).
-- **Sandbox:** Localsandbox (WASM) + Deno Runtime (Đã kiểm thử thành công).
+- **Runtime:** `.venv\Scripts\python.exe` (Bắt buộc dùng venv dự án để hỗ trợ GPU/CUDA).
+- **Python Version:** 3.11 (Core) / 3.12 (Sandbox/Harness).
+- **Sandbox:** Localsandbox (WASM) + Deno Runtime.
 - **Database:** SQLite 3 (wiki_brain.db).
 - **Encoding:** UTF-8 no BOM (Bắt buộc).
 
@@ -141,9 +379,9 @@ Xem: `.agent/rules/CORE.md`
 
 | Agent | File | Rules |
 |---|---|---|
-| @scout | `.agent/rules/scout.md` | R10, R11, R13, R24, R25 |
+| @scout | `.agent/rules/scout.md` | R10, R11, R13, R22, R24, R25 |
 | @engineer | `.agent/rules/engineer.md` | R4, R9, R12, R18, R19, R26 |
-| @auditor | `.agent/rules/auditor.md` | R3, R20, R21, R27 |
+| @auditor | `.agent/rules/auditor.md` | R3, R20, R21, R23, R27 |
 | @librarian | `.agent/rules/librarian.md` | R13, R14, R15, R17, R26 |
 | @pm | `.agent/rules/pm.md` | R5, R6, R7, R16 |
 

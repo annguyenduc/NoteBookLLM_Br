@@ -23,7 +23,8 @@ REPO_ROOT = pathlib.Path(__file__).parent.parent.parent
 RAW_INGEST = REPO_ROOT / "3-resources" / "raw_ingest"
 RAW_SOURCES = REPO_ROOT / "3-resources" / "raw_sources"
 RAW_ASSETS = REPO_ROOT / "3-resources" / "raw_assets"
-REJECTED_DIR = REPO_ROOT / "00_Inbox" / "Rejected" / datetime.now().strftime("%Y-%m-%d")
+ARCHIVE_ROOT = REPO_ROOT / "4-archive"
+REJECTED_DIR = ARCHIVE_ROOT / "rejected" / datetime.now().strftime("%Y-%m-%d")
 
 def check_audit_stamp(md_path):
     """Verifies if the MD file has a PASSED audit stamp."""

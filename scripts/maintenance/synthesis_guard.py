@@ -268,8 +268,14 @@ def cmd_scan() -> int:
     approved_files: set[str] = set()
     if GUARD_LOG.exists():
         log_content = GUARD_LOG.read_text(encoding="utf-8")
-        for m in re.finditer(r'action: approve.*?file: (.+)', log_content, re.DOTALL):
-            approved_files.add(m.group(1).strip())
+        raw_entries = re.split(r'\n(?=- timestamp:)', log_content)
+        for raw in raw_entries:
+            action_match = re.search(r'action:\s*(.+)', raw)
+            file_match = re.search(r'file:\s*(.+)', raw)
+            if not action_match or not file_match:
+                continue
+            if action_match.group(1).strip() == "approve":
+                approved_files.add(file_match.group(1).strip())
 
     print(f"\n[SYNTHESIS GUARD] Scan: {WIKI_DIR}")
     print("=" * 60)
@@ -305,7 +311,7 @@ def cmd_scan() -> int:
 
     print("=" * 60)
     print(f"  Total Files Scanned: {len(files)} | Issues/Reverts: {issues}")
-    return 0
+    return 1 if issues else 0
 
 
 # ---------------------------------------------------------------------------

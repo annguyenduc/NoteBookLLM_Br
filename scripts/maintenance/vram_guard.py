@@ -11,6 +11,23 @@ ROOT_DIR = pathlib.Path(__file__).parent.parent.parent
 LOCK_DIR = ROOT_DIR / ".kiro"
 LOCK_FILE = LOCK_DIR / "vram.lock"
 
+
+def _read_lock_pid():
+    try:
+        return int(LOCK_FILE.read_text(encoding="utf-8").strip())
+    except (OSError, ValueError):
+        return None
+
+
+def _pid_is_alive(pid):
+    if pid is None or pid <= 0:
+        return False
+    try:
+        os.kill(pid, 0)
+        return True
+    except OSError:
+        return False
+
 def acquire_lock(timeout=300):
     """Chờ và lấy quyền sử dụng VRAM bằng cơ chế atomic (O_EXCL)."""
     # Đảm bảo thư mục .kiro tồn tại (Rule R22/R4)
@@ -25,6 +42,14 @@ def acquire_lock(timeout=300):
             os.close(fd)
             return True  # Lock acquired atomically
         except FileExistsError:
+            stale_pid = _read_lock_pid()
+            if not _pid_is_alive(stale_pid):
+                print(f"[{datetime.now().strftime('%H:%M:%S')}] Removing stale VRAM lock{f' (pid {stale_pid})' if stale_pid else ''}...")
+                try:
+                    LOCK_FILE.unlink()
+                    continue
+                except OSError:
+                    pass
             # Lock đã tồn tại — kiểm tra timeout
             if time.time() - start_time > timeout:
                 print(f"ERROR: VRAM Guard Timeout after {timeout}s.")

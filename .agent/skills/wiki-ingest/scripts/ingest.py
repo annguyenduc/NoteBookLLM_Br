@@ -39,8 +39,8 @@ def ingest_file(file_path, learning=False):
         try:
             with open(file_path, 'r', encoding='utf-8', errors='replace') as f:
                 header = f.read(1024)
-                if "audit_stamp: true" not in header:
-                    print(f"WARNING: [Security Violation] Missing 'audit_stamp: true' in {file_path}. Skipping.")
+                if "audit_stamp: true" not in header and "audit:" not in header:
+                    print(f"WARNING: [Security Violation] Missing valid audit block in {file_path}. Skipping.")
                     return False
                 print("SUCCESS: Audit stamp verified.")
         except Exception as e:

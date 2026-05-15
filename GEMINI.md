@@ -14,7 +14,7 @@ Trong mọi trường hợp, các luật R1 đến R27 là TUYỆT ĐỐI. Nếu
 |---|---|---|---|
 | **I. Quản trị** | **R1** | Raw Immutable | Vùng `raw_*/` là vùng cấm tuyệt đối. NGHIÊM CẤM thực thi các lệnh xóa (`rm`), di chuyển (`mv`), hoặc đổi tên (`ren`/`rename`) đối với bất kỳ file nào trong `3-resources/`. |
 | | **R2** | Proactive Integrity | CẤM báo cáo ảo. BẮT BUỘC ghi log trước khi thực hiện (Logging First). |
-| | **R3** | Source Tracing | Mọi trích dẫn phải có Link Nguồn (Source Node). |
+| | **R3** | Source Tracing & Map-First | Mọi trích dẫn phải có Link Nguồn (Source Node). BẮT BUỘC khởi tạo Bản đồ (Source Node) TRƯỚC KHI bóc tách chi tiết. |
 | | **R4** | Structure & Encoding | BẮT BUỘC Python UTF-8 & Surgical Diff. CẤM dùng PowerShell ghi file tiếng Việt & CẤM file mới tại Root. |
 | | **R5** | Prereq Gate | Lệnh sản xuất (Design/Task) phải rõ ràng trước khi chạy. |
 | **II. Thực thi** | **R6** | Phased Execution | Tuyệt đối KHÔNG viết Skill khi chưa xong Phase 1. |
@@ -35,6 +35,7 @@ Trong mọi trường hợp, các luật R1 đến R27 là TUYỆT ĐỐI. Nếu
 | | **R21** | Self-Auditing Gate | BẮT BUỘC pass `audit_raw_ingest.py` khi vào `raw_ingest`. |
 | | **R22** | Staging-Promote | BẮT BUỘC xử lý thô trong `00_Inbox`. CẤM ghi trực tiếp vào `3-resources`. |
 | | **R-FLATTEN** | Flattened Storage | CẤM tạo thư mục con trong `raw_sources/`, `raw_ingest/`, và `raw_assets/`. Mọi tệp phải nằm ở root của các thư mục này. |
+| | **R-VENV** | Venv Mandatory | BẮT BUỘC sử dụng `.venv\Scripts\python.exe` cho mọi thao tác Python để đảm bảo hỗ trợ GPU/CUDA và cô lập thư viện. |
 | | **R23** | Promotion Gate | TUYỆT ĐỐI CẤM dùng `move_file` hoặc shell (`Move-Item`) để đưa file vào `raw_*`. CHỈ được dùng `promote.py` qua Circuit Breaker. |
 | **IV. Local AI Audit** | **R24** | Local AI Audit — Trigger | @scout PHẢI gọi `gap_check.py` thủ công sau mỗi chunk, trước khi báo "User Approved". |
 | | **R25** | Local AI Audit — Non-blocking | Nếu Ollama offline hoặc gemma3:4b lỗi → WARNING + tiếp tục. CẤM block pipeline chính. |

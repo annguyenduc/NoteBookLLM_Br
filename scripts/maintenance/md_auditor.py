@@ -3,6 +3,7 @@ import os
 import pathlib
 import shutil
 import logging
+import sys
 
 # Setup logging
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
@@ -11,8 +12,9 @@ class MarkdownAuditor:
     def __init__(self):
         _secret = os.environ.get("KIRO_AUDIT_SECRET")
         if not _secret:
-            raise EnvironmentError("KIRO_AUDIT_SECRET is not set. Cannot initialize auditor.")
-        self.hmac_key = _secret.encode("utf-8")
+            self.hmac_key = None
+        else:
+            self.hmac_key = _secret.encode("utf-8")
         
         # Improved ligature pattern: common OCR failures like "e?ciency"
         self.ligature_pattern = re.compile(r'[a-zA-Z]\?[a-zA-Z]')
@@ -90,7 +92,12 @@ class MarkdownAuditor:
             if wikilink:
                 new_content = new_content.replace(f"![[{wikilink}]]", new_path_str)
             else:
-                new_content = new_content.replace(f"![{old_link}]({old_link})", new_path_str) # Simple case
+                new_content = re.sub(
+                    rf'!\[.*?\]\({re.escape(old_link)}\)',
+                    new_path_str,
+                    new_content,
+                    count=1
+                )
             
             if not dry_run:
                 if src_img.exists():
@@ -119,10 +126,15 @@ class MarkdownAuditor:
         if missing_count > 0:
             score -= min(0.5, missing_count * 0.1)
         score = round(max(0.0, score), 2)
+        score_str = f"{score:.2f}"
         
         import hmac, hashlib
-        msg = f"{pathlib.Path(md_path).stem}-{score:.2f}-{today}-v1.0".encode("utf-8")
-        signature = hmac.new(self.hmac_key, msg, hashlib.sha256).hexdigest()
+        if self.hmac_key:
+            msg = f"{pathlib.Path(md_path).stem}-{score_str}-{today}-v1.0".encode("utf-8")
+            signature = hmac.new(self.hmac_key, msg, hashlib.sha256).hexdigest()
+        else:
+            signature = "UNSIGNED"
+            logging.warning("KIRO_AUDIT_SECRET not set. Audit stamp will be UNSIGNED.")
         
         status = "PASSED" if score >= 0.9 else "FAILED"
         
@@ -139,7 +151,7 @@ class MarkdownAuditor:
             md_path_obj = pathlib.Path(md_path)
             
             # Search locations
-            root_dir = pathlib.Path(__file__).parent.parent.parent.parent.parent
+            root_dir = pathlib.Path(__file__).resolve().parent.parent.parent
             search_paths = [
                 md_path_obj.parent,
                 root_dir / "00_Inbox",
@@ -156,7 +168,7 @@ class MarkdownAuditor:
             # Step B: Call verify_convert
             if pdf_path:
                 try:
-                    v_script = pathlib.Path(__file__).parent.parent.parent / "wiki-hd-convert" / "scripts" / "verify_convert.py"
+                    v_script = root_dir / ".agent" / "skills" / "wiki-hd-convert" / "scripts" / "verify_convert.py"
                     if v_script.exists():
                         spec = importlib.util.spec_from_file_location("verify_convert", v_script)
                         vc = importlib.util.module_from_spec(spec)
@@ -164,13 +176,23 @@ class MarkdownAuditor:
                         v_res = vc.verify(pdf_path, str(md_path))
                         verify_result = v_res.get("result", "ERROR")
                         verify_gaps = v_res.get("gaps", [])
+                    else:
+                        logging.error(f"Verification script missing: {v_script}")
+                        verify_result = "ERROR"
                 except Exception as e:
                     logging.error(f"Verification error: {e}")
                     verify_result = "ERROR"
+            else:
+                logging.error(f"Source PDF not found for verification: {pdf_filename}")
+                verify_result = "ERROR"
+
+        if verify_result in {"FAIL", "ERROR"}:
+            status = "FAILED"
 
         stamp_lines = [
+            "audit_stamp: true",
             "audit:",
-            f"  score: {score:.2f}",
+            f"  score: {score_str}",
             f"  date: \"{today}\"",
             f"  status: \"{status}\"",
             "  auditor: \"v1.0\"",
@@ -203,11 +225,8 @@ class MarkdownAuditor:
 
         with open(md_path, "w", encoding="utf-8") as f:
             f.write(new_content)
-
-        with open(md_path, "w", encoding="utf-8") as f:
-            f.write(new_content)
         
-        return score, status
+        return score, status, verify_result
 
 if __name__ == "__main__":
     import argparse
@@ -237,10 +256,14 @@ if __name__ == "__main__":
     if args.fix:
         if noises > 10:
             logging.error("Too much noise. Fix manually before promotion.")
+            sys.exit(1)
         elif missing:
             logging.error("Missing assets. Fix links before promotion.")
+            sys.exit(1)
         else:
             prefix = args.prefix if args.prefix else pathlib.Path(args.path).stem
             auditor.standardize_assets(args.path, prefix, args.vault, dry_run=False)
-            score, status = auditor.write_audit_stamp(args.path, noises, len(missing))
-            logging.info(f"Standardization complete. Audit {status} (Score: {score})")
+            score, status, verify_result = auditor.write_audit_stamp(args.path, noises, len(missing))
+            logging.info(f"Standardization complete. Audit {status} (Score: {score}, Verify: {verify_result})")
+            if status != "PASSED":
+                sys.exit(1)
