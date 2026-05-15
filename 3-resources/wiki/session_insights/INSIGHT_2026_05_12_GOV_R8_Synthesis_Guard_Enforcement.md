@@ -1,9 +1,3 @@
----
-title: "SESSION INSIGHT — GOV — R8 Synthesis Guard Enforcement"
-type: insight
-status: VERIFIED
-last_reconciled: "2026-05-14"
----
 # SESSION INSIGHT — GOV — R8 Synthesis Guard Enforcement
 > Date: 2026-05-12
 > Topic: Củng cố Rule R8 (Human Supremacy) & Đồng bộ hạ tầng kiểm định Wiki 2.0.

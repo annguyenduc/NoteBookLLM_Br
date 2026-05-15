@@ -1,9 +1,3 @@
----
-title: "INSIGHT: Rollback Governance Lockdown (Session Lock & ACL)"
-type: insight
-status: VERIFIED
-last_reconciled: "2026-05-11"
----
 # INSIGHT: Rollback Governance Lockdown (Session Lock & ACL)
 **Date:** 2026-05-11
 **Context:** Ingestion Pipeline Hardening Phase

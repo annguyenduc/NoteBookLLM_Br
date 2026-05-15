@@ -1,9 +1,3 @@
----
-title: "Session Insight: Architecture Hardening & Governance Reform (Sprint v2.0)"
-type: insight
-status: VERIFIED
-last_reconciled: "2026-05-12 / 2026-05-13"
----
 # Session Insight: Architecture Hardening & Governance Reform (Sprint v2.0)
 **Date:** 2026-05-12 / 2026-05-13
 **Agent:** @pm, @engineer, @scout, @healer

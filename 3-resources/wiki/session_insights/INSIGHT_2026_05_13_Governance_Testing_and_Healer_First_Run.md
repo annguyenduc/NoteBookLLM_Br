@@ -1,9 +1,3 @@
----
-title: "Session Insight: 2026-05-13 — Governance Testing & Healer Operations"
-type: insight
-status: VERIFIED
-last_reconciled: "2026-05-14"
----
 # Session Insight: 2026-05-13 — Governance Testing & Healer Operations
 
 **Thời gian**: 2026-05-13

@@ -1,9 +1,3 @@
----
-title: "Session Insight: Wiki 2.0 Governance & System Thinking"
-type: insight
-status: VERIFIED
-last_reconciled: "2026-05-14"
----
 # Session Insight: Wiki 2.0 Governance & System Thinking
 **Ngày**: 2026-05-14 | **Agent**: @pm, @engineer, @scout
 **Chủ đề**: Tổng kết hạ tầng kỹ thuật, Quản trị hệ thống bằng kiến trúc và Triết lý Ingest Karpathy-centric.
