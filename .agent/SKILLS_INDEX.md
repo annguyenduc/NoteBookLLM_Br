@@ -4,7 +4,7 @@ Bảng chỉ mục này phân loại và tóm tắt chức năng của các Skil
 
 ## 1. 📥 Nạp Dữ Liệu & Tiền Xử Lý (Ingestion)
 Nhóm kỹ năng dùng để cào dữ liệu, xử lý file thô và tạo Atom nháp (DRAFT).
-- **`wiki-ingest`**: Nòng cốt nạp dữ liệu. Băm nhỏ file (PDF, Markdown), mã hóa Hash, chấm điểm tự động và đưa vào Review Queue.
+- **`wiki-ingest`**: Stage deterministic của ingest lifecycle. Đăng ký file đã được chuẩn bị vào Review Queue bằng hash + score; không phải full user-facing `/ingest` entrypoint.
 - **`wiki-web-scrape`**: Cào dữ liệu web an toàn bằng Lightpanda. Chuyển đổi bài báo, Wikipedia thành Markdown sạch (Bắt buộc dùng thay cho Browser mặc định).
 - **`wiki-hd-convert`**: Trích xuất hình ảnh/biểu đồ độ phân giải cao từ PDF để giữ nguyên minh họa trực quan.
 - **`defuddle`**: Lọc bỏ rác web (quảng cáo, menu bar) để lấy nội dung Markdown lõi, giúp tiết kiệm Token.

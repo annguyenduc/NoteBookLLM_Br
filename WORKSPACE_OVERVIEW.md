@@ -154,7 +154,7 @@ graph TD
 | **Gap-Check** | `gap_check.py` | **Local Audit**: Phát hiện tri thức bỏ sót | `Atoms` → `00_Inbox/gap_candidates/` | `.agent/skills/wiki-ingest/scripts/` |
 | **Governance** | `synthesis_guard.py`| **R8 Enforcement**: Chống Agent tự synthesize | `Proposed` → `Revert/Approve` | `scripts/maintenance/` |
 | **Maintenance** | `wiki-status` | **Dashboard**: Báo cáo sức khỏe | `/status` | `scripts/` |
-| **Ingest** | `wiki-ingest` | **Ingestion**: Nạp tài liệu & atom hóa | `/ingest` | `.agent/skills/wiki-ingest/scripts/` |
+| **Ingest** | `ingest-lifecycle` + `wiki-ingest` | **Ingestion**: `ingest-lifecycle` là entrypoint chính thức cho `/ingest`; `wiki-ingest` là stage deterministic register-to-review-queue bên trong lifecycle | `/ingest` | `.agent/workflows/ingest-lifecycle.md` + `.agent/skills/wiki-ingest/scripts/` |
 | **Monitor** | `circuit_breaker.py`| **Circuit Breaker**: Giám sát lỗi | Process → `error_log.md` | `.kiro/` |
 | **Maintenance** | `wiki-rebuild` | **Rebuild**: Sync filesystem → DB | Vault → DB | `scripts/` |
 
@@ -171,6 +171,8 @@ python scripts/maintenance/md_auditor.py "00_Inbox/Converted_Sources/[SOURCE_NAM
 python .kiro/circuit_breaker.py promote "00_Inbox/Converted_Sources/[SOURCE_NAME]/[FILE].md"
 
 # 3. Đăng ký Ingest & Gap-Check
+# Official command flow: resolve stage via `.agent/workflows/ingest-lifecycle.md` first.
+# Direct `ingest.py` invocation below is only the deterministic stage script after upstream artifacts are READY.
 python .agent/skills/wiki-ingest/scripts/ingest.py "3-resources/raw_ingest/[SOURCE_FILE].md"  # Checks audit_stamp
 python .agent/skills/wiki-ingest/scripts/gap_check.py --source "[SOURCE_NAME]" --chunk [N] --atoms '[JSON_LIST]'
 

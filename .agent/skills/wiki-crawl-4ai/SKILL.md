@@ -25,7 +25,11 @@ python .agent/skills/wiki-crawl-4ai/tests/test_crawl.py
 2. Run crawler:
    `python .agent/skills/wiki-crawl-4ai/scripts/crawl4ai_run.py --url "<url>" --output "00_Inbox/<name>.md" --screenshot`
 3. Confirm existence of both `.md` and `.png`.
-4. Pass staging folder/files to `wiki-ingest`.
+4. Pass the verified staging folder/files to the official `/ingest` flow via `ingest-lifecycle`.
+
+## Handoff Rule
+- `wiki-crawl-4ai` ends at staged inbox artifacts plus verified screenshot evidence.
+- Official ingest must continue through `ingest-lifecycle`; do not hand off a fresh run directly to `wiki-ingest`.
 
 ## Quick Reference
 - `python .agent/skills/wiki-crawl-4ai/scripts/crawl4ai_run.py --url <URL> --output 00_Inbox/<name>.md --screenshot --headless`

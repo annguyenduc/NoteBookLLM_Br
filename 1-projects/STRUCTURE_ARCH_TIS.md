@@ -1,6 +1,6 @@
 # STRUCTURE: ARCH_TIS
 
-Source file: `00_Inbox/ARCH_Thinking_in_Systems.pdf`
+Source file: `3-resources/raw_sources/ARCH_Thinking_in_Systems.pdf`
 Source ID: `ARCH_TIS`
 Canonical title: `Thinking in Systems: A Primer`
 Canonical title slug: `Thinking_in_Systems`
@@ -143,5 +143,5 @@ For each confirmed chapter:
 
 - `1-projects/MAP_ARCH_TIS.md`
 - `1-projects/NAMING_LOCK_ARCH_TIS.md`
-- `.agent/workflows/ingest.md`
+- `.agent/workflows/ingest-lifecycle.md`
 - `.agent/docs/INGEST_MAP_NAMING_LOCK_SPEC.md`

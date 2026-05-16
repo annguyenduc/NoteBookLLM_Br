@@ -25,7 +25,11 @@ python .agent/skills/wiki-web-scrape/tests/test_scrape.py
 2. Run staging command:
    `python .agent/skills/wiki-web-scrape/scripts/lightpanda_scrape.py --url "<url>" --output "00_Inbox/<filename>.md"`
 3. Verify output quality in the inbox.
-4. Pass verified file to `wiki-ingest`.
+4. Pass the verified inbox artifact to the official `/ingest` flow via `ingest-lifecycle`.
+
+## Handoff Rule
+- `wiki-web-scrape` ends at staged inbox output plus human verification.
+- Official ingest must resume through `ingest-lifecycle`; do not treat `wiki-ingest` as the top-level handoff target for a fresh run.
 
 ## Quick Reference
 - `python .agent/skills/wiki-web-scrape/scripts/lightpanda_scrape.py --url <URL> --output 00_Inbox/<name>.md`

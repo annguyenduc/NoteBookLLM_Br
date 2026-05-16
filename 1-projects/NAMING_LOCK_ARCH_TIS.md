@@ -1,6 +1,6 @@
 # NAMING LOCK: ARCH_TIS
 
-Source file: `00_Inbox/ARCH_Thinking_in_Systems.pdf`
+Source file: `3-resources/raw_sources/ARCH_Thinking_in_Systems.pdf`
 Source ID: `ARCH_TIS`
 Status: `DRAFT`
 
@@ -81,5 +81,5 @@ Existing legacy aliases in the vault should eventually be reconciled toward this
 ## References
 
 - Map: `1-projects/MAP_ARCH_TIS.md`
-- Workflow: `.agent/workflows/ingest.md`
+- Workflow: `.agent/workflows/ingest-lifecycle.md`
 - Spec: `.agent/docs/INGEST_MAP_NAMING_LOCK_SPEC.md`

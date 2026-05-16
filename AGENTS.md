@@ -40,7 +40,7 @@
 - Antigravity: `.agent/skills/`
 - Global Skills: `C:\Users\anngu\.gemini\antigravity\skills\`
 - Codex: `.codex/skills/` (symlink → `.agent/skills/`)
-- **SOP (Workflow)**: `.agent/workflows/ingest.md`
+- **SOP (Workflow)**: `.agent/workflows/ingest-lifecycle.md`
 
 ## Skill Priority Override
 - Skill invocation follows `superpowers/using-superpowers`
@@ -281,7 +281,7 @@ Default policy by source type:
 
 | Lệnh | Agent | Làm gì | Skill trỏ tới |
 |---|---|---|---|
-| `/ingest [file]` | @scout | Nạp raw -> atomic atoms + sơ khởi liên kết | `wiki-ingest` |
+| `/ingest [file]` | @scout | Entry point chính thức cho full ingest lifecycle. Resolve stage qua `ingest-lifecycle`, rồi mới gọi `wiki-ingest` ở stage ingest khi upstream artifacts đã READY. | `ingest-lifecycle -> wiki-ingest` |
 | `/absorb` | @librarian | Hợp nhất atoms vào synthesis (Reconciliation) | `wiki-absorb` |
 | `/query [query]` | @librarian | Truy vấn tri thức (Hybrid Search + Graph) | `wiki-query` |
 | `/breakdown` | @scout | Phát hiện lỗ hổng tri thức (Noun Test) | `wiki-breakdown` |

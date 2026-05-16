@@ -1,12 +1,18 @@
 ---
 name: wiki-ingest
-description: "Use when raw knowledge sources (PDF, Markdown, HTML, Office) need to be atomized, hash-verified, and integrated into the Wiki 2.0 review queue. Triggers on /ingest command or when new files appear in 00_Inbox/, 3-resources/raw_sources/, or 3-resources/raw_ingest/."
+description: "Use for the deterministic ingest stage that registers a prepared source into the Wiki 2.0 review queue. For official /ingest runs, enter through ingest-lifecycle first and only invoke this skill after upstream artifacts are READY."
 ---
 
 # Wiki Ingest
 
 ## Overview
 Register a source file into the wiki pipeline without altering the raw source. This skill is for file-based ingestion, not for live web crawling.
+
+## Entry Point Rule
+- `ingest-lifecycle` is the official user-facing entrypoint for `/ingest`.
+- This skill covers the stage-level deterministic registration step, not the whole lifecycle.
+- Do not treat `ingest.py` as the top-level `/ingest` command for fresh runs.
+- Fresh runs must resolve `prepare-source -> audit-promote-source -> lock-ingest-input` before this skill's execution step.
 
 ## Guardrails
 - Treat `3-resources/raw_*/` as read-only for general agents.
@@ -20,13 +26,16 @@ Register a source file into the wiki pipeline without altering the raw source. T
 
 
 ## Workflow
-1. Confirm the input path exists and is already on disk.
+1. Confirm lifecycle scope before execution.
+Fresh `/ingest` runs must first resolve through `.agent/workflows/ingest-lifecycle.md`.
+Use direct `ingest.py` execution only when upstream artifacts are already ready, or when debugging the ingest stage itself.
+2. Confirm the input path exists and is already on disk.
 Preferred inputs are files in `00_Inbox/`, `3-resources/raw_sources/`, or `3-resources/raw_ingest/`.
-2. Inspect routing before ingestion.
+3. Inspect routing before ingestion.
 Run `python .agent/skills/wiki-ingest/scripts/magika_router.py "<path>"` to confirm MIME type and parser choice.
-3. Run the deterministic ingest step.
+4. Run the deterministic ingest step.
 Run `python .agent/skills/wiki-ingest/scripts/ingest.py "<path>"`.
-4. Verify the outcome.
+5. Verify the outcome.
 Check console output or DB/task logs for one of these outcomes: skipped duplicate, rejected raw mutation, or successful `DRAFT` atom plus `review_queue` entry.
 
 ## Quick Reference
@@ -46,6 +55,7 @@ $env:PYTHONPATH=".agent/skills/wiki-ingest/scripts"; python .agent/skills/wiki-i
 ```
 
 ## Common Mistakes
+- Treating `ingest.py` as the full `/ingest` workflow instead of one lifecycle stage.
 - Trying to ingest a URL directly instead of a saved file.
 - Writing new web output straight into `3-resources/raw_*/`.
 - Assuming ingestion updates wiki pages; this step only registers atoms and review items.

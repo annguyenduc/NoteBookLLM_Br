@@ -2,13 +2,20 @@
 description: Orchestration-only workflow cho source-first ingest sau khi upstream artifacts đã được khóa
 ---
 
-# Workflow: /ingest
+# Workflow: ingest
 
 Workflow này chỉ điều phối ingest chính sau khi đầu vào đã sẵn sàng.
+Đây là workflow con của `ingest-lifecycle`, không phải user-facing entrypoint cho fresh run.
 
 Workflow cha tham chiếu:
 
 - `ingest-lifecycle`
+
+Entry point rule:
+
+- User-facing command `/ingest` phải resolve qua `ingest-lifecycle` trước.
+- File này chỉ đại diện cho stage `ingest` bên trong lifecycle.
+- Không được dùng riêng file này để diễn giải rằng `/ingest` có thể bắt đầu trực tiếp từ stage này.
 
 Nó không được tự làm lại các bước upstream:
 

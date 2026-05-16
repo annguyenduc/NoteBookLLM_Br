@@ -26,6 +26,14 @@ def run_test():
 title: Test Integration Harness
 file_id: TEST_INTEGRATION_HARNESS
 status: DRAFT
+audit:
+  score: 1.00
+  date: "2026-05-15"
+  status: "PASSED"
+  auditor: "master_harness_2.0"
+  verify_result: "SKIPPED"
+  verify_gaps: []
+  signature: "test-harness-placeholder"
 ---
 Đây là nội dung giả lập để kiểm tra tính toàn vẹn của Master Harness 2.0.
 Đảm bảo rằng hệ thống có thể Ingest và Rebuild mà không gặp lỗi.
@@ -40,9 +48,10 @@ Lorum Ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor i
         print(f'ERROR creating mock data: {e}')
         return False
 
-    log_step('2. Execute wiki-ingest')
+    log_step('2. Execute deterministic ingest stage (wiki-ingest script)')
     ingest_script = os.path.join(ROOT_DIR, '.agent', 'skills', 'wiki-ingest', 'scripts', 'ingest.py')
-    # Set PYTHONPATH to include ingest scripts directory for imports like score_engine
+    # This harness targets the stage-level ingest script, not the full /ingest lifecycle entrypoint.
+    # Set PYTHONPATH to include ingest scripts directory for imports like score_engine.
     env = os.environ.copy()
     env['PYTHONPATH'] = os.path.join(ROOT_DIR, '.agent', 'skills', 'wiki-ingest', 'scripts')
     
@@ -79,7 +88,7 @@ Lorum Ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor i
         print(f'ERROR in rebuild: {result.stderr}')
         return False
 
-    log_step('5. Final Pipeline Validation')
+    log_step('5. Final stage-level pipeline validation')
     try:
         conn = sqlite3.connect(DB_PATH)
         cursor = conn.cursor()
@@ -88,7 +97,7 @@ Lorum Ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor i
         if last_log:
             print(f'Last Rebuild Log: {last_log[0]}')
         
-        print('\n[SUCCESS] Master Harness 2.0: Pipeline Ingest -> Rebuild is STABLE.')
+        print('\n[SUCCESS] Master Harness 2.0: ingest.py -> rebuild.py stage harness is STABLE.')
         conn.close()
     except Exception as e:
         print(f'Final validation error: {e}')

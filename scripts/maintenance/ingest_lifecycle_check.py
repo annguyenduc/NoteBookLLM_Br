@@ -50,6 +50,53 @@ def _resolve(args) -> tuple[dict[str, str], dict[str, str], int]:
         "ingest_closeout_report": "YES" if args.closeout and pathlib.Path(args.closeout).exists() else "NO",
     }
 
+    # Mid-chain start is forbidden for fresh runs. If a downstream artifact exists
+    # while a required upstream artifact is missing, stop instead of "resolving backwards".
+    if args.closeout and not args.generate:
+        report = {
+            "current_stage": "ingest-index-log",
+            "next_stage": "BLOCKED",
+            "lifecycle_status": "BLOCKED",
+            "fail_reason": "INGEST CLOSEOUT REPORT exists without INGEST GENERATE REPORT",
+        }
+        return precheck, report, 1
+
+    if args.generate and not args.orchestration:
+        report = {
+            "current_stage": "ingest-generate",
+            "next_stage": "BLOCKED",
+            "lifecycle_status": "BLOCKED",
+            "fail_reason": "INGEST GENERATE REPORT exists without INGEST ORCHESTRATION REPORT",
+        }
+        return precheck, report, 1
+
+    if args.orchestration and not args.input_lock:
+        report = {
+            "current_stage": "ingest",
+            "next_stage": "BLOCKED",
+            "lifecycle_status": "BLOCKED",
+            "fail_reason": "INGEST ORCHESTRATION REPORT exists without INGEST INPUT LOCK",
+        }
+        return precheck, report, 1
+
+    if args.input_lock and not args.source_audit:
+        report = {
+            "current_stage": "lock-ingest-input",
+            "next_stage": "BLOCKED",
+            "lifecycle_status": "BLOCKED",
+            "fail_reason": "INGEST INPUT LOCK exists without SOURCE AUDIT REPORT",
+        }
+        return precheck, report, 1
+
+    if args.source_audit and not args.source_prep:
+        report = {
+            "current_stage": "audit-promote-source",
+            "next_stage": "BLOCKED",
+            "lifecycle_status": "BLOCKED",
+            "fail_reason": "SOURCE AUDIT REPORT exists without SOURCE PREP REPORT",
+        }
+        return precheck, report, 1
+
     # Invalid or failed artifacts block immediately at their own stage.
     if args.source_prep and not prep_ok:
         report = {

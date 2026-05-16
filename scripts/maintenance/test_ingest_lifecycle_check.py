@@ -71,6 +71,65 @@ class TestIngestLifecycleCheck(unittest.TestCase):
         self.assertIn('next_stage: "ingest"', result.stdout)
         self.assertIn('lifecycle_status: "IN_PROGRESS"', result.stdout)
 
+    def test_invalid_skip_path_blocks_when_orchestration_exists_without_lock(self):
+        orch = self.temp_dir / "orch.md"
+        _write_report(orch, 'INGEST ORCHESTRATION REPORT:\nsource_id: "A"\nstatus: "READY_FOR_GENERATE"\n')
+
+        result = self._run("--orchestration", str(orch))
+        self.assertEqual(result.returncode, 1)
+        self.assertIn('current_stage: "ingest"', result.stdout)
+        self.assertIn('next_stage: "BLOCKED"', result.stdout)
+        self.assertIn('lifecycle_status: "BLOCKED"', result.stdout)
+
+    def test_blocked_path_at_input_lock(self):
+        prep = self.temp_dir / "prep.md"
+        audit = self.temp_dir / "audit.md"
+        lock = self.temp_dir / "lock.md"
+
+        _write_report(prep, 'SOURCE PREP REPORT:\nsource_evidence_file: "a.pdf"\nstaging_status: "READY"\n')
+        _write_report(audit, 'SOURCE AUDIT REPORT:\nsource_evidence_file: "a.pdf"\npromoted_artifact: "a.md"\naudit_status: "PASSED"\nready_for_input_lock: "YES"\n')
+        _write_report(lock, 'INGEST INPUT LOCK:\nsource_evidence_file: "a.pdf"\nprimary_ingest_file: "a.md"\nsource_id: "A"\nstatus: "BLOCKED"\n')
+
+        result = self._run("--source-prep", str(prep), "--source-audit", str(audit), "--input-lock", str(lock))
+        self.assertEqual(result.returncode, 1)
+        self.assertIn('current_stage: "lock-ingest-input"', result.stdout)
+        self.assertIn('next_stage: "lock-ingest-input"', result.stdout)
+        self.assertIn('lifecycle_status: "BLOCKED"', result.stdout)
+
+    def test_blocked_path_at_generate(self):
+        prep = self.temp_dir / "prep.md"
+        audit = self.temp_dir / "audit.md"
+        lock = self.temp_dir / "lock.md"
+        orch = self.temp_dir / "orch.md"
+        gen = self.temp_dir / "gen.md"
+
+        _write_report(prep, 'SOURCE PREP REPORT:\nsource_evidence_file: "a.pdf"\nstaging_status: "READY"\n')
+        _write_report(audit, 'SOURCE AUDIT REPORT:\nsource_evidence_file: "a.pdf"\npromoted_artifact: "a.md"\naudit_status: "PASSED"\nready_for_input_lock: "YES"\n')
+        _write_report(lock, 'INGEST INPUT LOCK:\nsource_evidence_file: "a.pdf"\nprimary_ingest_file: "a.md"\nsource_id: "A"\nstatus: "READY"\n')
+        _write_report(orch, 'INGEST ORCHESTRATION REPORT:\nsource_id: "A"\nstatus: "READY_FOR_GENERATE"\n')
+        _write_report(gen, 'INGEST GENERATE REPORT:\nsource_id: "A"\nstatus: "BLOCKED"\n')
+
+        result = self._run("--source-prep", str(prep), "--source-audit", str(audit), "--input-lock", str(lock), "--orchestration", str(orch), "--generate", str(gen))
+        self.assertEqual(result.returncode, 1)
+        self.assertIn('current_stage: "ingest-generate"', result.stdout)
+        self.assertIn('next_stage: "ingest-generate"', result.stdout)
+        self.assertIn('lifecycle_status: "BLOCKED"', result.stdout)
+
+    def test_fast_path_mode_is_reported_without_changing_chain_rules(self):
+        prep = self.temp_dir / "prep.md"
+        audit = self.temp_dir / "audit.md"
+        lock = self.temp_dir / "lock.md"
+
+        _write_report(prep, 'SOURCE PREP REPORT:\nsource_evidence_file: "a.pdf"\nstaging_status: "READY"\n')
+        _write_report(audit, 'SOURCE AUDIT REPORT:\nsource_evidence_file: "a.pdf"\npromoted_artifact: "a.md"\naudit_status: "PASSED"\nready_for_input_lock: "YES"\n')
+        _write_report(lock, 'INGEST INPUT LOCK:\nsource_evidence_file: "a.pdf"\nprimary_ingest_file: "a.md"\nsource_id: "A"\nstatus: "READY"\n')
+
+        result = self._run("--mode", "fast-path", "--source-prep", str(prep), "--source-audit", str(audit), "--input-lock", str(lock))
+        self.assertEqual(result.returncode, 0)
+        self.assertIn('mode: "fast-path"', result.stdout)
+        self.assertIn('next_stage: "ingest"', result.stdout)
+        self.assertIn('lifecycle_status: "IN_PROGRESS"', result.stdout)
+
 
 if __name__ == "__main__":
     unittest.main()
