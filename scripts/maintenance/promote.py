@@ -1,16 +1,17 @@
-import os
-import shutil
-import re
-import pathlib
-from datetime import datetime, date
 import argparse
+import os
+import pathlib
+import re
+import shutil
 import sys
+from datetime import date, datetime
 
 # ---------------------------------------------------------------------------
 # CONFIGURATION & RULES
 # ---------------------------------------------------------------------------
 ROOT_DIR = pathlib.Path("d:/NoteBookLLM_Br")
 INBOX_DIR = ROOT_DIR / "00_Inbox"
+STAGING_RAW_INGEST = INBOX_DIR / "Staging_Raw_Ingest"
 RAW_INGEST = ROOT_DIR / "3-resources/raw_ingest"
 RAW_SOURCES = ROOT_DIR / "3-resources/raw_sources"
 RAW_ASSETS = ROOT_DIR / "3-resources/raw_assets"
@@ -26,6 +27,10 @@ WIKI_INSIGHTS = ROOT_DIR / "3-resources/wiki/session_insights"
 ARCHIVE_ROOT = ROOT_DIR / "4-archive"
 
 LOCK_FILE = ROOT_DIR / ".kiro" / "session.lock"
+VALID_VERIFY_SCOPES = {"full-source", "chunk", "package"}
+STRICT_VERIFY_RESULTS = {"PASS", "WARN", "SKIPPED"}
+PERSONAL_VERIFY_RESULTS = {"PASS"}
+MIN_AUDIT_SCORE = 0.90
 
 
 def _check_gatekeeper():
@@ -46,19 +51,41 @@ def get_audit_info(md_path):
     try:
         with open(md_path, "r", encoding="utf-8") as f:
             content = f.read()
-        
-        # Regex to find audit block in YAML frontmatter
-        audit_match = re.search(r'audit:\s*\n\s*score:\s*([\d\.]+)\s*\n\s*date:\s*"(.*?)"\s*\n\s*status:\s*"(.*?)"', content, re.MULTILINE)
-        if not audit_match:
+
+        if "audit_stamp: true" not in content or "audit:" not in content:
             return None
-        
-        sig_match = re.search(r'audit:.*?signature:\s*"([\w]+)"', content, re.DOTALL)
-        
+
+        audit_lines = []
+        in_audit_block = False
+        for line in content.splitlines():
+            if line.strip() == "audit:":
+                in_audit_block = True
+                continue
+            if in_audit_block:
+                if line.startswith("  "):
+                    audit_lines.append(line.strip())
+                    continue
+                break
+
+        audit_map = {}
+        for line in audit_lines:
+            if ":" not in line:
+                continue
+            key, value = line.split(":", 1)
+            audit_map[key.strip()] = value.strip()
+
+        required = {"score", "date", "status"}
+        if not required.issubset(audit_map):
+            return None
+
         return {
-            "score_str": audit_match.group(1), # Store as string
-            "date": audit_match.group(2),
-            "status": audit_match.group(3),
-            "signature": sig_match.group(1) if sig_match else None
+            "score_str": audit_map["score"],
+            "score": float(audit_map["score"]),
+            "date": audit_map["date"].strip('"'),
+            "status": audit_map["status"].strip('"'),
+            "signature": audit_map.get("signature", "").strip('"') or None,
+            "verify_result": audit_map.get("verify_result", "").strip('"') or None,
+            "verify_scope": audit_map.get("verify_scope", "").strip('"') or None,
         }
     except Exception:
         return None
@@ -92,6 +119,36 @@ def verify_hmac_signature(md_path: pathlib.Path, audit: dict) -> bool:
         return False
     return True
 
+
+def resolve_audit_policy(cli_policy: str | None) -> str:
+    policy = cli_policy or os.environ.get("AUDIT_POLICY") or "strict"
+    return policy
+
+
+def validate_audit_policy(audit: dict, audit_policy: str) -> bool:
+    verify_scope = audit.get("verify_scope")
+    verify_result = audit.get("verify_result")
+    score = audit.get("score")
+
+    if score is None or score < MIN_AUDIT_SCORE:
+        print(f"BLOCKED: Audit score {score} is below threshold {MIN_AUDIT_SCORE:.2f}.")
+        return False
+
+    if verify_scope not in VALID_VERIFY_SCOPES:
+        print(f"BLOCKED: Invalid verify_scope '{verify_scope}'.")
+        return False
+
+    if audit_policy == "personal":
+        if verify_result not in PERSONAL_VERIFY_RESULTS:
+            print(f"BLOCKED: Personal audit policy requires verify_result PASS. Got '{verify_result}'.")
+            return False
+        return True
+
+    if verify_result not in STRICT_VERIFY_RESULTS:
+        print(f"BLOCKED: Strict audit policy rejected verify_result '{verify_result}'.")
+        return False
+    return True
+
 def get_source_pdf(md_path):
     """Detects source PDF name from Markdown body."""
     with open(md_path, "r", encoding="utf-8") as f:
@@ -111,11 +168,45 @@ def validate_origin(path: pathlib.Path):
     except ValueError:
         return False
 
-def promote(md_path_str, dry_run=False):
+
+def get_package_context(path: pathlib.Path):
+    """Return package routing context only for explicit staged package layout."""
+    try:
+        rel = path.relative_to(STAGING_RAW_INGEST)
+    except ValueError:
+        return None
+
+    if len(rel.parts) < 2:
+        return None
+
+    source_id = rel.parts[0]
+    package_rel = pathlib.Path(*rel.parts[1:])
+    return {"source_id": source_id, "relative_path": package_rel}
+
+
+def resolve_package_destination(md_path: pathlib.Path, package_ctx: dict):
+    source_id = package_ctx["source_id"]
+    relative_path = package_ctx["relative_path"]
+    package_root = RAW_INGEST / source_id
+    name = md_path.name
+
+    if name.lower() == "outline.md":
+        return package_root / "outline.md"
+    if name.lower() == "manifest.md" or name.endswith("_MANIFEST.md"):
+        return package_root / "manifest.md"
+    if name.startswith("RAW_"):
+        return package_root / "chunks" / name
+    if relative_path.parts and relative_path.parts[0].lower() == "chunks":
+        return package_root / "chunks" / name
+    return package_root / name
+
+def promote(md_path_str, dry_run=False, audit_policy="strict"):
     if not _check_gatekeeper():
         return False
 
     md_path = pathlib.Path(md_path_str).resolve()
+    audit_policy = resolve_audit_policy(audit_policy)
+    print(f"[PROMOTE] audit_policy={audit_policy}")
     
     # --- GATE 1: Existence ---
     if not md_path.exists():
@@ -144,9 +235,10 @@ def promote(md_path_str, dry_run=False):
         if (date.today() - audit_date).days > 7:
             print(f"BLOCKED: Audit stamp is stale ({audit['date']}). Re-audit required.")
             return False
-        
-        # --- HMAC Signature Check ---
-        if not verify_hmac_signature(md_path, audit):
+
+        if not validate_audit_policy(audit, audit_policy):
+            return False
+        if audit_policy == "strict" and not verify_hmac_signature(md_path, audit):
             return False
     except ValueError:
         print(f"ERROR: Malformed audit date: {audit['date']}")
@@ -161,8 +253,12 @@ def promote(md_path_str, dry_run=False):
             pdf_src_path = p
             break
 
+    package_ctx = get_package_context(md_path)
+
     # Define targets with smart routing
-    if md_path.name.startswith("CONCEPT_"):
+    if package_ctx:
+        dest_md = resolve_package_destination(md_path, package_ctx)
+    elif md_path.name.startswith("CONCEPT_"):
         dest_md = WIKI_CONCEPTS / md_path.name
     elif md_path.name.startswith("ENTITY_"):
         dest_md = WIKI_ENTITIES / md_path.name
@@ -222,6 +318,7 @@ def promote(md_path_str, dry_run=False):
         WIKI_CONCEPTS.mkdir(parents=True, exist_ok=True)
         WIKI_ENTITIES.mkdir(parents=True, exist_ok=True)
         WIKI_SOURCES.mkdir(parents=True, exist_ok=True)
+        dest_md.parent.mkdir(parents=True, exist_ok=True)
 
         # 1. Move MD
         shutil.move(str(md_path), str(dest_md))
@@ -260,7 +357,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Secure Wiki Promotion Gate.")
     parser.add_argument("path", help="Path to the audited Markdown file in 00_Inbox/")
     parser.add_argument("--dry-run", action="store_true", help="Preview actions")
+    parser.add_argument("--audit-policy", choices=["strict", "personal"], help="Audit policy override")
     
     args = parser.parse_args()
-    success = promote(args.path, dry_run=args.dry_run)
+    success = promote(args.path, dry_run=args.dry_run, audit_policy=args.audit_policy)
     sys.exit(0 if success else 1)

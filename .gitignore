@@ -14,10 +14,14 @@
 !/WORKSPACE_OVERVIEW.md
 !/.agent/
 !/scripts/
+!/runs/
 
 # 3. Re-ignore heavy/unwanted files inside whitelisted directories
 3-resources/wiki/wiki_brain.db
 3-resources/wiki/wiki_brain.db-journal
 3-resources/wiki/log.md
+runs/ingest_*/
+!runs/.gitkeep
+!runs/README.md
 **/__pycache__/
 **/*.pyc

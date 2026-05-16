@@ -36,5 +36,34 @@ Gap-Check **CHỈ** dùng cho `DRAFT` atoms.
 Mọi giá trị Metadata có chứa dấu `:` **BẮT BUỘC** để trong ngoặc kép `""`.
 Vi phạm → Ghost Atoms và hỏng liên kết Graph.
 
+## AUDIT SEVERITY
+Mọi audit finding phải gắn severity:
+
+| Severity | Meaning | Examples |
+|---|---|---|
+| BLOCKER | Không được promote / phải dừng pipeline | missing source, invalid YAML, missing audit stamp, direct raw_* write, R8 violation |
+| MAJOR | Cần sửa trước khi dùng chính thức | broken wikilink, wrong category, missing required metadata, weak source tracing |
+| MINOR | Có thể sửa bằng cleanup/lint | formatting drift, weak title, low link density, tag inconsistency |
+
+## AUDIT OUTPUT CONTRACT
+Mỗi finding phải có:
+- finding
+- evidence
+- affected file
+- severity
+- recommended owner: `@engineer` / `@librarian` / `@healer` / User
+- suggested next action
+
+## AUDITOR VS HEALER BOUNDARY
+`@auditor` phát hiện, phân loại, và báo cáo lỗi integrity.
+`@auditor` chỉ được sửa lỗi low-risk nếu đã có cleanup script hoặc rule rõ ràng.
+
+Escalate to `@healer` nếu:
+- cần rollback
+- có DLQ/failed_queue
+- broken links hàng loạt có nguy cơ phá graph
+- vi phạm R1/R8/R22/R23
+- không thể sửa an toàn bằng cleanup script
+
 ---
 *auditor.md — 5 rules cho @auditor. Nguồn: [[GEMINI.md#R3]], [[GEMINI.md#R21]], [[GEMINI.md#R23]], [[GEMINI.md#R27]], [[GEMINI.md#R20]]*

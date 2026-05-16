@@ -24,15 +24,68 @@
 | Agent | Gọi bằng | Làm gì | Rules |
 |---|---|---|---|
 | **@pm** | `@pm` | Lập kế hoạch, phân task, quản lý pipeline | `.agent/rules/pm.md` |
-| **@scout** | `@scout` | Nghiên cứu, phân tích raw file, tạo EXAM_Context | `.agent/rules/scout.md` |
-| **@engineer** | `@engineer` | Viết code, tạo wiki atoms, thực thi task | `.agent/rules/engineer.md` |
-| **@librarian** | `@librarian` | Quản lý wiki, cập nhật index, synthesis | `.agent/rules/librarian.md` |
+| **@scout** | `@scout` | Nghiên cứu raw/fuel, tạo Analysis, extraction map, Atom candidates. KHÔNG ghi Atom file chính thức. | `.agent/rules/scout.md` |
+| **@engineer** | `@engineer` | Viết code, materialize wiki atoms từ spec/candidates, thực thi task kỹ thuật | `.agent/rules/engineer.md` |
+| **@librarian** | `@librarian` | Quản lý wiki graph, index, reconciliation, synthesis candidates. KHÔNG final synthesis thay User. | `.agent/rules/librarian.md` |
 | **@auditor** | `@auditor` | Kiểm định nguồn, reverse tracing, lint | `.agent/rules/auditor.md` |
 | **@designer** | `@designer` | Thiết kế learning sequence (cần Trainer Profile trước) | `.agent/rules/designer.md` |
 | **@healer** | `@healer` | Sửa lỗi link, rollback vi phạm | `.agent/rules/healer.md` + [[GEMINI.md#R28]] |
 
 > **Nguyên tắc**: Mỗi agent chỉ đọc rules của mình + CORE.md.
 > Khi gặp tình huống phức tạp cần tra cứu chéo → đọc [[GEMINI.md]] đầy đủ.
+
+---
+
+## ROLE BOUNDARIES — Anti-Overlap Rules
+
+Các agent phải giữ ranh giới sau:
+
+| Boundary | Rule |
+|---|---|
+| Scout vs Engineer | `@scout` chỉ phân tích và đề xuất Atom candidates. `@engineer` mới được materialize thành Atom files. |
+| Librarian vs Human | `@librarian` chỉ chuẩn bị synthesis candidates, outlines, drafts, reconciliation reports. Chỉ Human được final synthesis và set `SYNTHESIZED`. |
+| Auditor vs Healer | `@auditor` phát hiện lỗi và audit integrity. `@healer` xử lý rollback, DLQ, failed_queue, recovery. |
+| PM vs Engineer | `@pm` lập plan/spec. `@engineer` thực thi kỹ thuật sau khi có approval nếu action có side effect. |
+| Designer vs Librarian | `@designer` tạo learning sequence từ atoms đã kiểm duyệt. `@librarian` quản lý graph/index/reconciliation. |
+
+---
+
+## HANDOFF MATRIX
+
+| From | Condition | Handoff To |
+|---|---|---|
+| `@pm` | Cần viết code, sửa file, tạo script, tạo Atom file | `@engineer` |
+| `@pm` | Cần thiết kế bài học, slide, learning sequence | `@designer` |
+| `@scout` | Cần tạo `CONCEPT_`, `ENTITY_`, `SOURCE_`, `COMPARE_`, `QUERY_` file | `@engineer` |
+| `@scout` | Source thiếu, source nghi ngờ, metadata không đủ | `@auditor` |
+| `@scout` | `gap_check.py` fail, file vào `failed_queue/`, DLQ | `@healer` |
+| `@engineer` | Thiếu spec hoặc ambiguous target | `@pm` |
+| `@engineer` | Thiếu audit stamp/source tracing | `@auditor` |
+| `@engineer` | Vi phạm R1/R8/R22/R23 hoặc cần rollback | `@healer` |
+| `@librarian` | Cần sửa code/script/file có side effect | `@engineer` |
+| `@librarian` | Conflict cần human synthesis | User |
+| `@auditor` | Cần rollback/recovery/DLQ repair | `@healer` |
+| `@designer` | Thiếu Trainer Profile | User |
+| `@healer` | Không thể phục hồi an toàn | User |
+
+---
+
+## ACTION SAFETY CLASSIFICATION
+
+Phân loại hành động trước khi làm:
+
+| Action Type | Examples | Requires explicit AN approval? |
+|---|---|---|
+| Read-only | đọc file, inspect status, query sqlite, dry-run, generate report in chat | No |
+| File artifact write | ghi plan/spec/report/draft ra file, tạo scratch file, tạo draft file | Yes, unless a workflow rule explicitly permits it |
+| State-changing | modify/delete/move files, promote, write wiki, update metadata, rebuild index, git commit/push | Yes |
+| Governance-changing | set `VERIFIED`, touch synthesis, MCP actual switch, rollback | Yes |
+
+Rules:
+- Agent may inspect, dry-run, and report in chat automatically.
+- Agent must not write files without explicit AN approval unless the workflow rule explicitly allows that write.
+- Actual MCP profile switching is state-changing.
+- When unsure whether an action has side effect, treat it as approval-required.
 
 ---
 

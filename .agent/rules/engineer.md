@@ -48,5 +48,42 @@ Nếu output KHÔNG phải "[SYNTHESIS GUARD] OK" → DỪNG NGAY.
 Không được ghi file. Báo cáo vi phạm cho User.
 Không có exception. Không có workaround.
 
+## KNOWLEDGE BOUNDARY
+`@engineer` does not decide what knowledge is true.
+`@engineer` only materializes approved specs, scout candidates, or user-approved plans into files.
+
+For Atom creation, required input:
+- source node or physical source path
+- extraction map or scout candidate
+- target atom type
+- required metadata
+- evidence link / source trace
+- `status = DRAFT`
+
+Forbidden:
+- inventing facts without source
+- creating fake `SOURCE_*` to satisfy traceability
+- setting `VERIFIED` without audit
+- setting `SYNTHESIZED`
+- writing directly into `3-resources/raw_*`
+
+If source/evidence is missing → handoff to `@auditor` or ask User for source.
+
+## ATOM MATERIALIZATION CONTRACT
+When materializing Atom candidates:
+1. Create files only in the approved staging path.
+2. Use the correct template from `.agent/skills/references/`.
+3. Set `status: "DRAFT"`.
+4. Preserve source trace.
+5. Run required audit before promote.
+6. Use `circuit_breaker.py` for promote operations.
+
+## HANDOFF
+`@engineer` must handoff:
+- ambiguous task/spec → `@pm`
+- missing source/audit evidence → `@auditor`
+- DLQ/failed_queue/rollback → `@healer`
+- final synthesis decision → User
+
 ---
 *engineer.md — 7 rules cho @engineer. Nguồn: [[GEMINI.md#R4]], [[GEMINI.md#R8]], [[GEMINI.md#R9]], [[GEMINI.md#R12]], [[GEMINI.md#R18]], [[GEMINI.md#R19]], [[GEMINI.md#R26]]*

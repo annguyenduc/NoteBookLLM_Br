@@ -12,6 +12,40 @@ ROOT_DIR = os.getenv(
 )
 DB_PATH = os.getenv("WIKI_DB_PATH", os.path.join(ROOT_DIR, "3-resources", "wiki", "wiki_brain.db"))
 RAW_DIR = os.path.join(ROOT_DIR, "3-resources", "raw")
+def has_audit_stamp(file_path):
+    try:
+        with open(file_path, "r", encoding="utf-8", errors="replace") as f:
+            header = f.read(1024)
+            return "audit_stamp: true" in header and "audit:" in header
+    except Exception:
+        return False
+
+
+def validate_package_dir(package_path):
+    package_path = os.path.normpath(os.path.abspath(package_path))
+    if not os.path.isdir(package_path):
+        return False, "Package path is not a directory."
+
+    manifest_path = os.path.join(package_path, "manifest.md")
+    chunks_dir = os.path.join(package_path, "chunks")
+    if not os.path.exists(manifest_path):
+        return False, "Package manifest.md is missing."
+    if not os.path.isdir(chunks_dir):
+        return False, "Package chunks/ directory is missing."
+
+    chunk_files = sorted(
+        os.path.join(chunks_dir, name)
+        for name in os.listdir(chunks_dir)
+        if name.startswith("RAW_") and name.lower().endswith(".md")
+    )
+    if not chunk_files:
+        return False, "Package chunks/ contains no RAW_*.md files."
+
+    missing_chunk_audit = [path for path in chunk_files if not has_audit_stamp(path)]
+    if missing_chunk_audit:
+        return False, f"Chunk missing valid audit block: {os.path.basename(missing_chunk_audit[0])}"
+
+    return True, {"manifest_path": manifest_path, "chunks_dir": chunks_dir, "chunk_files": chunk_files}
 
 def calculate_hash(file_path):
     sha256_hash = hashlib.sha256()
@@ -31,18 +65,16 @@ def get_routing_info(file_path):
         return json.loads(result.stdout)
     return None
 
-def ingest_file(file_path, learning=False):
+def ingest_file(file_path, learning=False, audit_required=True):
     print(f"--- Ingesting: {file_path} ---")
     
     # [Task 2B] Security Gate: audit_stamp check for Markdown files
-    if file_path.lower().endswith(".md"):
+    if audit_required and file_path.lower().endswith(".md"):
         try:
-            with open(file_path, 'r', encoding='utf-8', errors='replace') as f:
-                header = f.read(1024)
-                if "audit_stamp: true" not in header and "audit:" not in header:
-                    print(f"WARNING: [Security Violation] Missing valid audit block in {file_path}. Skipping.")
-                    return False
-                print("SUCCESS: Audit stamp verified.")
+            if not has_audit_stamp(file_path):
+                print(f"WARNING: [Security Violation] Missing valid audit block in {file_path}. Skipping.")
+                return False
+            print("SUCCESS: Audit stamp verified.")
         except Exception as e:
             print(f"ERROR: Failed to read audit stamp: {e}")
             return False
@@ -215,9 +247,24 @@ def ingest_file(file_path, learning=False):
     return True
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Ingest a file into the Wiki.")
-    parser.add_argument("file_path", help="Path to the file to ingest")
+    parser = argparse.ArgumentParser(description="Ingest a file or package into the Wiki.")
+    parser.add_argument("file_path", nargs="?", help="Path to the file to ingest")
+    parser.add_argument("--package", help="Path to the package directory to ingest")
     parser.add_argument("--learning", action="store_true", default=False, help="Mark as learning source")
     args = parser.parse_args()
-        
-    ingest_file(args.file_path, learning=args.learning)
+
+    if args.package:
+        ok, payload = validate_package_dir(args.package)
+        if not ok:
+            print(f"ERROR: Invalid package: {payload}")
+            sys.exit(1)
+        print(f"SUCCESS: Package manifest resolved: {payload['manifest_path']}")
+        print(f"SUCCESS: Package chunks resolved: {len(payload['chunk_files'])}")
+        success = ingest_file(payload["manifest_path"], learning=args.learning, audit_required=False)
+        sys.exit(0 if success else 1)
+
+    if not args.file_path:
+        parser.error("file_path is required when --package is not used")
+
+    success = ingest_file(args.file_path, learning=args.learning)
+    sys.exit(0 if success else 1)

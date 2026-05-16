@@ -16,6 +16,8 @@ NoteBookLLM_Br/
 │   ├── 📁 failed_queue/          ← Dead-Letter Queue (DLQ) — Chứa các chunk lỗi.
 │   └── 📁 (Deprecated)           --> Chuyển về 4-archive/inbox/
 │
+├── 📁 runs/                      ← TRANSIENT RUNTIME: Run packages cho ingest dài, có state/resume.
+│
 ├── 📁 1-projects/                ← ACTIVE PROJECTS: Drafts & Analysis.
 │   └── 📄 Analysis_[ID]_*.md     ← Scout analysis drafts (Thiết kế Atom).
 │
@@ -71,7 +73,8 @@ Mọi Agent phải tuân thủ luồng runtime phân tầng này để đảm b�
 graph TD
     subgraph "PHASE 1: SOURCE INGEST (Chuẩn bị nhiên liệu)"
         USER_IN["00_Inbox\n(Tài liệu thô từ User)"] -->|hd_converter.py| CONV["00_Inbox/Converted_Sources/\n(MD Chunks + Assets)"]
-        CONV --> AUDIT_A["md_auditor.py\n(Audit & Sign)"]
+        CONV --> RUNS["runs/ingest_*/\n(state + manifest + outline)"]
+        RUNS --> AUDIT_A["md_auditor.py\n(Audit & Sign)"]
         AUDIT_A -->|status: PASSED| PROMOTE_A["promote.py\n(Gatekeeper)"]
         PROMOTE_A --> RAW_PDF["3-resources/raw_sources/\n(Immutable PDF)"]
         PROMOTE_A --> FUEL["3-resources/raw_ingest/\n(Clean MD Fuel)"]
@@ -124,8 +127,9 @@ graph TD
 
 ### 3.1. Luồng Source Ingest (Nạp nguồn)
 *   **Mục tiêu**: Đưa tài liệu từ ngoài vào hệ thống dưới dạng Markdown sạch.
-*   **Quy trình**: PDF -> `hd_converter.py` -> `00_Inbox` -> `md_auditor.py` -> `promote.py` -> `raw_ingest/`.
-*   **Kết quả**: Một file Markdown duy nhất đại diện cho nguồn (hoặc chunk) tại `raw_ingest`.
+*   **Quy trình**: PDF -> `hd_converter.py` -> `00_Inbox/Converted_Sources/` -> `runs/ingest_*/` -> `md_auditor.py` -> `promote.py` -> `raw_ingest/`.
+*   **Phase A Note**: `runs/` là runtime package trước audit. Nó có thể copy hoặc reference converter chunks, nhưng không phải canonical knowledge storage.
+*   **Kết quả**: Một ingest-reading artifact đã audit/promo ở `raw_ingest`, sau khi run package đạt `READY_FOR_AUDIT`.
 
 ### 3.2. Luồng Knowledge Atomization (Bóc tách)
 *   **Mục tiêu**: Bóc tách tri thức từ "Nhiên liệu" thành các ghi chú nguyên tử.

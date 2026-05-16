@@ -2,14 +2,17 @@
 audit_stamp: true
 audit:
   score: 1.00
-  date: "2026-05-15"
+  date: "2026-05-16"
   status: "PASSED"
   auditor: "v1.0"
-  verify_result: "SKIPPED"
+  verify_scope: "chunk"
+  verify_result: "PASS"
   verify_gaps: []
-  signature: "UNSIGNED"
+  signature: "03d461a76b5bf0580482f7a5a4761e689d3fe4a2881abf45ca96233c3b5a5731"
+  verify_range: [28, 28]
+  verify_range_source: "frontmatter"
+  verify_manifest_range: [28, 28]
 ---
-
 # HD SOURCE: ARCH_Thinking_in_Systems_CH01_SEC01_P028-028
 Source PDF: ARCH_Thinking_in_Systems.pdf
 Extracted Images: 0

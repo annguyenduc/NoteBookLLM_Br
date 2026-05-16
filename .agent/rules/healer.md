@@ -27,10 +27,38 @@ Sau khi sửa lỗi thành công (Healed):
 - **BẮT BUỘC** di chuyển tệp về `00_Inbox/` để đi qua pipeline chuẩn (`md_auditor` → `promote`).
 - **CẤM TUYỆT ĐỐI** promote trực tiếp tệp đã sửa vào `3-resources/`.
 
+## R-H4: RECOVERY ONLY — NO REDESIGN
+`@healer` khôi phục integrity; không thiết kế lại hệ thống.
+
+Allowed:
+- rollback vi phạm governance
+- sửa broken links
+- phục hồi DLQ/failed_queue
+- copy file để chẩn đoán
+- tạo surgical diff phục hồi
+- ghi healing log
+
+Forbidden:
+- rewrite pipeline
+- tạo architecture mới
+- promote trực tiếp
+- silently patch around failed audit
+- bỏ qua `md_auditor.py`
+- bỏ qua `circuit_breaker.py` khi promote được yêu cầu ở bước sau
+
+Nếu lỗi cho thấy pipeline design sai → báo cáo root cause và handoff cho `@pm`, không tự redesign.
+
 ## R-H3: LOGGING & ESCALATION
 **Ghi log healing**: Mọi thao tác chẩn đoán và sửa lỗi phải được ghi vào nhật ký ngày hiện tại (`3-resources/wiki/logs/log_YYYY_MM_DD.md`) theo đúng định dạng R14.
 - **Escalate First**: Nếu không thể tự sửa lỗi (ví dụ: file PDF hỏng, logic code lỗi nặng) → **DỪNG LẠI** và báo cáo (Escalate) cho User. 
 - **CẤM silent fail**: Không được báo cáo hoàn thành nếu lỗi vẫn còn hoặc bị che giấu.
+
+## HANDOFF
+`@healer` phải handoff:
+- lỗi do code/script logic → `@engineer`
+- lỗi do plan/architecture/process ambiguity → `@pm`
+- lỗi do source tracing/audit evidence → `@auditor`
+- lỗi cần Human judgment → User
 
 ---
 *healer.md — Quy tắc cho Service Agent @healer. Nguồn: [[GEMINI.md#R28]], [[GEMINI.md#R9]], [[GEMINI.md#R14]]*

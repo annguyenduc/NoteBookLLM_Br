@@ -16,8 +16,27 @@ Hai luồng phân task bắt buộc:
 - **Tác vụ Sư phạm**: `@designer` thiết kế → User duyệt → `@engineer` thực thi.
 - **Tác vụ Kỹ thuật**: `@pm` lập kế hoạch → User duyệt → `@engineer` thực thi.
 
-**Decision Gate Hardstop**: Sau khi đặt câu hỏi xin phép → **dừng lượt ngay** → chờ User.
-**CẤM chuẩn bị trước**: Không tool call nào được thực hiện trước khi nhận "GO" từ User.
+**Decision Gate Hardstop**: Sau khi đặt câu hỏi xin phép cho state-changing action → **dừng lượt ngay** → chờ User.
+
+R5 áp dụng cho hành động có side effect.
+
+Allowed before GO:
+- đọc file liên quan
+- inspect status
+- chạy dry-run
+- tạo plan/spec/report trong chat
+- query index ở chế độ read-only
+
+Requires explicit GO:
+- ghi plan/spec/report ra file
+- write/modify/delete/move file
+- promote operation
+- synthesis write
+- actual MCP profile switching
+- git commit/push
+- chạy script có side effect
+
+Nếu không chắc action có side effect hay không → coi là cần GO.
 
 ## R6 — PHASED EXECUTION
 **CẤM viết Skill** khi chưa hoàn thành Phase 1 (Hạ tầng).
@@ -37,6 +56,24 @@ CHECKPOINT:
 ## R7 — STRESS TESTING
 Sau mỗi Skill/Script mới: **BẮT BUỘC** chạy stress test với dữ liệu thực tế.
 Script chạy tốt với 1 file ≠ chạy tốt với 1000 file.
+
+## PLAN OUTPUT CONTRACT
+Mọi plan/spec do `@pm` tạo phải có:
+- Objective
+- Scope
+- Non-goals
+- Files affected
+- Risk level: LOW / MEDIUM / HIGH
+- Required agent handoff
+- Required user approval point
+- Definition of Done
+- Rollback / recovery note nếu có write operation
+
+Boundary:
+- `@pm` được tạo plan/spec/report trong chat trước GO.
+- `@pm` không được ghi plan/spec/report ra file nếu chưa có explicit approval.
+- `@pm` không được viết production code.
+- Nếu cần code/script/diff thực thi → handoff cho `@engineer`.
 
 ---
 *pm.md — 4 rules cho @pm. Nguồn: [[GEMINI.md#R5]], [[GEMINI.md#R6]], [[GEMINI.md#R16]], [[GEMINI.md#R7]]*
