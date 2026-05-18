@@ -34,14 +34,51 @@ Cuốn sách trình bày các khái niệm nền tảng của tư duy hệ thố
 3. **Triết lý Sống:** Các nguyên tắc để con người (với năng lực nhận thức hữu hạn) có thể sống hòa hợp, thay vì cố gắng kiểm soát thô bạo, các hệ thống phức tạp xung quanh.
 
 ## 3. Bản đồ Tri thức (Knowledge Map)
-*Danh sách các Concept (Khái niệm) đã được trích xuất từ tài liệu này:*
+*Danh sách đầy đủ 37 atoms đã được materialize từ tài liệu này (ingest DONE — 2026-05-18):*
+
+### Entities (3)
+- [[ENTITY_ARCH_TIS_Donella_Meadows]]
+- [[ENTITY_ARCH_TIS_Jay_Forrester]]
+- [[ENTITY_ARCH_TIS_MIT_SD_Group]]
+
+### Concepts — Batch 01: Cấu trúc cơ bản (Ch.1)
 - [[CONCEPT_ARCH_TIS_System]]
+- [[CONCEPT_ARCH_TIS_System_Structure]]
 - [[CONCEPT_ARCH_TIS_Stock]]
 - [[CONCEPT_ARCH_TIS_Flow]]
+- [[CONCEPT_ARCH_TIS_Stock_Flow_Diagram]]
+- [[CONCEPT_ARCH_TIS_Dynamic_Equilibrium]]
 - [[CONCEPT_ARCH_TIS_Feedback_Loop]]
-- [[CONCEPT_ARCH_TIS_Leverage_Points]]
+- [[CONCEPT_ARCH_TIS_Balancing_Feedback]]
+- [[CONCEPT_ARCH_TIS_Reinforcing_Feedback]]
+
+### Concepts — Batch 02: Vườn thú hệ thống (Ch.2)
+- [[CONCEPT_ARCH_TIS_Shifting_Dominance]]
+- [[CONCEPT_ARCH_TIS_Delay]]
+- [[CONCEPT_ARCH_TIS_Oscillation]]
+- [[CONCEPT_ARCH_TIS_Nonrenewable_Resource_Limit]]
+- [[CONCEPT_ARCH_TIS_Renewable_Resource_Limit]]
+- [[CONCEPT_ARCH_TIS_Overshoot_and_Collapse]]
+
+### Concepts — Batch 03: Đặc tính & Tại sao hệ thống khó hiểu (Ch.3–4)
+- [[CONCEPT_ARCH_TIS_Resilience]]
+- [[CONCEPT_ARCH_TIS_Self_Organization]]
+- [[CONCEPT_ARCH_TIS_Hierarchy]]
+- [[CONCEPT_ARCH_TIS_Event_Behavior_Structure]]
+- [[CONCEPT_ARCH_TIS_Nonlinearities]]
+- [[CONCEPT_ARCH_TIS_System_Boundaries]]
+- [[CONCEPT_ARCH_TIS_Limiting_Factor]]
+- [[CONCEPT_ARCH_TIS_Bounded_Rationality]]
+
+### Concepts — Batch 04: Cạm bẫy & Can thiệp (Ch.5–6)
 - [[CONCEPT_ARCH_TIS_System_Traps]]
-- *(Danh sách đang được tiếp tục cập nhật trong quá trình ingest-generate)*
+- [[CONCEPT_ARCH_TIS_Tragedy_of_Commons]]
+- [[CONCEPT_ARCH_TIS_Escalation]]
+- [[CONCEPT_ARCH_TIS_Leverage_Points]]
+- [[CONCEPT_ARCH_TIS_System_Paradigms]]
+
+### Concepts — Batch 05: Triết lý Hệ thống (Ch.7)
+- [[CONCEPT_ARCH_TIS_Systems_Wisdom]]
 
 ## 4. Bằng chứng Trích xuất (Audit & Provenance)
 - **Primary Ingest File:** `3-resources/raw_ingest/arch_thinking_in_systems/manifest.md`

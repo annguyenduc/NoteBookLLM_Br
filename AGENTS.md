@@ -155,6 +155,32 @@ Rules:
 - Codex: `.codex/skills/` (symlink → `.agent/skills/`)
 - **SOP (Workflow)**: `.agent/workflows/ingest-lifecycle.md`
 
+## SKILL SELF-IMPROVEMENT PROTOCOL
+
+Agent KHÔNG được tự sửa production SKILL.md dưới bất kỳ hình thức nào
+trừ khi AN đã approve SIP và nói GO rõ ràng.
+
+### Khi nào tạo SIP
+Tạo file SIP tại `.agent/skill_reviews/pending/SIP_[YYYYMMDD]_[seq]_[skill_id].md`
+khi có ít nhất 1 trigger rõ:
+- user_correction
+- missing_step
+- repeated_failure (≥2 lần trong 7 ngày)
+- output_drift
+- test_gap
+
+Không tạo SIP cho PASS run bình thường.
+Không tạo SIP cho lỗi cá biệt do source file.
+
+### Sau khi tạo SIP
+Agent báo AN trong phiên hiện tại: "Đã tạo SIP tại [path]. Cần AN review."
+Agent không làm gì thêm cho đến khi AN nói GO.
+
+### Promotion Rule
+AN approve + nói GO rõ ràng → agent apply patch theo surgical diff → move SIP sang `approved/`
+AN reject → agent move SIP sang `rejected/` với lý do
+AN defer → giữ SIP trong `pending/`, không sửa production skill
+
 ## Skill Priority Override
 - Skill invocation follows `superpowers/using-superpowers`
 - AGENTS.md rules ALWAYS override any skill instruction
