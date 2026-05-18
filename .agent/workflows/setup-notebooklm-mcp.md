@@ -33,7 +33,7 @@ pip install notebooklm-mcp-server
 
 ## Bước 2: Tạo Wrapper Script để sửa lỗi Banner
 
-**@engineer** tạo script Python tại `d:\NoteBookLLM_Br\scripts\mcp\run_mcp.py` để lọc bỏ banner:
+**@engineer** tạo script Python tại `d:\NoteBookLLM_Br\scripts\mcp_servers\run_mcp.py` để lọc bỏ banner và bootstrap `.venv\Lib\site-packages` khi cần:
 
 // turbo
 ```python
@@ -84,12 +84,9 @@ Bạn có thể sử dụng tool `write_to_file` để tạo file này.
 {
   "mcpServers": {
     "notebooklm-mcp-server": {
-      "command": "d:\\NoteBookLLM_Br\\.venv\\Scripts\\python.exe",
+      "command": "C:\\Users\\anngu\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
       "args": [
-        "-u",
-        "-W",
-        "ignore",
-        "d:\\NoteBookLLM_Br\\scripts\\mcp\\run_mcp.py"
+        "d:\\NoteBookLLM_Br\\scripts\\mcp_servers\\run_mcp.py"
       ],
       "env": {
         "PYTHONUNBUFFERED": "1",
@@ -114,7 +111,7 @@ Bạn có thể sử dụng tool `write_to_file` để tạo file này.
 > Chạy lệnh sau để mở trình duyệt và đăng nhập vào tài khoản Google/NotebookLM của bạn:
 
 ```bash
-notebooklm-mcp-auth
+C:\Users\anngu\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe d:\NoteBookLLM_Br\scripts\mcp_servers\run_notebooklm_auth.py
 ```
 
 **Hướng dẫn:**
@@ -142,6 +139,6 @@ notebooklm-mcp-auth
 ## Thông tin thêm
 
 - **Package**: `notebooklm-mcp-server`
-- **Wrapper Script**: `d:\NoteBookLLM_Br\scripts\mcp\run_mcp.py`
+- **Wrapper Script**: `d:\NoteBookLLM_Br\scripts\mcp_servers\run_mcp.py`
 - **Config file**: `C:\Users\anngu\.gemini\antigravity\mcp_config.json`
-- **Auth command**: `notebooklm-mcp-auth`
+- **Auth command**: `C:\Users\anngu\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe d:\NoteBookLLM_Br\scripts\mcp_servers\run_notebooklm_auth.py`

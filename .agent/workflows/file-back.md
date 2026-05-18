@@ -58,7 +58,7 @@ Dù được User ra lệnh (T1/T2), Agent vẫn phải rà soát nhanh để tr
 
 ## ⚙️ Quy trình thực thi (Execution Flow)
 
-Sau khi User xác nhận "insight mới", Agent thực hiện:
+Sau khi User xác nhận rõ `GO` cho thao tác ghi file, Agent mới được thực hiện:
 
 ### Bước 1: Quyết định đích đến & Đặt tên trang
 - Kiến thức nguyên tử: Lưu vào `concepts/CONCEPT_[PREFIX]_[Tên].md`.
@@ -73,6 +73,8 @@ Sau khi User xác nhận "insight mới", Agent thực hiện:
 Thêm nội dung phân tích + [[Wikilinks]] đến các trang gốc đã tham khảo.
 
 ### Bước 3: Ghi file và Cập nhật Log (Tuân thủ Luật R14)
+**Bắt buộc có AN GO trước bước này.** Nếu chưa có GO, chỉ xuất preview/diff trong chat và dừng.
+
 ```text
 # Lưu file đúng định dạng
 write_to_file("3-resources/wiki/concepts/CONCEPT_[PREFIX]_[Tên].md", content) 

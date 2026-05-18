@@ -131,22 +131,44 @@ class MarkdownAuditor:
         return text
 
     def get_source_pdf_path(self, content: str, md_path: pathlib.Path):
-        pdf_match = re.search(r"^Source PDF:\s*(.*)$", content, re.MULTILINE)
-        if not pdf_match:
+        patterns = [
+            r'^Source PDF:\s*(.*)$',
+            r'^Source file:\s*`?(.*?)`?$',
+            r'^source_pdf:\s*"(.*)"$',
+            r'^source_file:\s*"(.*)"$',
+        ]
+
+        pdf_filename = None
+        for pattern in patterns:
+            match = re.search(pattern, content, re.MULTILINE)
+            if match:
+                pdf_filename = match.group(1).strip().strip("`")
+                break
+
+        if not pdf_filename:
             return None
 
-        pdf_filename = pdf_match.group(1).strip()
-        search_paths = [
-            md_path.parent,
-            self.root_dir / "00_Inbox",
-            self.root_dir / "3-resources" / "raw_sources",
-        ]
+        pdf_path = pathlib.Path(pdf_filename)
+        if pdf_path.exists():
+            return pdf_path.resolve()
+
+        search_paths = [md_path.parent, self.root_dir / "00_Inbox", self.root_dir / "3-resources" / "raw_sources"]
         for search_path in search_paths:
             candidate = (search_path / pdf_filename).resolve()
             if candidate.exists():
                 return candidate
         logging.error(f"Source PDF not found for verification: {pdf_filename}")
         return None
+
+    def extract_manifest_chunk_names(self, content: str):
+        return re.findall(r"`(RAW_[^`]+\.md)`", content)
+
+    def extract_outline_chunk_names(self, content: str):
+        names = []
+        for line in content.splitlines():
+            if line.lstrip().startswith("- `RAW_"):
+                names.extend(re.findall(r"`(RAW_[^`]+\.md)`", line))
+        return names
 
     def resolve_chunk_range(self, md_path: pathlib.Path, content: str):
         metadata_match = re.search(r"Chunk Range:\s*Pages\s+(\d+)\s+to\s+(\d+)", content)
@@ -342,7 +364,7 @@ class MarkdownAuditor:
         content = md_path.read_text(encoding="utf-8")
 
         if verify_scope == "package":
-            return {"result": "NOT_IMPLEMENTED", "gaps": [], "verify_scope": "package"}
+            return self.verify_package_scope(md_path, content)
 
         manifest_contract = re.search(r'^primary_ingest_contract:\s*"manifest"\s*$', content, re.MULTILINE)
         if manifest_contract and verify_scope == "full-source":
@@ -358,6 +380,141 @@ class MarkdownAuditor:
         result = self.verify_full_source(pdf_path, md_path)
         result["verify_scope"] = "full-source"
         return result
+
+    def verify_package_scope(self, md_path: pathlib.Path, content: str):
+        package_root = md_path.parent
+        chunks_dir = package_root / "chunks"
+        outline_path = package_root / "outline.md"
+        manifest_path = package_root / "manifest.md"
+        is_outline = (
+            md_path.name.lower() == "outline.md"
+            or re.search(r'^primary_ingest_contract:\s*"outline"\s*$', content, re.MULTILINE)
+        )
+        manifest_content = ""
+        if is_outline:
+            if not manifest_path.exists():
+                safe_print(f"\n  [VERIFY: package] {md_path.name}")
+                safe_print(f"    Package root: {package_root}")
+                safe_print("  RESULT: FAIL")
+                return {"result": "FAIL", "gaps": ["missing_manifest"], "verify_scope": "package"}
+            manifest_content = manifest_path.read_text(encoding="utf-8", errors="replace")
+            verification_content = manifest_content
+        else:
+            verification_content = content
+
+        pdf_path = self.get_source_pdf_path(content, md_path)
+        if not pdf_path and manifest_content:
+            pdf_path = self.get_source_pdf_path(manifest_content, manifest_path)
+
+        gaps = []
+        if not pdf_path:
+            gaps.append("missing_source_pdf")
+        if not chunks_dir.exists():
+            gaps.append("missing_chunks_dir")
+            return {"result": "ERROR", "gaps": gaps, "verify_scope": "package"}
+
+        inventory_names = self.extract_manifest_chunk_names(verification_content)
+        if not inventory_names:
+            gaps.append("missing_manifest_inventory")
+            return {"result": "ERROR", "gaps": gaps, "verify_scope": "package"}
+
+        inventory_set = list(dict.fromkeys(inventory_names))
+        if is_outline:
+            outline_names = self.extract_outline_chunk_names(content)
+            outline_set = list(dict.fromkeys(outline_names))
+            if not outline_set:
+                gaps.append("missing_outline_inventory")
+            missing_from_outline = [name for name in inventory_set if name not in set(outline_set)]
+            extra_in_outline = [name for name in outline_set if name not in set(inventory_set)]
+            if missing_from_outline:
+                gaps.append(f"outline_missing_chunks_{len(missing_from_outline)}")
+            if extra_in_outline:
+                gaps.append(f"outline_extra_chunks_{len(extra_in_outline)}")
+
+        actual_chunk_names = sorted(path.name for path in chunks_dir.glob("RAW_*.md"))
+        actual_set = set(actual_chunk_names)
+
+        missing_chunks = [name for name in inventory_set if name not in actual_set]
+        extra_chunks = [name for name in actual_chunk_names if name not in set(inventory_set)]
+        if missing_chunks:
+            gaps.append(f"missing_chunks_{len(missing_chunks)}")
+        if extra_chunks:
+            gaps.append(f"extra_chunks_{len(extra_chunks)}")
+
+        audited_chunk_count = 0
+        for chunk_name in inventory_set:
+            chunk_path = chunks_dir / chunk_name
+            if not chunk_path.exists():
+                continue
+            chunk_text = chunk_path.read_text(encoding="utf-8", errors="replace")
+            if "audit_stamp: true" in chunk_text and 'status: "PASSED"' in chunk_text and 'verify_scope: "chunk"' in chunk_text:
+                audited_chunk_count += 1
+            else:
+                gaps.append(f"unaudited_chunk_{chunk_name}")
+
+        has_outline = outline_path.exists()
+        if not has_outline:
+            gaps.append("missing_outline")
+
+        safe_print(f"\n  [VERIFY: package] {md_path.name}")
+        safe_print(f"    Package root: {package_root}")
+        safe_print(f"    Inventory: {len(inventory_set)} manifest entries")
+        safe_print(f"    Chunks:    {len(actual_chunk_names)} files present")
+        safe_print(f"    Audited:   {audited_chunk_count}/{len(inventory_set)} chunk files")
+        safe_print(f"    Outline:   {'present' if has_outline else 'missing'}")
+
+        if is_outline and (
+            "missing_outline_inventory" in gaps
+            or any(gap.startswith("outline_missing_chunks_") for gap in gaps)
+            or any(gap.startswith("outline_extra_chunks_") for gap in gaps)
+        ):
+            safe_print("  RESULT: FAIL")
+            return {
+                "result": "FAIL",
+                "gaps": gaps,
+                "verify_scope": "package",
+                "package_chunk_count": len(actual_chunk_names),
+                "package_inventory_count": len(inventory_set),
+            }
+
+        if missing_chunks or extra_chunks:
+            safe_print("  RESULT: FAIL")
+            return {
+                "result": "FAIL",
+                "gaps": gaps,
+                "verify_scope": "package",
+                "package_chunk_count": len(actual_chunk_names),
+                "package_inventory_count": len(inventory_set),
+            }
+
+        if audited_chunk_count != len(inventory_set):
+            safe_print("  RESULT: FAIL")
+            return {
+                "result": "FAIL",
+                "gaps": gaps,
+                "verify_scope": "package",
+                "package_chunk_count": len(actual_chunk_names),
+                "package_inventory_count": len(inventory_set),
+            }
+
+        if not pdf_path:
+            safe_print("  RESULT: FAIL")
+            return {
+                "result": "FAIL",
+                "gaps": gaps,
+                "verify_scope": "package",
+                "package_chunk_count": len(actual_chunk_names),
+                "package_inventory_count": len(inventory_set),
+            }
+
+        safe_print("  RESULT: PASS")
+        return {
+            "result": "PASS",
+            "gaps": [],
+            "verify_scope": "package",
+            "package_chunk_count": len(actual_chunk_names),
+            "package_inventory_count": len(inventory_set),
+        }
 
     def write_audit_stamp(self, md_path, noises, missing_count, verify_scope="full-source", manifest_path=None):
         today = date.today().strftime("%Y-%m-%d")
@@ -406,6 +563,10 @@ class MarkdownAuditor:
             stamp_lines.append(f'  verify_range_source: "{verify_meta["range_source"]}"')
         if verify_meta.get("manifest_match"):
             stamp_lines.append(f"  verify_manifest_range: {verify_meta['manifest_match']}")
+        if verify_meta.get("package_chunk_count") is not None:
+            stamp_lines.append(f"  verify_package_chunk_count: {verify_meta['package_chunk_count']}")
+        if verify_meta.get("package_inventory_count") is not None:
+            stamp_lines.append(f"  verify_package_inventory_count: {verify_meta['package_inventory_count']}")
 
         stamp_text = "\n".join(stamp_lines)
         content = pathlib.Path(md_path).read_text(encoding="utf-8")
@@ -454,10 +615,6 @@ def main():
     auditor = MarkdownAuditor()
     if not os.path.exists(args.path):
         logging.error(f"File not found: {args.path}")
-        sys.exit(1)
-
-    if args.verify_scope == "package":
-        logging.error("package verify scope is not implemented yet.")
         sys.exit(1)
 
     with open(args.path, "r", encoding="utf-8") as handle:

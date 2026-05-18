@@ -6,6 +6,8 @@ description: Rebuild, append log, và closeout bookkeeping sau khi ingest-genera
 
 Workflow này đóng ingest run sau khi atom đã được generate.
 
+Runtime boundary: rebuild, append log và bookkeeping là side effect. Chỉ chạy khi GO ban đầu bao gồm closeout hoặc AN cấp GO riêng cho `ingest-index-log`.
+
 Workflow cha tham chiếu:
 
 - `ingest-lifecycle`

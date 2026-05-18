@@ -76,7 +76,7 @@ When materializing Atom candidates:
 3. Set `status: "DRAFT"`.
 4. Preserve source trace.
 5. Run required audit before promote.
-6. Use `circuit_breaker.py` for promote operations.
+6. Use `scripts/maintenance/circuit_breaker.py` for promote operations.
 
 ## HANDOFF
 `@engineer` must handoff:

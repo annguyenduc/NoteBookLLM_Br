@@ -1,5 +1,5 @@
 # SCRIPTS_INDEX.md — NoteBookLLM_Br Script Directory
-**Source of Truth for Automation & Maintenance**
+**Script catalog for Automation & Maintenance**
 
 ## 1. CORE PIPELINE (Wiki 2.0)
 | Script | Description | Status |

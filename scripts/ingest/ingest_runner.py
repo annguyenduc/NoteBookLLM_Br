@@ -135,6 +135,8 @@ def stage_build_outline(run_dir: Path, state: dict):
         str(BUILD_OUTLINE),
         "--source-id",
         state["source_id"],
+        "--source-file",
+        state["source_file"],
         "--converted-dir",
         state["converted_dir"],
         "--run-dir",

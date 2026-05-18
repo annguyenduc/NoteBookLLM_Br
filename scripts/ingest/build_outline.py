@@ -64,13 +64,28 @@ def group_outline(entries):
     return grouped
 
 
-def write_outline(entries, output_path: Path, source_id: str):
+def write_outline(entries, output_path: Path, source_id: str, source_file: str = ""):
     grouped = group_outline(entries)
     lines = [
+        "---",
+        'primary_ingest_contract: "outline"',
+        f'source_id: "{source_id}"',
+    ]
+    if source_file:
+        lines.append(f'source_file: "{source_file}"')
+    lines.extend(
+        [
+            "---",
+            "",
+        ]
+    )
+    lines.extend(
+        [
         f"# Outline - {source_id}",
         "",
         "## Structure Summary",
-    ]
+        ]
+    )
     for chapter, data in grouped.items():
         page_range = "?" if data["start_page"] is None else f'{data["start_page"]}-{data["end_page"]}'
         lines.extend(
@@ -96,6 +111,7 @@ def write_outline(entries, output_path: Path, source_id: str):
 def main():
     parser = argparse.ArgumentParser(description="Build a deterministic outline from converted chunks.")
     parser.add_argument("--source-id", required=True, help="Canonical source id for the run")
+    parser.add_argument("--source-file", help="Physical source file path used for package verification")
     parser.add_argument("--converted-dir", required=True, help="Path to Converted_Sources/<source>/")
     parser.add_argument("--run-dir", required=True, help="Path to runs/ingest_<source>_<date>/")
     args = parser.parse_args()
@@ -108,7 +124,7 @@ def main():
 
     entries = build_outline_entries(converted_dir)
     outline_path = run_dir / "outline.md"
-    write_outline(entries, outline_path, args.source_id)
+    write_outline(entries, outline_path, args.source_id, source_file=args.source_file or "")
     print(json.dumps({"outline_path": str(outline_path), "entries": len(entries)}))
 
 

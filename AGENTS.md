@@ -5,17 +5,77 @@
 
 ---
 
-## STARTUP (Bắt buộc mỗi phiên)
+## RUNTIME SOURCE OF TRUTH
 
-0. **Load `.env`**: BẮT BUỘC trước mọi script call:
-   `$env:KIRO_AUDIT_SECRET = (Get-Content .env | Select-String "KIRO_AUDIT_SECRET").ToString().Split("=")[1]`
-1. Đọc `AGENTS.md`, `.agent/rules/CORE.md` (Hard Stop Rules), và `WORKSPACE_OVERVIEW.md` (Pipeline Architecture).
-   → `GEMINI.md`: CHỈ đọc khi gặp tình huống phức tạp cần tra cứu chéo. KHÔNG inject mặc định.
-2. Inject Scoped Context: Đọc `SOUL.md`, `USER.md` và file rules tương ứng với agent đang hoạt động (`.agent/rules/[agent].md`).
-3. Khai báo CHECKPOINT (xem cuối file) trước khi bắt đầu task
-4. Ghi log vào file nhật ký ngày hiện tại trong `3-resources/wiki/logs/` sau khi hoàn thành
+`AGENTS.md` là runtime source of truth cho agent trong repo này.
+Các file khác chỉ là role rule, workflow, skill hoặc reference. Nếu có mâu thuẫn khi chạy thật, ưu tiên theo thứ tự:
 
-> **Tra cứu Bản đồ 27 rules và WikiCouncil 2.0**: [[GEMINI.md]]
+1. User instruction trong phiên hiện tại, nếu không vi phạm runtime safety.
+2. `AGENTS.md`.
+3. `.agent/rules/CORE.md`.
+4. `.agent/rules/[agent].md`.
+5. Workflow được gọi trực tiếp.
+6. Skill instruction.
+7. `GEMINI.md` chỉ là governance reference/archive, không override runtime.
+
+---
+
+## STARTUP PROFILE (Bắt buộc mỗi phiên)
+
+Agent phải chọn đúng profile trước khi đọc context.
+
+### MICRO
+Dùng cho local model <= 3B hoặc task rất nhỏ.
+Primary target: Llama/Qwen/Gemma/Phi class <= 3B hoặc model có context/reasoning rất hạn chế.
+Không tối ưu workflow mặc định quanh 8B; chỉ dùng MICRO cho 8B nếu AN yêu cầu test rõ.
+
+Đọc:
+1. `AGENTS.md`
+2. `.agent/rules/CORE.md`
+3. Current user task
+4. File được user chỉ đích danh
+
+Không đọc mặc định: `SOUL.md`, `USER.md`, `WORKSPACE_OVERVIEW.md`, `GEMINI.md`, unrelated skills, full skill files, multiple wiki skills, non-essential MCP schemas, browser/search/github MCP, subagent-driven-development, writing-plans full workflow, templates dài, log lịch sử.
+
+Hard rules:
+- Không write vào `raw_*/` hoặc modify `3-resources/raw_*`.
+- Không bulk-edit vault files.
+- Chỉ load một task-specific skill summary nếu cần.
+- Ưu tiên direct file operations và tránh recursive search nếu không cần.
+- Không multi-agent dispatch trừ khi AN yêu cầu.
+- Dùng one-step execution với user checkpoints.
+- Với read-only audit trong MICRO, giới hạn scope mặc định vào `AGENTS.md`, `.agent/rules/CORE.md`, active role rule, và file user chỉ đích danh; chỉ mở rộng sang root governance/workflow/script files nếu AN yêu cầu hoặc có blocker trực tiếp.
+- Chạy `synthesis_guard.py check` trước mọi write vào `synthesis/`.
+- Chỉ AN được set `SYNTHESIZED`.
+- Dùng `scripts/maintenance/circuit_breaker.py` cho promote operation.
+- Sau mỗi 3 turns, tóm tắt working history thành 3 bullets trước khi tiếp tục.
+- Trong MICRO mode, không append "Summary of Work" trừ khi AN yêu cầu rõ hoặc đây là assistant turn thứ 3 trong task hiện tại.
+
+Default MCP/tools: `filesystem` only. Bật `sqlite` chỉ khi task cần query/index. Không bật github/browser/search/scrape trừ khi AN yêu cầu rõ.
+
+### NORMAL
+Dùng cho cloud model hoặc task vault thông thường.
+Đọc:
+1. `AGENTS.md`
+2. `.agent/rules/CORE.md`
+3. `WORKSPACE_OVERVIEW.md`
+4. `.agent/rules/[agent].md`
+
+### FULL
+Dùng khi task phức tạp, conflict rule, ingest dài, hoặc audit hệ thống.
+Đọc:
+1. NORMAL profile
+2. Relevant `SKILL.md`
+3. `GEMINI.md` chỉ khi cần resolve conflict
+
+### Secret Handling
+Không load `.env` mặc định.
+Chỉ đọc secret khi script bắt buộc cần và User đã duyệt action có side effect.
+
+### Session End
+Sau task có side effect, ghi log vào `3-resources/wiki/logs/log_YYYY_MM_DD.md`.
+
+> **Governance reference/archive**: [[GEMINI.md]] chỉ dùng để tra cứu lịch sử rule hoặc giải thích khi cần, không override runtime.
 
 ---
 
@@ -29,10 +89,10 @@
 | **@librarian** | `@librarian` | Quản lý wiki graph, index, reconciliation, synthesis candidates. KHÔNG final synthesis thay User. | `.agent/rules/librarian.md` |
 | **@auditor** | `@auditor` | Kiểm định nguồn, reverse tracing, lint | `.agent/rules/auditor.md` |
 | **@designer** | `@designer` | Thiết kế learning sequence (cần Trainer Profile trước) | `.agent/rules/designer.md` |
-| **@healer** | `@healer` | Sửa lỗi link, rollback vi phạm | `.agent/rules/healer.md` + [[GEMINI.md#R28]] |
+| **@healer** | `@healer` | Sửa lỗi link, rollback vi phạm | `.agent/rules/healer.md` |
 
 > **Nguyên tắc**: Mỗi agent chỉ đọc rules của mình + CORE.md.
-> Khi gặp tình huống phức tạp cần tra cứu chéo → đọc [[GEMINI.md]] đầy đủ.
+> Khi gặp tình huống phức tạp cần tra cứu lịch sử rule → đọc phần liên quan trong [[GEMINI.md]], không inject toàn bộ mặc định.
 
 ---
 
@@ -101,123 +161,6 @@ Rules:
 - `brainstorming` skill: agents must not auto-invoke for Atom generation
 
 
-
-## Local Model Profile Selection
-
-The default workflow remains unchanged.
-
-Use `MICRO` only for very small local models:
-
-| Condition | Mode |
-|---|---|
-| Cloud / normal model | Normal workflow |
-| Local model <= 3B | MICRO |
-| Local 8B model | Not assumed usable; MICRO only if AN explicitly requests testing |
-
-<!-- PROFILE: MICRO_START -->
-## MICRO Mode — 3B Local Models
-
-Use this mode only when running very small local models.
-
-Primary target:
-
-- Llama 3.2 3B
-- Qwen 2.5/3 3B class
-- Gemma 3B/4B class local models
-- Phi small models
-- Any local model with very limited context/reasoning budget
-
-Do not design this mode around 8B.  
-8B local models are considered too heavy for the default local workflow unless AN explicitly requests an 8B test.
-
-Do not use this mode for normal cloud models.
-
-### Activation Rule
-
-```text
-IF model is local AND model size <= 3B
-THEN use MICRO mode.
-
-IF model is local 8B
-THEN do NOT assume it can run the vault workflow.
-Only use MICRO mode for 8B if AN explicitly requests an 8B test.
-
-ELSE use normal vault workflow.
-```
-
-### Read Only
-
-In MICRO mode, read only:
-
-* This MICRO block
-* The current user task
-* One task-specific skill summary, not the full skill file unless required
-* Directly referenced files
-
-### Hard Rules
-
-* Do not write to raw_*/
-* Do not modify 3-resources/raw_*
-* Do not bulk-edit vault files
-* Run synthesis_guard.py check before any write to synthesis/
-* Declare CHECKPOINT before complex tasks
-* Only AN may set SYNTHESIZED
-* Use circuit_breaker.py for every promote operation
-* Load only one wiki skill summary for the current task
-* Prefer direct file operations over broad repository scans
-* Avoid recursive search unless explicitly needed
-* Avoid multi-agent dispatch unless explicitly requested
-* Avoid long chain workflows
-* Use one-step execution with user checkpoints
-* After every 3 turns, summarize working history into 3 bullets before continuing
-
-### Do Not Load
-
-In MICRO mode, do not load:
-
-* SOUL.md
-* USER.md
-* WORKSPACE_OVERVIEW.md
-* unrelated skills
-* full skill files unless directly required
-* multiple wiki skills at the same time
-* non-essential MCP tool schemas
-* browser/search/github MCP unless AN explicitly asks
-* subagent-driven-development
-* writing-plans full workflow
-* large prompt templates
-* long examples
-* historical logs unless directly requested
-
-### Shadow MCP
-
-Default allowed MCP/tools in MICRO:
-
-* filesystem only
-
-Allowed conditionally:
-
-* sqlite, only if the task needs database/wiki query
-
-Disabled unless explicitly required:
-
-* github
-* browser
-* brave-search
-* web scrape tools
-* large external tool schemas
-
-### Output Discipline
-
-In MICRO mode:
-
-* Prefer short plans
-* Prefer direct commands
-* Prefer patch-sized edits
-* Avoid broad architectural commentary
-* Ask for user checkpoint before actual write if risk is MEDIUM or HIGH
-
-<!-- PROFILE: MICRO_END -->
 
 ## Automation MCP Policy
 
@@ -291,7 +234,7 @@ Use these MCP sets as the default operating profiles for this workspace:
 | MICRO 3B | `filesystem` | Default for very small local models. Keep tool surface minimal. |
 | Normal vault work | `filesystem + sqlite` | Maps to script mode `vault`. Best default for cloud models or normal wiki work. |
 | Automation | `filesystem + sqlite` | Read-only by default. Inspect, query, audit, report, suggest. |
-| Dev/script work | `filesystem + sqlite + git + github-mcp-server` | Maps to script mode `dev`. Enable Git-capable MCPs only when needed. |
+| Dev/script work | `filesystem + sqlite + Git CLI (Direct)` | Maps to script mode `dev`. Sử dụng lệnh Git CLI trực tiếp thay cho github-mcp-server để tiết kiệm 12.5K tokens. |
 | Ingest profile | `filesystem + sqlite + notebooklm-mcp-server` | Maps to script mode `ingest` for the currently configured MCP inventory. |
 | Web ingest | `filesystem + browser/search/scrape` | Policy target when those MCPs exist in the full inventory. |
 
@@ -300,8 +243,9 @@ Use these MCP sets as the default operating profiles for this workspace:
 - `MICRO 3B`: do not enable extra MCPs unless the task explicitly requires them.
 - `Normal vault work`: prefer `filesystem + sqlite` before enabling any broader tool surface.
 - `Automation`: must remain read-only unless AN explicitly approves a write-capable action.
-- `Dev/script work`: `github` is on-demand, not a permanent default.
+- `Dev/script work`: Ưu tiên sử dụng lệnh Git CLI trực tiếp qua run_command, loại bỏ hoàn toàn github-mcp-server để tối ưu hóa context.
 - `Ingest profile`: current script implementation uses `filesystem + sqlite + notebooklm-mcp-server` because those servers exist in the current full backup.
+- `Ingest profile`: dùng `notebooklm-mcp-server` trước hết như lớp reconnaissance nhanh cho source dài hoặc source đã có trong NotebookLM; không coi output MCP là canonical ingest artifact.
 - `Web ingest`: disable browser/search/scrape MCPs again after the ingest task is complete.
 
 ## Ingest Source Policy
@@ -317,6 +261,16 @@ Default policy by source type:
 | Video | Transcript-first | Do not default to downloading the full video file if it is large. |
 | Audio | Transcript-first | Keep source metadata and transcript as the ingest basis. |
 
+### Source-Scoped Staging and Run Packages
+
+- Không để phẳng `SOURCE_PREP_REPORT_*`, `SOURCE_AUDIT_REPORT_*`, `INGEST_INPUT_LOCK_*` trực tiếp trong `00_Inbox/` khi source có scope rõ ràng.
+- Với `fresh/simple source`, ưu tiên dùng `00_Inbox/sources/[source_id]/` cho source staging và lifecycle control artifacts.
+- Với `complex/AI-first/rerun/resumable source`, ưu tiên dùng `runs/ingest_[source_id]_[YYYYMMDD]_[seq]/` làm run package.
+- Không tạo folder con theo source bên trong `3-resources/raw_sources/`, `3-resources/raw_ingest/`, hoặc `3-resources/raw_assets/`; các vùng raw giữ `flattened storage`.
+- `1-projects/sources/[source_id]/` là default cho source-scoped control/analysis artifacts như `SOURCE_PREP_REPORT_*`, `SOURCE_AUDIT_REPORT_*`, `INGEST_INPUT_LOCK_*`, `STRUCTURE_[ID]`, `FIGURES_[ID]`, `NAMING_LOCK_[ID]`, `MAP_[ID]`, `Analysis_*`, và `INGEST_ORCHESTRATION_REPORT_*`.
+- Không để phẳng các artifact trên trực tiếp trong `1-projects/` khi source có scope rõ ràng.
+- `1-projects/` root chỉ giữ project-level notes hoặc lightweight recon artifacts khi workflow đã chốt path root.
+
 ### Video and Audio Guidance
 
 - For large videos, prefer `URL + transcript + metadata + selected screenshots` over storing the full source file locally.
@@ -326,8 +280,64 @@ Default policy by source type:
 ### Operational Rule
 
 - Live web/video sources are acquisition points, not the default ingest-ready artifacts.
-- The preferred ingest starting point is a staged local artifact in `00_Inbox/`.
+- The preferred ingest starting point is a staged local artifact in `00_Inbox/sources/[source_id]/` for simple runs, or a run package under `runs/ingest_[source_id]_[YYYYMMDD]_[seq]/` for complex runs.
 - If a source remains live-only, the agent must explain the risk: mutability, link rot, replay difficulty, and weaker auditability.
+
+## Knowledge Intake Policy
+
+There are two entry lanes:
+- Preview lane: `knowledge-intake` routes natural-language preview requests to preview modes. `NON_CANONICAL`.
+- Official ingest lane: `/ingest` and official ingest requests go to `ingest-lifecycle`. `CANONICAL`.
+
+NotebookLM query là lớp reconnaissance phụ trợ, không phải entry lane thứ ba.
+Nó chỉ dùng để trinh sát nhanh trước `knowledge-intake` hoặc trước khi đọc sâu source dài.
+
+Rules:
+- `/ingest [file]` bypasses `knowledge-intake`.
+- Preview runtime defaults to `CHAT_ONLY`.
+- Preview artifact writes are allowed only when requested by workflow/user text.
+- During an approved implementation goal, Codex must not stop for additional GO confirmations inside the declared scope.
+- Preview artifacts cannot satisfy official ingest gates.
+- Official ingest must ignore `00_Inbox/preview/`.
+- Lifecycle control artifacts may live in `00_Inbox/sources/[source_id]/` or `runs/ingest_[source_id]_[YYYYMMDD]_[seq]/`.
+- Lifecycle control artifacts do not satisfy official gates by location alone; the current lifecycle/run must explicitly resolve them as the active artifacts for that source/run.
+
+### NotebookLM Recon Policy
+
+Use `notebooklm-mcp-server` as a reconnaissance layer when helpful:
+- tìm nhanh ý chính
+- tìm chương/đoạn đáng chú ý
+- tìm atom candidates sơ bộ
+- tìm câu hỏi còn mơ hồ, contradiction, gap
+
+Hard boundaries:
+- output từ NotebookLM là `UNVERIFIED`
+- không dùng output NotebookLM làm `source_evidence_file`
+- không dùng output NotebookLM làm `primary_ingest_file`
+- không dùng output NotebookLM để tạo Atom trực tiếp
+- không coi NotebookLM answer là source of truth
+
+Required follow-up:
+- NotebookLM recon phải đi qua `knowledge-intake` ở mode `CHAT_ONLY` hoặc preview mode phù hợp để lọc nhiễu, chuẩn hóa claim, và loại bỏ ý không trace được về nguồn
+- chỉ sau đó mới được handoff sang canonical core nếu source và gates đã rõ
+
+Recommended sequence:
+
+```text
+NotebookLM query
+-> knowledge-intake (chat_only)
+-> prepare-source
+-> audit-promote-source
+-> lock-ingest-input
+-> ingest
+```
+
+Optional analysis artifact:
+- `NOTEBOOKLM_RECON_[SOURCE_ID].md`
+- default path:
+  - `1-projects/NOTEBOOKLM_RECON_[SOURCE_ID].md`
+- `runs/ingest_[source_id]_[YYYYMMDD]_[seq]/NOTEBOOKLM_RECON_[SOURCE_ID].md` chỉ dùng như ngoại lệ debug/runtime khi được yêu cầu rõ
+- artifact này là analysis phụ trợ, không phải canonical ingest fuel
 
 ---
 ## ⚡ LỆNH VẬN HÀNH (Wiki 2.0)
@@ -354,7 +364,7 @@ Default policy by source type:
 NoteBookLLM_Br/              ← root
 │
 ├── AGENTS.md                ← root level
-├── GEMINI.md                ← Hiến pháp tối cao (R1-R27)
+├── GEMINI.md                ← Governance reference/archive, không phải runtime source of truth
 ├── EXAMPLES.md              ← Ví dụ đối chiếu mẫu
 ├── SOUL.md                  ← Linh hồn hệ thống
 ├── USER.md                  ← Chân dung User
@@ -422,7 +432,7 @@ NoteBookLLM_Br/              ← root
 ## 🛡️ BỘ QUY TẮC QUẢN TRỊ
 
 > **Kiến trúc phân tầng** — Rules được phân bổ theo agent, không nhồi vào một chỗ.
-> Chi tiết đầy đủ 27 rules và diễn giải: [[GEMINI.md]]
+> Diễn giải lịch sử 27 rules: [[GEMINI.md]] — reference/archive, không override runtime.
 
 ### Tầng 1 — Constitutional Rules (Mọi agent, mọi lúc)
 Xem: `.agent/rules/CORE.md`
@@ -444,13 +454,13 @@ Xem: `.agent/rules/CORE.md`
 |---|---|
 | R8 Human Supremacy | `synthesis_guard.py check <file>` — BLOCKED nếu write vào `synthesis/` hoặc modify SYNTHESIZED atom |
 | R8 Human Approve | `synthesis_guard.py approve <file>` — CHỈ Human gọi để set SYNTHESIZED |
-| R22 Staging-Promote | `circuit_breaker.py` chặn write trực tiếp vào `3-resources/` |
+| R22 Staging-Promote | `scripts/maintenance/circuit_breaker.py` chặn write trực tiếp vào `3-resources/` |
 | R23 Promotion Gate | `promote.py` là wrapper duy nhất được phép move file |
 | R20 YAML Validity | `ingest.py` schema validation — tự reject nếu YAML invalid |
 | R14 Log Rotation | `session_seal.py` tự tạo file log đúng tên |
 
 ### Tầng 4 — Reference (Tra cứu khi cần, không inject mặc định)
-[[GEMINI.md]] — Toàn bộ 27 rules + WikiCouncil 2.0 (Bản đồ Hiến pháp).
+[[GEMINI.md]] — Governance reference/archive cho 27 rules và WikiCouncil 2.0; không phải startup bắt buộc.
 
 ---
 

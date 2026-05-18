@@ -1,5 +1,31 @@
 # Ingest Spec: Global Map + Naming Lock
 
+## Ngôn ngữ artifact
+
+Spec này quy định:
+
+- metadata có thể giữ tiếng Anh hoặc canonical enum để máy đọc ổn định
+- phần nội dung markdown cho human review phải viết bằng tiếng Việt
+
+Giữ nguyên tiếng Anh cho:
+
+- `source_id`
+- filenames
+- status enums
+- code
+- exact source title
+- technical terms khi chưa có bản dịch ngắn gọn, nhưng nên giải thích bằng tiếng Việt ở lần đầu xuất hiện
+
+Áp dụng cho toàn bộ artifact downstream:
+
+- `STRUCTURE_[ID].md`
+- `FIGURES_[ID].md`
+- `MAP_[ID].md`
+- `NAMING_LOCK_[ID].md`
+- `Analysis_[ID]_MASTER_STRATEGY.md`
+- `Analysis_[ID]_CHUNK_XX.md`
+- các report ingest
+
 ## Goal
 
 Stabilize ingest for large PDFs by separating:

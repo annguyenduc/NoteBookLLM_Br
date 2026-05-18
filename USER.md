@@ -60,6 +60,8 @@ learning_stance:
     - Vibe coding và solo developer workflows
   principle: >
     Wiki phải phản ánh quá trình học — Atoms mới từ học tập được đánh dấu learning_source để phân biệt với kiến thức đã được kiểm chứng qua thực hành
+```
+
 ---
 
 ## output_constraints

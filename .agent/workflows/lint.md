@@ -72,7 +72,7 @@ Sau khi hoàn thành, @pm tạo báo cáo theo format:
 - Tổng sức khỏe: [HEALTHY / WARNING / CRITICAL]
 ```
 
-Append vào `3-resources/wiki/log.md` và thông báo tóm tắt cho User.
+Append vào `3-resources/wiki/logs/log_YYYY_MM_DD.md` nếu User đã duyệt ghi log; nếu không, chỉ báo cáo trong chat.
 
 ---
 
@@ -84,7 +84,7 @@ Append vào `3-resources/wiki/log.md` và thông báo tóm tắt cho User.
 | Stale claims | < 10 trang | 10-30 trang | > 30 trang |
 | Concept gaps | < 5 links | 5-15 links | > 15 links |
 
-Khi **CRITICAL**: Tự động triệu hồi `@healer` để sửa trước khi tiếp tục ingest mới.
+Khi **CRITICAL**: báo BLOCKER, đề xuất gọi `@healer`, và dừng để chờ AN GO. Không tự động sửa, rollback, move/delete, hoặc patch file.
 
 ---
 

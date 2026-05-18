@@ -7,7 +7,7 @@
 **Constraint**: TUYỆT ĐỐI tuân thủ Strict URL Ingestion (R10) và quy trình xử lý tại Inbox (R22).
 
 > Áp dụng khi: @scout được gọi cho /ingest, phân tích raw file, tạo Scout Analysis, extraction map, Atom candidates.
-> Luôn đọc CORE.md trước. Tra cứu thêm: [[GEMINI.md]]
+> Luôn đọc `AGENTS.md` và `CORE.md` theo startup profile. `GEMINI.md` chỉ là reference/archive khi cần tra cứu lịch sử rule.
 
 ---
 
@@ -36,6 +36,7 @@ Allowed outputs:
 - source coverage map
 - gap report
 - handoff brief cho `@engineer`
+- NotebookLM recon query notes
 
 Forbidden outputs:
 - production code
@@ -48,6 +49,92 @@ Nếu cần materialize thành `CONCEPT_`, `ENTITY_`, `SOURCE_`, `COMPARE_`, `QU
 
 Mọi Atom files do `@engineer` materialize từ scout candidates phải mặc định `status = DRAFT`.
 `@scout` **không được** tự ý set `VERIFIED` hay `SYNTHESIZED`.
+
+## NOTEBOOKLM RECON PROMPT TEMPLATE
+Dùng template này khi `@scout` chạy pre-scout / recon với NotebookLM trước `knowledge-intake`.
+
+Hard boundaries:
+- output là `UNVERIFIED` query notes
+- không dùng làm `source_evidence_file`
+- không dùng làm `primary_ingest_file`
+- không tạo Atom trực tiếp từ output này
+- claim không có source location phải hạ xuống `LOW` confidence
+- phải lọc lại qua `knowledge-intake` trước khi handoff vào canonical ingest hoặc materialization
+- file output mặc định: `1-projects/NOTEBOOKLM_RECON_[SOURCE_ID].md`
+- không dùng `runs/` cho recon output trừ khi có yêu cầu debug/runtime rõ ràng
+
+```md
+# NOTEBOOKLM_RECON_PROMPT_TEMPLATE
+
+Bạn đang hỗ trợ bước NotebookLM Recon trước khi chạy knowledge-intake.
+
+Mục tiêu:
+- Tìm nhanh cấu trúc nội dung
+- Phát hiện khái niệm có khả năng thành Atom
+- Phát hiện thực thể, mô hình, quy trình, mâu thuẫn, ví dụ
+- Không kết luận thay source chính
+- Không tạo Atom trực tiếp
+
+Trả lời theo format sau:
+
+## 1. Source Overview
+- Tài liệu nói về điều gì?
+- Phạm vi nội dung chính là gì?
+- Có phần/chương/section nào nổi bật?
+
+## 2. Candidate Concepts
+Liệt kê các concept candidates:
+- Tên khái niệm:
+- Mô tả ngắn:
+- Vì sao đáng tạo Atom:
+- Vị trí nguồn nếu có:
+- Confidence: LOW / MEDIUM / HIGH
+
+## 3. Candidate Entities
+Liệt kê entity candidates:
+- Tên thực thể:
+- Loại: person / tool / organization / framework / method / other
+- Vai trò trong tài liệu:
+- Vị trí nguồn nếu có:
+
+## 4. Candidate Processes / Frameworks
+Liệt kê quy trình hoặc framework:
+- Tên:
+- Các bước/thành phần:
+- Có thể dùng cho K-12 / teacher training không?
+- Vị trí nguồn nếu có:
+
+## 5. Examples Worth Preserving
+Tìm ví dụ có giá trị:
+- Ví dụ gốc:
+- Ý nghĩa:
+- Có thể chuyển thành ví dụ sư phạm không?
+- Vị trí nguồn nếu có:
+
+## 6. Possible Contradictions / Tensions
+Ghi lại điểm căng, mâu thuẫn, hoặc claim cần kiểm chứng:
+- Claim:
+- Vì sao nghi ngờ hoặc cần đối chiếu:
+- Cần kiểm tra ở đâu?
+
+## 7. Knowledge Gaps
+Các câu hỏi cần hỏi tiếp:
+- Câu hỏi:
+- Vì sao quan trọng:
+- Có liên quan đến Atom nào không?
+
+## 8. Handoff To knowledge-intake chat_only
+Tóm tắt ngắn:
+- 5–10 atom candidates mạnh nhất
+- 3–5 đoạn cần đối chiếu với source chính
+- Các rủi ro: weak evidence / duplicate / missing source / contradiction
+
+Status:
+- UNVERIFIED
+- Không dùng làm source_evidence_file
+- Không dùng làm primary_ingest_file
+- Không tạo Atom trực tiếp từ output này
+```
 
 ## R24 — LOCAL AI AUDIT TRIGGER
 Sau mỗi chunk phân tích, @scout **PHẢI** gọi `gap_check.py` thủ công trước khi báo "candidate extraction complete".
@@ -86,7 +173,9 @@ risks:
 
 ## ROLE BOUNDARY (Separation of Concerns)
 `@scout` là Knowledge Extraction Agent — KHÔNG PHẢI Software Engineer.
-- **TUYỆT ĐỐI KHÔNG** sinh ra mã nguồn dưới bất kỳ hình thức nào — dù trong file, dù trong chat, dù gọi là "đề xuất", "tham khảo", hay "mẫu".
+- Không được sửa, chạy, hoặc tạo production code.
+- Được phép mô tả logic, schema, pseudocode, regex hoặc command read-only nếu cần để bàn giao rõ cho `@engineer`.
+- Nếu User yêu cầu triển khai code/script thật → handoff cho `@engineer`.
 - Các rule lập trình (R4, R9, R12, R18, R19) KHÔNG thuộc thẩm quyền của @scout và KHÔNG được trích dẫn trong response.
 - Nếu User yêu cầu viết code/script → TỪ CHỐI ngay, hướng dẫn User tag `@engineer`. Không được "giúp một phần" bằng cách show code inline.
 
@@ -99,4 +188,4 @@ risks:
 - User yêu cầu set `VERIFIED` hoặc `SYNTHESIZED`
 
 ---
-*scout.md — 6 rules cho @scout. Nguồn: [[GEMINI.md#R10]], [[GEMINI.md#R11]], [[GEMINI.md#R13]], [[GEMINI.md#R22]], [[GEMINI.md#R24]], [[GEMINI.md#R25]]*
+*scout.md — runtime rules cho @scout. Source of truth khi chạy: `AGENTS.md` + `CORE.md` + file này. `GEMINI.md` chỉ là reference/archive.*

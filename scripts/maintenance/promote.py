@@ -36,7 +36,7 @@ MIN_AUDIT_SCORE = 0.90
 def _check_gatekeeper():
     if os.environ.get("KIRO_CB_ACTIVE") != "1":
         print("\n[GATE KEEPER] BLOCKED: Direct promotion is FORBIDDEN.", file=sys.stderr)
-        print("[GATE KEEPER] REASON: You must execute via Circuit Breaker: python .kiro/circuit_breaker.py promote <path>", file=sys.stderr)
+        print("[GATE KEEPER] REASON: You must execute via Circuit Breaker: python scripts/maintenance/circuit_breaker.py promote <path>", file=sys.stderr)
         return False
 
     if not LOCK_FILE.exists():
@@ -200,7 +200,16 @@ def resolve_package_destination(md_path: pathlib.Path, package_ctx: dict):
         return package_root / "chunks" / name
     return package_root / name
 
-def promote(md_path_str, dry_run=False, audit_policy="strict"):
+def archive_existing_destination(dest_md: pathlib.Path) -> pathlib.Path:
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    relative_dest = dest_md.relative_to(ROOT_DIR)
+    archive_path = ARCHIVE_ROOT / "rollbacks" / f"promote_replace_{timestamp}" / relative_dest
+    archive_path.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(dest_md, archive_path)
+    return archive_path
+
+
+def promote(md_path_str, dry_run=False, audit_policy="strict", replace_existing=False):
     if not _check_gatekeeper():
         return False
 
@@ -276,6 +285,11 @@ def promote(md_path_str, dry_run=False, audit_policy="strict"):
         dest_md = WIKI_INSIGHTS / md_path.name
     else:
         dest_md = RAW_INGEST / md_path.name
+
+    if dest_md.exists() and not replace_existing:
+        print(f"BLOCKED: Destination already exists: {dest_md.relative_to(ROOT_DIR)}")
+        print("   Use --replace-existing for an explicit audited repair replacement.")
+        return False
         
     dest_pdf = RAW_SOURCES / pdf_name if pdf_name else None
     
@@ -303,6 +317,8 @@ def promote(md_path_str, dry_run=False, audit_policy="strict"):
     if dry_run:
         print(f"\n--- [DRY RUN] Promotion Plan for {md_path.name} ---")
         print(f"[MD]  {md_path.name} -> {dest_md.relative_to(ROOT_DIR)}")
+        if dest_md.exists() and replace_existing:
+            print(f"[ARC] existing {dest_md.relative_to(ROOT_DIR)} -> 4-archive/rollbacks/promote_replace_<timestamp>/")
         if pdf_src_path:
             print(f"[SRC] {pdf_name} -> {dest_pdf.relative_to(ROOT_DIR)}")
         for src, dst in assets_to_move:
@@ -321,7 +337,12 @@ def promote(md_path_str, dry_run=False, audit_policy="strict"):
         dest_md.parent.mkdir(parents=True, exist_ok=True)
 
         # 1. Move MD
-        shutil.move(str(md_path), str(dest_md))
+        if dest_md.exists() and replace_existing:
+            archive_path = archive_existing_destination(dest_md)
+            os.replace(str(md_path), str(dest_md))
+            print(f"ARCHIVED EXISTING MD: {archive_path.relative_to(ROOT_DIR)}")
+        else:
+            shutil.move(str(md_path), str(dest_md))
         print(f"PROMOTED MD: {md_path.name}")
 
         # 2. Move PDF
@@ -358,7 +379,8 @@ if __name__ == "__main__":
     parser.add_argument("path", help="Path to the audited Markdown file in 00_Inbox/")
     parser.add_argument("--dry-run", action="store_true", help="Preview actions")
     parser.add_argument("--audit-policy", choices=["strict", "personal"], help="Audit policy override")
+    parser.add_argument("--replace-existing", action="store_true", help="Archive and replace an existing destination file")
     
     args = parser.parse_args()
-    success = promote(args.path, dry_run=args.dry_run, audit_policy=args.audit_policy)
+    success = promote(args.path, dry_run=args.dry_run, audit_policy=args.audit_policy, replace_existing=args.replace_existing)
     sys.exit(0 if success else 1)

@@ -39,9 +39,9 @@ audit:
    Execute `promote.py` via **Circuit Breaker** only after a `PASSED` audit.
    ```powershell
    # Preview first
-   python .kiro/circuit_breaker.py promote "00_Inbox/Converted_Sources/XXX/RAW_XXX.md" --dry-run
+python scripts/maintenance/circuit_breaker.py promote "00_Inbox/Converted_Sources/XXX/RAW_XXX.md" --dry-run
    # Execute
-   python .kiro/circuit_breaker.py promote "00_Inbox/Converted_Sources/XXX/RAW_XXX.md"
+python scripts/maintenance/circuit_breaker.py promote "00_Inbox/Converted_Sources/XXX/RAW_XXX.md"
    ```
    **Output**: The `.md` file moves to `raw_ingest/`, the original PDF is archived to `raw_sources/`, and the temporary folder is deleted.
 
@@ -49,9 +49,9 @@ audit:
 - **Step 1: Audit & Fix**
   `python scripts/maintenance/md_auditor.py "00_Inbox/Converted_Sources/RAW_file.md" --fix`
 - **Step 2: Promote (Dry Run)**
-  `python .kiro/circuit_breaker.py promote "00_Inbox/Converted_Sources/RAW_file.md" --dry-run`
+`python scripts/maintenance/circuit_breaker.py promote "00_Inbox/Converted_Sources/RAW_file.md" --dry-run`
 - **Step 3: Promote (Execute)**
-  `python .kiro/circuit_breaker.py promote "00_Inbox/Converted_Sources/RAW_file.md"`
+`python scripts/maintenance/circuit_breaker.py promote "00_Inbox/Converted_Sources/RAW_file.md"`
 
 ## Testing
 This skill is developed using **TDD**.

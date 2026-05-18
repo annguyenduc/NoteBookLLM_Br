@@ -1,6 +1,8 @@
 # 🗺️ WORKSPACE OVERVIEW — NoteBookLLM_Br
 > [!IMPORTANT]
-> **MANDATORY READ FOR ALL AGENTS**: Tài liệu này cùng với `AGENTS.md` và `GEMINI.md` là bộ ba "Source of Truth" tối cao. Mọi hành động Ingest/Atomize phải đối soát với sơ đồ tại Mục 2 và SOP tại Mục 3.
+> **ARCHITECTURE MAP**: Tài liệu này mô tả cấu trúc workspace và pipeline hiện hành.
+> File này không override `AGENTS.md` hoặc `.agent/rules/CORE.md`.
+> Chỉ đọc mặc định trong NORMAL/FULL profile.
 > **Cập nhật**: 2026-05-14 | Schema v7.1 (Promotion Routing & Template Sync)
 
 ---
@@ -11,15 +13,18 @@
 NoteBookLLM_Br/
 │
 ├── 📥 00_Inbox/                  ← QUARANTINE: Khu vực cách ly & xử lý thô.
+│   ├── 📁 sources/               ← SOURCE-SCOPED STAGING: Fresh/simple source packages + control artifacts.
 │   ├── 📁 Converted_Sources/     ← Output từ PDF Router (Markdown HD + Images).
+│   ├── 📁 preview/               ← PREVIEW_ONLY: Learning map không-canonical.
 │   ├── 📁 gap_candidates/        ← Local AI audit output (PENDING_REVIEW).
 │   ├── 📁 failed_queue/          ← Dead-Letter Queue (DLQ) — Chứa các chunk lỗi.
 │   └── 📁 (Deprecated)           --> Chuyển về 4-archive/inbox/
 │
-├── 📁 runs/                      ← TRANSIENT RUNTIME: Run packages cho ingest dài, có state/resume.
+├── 📁 runs/                      ← TRANSIENT RUNTIME: Run packages cho ingest dài, rerun, AI-first, có state/resume.
 │
 ├── 📁 1-projects/                ← ACTIVE PROJECTS: Drafts & Analysis.
-│   └── 📄 Analysis_[ID]_*.md     ← Scout analysis drafts (Thiết kế Atom).
+│   ├── 📄 Analysis_[ID]_*.md     ← Scout analysis drafts (Thiết kế Atom).
+│   └── 📄 NOTEBOOKLM_RECON_[ID].md ← Recon notes phụ trợ, không-canonical.
 │
 ├── 📁 2-areas/                   ← Vùng quản lý liên tục (Profiles, Assessment).
 │
@@ -58,7 +63,7 @@ NoteBookLLM_Br/
 ├── 📁 .kiro/                     ← Agent Kiro Infrastructure (Circuit Breaker & Logs).
 │
 ├── AGENTS.md                     ← BỘ LUẬT SWARM (BẮT BUỘC ĐỌC)
-├── GEMINI.md                     ← HIẾN PHÁP (R1-R21) — Tối cao
+├── GEMINI.md                     ← Reference mở rộng — chỉ đọc khi cần resolve conflict
 ├── task_plan.md                  ← Kế hoạch hiện tại (v6.0 — Phase 4 Hardening)
 └── WORKSPACE_OVERVIEW.md         ← File này
 ```
@@ -113,8 +118,8 @@ graph TD
     subgraph "PHASE 5: MAINTENANCE (Bảo trì hệ thống)"
         SYNTHESIZED --> REBUILD["wiki-rebuild\n(Sync Filesystem -> DB)"]
         REBUILD --> CLEAN["wiki-cleanup\n(Broken links)"]
-        
-        CB[".kiro/circuit_breaker.py\n(Retry & Error Logs)"] -.->|Oversight| PROMOTE_A
+
+        CB["scripts/maintenance/circuit_breaker.py\n(Retry & Error Logs)"] -.->|Oversight| PROMOTE_A
         CB -.->|Oversight| PROMOTE_B
     end
 ```
@@ -131,6 +136,101 @@ graph TD
 *   **Phase A Note**: `runs/` là runtime package trước audit. Nó có thể copy hoặc reference converter chunks, nhưng không phải canonical knowledge storage.
 *   **Kết quả**: Một ingest-reading artifact đã audit/promo ở `raw_ingest`, sau khi run package đạt `READY_FOR_AUDIT`.
 
+#### 3.1.1. 00_Inbox Artifact Classification
+Phân biệt rõ các loại file trong `00_Inbox` để tránh source competition drift:
+
+*   **Hợp lệ trong `00_Inbox`**:
+    *   source thô mới nhận vào (`.pdf`, `.html`, transcript, web scrape output)
+    *   source-scoped staging packages:
+        *   `00_Inbox/sources/[source_id]/`
+    *   preview artifacts:
+        *   `00_Inbox/preview/PREVIEW_[safe_stem]_YYYYMMDD.md`
+        *   `00_Inbox/preview/QUICK_INDEX_[safe_stem]_YYYYMMDD.md`
+    *   lifecycle control/report artifacts:
+        *   `00_Inbox/sources/[source_id]/SOURCE_PREP_REPORT_*.md`
+        *   `00_Inbox/sources/[source_id]/SOURCE_AUDIT_REPORT_*.md`
+        *   `00_Inbox/sources/[source_id]/INGEST_INPUT_LOCK_*.md`
+        *   `runs/ingest_[source_id]_[YYYYMMDD]_[seq]/SOURCE_PREP_REPORT_*.md`
+        *   `runs/ingest_[source_id]_[YYYYMMDD]_[seq]/SOURCE_AUDIT_REPORT_*.md`
+        *   `runs/ingest_[source_id]_[YYYYMMDD]_[seq]/INGEST_INPUT_LOCK_*.md`
+    *   staging artifacts trước promote:
+        *   `00_Inbox/Staging_Raw_Ingest/`
+        *   `00_Inbox/Staging_Atoms/`
+    *   converted intermediates:
+        *   `00_Inbox/Converted_Sources/`
+
+*   **Không phải canonical ingest fuel**:
+    *   file ở `00_Inbox` chỉ là source, staging, hoặc lifecycle control artifact
+    *   file trong `runs/` là runtime package, không phải canonical knowledge storage
+    *   `00_Inbox/preview/` là `PREVIEW_ONLY`, `NON_CANONICAL`
+    *   preview artifact không phải source evidence
+    *   preview artifact không phải `primary_ingest_file`
+    *   preview artifact không được mang `source_id`
+    *   preview artifact không thể satisfy official ingest gates
+    *   ingest-reading artifact canonical phải nằm ở `3-resources/raw_ingest/`
+
+*   **Bị coi là workflow noise**:
+    *   để phẳng `SOURCE_PREP_REPORT_*`, `SOURCE_AUDIT_REPORT_*`, `INGEST_INPUT_LOCK_*` trực tiếp trong `00_Inbox/` khi source đã có scope rõ
+    *   tạo thêm `RAW_*.md` mới trong `00_Inbox` khi đã có bản canonical tương ứng ở `3-resources/raw_ingest/`
+    *   để nhiều markdown cùng cạnh tranh vai trò `primary_ingest_file`
+    *   không phân biệt rõ file nào là source mới, file nào là staging artifact, file nào là lifecycle report
+
+Regression rule:
+
+*   nếu test bắt đầu từ canonical artifact đã promote, mặc định không tạo thêm ingest fuel mới trong `00_Inbox`
+*   nếu test bắt đầu từ `prepare-source` hoặc `audit-promote-source`, việc tạo report/control artifact trong `00_Inbox` là hợp lệ
+
+#### 3.1.1.a. Source-Scoped Control Artifact Policy
+
+*   `fresh/simple source`:
+    *   ưu tiên `00_Inbox/sources/[source_id]/`
+    *   có thể chứa source mới đang stage và các control artifacts của run ngắn
+
+*   `complex/AI-first/rerun/resumable source`:
+*   ưu tiên `runs/ingest_[source_id]_[YYYYMMDD]_[seq]/`
+*   có thể chứa `RUN_MANIFEST`, `state`, control artifacts, orchestration reports, generate reports, closeout reports
+*   chỉ chứa `NOTEBOOKLM_RECON_[SOURCE_ID].md` khi có yêu cầu rõ cho debug/runtime theo run
+
+*   `1-projects/sources/[source_id]/`:
+*   chỉ dành cho analysis artifacts
+*   là default cho `NOTEBOOKLM_RECON_[SOURCE_ID].md` như analysis phụ trợ
+    *   không phải nơi chứa `SOURCE_PREP_REPORT_*`, `SOURCE_AUDIT_REPORT_*`, `INGEST_INPUT_LOCK_*`
+
+*   `3-resources/raw_sources/`, `raw_ingest/`, `raw_assets/`:
+    *   giữ `flattened storage`
+    *   không tạo source folder con trong các vùng raw
+
+Operational rule:
+
+*   lifecycle control artifacts không satisfy official ingest gates chỉ vì nằm đúng thư mục
+*   gate chỉ được coi là pass khi lifecycle hiện tại resolve đúng artifact active cho source/run đó
+*   `NOTEBOOKLM_RECON_[SOURCE_ID].md` không phải ingest fuel, không phải source evidence, và không thay thế `SOURCE PREP REPORT`, `SOURCE AUDIT REPORT`, hoặc `INGEST INPUT LOCK`
+
+#### 3.1.2. Source Naming Contract
+Phân biệt rõ ba lớp tên để tránh agent tự đổi anchor:
+
+*   **`source_id`**:
+    *   là identity anchor duy nhất cho lifecycle artifacts và downstream control files
+    *   ví dụ: `ARCH_TIS`
+    *   khi đã có `NAMING_LOCK_*` hoặc `INGEST INPUT LOCK`, agent không được tự đổi sang anchor khác
+
+*   **`title slug` / display title**:
+    *   là tên người đọc nhìn thấy hoặc slug nội dung
+    *   ví dụ: `Thinking_in_Systems`
+    *   không được dùng để thay thế `source_id`
+
+*   **`raw filename stem`**:
+    *   là stem của file source hoặc raw ingest artifact
+    *   ví dụ: `ARCH_Thinking_in_Systems`
+    *   có thể khác `source_id`
+    *   không được tự suy ra rằng raw filename stem là naming anchor của lifecycle control artifacts
+
+Operational rule:
+
+*   nếu source đã có naming lock, mọi `SOURCE_PREP_REPORT_*`, `SOURCE_AUDIT_REPORT_*`, `INGEST_INPUT_LOCK_*`, `INGEST_ORCHESTRATION_REPORT_*` phải dùng `source_id` trong tên file
+*   agent không được rename lifecycle artifact từ `ARCH_TIS` sang `Thinking_in_Systems` chỉ vì PDF, chunk, hoặc raw filename dùng stem `ARCH_Thinking_in_Systems`
+*   nếu phát hiện `source_id`, `title slug`, và `raw filename stem` đang drift, phải báo `BLOCKED` thay vì tự chọn lại anchor
+
 ### 3.2. Luồng Knowledge Atomization (Bóc tách)
 *   **Mục tiêu**: Bóc tách tri thức từ "Nhiên liệu" thành các ghi chú nguyên tử.
 *   **Quy trình**: `raw_ingest` -> `@scout` (Thiết kế) -> `@engineer` (Viết nháp vào `00_Inbox`) -> `md_auditor.py` -> `promote.py` -> `wiki/`.
@@ -138,7 +238,7 @@ graph TD
 
 ### 3.3. Vai trò của promote.py (The Golden Gate)
 *   Tuyệt đối **CẤM** ghi trực tiếp vào `3-resources/`.
-*   Mọi hành động di chuyển file vào `raw_ingest/`, `raw_assets/` hay `wiki/` BẮT BUỘC phải gọi qua `python .kiro/circuit_breaker.py promote [path]`.
+*   Mọi hành động di chuyển file vào `raw_ingest/`, `raw_assets/` hay `wiki/` BẮT BUỘC phải gọi qua `python scripts/maintenance/circuit_breaker.py promote [path]`.
 *   Script này sẽ tự động phân loại dựa trên tiền tố file:
     - `CONCEPT_` -> `wiki/concepts/`
     - `ENTITY_` -> `wiki/entities/`
@@ -159,7 +259,7 @@ graph TD
 | **Governance** | `synthesis_guard.py`| **R8 Enforcement**: Chống Agent tự synthesize | `Proposed` → `Revert/Approve` | `scripts/maintenance/` |
 | **Maintenance** | `wiki-status` | **Dashboard**: Báo cáo sức khỏe | `/status` | `scripts/` |
 | **Ingest** | `ingest-lifecycle` + `wiki-ingest` | **Ingestion**: `ingest-lifecycle` là entrypoint chính thức cho `/ingest`; `wiki-ingest` là stage deterministic register-to-review-queue bên trong lifecycle | `/ingest` | `.agent/workflows/ingest-lifecycle.md` + `.agent/skills/wiki-ingest/scripts/` |
-| **Monitor** | `circuit_breaker.py`| **Circuit Breaker**: Giám sát lỗi | Process → `error_log.md` | `.kiro/` |
+| **Monitor** | `scripts/maintenance/circuit_breaker.py`| **Circuit Breaker**: Giám sát lỗi | Process → `.kiro/error_log.md` | `scripts/maintenance/` |
 | **Maintenance** | `wiki-rebuild` | **Rebuild**: Sync filesystem → DB | Vault → DB | `scripts/` |
 
 ---
@@ -172,7 +272,7 @@ python .agent/skills/wiki-hd-convert/scripts/hd_converter.py "00_Inbox/[FILE].pd
 
 # 2. Audit & Promote (Gate 1)
 python scripts/maintenance/md_auditor.py "00_Inbox/Converted_Sources/[SOURCE_NAME]/" --fix
-python .kiro/circuit_breaker.py promote "00_Inbox/Converted_Sources/[SOURCE_NAME]/[FILE].md"
+python scripts/maintenance/circuit_breaker.py promote "00_Inbox/Converted_Sources/[SOURCE_NAME]/[FILE].md"
 
 # 3. Đăng ký Ingest & Gap-Check
 # Official command flow: resolve stage via `.agent/workflows/ingest-lifecycle.md` first.

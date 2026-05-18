@@ -6,6 +6,8 @@ description: Audit và promote source artifact để tạo ingest-reading artifa
 
 Workflow này nhận `SOURCE PREP REPORT` và tạo artifact đọc chính cho ingest.
 
+Runtime boundary: audit read-only có thể chạy trước GO; promote hoặc tạo artifact mới là side effect và cần AN GO theo `AGENTS.md`.
+
 `audit-promote-source` không bắt đầu Phase 0 của ingest chính.
 
 ---

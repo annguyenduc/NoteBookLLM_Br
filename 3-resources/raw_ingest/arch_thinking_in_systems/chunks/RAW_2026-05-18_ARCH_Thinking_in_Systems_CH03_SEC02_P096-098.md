@@ -1,0 +1,70 @@
+---
+audit_stamp: true
+audit:
+  score: 1.00
+  date: "2026-05-18"
+  status: "PASSED"
+  auditor: "v1.0"
+  verify_scope: "chunk"
+  verify_result: "PASS"
+  verify_gaps: []
+  signature: "UNSIGNED"
+  verify_range: [96, 98]
+  verify_range_source: "frontmatter"
+  verify_manifest_range: [96, 98]
+---
+
+# HD SOURCE: ARCH_Thinking_in_Systems_CH03_SEC02_P096-098
+Source PDF: ARCH_Thinking_in_Systems.pdf
+Extracted Images: 1
+Structure Mode: chapter>section>page
+Chunk Unit ID: CH03_SEC02
+Part Title: PART TWO Systems and Us
+Chapter Title: Chapter Three Why Systems Work So Well
+Section Title: Self-Organization
+Chunk Range: Pages 96 to 98
+Manifest File: RAW_2026-05-18_ARCH_Thinking_in_Systems_MANIFEST.md
+---
+
+## Self-Organization
+
+[Evolution] appears to be not a series of accidents the course of which is determined only by the change of environments during earth  history  and  the  resulting  struggle  for  existence,  .  .  .  but  is governed by defi  nite laws. . . . The discovery of these laws constitutes one of the most important tasks of the future.
+
+-Ludwig von Bertalanffy, 3 biologist
+
+The most marvelous characteristic of some complex systems is their ability to learn, diversify, complexify, evolve. It is the ability of a single fertilized ovum to generate, out of itself, the incredible complexity of a mature frog, or chicken, or person. It is the ability of nature to have diversifi  ed millions of fantastic species out of a puddle of organic chemicals. It is the ability of a society to take the ideas of burning coal, making steam, pumping water, and specializing labor, and develop them eventually into an automobile assembly plant, a city of skyscrapers, a worldwide network of communications.
+
+This capacity of a system to make its own structure more complex is called self-organization . Y ou see self-organization in a small, mechanistic way whenever you see a snowfl  ake, or ice feathers on a poorly insulated window, or a supersaturated solution suddenly forming a garden of crystals. Y ou see self-organization in a more profound way whenever a seed sprouts,  or  a  baby  learns  to  speak,  or  a  neighborhood  decides  to  come together to oppose a toxic waste dump.
+
+Self-organization  is  such  a  common  property,  particularly  of  living systems, that we take it for granted. If we didn't, we would be dazzled by the unfolding systems of our world. And if we weren't nearly blind to the property of self-organization, we would do better at encouraging, rather than destroying, the self-organizing capacities of the systems of which we are a part.
+
+Like  resilience,  self-organization  is  often  sacrifi  ced  for  purposes  of short-term  productivity  and  stability.  Productivity  and  stability  are  the usual excuses for turning creative human beings into mechanical adjuncts to production processes. Or for narrowing the genetic variability of crop plants. Or for establishing bureaucracies and theories of knowledge that treat people as if they were only numbers.
+
+Self-organization produces heterogeneity and unpredictability. It is likely to come up with whole new structures, whole new ways of doing things. It requires freedom and experimentation, and a certain amount of disorder. These conditions that encourage self-organization often can be scary for  individuals  and  threatening  to  power  structures.  As  a  consequence, education systems may restrict the creative powers of children instead of stimulating those powers. Economic policies may lean toward supporting established, powerful enterprises rather than upstart, new ones. And many governments prefer their people not to be too self-organizing.
+
+Fortunately, self-organization is such a basic property of living systems that  even  the  most  overbearing  power  structure  can  never  fully  kill  it, although in the name of law and order, self-organization can be suppressed for long, barren, cruel, boring periods.
+
+Systems theorists used to think that self-organization was such a complex property of systems that it could never be understood. Computers were used to model mechanistic, 'deterministic' systems, not evolutionary ones, because it was suspected, without much thought, that evolutionary systems were simply not understandable.
+
+New  discoveries,  however,  suggest  that  just  a  few  simple  organizing principles can lead to wildly diverse self-organizing structures. Imagine a triangle with three equal sides. Add to the middle of each side another equilateral triangle, one-third the size of the fi  rst one. Add to each of the new sides another triangle, one-third smaller. And so on. The result is called a Koch snowfl  ake. (See Figure 46.) Its edge has tremendous length-but it can be contained within a circle. This structure is one simple example of fractal geometry-a realm of mathematics and art populated by elaborate shapes formed by relatively simple rules.
+
+Similarly,  the  delicate,  beautiful,  intricate  structure  of  a  stylized  fern can be generated by a computer with just a few simple fractal rules. The differentiation of a single cell into a human being probably proceeds by some similar set of geometric rules, basically simple, but generating utter complexity. (It is because of fractal geometry that the average human lung has enough surface area to cover a tennis court.)
+
+Figure 46. Even a delicate and intricate pattern, such as the Koch snowfl  ake shown here, can evolve from a simple set of organizing principles or decision rules.
+
+
+![[RAW_2026-05-18_ARCH_Thinking_in_Systems_CH03_SEC02_P096-098_fig_00.png]]
+
+
+Here are some other examples of simple organizing rules that have led to self-organizing systems of great complexity:
+
+-   All of life, from viruses to redwood trees, from amoebas to elephants, is based on the basic organizing rules encapsulated in the chemistry of DNA, RNA, and protein molecules.
+-   The agricultural revolution and all that followed started with the simple, shocking ideas that people could stay settled in one place, own land, select and cultivate crops.
+-   'God created the universe with the earth at its center, the land with the castle at its center, and humanity with the Church at its center'-the organizing principle for the elaborate social and physical structures of Europe in the Middle Ages.
+-   'God and morality are outmoded ideas; people should be objective and scientifi  c, should own and multiply the means of production, and should treat people and nature as instrumental inputs to production'-the organizing principles of the Industrial Revolution.
+
+Out  of  simple  rules  of  self-organization  can grow  enormous,  diversifying  crystals  of  technology,  physical  structures,  organizations,  and cultures.
+
+Science knows now that self-organizing systems  can  arise  from  simple  rules.  Science, itself a self-organizing system, likes to think that all the complexity of the world must arise, ultimately, from simple rules. Whether that actually happens is something that science does not yet know.
+
+Systems  often  have  the property of self-organization-the ability to structure themselves, to create new  structure,  to  learn, diversify, and complexify. Even complex forms of self-organization may arise from relatively simple organizing rules-or may not.

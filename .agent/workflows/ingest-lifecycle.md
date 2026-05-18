@@ -68,6 +68,15 @@ Nếu artifact của các stage trước đã tồn tại và hợp lệ, workfl
 
 Resume chỉ được dựa trên artifact contract, không dựa trên đoán trạng thái.
 
+### Runtime approval boundary
+
+Workflow này chỉ điều phối stage. Mọi write/state-changing action vẫn tuân thủ `AGENTS.md` và `CORE.md`.
+
+- Read-only precheck/dry-run/report trong chat: không cần GO.
+- Tạo/sửa/xóa/di chuyển file, promote, generate atom, rebuild index, append log: cần AN GO rõ.
+- `WAITING_FOR_REVIEW` là hard stop; không được nhảy sang `ingest-generate`.
+- `ingest-index-log` chỉ chạy khi GO ban đầu bao gồm closeout hoặc AN cấp GO riêng.
+
 ---
 
 ## 4. Stage Contracts
@@ -118,7 +127,11 @@ INGEST ORCHESTRATION REPORT:
   primary_ingest_file: "[path]"
   chunk_analysis_files:
     - "[path]"
-  status: "READY_FOR_GENERATE | BLOCKED"
+  status: "BLOCKED | WAITING_FOR_REVIEW | READY_FOR_GENERATE"
+  gate_reasons:
+    - "[reason]"
+  projected_end_to_end_outcome:
+    - "[what will be materialized if all gates pass]"
 ```
 
 ### Stage 5: ingest-generate
@@ -180,6 +193,12 @@ Nếu artifact có nhưng ở trạng thái fail/block:
 - phải giữ `BLOCKED`
 - phải nêu rõ stage đang giữ lỗi
 
+Nếu `INGEST ORCHESTRATION REPORT.status = WAITING_FOR_REVIEW`:
+
+- không được nhảy sang `ingest-generate`
+- phải giữ lifecycle ở stage `ingest`
+- phải mirror đúng trạng thái `WAITING_FOR_REVIEW`
+
 ---
 
 ## 7. Execution Modes
@@ -211,6 +230,32 @@ Workflow cha chỉ có hai mode:
 
 ---
 
+## Preview Artifact Isolation
+
+Preview artifacts are `NON_CANONICAL`.
+
+`ingest-lifecycle` must ignore all files under:
+- `00_Inbox/preview/`
+- `1-projects/learning_maps/`
+
+Preview artifacts cannot satisfy:
+- `SOURCE PREP REPORT`
+- `SOURCE AUDIT REPORT`
+- `INGEST INPUT LOCK`
+- `primary_ingest_file`
+- `source_id`
+- `STRUCTURE_[ID]`
+- `FIGURES_[ID]`
+- `MAP_[ID]`
+- `NAMING_LOCK_[ID]`
+- `Analysis_[ID]_CHUNK_XX`
+- `INGEST GENERATE REPORT`
+- `INGEST CLOSEOUT REPORT`
+
+Preview may inform AN's decision, but cannot pass any official ingest gate.
+
+---
+
 ## 9. Output Contract
 
 Workflow cha phải kết thúc bằng:
@@ -222,9 +267,25 @@ INGEST LIFECYCLE REPORT:
   next_stage: "[stage | DONE | BLOCKED]"
   mode: "guided | fast-path"
   lifecycle_status: "DONE | BLOCKED | WAITING_FOR_REVIEW | IN_PROGRESS"
+  stage_status: "BLOCKED | WAITING_FOR_REVIEW | READY_FOR_GENERATE | DONE"
+  gate_reasons:
+    - "[reason]"
+  downstream_plan:
+    - stage: "[next stage]"
+      action: "[what this stage will do]"
+      status_if_run_now: "BLOCKED | READY"
+      blockers:
+        - "[reason]"
+  projected_end_to_end_outcome:
+    - "[what the full chain will produce if all gates pass]"
   final_artifact: "[path | NONE]"
   fail_reason: "NONE | ..."
 ```
+
+Mirror rule:
+
+- nếu `current_stage = ingest` thì `stage_status` phải phản ánh đúng `INGEST ORCHESTRATION REPORT.status`
+- không được để lifecycle gợi ý rằng source gần generate nếu orchestration vẫn `WAITING_FOR_REVIEW`
 
 ---
 
@@ -271,4 +332,3 @@ Mục tiêu của pressure test là kiểm tra orchestration stability, không c
 - `.agent/workflows/ingest.md`
 - `.agent/workflows/ingest-generate.md`
 - `.agent/workflows/ingest-index-log.md`
-

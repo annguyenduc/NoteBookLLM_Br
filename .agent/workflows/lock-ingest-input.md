@@ -6,6 +6,8 @@ description: Khóa source_evidence_file, primary_ingest_file, và source_id trư
 
 Workflow này là cổng vào cuối cùng trước khi chạy `ingest.md`.
 
+Runtime boundary: kiểm tra nhất quán là read-only; ghi `INGEST INPUT LOCK` ra file là side effect và cần AN GO.
+
 Nó không tạo `STRUCTURE`, `FIGURES`, `MAP`, `NAMING_LOCK`, hoặc Atom.
 
 ---
@@ -16,6 +18,7 @@ Nó không tạo `STRUCTURE`, `FIGURES`, `MAP`, `NAMING_LOCK`, hoặc Atom.
   - `source_evidence_file`
   - `primary_ingest_file`
   - `source_id`
+- Chốt artifact control nào là active cho source/run hiện tại
 
 ---
 
@@ -44,7 +47,10 @@ SOURCE AUDIT REPORT:
    - `primary_ingest_file = promoted_artifact`
    - `source_id`
 5. Kiểm tra không có ingest-reading file cạnh tranh.
-6. Nếu mọi thứ nhất quán, khóa input cho ingest chính.
+6. Resolve artifact control path active cho run hiện tại:
+   - `00_Inbox/sources/[source_id]/`
+   - hoặc `runs/ingest_[source_id]_[YYYYMMDD]_[seq]/`
+7. Nếu mọi thứ nhất quán, khóa input cho ingest chính.
 
 ---
 
@@ -53,6 +59,10 @@ SOURCE AUDIT REPORT:
 - Một ingest run chỉ có đúng một `source_evidence_file`.
 - Một ingest run chỉ có đúng một `primary_ingest_file`.
 - `source_id` phải là anchor định danh duy nhất cho mọi artifact downstream.
+- `source_id` không được tự suy ra lại từ display title, title slug, hay raw filename stem nếu naming lock đã tồn tại.
+- Lifecycle control artifact filenames phải dùng `source_id` đã khóa, không dùng title slug thay thế.
+- `INGEST INPUT LOCK` không được đặt trong `1-projects/`.
+- Lifecycle control artifacts không satisfy official ingest gates chỉ vì nằm đúng thư mục; run hiện tại phải resolve chúng là active artifacts cho source/run đó.
 - Nếu ba trường này chưa khóa được, `ingest.md` phải `BLOCKED`.
 
 ---
@@ -64,6 +74,7 @@ INGEST INPUT LOCK:
   source_evidence_file: "[path]"
   primary_ingest_file: "[path]"
   source_id: "[ID]"
+  active_control_path: "00_Inbox/sources/[source_id] | runs/ingest_[source_id]_[YYYYMMDD]_[seq]"
   status: "READY | BLOCKED"
   fail_reason: "NONE | ..."
 ```
@@ -78,6 +89,7 @@ INGEST INPUT LOCK:
 - có đúng một `source_evidence_file`
 - có đúng một `primary_ingest_file`
 - `source_id` đã chốt
+- `active_control_path` đã chốt
 
 ---
 

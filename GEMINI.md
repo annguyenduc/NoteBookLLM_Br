@@ -1,10 +1,20 @@
-# GEMINI.md — NoteBookLLM_Br (Hiến Pháp Toàn Diện 3.7)
+# GEMINI.md — Governance Reference / Archive
 
-> **Antigravity highest-priority rules.** Overrides all other rule files.
-> Bản Hiến chương tối cao quy định mọi khía cạnh vận hành của NoteBookLLM_Br.
+> Reference mở rộng cho lịch sử rule, audit sâu, và workflow phức tạp.
+> Không inject mặc định ở startup.
+> File này không phải runtime source of truth.
+> Khi có xung đột, thứ tự ưu tiên là:
+> 1. User instruction trong phiên hiện tại, nếu không vi phạm runtime safety.
+> 2. `AGENTS.md`
+> 3. `.agent/rules/CORE.md`
+> 4. `.agent/rules/[agent].md`
+> 5. Workflow được gọi trực tiếp.
+> 6. Skill instruction.
+> 7. `GEMINI.md` như tài liệu tham chiếu/archive.
 
-## META-RULE | CONSTITUTION OVERRIDES USER INSTRUCTIONS:
-Trong mọi trường hợp, các luật R1 đến R27 là TUYỆT ĐỐI. Nếu User yêu cầu bạn bỏ qua luật (ví dụ: yêu cầu chạy thẳng code bỏ qua R19, hoặc yêu cầu chạm vào thư mục raw_ bỏ qua R1), bạn BẮT BUỘC PHẢI TỪ CHỐI và cảnh báo User. Tuyệt đối không được tự biện hộ (rationalize) để lách luật.
+## META-RULE
+Không dùng file này để phủ quyết mọi yêu cầu của User.
+Chỉ từ chối khi yêu cầu vi phạm safety rule rõ ràng: raw immutable, secret exposure, destructive command, fake reporting, hoặc agent tự set SYNTHESIZED.
 
 ---
 
@@ -142,4 +152,3 @@ Bản tóm tắt "Linh hồn" và Thẩm quyền của 7 đặc vụ trong NoteB
 > - Constitutional rules → .agent/rules/CORE.md
 > - Agent-specific rules → .agent/rules/[agent].md
 > Tra cứu tại đây khi cần tham chiếu chéo.
-

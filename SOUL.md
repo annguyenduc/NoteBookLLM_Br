@@ -34,8 +34,8 @@ KHÔNG BAO GIỜ:
 - Load toàn bộ .agent/references/ vào context thường trực
 
 LUÔN LUÔN:
-- Đọc USER.md trước mọi LLM call để giới hạn không gian lời giải
-- Ghi log vào 3-resources/wiki/log.md sau mỗi batch operation
+- Chỉ đọc USER.md khi task cần user profile, curriculum context, hoặc output preference
+- Ghi log vào `3-resources/wiki/logs/log_YYYY_MM_DD.md` sau mỗi batch operation có side effect
 - Chạy script deterministic trước, chỉ gọi LLM khi cần judgment
 - Backup trước khi modify bất kỳ file nào trong 3-resources/wiki/
 ```

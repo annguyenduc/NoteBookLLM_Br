@@ -7,6 +7,11 @@ description: Orchestration-only workflow cho source-first ingest sau khi upstrea
 Workflow này chỉ điều phối ingest chính sau khi đầu vào đã sẵn sàng.
 Đây là workflow con của `ingest-lifecycle`, không phải user-facing entrypoint cho fresh run.
 
+Runtime boundary:
+- `@scout` được phân tích và đề xuất analysis/candidates.
+- Nếu cần ghi/cập nhật artifact phân tích, phải có AN GO theo `AGENTS.md`.
+- Tạo atom thật thuộc `ingest-generate` và do `@engineer` thực hiện sau GO.
+
 Workflow cha tham chiếu:
 
 - `ingest-lifecycle`
@@ -42,6 +47,25 @@ Nó cũng không được ôm phần downstream:
   - `MAP_[ID].md`
   - `Analysis_[ID]_MASTER_STRATEGY.md`
   - `Analysis_[ID]_CHUNK_XX.md`
+
+---
+
+## 1.5. State Model Của Stage `ingest`
+
+Stage `ingest` chỉ được phép kết thúc ở một trong ba trạng thái sau:
+
+```yaml
+INGEST_STAGE_STATE:
+  status: "BLOCKED | WAITING_FOR_REVIEW | READY_FOR_GENERATE"
+```
+
+Ý nghĩa:
+
+- `BLOCKED`: còn blocker cứng, chưa được chuyển sang review hay generate
+- `WAITING_FOR_REVIEW`: orchestration đã xong, analysis đã có, nhưng user chưa duyệt batch hiện tại
+- `READY_FOR_GENERATE`: toàn bộ gate đã pass, có thể chuyển sang `ingest-generate`
+
+Không dùng diễn giải mơ hồ kiểu `đã chờ duyệt hoặc đã được duyệt`.
 
 ---
 
@@ -138,6 +162,49 @@ Workflow này không làm:
 
 ---
 
+## 6.5. Language Policy For Markdown Artifacts
+
+Mặc định, mọi artifact markdown sinh ra cho human review trong workflow này phải viết bằng tiếng Việt ở phần nội dung.
+
+Được phép giữ tiếng Anh hoặc canonical form cho:
+
+- metadata keys
+- status enums
+- `source_id`
+- filenames
+- code blocks
+- exact source titles
+- technical terms khi cần giữ nguyên nghĩa, ưu tiên ghi tiếng Việt trước rồi để tiếng Anh trong ngoặc
+
+Áp dụng cho:
+
+- `STRUCTURE_[ID].md`
+- `FIGURES_[ID].md`
+- `NAMING_LOCK_[ID].md`
+- `MAP_[ID].md`
+- `Analysis_[ID]_MASTER_STRATEGY.md`
+- `Analysis_[ID]_CHUNK_XX.md`
+- `INGEST ORCHESTRATION REPORT`
+
+Ví dụ heading nên dùng:
+
+- `Tóm tắt trạng thái`
+- `Ý chính`
+- `Atom đề xuất`
+- `Liên kết và điểm căng`
+- `Hình minh họa đã nhận diện`
+- `Dấu vết kiểm toán`
+
+Không nên mặc định dùng heading tiếng Anh kiểu:
+
+- `Key Takeaways`
+- `Proposed Atoms`
+- `Connections & Contradictions`
+- `Figures Identified`
+- `Audit Trace`
+
+---
+
 ## 7. Phase Flow
 
 ### Phase 0: Structure, Figures, Naming Lock, Map
@@ -150,6 +217,11 @@ Workflow này không làm:
    - hierarchy `Part -> Chapter -> Section -> page_range`
 2. Tạo hoặc cập nhật `FIGURES_[ID].md` khi visual evidence là quan trọng
    - mỗi item gắn với `chapter -> section -> page`
+   - phải phân biệt rõ:
+     - `PENDING_EXTRACTION`: chưa có asset thật
+     - `ASSETS_PRESENT_BUT_UNREGISTERED`: asset đã có nhưng figures artifact chưa đăng ký/map lại
+     - `READY`: figures artifact đã phản ánh đúng asset cần dùng
+     - `N/A`: batch hiện tại không cần visual evidence
 3. Tạo hoặc cập nhật `NAMING_LOCK_[ID].md`
    - chốt `source_id`
    - chốt canonical filename patterns
@@ -187,11 +259,12 @@ Workflow này không làm:
    - `NAMING_LOCK_[ID].md`
    - `primary_ingest_file`
 3. Chunk analysis phải nêu:
-   - key takeaways
-   - atoms proposed
-   - contradictions and tensions
-   - connections with existing wiki
-   - deep research queries nếu có
+   - ý chính
+   - atom đề xuất
+   - mâu thuẫn hoặc điểm căng
+   - liên kết với wiki hiện có
+   - truy vấn nghiên cứu sâu nếu có
+   - danh sách `raw_inputs` cụ thể nếu batch gom nhiều raw chunk
 4. Kết thúc phase này ở trạng thái chờ user duyệt analysis
 
 ---
@@ -205,15 +278,19 @@ INGEST ORCHESTRATION REPORT:
   source_id: "[ID]"
   source_evidence_file: "[path]"
   primary_ingest_file: "[path]"
-  structure_file: "1-projects/STRUCTURE_[ID].md | NONE"
-  figures_file: "1-projects/FIGURES_[ID].md | NONE"
-  naming_lock_file: "1-projects/NAMING_LOCK_[ID].md | NONE"
-  map_file: "1-projects/MAP_[ID].md | NONE"
-  master_strategy_file: "1-projects/Analysis_[ID]_MASTER_STRATEGY.md | NONE"
+  structure_file: "1-projects/sources/[source_id]/STRUCTURE_[ID].md | NONE"
+  figures_file: "1-projects/sources/[source_id]/FIGURES_[ID].md | NONE"
+  naming_lock_file: "1-projects/sources/[source_id]/NAMING_LOCK_[ID].md | NONE"
+  map_file: "1-projects/sources/[source_id]/MAP_[ID].md | NONE"
+  master_strategy_file: "1-projects/sources/[source_id]/Analysis_[ID]_MASTER_STRATEGY.md | NONE"
   chunk_analysis_files:
-    - "1-projects/Analysis_[ID]_CHUNK_XX.md"
-  next_workflow: "ingest-generate | BLOCKED"
-  status: "READY_FOR_GENERATE | BLOCKED"
+    - "1-projects/sources/[source_id]/Analysis_[ID]_CHUNK_XX.md"
+  next_workflow: "ingest-generate | WAITING_FOR_REVIEW | BLOCKED"
+  status: "BLOCKED | WAITING_FOR_REVIEW | READY_FOR_GENERATE"
+  gate_reasons:
+    - "[reason]"
+  projected_end_to_end_outcome:
+    - "[what will be materialized if all gates pass]"
 ```
 
 ---
@@ -230,7 +307,24 @@ INGEST ORCHESTRATION REPORT:
 - `NAMING_LOCK_[ID].md` đã sẵn sàng
 - `MAP_[ID].md` đã sẵn sàng
 - có ít nhất một `Analysis_[ID]_CHUNK_XX.md`
-- analysis tương ứng đã chờ duyệt hoặc đã được duyệt cho generate
+- mọi `Analysis_[ID]_CHUNK_XX.md` trong batch generate hiện tại đã được duyệt
+- `FIGURES_[ID].md` không còn `PENDING_EXTRACTION`
+- `FIGURES_[ID].md` không còn `ASSETS_PRESENT_BUT_UNREGISTERED`
+- không còn naming drift song song với `source_id` canonical
+
+---
+
+## 9.5. WAITING_FOR_REVIEW Criteria
+
+`WAITING_FOR_REVIEW` chỉ khi:
+
+- precheck là `READY`
+- `source_id` đã khóa
+- `primary_ingest_file` đã khóa
+- `STRUCTURE_[ID].md`, `MAP_[ID].md`, và `NAMING_LOCK_[ID].md` đã đủ để review
+- đã có ít nhất một `Analysis_[ID]_CHUNK_XX.md`
+- còn ít nhất một batch analysis chưa được user duyệt
+- không có blocker cứng ở upstream artifacts
 
 ---
 
@@ -242,6 +336,9 @@ INGEST ORCHESTRATION REPORT:
 - không xác định được `source_id`
 - không xác định được `primary_ingest_file`
 - `NAMING_LOCK_[ID].md` chưa chốt canonical filenames
+- `FIGURES_[ID].md` còn `PENDING_EXTRACTION` trong khi source cần visual evidence
+- `FIGURES_[ID].md` còn `ASSETS_PRESENT_BUT_UNREGISTERED`
+- chunk analysis thiếu `raw_inputs` khi batch gom nhiều raw chunk
 - agent đang cố vào chunk analysis theo page-first trước chapter/section-first
 
 ---
@@ -253,6 +350,12 @@ Khi orchestration đã hoàn tất:
 - nếu analysis đã sẵn sàng cho tạo atom thật -> chuyển sang `ingest-generate`
 - nếu analysis chưa được duyệt -> dừng và chờ user
 - `ingest-index-log` chỉ chạy sau khi `ingest-generate` hoàn tất
+
+Khi dừng ở stage `ingest`, report phải cho user thấy:
+
+- đang dừng ở gate nào
+- vì sao đang dừng
+- nếu pass hết gate thì `ingest-generate` sẽ materialize những loại atom nào
 
 ---
 

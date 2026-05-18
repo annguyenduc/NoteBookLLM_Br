@@ -1,0 +1,49 @@
+---
+audit_stamp: true
+audit:
+  score: 1.00
+  date: "2026-05-18"
+  status: "PASSED"
+  auditor: "v1.0"
+  verify_scope: "chunk"
+  verify_result: "PASS"
+  verify_gaps: []
+  signature: "UNSIGNED"
+  verify_range: [176, 177]
+  verify_range_source: "frontmatter"
+  verify_manifest_range: [176, 177]
+---
+
+# HD SOURCE: ARCH_Thinking_in_Systems_CH06_SEC09_P176-177
+Source PDF: ARCH_Thinking_in_Systems.pdf
+Extracted Images: 0
+Structure Mode: chapter>section>page
+Chunk Unit ID: CH06_SEC09
+Part Title: PART THREE Creating Change-in Systems and in Our Philosophy
+Chapter Title: Chapter Six Leverage Points-Places to Intervene in a System
+Section Title: 4. Self-Organization-The power to add, change, or evolve system structure
+Chunk Range: Pages 176 to 177
+Manifest File: RAW_2026-05-18_ARCH_Thinking_in_Systems_MANIFEST.md
+---
+
+to attract corporate investment. It's a recipe for unleashing 'success to the successful' loops, until they generate enormous accumulations of power and huge centralized planning systems that will destroy themselves.
+
+## 4. Self-Organization-The power to add, change, or evolve system structure
+
+The most stunning thing living systems and some social systems can do is to change themselves utterly by creating whole new structures and behaviors. In biological systems that power is called evolution. In human economies it's called technical advance or social revolution. In systems lingo it's called self-organization.
+
+Self-organization means changing any aspect of a system lower on this list-adding completely new physical structures, such as brains or wings or computers-adding new balancing or reinforcing loops, or new rules. The ability to self-organize is the strongest form of system resilience. A system that can evolve can survive almost any change, by changing itself. The human immune system has the power to develop new responses to some kinds of insults it has never before encountered. The human brain can take in new information and pop out completely new thoughts.
+
+The power of self-organization seems so wondrous that we tend to regard it as mysterious, miraculous, heaven sent. Economists often model technology as magic-coming from nowhere, costing nothing, increasing the productivity of an economy by some steady percent each year. For centuries people have regarded the spectacular variety of nature with the same awe. Only a divine creator could bring forth such a creation.
+
+Further investigation of self-organizing systems reveals that the divine creator, if  there  is  one,  does  not  have  to  produce  evolutionary  miracles. He, she, or it just has to write marvelously clever rules for self-organization . These rules basically govern how, where, and what the system can add onto or subtract from itself under what conditions. As hundreds of self-organizing computer models have demonstrated, complex and delightful patterns can evolve from quite simple sets of rules. The genetic code within the DNA that is the basis of all biological evolution contains just four different letters, combined into words of three letters each. That pattern, and the rules for replicating and rearranging it, has been constant for something like three billion years, during which it has spewed out an unimaginable variety of failed and successful self-evolved creatures.
+
+Self-organization  is  basically  a  matter  of  an  evolutionary  raw  material-a highly variable stock of information from which to select possible patterns-and a means for experimentation, for selecting and testing new  patterns.  For  biological  evolution,  the  raw  material  is  DNA,  one source of variety is spontaneous mutation, and the testing mechanism is a changing environment in which some individuals do not survive to reproduce. For technology, the raw material is the body of understanding science has accumulated and stored in libraries and in the brains of its practitioners. The source of variety is human creativity (whatever that is) and the selection mechanism can be whatever the market will reward, or whatever governments and foundations will fund, or whatever meets human needs.
+
+When you understand the power of system self-organization, you begin to understand why biologists worship biodiversity even more than economists worship technology. The wildly varied stock of DNA, evolved and accumulated over billions of years, is the source of evolutionary potential, just as science libraries and labs and universities where scientists are trained are the source of technological potential. Allowing species to go extinct is a systems crime, just as randomly eliminating all copies of particular science journals or particular kinds of scientists would be.
+
+The same could be said of human cultures, of course, which are the store of behavioral repertoires, accumulated over not billions, but hundreds of thousands of years. They are a stock out of which social evolution can arise. Unfortunately,  people  appreciate  the  precious  evolutionary  potential  of cultures even less than they understand the preciousness of every genetic variation in the world's ground squirrels. I guess that's because one aspect of almost every culture is the belief in the utter superiority of that culture.
+
+Insistence on a single culture shuts down learning and cuts back resilience. Any system, biological, economic, or social, that gets so encrusted that it cannot self-evolve, a system that systematically scorns experimentation and wipes out the raw material of innovation, is doomed over the long term on this highly variable planet.
+
+The  intervention  point  here  is  obvious,  but  unpopular.  Encouraging variability and experimentation and diversity means 'losing control.' Let a thousand fl  owers bloom and anything could happen! Who wants that?
