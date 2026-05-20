@@ -1,12 +1,7 @@
-# 1. Ignore EVERYTHING
+# 1. Ignore everything by default
 /*
 
-# 2. Whitelist Knowledge + Core Constitution
-!/00_Inbox/gap_candidates/
-!/1-projects/
-!/2-areas/
-!/3-resources/
-!/5-learning/
+# 2. Root files
 !/.gitignore
 !/README.md
 !/AGENTS.md
@@ -14,16 +9,46 @@
 !/USER.md
 !/GEMINI.md
 !/WORKSPACE_OVERVIEW.md
-!/.agent/
-!/scripts/
-!/runs/
 
-# 3. Re-ignore heavy/unwanted files inside whitelisted directories
-3-resources/wiki/wiki_brain.db
-3-resources/wiki/wiki_brain.db-journal
-3-resources/wiki/log.md
-runs/ingest_*/
-!runs/.gitkeep
-!runs/README.md
+# 3. Core vault directories
+!/00_Inbox/
+!/00_Inbox/gap_candidates/
+!/00_Inbox/gap_candidates/**
+
+!/1-projects/
+!/1-projects/**
+
+!/2-areas/
+!/2-areas/**
+
+!/3-resources/
+!/3-resources/**
+
+!/5-learning/
+!/5-learning/**
+
+# 4. Agent/runtime control files
+!/.agent/
+!/.agent/**
+
+!/scripts/
+!/scripts/**
+
+!/runs/
+!/runs/**
+
+# 5. Re-ignore heavy/runtime outputs
+/3-resources/wiki/wiki_brain.db
+/3-resources/wiki/wiki_brain.db-journal
+/3-resources/wiki/log.md
+
+/runs/ingest_*/
+/runs/tmp_*/
+/runs/cache_*/
+
+!/runs/.gitkeep
+!/runs/README.md
+
+# 6. Python/cache
 **/__pycache__/
 **/*.pyc
