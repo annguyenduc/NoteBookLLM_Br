@@ -66,12 +66,13 @@ Nhóm kỹ năng nền tảng chuẩn hóa quy trình kỹ thuật.
 - **`cm-quality-gate`**: Bước kiểm tra chất lượng bắt buộc trước khi kết thúc task hoặc xuất bản.
 - **`cm-tdd`**: Quy trình phát triển hướng kiểm thử (Test-Driven Development) và sửa lỗi tự động.
 - **`cm-terminal`**: Điều phối Terminal (PowerShell) linh hoạt với khả năng ghi log và tự phục hồi.
+- **`cm-planning`**: **[Phase 0 — Trước khi có spec]** Làm rõ ý định, đánh giá rủi ro và chốt tiêu chí hoàn thành khi task còn mơ hồ hoặc có hơn 3 bước. → Dùng TRƯỚC `writing-plans`.
 
 ## 9. 📝 Lập Kế Hoạch & Thực Thi (Planning & Execution)
 Nhóm kỹ năng quản trị vòng đời Task từ thiết kế đến báo cáo kết quả.
 - **`using-superpowers`**: Đọc hướng dẫn chọn và gọi đúng các skill ở đầu phiên.
 - **`brainstorming`**: Khám phá ý định, định hình giải pháp trước khi viết code.
-- **`writing-plans`**: Thiết kế kế hoạch triển khai đa bước chi tiết cho các chức năng mới.
+- **`writing-plans`**: **[Phase 1 — Sau khi đã có spec]** Viết plan chi tiết (file structure, task breakdown, test strategy) để engineer thực thi mà không cần hỏi thêm. → Dùng SAU `cm-planning`.
 - **`executing-plans`**: Thực thi tuần tự kế hoạch đã lập và checkpoint sau mỗi bước.
 - **`subagent-driven-development`**: Phân bổ tác vụ cho các Subagent chạy song song trong phiên hiện tại.
 - **`systematic-debugging`**: Hệ thống hóa phương pháp phân tích và khoanh vùng lỗi.

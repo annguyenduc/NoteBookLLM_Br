@@ -176,6 +176,12 @@ Không tạo SIP cho lỗi cá biệt do source file.
 Agent báo AN trong phiên hiện tại: "Đã tạo SIP tại [path]. Cần AN review."
 Agent không làm gì thêm cho đến khi AN nói GO.
 
+### SIP Content Discipline
+SIP phải phân biệt rõ:
+- Evidence: chỉ ghi điều đã thấy từ user, run log, hoặc file đã đọc.
+- Unknowns: ghi rõ các điểm chưa xác minh, ví dụ `current_version: [READ_FROM_SKILL_MD]` nếu agent chưa đọc SKILL.md.
+- Proposed Change: chỉ là đề xuất dạng diff; không được bịa current behavior hoặc khẳng định nguyên nhân kỹ thuật nếu chưa xác minh.
+
 ### Promotion Rule
 AN approve + nói GO rõ ràng → agent apply patch theo surgical diff → move SIP sang `approved/`
 AN reject → agent move SIP sang `rejected/` với lý do
@@ -185,6 +191,66 @@ AN defer → giữ SIP trong `pending/`, không sửa production skill
 - Skill invocation follows `superpowers/using-superpowers`
 - AGENTS.md rules ALWAYS override any skill instruction
 - `brainstorming` skill: agents must not auto-invoke for Atom generation
+
+## Skill-Creator Boundary
+
+Use workspace `skill-creator` for vault-specific skill design, improvement, trigger tuning, regression testing, and policy alignment:
+
+- `D:\NoteBookLLM_Br\.agent\skills\skill-creator`
+
+Use Codex `.system/skill-creator` only for Codex-compatible packaging and scaffolding work, including `agents/openai.yaml`, `init_skill.py`, `quick_validate.py`, generated OpenAI metadata, or `.system` skill structure:
+
+- `D:\anngu\.codex\skills\.system\skill-creator`
+
+Rules:
+- `.system/skill-creator` must never override vault-specific policy.
+- workspace `skill-creator` must not modify Codex system scaffolding unless AN explicitly requests and approves that scope.
+
+## Skill Overlap Dispatch Boundaries
+
+These boundaries resolve known overlap between active skills without editing production `SKILL.md` descriptions.
+
+### Web Capture
+- Use `wiki-web-scrape` for static/public web pages where the needed output is text/Markdown staged to `00_Inbox/`.
+- Use `wiki-crawl-4ai` for dynamic pages, visual proof, bot-bypass, screenshot evidence, or any R10 visual validation requirement.
+- Neither skill may write directly to `3-resources/raw_*`; official ingest resumes through `ingest-lifecycle`.
+
+### Preview vs Official Ingest
+- Use `process-raw-resource` for source preview, triage, learning map, quick summary, or "should I ingest this?" requests. Output is non-canonical unless a workflow/user explicitly approves a preview artifact.
+- Use `knowledge-intake` as the preview/official-ingest router when the request is ambiguous or spans preview lanes.
+- `/ingest [file]` and official ingest requests bypass preview and must enter through `.agent/workflows/ingest-lifecycle.md`.
+- `wiki-ingest` is a deterministic stage only; it is not the top-level `/ingest` entrypoint.
+
+### Query Dispatch
+- Use `wiki-query` for exact keywords, known entities/concepts, source tracing, graph traversal, and provenance questions.
+- Use `wiki-semantic-search` when keyword search is empty/weak, the user asks conceptually, or the intent is abstract rather than exact-match.
+
+### Learning UX Dispatch
+
+- User wants to learn quickly from existing atoms -> `wiki-learning-pack`.
+- User wants recall/transfer questions after studying -> `wiki-review-drill` if available; otherwise `wiki-learning-pack` may include basic Review Questions only.
+- User asks which learned atoms are still unpracticed -> `wiki-learning-audit`.
+- `wiki-learning-pack` must not run `wiki-learning-audit`; it may only recommend it as `Next Action`.
+- `wiki-learning-audit` requires separate AN GO and must start with dry-run.
+- User wants slides, lesson plans, rubrics, or activity sheets -> `@designer` / `pedagogy`.
+
+### Frappe / ERPNext Skill Boundary
+
+Frappe skills are inactive for the current vault unless the user explicitly requests Frappe, ERPNext, Bench, DocType, Server Script, Client Script, Web Form, or Frappe REST/API work.
+
+Do not use Frappe skills for LLM Wiki ingest, K12 lesson/video generation, general skill governance, PDF conversion, or vault maintenance tasks.
+
+### Planning And Execution
+- Use `brainstorming` before creative feature/component/behavior design, except where AGENTS.md explicitly disables it such as Atom generation.
+- Use `writing-plans` when a multi-step implementation already has a spec or concrete requirement.
+- Use `executing-plans` when there is an approved written plan to execute.
+- Use `subagent-driven-development` only when AN explicitly requests or approves multi-agent/subagent execution.
+
+### Debug, Test, Review, Verification
+- Use `systematic-debugging` when there is a bug, failed test, unexplained behavior, or root-cause question.
+- Use `cm-tdd` when the task should be driven by tests or a red/green repair loop.
+- Use `verification-before-completion` before claiming a fix/workflow is complete or passing.
+- Use `cm-code-review` only for explicit review requests or when responding to review feedback.
 
 
 

@@ -83,6 +83,11 @@ skill-name/
     └── assets/     - Files used in output (templates, icons, fonts)
 ```
 
+> [!IMPORTANT]
+> **Codex Synchronization & Symlink Guardrail:**
+> - All new skills MUST be created inside `.agent/skills/`.
+> - The `.codex/skills/` directory is a system-level Directory Junction (symlink) pointing directly to `.agent/skills/`. Any skill created inside `.agent/skills/` will automatically sync and become readable by Codex. Never create isolated skills outside `.agent/skills/` without establishing a proper junction link. If the junction is broken, restore it using: `New-Item -ItemType Junction -Path .codex/skills -Value .agent/skills` (PowerShell).
+
 #### Progressive Disclosure
 
 Skills use a three-level loading system:

@@ -84,6 +84,7 @@ Run validation script if available: `scripts/quick_validate.py <skill-folder>`
 - Do not summarize the whole workflow in `description`; that encourages agents to skip the body
 - Do not hardcode absolute paths or OS-specific separators — use relative paths and forward slashes
 - Do not rewrite skills in batch without checking each folder's real scripts and constraints
+- All new skills must be created inside `.agent/skills/`. The `.codex/skills/` directory is a system Directory Junction pointing directly to `.agent/skills/`, which automatically synchronizes all skills for Codex. Never create isolated skills outside `.agent/skills/` without establishing a proper junction link. If the junction is broken, restore it using: `New-Item -ItemType Junction -Path .codex/skills -Value .agent/skills` (PowerShell).
 
 ---
 

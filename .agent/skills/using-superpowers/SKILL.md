@@ -40,13 +40,26 @@ If AGENTS.md says "don't use TDD" and a skill says "always use TDD," follow the 
 Skills use Claude Code tool names. Platform equivalents:
 - **Codex** → see `references/codex-tools.md`
 - **Gemini CLI** → tool mapping loaded automatically via GEMINI.md  
-- **Antigravity** → follow AGENTS.md activation map; on-demand skills require explicit trigger
+- **Antigravity** → see `references/antigravity-tools.md`; on-demand skills require explicit trigger per AGENTS.md activation map
 
 # Using Skills
 
 ## The Rule
 
 **Invoke relevant or requested skills BEFORE any response or action.** Even a 1% chance a skill might apply means that you should invoke the skill to check. If an invoked skill turns out to be wrong for the situation, you don't need to use it.
+
+## MANDATORY ANNOUNCEMENT CHECKLIST
+
+Before writing any user-facing output or taking any action:
+
+1. Identify all skills that may apply to the task.
+2. Invoke/read each applicable skill before acting.
+3. Make the first visible line:
+   `🔧 Using [skill] to [purpose]`
+4. If multiple skills apply, announce all of them in the same first line or consecutive first lines.
+5. Only then proceed with the task.
+
+Hard rule: if an applicable skill was used but not announced before the task response/action, the response is invalid and must be restarted.
 
 ```dot
 digraph skill_flow {

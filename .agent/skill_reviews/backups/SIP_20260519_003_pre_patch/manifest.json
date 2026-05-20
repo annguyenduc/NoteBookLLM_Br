@@ -1,0 +1,86 @@
+{
+  "sip_id": "SIP_20260519_003",
+  "backup_dir": "D:\\NoteBookLLM_Br\\.agent\\skill_reviews\\backups\\SIP_20260519_003_pre_patch",
+  "items": [
+    {
+      "id": "cm-frappe-agent",
+      "path": "D:\\anngu\\.codex\\skills\\cm-frappe-agent\\SKILL.md",
+      "backup_path": "D:\\NoteBookLLM_Br\\.agent\\skill_reviews\\backups\\SIP_20260519_003_pre_patch\\cm-frappe-agent.SKILL.md",
+      "pre_sha256": "8b8d413d2071e272cf73c1d95f610501e352090948ac2742e04a626d953c0c92",
+      "post_sha256": "60d547675e9bec6a684d02544063201dda4c0d68bb3647cacd709ea1ae272612",
+      "frontmatter_sha256": "e85703e11bef4a2c46a4fc41721270d38d9c51a34fff7c02cc2fd4057650e02e",
+      "body_line_count": 42,
+      "changed": true
+    },
+    {
+      "id": "bench-commands",
+      "path": "D:\\anngu\\.codex\\skills\\cm-frappe-agent\\skills\\bench-commands\\SKILL.md",
+      "backup_path": "D:\\NoteBookLLM_Br\\.agent\\skill_reviews\\backups\\SIP_20260519_003_pre_patch\\bench-commands.SKILL.md",
+      "pre_sha256": "d9dcbd81354b7be8991201d56f65407934380d8c891b7e7083051b9959a46bdb",
+      "post_sha256": "79980a8170b1e5a0fd96f222b648fa2af1abb001d3ebd5011dc2330d73a0b2d4",
+      "frontmatter_sha256": "d5f5ead791ecbeddafb290a82a5deb37a992be8760152bde95df4db695cb0a30",
+      "body_line_count": 36,
+      "changed": true
+    },
+    {
+      "id": "client-scripts",
+      "path": "D:\\anngu\\.codex\\skills\\cm-frappe-agent\\skills\\client-scripts\\SKILL.md",
+      "backup_path": "D:\\NoteBookLLM_Br\\.agent\\skill_reviews\\backups\\SIP_20260519_003_pre_patch\\client-scripts.SKILL.md",
+      "pre_sha256": "fc2d4284674140847eca3dca7514c1400f0bcb8828672b7bc25d69eee8b5dc41",
+      "post_sha256": "0cfccd0c80af9437410161fc9ce9c693be35a97202ef281fe0e497c23cec3ed1",
+      "frontmatter_sha256": "12f19b0dd408bd78154ffd372a13e4d34390008f4d72a966dc08edb97489c228",
+      "body_line_count": 30,
+      "changed": true
+    },
+    {
+      "id": "doctype-patterns",
+      "path": "D:\\anngu\\.codex\\skills\\cm-frappe-agent\\skills\\doctype-patterns\\SKILL.md",
+      "backup_path": "D:\\NoteBookLLM_Br\\.agent\\skill_reviews\\backups\\SIP_20260519_003_pre_patch\\doctype-patterns.SKILL.md",
+      "pre_sha256": "9c2bae20705453380bdc32f4321a3f6dd7e4b946f00ac24644d60a4795256b2f",
+      "post_sha256": "70f3caecdd42a4cc2162e7dbd6fbc97cda075e695efd66e5fd80e2c7d71cc23f",
+      "frontmatter_sha256": "86d6355640a009fac3e3472fa51b9a5abcad561f9ab18331c29b1f7cc21a1d2e",
+      "body_line_count": 34,
+      "changed": true
+    },
+    {
+      "id": "frappe-api",
+      "path": "D:\\anngu\\.codex\\skills\\cm-frappe-agent\\skills\\frappe-api\\SKILL.md",
+      "backup_path": "D:\\NoteBookLLM_Br\\.agent\\skill_reviews\\backups\\SIP_20260519_003_pre_patch\\frappe-api.SKILL.md",
+      "pre_sha256": "f02bf270959ee8eca294434352bb21a27fa9ce1e02ea25b8034cd30643195810",
+      "post_sha256": "14a39b854a8a3a50ba04a8f0ba8b78364dcad848657175d6b9bbea1baa6e371f",
+      "frontmatter_sha256": "49a771926c50a7242686c0adbc94f4622de1f3b34dbd3952ab45d9779c995b84",
+      "body_line_count": 29,
+      "changed": true
+    },
+    {
+      "id": "remote-operations",
+      "path": "D:\\anngu\\.codex\\skills\\cm-frappe-agent\\skills\\remote-operations\\SKILL.md",
+      "backup_path": "D:\\NoteBookLLM_Br\\.agent\\skill_reviews\\backups\\SIP_20260519_003_pre_patch\\remote-operations.SKILL.md",
+      "pre_sha256": "96c4ca260b6896285ae782556bb80a70f90dc52f079cc476e121999d360e5528",
+      "post_sha256": "9e61734e6fc30faa52a8d4843a074eea7c43f8e04b69d7698b704d11aba64e40",
+      "frontmatter_sha256": "bb893fd6048f96ebdcb857947385f3341a4b6757c9bfb556baadb3ee965644c7",
+      "body_line_count": 30,
+      "changed": true
+    },
+    {
+      "id": "server-scripts",
+      "path": "D:\\anngu\\.codex\\skills\\cm-frappe-agent\\skills\\server-scripts\\SKILL.md",
+      "backup_path": "D:\\NoteBookLLM_Br\\.agent\\skill_reviews\\backups\\SIP_20260519_003_pre_patch\\server-scripts.SKILL.md",
+      "pre_sha256": "363c590750e6689f403afe967d156b695dd3e4b7e2e9962daa76d7389870334b",
+      "post_sha256": "4a1370cefc93a258e177ebf2010c991db2edbc0d69c565e2ae8a6a3bc87ca3ee",
+      "frontmatter_sha256": "5e6508057767e6846359d11abc3198f1580468aa59d67e2bf69a5c8b14e3e66e",
+      "body_line_count": 30,
+      "changed": true
+    },
+    {
+      "id": "web-forms",
+      "path": "D:\\anngu\\.codex\\skills\\cm-frappe-agent\\skills\\web-forms\\SKILL.md",
+      "backup_path": "D:\\NoteBookLLM_Br\\.agent\\skill_reviews\\backups\\SIP_20260519_003_pre_patch\\web-forms.SKILL.md",
+      "pre_sha256": "a72c4f74ab029c7a41b08da449c3251537bf4d14a04ce061e240fb4e2e2792ef",
+      "post_sha256": "2923f9b1d4329924b5e73ed92e89d4b3934c86571a8608f209239f9a3aa79e58",
+      "frontmatter_sha256": "3faa15264e52fb3bf14a2128be1dcc38edf6eb36a7454b6b8fd3fbc359a7a960",
+      "body_line_count": 30,
+      "changed": true
+    }
+  ]
+}

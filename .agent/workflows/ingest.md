@@ -207,9 +207,11 @@ Không nên mặc định dùng heading tiếng Anh kiểu:
 
 ## 7. Phase Flow
 
+> **GO Gate**: Mọi thao tác "tạo" hoặc "cập nhật" artifact trong các phase dưới đây chỉ được thực thi sau khi AN đã cấp GO rõ ràng cho phase đó. Precheck READY là điều kiện cần, không phải ủy quyền đủ.
+
 ### Phase 0: Structure, Figures, Naming Lock, Map
 
-Áp dụng cho ingest orchestration sau khi precheck đạt `READY`.
+Áp dụng cho ingest orchestration sau khi precheck đạt `READY` và AN đã GO.
 
 1. Tạo hoặc cập nhật `STRUCTURE_[ID].md`
    - chứa metadata nguồn

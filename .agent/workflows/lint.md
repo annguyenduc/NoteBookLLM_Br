@@ -11,7 +11,8 @@ Workflow `/lint` thực hiện health-check định kỳ theo Karpathy:
 
 ```yaml
 CHECKPOINT:
-  agent: "@pm"
+  orchestrator: "@pm"        # lập kế hoạch, khai báo CHECKPOINT, tổng hợp báo cáo cuối
+  auditor: "@auditor"        # thực hiện các health checks (Check 1–4)
   task: "Thực hiện Health Check (Lint) cho Wiki"
   prerequisites:
     - file: "3-resources/wiki/index.md"
@@ -61,7 +62,7 @@ Nếu lệnh `/cleanup` gặp lỗi, @auditor thực hiện thủ công:
 
 ## 📊 Báo cáo Lint (Output chuẩn)
 
-Sau khi hoàn thành, @pm tạo báo cáo theo format:
+Sau khi @auditor hoàn thành checks, @pm tổng hợp báo cáo theo format:
 
 ```markdown
 ## [YYYY-MM-DD] lint | @pm | Health Check Report
@@ -84,7 +85,7 @@ Append vào `3-resources/wiki/logs/log_YYYY_MM_DD.md` nếu User đã duyệt gh
 | Stale claims | < 10 trang | 10-30 trang | > 30 trang |
 | Concept gaps | < 5 links | 5-15 links | > 15 links |
 
-Khi **CRITICAL**: báo BLOCKER, đề xuất gọi `@healer`, và dừng để chờ AN GO. Không tự động sửa, rollback, move/delete, hoặc patch file.
+Khi **CRITICAL**: @pm báo BLOCKER, đề xuất gọi `@healer`, và dừng để chờ AN GO. Không tự động sửa, rollback, move/delete, hoặc patch file.
 
 ---
 

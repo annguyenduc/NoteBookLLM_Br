@@ -67,5 +67,32 @@ Nếu phát hiện vi phạm bất kỳ rule nào trong hệ thống:
 **DỪNG ngay lập tức** — không làm gì thêm — báo cáo vi phạm cho User.
 
 ---
-*CORE.md — 4 Constitutional Rules. Phiên bản 1.0 — 2026-05-12.*
+
+## TOOL BYPASS PROHIBITION
+If any write/edit/command tool returns permission denied, blocked, or not allowed:
+- Agent MUST STOP immediately.
+- Agent MUST NOT retry the same write using another tool.
+- Agent MUST report: blocked tool, target path, intended change.
+- Agent MUST ask AN for GO or policy clarification.
+
+Permission denial is a governance signal, not an optimization problem.
+
+Forbidden bypass patterns (examples):
+- `replace_file_content` denied → try `mcp_filesystem_edit_file`
+- command denied → try Python subprocess
+- write_file denied → try shell redirect
+- MCP edit denied → try IDE built-in edit
+
+## SYNTHESIS WRITE HARD GATE
+Any write, patch, replace, append, rename, move, or generated edit touching
+`3-resources/wiki/synthesis/`
+requires ALL of the following:
+1. Explicit AN GO for that exact file path.
+2. `synthesis_guard.py check` run and passed.
+3. No fallback to alternate write tools after any denial.
+
+If any write tool is denied for a `synthesis/` path: STOP. Do not attempt another tool.
+
+---
+*CORE.md — 6 Constitutional Rules. Phiên bản 1.1 — 2026-05-19.*
 *Diễn giải lịch sử 27 rules: [[GEMINI.md]] — reference/archive, không override runtime.*

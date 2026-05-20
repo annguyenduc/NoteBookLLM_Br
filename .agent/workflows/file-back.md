@@ -15,6 +15,7 @@ CHECKPOINT:
   agent: "@librarian"
   task: "Thăng cấp Insight/Query thành Wiki Atom chính thức"
   output_file: "3-resources/wiki/.../[Name].md"
+  write_policy: "DIRECT_WRITE — được ghi thẳng vào 3-resources/wiki/ sau AN GO. Không qua staging vì workflow này đã có Pre-flight Check + AN GO gate thay thế cho promote flow."
   prerequisites:
     - file: "3-resources/wiki/index.md"
       exists: "YES"
@@ -77,7 +78,7 @@ Thêm nội dung phân tích + [[Wikilinks]] đến các trang gốc đã tham k
 
 ```text
 # Lưu file đúng định dạng
-write_to_file("3-resources/wiki/concepts/CONCEPT_[PREFIX]_[Tên].md", content) 
+write_to_file("3-resources/wiki/concepts/CONCEPT_[PREFIX]_[Tên].md", content)
 # HOẶC "3-resources/wiki/synthesis/SYNTHESIS_[Tên].md"
 
 # Ghi nhật ký vào đúng file của ngày hôm nay (Phân mảnh Log)
@@ -85,7 +86,7 @@ Append("3-resources/wiki/logs/log_YYYY_MM_DD.md", "## [HH:MM] file-back | @libra
 ```
 
 ### Bước 4: Thông báo cho User (1 dòng)
-> 📁 **File-Back**: Đã lưu (DRAFT) → [`[Tên].md`](file:///d:/NoteBookLLM_Br/3-resources/wiki/concepts/[Tên].md). Đang chờ Human Review.
+> 📁 **File-Back**: Đã lưu (DRAFT) → `[Tên].md`. Đang chờ Human Review.
 
 ---
 

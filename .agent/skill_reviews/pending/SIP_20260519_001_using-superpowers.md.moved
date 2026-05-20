@@ -1,0 +1,76 @@
+# SKILL_IMPROVEMENT_PROPOSAL
+
+```yaml
+proposal_id: SIP_20260519_001
+skill_id: using-superpowers
+current_version: [READ_FROM_SKILL_MD — không có version field trong frontmatter]
+proposed_version: minor bump
+source_run_id: conversation/01d1150c-bb7b-4ef8-90b0-ae8edbb39fb0
+trigger: repeated_failure
+severity: medium
+approval_required: true
+```
+
+## Evidence
+
+Phiên 2026-05-19 (conversation 01d1150c):
+- Turn 1: Agent đọc `mcp-builder` SKILL.md nhưng **không announce** "Using mcp-builder to..."
+- Turn 2: Agent sửa `SKILLS_INDEX.md` nhưng **không announce** skill nào được dùng
+- User phải hỏi trực tiếp: *"bạn đang dùng các skill nào? vì sao không báo cáo cho tôi như đã đề cập"*
+- Agent thừa nhận lỗi tại chỗ — xác nhận đây là pattern lặp lại, không phải lỗi cá biệt
+
+Pattern tương tự đã xảy ra trong các phiên trước (chưa có log count chính xác — ghi `UNKNOWN` để trung thực).
+
+## Problem
+
+`using-superpowers` SKILL.md yêu cầu rõ tại dòng 59:
+```
+"Announce: 'Using [skill] to [purpose]'"
+```
+
+Và tại dòng 13:
+```
+IF A SKILL APPLIES TO YOUR TASK, YOU DO NOT HAVE A CHOICE. YOU MUST USE IT.
+```
+
+Gap hiện tại: Skill không có cơ chế **enforce announcement** đủ mạnh ở đầu response. Agent đọc skill, áp dụng logic bên trong, nhưng bỏ qua bước announce vì bước này không có **explicit checkpoint** bắt trước khi write bất kỳ output nào.
+
+Nguyên nhân suy đoán (chưa xác minh): Bước announce nằm trong flow diagram (dòng 59-61) nhưng không được nhấn mạnh thành **Hard Rule** hay **Checklist item** độc lập — dễ bị agent skip khi tập trung vào nội dung task.
+
+## Proposed Change (diff format)
+
+Đề xuất thêm một section **"MANDATORY ANNOUNCEMENT CHECKLIST"** ngay sau phần "The Rule" (dòng 47), trước flow diagram:
+
+```diff
+ ## The Rule
+ 
+ **Invoke relevant or requested skills BEFORE any response or action.**
++
++## ⛔ MANDATORY — Before writing ANY output
++
++Complete this checklist IN ORDER before the first word of your response:
++
++1. [ ] List all skills that might apply (even 1% chance)
++2. [ ] Invoke Skill tool for each candidate
++3. [ ] Write "🔧 Using `[skill]` to `[purpose]`" as the FIRST LINE of your response
++4. [ ] Only then proceed with the task
++
++**Hard rule**: If step 3 is missing from your response, the response is INVALID.
++Start over.
+```
+
+## Regression Case
+
+- Input: User nói "cập nhật file X cho đúng với hiện tại"
+- Expected: Agent response bắt đầu bằng `🔧 Using cm-core-edit-pro to...` trước khi làm bất cứ điều gì
+- Current (broken): Agent đọc file và sửa ngay, announce thiếu hoặc không có
+
+## Risk
+
+**medium** — Thay đổi chỉ thêm section mới, không xóa nội dung cũ. Rủi ro duy nhất là làm skill dài hơn, tăng token load nhẹ.
+
+## AN Decision
+
+- [ ] Approve + GO → agent apply patch theo surgical diff
+- [ ] Reject → lý do: ___
+- [ ] Defer → review lại sau: ___
