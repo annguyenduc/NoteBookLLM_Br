@@ -5,6 +5,20 @@
 
 ---
 
+## Worktree execution boundary
+
+For autonomous or large tasks, agents must follow:
+
+```text
+.agent/rules/worktree-agent.md
+```
+
+Agents must not modify `main` directly. Any task that edits files must run from a branch named `agent/*` inside `D:\_agent_worktrees\`.
+
+If the current branch is `main`, the agent must stop and report `WRONG_BRANCH_OR_WORKTREE`.
+
+---
+
 ## RUNTIME SOURCE OF TRUTH
 
 `AGENTS.md` là runtime source of truth cho agent trong repo này.
@@ -291,6 +305,15 @@ Automation may request additional MCP access, but must explain:
 2. why it is needed
 3. what action it will perform
 4. whether the action is read-only or write-capable
+
+### Tavily Cost-Control & Search Policy
+
+Để kiểm soát chi phí API credits của Tavily (Basic Search = 1 credit, Advanced Search = 2 credits, Basic Extract = 1 credit / 5 URL, Advanced Extract = 2 credits / 5 URL), Agent PHẢI tuân thủ các quy tắc sau:
+
+1. **Ưu tiên Tìm kiếm Nội bộ:** Chỉ sử dụng Tavily MCP khi tìm kiếm cục bộ (`wiki-query` hoặc `wiki-semantic-search`) không mang lại kết quả hoặc thông tin yêu cầu cần cập nhật thực tế từ Internet.
+2. **Cấu hình Mặc định (Basic Mode):** Khi gọi `tavily-search`, BẮT BUỘC đặt mặc định `search_depth: "basic"`. Chỉ chuyển sang `advanced` khi có chỉ định rõ ràng của AN.
+3. **Giới hạn Trích xuất (Extract Limitation):** Không tự ý chạy `tavily-extract` trên nhiều URL mà không có sự đồng ý của AN. Chỉ trích xuất từ các nguồn chất lượng cao, có độ tin cậy được xác định trước, và luôn giải thích lý do/chi phí dự kiến cho AN trước khi gọi.
+4. **Tránh Gọi Lặp:** Tận dụng tối đa kết quả tìm kiếm đã có trong phiên làm việc hiện tại, tránh gọi lại các câu truy vấn tương tự hoặc chồng chéo.
 
 ## MCP Switching Operations
 

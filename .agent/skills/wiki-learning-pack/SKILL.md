@@ -1,13 +1,29 @@
 ---
 name: wiki-learning-pack
 description: Use when the user wants to learn quickly from existing Wiki atoms, create a fast-start learning pack from a topic or source_id, turn indexed atoms into a 60-90 minute self-study path, or build a structured review path before drills or pedagogy. Do NOT use for ingest, atom creation, final synthesis, PDF conversion, slide decks, lesson plans, or vault maintenance.
+metadata:
+  triggers:
+    - "wiki-learning-pack"
+    - "học nhanh"
+    - "tự học"
+  od:
+    preview:
+      type: markdown
+    capabilities_required:
+      - chat_proposal
+    outputs:
+      optional_artifact: "5-learning/"
+  nbllm:
+    domain: learning
+    default_runtime: chat_only
+    requires_an_go_for_write: true
 ---
 
 # wiki-learning-pack
 
 ## Purpose
 
-Create a Learning Pack from existing indexed Wiki atoms so the user can learn a topic in 60-90 minutes without rereading the full source.
+Create a Learning Pack and Personalized Path from existing indexed Wiki atoms so the user can learn a topic in 60-90 minutes without rereading the full source.
 
 This skill is a Learning UX layer over existing atoms. It is read-heavy and write-light: read enough atom/source context to organize learning, then produce one chat proposal by default or one Learning Pack artifact only after explicit AN GO.
 
@@ -17,7 +33,7 @@ Use this skill when the user asks to:
 
 - Learn a topic quickly from the vault.
 - Create a Fast Start, learning path, study pack, or Learning Pack.
-- Turn a `source_id` such as `ARCH_TIS` into a structured self-study artifact.
+- Turn a `source_id` such as `ARCH_TIS` into a structured self-study artifact and personalized sequence path.
 - Organize existing atoms into concept order, practice tasks, review questions, and source trace.
 - Prepare a learning outline before `wiki-review-drill`, `pedagogy`, or `wiki-to-deliverable`.
 
@@ -29,7 +45,7 @@ Do not use this skill for:
 
 - Ingesting sources, converting PDFs, scraping web pages, or rebuilding the index.
 - Creating, modifying, promoting, or deleting atoms.
-- Patching `concepts/`, `entities/`, `sources/`, `comparisons/`, `queries/`, or `synthesis/`.
+- Patching `concepts/`, `entities/`, `sources/`, `comparisons/`, `queries/`, or `synthesis/` (except sync learning status via `learning_manager.py`).
 - Setting `SYNTHESIZED` or presenting the Learning Pack as final synthesis.
 - Creating giáo án, slide decks, activity sheets, or rubrics. Handoff to `@designer` / `pedagogy` for that.
 - Broad vault maintenance or skill governance work.
@@ -84,9 +100,10 @@ If metadata is included in a Learning Pack artifact, use `status: "DRAFT"` or `s
 4. Use `wiki-semantic-search` only when keyword search is weak or the user does not remember the exact term.
 5. Select a small must-know set before expanding related atoms.
 6. Build a 60-90 minute learning path: big picture, key concepts, comparisons, failure modes, practice, review.
-7. Add `Source Trace` to atom/source references; do not cite NotebookLM recon as source of truth.
-8. Put unresolved gaps in `Missing Context`; route gap discovery to `wiki-breakdown` if needed.
-9. Return a chat-only proposal unless AN explicitly approved writing the Learning Pack file.
+7. Call `python scripts/learning/learning_manager.py generate-path [SOURCE_ID] --goal "[GOAL]"` ngầm để sinh lộ trình cá nhân hóa tuần tự tại `5-learning/paths/LEARNING_PATH_[SOURCE_ID].md`.
+8. Add `Source Trace` to atom/source references; do not cite NotebookLM recon as source of truth.
+9. Put unresolved gaps in `Missing Context`; route gap discovery to `wiki-breakdown` if needed.
+10. Return a chat-only proposal unless AN explicitly approved writing the Learning Pack file.
 
 ## Write boundary
 
@@ -95,12 +112,12 @@ Default behavior is chat-only.
 With explicit AN GO for a Learning Pack file, write only under:
 
 ```text
-3-resources/wiki/learning_packs/
+5-learning/packs/
 ```
 
 Do not:
 
-- Patch concepts/entities/sources or any atom folder.
+- Patch concepts/entities/sources or any atom folder manually (always use `learning_manager.py` for updates).
 - Run ingest, promote, rebuild, scrape, or PDF conversion.
 - Create more than one Learning Pack artifact for one request unless AN explicitly asks.
 - Write to `synthesis/` or set `SYNTHESIZED`.
@@ -113,6 +130,7 @@ Do not:
 - Handoff to `wiki-learning-audit` when the user wants to mark learned-but-unpracticed knowledge.
 - Handoff to `@designer` / `pedagogy` only after the user wants lesson plans, slides, rubrics, or activity sheets.
 - Handoff to `wiki-review-drill` if/when that skill exists and the user wants recall/transfer practice after a Learning Pack.
+- Handoff to `learning_manager.py` to trigger SM-2 spacing engine and update dashboard dynamically.
 
 ## Learning audit boundary
 

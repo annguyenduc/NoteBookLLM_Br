@@ -1,6 +1,22 @@
 ---
 name: wiki-web-scrape
 description: Use when the user provides a URL (like Wikipedia, articles, web pages) to read, analyze, or create atoms. SUPERSEDES sub_browser. This tool safely extracts Markdown via Lightpanda and stages it to 00_Inbox/. Prohibited for direct writing to 3-resources/raw_*/.
+metadata:
+  triggers:
+    - "wiki-web-scrape"
+    - "cào"
+    - "scrape"
+  od:
+    preview:
+      type: markdown
+    capabilities_required:
+      - file_write
+    outputs:
+      primary: "00_Inbox/"
+  nbllm:
+    domain: ingest
+    default_runtime: chat_only
+    requires_an_go_for_write: true
 ---
 
 # Wiki Web Scrape (Resilient/Hybrid)

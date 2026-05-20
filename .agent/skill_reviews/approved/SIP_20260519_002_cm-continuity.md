@@ -7,9 +7,10 @@ skill_id: cm-continuity
 skill_path: .agent/skills/cm-continuity/SKILL.md
 trigger: user_correction
 created: 2026-05-19
-status: PENDING
+status: APPROVED_IMPLEMENTED
 author: "@engineer"
 session_id: 3c4dd92e-4446-4b3e-9b5e-57bfff18e6c4
+approval_required: true
 ```
 
 ## Evidence (Điều quan sát được từ user)
@@ -95,3 +96,14 @@ Tier 4 (qmd) và Tier 5 (CodeGraph) không tồn tại thực tế trong vault n
 - [ ] Tier 4 & 5 được note là "chưa triển khai".
 - [ ] SKILL.md không dài quá 80 dòng sau khi sửa.
 ```
+
+## AN Decision
+
+- [x] Approve + GO -> production skill exists at `.agent/skills/cm-continuity/SKILL.md`; SIP lifecycle closed.
+- [ ] Reject -> reason: ___
+- [ ] Defer -> review again after: ___
+
+## Implementation Note
+
+- Production skill had already been updated to `version: 3.6.0` with the proposed trigger boundaries.
+- This cleanup normalized frontmatter for repo-local `quick_validate.py` by moving `version` and `audit_id` under `metadata:`.

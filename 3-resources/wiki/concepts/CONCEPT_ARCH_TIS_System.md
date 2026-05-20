@@ -16,8 +16,10 @@ source_file: "RAW_2026-05-18_ARCH_Thinking_in_Systems_CH01_SEC01_P028-028.md"
 source_ref: "[[SOURCE_ARCH_TIS_Thinking_in_Systems]]"
 created: "2026-05-18"
 last_updated: "2026-05-18"
+learning_status: "LEARNED"
+next_review_date: "2026-05-26"
+last_reviewed: "2026-05-20 16:13:13"
 ---
-
 ## For future Claude (AI Preamble)
 > Một hệ thống là một tập hợp các yếu tố được kết nối với nhau một cách có tổ chức để đạt được một mục tiêu hoặc chức năng nhất định. Hệ thống không chỉ là tổng các phần tử cộng lại, mà là kết quả của sự tương tác giữa các phần tử đó (structure).
 

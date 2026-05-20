@@ -7,12 +7,20 @@ skill_id: wiki-learning-pack
 proposed_skill_path: .agent/skills/wiki-learning-pack/SKILL.md
 trigger: missing_step
 created: 2026-05-20
-status: PENDING
+status: APPROVED_IMPLEMENTED
 author: "@librarian"
-phase: SPEC
+phase: IMPLEMENTED
 approval_required: true
-production_edit_performed: false
+production_edit_performed: true
 ```
+
+## Implementation Result
+
+- AN approved with `go` after production state inspection.
+- Production skill exists at `.agent/skills/wiki-learning-pack/SKILL.md`.
+- `quick_validate.py` passed with `PYTHONUTF8=1`.
+- No Learning Pack artifact was created in this closeout.
+- No atom, ingest, rebuild, promote, or synthesis action was performed.
 
 ## Evidence
 
@@ -35,7 +43,7 @@ Unknowns:
 
 - Trạng thái atom/count hiện tại chưa được verify lại bằng DB trong lượt này.
 - Chưa kiểm tra folder `3-resources/wiki/learning_packs/` đã tồn tại chưa.
-- Chưa tạo production skill, chưa chạy `quick_validate.py`.
+- Lúc tạo SIP ban đầu chưa có production skill; closeout hiện tại đã tạo `.agent/skills/wiki-learning-pack/SKILL.md` và `quick_validate.py` đã PASS với `PYTHONUTF8=1`.
 
 ## Problem
 
@@ -234,6 +242,6 @@ Mitigation:
 
 ## AN Decision
 
-- [ ] Approve + GO -> agent creates `.agent/skills/wiki-learning-pack/SKILL.md` in a later implementation phase.
+- [x] Approve + GO -> production skill exists at `.agent/skills/wiki-learning-pack/SKILL.md`; SIP lifecycle closed.
 - [ ] Reject -> reason: ___
 - [ ] Defer -> review again after: ___

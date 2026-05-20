@@ -48,54 +48,54 @@ Mục tiêu 60-90 phút: không thuộc lòng toàn bộ concept, mà nắm đư
 # Concept Map
 
 ```text
-CONCEPT_ARCH_TIS_System
-├─ CONCEPT_ARCH_TIS_System_Structure
-│  ├─ CONCEPT_ARCH_TIS_Event_Behavior_Structure
-│  ├─ CONCEPT_ARCH_TIS_System_Boundaries
-│  └─ CONCEPT_ARCH_TIS_Hierarchy
-├─ CONCEPT_ARCH_TIS_Stock
-│  └─ CONCEPT_ARCH_TIS_Flow
-├─ CONCEPT_ARCH_TIS_Feedback_Loop
-│  ├─ CONCEPT_ARCH_TIS_Balancing_Feedback
-│  ├─ CONCEPT_ARCH_TIS_Reinforcing_Feedback
-│  ├─ CONCEPT_ARCH_TIS_Delay
-│  └─ CONCEPT_ARCH_TIS_Oscillation
-├─ CONCEPT_ARCH_TIS_System_Traps
-│  ├─ CONCEPT_ARCH_TIS_Tragedy_of_Commons
-│  └─ CONCEPT_ARCH_TIS_Escalation
-└─ CONCEPT_ARCH_TIS_Leverage_Points
-   ├─ CONCEPT_ARCH_TIS_Resilience
-   ├─ CONCEPT_ARCH_TIS_Self_Organization
-   └─ CONCEPT_ARCH_TIS_Systems_Wisdom
+[[CONCEPT_ARCH_TIS_System]]
+├─ [[CONCEPT_ARCH_TIS_System_Structure]]
+│  ├─ [[CONCEPT_ARCH_TIS_Event_Behavior_Structure]]
+│  ├─ [[CONCEPT_ARCH_TIS_System_Boundaries]]
+│  └─ [[CONCEPT_ARCH_TIS_Hierarchy]]
+├─ [[CONCEPT_ARCH_TIS_Stock]]
+│  └─ [[CONCEPT_ARCH_TIS_Flow]]
+├─ [[CONCEPT_ARCH_TIS_Feedback_Loop]]
+│  ├─ [[CONCEPT_ARCH_TIS_Balancing_Feedback]]
+│  ├─ [[CONCEPT_ARCH_TIS_Reinforcing_Feedback]]
+│  ├─ [[CONCEPT_ARCH_TIS_Delay]]
+│  └─ [[CONCEPT_ARCH_TIS_Oscillation]]
+├─ [[CONCEPT_ARCH_TIS_System_Traps]]
+│  ├─ [[CONCEPT_ARCH_TIS_Tragedy_of_Commons]]
+│  └─ [[CONCEPT_ARCH_TIS_Escalation]]
+└─ [[CONCEPT_ARCH_TIS_Leverage_Points]]
+   ├─ [[CONCEPT_ARCH_TIS_Resilience]]
+   ├─ [[CONCEPT_ARCH_TIS_Self_Organization]]
+   └─ [[CONCEPT_ARCH_TIS_Systems_Wisdom]]
 ```
 
 # Must-Know Atoms
 
 Học theo thứ tự này trong 60-90 phút:
 
-1. `SOURCE_ARCH_TIS_Thinking_in_Systems`
-2. `CONCEPT_ARCH_TIS_System`
-3. `CONCEPT_ARCH_TIS_System_Structure`
-4. `CONCEPT_ARCH_TIS_Event_Behavior_Structure`
-5. `CONCEPT_ARCH_TIS_Stock`
-6. `CONCEPT_ARCH_TIS_Flow`
-7. `CONCEPT_ARCH_TIS_Feedback_Loop`
-8. `CONCEPT_ARCH_TIS_Balancing_Feedback`
-9. `CONCEPT_ARCH_TIS_Reinforcing_Feedback`
-10. `CONCEPT_ARCH_TIS_Delay`
-11. `CONCEPT_ARCH_TIS_System_Boundaries`
-12. `CONCEPT_ARCH_TIS_System_Traps`
-13. `CONCEPT_ARCH_TIS_Leverage_Points`
-14. `CONCEPT_ARCH_TIS_Systems_Wisdom`
+1. [[SOURCE_ARCH_TIS_Thinking_in_Systems]]
+2. [[CONCEPT_ARCH_TIS_System]]
+3. [[CONCEPT_ARCH_TIS_System_Structure]]
+4. [[CONCEPT_ARCH_TIS_Event_Behavior_Structure]]
+5. [[CONCEPT_ARCH_TIS_Stock]]
+6. [[CONCEPT_ARCH_TIS_Flow]]
+7. [[CONCEPT_ARCH_TIS_Feedback_Loop]]
+8. [[CONCEPT_ARCH_TIS_Balancing_Feedback]]
+9. [[CONCEPT_ARCH_TIS_Reinforcing_Feedback]]
+10. [[CONCEPT_ARCH_TIS_Delay]]
+11. [[CONCEPT_ARCH_TIS_System_Boundaries]]
+12. [[CONCEPT_ARCH_TIS_System_Traps]]
+13. [[CONCEPT_ARCH_TIS_Leverage_Points]]
+14. [[CONCEPT_ARCH_TIS_Systems_Wisdom]]
 
 Optional extension nếu còn thời gian:
 
-- `CONCEPT_ARCH_TIS_Oscillation`
-- `CONCEPT_ARCH_TIS_Tragedy_of_Commons`
-- `CONCEPT_ARCH_TIS_Escalation`
-- `CONCEPT_ARCH_TIS_Resilience`
-- `CONCEPT_ARCH_TIS_Self_Organization`
-- `CONCEPT_ARCH_TIS_Hierarchy`
+- [[CONCEPT_ARCH_TIS_Oscillation]]
+- [[CONCEPT_ARCH_TIS_Tragedy_of_Commons]]
+- [[CONCEPT_ARCH_TIS_Escalation]]
+- [[CONCEPT_ARCH_TIS_Resilience]]
+- [[CONCEPT_ARCH_TIS_Self_Organization]]
+- [[CONCEPT_ARCH_TIS_Hierarchy]]
 
 # Comparison Table
 

@@ -1,6 +1,20 @@
 ---
 name: wiki-semantic-search
 description: "Use when wiki-query (keyword search) returns no results or irrelevant results, when the search intent is conceptual or abstract rather than exact-match, or when the user asks questions using meaning rather than specific terms."
+metadata:
+  triggers:
+    - "wiki-semantic-search"
+    - "ngữ nghĩa"
+    - "tương đương"
+  od:
+    preview:
+      type: markdown
+    capabilities_required:
+      - read_file
+  nbllm:
+    domain: query
+    default_runtime: chat_only
+    requires_an_go_for_write: false
 ---
 
 # Wiki Semantic Search

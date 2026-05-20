@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ css_href }}">
+  </head>
+  <body>
+    <div class="reader-shell">
+      <aside class="reader-toc" aria-label="Table of contents">
+        <div class="toc-header">
+          <span class="toc-kicker">Learning Pack</span>
+          <strong>{{ title }}</strong>
+        </div>
+        <nav>
+          {% for heading in headings %}
+          <a class="toc-link toc-level-{{ heading.level }}" href="#{{ heading.slug }}">{{ heading.text }}</a>
+          {% endfor %}
+        </nav>
+      </aside>
+
+      <main class="reader-main">
+        <header class="reader-title">
+          <p>Learning Pack</p>
+          <h1>{{ title }}</h1>
+          {% if metadata.source_id or metadata.learning_pack_status or metadata.status %}
+          <dl class="metadata-strip">
+            {% if metadata.source_id %}
+            <div>
+              <dt>source_id</dt>
+              <dd>{{ metadata.source_id }}</dd>
+            </div>
+            {% endif %}
+            {% if metadata.learning_pack_status %}
+            <div>
+              <dt>learning_pack_status</dt>
+              <dd>{{ metadata.learning_pack_status }}</dd>
+            </div>
+            {% endif %}
+            {% if metadata.status %}
+            <div>
+              <dt>status</dt>
+              <dd>{{ metadata.status }}</dd>
+            </div>
+            {% endif %}
+          </dl>
+          {% endif %}
+        </header>
+
+        <article class="reader-content">
+          {{ content_html | safe }}
+        </article>
+      </main>
+
+      <div class="reader-tools" aria-label="Reader controls">
+        <button type="button" class="icon-button" data-theme-toggle aria-label="Toggle theme" title="Toggle theme">
+          <span aria-hidden="true">T</span>
+        </button>
+      </div>
+    </div>
+
+    <script src="{{ js_src }}"></script>
+  </body>
+</html>

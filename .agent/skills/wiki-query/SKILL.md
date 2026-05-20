@@ -1,6 +1,20 @@
 ---
 name: wiki-query
 description: "Use when retrieving concept definitions, tracing source provenance, or discovering connections between Knowledge Atoms via keyword or graph traversal. Use wiki-semantic-search instead when keyword search returns poor results."
+metadata:
+  triggers:
+    - "wiki-query"
+    - "định nghĩa"
+    - "truy vấn nguồn"
+  od:
+    preview:
+      type: markdown
+    capabilities_required:
+      - read_file
+  nbllm:
+    domain: query
+    default_runtime: chat_only
+    requires_an_go_for_write: false
 ---
 
 # Wiki Query

@@ -18,8 +18,11 @@ source_file: "RAW_2026-05-18_ARCH_Thinking_in_Systems_CH01_SEC03_P034-041.md"
 source_ref: "[[SOURCE_ARCH_TIS_Thinking_in_Systems]]"
 created: "2026-05-18"
 last_updated: "2026-05-18"
+learning_status: "IN_PROGRESS"
+next_review_date: "2026-05-21"
+last_reviewed: "2026-05-20 15:33:59"
+needs_practice_verification: true
 ---
-
 ## For future Claude (AI Preamble)
 > Stock (Kho chứa/Trữ lượng) là các yếu tố có thể đo đếm được tại một thời điểm bất kỳ trong hệ thống. Nó đại diện cho bộ nhớ, trạng thái hiện tại và quán tính của hệ thống, thay đổi từ từ qua thời gian nhờ các Flow (Dòng chảy).
 

@@ -79,36 +79,23 @@ def new_confidence(current) -> float:
     return max(round(base - CONFIDENCE_PENALTY, 4), CONFIDENCE_FLOOR)
 
 
-def already_in_queue(cursor, file_id: str) -> bool:
+def already_in_queue(cursor, file_id: str, reason: str) -> bool:
     """Avoid double-inserting the same Atom."""
     cursor.execute(
         "SELECT 1 FROM review_queue WHERE item_id = ? AND reason = ?",
-        (file_id, QUEUE_REASON),
+        (file_id, reason),
     )
     return cursor.fetchone() is not None
 
 
-def matches_domain(file_id: str, metadata_json, domain: str | None) -> bool:
+def matches_domain(file_id: str, domain: str | None) -> bool:
     """
     Return True if no filter given.
-    Checks metadata JSON domain/tags field first, then falls back to file_id path.
+    Checks if domain slug is in file_id.
     """
     if not domain:
         return True
-    d = domain.lower()
-
-    if metadata_json:
-        try:
-            meta = json.loads(metadata_json)
-            tags = meta.get("domain", meta.get("tags", []))
-            if isinstance(tags, str):
-                tags = [tags]
-            if any(d in t.lower() for t in tags):
-                return True
-        except (json.JSONDecodeError, AttributeError):
-            pass
-
-    return d in file_id.lower()
+    return domain.lower() in file_id.lower()
 
 
 def update_frontmatter_flag(file_id: str) -> bool:
@@ -161,9 +148,10 @@ def run_audit(
     limit: int = DEFAULT_LIMIT,
     domain: str | None = None,
     since: str | None = None,
+    due_only: bool = False,
 ) -> list[dict]:
     """
-    Find eligible Atoms (learning_source=1, status != SYNTHESIZED)
+    Find eligible Atoms (learning_source=1 or due for spaced repetition, status != SYNTHESIZED)
     and (if not dry_run) flag them into review_queue.
     Returns list of affected Atom dicts for reporting.
     """
@@ -176,20 +164,36 @@ def run_audit(
     conn.row_factory = sqlite3.Row
     cursor = conn.cursor()
 
-    # Use DB column directly — no JSON parsing needed for primary filter
-    sql = """
-        SELECT file_id, title, status, confidence, metadata, last_modified
-        FROM atoms
-        WHERE learning_source = 1
-          AND status != ?
-        ORDER BY last_modified ASC
-    """
-    rows = cursor.execute(sql, (SKIP_STATUS,)).fetchall()
+    if due_only:
+        # Lọc các Atoms đã học nhưng đến hạn ôn tập (next_review <= ngày hiện tại)
+        today_str = datetime.now().strftime("%Y-%m-%d")
+        sql = """
+            SELECT file_id, title, status, confidence, last_modified
+            FROM atoms
+            WHERE (learning_status IN ('IN_PROGRESS', 'LEARNED') OR learning_status IS NOT NULL)
+              AND next_review IS NOT NULL
+              AND next_review <= ?
+              AND status != ?
+            ORDER BY next_review ASC
+        """
+        rows = cursor.execute(sql, (today_str, SKIP_STATUS)).fetchall()
+        queue_reason = "spaced_repetition_due"
+    else:
+        # Hành vi mặc định: quét atoms learning_source=1 chưa thực hành
+        sql = """
+            SELECT file_id, title, status, confidence, last_modified
+            FROM atoms
+            WHERE learning_source = 1
+              AND status != ?
+            ORDER BY last_modified ASC
+        """
+        rows = cursor.execute(sql, (SKIP_STATUS,)).fetchall()
+        queue_reason = QUEUE_REASON
 
     # Python-side filters: domain + since
     eligible = []
     for row in rows:
-        if not matches_domain(row["file_id"], row["metadata"], domain):
+        if not matches_domain(row["file_id"], domain):
             continue
         if since:
             modified = (row["last_modified"] or "")[:10]
@@ -206,7 +210,7 @@ def run_audit(
 
     # ── Dry run: report only ───────────────────────────────────────────────────
     if dry_run:
-        print(f"\n[DRY RUN] {len(eligible)} Atom(s) would be flagged:\n")
+        print(f"\n[DRY RUN] {len(eligible)} Atom(s) would be flagged ({queue_reason}):\n")
         print(f"  {'#':<4} {'title':<38} {'status':<12} {'conf':<8} {'last_modified'}")
         print("  " + "-" * 90)
         for i, a in enumerate(eligible, 1):
@@ -234,12 +238,12 @@ def run_audit(
         )
 
         # 2. Push to review_queue (idempotent)
-        if already_in_queue(cursor, fid):
+        if already_in_queue(cursor, fid, queue_reason):
             skipped_queue += 1
         else:
             cursor.execute(
                 "INSERT INTO review_queue (item_id, reason) VALUES (?, ?)",
-                (fid, QUEUE_REASON),
+                (fid, queue_reason),
             )
 
         # 3. Patch frontmatter on disk (best-effort, non-blocking)
@@ -249,10 +253,10 @@ def run_audit(
         conf_str = f"{float(conf):.2f}" if conf is not None else "n/a"
         log_wiki(
             cursor, "FLAG", fid,
-            f"learning_unverified | conf {conf_str} → {new_conf:.2f} | md_patched={patched}",
+            f"{queue_reason} | conf {conf_str} → {new_conf:.2f} | md_patched={patched}",
         )
 
-        flagged.append({**atom, "new_confidence": new_conf, "frontmatter_patched": patched})
+        flagged.append({**atom, "new_confidence": new_conf, "frontmatter_patched": patched, "queue_reason": queue_reason})
         print(f"  [FLAGGED] {title} | conf {conf_str} → {new_conf:.2f} | md={'✓' if patched else '✗'}")
 
     conn.commit()
@@ -282,13 +286,14 @@ def print_report(flagged: list[dict]):
         default=None,
     )
 
+    queue_tag = flagged[0].get("queue_reason", QUEUE_REASON) if flagged else QUEUE_REASON
     print(f"\n{'='*62}")
     print(f"  AUDIT COMPLETE — {len(flagged)} Atom(s) pushed to review queue")
     print(f"{'='*62}")
     print(f"  Domains  : {', '.join(f'{k}({v})' for k, v in domains.items())}")
     if oldest:
         print(f"  Oldest   : {oldest['title']} ({(oldest['last_modified'] or '')[:10]})")
-    print(f"  Queue tag: {QUEUE_REASON}")
+    print(f"  Queue tag: {queue_tag}")
     print(f"  Next step: weekly review → verify through practice → SYNTHESIZED")
     print(f"{'='*62}\n")
 
@@ -326,6 +331,8 @@ def parse_args():
                    help="Filter by domain (path substring or metadata tag)")
     p.add_argument("--since", type=str, default=None,
                    help="Only flag Atoms with last_modified >= YYYY-MM-DD")
+    p.add_argument("--due", action="store_true", default=False,
+                   help="Only scan Atoms that are due for spaced repetition review")
     p.add_argument("--show-patch", action="store_true", default=False,
                    help="Print ingest.py patch instructions and exit")
     return p.parse_args()
@@ -339,9 +346,10 @@ if __name__ == "__main__":
         sys.exit(0)
 
     mode = "DRY RUN" if args.dry_run else "LIVE"
-    print(f"\n[wiki-learning-audit v1.2] Mode={mode} | limit={args.limit}"
+    print(f"\n[wiki-learning-audit v1.3] Mode={mode} | limit={args.limit}"
           + (f" | domain={args.domain}" if args.domain else "")
           + (f" | since={args.since}" if args.since else "")
+          + (f" | due_only={args.due}" if args.due else "")
           + "\n")
 
     flagged = run_audit(
@@ -349,6 +357,7 @@ if __name__ == "__main__":
         limit=args.limit,
         domain=args.domain,
         since=args.since,
+        due_only=args.due,
     )
 
     if not args.dry_run:

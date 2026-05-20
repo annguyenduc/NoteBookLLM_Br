@@ -1,6 +1,22 @@
 ---
 name: wiki-cleanup
 description: "Use when broken links, stale content (not updated in 30+ days), or structural inconsistencies are detected in Wiki Atoms. Also triggers on /cleanup command or after a large ingest batch."
+metadata:
+  triggers:
+    - "wiki-cleanup"
+    - "dọn dẹp"
+    - "sửa link"
+    - "stale"
+  od:
+    preview:
+      type: markdown
+    capabilities_required:
+      - file_write
+      - surgical_edit
+  nbllm:
+    domain: maintenance
+    default_runtime: chat_only
+    requires_an_go_for_write: true
 ---
 
 # Wiki Cleanup (Auditor/Linter)

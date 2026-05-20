@@ -15,11 +15,11 @@ skill_paths:
   - D:/anngu/.codex/skills/cm-frappe-agent/skills/web-forms/SKILL.md
 trigger: missing_step
 created: 2026-05-19
-status: PENDING
+status: APPROVED_IMPLEMENTED
 author: "@pm"
-phase: Phase 3A
+phase: Phase 3B closed
 approval_required: true
-production_edit_performed: false
+production_edit_performed: true
 ```
 
 ## Scope Lock
@@ -355,6 +355,12 @@ AN GO - Phase 3B apply SIP_20260519_003 only; enrich 8 Frappe SKILL.md bodies; p
 
 ## AN Decision
 
-- [ ] Approve + GO -> agent applies surgical body-only patches in Phase 3B.
+- [x] Approve + GO -> agent applied surgical body-only patches in Phase 3B.
 - [ ] Reject -> reason: ___
 - [ ] Defer -> review again after: ___
+
+## Implementation Note
+
+- Production enrichment was already present in `D:/anngu/.codex/skills/cm-frappe-agent/` and its 7 child skills.
+- Backup, manifest, and diff summary exist under `.agent/skill_reviews/backups/SIP_20260519_003_pre_patch/`.
+- This cleanup pass normalized top-level `version` into `metadata.version` in the 8 Frappe skill frontmatters so repo-local `quick_validate.py` can pass.
