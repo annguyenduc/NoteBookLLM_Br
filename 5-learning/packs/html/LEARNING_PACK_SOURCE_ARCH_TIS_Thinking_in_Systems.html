@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <title>LEARNING_PACK_ARCH_TIS_Fast_Start</title>
+    <link rel="stylesheet" href="assets/learning-pack.css">
+  </head>
+  <body>
+    <div class="reader-shell">
+      <aside class="reader-toc" aria-label="Table of contents">
+        <div class="toc-header">
+          <span class="toc-kicker">Learning Pack</span>
+          <strong>LEARNING_PACK_ARCH_TIS_Fast_Start</strong>
+        </div>
+        <nav>
+          
+          <a class="toc-link toc-level-1" href="#big-picture">Big Picture</a>
+          
+          <a class="toc-link toc-level-1" href="#key-concepts">Key Concepts</a>
+          
+          <a class="toc-link toc-level-1" href="#concept-map">Concept Map</a>
+          
+          <a class="toc-link toc-level-1" href="#must-know-atoms">Must-Know Atoms</a>
+          
+          <a class="toc-link toc-level-1" href="#comparison-table">Comparison Table</a>
+          
+          <a class="toc-link toc-level-1" href="#failure-modes">Failure Modes</a>
+          
+          <a class="toc-link toc-level-1" href="#practice-task">Practice Task</a>
+          
+          <a class="toc-link toc-level-1" href="#review-questions">Review Questions</a>
+          
+          <a class="toc-link toc-level-1" href="#related-projects">Related Projects</a>
+          
+          <a class="toc-link toc-level-1" href="#source-trace">Source Trace</a>
+          
+          <a class="toc-link toc-level-1" href="#missing-context">Missing Context</a>
+          
+          <a class="toc-link toc-level-1" href="#next-action">Next Action</a>
+          
+        </nav>
+      </aside>
+
+      <main class="reader-main">
+        <header class="reader-title">
+          <p>Learning Pack</p>
+          <h1>LEARNING_PACK_ARCH_TIS_Fast_Start</h1>
+          
+          <dl class="metadata-strip">
+            
+            <div>
+              <dt>source_id</dt>
+              <dd>ARCH_TIS</dd>
+            </div>
+            
+            
+            <div>
+              <dt>learning_pack_status</dt>
+              <dd>EXPLORATORY</dd>
+            </div>
+            
+            
+            <div>
+              <dt>status</dt>
+              <dd>LEARNING_DRAFT</dd>
+            </div>
+            
+          </dl>
+          
+        </header>
+
+        <article class="reader-content">
+          <section id="big-picture" class="reader-section section-big-picture"><h1><a class="heading-anchor" href="#big-picture">#</a>Big Picture</h1>
+<p><strong>EXPLORATORY Learning Pack</strong> vì các atom <code>ARCH_TIS</code> hiện đọc được đều đang <code>status: &quot;DRAFT&quot;</code>. Các claim dưới đây dùng atom có <code>source_ref</code> / <code>source_file</code>, nhưng chưa trình bày như synthesis đã chốt.</p>
+<p><code>Thinking in Systems</code> nên học theo một đường chính:</p>
+<pre><code class="language-text">System
+-&gt; Structure creates behavior
+-&gt; Stocks/Flows create state change
+-&gt; Feedback loops create dynamics
+-&gt; Delays create oscillation/overshoot
+-&gt; Boundaries decide what you can see
+-&gt; Traps reveal repeated failure patterns
+-&gt; Leverage points show where to intervene
+-&gt; Systems wisdom is the operating mindset</code></pre>
+<p>Mục tiêu 60-90 phút: không thuộc lòng toàn bộ concept, mà nắm được cách nhìn hệ thống để áp dụng vào một vấn đề thật.</p>
+</section>
+<section id="key-concepts" class="reader-section section-key-concepts"><h1><a class="heading-anchor" href="#key-concepts">#</a>Key Concepts</h1>
+<ol><li><strong>System</strong>: một tập hợp phần tử kết nối với nhau để tạo ra mục đích hoặc hành vi chung.</li><li><strong>System Structure</strong>: cấu trúc quan hệ, luồng, stock, feedback và rule là nguyên nhân sâu hơn của hành vi.</li><li><strong>Event / Behavior / Structure</strong>: sự kiện là bề mặt; pattern hành vi và cấu trúc mới là tầng cần phân tích.</li><li><strong>Stock</strong>: trạng thái tích lũy của hệ thống tại một thời điểm.</li><li><strong>Flow</strong>: dòng vào / dòng ra làm stock tăng hoặc giảm theo thời gian.</li><li><strong>Feedback Loop</strong>: vòng phản hồi khiến hành động hôm nay quay lại ảnh hưởng trạng thái tương lai.</li><li><strong>Balancing Feedback</strong>: vòng phản hồi kéo hệ về mục tiêu hoặc trạng thái cân bằng.</li><li><strong>Reinforcing Feedback</strong>: vòng phản hồi khuếch đại tăng trưởng hoặc suy giảm.</li><li><strong>Delay</strong>: độ trễ giữa hành động và kết quả, thường gây dao động hoặc overcorrection.</li><li><strong>System Boundaries</strong>: ranh giới quyết định cái gì được tính vào phân tích và cái gì bị bỏ ngoài.</li><li><strong>System Traps</strong>: mẫu lỗi lặp lại do cấu trúc hệ thống, không chỉ do con người ra quyết định kém.</li><li><strong>Leverage Points</strong>: điểm can thiệp có sức đổi hệ thống, từ tham số nông đến mục tiêu và mindset sâu.</li><li><strong>Resilience / Self-Organization / Hierarchy</strong>: năng lực hệ thống hấp thụ biến động, tự tái cấu trúc, và tổ chức nhiều tầng.</li><li><strong>Systems Wisdom</strong>: thái độ vận hành khi làm việc với hệ thống phức tạp: khiêm tốn, quan sát feedback, thử nhỏ, và học từ hành vi thật.</li></ol>
+</section>
+<section id="concept-map" class="reader-section section-concept-map"><h1><a class="heading-anchor" href="#concept-map">#</a>Concept Map</h1>
+<pre><code class="language-text"><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_System.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_System</a>
+├─ <a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_System_Structure.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_System_Structure</a>
+│  ├─ <a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Event_Behavior_Structure.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_Event_Behavior_Structure</a>
+│  ├─ <a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_System_Boundaries.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_System_Boundaries</a>
+│  └─ <a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Hierarchy.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_Hierarchy</a>
+├─ <a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Stock.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_Stock</a>
+│  └─ <a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Flow.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_Flow</a>
+├─ <a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Feedback_Loop.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_Feedback_Loop</a>
+│  ├─ <a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Balancing_Feedback.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_Balancing_Feedback</a>
+│  ├─ <a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Reinforcing_Feedback.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_Reinforcing_Feedback</a>
+│  ├─ <a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Delay.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_Delay</a>
+│  └─ <a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Oscillation.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_Oscillation</a>
+├─ <a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_System_Traps.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_System_Traps</a>
+│  ├─ <a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Tragedy_of_Commons.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_Tragedy_of_Commons</a>
+│  └─ <a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Escalation.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_Escalation</a>
+└─ <a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Leverage_Points.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_Leverage_Points</a>
+   ├─ <a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Resilience.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_Resilience</a>
+   ├─ <a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Self_Organization.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_Self_Organization</a>
+   └─ <a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Systems_Wisdom.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_Systems_Wisdom</a></code></pre>
+</section>
+<section id="must-know-atoms" class="reader-section section-must-know-atoms"><h1><a class="heading-anchor" href="#must-know-atoms">#</a>Must-Know Atoms</h1>
+<p>Học theo thứ tự này trong 60-90 phút:</p>
+<ol><li><label class="progress-item"><input type="checkbox" data-progress-key="b2da59cd3f6a"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/sources/SOURCE_ARCH_TIS_Thinking_in_Systems.md" class="obsidian-link" title="Mở trong Obsidian"><code>SOURCE_ARCH_TIS_Thinking_in_Systems</code></a></span></label></li><li><label class="progress-item"><input type="checkbox" data-progress-key="7bd46d876743"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_System.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_System</code></a></span></label></li><li><label class="progress-item"><input type="checkbox" data-progress-key="88c0b3c0378f"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_System_Structure.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_System_Structure</code></a></span></label></li><li><label class="progress-item"><input type="checkbox" data-progress-key="5cfaeadbb7f6"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Event_Behavior_Structure.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_Event_Behavior_Structure</code></a></span></label></li><li><label class="progress-item"><input type="checkbox" data-progress-key="38e430813b73"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Stock.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_Stock</code></a></span></label></li><li><label class="progress-item"><input type="checkbox" data-progress-key="cf37245febba"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Flow.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_Flow</code></a></span></label></li><li><label class="progress-item"><input type="checkbox" data-progress-key="f5be88bc9255"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Feedback_Loop.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_Feedback_Loop</code></a></span></label></li><li><label class="progress-item"><input type="checkbox" data-progress-key="871c38cf913d"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Balancing_Feedback.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_Balancing_Feedback</code></a></span></label></li><li><label class="progress-item"><input type="checkbox" data-progress-key="08f1a6946ca5"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Reinforcing_Feedback.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_Reinforcing_Feedback</code></a></span></label></li><li><label class="progress-item"><input type="checkbox" data-progress-key="6af0f2978f1f"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Delay.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_Delay</code></a></span></label></li><li><label class="progress-item"><input type="checkbox" data-progress-key="ca8c233115fc"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_System_Boundaries.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_System_Boundaries</code></a></span></label></li><li><label class="progress-item"><input type="checkbox" data-progress-key="7bd293a76c8b"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_System_Traps.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_System_Traps</code></a></span></label></li><li><label class="progress-item"><input type="checkbox" data-progress-key="ff19763d5562"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Leverage_Points.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_Leverage_Points</code></a></span></label></li><li><label class="progress-item"><input type="checkbox" data-progress-key="974576ddc910"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Systems_Wisdom.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_Systems_Wisdom</code></a></span></label></li></ol>
+<p>Optional extension nếu còn thời gian:</p>
+<ul><li><label class="progress-item"><input type="checkbox" data-progress-key="ed5d7cf6a6ca"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Oscillation.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_Oscillation</code></a></span></label></li><li><label class="progress-item"><input type="checkbox" data-progress-key="08c52cda8fa0"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Tragedy_of_Commons.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_Tragedy_of_Commons</code></a></span></label></li><li><label class="progress-item"><input type="checkbox" data-progress-key="5986dec81463"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Escalation.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_Escalation</code></a></span></label></li><li><label class="progress-item"><input type="checkbox" data-progress-key="f8ba524115e4"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Resilience.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_Resilience</code></a></span></label></li><li><label class="progress-item"><input type="checkbox" data-progress-key="ab4df2f7eda3"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Self_Organization.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_Self_Organization</code></a></span></label></li><li><label class="progress-item"><input type="checkbox" data-progress-key="995328aa9ad7"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Hierarchy.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_Hierarchy</code></a></span></label></li></ul>
+</section>
+<section id="comparison-table" class="reader-section section-comparison-table"><h1><a class="heading-anchor" href="#comparison-table">#</a>Comparison Table</h1>
+<div class="table-wrap"><table><thead><tr><th>Pair</th><th>Phân biệt nhanh</th><th>Câu hỏi kiểm tra</th></tr></thead><tbody><tr><td>Event vs Behavior vs Structure</td><td>Event là điều vừa xảy ra; behavior là pattern qua thời gian; structure là nguyên nhân tạo pattern.</td><td>Bạn đang sửa triệu chứng hay sửa cấu trúc?</td></tr><tr><td>Stock vs Flow</td><td>Stock là lượng tích lũy; flow là tốc độ vào / ra làm stock đổi.</td><td>Bạn đang đo trạng thái hay đo dòng thay đổi?</td></tr><tr><td>Balancing vs Reinforcing Feedback</td><td>Balancing ổn định / kéo về mục tiêu; reinforcing khuếch đại.</td><td>Feedback đang làm hệ tự ổn định hay tự tăng tốc?</td></tr><tr><td>Delay vs No Delay</td><td>Delay làm tác động đến muộn, dễ gây phản ứng quá tay.</td><td>Có khoảng trễ nào làm bạn hiểu sai kết quả không?</td></tr><tr><td>Boundary vs Whole System</td><td>Boundary quyết định scope phân tích; đổi boundary có thể đổi kết luận.</td><td>Ai / cái gì đang bị loại khỏi bản đồ hệ thống?</td></tr><tr><td>Trap vs Bad Decision</td><td>Trap là lỗi do cấu trúc lặp lại; bad decision là lỗi cục bộ.</td><td>Nếu thay người mà lỗi vẫn lặp lại, trap là gì?</td></tr><tr><td>Parameter vs Leverage Point sâu</td><td>Parameter thường dễ chỉnh nhưng ít đổi hệ; goal/mindset/rule sâu hơn.</td><td>Bạn đang chỉnh số hay đổi logic vận hành?</td></tr></tbody></table></div>
+</section>
+<section id="failure-modes" class="reader-section section-failure-modes"><h1><a class="heading-anchor" href="#failure-modes">#</a>Failure Modes</h1>
+<ol><li><strong>Chỉ nhìn event</strong>: thấy một lỗi đơn lẻ rồi sửa nhanh, nhưng bỏ qua pattern và cấu trúc.</li><li><strong>Nhầm stock với flow</strong>: dùng dữ liệu tốc độ để kết luận về trạng thái tích lũy, hoặc ngược lại.</li><li><strong>Bỏ qua delay</strong>: can thiệp quá sớm / quá mạnh vì chưa thấy kết quả đến.</li><li><strong>Tìm thủ phạm thay vì tìm cấu trúc</strong>: quy lỗi cho cá nhân trong khi incentive, boundary, rule hoặc feedback mới là nguyên nhân.</li><li><strong>Can thiệp ở điểm đòn bẩy nông</strong>: chỉnh tham số nhưng không chạm rule, goal, information flow, hoặc mindset.</li><li><strong>Vẽ boundary quá hẹp</strong>: tối ưu một phần khiến toàn hệ xấu hơn.</li><li><strong>Coi Learning Pack là synthesis cuối</strong>: pack này chỉ là learning artifact để học và thực hành, không phải kết luận đã duyệt.</li></ol>
+</section>
+<section id="practice-task" class="reader-section section-practice-task"><h1><a class="heading-anchor" href="#practice-task">#</a>Practice Task</h1>
+<p>Chọn một hệ thống thật trong vault hoặc công việc hiện tại, ví dụ:</p>
+<ul><li>pipeline ingest của <code>NoteBookLLM_Br</code></li><li>quy trình học một nguồn dài như <code>Thinking in Systems</code></li><li>workflow tạo atom -&gt; review -&gt; synthesis</li><li>một lớp học / chương trình đào tạo đang thiết kế</li></ul>
+<p>Làm trong 25-35 phút:</p>
+<ol><li>Ghi mục đích của hệ thống trong 1 câu.</li><li>Liệt kê 2-3 stock chính.</li><li>Liệt kê flow làm mỗi stock tăng / giảm.</li><li>Vẽ ít nhất một balancing loop và một reinforcing loop.</li><li>Chỉ ra một delay quan trọng.</li><li>Ghi boundary đang dùng và một boundary thay thế.</li><li>Chọn một system trap có thể đang xảy ra.</li><li>Đề xuất một leverage point sâu hơn chỉnh tham số.</li></ol>
+<p>Output mong muốn:</p>
+<pre><code class="language-md">## System Chosen
+## Purpose
+## Stocks
+## Flows
+## Feedback Loops
+## Delays
+## Boundary Choice
+## Likely Trap
+## Leverage Point
+## What I Would Test Next</code></pre>
+</section>
+<section id="review-questions" class="reader-section section-review-questions"><h1><a class="heading-anchor" href="#review-questions">#</a>Review Questions</h1>
+<ol><li>Nếu chỉ được nhớ một câu về system, bạn sẽ nói gì?</li><li>Vì sao structure quan trọng hơn event khi muốn sửa lỗi lặp lại?</li><li>Stock khác flow ở đâu? Cho một ví dụ trong vault.</li><li>Một reinforcing loop có thể tạo tăng trưởng tốt và suy giảm xấu như thế nào?</li><li>Balancing feedback có phải lúc nào cũng tốt không?</li><li>Delay gây oscillation bằng cách nào?</li><li>Khi đổi boundary, kết luận phân tích có thể đổi ra sao?</li><li>Dấu hiệu nào cho thấy vấn đề là system trap chứ không phải lỗi cá nhân?</li><li>Vì sao leverage point sâu thường khó dùng hơn leverage point nông?</li><li>Bạn sẽ áp dụng systems wisdom vào một quyết định tuần này như thế nào?</li></ol>
+</section>
+<section id="related-projects" class="reader-section section-related-projects"><h1><a class="heading-anchor" href="#related-projects">#</a>Related Projects</h1>
+<ul><li><code>ARCH_TIS</code>: học nhanh <code>Thinking in Systems</code> từ atom đã có.</li><li>Wiki ingest lifecycle: dùng event / behavior / structure để phân biệt lỗi local với blocker toàn pipeline.</li><li>Skill governance: dùng boundary để tách <code>wiki-learning-pack</code> khỏi <code>wiki-learning-audit</code>, <code>pedagogy</code>, ingest, và synthesis.</li><li>Learning UX layer: dùng pack này làm bước trước <code>wiki-review-drill</code> và <code>wiki-learning-audit</code>.</li></ul>
+</section>
+<section id="source-trace" class="reader-section section-source-trace"><h1><a class="heading-anchor" href="#source-trace">#</a>Source Trace</h1>
+<p>Pack này trace về các atom/source sau:</p>
+<ul><li><code>3-resources/wiki/sources/SOURCE_ARCH_TIS_Thinking_in_Systems.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_System.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_System_Structure.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Event_Behavior_Structure.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_System_Boundaries.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Stock.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Flow.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Feedback_Loop.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Balancing_Feedback.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Reinforcing_Feedback.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Delay.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Oscillation.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_System_Traps.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Tragedy_of_Commons.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Escalation.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Leverage_Points.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Resilience.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Self_Organization.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Hierarchy.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Systems_Wisdom.md</code></li></ul>
+</section>
+<section id="missing-context" class="reader-section section-missing-context"><h1><a class="heading-anchor" href="#missing-context">#</a>Missing Context</h1>
+<ul><li>Các atom <code>ARCH_TIS</code> đọc được trong bước chat-only test đang là <code>DRAFT</code>, nên artifact này giữ <code>learning_pack_status: &quot;EXPLORATORY&quot;</code> và <code>status: &quot;LEARNING_DRAFT&quot;</code>.</li><li>Source atom ghi “37 atoms”, nhưng filesystem query ở bước test thấy 33 file <code>ARCH_TIS</code>. Cần reconcile con số này trước khi coi pack là trạng thái ổn định dài hạn.</li><li>Chưa chạy <code>wiki-breakdown</code>, nên chưa xác nhận khái niệm nào còn thiếu để học nhanh.</li><li>Chưa chạy <code>wiki-learning-audit</code>, đúng boundary: pack này chỉ recommend audit, không tự chạy.</li></ul>
+</section>
+<section id="next-action" class="reader-section section-next-action"><h1><a class="heading-anchor" href="#next-action">#</a>Next Action</h1>
+<ol><li>Dùng pack này để học <code>ARCH_TIS</code> trong một phiên 60-90 phút.</li><li>Sau khi học, tạo <code>wiki-review-drill</code> nếu cần câu hỏi recall / transfer chuyên biệt.</li><li>Nếu muốn kiểm tra atom nào “đã đọc nhưng chưa thực hành”, chạy GO riêng:</li></ol>
+<pre><code class="language-text">AN GO - run wiki-learning-audit dry-run for ARCH_TIS</code></pre>
+<ol><li>Nếu muốn biến pack thành giáo án, slide, activity sheet, hoặc rubric, handoff sang <code>@designer</code> / <code>pedagogy</code>.</li></ol>
+</section>
+        </article>
+      </main>
+
+      <div class="reader-tools" aria-label="Reader controls">
+        <button type="button" class="icon-button" data-theme-toggle aria-label="Toggle theme" title="Toggle theme">
+          <span aria-hidden="true">T</span>
+        </button>
+      </div>
+    </div>
+
+    <script src="assets/learning-pack.js"></script>
+  </body>
+</html>
