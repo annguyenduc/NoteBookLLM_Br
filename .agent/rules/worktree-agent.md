@@ -13,6 +13,115 @@ main vault = stable source of truth
 agent worktree = disposable execution space
 ```
 
+## Repository Topology
+
+Keep these three concepts separate:
+
+```text
+1. main repo
+2. worktree folders
+3. branch names
+```
+
+The main repo is the stable vault and merge point:
+
+```text
+D:\NoteBookLLM_Br
+```
+
+Agent execution folders live outside the main vault:
+
+```text
+D:\_agent_worktrees\
+```
+
+Each folder under `D:\_agent_worktrees\` must map to exactly one `agent/` branch.
+The folder name uses underscores for Windows readability. The branch name uses
+hyphens for Git readability.
+
+Example mapping:
+
+```text
+Folder:
+D:\_agent_worktrees\20260521_smart_convert
+
+Branch:
+agent/20260521-smart-convert
+```
+
+## Folder And Branch Naming Contract
+
+Use this default pattern:
+
+```text
+Folder: D:\_agent_worktrees\YYYYMMDD_task_name
+Branch: agent/YYYYMMDD-task-name
+```
+
+Examples:
+
+```text
+D:\_agent_worktrees\20260521_rules_patch
+agent/20260521-rules-patch
+
+D:\_agent_worktrees\20260521_smart_convert
+agent/20260521-smart-convert
+
+D:\_agent_worktrees\20260521_learning_pack
+agent/20260521-learning-pack
+```
+
+Branch names should describe the goal of the change, not the agent identity.
+
+Preferred:
+
+```text
+agent/20260521-smart-convert-marker
+agent/20260521-learning-pack-dryrun
+agent/20260521-rules-audit
+```
+
+Avoid:
+
+```text
+agent/agent-a
+agent/agent-b
+agent/agent-c
+```
+
+By default, create every agent branch from `main`. Do not branch from another
+agent branch unless the task explicitly depends on that branch's work.
+
+## Parallel Worktree Policy
+
+Parallel worktrees are allowed when their write scopes are independent.
+
+Good parallel split:
+
+```text
+agent/20260521-smart-convert-marker
+agent/20260521-smart-convert-ollama
+agent/20260521-learning-pack-dryrun
+agent/20260521-rules-audit
+```
+
+Avoid parallel writes to the same governance or workflow file, including:
+
+```text
+AGENTS.md
+.agent/rules/worktree-agent.md
+.agent/workflows/knowledge-intake.md
+.agent/skills/wiki-learning-pack/SKILL.md
+```
+
+If multiple agents need to touch the same file, split the work by role:
+
+```text
+Agent A: review only, produce report
+Agent B: patch file
+Agent C: review diff
+```
+
 ## Hard Boundary
 
 The agent must not modify the main vault directly.
