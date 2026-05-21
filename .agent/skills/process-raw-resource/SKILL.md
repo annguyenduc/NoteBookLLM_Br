@@ -126,7 +126,29 @@ Nếu cần, có thể thêm:
 
 ### 5. Đưa ra quyết định intake
 
-Skill phải kết thúc bằng output contract sau:
+Skill phải bắt đầu output bằng `ROUTING_DECISION`, rồi kết thúc bằng output contract sau.
+
+Ví dụ route cho prompt `Tóm tắt PDF này để tôi học nhanh`:
+
+```yaml
+ROUTING_DECISION:
+  cwd_context: "vault_root | workspace_child"
+  selected_workspace: "workspaces/learning | workspaces/source-lab"
+  mode: "learning-first | source-preview"
+  reason: "[why this route was selected]"
+  loaded_overlay: "workspaces/learning/AGENTS.md | workspaces/source-lab/AGENTS.md | NONE"
+  action_type: "read-only/chat-only | write-preview-artifact"
+  write_artifact: "NO | YES"
+  canonical_write: "NO"
+  ingest_lifecycle: "NO"
+  forbidden_actions_checked:
+    - "no 3-resources write"
+    - "no Atom generation"
+    - "no VERIFIED/SYNTHESIZED"
+    - "no ingest-lifecycle"
+```
+
+Sau đó mới xuất:
 
 ```yaml
 SOURCE PREVIEW REPORT:

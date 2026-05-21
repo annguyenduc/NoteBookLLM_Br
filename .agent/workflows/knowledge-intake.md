@@ -147,6 +147,26 @@ KNOWLEDGE INTAKE ROUTING:
   mid_task_confirmation_required: "NO"
 ```
 
+Any preview output must include this trace before summary/report content:
+
+```yaml
+ROUTING_DECISION:
+  cwd_context: "vault_root | workspace_child"
+  selected_workspace: "workspaces/learning | workspaces/source-lab | workspaces/research-lab | NONE"
+  mode: "learning-first | source-preview | research-preview | official-ingest"
+  reason: "[why this route was selected]"
+  loaded_overlay: "[workspace AGENTS.md path | NONE]"
+  action_type: "read-only/chat-only | write-preview-artifact | state-changing"
+  write_artifact: "NO | YES"
+  canonical_write: "NO | YES"
+  ingest_lifecycle: "NO | YES"
+  forbidden_actions_checked:
+    - "no 3-resources write"
+    - "no Atom generation"
+    - "no VERIFIED/SYNTHESIZED"
+    - "no ingest-lifecycle"
+```
+
 Allowed:
 - classify user intent
 - detect artifact type
@@ -228,6 +248,14 @@ Optional non-canonical inputs:
 - manually pasted reconnaissance notes
 
 ```yaml
+ROUTING_DECISION:
+  cwd_context: "vault_root | workspace_child"
+  selected_workspace: "workspaces/learning | workspaces/source-lab | workspaces/research-lab | NONE"
+  mode: "learning-first | source-preview | research-preview"
+  action_type: "read-only/chat-only | write-preview-artifact"
+  write_artifact: "NO | YES"
+  canonical_write: "NO"
+  ingest_lifecycle: "NO"
 SOURCE PREVIEW REPORT:
   artifact_type: "source_document"
   source_input: "[path]"
@@ -364,6 +392,7 @@ ASSET PREVIEW REPORT:
 
 ```yaml
 KNOWLEDGE INTAKE REPORT:
+  routing_decision: "PRESENT | MISSING"
   source_input: "[path]"
   artifact_type: "[detected type]"
   selected_lane: "PREVIEW | OFFICIAL_INGEST | BLOCKED"

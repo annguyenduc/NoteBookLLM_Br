@@ -212,6 +212,53 @@ Escalation rule:
 
 ---
 
+## Routing Trace
+
+Mọi request đi qua root dispatch hoặc workspace overlay phải mở đầu output bằng block ngắn:
+
+```yaml
+ROUTING_DECISION:
+  cwd_context: "vault_root | workspace_child"
+  selected_workspace: "workspaces/learning | workspaces/source-lab | workspaces/research-lab | workspaces/dev-lab | NONE"
+  mode: "learning-first | source-preview | research-preview | dev-task | official-ingest"
+  reason: "[vì sao chọn route này]"
+  loaded_overlay: "[path | NONE]"
+  action_type: "read-only/chat-only | write-preview-artifact | state-changing"
+  write_artifact: "NO | YES"
+  canonical_write: "NO | YES"
+  ingest_lifecycle: "NO | YES"
+  forbidden_actions_checked:
+    - "no 3-resources write"
+    - "no Atom generation"
+    - "no VERIFIED/SYNTHESIZED"
+    - "no ingest-lifecycle"
+```
+
+Ví dụ với prompt `Tóm tắt PDF này để tôi học nhanh` từ root:
+
+```yaml
+ROUTING_DECISION:
+  cwd_context: "vault_root"
+  selected_workspace: "workspaces/learning"
+  mode: "learning-first"
+  reason: "User intent is fast learning summary, not official ingest"
+  loaded_overlay: "workspaces/learning/AGENTS.md"
+  action_type: "read-only/chat-only"
+  write_artifact: "NO"
+  canonical_write: "NO"
+  ingest_lifecycle: "NO"
+  forbidden_actions_checked:
+    - "no 3-resources write"
+    - "no Atom generation"
+    - "no VERIFIED/SYNTHESIZED"
+    - "no ingest-lifecycle"
+```
+
+Nếu route là preview tài liệu dài cần OCR/convert/NotebookLM recon, chọn `workspaces/source-lab`.
+Nếu chỉ học nhanh, tóm tắt, tạo câu hỏi hoặc flashcard, ưu tiên `workspaces/learning`.
+
+---
+
 ## Startup Profiles
 
 ### MICRO

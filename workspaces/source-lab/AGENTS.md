@@ -34,6 +34,17 @@ Default workflow:
 ../../.agent/skills/process-raw-resource/SKILL.md
 ```
 
+Required routing trace:
+
+```yaml
+ROUTING_DECISION:
+  selected_workspace: "workspaces/source-lab"
+  mode: "source-preview"
+  loaded_overlay: "workspaces/source-lab/AGENTS.md"
+  canonical_write: "NO"
+  ingest_lifecycle: "NO"
+```
+
 Allowed workflows:
 
 ```text
