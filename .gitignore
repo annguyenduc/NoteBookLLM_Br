@@ -12,6 +12,8 @@
 
 # 3. Core vault directories
 !/00_Inbox/
+/00_Inbox/*
+!/00_Inbox/.gitkeep
 !/00_Inbox/gap_candidates/
 !/00_Inbox/gap_candidates/**
 
