@@ -76,4 +76,3 @@ Forbidden by default:
 
 - For script patches, report exact files and tests before commit.
 - For canonical ingest effects, handoff to root workflow after AN GO.
-

@@ -69,4 +69,3 @@ Forbidden by default:
 
 - If a source deserves vault ingestion, report `PROMOTE` and stop.
 - Official ingest must be approved by AN and routed through `../../.agent/workflows/ingest-lifecycle.md`.
-

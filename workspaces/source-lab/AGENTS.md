@@ -84,4 +84,3 @@ Forbidden by default:
 - Default output is `SKIP | KEEP_SUMMARY | PROMOTE`.
 - If `PROMOTE`, report why and stop.
 - Only route to `../../.agent/workflows/ingest-lifecycle.md` after AN gives GO for official ingest.
-
