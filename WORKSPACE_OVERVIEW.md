@@ -7,6 +7,12 @@
 
 ---
 
+> Runtime update 2026-05-21:
+> Mặc định vận hành chuyển sang học trước (learning-first):
+> `Capture -> Learn Note -> Promote if valuable`.
+> `3-resources/` vẫn là nguồn sự thật chính thức (canonical source of truth).
+> `workspaces/` là xưởng phụ không-chính-thức (non-canonical) và không thay thế `00_Inbox/`, `1-projects/`, `3-resources/`, hoặc `4-archive/`.
+
 ## 1. Cấu trúc thư mục (Directory Map)
 
 ```
@@ -55,6 +61,10 @@ NoteBookLLM_Br/
 │   ├── 📂 resources/             ← Bản lưu từ 3-resources.
 │   ├── 📂 rejected/              ← File lỗi audit từ md_auditor/promote.
 │   └── 📂 rollbacks/             ← Bản lưu phục hồi hệ thống.
+│
+├── 📁 workspaces/                ← XƯỞNG PHỤ: preview, learning, experiments. NON-CANONICAL.
+│   ├── 📁 learning/              ← Ghi chú học nhanh, learning maps, câu hỏi tra cứu.
+│   └── 📁 source-lab/            ← Xử lý thử nguồn dài trước khi quyết định ingest.
 │
 ├── 📁 .agent/                    ← Cấu hình & Kỹ năng (Skills)
 │   ├── skills/                   ← Bộ kỹ năng v3.0 (TDD enforced)

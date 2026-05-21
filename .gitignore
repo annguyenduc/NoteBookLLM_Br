@@ -28,6 +28,14 @@
 !/5-learning/
 !/5-learning/**
 
+!/workspaces/
+/workspaces/*
+!/workspaces/README.md
+!/workspaces/*/
+/workspaces/*/*
+!/workspaces/*/README.md
+!/workspaces/*/AGENTS.md
+
 # 4. Agent/runtime control files
 !/.agent/
 !/.agent/**
