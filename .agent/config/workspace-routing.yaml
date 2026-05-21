@@ -82,4 +82,3 @@ official_ingest:
     - "official ingest"
     - "đưa vào vault chính thức"
   rule: "Bypass preview; follow canonical gates."
-
