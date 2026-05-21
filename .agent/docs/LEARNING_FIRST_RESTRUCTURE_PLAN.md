@@ -55,3 +55,7 @@ Chỉ merge sau khi AN review các file chính:
 - `.agent/config/paths.yaml`
 - `WORKSPACE_OVERVIEW.md`
 - `workspaces/*/AGENTS.md`
+
+## Next Step For AN
+
+Review `CONTINUITY.md` và quyết định có GO merge branch `agent/20260521-learning-first-vault` vào `main` không.

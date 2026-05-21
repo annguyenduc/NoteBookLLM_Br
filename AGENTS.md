@@ -353,6 +353,23 @@ Sau task có side effect trong vault chính, ghi log vào:
 
 Nếu đang trong worktree refactor governance, báo cáo `TASK_REPORT` trước khi merge.
 
+Mỗi phiên có thay đổi trạng thái hoặc tạo future dependency phải cập nhật:
+
+```text
+CONTINUITY.md
+```
+
+Nội dung bắt buộc:
+
+```yaml
+current_state: "[đang ở đâu]"
+next_step_for_AN: "[bước tiếp theo để AN check]"
+blockers:
+  - "[nếu có]"
+```
+
+Không để `CONTINUITY.md` dài quá mức; nếu vượt khoảng 500 từ, rút gọn còn trạng thái hiện tại, quyết định đã chốt, blocker, và bước tiếp theo.
+
 ---
 
 ## Skill Paths
