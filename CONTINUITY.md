@@ -8,10 +8,13 @@ Tái cấu trúc NoteBookLLM_Br theo hướng học trước (learning-first), g
 
 - Branch: `agent/20260521-learning-first-vault`
 - Worktree: `D:\_agent_worktrees\20260521_learning_first_vault`
-- Đã có 3 commit:
+- Đã merge vào `main`.
+- Các commit chính:
   - `dc77f11 chore: add learning-first vault structure`
   - `5d6dc43 chore: split workspace activation overlays`
   - `99adaab chore: add workspace folder skeletons`
+  - `c18bb61 chore: add session continuity handoff`
+  - `c8dcb90 chore: trim workspace doc eof whitespace`
 - `AGENTS.md` đã chuyển root runtime sang learning-first.
 - `workspaces/` đã có overlay cho `learning`, `source-lab`, `research-lab`, `dev-lab`.
 - `.agent/config/paths.yaml` đã ghi frozen paths để tránh làm vỡ scripts.
@@ -26,17 +29,16 @@ Tái cấu trúc NoteBookLLM_Br theo hướng học trước (learning-first), g
 
 ## Next Step For AN
 
-Review nhanh branch `agent/20260521-learning-first-vault`, đặc biệt:
+Mở phiên mới từ `D:\NoteBookLLM_Br` để kiểm tra runtime thực tế với root `AGENTS.md` mới:
 
-1. `AGENTS.md`
-2. `.agent/workflows/learning-first.md`
-3. `workspaces/*/AGENTS.md`
-4. `WORKSPACE_OVERVIEW.md`
-5. `.agent/docs/LEARNING_FIRST_RESTRUCTURE_PLAN.md`
+1. Test một request học nhanh trong `workspaces/learning`.
+2. Test một request preview tài liệu trong `workspaces/source-lab`.
+3. Xác nhận Tavily tool surface có hiện sau restart/new session.
+4. Nếu ổn, cleanup worktree `D:\_agent_worktrees\20260521_learning_first_vault`.
 
-Nếu ổn, bước tiếp theo là GO merge branch này vào `main`, rồi mở phiên mới để kiểm tra runtime thực tế với root `AGENTS.md` mới.
+Không cần chạy official ingest trong smoke test đầu tiên.
 
 ## Blockers
 
-- Chưa merge vào `main`.
 - Tavily MCP đã thêm vào config, nhưng tool surface trong phiên hiện tại có thể cần restart/new session để hiện tool.
+- Chưa cleanup worktree sau merge.
