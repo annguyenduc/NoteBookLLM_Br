@@ -10,3 +10,13 @@ Default output:
 SKIP | KEEP_SUMMARY | PROMOTE
 ```
 
+## Folders
+
+```text
+inbox/       # query brief, pasted source, hoặc URL notes
+notes/       # research notes, context notes
+comparisons/ # so sánh nhiều nguồn
+outputs/     # report non-canonical
+```
+
+Không coi kết quả web/Tavily là source truth nếu chưa được kiểm chứng.

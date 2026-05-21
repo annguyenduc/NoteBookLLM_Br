@@ -35,6 +35,9 @@
 /workspaces/*/*
 !/workspaces/*/README.md
 !/workspaces/*/AGENTS.md
+!/workspaces/*/*/
+/workspaces/*/*/*
+!/workspaces/*/*/.gitkeep
 
 # 4. Agent/runtime control files
 !/.agent/

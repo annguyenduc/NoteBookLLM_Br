@@ -63,10 +63,10 @@ NoteBookLLM_Br/
 │   └── 📂 rollbacks/             ← Bản lưu phục hồi hệ thống.
 │
 ├── 📁 workspaces/                ← XƯỞNG PHỤ: preview, learning, experiments. NON-CANONICAL.
-│   ├── 📁 learning/              ← Ghi chú học nhanh, learning maps, câu hỏi tra cứu.
-│   ├── 📁 source-lab/            ← Xử lý thử nguồn dài trước khi quyết định ingest.
-│   ├── 📁 research-lab/          ← Tavily/web context, so sánh nguồn, research notes.
-│   └── 📁 dev-lab/               ← Thử nghiệm scripts, benchmark, patch kỹ thuật.
+│   ├── 📁 learning/              ← inbox, notes, questions, flashcards, outputs.
+│   ├── 📁 source-lab/            ← inbox, converted, reports, runs.
+│   ├── 📁 research-lab/          ← inbox, notes, comparisons, outputs.
+│   └── 📁 dev-lab/               ← repos, experiments, reports, sandbox.
 │
 ├── 📁 .agent/                    ← Cấu hình & Kỹ năng (Skills)
 │   ├── skills/                   ← Bộ kỹ năng v3.0 (TDD enforced)
