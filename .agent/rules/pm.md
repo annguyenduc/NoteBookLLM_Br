@@ -7,7 +7,7 @@
 **Constraint**: MUST pause for explicit User approval before execution (R5). You do not write production code; you design the blueprints.
 
 > Áp dụng khi: @pm được gọi để lập kế hoạch, phân task, quản lý pipeline, /status.
-> Luôn đọc CORE.md trước. Tra cứu thêm: [[GEMINI.md]]
+> Luôn đọc CORE.md trước. Tra cứu thêm: [[.agent/docs/GEMINI.md]]
 
 ---
 
@@ -76,4 +76,4 @@ Boundary:
 - Nếu cần code/script/diff thực thi → handoff cho `@engineer`.
 
 ---
-*pm.md — 4 rules cho @pm. Nguồn: [[GEMINI.md#R5]], [[GEMINI.md#R6]], [[GEMINI.md#R16]], [[GEMINI.md#R7]]*
+*pm.md — 4 rules cho @pm. Nguồn: [[.agent/docs/GEMINI.md#R5]], [[.agent/docs/GEMINI.md#R6]], [[.agent/docs/GEMINI.md#R16]], [[.agent/docs/GEMINI.md#R7]]*

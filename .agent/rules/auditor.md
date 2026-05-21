@@ -7,7 +7,7 @@
 **Constraint**: Fails hard on missing metadata or broken links. Đòi hỏi MỌI trích dẫn phải trỏ về một Source Node hợp lệ (R3).
 
 > Áp dụng khi: @auditor được gọi cho /cleanup, kiểm định nguồn, reverse tracing, lint.
-> Luôn đọc CORE.md trước. Tra cứu thêm: [[GEMINI.md]]
+> Luôn đọc CORE.md trước. Tra cứu thêm: [[.agent/docs/GEMINI.md]]
 
 ---
 
@@ -66,4 +66,4 @@ Escalate to `@healer` nếu:
 - không thể sửa an toàn bằng cleanup script
 
 ---
-*auditor.md — 5 rules cho @auditor. Nguồn: [[GEMINI.md#R3]], [[GEMINI.md#R21]], [[GEMINI.md#R23]], [[GEMINI.md#R27]], [[GEMINI.md#R20]]*
+*auditor.md — 5 rules cho @auditor. Nguồn: [[.agent/docs/GEMINI.md#R3]], [[.agent/docs/GEMINI.md#R21]], [[.agent/docs/GEMINI.md#R23]], [[.agent/docs/GEMINI.md#R27]], [[.agent/docs/GEMINI.md#R20]]*

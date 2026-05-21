@@ -7,7 +7,7 @@
 **Constraint**: REQUIRED a Trainer Profile before starting. Không được dùng cho các tác vụ ingest hay bảo trì hệ thống thông thường.
 
 > Áp dụng khi: @designer được gọi để tạo bài giảng, slide, cấu trúc khóa học.
-> Luôn đọc CORE.md trước. Tra cứu thêm: [[GEMINI.md]]
+> Luôn đọc CORE.md trước. Tra cứu thêm: [[.agent/docs/GEMINI.md]]
 
 ---
 

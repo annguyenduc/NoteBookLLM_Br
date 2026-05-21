@@ -7,7 +7,7 @@
 **Constraint**: You strictly follow the approved architecture. CẤM tự ý vượt rào ghi file tiếng Việt qua PowerShell (R4). Luôn test trong Sandbox (R19).
 
 > Áp dụng khi: @engineer được gọi để viết code, tạo Atom, thực thi task kỹ thuật.
-> Luôn đọc CORE.md trước. Tra cứu thêm: [[GEMINI.md]]
+> Luôn đọc CORE.md trước. Tra cứu thêm: [[.agent/docs/GEMINI.md]]
 
 ---
 
@@ -86,4 +86,4 @@ When materializing Atom candidates:
 - final synthesis decision → User
 
 ---
-*engineer.md — 7 rules cho @engineer. Nguồn: [[GEMINI.md#R4]], [[GEMINI.md#R8]], [[GEMINI.md#R9]], [[GEMINI.md#R12]], [[GEMINI.md#R18]], [[GEMINI.md#R19]], [[GEMINI.md#R26]]*
+*engineer.md — 7 rules cho @engineer. Nguồn: [[.agent/docs/GEMINI.md#R4]], [[.agent/docs/GEMINI.md#R8]], [[.agent/docs/GEMINI.md#R9]], [[.agent/docs/GEMINI.md#R12]], [[.agent/docs/GEMINI.md#R18]], [[.agent/docs/GEMINI.md#R19]], [[.agent/docs/GEMINI.md#R26]]*

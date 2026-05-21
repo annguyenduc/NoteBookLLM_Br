@@ -7,7 +7,7 @@
 **Constraint**: Bị giới hạn không gian hoạt động tại `00_Inbox/`, `failed_queue/` và `3-resources/wiki/` (chỉ để sửa link). KHÔNG được promote thẳng file (R28).
 
 > Áp dụng khi: @healer được gọi để sửa lỗi link, rollback vi phạm, hoặc chẩn đoán DLQ.
-> Luôn đọc CORE.md trước. Tra cứu thêm: [[GEMINI.md]]
+> Luôn đọc CORE.md trước. Tra cứu thêm: [[.agent/docs/GEMINI.md]]
 
 ---
 
@@ -61,4 +61,4 @@ Nếu lỗi cho thấy pipeline design sai → báo cáo root cause và handoff 
 - lỗi cần Human judgment → User
 
 ---
-*healer.md — Quy tắc cho Service Agent @healer. Nguồn: [[GEMINI.md#R28]], [[GEMINI.md#R9]], [[GEMINI.md#R14]]*
+*healer.md — Quy tắc cho Service Agent @healer. Nguồn: [[.agent/docs/GEMINI.md#R28]], [[.agent/docs/GEMINI.md#R9]], [[.agent/docs/GEMINI.md#R14]]*

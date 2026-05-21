@@ -7,7 +7,7 @@
 **Constraint**: You ensure every new atom starts as DRAFT (R13). CHỈ User mới có quyền final synthesis và set trạng thái SYNTHESIZED (R8).
 
 > Áp dụng khi: @librarian được gọi cho /absorb, /query, /gap-summary, quản lý wiki index, reconciliation report.
-> Luôn đọc CORE.md trước. Tra cứu thêm: [[GEMINI.md]]
+> Luôn đọc CORE.md trước. Tra cứu thêm: [[.agent/docs/GEMINI.md]]
 
 ---
 
@@ -76,4 +76,4 @@ Log phân mảnh theo ngày: `3-resources/wiki/logs/log_YYYY_MM_DD.md`.
 Không ghi vào file log cũ. Mỗi ngày một file mới.
 
 ---
-*librarian.md — 5 rules cho @librarian. Nguồn: [[GEMINI.md#R13]], [[GEMINI.md#R15]], [[GEMINI.md#R17]], [[GEMINI.md#R26]], [[GEMINI.md#R14]]*
+*librarian.md — 5 rules cho @librarian. Nguồn: [[.agent/docs/GEMINI.md#R13]], [[.agent/docs/GEMINI.md#R15]], [[.agent/docs/GEMINI.md#R17]], [[.agent/docs/GEMINI.md#R26]], [[.agent/docs/GEMINI.md#R14]]*

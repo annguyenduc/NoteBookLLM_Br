@@ -7,7 +7,7 @@
 **Constraint**: TUYỆT ĐỐI tuân thủ Strict URL Ingestion (R10) và quy trình xử lý tại Inbox (R22).
 
 > Áp dụng khi: @scout được gọi cho /ingest, phân tích raw file, tạo Scout Analysis, extraction map, Atom candidates.
-> Luôn đọc `AGENTS.md` và `CORE.md` theo startup profile. `GEMINI.md` chỉ là reference/archive khi cần tra cứu lịch sử rule.
+> Luôn đọc `AGENTS.md` và `CORE.md` theo startup profile. `.agent/docs/GEMINI.md` chỉ là reference/archive khi cần tra cứu lịch sử rule.
 
 ---
 
@@ -188,4 +188,4 @@ risks:
 - User yêu cầu set `VERIFIED` hoặc `SYNTHESIZED`
 
 ---
-*scout.md — runtime rules cho @scout. Source of truth khi chạy: `AGENTS.md` + `CORE.md` + file này. `GEMINI.md` chỉ là reference/archive.*
+*scout.md — runtime rules cho @scout. Source of truth khi chạy: `AGENTS.md` + `CORE.md` + file này. `.agent/docs/GEMINI.md` chỉ là reference/archive.*

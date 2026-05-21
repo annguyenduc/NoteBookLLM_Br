@@ -52,7 +52,19 @@ configure_fastmcp_runtime()
 original_stdout = sys.stdout
 sys.stdout = SimpleFilteredStdout(original_stdout)
 
-from notebooklm_mcp.server import main
+from notebooklm_mcp.server import main, mcp
+
+# Token Budget Optimization: Lọc MCP tools chỉ giữ lại các tool truy vấn cần thiết
+ALLOWED_TOOLS = {'notebook_query', 'notebook_list', 'notebook_get', 'refresh_auth'}
+tools_to_remove = []
+for comp_name in list(mcp._local_provider._components.keys()):
+    if comp_name.startswith('tool:'):
+        base_name = comp_name.split(':')[1].split('@')[0]
+        if base_name not in ALLOWED_TOOLS:
+            tools_to_remove.append(comp_name)
+
+for comp_name in tools_to_remove:
+    del mcp._local_provider._components[comp_name]
 
 if __name__ == "__main__":
     sys.exit(main())

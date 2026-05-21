@@ -2,7 +2,7 @@
 
 > **BẮT BUỘC ĐỌC** theo startup profile trong `AGENTS.md`.
 > Runtime source of truth: `AGENTS.md`. File này chỉ chứa hard-stop kernel ngắn.
-> `GEMINI.md` là governance reference/archive, không override runtime.
+> `.agent/docs/GEMINI.md` là governance reference/archive, không override runtime.
 
 ---
 
@@ -95,4 +95,4 @@ If any write tool is denied for a `synthesis/` path: STOP. Do not attempt anothe
 
 ---
 *CORE.md — 6 Constitutional Rules. Phiên bản 1.1 — 2026-05-19.*
-*Diễn giải lịch sử 27 rules: [[GEMINI.md]] — reference/archive, không override runtime.*
+*Diễn giải lịch sử 27 rules: [[.agent/docs/GEMINI.md]] — reference/archive, không override runtime.*

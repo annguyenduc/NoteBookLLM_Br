@@ -5,9 +5,9 @@
 !/.gitignore
 !/README.md
 !/AGENTS.md
+!/CONTINUITY.md
 !/SOUL.md
 !/USER.md
-!/GEMINI.md
 !/WORKSPACE_OVERVIEW.md
 
 # 3. Core vault directories
@@ -28,6 +28,17 @@
 
 !/5-learning/
 !/5-learning/**
+
+!/workspaces/
+/workspaces/*
+!/workspaces/README.md
+!/workspaces/*/
+/workspaces/*/*
+!/workspaces/*/README.md
+!/workspaces/*/AGENTS.md
+!/workspaces/*/*/
+/workspaces/*/*/*
+!/workspaces/*/*/.gitkeep
 
 # 4. Agent/runtime control files
 !/.agent/
