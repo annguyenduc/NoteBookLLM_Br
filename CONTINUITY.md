@@ -6,22 +6,36 @@ Tái cấu trúc NoteBookLLM_Br theo hướng học trước (learning-first), g
 
 ## Current State
 
-- Branch: `main` tại `D:\NoteBookLLM_Br`
-- Đã hoàn tất các smoke test của root `AGENTS.md` (workspaces learning, source-lab, và Tavily).
-- Đã merge thành công nhánh `agent/optimize-token-budget-phase3` (đã merge từ trước) và nhánh `agent/gap-check-tis` (đã merge main và fast-forward vào main) vào `main`.
-- Đã dọn dẹp sạch sẽ toàn bộ các agent worktrees (`20260521_learning_first_vault`, `gap-check-tis`, và `optimize-token-budget`).
+- Branch đang làm: `agent/20260522-routing-trace`
+- Worktree: `D:\_agent_worktrees\20260522_routing_trace`
+- Đang vá gap routing audit cho test case: `Tóm tắt PDF này để tôi học nhanh.`
+- Đã thêm `ROUTING_DECISION` vào root dispatch, `learning-first`, `knowledge-intake`, `process-raw-resource`, và overlay `learning/source-lab`.
+- Đã tách workspace selection ra registry chung `.agent/config/workspace-routing.yaml` để skill/workflow không hard-code topology.
+- `process-raw-resource` chỉ echo `ROUTING_DECISION` đã được dispatcher chọn; nếu thiếu route thì báo `selected_workspace: "NONE"` / `mode: "BLOCKED"`.
 
 ## Validation Evidence
 
-- Smoke tests (workspaces): PASS
-- `scripts/maintenance/` tests: 9/9 PASS (test_ingest_lifecycle_check.py và test_md_auditor_outline.py)
-- `git worktree list`: Chỉ còn duy nhất root workspace `D:/NoteBookLLM_Br`
-- `search_web` (Tavily): PASS
+- `git diff --check`: PASS
+- conflict/TODO/TBD scan: PASS
+- routing registry/ROUTING_DECISION presence scan: PASS
+- `synthesis_guard.py check AGENTS.md`: PASS
+- `test_ingest_lifecycle_check.py`: PASS
+- `test_md_auditor_outline.py`: PASS
 
 ## Next Step For AN
 
-1. Chờ User chỉ định nhiệm vụ/feature phát triển tiếp theo trên main hoặc tạo branch mới.
+1. Review routing trace patch.
+2. Nếu ổn, GO merge branch `agent/20260522-routing-trace` vào `main`.
+3. Sau merge, chạy lại smoke test: `Tóm tắt PDF này để tôi học nhanh.`
+4. Expected first block:
+   ```yaml
+   ROUTING_DECISION:
+     selected_workspace: "workspaces/learning"
+     mode: "learning-first"
+     canonical_write: "NO"
+     ingest_lifecycle: "NO"
+   ```
 
 ## Blockers
 
-- Không có.
+- Main tại `D:\NoteBookLLM_Br` đang có thay đổi chưa liên quan trước khi tạo worktree: `.gitignore` modified và `00_Inbox/sources-pending/` untracked. Không chạm các thay đổi đó trong patch này.

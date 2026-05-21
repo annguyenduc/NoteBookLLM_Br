@@ -50,6 +50,26 @@ Allowed inputs:
 
 Output trong bước này mặc định là chat, không ghi file nếu chưa được yêu cầu.
 
+Mọi output learning-first phải bắt đầu bằng routing trace:
+
+```yaml
+ROUTING_DECISION:
+  cwd_context: "vault_root | workspace_child"
+  selected_workspace: "[provided by .agent/config/workspace-routing.yaml]"
+  mode: "learning-first"
+  reason: "[why this is learning-first instead of official ingest]"
+  loaded_overlay: "[provided by workspace routing registry | NONE]"
+  action_type: "read-only/chat-only | write-preview-artifact"
+  write_artifact: "NO | YES"
+  canonical_write: "NO"
+  ingest_lifecycle: "NO"
+  forbidden_actions_checked:
+    - "no 3-resources write"
+    - "no Atom generation"
+    - "no VERIFIED/SYNTHESIZED"
+    - "no ingest-lifecycle"
+```
+
 ### Bước 2: Learn Note
 
 Tạo câu trả lời ngắn hoặc learning note.
@@ -57,6 +77,14 @@ Tạo câu trả lời ngắn hoặc learning note.
 Output contract:
 
 ```yaml
+ROUTING_DECISION:
+  cwd_context: "vault_root | workspace_child"
+  selected_workspace: "[provided by workspace routing registry]"
+  mode: "learning-first"
+  action_type: "read-only/chat-only | write-preview-artifact"
+  write_artifact: "NO | YES"
+  canonical_write: "NO"
+  ingest_lifecycle: "NO"
 LEARNING NOTE:
   learning_status: "PREVIEW_ONLY"
   canonical_status: "NON_CANONICAL"

@@ -34,6 +34,23 @@ Default workflow:
 ../../.agent/workflows/learning-first.md
 ```
 
+Required routing trace:
+
+```yaml
+ROUTING_DECISION:
+  selected_workspace: "workspaces/learning"
+  mode: "learning-first"
+  loaded_overlay: "workspaces/learning/AGENTS.md"
+  canonical_write: "NO"
+  ingest_lifecycle: "NO"
+```
+
+This overlay only defines the learning route. The global workspace list lives in:
+
+```text
+../../.agent/config/workspace-routing.yaml
+```
+
 Allowed skills/workflows:
 
 ```text

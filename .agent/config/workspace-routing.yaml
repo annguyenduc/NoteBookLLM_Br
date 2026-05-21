@@ -1,0 +1,85 @@
+# Workspace routing registry.
+# This file owns workspace selection. Workflows and skills must not hard-code
+# every workspace; they should consume and echo ROUTING_DECISION.
+
+version: 1
+
+routing_contract:
+  required_output_block: "ROUTING_DECISION"
+  owner: "root AGENTS.md + this registry"
+  rule: "Dispatcher selects workspace first; workflows/skills execute the selected route."
+  unknown_route_behavior: "Use selected_workspace: NONE and ask AN or report BLOCKED."
+
+routes:
+  learning:
+    workspace: "workspaces/learning"
+    overlay: "workspaces/learning/AGENTS.md"
+    default_mode: "learning-first"
+    default_entrypoint: ".agent/workflows/learning-first.md"
+    intents:
+      - "học nhanh"
+      - "tóm tắt để học"
+      - "learning map"
+      - "questions"
+      - "flashcards"
+      - "ôn tập"
+    forbidden_by_default:
+      - "official ingest"
+      - "Atom generation"
+      - "writes to 3-resources"
+
+  source_lab:
+    workspace: "workspaces/source-lab"
+    overlay: "workspaces/source-lab/AGENTS.md"
+    default_mode: "source-preview"
+    default_entrypoint: ".agent/skills/process-raw-resource/SKILL.md"
+    intents:
+      - "preview tài liệu dài"
+      - "OCR"
+      - "convert thử"
+      - "source quality"
+      - "NotebookLM recon"
+    escalation_only:
+      - ".agent/workflows/ingest-lifecycle.md"
+    forbidden_by_default:
+      - "canonical writes"
+      - "lifecycle artifacts unless AN starts official ingest"
+
+  research_lab:
+    workspace: "workspaces/research-lab"
+    overlay: "workspaces/research-lab/AGENTS.md"
+    default_mode: "research-preview"
+    default_entrypoint: ".agent/workflows/learning-first.md"
+    intents:
+      - "Tavily"
+      - "web context"
+      - "source comparison"
+      - "external background"
+    forbidden_by_default:
+      - "treating web result as source truth"
+      - "writes to 3-resources"
+
+  dev_lab:
+    workspace: "workspaces/dev-lab"
+    overlay: "workspaces/dev-lab/AGENTS.md"
+    default_mode: "dev-task"
+    default_entrypoint: ".agent/workflows/autonomous-dev-task.md"
+    intents:
+      - "script test"
+      - "benchmark"
+      - "tool/API experiment"
+      - "technical patch"
+    forbidden_by_default:
+      - "touching raw/wiki/synthesis without exact GO"
+
+official_ingest:
+  workspace: "NONE"
+  overlay: "NONE"
+  default_mode: "official-ingest"
+  default_entrypoint: ".agent/workflows/ingest-lifecycle.md"
+  trigger:
+    - "/ingest"
+    - "official ingest"
+    - "đưa vào vault chính thức"
+  rule: "Bypass preview; follow canonical gates."
+
