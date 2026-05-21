@@ -7,22 +7,20 @@ Tái cấu trúc NoteBookLLM_Br theo hướng học trước (learning-first), g
 ## Current State
 
 - Branch: `main` tại `D:\NoteBookLLM_Br`
-- Đã hoàn tất các bước smoke test với root `AGENTS.md` mới:
-  - Test request học nhanh tại `workspaces/learning`: Tạo thành công `notes/learning_map_sample.md`.
-  - Test request preview tại `workspaces/source-lab`: Tạo thành công `reports/preview_faillure_system.md`.
-  - Xác nhận Tavily tool surface (`search_web`) hoạt động bình thường.
-- Đã dọn dẹp sạch sẽ worktree `D:\_agent_worktrees\20260521_learning_first_vault`.
+- Đã hoàn tất các smoke test của root `AGENTS.md` (workspaces learning, source-lab, và Tavily).
+- Đã merge thành công nhánh `agent/optimize-token-budget-phase3` (đã merge từ trước) và nhánh `agent/gap-check-tis` (đã merge main và fast-forward vào main) vào `main`.
+- Đã dọn dẹp sạch sẽ toàn bộ các agent worktrees (`20260521_learning_first_vault`, `gap-check-tis`, và `optimize-token-budget`).
 
 ## Validation Evidence
 
-- Smoke tests: PASS
-- `git worktree list`: Cleaned up `20260521_learning_first_vault`.
-- `search_web` tool: PASS
+- Smoke tests (workspaces): PASS
+- `scripts/maintenance/` tests: 9/9 PASS (test_ingest_lifecycle_check.py và test_md_auditor_outline.py)
+- `git worktree list`: Chỉ còn duy nhất root workspace `D:/NoteBookLLM_Br`
+- `search_web` (Tavily): PASS
 
 ## Next Step For AN
 
-1. Tiếp tục triển khai các task tiếp theo trên các branch agent khác (`gap-check-tis` hoặc `optimize-token-budget`) theo kế hoạch.
-2. Hoặc chờ User giao task tiếp theo.
+1. Chờ User chỉ định nhiệm vụ/feature phát triển tiếp theo trên main hoặc tạo branch mới.
 
 ## Blockers
 
