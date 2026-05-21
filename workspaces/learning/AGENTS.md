@@ -79,4 +79,3 @@ Forbidden by default:
 - If a learning note deserves canonical ingest, report `PROMOTE`.
 - Do not load or run ingest lifecycle details unless AN explicitly says GO for official ingest.
 - Official ingest must go through `../../.agent/workflows/ingest-lifecycle.md`.
-

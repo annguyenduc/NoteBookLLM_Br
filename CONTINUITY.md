@@ -40,4 +40,3 @@ Nếu ổn, bước tiếp theo là GO merge branch này vào `main`, rồi mở
 
 - Chưa merge vào `main`.
 - Tavily MCP đã thêm vào config, nhưng tool surface trong phiên hiện tại có thể cần restart/new session để hiện tool.
-
