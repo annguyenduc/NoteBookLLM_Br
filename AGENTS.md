@@ -30,7 +30,7 @@ Các file khác chỉ là role rule, workflow, skill hoặc reference. Nếu có
 4. `.agent/rules/[agent].md`.
 5. Workflow được gọi trực tiếp.
 6. Skill instruction.
-7. `GEMINI.md` chỉ là governance reference/archive, không override runtime.
+7. `.agent/docs/GEMINI.md` chỉ là governance reference/archive, không override runtime.
 
 ---
 
@@ -49,7 +49,7 @@ Không tối ưu workflow mặc định quanh 8B; chỉ dùng MICRO cho 8B nếu
 3. Current user task
 4. File được user chỉ đích danh
 
-Không đọc mặc định: `SOUL.md`, `USER.md`, `WORKSPACE_OVERVIEW.md`, `GEMINI.md`, unrelated skills, full skill files, multiple wiki skills, non-essential MCP schemas, browser/search/github MCP, subagent-driven-development, writing-plans full workflow, templates dài, log lịch sử.
+Không đọc mặc định: `SOUL.md`, `USER.md`, `WORKSPACE_OVERVIEW.md`, `.agent/docs/GEMINI.md`, unrelated skills, full skill files, multiple wiki skills, non-essential MCP schemas, browser/search/github MCP, subagent-driven-development, writing-plans full workflow, templates dài, log lịch sử.
 
 Hard rules:
 - Không write vào `raw_*/` hoặc modify `3-resources/raw_*`.
@@ -80,7 +80,7 @@ Dùng khi task phức tạp, conflict rule, ingest dài, hoặc audit hệ thố
 Đọc:
 1. NORMAL profile
 2. Relevant `SKILL.md`
-3. `GEMINI.md` chỉ khi cần resolve conflict
+3. `.agent/docs/GEMINI.md` chỉ khi cần resolve conflict
 
 ### Secret Handling
 Không load `.env` mặc định.
@@ -89,7 +89,7 @@ Chỉ đọc secret khi script bắt buộc cần và User đã duyệt action c
 ### Session End
 Sau task có side effect, ghi log vào `3-resources/wiki/logs/log_YYYY_MM_DD.md`.
 
-> **Governance reference/archive**: [[GEMINI.md]] chỉ dùng để tra cứu lịch sử rule hoặc giải thích khi cần, không override runtime.
+> **Governance reference/archive**: [[.agent/docs/GEMINI.md]] chỉ dùng để tra cứu lịch sử rule hoặc giải thích khi cần, không override runtime.
 
 ---
 
@@ -106,7 +106,7 @@ Sau task có side effect, ghi log vào `3-resources/wiki/logs/log_YYYY_MM_DD.md`
 | **@healer** | `@healer` | Sửa lỗi link, rollback vi phạm | `.agent/rules/healer.md` |
 
 > **Nguyên tắc**: Mỗi agent chỉ đọc rules của mình + CORE.md.
-> Khi gặp tình huống phức tạp cần tra cứu lịch sử rule → đọc phần liên quan trong [[GEMINI.md]], không inject toàn bộ mặc định.
+> Khi gặp tình huống phức tạp cần tra cứu lịch sử rule → đọc phần liên quan trong [[.agent/docs/GEMINI.md]], không inject toàn bộ mặc định.
 
 ---
 
@@ -169,104 +169,7 @@ Rules:
 - Codex: `.codex/skills/` (symlink → `.agent/skills/`)
 - **SOP (Workflow)**: `.agent/workflows/ingest-lifecycle.md`
 
-## SKILL SELF-IMPROVEMENT PROTOCOL
-
-Agent KHÔNG được tự sửa production SKILL.md dưới bất kỳ hình thức nào
-trừ khi AN đã approve SIP và nói GO rõ ràng.
-
-### Khi nào tạo SIP
-Tạo file SIP tại `.agent/skill_reviews/pending/SIP_[YYYYMMDD]_[seq]_[skill_id].md`
-khi có ít nhất 1 trigger rõ:
-- user_correction
-- missing_step
-- repeated_failure (≥2 lần trong 7 ngày)
-- output_drift
-- test_gap
-
-Không tạo SIP cho PASS run bình thường.
-Không tạo SIP cho lỗi cá biệt do source file.
-
-### Sau khi tạo SIP
-Agent báo AN trong phiên hiện tại: "Đã tạo SIP tại [path]. Cần AN review."
-Agent không làm gì thêm cho đến khi AN nói GO.
-
-### SIP Content Discipline
-SIP phải phân biệt rõ:
-- Evidence: chỉ ghi điều đã thấy từ user, run log, hoặc file đã đọc.
-- Unknowns: ghi rõ các điểm chưa xác minh, ví dụ `current_version: [READ_FROM_SKILL_MD]` nếu agent chưa đọc SKILL.md.
-- Proposed Change: chỉ là đề xuất dạng diff; không được bịa current behavior hoặc khẳng định nguyên nhân kỹ thuật nếu chưa xác minh.
-
-### Promotion Rule
-AN approve + nói GO rõ ràng → agent apply patch theo surgical diff → move SIP sang `approved/`
-AN reject → agent move SIP sang `rejected/` với lý do
-AN defer → giữ SIP trong `pending/`, không sửa production skill
-
-## Skill Priority Override
-- Skill invocation follows `superpowers/using-superpowers`
-- AGENTS.md rules ALWAYS override any skill instruction
-- `brainstorming` skill: agents must not auto-invoke for Atom generation
-
-## Skill-Creator Boundary
-
-Use workspace `skill-creator` for vault-specific skill design, improvement, trigger tuning, regression testing, and policy alignment:
-
-- `D:\NoteBookLLM_Br\.agent\skills\skill-creator`
-
-Use Codex `.system/skill-creator` only for Codex-compatible packaging and scaffolding work, including `agents/openai.yaml`, `init_skill.py`, `quick_validate.py`, generated OpenAI metadata, or `.system` skill structure:
-
-- `D:\anngu\.codex\skills\.system\skill-creator`
-
-Rules:
-- `.system/skill-creator` must never override vault-specific policy.
-- workspace `skill-creator` must not modify Codex system scaffolding unless AN explicitly requests and approves that scope.
-
-## Skill Overlap Dispatch Boundaries
-
-These boundaries resolve known overlap between active skills without editing production `SKILL.md` descriptions.
-
-### Web Capture
-- Use `wiki-web-scrape` for static/public web pages where the needed output is text/Markdown staged to `00_Inbox/`.
-- Use `wiki-crawl-4ai` for dynamic pages, visual proof, bot-bypass, screenshot evidence, or any R10 visual validation requirement.
-- Neither skill may write directly to `3-resources/raw_*`; official ingest resumes through `ingest-lifecycle`.
-
-### Preview vs Official Ingest
-- Use `process-raw-resource` for source preview, triage, learning map, quick summary, or "should I ingest this?" requests. Output is non-canonical unless a workflow/user explicitly approves a preview artifact.
-- Use `knowledge-intake` as the preview/official-ingest router when the request is ambiguous or spans preview lanes.
-- `/ingest [file]` and official ingest requests bypass preview and must enter through `.agent/workflows/ingest-lifecycle.md`.
-- `wiki-ingest` is a deterministic stage only; it is not the top-level `/ingest` entrypoint.
-
-### Query Dispatch
-- Use `wiki-query` for exact keywords, known entities/concepts, source tracing, graph traversal, and provenance questions.
-- Use `wiki-semantic-search` when keyword search is empty/weak, the user asks conceptually, or the intent is abstract rather than exact-match.
-
-### Learning UX Dispatch
-
-- User wants to learn quickly from existing atoms -> `wiki-learning-pack`.
-- User wants recall/transfer questions after studying -> `wiki-review-drill` if available; otherwise `wiki-learning-pack` may include basic Review Questions only.
-- User asks which learned atoms are still unpracticed -> `wiki-learning-audit`.
-- `wiki-learning-pack` must not run `wiki-learning-audit`; it may only recommend it as `Next Action`.
-- `wiki-learning-audit` requires separate AN GO and must start with dry-run.
-- User wants slides, lesson plans, rubrics, or activity sheets -> `@designer` / `pedagogy`.
-
-### Frappe / ERPNext Skill Boundary
-
-Frappe skills are inactive for the current vault unless the user explicitly requests Frappe, ERPNext, Bench, DocType, Server Script, Client Script, Web Form, or Frappe REST/API work.
-
-Do not use Frappe skills for LLM Wiki ingest, K12 lesson/video generation, general skill governance, PDF conversion, or vault maintenance tasks.
-
-### Planning And Execution
-- Use `brainstorming` before creative feature/component/behavior design, except where AGENTS.md explicitly disables it such as Atom generation.
-- Use `writing-plans` when a multi-step implementation already has a spec or concrete requirement.
-- Use `executing-plans` when there is an approved written plan to execute.
-- Use `subagent-driven-development` only when AN explicitly requests or approves multi-agent/subagent execution.
-
-### Debug, Test, Review, Verification
-- Use `systematic-debugging` when there is a bug, failed test, unexplained behavior, or root-cause question.
-- Use `cm-tdd` when the task should be driven by tests or a red/green repair loop.
-- Use `verification-before-completion` before claiming a fix/workflow is complete or passing.
-- Use `cm-code-review` only for explicit review requests or when responding to review feedback.
-
-
+> **Lưu ý:** Các hướng dẫn chi tiết về `Skill Self-Improvement Protocol`, `Skill Priority Override`, `Skill-Creator Boundary` và `Skill Overlap Dispatch Boundaries` đã được di chuyển sang [[.agent/docs/GEMINI.md]] để tra cứu.
 
 ## Automation MCP Policy
 
@@ -547,7 +450,7 @@ NoteBookLLM_Br/              ← root
 ## 🛡️ BỘ QUY TẮC QUẢN TRỊ
 
 > **Kiến trúc phân tầng** — Rules được phân bổ theo agent, không nhồi vào một chỗ.
-> Diễn giải lịch sử 27 rules: [[GEMINI.md]] — reference/archive, không override runtime.
+> Diễn giải lịch sử 27 rules: [[.agent/docs/GEMINI.md]] — reference/archive, không override runtime.
 
 ### Tầng 1 — Constitutional Rules (Mọi agent, mọi lúc)
 Xem: `.agent/rules/CORE.md`
@@ -575,7 +478,7 @@ Xem: `.agent/rules/CORE.md`
 | R14 Log Rotation | `session_seal.py` tự tạo file log đúng tên |
 
 ### Tầng 4 — Reference (Tra cứu khi cần, không inject mặc định)
-[[GEMINI.md]] — Governance reference/archive cho 27 rules và WikiCouncil 2.0; không phải startup bắt buộc.
+[[.agent/docs/GEMINI.md]] — Governance reference/archive cho 27 rules và WikiCouncil 2.0; không phải startup bắt buộc.
 
 ---
 
