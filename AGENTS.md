@@ -1,11 +1,116 @@
-# AGENTS.md — NoteBookLLM_Br
+# AGENTS.md - NoteBookLLM_Br
 
-> Đọc file này TRƯỚC KHI thực hiện bất kỳ tác vụ nào.
-> Mục tiêu hệ thống: Second brain theo mô hình LLM Wiki — ingest tài liệu thô → atomic wiki nodes → synthesis có thể verify nguồn.
+> Đọc file này trước khi thực hiện bất kỳ tác vụ nào.
+> Mục tiêu tối thượng của vault: giúp AN học nhanh hơn và tra cứu nhanh hơn.
 
 ---
 
-## Worktree execution boundary
+## Nguồn Sự Thật Khi Chạy (Runtime Source Of Truth)
+
+`AGENTS.md` là nguồn sự thật khi chạy (runtime source of truth) cho agent trong repo này.
+Nếu có mâu thuẫn khi chạy thật, ưu tiên theo thứ tự:
+
+1. Chỉ dẫn của user trong phiên hiện tại, nếu không vi phạm an toàn vận hành (runtime safety).
+2. `AGENTS.md`.
+3. `.agent/rules/CORE.md`.
+4. `.agent/rules/[agent].md`.
+5. Workflow được gọi trực tiếp.
+6. Skill instruction.
+7. `.agent/docs/GEMINI.md` chỉ là tài liệu tham chiếu/lưu trữ (reference/archive), không override runtime.
+
+---
+
+## Mặc Định Học Trước (Learning-First Default)
+
+Mặc định của vault không phải là ingest. Mặc định là học nhanh và tra cứu nhanh:
+
+```text
+Capture -> Learn Note -> Promote if valuable
+```
+
+Diễn giải:
+
+- Thu nhận (Capture): nhận nguồn hoặc câu hỏi.
+- Ghi chú học nhanh (Learn Note): tạo bản đồ học, câu trả lời ngắn, câu hỏi chính.
+- Nâng cấp nếu đáng giữ (Promote if valuable): chỉ khi AN muốn đưa vào tri thức chính thức.
+
+### Bước 1: Thu Nhận (Capture)
+
+Nguồn mới, tài liệu dài, web scrape, transcript, hoặc file cần đọc nhanh mặc định đi vào làn xem trước/học nhanh (preview/learning lane).
+
+Vị trí mặc định:
+
+```text
+00_Inbox/                  # nguồn mới hoặc staging tạm
+workspaces/                # xưởng phụ, non-canonical
+1-projects/learning_maps/  # learning note / learning map giữ lại để học
+```
+
+### Bước 2: Ghi Chú Học Nhanh (Learn Note)
+
+Agent ưu tiên trả lời trong chat. Chỉ ghi file khi user/workflow cho phép.
+
+Learning note luôn là:
+
+```yaml
+learning_status: "PREVIEW_ONLY"
+canonical_status: "NON_CANONICAL"
+source_id: "NONE"
+trust: "UNVERIFIED"
+```
+
+Learning note không phải Atom, không phải nhiên liệu ingest (ingest fuel), không phải bằng chứng nguồn (source evidence).
+
+### Bước 3: Nâng Cấp Nếu Đáng Giữ (Promote If Valuable)
+
+Chỉ khi AN muốn đưa tri thức vào vault chính thức mới chuyển sang ingest chính thức (canonical ingest):
+
+```text
+ingest-lifecycle
+```
+
+Official ingest vẫn phải giữ đủ chuỗi gate:
+
+```text
+prepare-source -> audit-promote-source -> lock-ingest-input -> ingest -> ingest-generate -> ingest-index-log
+```
+
+Đây là chế độ nâng cao/chính thức (advanced/canonical mode), không phải mặc định cho mọi tài liệu.
+
+---
+
+## Bộ MCP Mặc Định (Default MCP Profile)
+
+Default learning mode:
+
+```text
+filesystem
+notebooklm-mcp-server
+sqlite
+tavily
+```
+
+Vai trò:
+
+- `filesystem`: đọc/ghi file trong vault khi được phép.
+- `notebooklm-mcp-server`: hỏi đáp tài liệu dài, tạo bản đồ học (learning map).
+- `sqlite`: tra cứu chỉ mục vault, atom, metadata, quan hệ nguồn.
+- `tavily`: tìm kiếm web nhanh khi cần bối cảnh bên ngoài.
+
+Tắt mặc định nếu không cần:
+
+```text
+github
+browser/scrape nặng
+local-ai
+multi-agent dispatch
+```
+
+Nếu Tavily chưa có trong `codex mcp list`, báo thiếu MCP thay vì giả định đã bật.
+
+---
+
+## Ranh Giới Worktree (Worktree Execution Boundary)
 
 For autonomous or large tasks, agents must follow:
 
@@ -15,160 +120,262 @@ For autonomous or large tasks, agents must follow:
 
 Agents must not modify `main` directly. Any task that edits files must run from a branch named `agent/*` inside `D:\_agent_worktrees\`.
 
-If the current branch is `main`, the agent must stop and report `WRONG_BRANCH_OR_WORKTREE`.
+If the current branch is `main`, `master`, or the current working directory is `D:\NoteBookLLM_Br`, the agent must stop and report:
+
+```text
+WRONG_BRANCH_OR_WORKTREE
+```
 
 ---
 
-## RUNTIME SOURCE OF TRUTH
+## Đóng Băng Đường Dẫn Cốt Lõi (Core Path Freeze)
 
-`AGENTS.md` là runtime source of truth cho agent trong repo này.
-Các file khác chỉ là role rule, workflow, skill hoặc reference. Nếu có mâu thuẫn khi chạy thật, ưu tiên theo thứ tự:
+Để tái cấu trúc không làm vỡ scripts vận hành, các path sau được đóng băng trong phase hiện tại:
 
-1. User instruction trong phiên hiện tại, nếu không vi phạm runtime safety.
-2. `AGENTS.md`.
-3. `.agent/rules/CORE.md`.
-4. `.agent/rules/[agent].md`.
-5. Workflow được gọi trực tiếp.
-6. Skill instruction.
-7. `.agent/docs/GEMINI.md` chỉ là governance reference/archive, không override runtime.
+```text
+00_Inbox/
+1-projects/
+2-areas/
+3-resources/
+4-archive/
+.agent/
+scripts/
+```
+
+Không di chuyển, đổi tên, hoặc đổi nghĩa các path trên nếu chưa có lớp tương thích (compatibility layer) và kiểm tra hồi quy (regression check).
+
+`3-resources/` vẫn là nguồn sự thật chính thức (canonical source of truth):
+
+```text
+3-resources/raw_sources/
+3-resources/raw_ingest/
+3-resources/raw_assets/
+3-resources/wiki/
+```
 
 ---
 
-## STARTUP PROFILE (Bắt buộc mỗi phiên)
+## Ranh Giới Workspaces
 
-Agent phải chọn đúng profile trước khi đọc context.
+`workspaces/` là vùng làm việc phụ nằm trong vault nhưng không chính thức (non-canonical).
+
+Root vault có thể đọc `workspaces/*/AGENTS.md` để chọn đúng overlay, nhưng không tự động load toàn bộ workspace con.
+
+Nếu current working directory nằm trong `workspaces/[name]/`, agent phải dùng thứ tự runtime:
+
+1. root `AGENTS.md`
+2. `workspaces/[name]/AGENTS.md`
+3. `.agent/rules/CORE.md`
+4. workflow/skill được overlay đó cho phép
+
+Shared agent library luôn nằm ở:
+
+```text
+.agent/
+```
+
+Workspace con chỉ khai báo overlay: workflow nào active, skill nào allowed, workflow nào forbidden hoặc escalation-only.
+
+Allowed:
+
+- đọc/ghi trong workspace phụ được giao.
+- tạo preview, notes, experiments, reports non-canonical.
+- tạo candidate package để AN quyết định có promote/ingest không.
+
+Forbidden:
+
+- ghi trực tiếp vào `3-resources/`.
+- ghi trực tiếp vào `3-resources/raw_sources/`, `raw_ingest/`, `raw_assets/`, hoặc `wiki/`.
+- tạo Atom canonical.
+- set `VERIFIED`.
+- set `SYNTHESIZED`.
+- coi NotebookLM/Tavily output là source of truth.
+
+---
+
+## Workspace Dispatch
+
+Root vault dùng bảng này để route task sang workspace overlay phù hợp:
+
+| Workspace | Khi dùng | Default workflow | Forbidden by default |
+|---|---|---|---|
+| `workspaces/learning/` | học nhanh, learning map, ghi chú học, ôn tập | `.agent/workflows/learning-first.md` | official ingest, Atom generation, writes to `3-resources/` |
+| `workspaces/source-lab/` | preview tài liệu dài, OCR/convert thử, NotebookLM recon | `.agent/skills/process-raw-resource/SKILL.md` | canonical writes, lifecycle artifacts unless AN starts ingest |
+| `workspaces/research-lab/` | tìm bối cảnh web, so sánh nguồn, Tavily recon | `.agent/workflows/learning-first.md` | treating web result as source truth |
+| `workspaces/dev-lab/` | thử nghiệm script, benchmark, patch kỹ thuật | `.agent/workflows/autonomous-dev-task.md` | touching raw/wiki/synthesis without exact GO |
+
+Escalation rule:
+
+- Nếu workspace con kết luận `PROMOTE`, chỉ báo cáo handoff.
+- Chỉ khi AN GO official ingest mới dùng `.agent/workflows/ingest-lifecycle.md`.
+- Workspace con không cần đọc chi tiết ingest lifecycle khi chỉ đang học nhanh/preview.
+
+---
+
+## Startup Profiles
 
 ### MICRO
-Dùng cho local model <= 3B hoặc task rất nhỏ.
-Primary target: Llama/Qwen/Gemma/Phi class <= 3B hoặc model có context/reasoning rất hạn chế.
-Không tối ưu workflow mặc định quanh 8B; chỉ dùng MICRO cho 8B nếu AN yêu cầu test rõ.
+
+Dùng cho task nhỏ, local model <= 3B, hoặc khi cần giảm context tối đa.
 
 Đọc:
+
 1. `AGENTS.md`
 2. `.agent/rules/CORE.md`
 3. Current user task
-4. File được user chỉ đích danh
+4. File được user chỉ định
 
-Không đọc mặc định: `SOUL.md`, `USER.md`, `WORKSPACE_OVERVIEW.md`, `.agent/docs/GEMINI.md`, unrelated skills, full skill files, multiple wiki skills, non-essential MCP schemas, browser/search/github MCP, subagent-driven-development, writing-plans full workflow, templates dài, log lịch sử.
+Không đọc mặc định:
+
+```text
+SOUL.md
+USER.md
+WORKSPACE_OVERVIEW.md
+.agent/docs/GEMINI.md
+unrelated skills
+full skill files
+non-essential MCP schemas
+browser/search/github MCP
+log lịch sử
+```
 
 Hard rules:
+
 - Không write vào `raw_*/` hoặc modify `3-resources/raw_*`.
 - Không bulk-edit vault files.
 - Chỉ load một task-specific skill summary nếu cần.
 - Ưu tiên direct file operations và tránh recursive search nếu không cần.
 - Không multi-agent dispatch trừ khi AN yêu cầu.
-- Dùng one-step execution với user checkpoints.
-- Với read-only audit trong MICRO, giới hạn scope mặc định vào `AGENTS.md`, `.agent/rules/CORE.md`, active role rule, và file user chỉ đích danh; chỉ mở rộng sang root governance/workflow/script files nếu AN yêu cầu hoặc có blocker trực tiếp.
-- Chạy `synthesis_guard.py check` trước mọi write vào `synthesis/`.
+- Chạy `synthesis_guard.py check` trước mọi write vào `3-resources/wiki/synthesis/`.
 - Chỉ AN được set `SYNTHESIZED`.
-- Dùng `scripts/maintenance/circuit_breaker.py` cho promote operation.
-- Sau mỗi 3 turns, tóm tắt working history thành 3 bullets trước khi tiếp tục.
-- Trong MICRO mode, không append "Summary of Work" trừ khi AN yêu cầu rõ hoặc đây là assistant turn thứ 3 trong task hiện tại.
-
-Default MCP/tools: `filesystem` only. Bật `sqlite` chỉ khi task cần query/index. Không bật github/browser/search/scrape trừ khi AN yêu cầu rõ.
 
 ### NORMAL
+
 Dùng cho cloud model hoặc task vault thông thường.
+
 Đọc:
+
 1. `AGENTS.md`
 2. `.agent/rules/CORE.md`
 3. `WORKSPACE_OVERVIEW.md`
-4. `.agent/rules/[agent].md`
+4. `.agent/rules/[agent].md` nếu có role rõ
 
 ### FULL
-Dùng khi task phức tạp, conflict rule, ingest dài, hoặc audit hệ thống.
+
+Dùng khi task phức tạp, conflict rule, official ingest dài, hoặc audit hệ thống.
+
 Đọc:
+
 1. NORMAL profile
 2. Relevant `SKILL.md`
 3. `.agent/docs/GEMINI.md` chỉ khi cần resolve conflict
 
-### Secret Handling
+---
+
+## An Toàn Hành Động (Action Safety)
+
+Read-only actions không cần GO:
+
+- đọc file liên quan
+- inspect status
+- dry-run
+- query sqlite/index read-only
+- tạo plan/spec/report trong chat
+
+Cần AN GO:
+
+- tạo/sửa/xóa/di chuyển file
+- promote operation
+- synthesis write
+- actual MCP profile switching
+- rebuild index
+- git commit/push
+- script có side effect
+
+Nếu không chắc action có side effect không, coi như cần GO.
+
+---
+
+## Agent Roles
+
+Agent role chỉ load khi task gọi role đó hoặc cần boundary rõ:
+
+| Agent | Call | Purpose | Rules |
+|---|---|---|---|
+| `@pm` | `@pm` | lập plan, phân task, quản lý pipeline | `.agent/rules/pm.md` |
+| `@scout` | `@scout` | preview/source analysis, Atom candidates, không ghi Atom chính thức | `.agent/rules/scout.md` |
+| `@engineer` | `@engineer` | code, scripts, materialize theo spec được duyệt | `.agent/rules/engineer.md` |
+| `@librarian` | `@librarian` | wiki graph, index, reconciliation, synthesis candidates | `.agent/rules/librarian.md` |
+| `@auditor` | `@auditor` | source tracing, audit, lint | `.agent/rules/auditor.md` |
+| `@designer` | `@designer` | learning sequence khi có Trainer Profile | `.agent/rules/designer.md` |
+| `@healer` | `@healer` | rollback, DLQ, recovery | `.agent/rules/healer.md` |
+
+Ma trận bàn giao chi tiết (handoff matrix) và lịch sử governance nằm trong `.agent/docs/GEMINI.md` khi cần tra cứu, không load mặc định.
+
+---
+
+## Định Tuyến Workflow (Workflow Routing)
+
+Default:
+
+```text
+learning-first -> process-raw-resource -> learning note / chat answer
+```
+
+Use `knowledge-intake` khi cần route giữa preview và official ingest.
+
+Use `ingest-lifecycle` chỉ khi AN muốn official ingest vào canonical vault.
+
+Slash command:
+
+```text
+/ingest [file]
+```
+
+phải bypass preview và đi thẳng vào `ingest-lifecycle`.
+
+---
+
+## Secret Handling
+
 Không load `.env` mặc định.
 Chỉ đọc secret khi script bắt buộc cần và User đã duyệt action có side effect.
 
-### Session End
-Sau task có side effect, ghi log vào `3-resources/wiki/logs/log_YYYY_MM_DD.md`.
+---
 
-> **Governance reference/archive**: [[.agent/docs/GEMINI.md]] chỉ dùng để tra cứu lịch sử rule hoặc giải thích khi cần, không override runtime.
+## Session End
+
+Sau task có side effect trong vault chính, ghi log vào:
+
+```text
+3-resources/wiki/logs/log_YYYY_MM_DD.md
+```
+
+Nếu đang trong worktree refactor governance, báo cáo `TASK_REPORT` trước khi merge.
+
+Mỗi phiên có thay đổi trạng thái hoặc tạo future dependency phải cập nhật:
+
+```text
+CONTINUITY.md
+```
+
+Nội dung bắt buộc:
+
+```yaml
+current_state: "[đang ở đâu]"
+next_step_for_AN: "[bước tiếp theo để AN check]"
+blockers:
+  - "[nếu có]"
+```
+
+Không để `CONTINUITY.md` dài quá mức; nếu vượt khoảng 500 từ, rút gọn còn trạng thái hiện tại, quyết định đã chốt, blocker, và bước tiếp theo.
 
 ---
 
-## AGENTS
+## Skill Paths
 
-| Agent | Gọi bằng | Làm gì | Rules |
-|---|---|---|---|
-| **@pm** | `@pm` | Lập kế hoạch, phân task, quản lý pipeline | `.agent/rules/pm.md` |
-| **@scout** | `@scout` | Nghiên cứu raw/fuel, tạo Analysis, extraction map, Atom candidates. KHÔNG ghi Atom file chính thức. | `.agent/rules/scout.md` |
-| **@engineer** | `@engineer` | Viết code, materialize wiki atoms từ spec/candidates, thực thi task kỹ thuật | `.agent/rules/engineer.md` |
-| **@librarian** | `@librarian` | Quản lý wiki graph, index, reconciliation, synthesis candidates. KHÔNG final synthesis thay User. | `.agent/rules/librarian.md` |
-| **@auditor** | `@auditor` | Kiểm định nguồn, reverse tracing, lint | `.agent/rules/auditor.md` |
-| **@designer** | `@designer` | Thiết kế learning sequence (cần Trainer Profile trước) | `.agent/rules/designer.md` |
-| **@healer** | `@healer` | Sửa lỗi link, rollback vi phạm | `.agent/rules/healer.md` |
-
-> **Nguyên tắc**: Mỗi agent chỉ đọc rules của mình + CORE.md.
-> Khi gặp tình huống phức tạp cần tra cứu lịch sử rule → đọc phần liên quan trong [[.agent/docs/GEMINI.md]], không inject toàn bộ mặc định.
-
----
-
-## ROLE BOUNDARIES — Anti-Overlap Rules
-
-Các agent phải giữ ranh giới sau:
-
-| Boundary | Rule |
-|---|---|
-| Scout vs Engineer | `@scout` chỉ phân tích và đề xuất Atom candidates. `@engineer` mới được materialize thành Atom files. |
-| Librarian vs Human | `@librarian` chỉ chuẩn bị synthesis candidates, outlines, drafts, reconciliation reports. Chỉ Human được final synthesis và set `SYNTHESIZED`. |
-| Auditor vs Healer | `@auditor` phát hiện lỗi và audit integrity. `@healer` xử lý rollback, DLQ, failed_queue, recovery. |
-| PM vs Engineer | `@pm` lập plan/spec. `@engineer` thực thi kỹ thuật sau khi có approval nếu action có side effect. |
-| Designer vs Librarian | `@designer` tạo learning sequence từ atoms đã kiểm duyệt. `@librarian` quản lý graph/index/reconciliation. |
-
----
-
-## HANDOFF MATRIX
-
-| From | Condition | Handoff To |
-|---|---|---|
-| `@pm` | Cần viết code, sửa file, tạo script, tạo Atom file | `@engineer` |
-| `@pm` | Cần thiết kế bài học, slide, learning sequence | `@designer` |
-| `@scout` | Cần tạo `CONCEPT_`, `ENTITY_`, `SOURCE_`, `COMPARE_`, `QUERY_` file | `@engineer` |
-| `@scout` | Source thiếu, source nghi ngờ, metadata không đủ | `@auditor` |
-| `@scout` | `gap_check.py` fail, file vào `failed_queue/`, DLQ | `@healer` |
-| `@engineer` | Thiếu spec hoặc ambiguous target | `@pm` |
-| `@engineer` | Thiếu audit stamp/source tracing | `@auditor` |
-| `@engineer` | Vi phạm R1/R8/R22/R23 hoặc cần rollback | `@healer` |
-| `@librarian` | Cần sửa code/script/file có side effect | `@engineer` |
-| `@librarian` | Conflict cần human synthesis | User |
-| `@auditor` | Cần rollback/recovery/DLQ repair | `@healer` |
-| `@designer` | Thiếu Trainer Profile | User |
-| `@healer` | Không thể phục hồi an toàn | User |
-
----
-
-## ACTION SAFETY CLASSIFICATION
-
-Phân loại hành động trước khi làm:
-
-| Action Type | Examples | Requires explicit AN approval? |
-|---|---|---|
-| Read-only | đọc file, inspect status, query sqlite, dry-run, generate report in chat | No |
-| File artifact write | ghi plan/spec/report/draft ra file, tạo scratch file, tạo draft file | Yes, unless a workflow rule explicitly permits it |
-| State-changing | modify/delete/move files, promote, write wiki, update metadata, rebuild index, git commit/push | Yes |
-| Governance-changing | set `VERIFIED`, touch synthesis, MCP actual switch, rollback | Yes |
-
-Rules:
-- Agent may inspect, dry-run, and report in chat automatically.
-- Agent must not write files without explicit AN approval unless the workflow rule explicitly allows that write.
-- Actual MCP profile switching is state-changing.
-- When unsure whether an action has side effect, treat it as approval-required.
-
----
-
-## SKILL PATHS
 - Antigravity: `.agent/skills/`
 - Global Skills: `C:\Users\anngu\.gemini\antigravity\skills\`
-- Codex: `.codex/skills/` (symlink → `.agent/skills/`)
-- **SOP (Workflow)**: `.agent/workflows/ingest-lifecycle.md`
-
-> **Lưu ý:** Các hướng dẫn chi tiết về `Skill Self-Improvement Protocol`, `Skill Priority Override`, `Skill-Creator Boundary` và `Skill Overlap Dispatch Boundaries` đã được di chuyển sang [[.agent/docs/GEMINI.md]] để tra cứu.
-
-> **Lưu ý:** Các hướng dẫn về MCP Policy, Ingest Source Policy, Giao thức Vận hành, và Cấu trúc Thư mục đã được chuyển sang [[.agent/docs/GEMINI.md]] để giảm tải Context Window.
+- Codex: `.codex/skills/` symlink to `.agent/skills/`
+- Official ingest workflow: `.agent/workflows/ingest-lifecycle.md`
+- Learning-first workflow: `.agent/workflows/learning-first.md`

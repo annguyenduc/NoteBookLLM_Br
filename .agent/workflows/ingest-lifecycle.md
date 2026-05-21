@@ -4,6 +4,9 @@ description: Workflow cha duy nhất cho toàn bộ ingest lifecycle, điều ph
 
 # Workflow: ingest-lifecycle
 
+> Runtime note 2026-05-21: đây là chế độ ingest chính thức (official/canonical ingest), không phải default learning lane.
+> Nếu AN chỉ muốn học nhanh, đọc nhanh, hoặc tra cứu nhanh, dùng `.agent/workflows/learning-first.md` trước.
+
 Đây là workflow cha cho toàn bộ vòng đời ingest.
 
 User chỉ nên nghĩ theo một entrypoint này.

@@ -4,6 +4,10 @@ description: Workflow định tuyến nguồn vào theo mô hình 2 entry lanes,
 
 # Workflow: knowledge-intake
 
+> Runtime note 2026-05-21: vault default đã chuyển sang `learning-first`.
+> Dùng `.agent/workflows/learning-first.md` cho học nhanh/tra cứu nhanh.
+> Dùng workflow này khi cần phân luồng rõ giữa preview và official ingest.
+
 `knowledge-intake` là workflow routing nhẹ cho lớp tiếp nhận nguồn.
 
 Mục tiêu là tách rõ:
