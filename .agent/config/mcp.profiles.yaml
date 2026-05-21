@@ -1,0 +1,27 @@
+version: 1
+
+profiles:
+  micro:
+    enabled:
+      - filesystem
+
+  vault:
+    enabled:
+      - filesystem
+      - sqlite
+
+  learning:
+    enabled:
+      - filesystem
+      - sqlite
+      - notebooklm-mcp-server
+      - tavily
+
+  dev:
+    enabled:
+      - filesystem
+      - sqlite
+      - git
+      - github-mcp-server
+      - local-ai
+      - wiki-ops
