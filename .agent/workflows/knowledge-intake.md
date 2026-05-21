@@ -152,10 +152,10 @@ Any preview output must include this trace before summary/report content:
 ```yaml
 ROUTING_DECISION:
   cwd_context: "vault_root | workspace_child"
-  selected_workspace: "workspaces/learning | workspaces/source-lab | workspaces/research-lab | NONE"
-  mode: "learning-first | source-preview | research-preview | official-ingest"
+  selected_workspace: "[provided by .agent/config/workspace-routing.yaml | NONE]"
+  mode: "[provided by workspace routing registry]"
   reason: "[why this route was selected]"
-  loaded_overlay: "[workspace AGENTS.md path | NONE]"
+  loaded_overlay: "[provided by workspace routing registry | NONE]"
   action_type: "read-only/chat-only | write-preview-artifact | state-changing"
   write_artifact: "NO | YES"
   canonical_write: "NO | YES"
@@ -250,8 +250,8 @@ Optional non-canonical inputs:
 ```yaml
 ROUTING_DECISION:
   cwd_context: "vault_root | workspace_child"
-  selected_workspace: "workspaces/learning | workspaces/source-lab | workspaces/research-lab | NONE"
-  mode: "learning-first | source-preview | research-preview"
+  selected_workspace: "[provided by workspace routing registry | NONE]"
+  mode: "[provided by workspace routing registry]"
   action_type: "read-only/chat-only | write-preview-artifact"
   write_artifact: "NO | YES"
   canonical_write: "NO"

@@ -195,14 +195,13 @@ Forbidden:
 
 ## Workspace Dispatch
 
-Root vault dùng bảng này để route task sang workspace overlay phù hợp:
+Root vault route task bằng registry chung:
 
-| Workspace | Khi dùng | Default workflow | Forbidden by default |
-|---|---|---|---|
-| `workspaces/learning/` | học nhanh, learning map, ghi chú học, ôn tập | `.agent/workflows/learning-first.md` | official ingest, Atom generation, writes to `3-resources/` |
-| `workspaces/source-lab/` | preview tài liệu dài, OCR/convert thử, NotebookLM recon | `.agent/skills/process-raw-resource/SKILL.md` | canonical writes, lifecycle artifacts unless AN starts ingest |
-| `workspaces/research-lab/` | tìm bối cảnh web, so sánh nguồn, Tavily recon | `.agent/workflows/learning-first.md` | treating web result as source truth |
-| `workspaces/dev-lab/` | thử nghiệm script, benchmark, patch kỹ thuật | `.agent/workflows/autonomous-dev-task.md` | touching raw/wiki/synthesis without exact GO |
+```text
+.agent/config/workspace-routing.yaml
+```
+
+Registry này là nơi duy nhất sở hữu danh sách workspace, intent, default workflow, và forbidden-by-default. Workflow/skill không được tự hard-code toàn bộ workspace list; chúng chỉ consume và echo `ROUTING_DECISION`.
 
 Escalation rule:
 
@@ -219,10 +218,10 @@ Mọi request đi qua root dispatch hoặc workspace overlay phải mở đầu 
 ```yaml
 ROUTING_DECISION:
   cwd_context: "vault_root | workspace_child"
-  selected_workspace: "workspaces/learning | workspaces/source-lab | workspaces/research-lab | workspaces/dev-lab | NONE"
-  mode: "learning-first | source-preview | research-preview | dev-task | official-ingest"
+  selected_workspace: "[registry.routes.*.workspace | NONE]"
+  mode: "[registry route default_mode]"
   reason: "[vì sao chọn route này]"
-  loaded_overlay: "[path | NONE]"
+  loaded_overlay: "[registry route overlay | NONE]"
   action_type: "read-only/chat-only | write-preview-artifact | state-changing"
   write_artifact: "NO | YES"
   canonical_write: "NO | YES"
@@ -254,8 +253,9 @@ ROUTING_DECISION:
     - "no ingest-lifecycle"
 ```
 
-Nếu route là preview tài liệu dài cần OCR/convert/NotebookLM recon, chọn `workspaces/source-lab`.
-Nếu chỉ học nhanh, tóm tắt, tạo câu hỏi hoặc flashcard, ưu tiên `workspaces/learning`.
+Nếu route là preview tài liệu dài cần OCR/convert/NotebookLM recon, registry hiện chọn `workspaces/source-lab`.
+Nếu chỉ học nhanh, tóm tắt, tạo câu hỏi hoặc flashcard, registry hiện ưu tiên `workspaces/learning`.
+Khi thêm workspace mới, cập nhật `.agent/config/workspace-routing.yaml` và workspace overlay, không sửa từng skill/workflow nếu contract không đổi.
 
 ---
 

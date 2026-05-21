@@ -10,12 +10,14 @@ Tái cấu trúc NoteBookLLM_Br theo hướng học trước (learning-first), g
 - Worktree: `D:\_agent_worktrees\20260522_routing_trace`
 - Đang vá gap routing audit cho test case: `Tóm tắt PDF này để tôi học nhanh.`
 - Đã thêm `ROUTING_DECISION` vào root dispatch, `learning-first`, `knowledge-intake`, `process-raw-resource`, và overlay `learning/source-lab`.
+- Đã tách workspace selection ra registry chung `.agent/config/workspace-routing.yaml` để skill/workflow không hard-code topology.
+- `process-raw-resource` chỉ echo `ROUTING_DECISION` đã được dispatcher chọn; nếu thiếu route thì báo `selected_workspace: "NONE"` / `mode: "BLOCKED"`.
 
 ## Validation Evidence
 
 - `git diff --check`: PASS
 - conflict/TODO/TBD scan: PASS
-- `ROUTING_DECISION` presence scan: PASS
+- routing registry/ROUTING_DECISION presence scan: PASS
 - `synthesis_guard.py check AGENTS.md`: PASS
 - `test_ingest_lifecycle_check.py`: PASS
 - `test_md_auditor_outline.py`: PASS

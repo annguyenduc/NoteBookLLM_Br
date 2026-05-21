@@ -126,17 +126,20 @@ Nếu cần, có thể thêm:
 
 ### 5. Đưa ra quyết định intake
 
-Skill phải bắt đầu output bằng `ROUTING_DECISION`, rồi kết thúc bằng output contract sau.
+Skill này không sở hữu quyết định route.
+Route phải được chọn trước bởi root `AGENTS.md`, workspace overlay, hoặc `.agent/config/workspace-routing.yaml`.
+
+Skill phải bắt đầu output bằng cách echo `ROUTING_DECISION` đã được dispatcher chọn, rồi kết thúc bằng output contract sau.
 
 Ví dụ route cho prompt `Tóm tắt PDF này để tôi học nhanh`:
 
 ```yaml
 ROUTING_DECISION:
   cwd_context: "vault_root | workspace_child"
-  selected_workspace: "workspaces/learning | workspaces/source-lab"
-  mode: "learning-first | source-preview"
-  reason: "[why this route was selected]"
-  loaded_overlay: "workspaces/learning/AGENTS.md | workspaces/source-lab/AGENTS.md | NONE"
+  selected_workspace: "[provided by .agent/config/workspace-routing.yaml]"
+  mode: "[provided by workspace routing registry]"
+  reason: "[provided by dispatcher]"
+  loaded_overlay: "[provided by workspace routing registry | NONE]"
   action_type: "read-only/chat-only | write-preview-artifact"
   write_artifact: "NO | YES"
   canonical_write: "NO"
@@ -146,6 +149,16 @@ ROUTING_DECISION:
     - "no Atom generation"
     - "no VERIFIED/SYNTHESIZED"
     - "no ingest-lifecycle"
+```
+
+Nếu skill được gọi mà chưa có route, không tự đoán toàn bộ workspace topology. Báo:
+
+```yaml
+ROUTING_DECISION:
+  selected_workspace: "NONE"
+  mode: "BLOCKED"
+  reason: "Missing dispatcher-selected route"
+  required_next_step: "Use root AGENTS.md or .agent/config/workspace-routing.yaml to select workspace"
 ```
 
 Sau đó mới xuất:

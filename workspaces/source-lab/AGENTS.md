@@ -45,6 +45,12 @@ ROUTING_DECISION:
   ingest_lifecycle: "NO"
 ```
 
+This overlay only defines the source-lab route. The global workspace list lives in:
+
+```text
+../../.agent/config/workspace-routing.yaml
+```
+
 Allowed workflows:
 
 ```text
