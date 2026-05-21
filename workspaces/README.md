@@ -4,6 +4,15 @@
 
 Các workspace này giúp giảm context và thử nghiệm nhanh, nhưng luôn là non-canonical.
 
+Current overlays:
+
+```text
+learning/      # học nhanh, learning map, ghi chú học
+source-lab/    # preview tài liệu dài, NotebookLM recon, source triage
+research-lab/  # Tavily/web context, so sánh nguồn, research notes
+dev-lab/       # thử nghiệm script, benchmark, patch kỹ thuật
+```
+
 Allowed:
 
 - tạo preview, learning note, report, experiment.
@@ -23,3 +32,10 @@ Canonical knowledge vẫn nằm ở:
 3-resources/
 ```
 
+Shared rules, workflows, and skills live at:
+
+```text
+../.agent/
+```
+
+Workspace overlays select what is active; they do not copy `.agent/`.

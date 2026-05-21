@@ -20,6 +20,8 @@
 - [x] Đánh dấu `ingest-lifecycle` là official/canonical mode, không phải default.
 - [x] Thêm `.agent/config/paths.yaml` để ghi nhận frozen paths và path registry.
 - [x] Thêm `workspaces/` non-canonical với `learning/` và `source-lab/`.
+- [x] Thêm overlay `research-lab/` và `dev-lab/` để phân rã routing theo workspace.
+- [x] Ghi rõ workspace activation: root route, workspace con chọn active/allowed/forbidden workflow.
 - [x] Cập nhật `.gitignore` để chỉ track `README.md` và `AGENTS.md` trong workspace, còn file nháp vẫn ignored.
 - [x] Cập nhật `WORKSPACE_OVERVIEW.md` để phản ánh learning-first và `workspaces/`.
 - [x] Bật Tavily MCP dạng remote OAuth trong Codex config.
@@ -52,4 +54,3 @@ Chỉ merge sau khi AN review các file chính:
 - `.agent/config/paths.yaml`
 - `WORKSPACE_OVERVIEW.md`
 - `workspaces/*/AGENTS.md`
-

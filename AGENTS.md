@@ -159,6 +159,23 @@ Không di chuyển, đổi tên, hoặc đổi nghĩa các path trên nếu chư
 
 `workspaces/` là vùng làm việc phụ nằm trong vault nhưng không chính thức (non-canonical).
 
+Root vault có thể đọc `workspaces/*/AGENTS.md` để chọn đúng overlay, nhưng không tự động load toàn bộ workspace con.
+
+Nếu current working directory nằm trong `workspaces/[name]/`, agent phải dùng thứ tự runtime:
+
+1. root `AGENTS.md`
+2. `workspaces/[name]/AGENTS.md`
+3. `.agent/rules/CORE.md`
+4. workflow/skill được overlay đó cho phép
+
+Shared agent library luôn nằm ở:
+
+```text
+.agent/
+```
+
+Workspace con chỉ khai báo overlay: workflow nào active, skill nào allowed, workflow nào forbidden hoặc escalation-only.
+
 Allowed:
 
 - đọc/ghi trong workspace phụ được giao.
@@ -173,6 +190,25 @@ Forbidden:
 - set `VERIFIED`.
 - set `SYNTHESIZED`.
 - coi NotebookLM/Tavily output là source of truth.
+
+---
+
+## Workspace Dispatch
+
+Root vault dùng bảng này để route task sang workspace overlay phù hợp:
+
+| Workspace | Khi dùng | Default workflow | Forbidden by default |
+|---|---|---|---|
+| `workspaces/learning/` | học nhanh, learning map, ghi chú học, ôn tập | `.agent/workflows/learning-first.md` | official ingest, Atom generation, writes to `3-resources/` |
+| `workspaces/source-lab/` | preview tài liệu dài, OCR/convert thử, NotebookLM recon | `.agent/skills/process-raw-resource/SKILL.md` | canonical writes, lifecycle artifacts unless AN starts ingest |
+| `workspaces/research-lab/` | tìm bối cảnh web, so sánh nguồn, Tavily recon | `.agent/workflows/learning-first.md` | treating web result as source truth |
+| `workspaces/dev-lab/` | thử nghiệm script, benchmark, patch kỹ thuật | `.agent/workflows/autonomous-dev-task.md` | touching raw/wiki/synthesis without exact GO |
+
+Escalation rule:
+
+- Nếu workspace con kết luận `PROMOTE`, chỉ báo cáo handoff.
+- Chỉ khi AN GO official ingest mới dùng `.agent/workflows/ingest-lifecycle.md`.
+- Workspace con không cần đọc chi tiết ingest lifecycle khi chỉ đang học nhanh/preview.
 
 ---
 

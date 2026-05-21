@@ -37,6 +37,8 @@ workspaces:
   root: "workspaces"
   learning: "workspaces/learning"
   source_lab: "workspaces/source-lab"
+  research_lab: "workspaces/research-lab"
+  dev_lab: "workspaces/dev-lab"
 
 compatibility:
   frozen_paths:
@@ -48,4 +50,3 @@ compatibility:
     - ".agent"
     - "scripts"
   migration_rule: "Do not rename or move frozen paths until scripts are migrated to this registry and regression checks pass."
-
