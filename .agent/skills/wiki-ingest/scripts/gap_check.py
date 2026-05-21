@@ -82,10 +82,14 @@ STRICT RULES:
 6. IGNORE generic illustrative examples, analogies, metaphors, and everyday nouns used only to explain another concept (e.g., digestive system, football team, school, city).
 7. IGNORE broad/common terms that are already represented by the extracted atoms list, even if the exact wording appears again in the chunk.
 8. When uncertain whether a candidate is core knowledge or just an example, omit it. Prefer NONE over false positives.
+9. IGNORE biological components, chemical substances, physical objects, and materials used purely as examples (e.g., chloroplasts, enzymes, bloodstream, furnace, insulation, lumber, reservoir, mineral deposit). These are illustration vehicles, not learnable concepts.
+10. IGNORE sub-variants or rewordings of atoms already in the extracted list. If "Feedback Loop" is extracted, do NOT add "Balancing Feedback Loop", "Reinforcing Feedback Loop", "Delayed Feedback", "Feedback Delays" as separate gaps.
+11. [Entity] type is RESERVED for: named persons, named organizations, named software tools, named books/papers, named frameworks, named geographic/political entities. Do NOT use [Entity] for generic nouns (economy, stock, flow, system, reservoir) — use [Concept] or omit.
+12. IGNORE concepts that are trivially derived from the title/subject of the source itself. Do not flag "Systems Thinking" or "System Dynamics" if the source is explicitly about systems thinking.
 
 Format (STRICTLY follow this):
 - [Concept] <name>: <1 sentence value>
-- [Entity] <name>: <1 sentence role>
+- [Entity] <name>: <1 sentence role — only named persons/orgs/tools>
 - [Mental Model] <name>: <1 sentence application>
 - [Relationship] <name>: <1 sentence connection>
 """
@@ -289,32 +293,29 @@ def is_duplicate_of_extracted(name: str, extracted_atoms: list[str]) -> bool:
     return False
 
 
+# Tất cả các subfolder wiki cần scan — cross-type để bắt case gemma3 label sai type
+_WIKI_ATOM_FOLDERS = [
+    "concepts", "entities", "methods", "principles", "mental_models", "relationships", "review_queue"
+]
+
+
 def check_vault_duplicate(canonical_type: str, name: str) -> bool:
     """
-    Kiểm tra xem một atom có tên `name` và loại `canonical_type` đã tồn tại trong Vault hay chưa.
+    Kiểm tra xem một atom có tên `name` đã tồn tại trong Vault hay chưa.
+    Cross-type scan: không giới hạn vào folder của canonical_type vì gemma3
+    có thể label sai type (ví dụ: Feedback Loop là [Relationship] thay vì [Concept]).
     """
     normalized_name = name.strip().lower().replace(" ", "_").replace("-", "_")
 
-    type_folder = ""
-    if canonical_type == "Concept":
-        type_folder = "concepts"
-    elif canonical_type == "Entity":
-        type_folder = "entities"
-    elif canonical_type == "Method":
-        type_folder = "methods"
-    elif canonical_type == "Principle":
-        type_folder = "principles"
-    elif canonical_type == "Mental Model":
-        type_folder = "mental_models"
-    elif canonical_type == "Relationship":
-        type_folder = "relationships"
+    # Tạo biến thể singular/plural để match cả hai chiều
+    name_variants = {normalized_name}
+    if normalized_name.endswith("s"):
+        name_variants.add(normalized_name[:-1])   # loops → loop
+    else:
+        name_variants.add(normalized_name + "s")  # loop → loops
 
-    folders_to_scan = []
-    if type_folder:
-        folders_to_scan.append(os.path.join(ROOT_DIR, "3-resources", "wiki", type_folder))
-    folders_to_scan.append(os.path.join(ROOT_DIR, "3-resources", "wiki", "review_queue"))
-
-    for folder in folders_to_scan:
+    for subfolder in _WIKI_ATOM_FOLDERS:
+        folder = os.path.join(ROOT_DIR, "3-resources", "wiki", subfolder)
         if not os.path.exists(folder):
             continue
         for root, dirs, files in os.walk(folder):
@@ -322,9 +323,19 @@ def check_vault_duplicate(canonical_type: str, name: str) -> bool:
                 if not file.endswith(".md"):
                     continue
                 file_name_normalized = file.lower().replace(" ", "_").replace("-", "_")[:-3]
-                parts = file_name_normalized.split("_")
-                if normalized_name == file_name_normalized or normalized_name in parts:
-                    return True
+                # Strip common prefixes: CONCEPT_ARCH_TIS_, ENTITY_ARCH_TIS_, etc.
+                for prefix in ("concept_", "entity_", "method_", "principle_", "mental_model_", "relationship_"):
+                    if file_name_normalized.startswith(prefix):
+                        file_name_normalized = file_name_normalized[len(prefix):]
+                        break
+                # Strip source prefix pattern like arch_tis_, lrn_ds_, etc.
+                parts_check = file_name_normalized.split("_")
+                if len(parts_check) > 2 and len(parts_check[0]) <= 5 and len(parts_check[1]) <= 5:
+                    file_name_normalized = "_".join(parts_check[2:])
+
+                for variant in name_variants:
+                    if variant == file_name_normalized or file_name_normalized.endswith(variant) or variant in file_name_normalized.split("_"):
+                        return True
     return False
 
 
