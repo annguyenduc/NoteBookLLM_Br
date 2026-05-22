@@ -28,9 +28,20 @@ last_updated: "YYYY-MM-DD"
 - **Nguyên nhân (Root Cause):** [Tại sao lại xảy ra?]
 - **Cách khắc phục:** [Giải pháp đã áp dụng trong phiên]
 
-## 4. Bài học hệ thống (System Learnings / Instincts)
-*Phần này rất quan trọng để hệ thống không lặp lại lỗi trong các phiên sau.*
-- **Bài học 1:** [Quy tắc mới hoặc mẹo cần nhớ]
+## 4. Bài học hệ thống / Instincts
+
+*Ghi lại bài học vận hành rút ra từ phiên này. Chỉ ghi khi có giá trị tái sử dụng rõ ràng.*
+
+### Instinct candidate
+
+- **Trigger:** [Khi nào quy tắc này được kích hoạt?]
+- **Action:** [Agent nên làm gì ở lần sau?]
+- **Evidence:** [Bằng chứng từ phiên này]
+- **Confidence:** LOW | MEDIUM | HIGH
+- **Repeat count:** 1
+
+> [!TIP]
+> **Promote Rule:** Nếu cùng một instinct được xác nhận qua 3+ phiên hoặc gây lỗi lặp lại có rủi ro cao, mở SIP để đề xuất chuyển thành rule/skill chính thức.
 
 ## 5. Đề xuất cho phiên sau (Next Steps)
 - [ ] [Nhiệm vụ còn tồn đọng 1]

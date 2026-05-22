@@ -61,7 +61,7 @@ Nhóm kỹ năng nền tảng chuẩn hóa quy trình kỹ thuật.
 - **`cm-dockit`**: Tự động phân tích nguồn và tạo tài liệu SOP/Tech Docs dạng Markdown/VitePress.
 - **`cm-gateway-pro`**: Tối ưu hóa và bảo trì kiến trúc SmartProxyHub Gateway.
 - **`cm-git-flow`**: Xử lý, đồng bộ hóa phiên bản và resolve conflict Git.
-- **`cm-instinct-learning`**: Hệ thống học liên tục lưu trữ các "Instinct" để tái sử dụng.
+- **`cm-instinct-learning`**: [ARCHIVED / DEPRECATED] Đã hợp nhất vào `session_insights` và `skill_reviews/SIP`. Không gọi như skill active.
 - **`cm-notebooklm`**: Lưu kiến thức sang Google NotebookLM để truy xuất đa nền tảng (podcast, flashcard).
 - **`cm-quality-gate`**: Bước kiểm tra chất lượng bắt buộc trước khi kết thúc task hoặc xuất bản.
 - **`cm-tdd`**: Quy trình phát triển hướng kiểm thử (Test-Driven Development) và sửa lỗi tự động.
