@@ -257,61 +257,31 @@ Khi thêm workspace mới, cập nhật `.agent/config/workspace-routing.yaml` v
 
 ## Startup Profiles
 
-### MICRO
+### STARTUP MINIMAL
 
-Dùng cho task nhỏ, local model <= 3B, hoặc khi cần giảm context tối đa.
+Always read:
+- `AGENTS.md`
+- `.agent/rules/CORE.md`
+- `.agent/rules/[active_agent].md`
 
-Đọc:
+Do not bulk-load root markdown files.
+Root `.md` files are references, not default context.
+Load the smallest file or section that answers the current routing question.
 
-1. `AGENTS.md`
-2. `.agent/rules/CORE.md`
-3. Current user task
-4. File được user chỉ định
+### ROOT REFERENCE LOAD POLICY
 
-Không đọc mặc định:
+Default:
+- Do not read `WORKSPACE_OVERVIEW.md`, `USER.md`, `SOUL.md`, `GEMINI.md`, `EXAMPLES.md`, or `SKILLS_INDEX.md` during normal startup.
 
-```text
-SOUL.md
-USER.md
-WORKSPACE_OVERVIEW.md
-.agent/docs/GEMINI.md
-unrelated skills
-full skill files
-non-essential MCP schemas
-browser/search/github MCP
-log lịch sử
-```
+Load conditions:
+- Path / folder / ingest / architecture / pipeline question -> `WORKSPACE_OVERVIEW.md`
+- User preference / learning / pedagogy question -> `USER.md`
+- Governance philosophy / human gate / system identity -> `SOUL.md`
+- Rule conflict / hard stop / constitutional lookup -> `GEMINI.md`
+- Atom format / naming / markdown convention / examples -> `EXAMPLES.md`
+- Skill routing / skill discovery / skill inventory -> `SKILLS_INDEX.md`
 
-Hard rules:
-
-- Không write vào `raw_*/` hoặc modify `3-resources/raw_*`.
-- Không bulk-edit vault files.
-- Chỉ load một task-specific skill summary nếu cần.
-- Ưu tiên direct file operations và tránh recursive search nếu không cần.
-- Không multi-agent dispatch trừ khi AN yêu cầu.
-- Chạy `synthesis_guard.py check` trước mọi write vào `3-resources/wiki/synthesis/`.
-- Chỉ AN được set `SYNTHESIZED`.
-
-### NORMAL
-
-Dùng cho cloud model hoặc task vault thông thường.
-
-Đọc:
-
-1. `AGENTS.md`
-2. `.agent/rules/CORE.md`
-3. `WORKSPACE_OVERVIEW.md`
-4. `.agent/rules/[agent].md` nếu có role rõ
-
-### FULL
-
-Dùng khi task phức tạp, conflict rule, official ingest dài, hoặc audit hệ thống.
-
-Đọc:
-
-1. NORMAL profile
-2. Relevant `SKILL.md`
-3. `.agent/docs/GEMINI.md` chỉ khi cần resolve conflict
+If a task needs only one section, read only that section.
 
 ---
 

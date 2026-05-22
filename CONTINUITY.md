@@ -2,20 +2,22 @@
 
 ## Current Objective
 
-Học nhanh và tra cứu nhanh thông tin thông qua cơ chế On-Demand Script Policy đã được tích hợp vào nhánh main.
+Tái cấu trúc NoteBookLLM_Br theo hướng học trước (learning-first), giảm context mặc định, nhưng không làm vỡ scripts vận hành.
 
 ## Current State
 
-- **Trạng thái**: Đã merge thành công nhánh `agent/20260522-on-demand-script-policy` vào `main`.
-- **Đã kiểm thử**: Đã chạy thử nghiệm và sửa lỗi phân tích (parse) git status đầu ra trong [git_status_report.py](file:///D:/NoteBookLLM_Br/scripts/tasks/git_status_report.py) (không bị mất chữ cái đầu).
-- **Cấu hình**: MCP Profile đã được chuyển đổi mặc định về `micro` (chỉ bật `filesystem` MCP), các MCP khác chuyển thành chạy script on-demand để tiết kiệm RAM.
-- **Worktree**: Đã dọn dẹp và xóa worktree `D:\_agent_worktrees\20260522_on_demand_script_policy`.
+- **Trạng thái**: Đã merge thành công nhánh `agent/20260522-layered-load-policy` vào `main`.
+- **Thay đổi chính**: Cập nhật phần `## Startup Profiles` trong `AGENTS.md` thành `STARTUP MINIMAL` và `ROOT REFERENCE LOAD POLICY` nhằm giảm dung lượng context khởi động (Phase 1).
+- **Trước đó**: Đã merge thành công nhánh `agent/20260522-on-demand-script-policy` vào `main`, chuyển đổi MCP Profile mặc định về `micro` (chỉ bật `filesystem` MCP).
+- **Worktree**: Đã dọn dẹp và xóa các worktree cũ (`20260522_on_demand_script_policy`, `20260522_layered_load_policy`).
 
 ## Next Step For AN
 
 1. Theo dõi hoạt động của Agent khi thực thi các script on-demand qua rule mới [.agent/rules/on-demand-script-policy.md](file:///D:/NoteBookLLM_Br/.agent/rules/on-demand-script-policy.md).
-2. Kiểm tra báo cáo kiểm thử chi tiết trong [walkthrough.md](file:///C:/Users/anngu/.gemini/antigravity/brain/3928c136-b64f-4bec-9e11-0c156bf448b6/walkthrough.md).
+2. Kiểm tra Agent chạy trong 1-2 phiên tiếp theo xem có tuân thủ việc không tự động bulk-load các tệp markdown ở root và chỉ tra cứu khi cần hay không.
+3. Sau khi chạy thử ổn định, đánh giá để thực hiện Phase 2 (hạ nhãn mandatory trong `WORKSPACE_OVERVIEW.md` hoặc SPEC).
 
 ## Blockers
 
-- Không có.
+- Các file chưa stage trên `main` (`.gitignore` và `00_Inbox/sources-pending/`) vẫn được giữ nguyên, không ảnh hưởng đến thay đổi này.
+
