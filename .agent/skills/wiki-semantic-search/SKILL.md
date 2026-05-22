@@ -1,6 +1,6 @@
 ---
 name: wiki-semantic-search
-description: "Use when wiki-query (keyword search) returns no results or irrelevant results, when the search intent is conceptual or abstract rather than exact-match, or when the user asks questions using meaning rather than specific terms."
+description: "Perform conceptual/semantic search when exact keyword query fails or user asks abstract questions."
 metadata:
   triggers:
     - "wiki-semantic-search"

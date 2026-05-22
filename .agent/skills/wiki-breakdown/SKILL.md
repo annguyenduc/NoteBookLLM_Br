@@ -1,6 +1,6 @@
 ---
 name: wiki-breakdown
-description: "Use when knowledge gaps need to be identified in the Wiki — specifically when terms are referenced in Atoms but have no corresponding page in concepts/ or entities/. Triggers on /breakdown command."
+description: "Identify knowledge gaps when referenced terms lack pages in concepts/ or entities/. Triggers on /breakdown."
 ---
 
 # Wiki Breakdown

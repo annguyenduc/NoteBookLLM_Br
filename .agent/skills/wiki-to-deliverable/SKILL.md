@@ -1,6 +1,6 @@
 ---
 name: wiki-to-deliverable
-description: Use when synthesizing multiple Knowledge Atoms from the vault into a structured Markdown summary or Obsidian note. Triggers on 'tổng hợp từ vault', 'compile atoms', 'make summary from wiki', 'draft from vault', or when a topic requires pulling connected Atoms into a single readable output. Do NOT use for single-Atom lookup (use wiki-query instead) or for generating curriculum deliverables for external audiences (KDI scope excluded).
+description: "Compile multiple Wiki Atoms into a structured Markdown summary. Triggers on compile atoms. Do NOT use for single-Atom lookup."
 ---
 
 # Wiki to Deliverable

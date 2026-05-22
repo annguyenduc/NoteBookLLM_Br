@@ -1,6 +1,6 @@
 ---
 name: wiki-learning-pack
-description: Use when the user wants to learn quickly from existing Wiki atoms, create a fast-start learning pack from a topic or source_id, turn indexed atoms into a 60-90 minute self-study path, or build a structured review path before drills or pedagogy. Do NOT use for ingest, atom creation, final synthesis, PDF conversion, slide decks, lesson plans, or vault maintenance.
+description: "Create 60-90 min learning packs or review paths from existing Wiki atoms. Do NOT use for ingest, synthesis, or vault maintenance."
 metadata:
   triggers:
     - "wiki-learning-pack"

@@ -1,6 +1,6 @@
 ---
 name: pedagogy
-description: "Use when designing lesson plans or learning sequences from Wiki Atoms, converting comparison content to PPTX slides, or packaging content for LMS/H5P export. Requires a Trainer Profile before starting. Do NOT use for raw data ingest or routine Wiki maintenance."
+description: "Design lesson plans, learning sequences, or PPTX slides from Wiki Atoms. Requires Trainer Profile. Do NOT use for raw ingest or Wiki maintenance."
 ---
 
 # Pedagogy
