@@ -1,6 +1,6 @@
 ---
 name: wiki-status
-description: "Use when the user asks about Wiki health, atom counts, verification rates, or link density. Also use before a large ingest batch to establish a baseline. Triggers on 'wiki status', 'dashboard', or '/status' commands."
+description: "Show Wiki health, atom counts, and link density. Establish baselines before ingest. Triggers on wiki status or /status."
 ---
 
 # Wiki Status (Dashboard/Health)

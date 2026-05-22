@@ -1,6 +1,6 @@
 ---
 name: wiki-learning-audit
-description: "Use when auditing unverified knowledge in the vault — specifically to find Atoms tagged learning_source=true that have not been confirmed through practice OR Atoms that are due for spaced repetition review. Triggers on 'audit learning atoms', 'check unverified atoms', 'review queue audit', 'learning audit', or when weekly review cycle starts. Do NOT use for general ingest tasks or content editing."
+description: "Audit unverified atoms (learning_source=true) or spaced repetition reviews. Triggers on learning audit or weekly review. Do NOT use for general ingest."
 ---
 
 # Wiki Learning Audit

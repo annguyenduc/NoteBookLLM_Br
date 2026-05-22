@@ -1,6 +1,6 @@
 ---
 name: brainstorming
-description: "BẮT BUỘC sử dụng kỹ năng này trước mọi công việc sáng tạo (tạo tính năng, component, thay đổi chức năng). Khám phá ý định người dùng, yêu cầu và thiết kế trước khi lập trình."
+description: "Dùng trước công việc sáng tạo (tính năng, component). Khám phá ý định người dùng, yêu cầu và thiết kế trước khi lập trình."
 ---
 
 Help turn ideas into fully formed designs and specs through natural collaborative dialogue.

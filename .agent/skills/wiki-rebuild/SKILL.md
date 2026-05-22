@@ -1,6 +1,6 @@
 ---
 name: wiki-rebuild
-description: "Use when the database is out of sync with the filesystem, after files are added or deleted manually, or on nightly maintenance. Triggers on /rebuild command or when index.md is stale. Do NOT use for content edits."
+description: "Sync database with filesystem after manual additions/deletions. Triggers on /rebuild or stale index. Do NOT use for content edits."
 ---
 
 # Wiki Rebuild (Resilient/Sync)

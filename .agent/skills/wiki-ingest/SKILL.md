@@ -1,6 +1,6 @@
 ---
 name: wiki-ingest
-description: "Use for the deterministic ingest stage that registers a prepared source into the Wiki 2.0 review queue. For official /ingest runs, enter through ingest-lifecycle first and only invoke this skill after upstream artifacts are READY."
+description: "Register prepared sources into the Wiki 2.0 review queue. For official /ingest, invoke after upstream artifacts are READY."
 ---
 
 # Wiki Ingest

@@ -1,6 +1,6 @@
 ---
 name: wiki-cleanup
-description: "Use when broken links, stale content (not updated in 30+ days), or structural inconsistencies are detected in Wiki Atoms. Also triggers on /cleanup command or after a large ingest batch."
+description: "Fix broken links, stale content, or structural inconsistencies in Wiki Atoms. Triggers on /cleanup or after large ingest."
 metadata:
   triggers:
     - "wiki-cleanup"

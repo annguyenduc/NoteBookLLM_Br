@@ -1,6 +1,6 @@
 ---
 name: write-skill
-description: Use when creating, editing, rewriting, or upgrading any SKILL.md file. Triggers on 'viết skill', 'sửa skill', 'nâng cấp skill', 'improve this skill', 'update the skill', or when a user shows you a SKILL.md and asks for feedback. Do NOT use for wiki content editing, ingest tasks, or general documentation outside skill folders.
+description: "Create, edit, or upgrade SKILL.md files. Triggers on edit/upgrade skill or feedback requests. Do NOT use for general wiki edits."
 ---
 
 # Write Skill

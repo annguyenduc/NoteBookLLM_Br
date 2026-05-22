@@ -1,6 +1,6 @@
 ---
 name: process-raw-resource
-description: "Use when the user wants source-preview behavior: preview, triage, or learn quickly from a local source before official ingest. Kích hoạt khi user nói kiểu đọc nhanh, tóm tắt nhanh, có đáng học không, có nên ingest không, preview tài liệu, learning map, quick summary, keyword, câu hỏi chính, hoặc khi một file trong 00_Inbox/ hay một local source cần đi qua một lượt PREVIEW_ONLY. Do NOT use for /ingest, official ingest, atom creation, audit promotion, index rebuild, or any request to write into 3-resources/ or wiki/."
+description: "Preview, triage, or learn quickly from local sources (00_Inbox/) before ingest. Triggers on quick summaries or questions. Do NOT use for official ingest or wiki writes."
 ---
 
 # Process Raw Resource
