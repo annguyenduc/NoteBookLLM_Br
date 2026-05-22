@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark">
     <title>{{ title }}</title>
+    {% if css_content %}
+    <style>
+      {{ css_content | safe }}
+    </style>
+    {% else %}
     <link rel="stylesheet" href="{{ css_href }}">
+    {% endif %}
   </head>
   <body>
     <div class="reader-shell">
@@ -61,6 +67,12 @@
       </div>
     </div>
 
+    {% if js_content %}
+    <script>
+      {{ js_content | safe }}
+    </script>
+    {% else %}
     <script src="{{ js_src }}"></script>
+    {% endif %}
   </body>
 </html>

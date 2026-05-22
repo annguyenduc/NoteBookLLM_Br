@@ -156,7 +156,7 @@ a {
 .reader-title h1 {
   margin: 4px 0 16px;
   font-family: var(--font-title);
-  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-size: clamp(1.6rem, 4.5vw, 2.3rem);
   line-height: 1.08;
 }
 
@@ -209,25 +209,31 @@ a {
 
 .reader-section h1,
 .reader-section h2,
-.reader-section h3 {
+.reader-section h3,
+.reader-content h1,
+.reader-content h2,
+.reader-content h3 {
   scroll-margin-top: 24px;
   line-height: 1.22;
 }
 
-.reader-section h1 {
-  margin: 0 0 16px;
+.reader-section h1,
+.reader-content h1 {
+  margin: 24px 0 16px;
   font-family: var(--font-title);
-  font-size: 1.65rem;
-}
-
-.reader-section h2 {
-  margin-top: 24px;
   font-size: 1.25rem;
 }
 
-.reader-section h3 {
+.reader-section h2,
+.reader-content h2 {
   margin-top: 20px;
   font-size: 1.08rem;
+}
+
+.reader-section h3,
+.reader-content h3 {
+  margin-top: 16px;
+  font-size: 0.98rem;
 }
 
 .heading-anchor {
