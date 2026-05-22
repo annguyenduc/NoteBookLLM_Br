@@ -62,6 +62,11 @@ NoteBookLLM_Br/
 │   ├── 📂 rejected/              ← File lỗi audit từ md_auditor/promote.
 │   └── 📂 rollbacks/             ← Bản lưu phục hồi hệ thống.
 │
+├── 📁 5-learning/                ← TRUNG TÂM HỌC TẬP: Dashboard, review packs, spaced repetition.
+│   ├── 📄 LEARNING_DASHBOARD.md  ← Dashboard tổng hợp tiến độ học tập.
+│   ├── 📂 packs/                 ← Các gói học tập (learning packs) 60-90 phút.
+│   └── 📂 paths/                 ← Lộ trình ôn tập tự động.
+│
 ├── 📁 workspaces/                ← XƯỞNG PHỤ: preview, learning, experiments. NON-CANONICAL.
 │   ├── 📁 learning/              ← inbox, notes, questions, flashcards, outputs.
 │   ├── 📁 source-lab/            ← inbox, converted, reports, runs.
