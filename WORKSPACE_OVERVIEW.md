@@ -74,6 +74,7 @@ NoteBookLLM_Br/
 │   └── 📁 dev-lab/               ← repos, experiments, reports, sandbox.
 │
 ├── 📁 .agent/                    ← Cấu hình & Kỹ năng (Skills)
+│   ├── docs/                     ← Tài liệu tham chiếu, kế hoạch lịch sử, spec hệ thống
 │   ├── skills/                   ← Bộ kỹ năng v3.0 (TDD enforced)
 │   └── workflows/                ← Các quy trình tự động hóa (/ingest, /lint)
 │
@@ -81,7 +82,6 @@ NoteBookLLM_Br/
 │
 ├── AGENTS.md                     ← BỘ LUẬT SWARM (BẮT BUỘC ĐỌC)
 ├── GEMINI.md                     ← Reference mở rộng — chỉ đọc khi cần resolve conflict
-├── task_plan.md                  ← Kế hoạch hiện tại (v6.0 — Phase 4 Hardening)
 └── WORKSPACE_OVERVIEW.md         ← File này
 ```
 
