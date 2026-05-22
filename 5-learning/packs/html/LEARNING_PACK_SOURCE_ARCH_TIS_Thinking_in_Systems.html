@@ -4,41 +4,509 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <title>LEARNING_PACK_ARCH_TIS_Fast_Start</title>
-    <link rel="stylesheet" href="assets/learning-pack.css">
+    <title>Thinking in Systems Reader</title>
+    
+    <style>
+      :root {
+  color-scheme: light;
+  --bg: #faf8f5;
+  --panel: #ffffff;
+  --panel-soft: #f8fafc;
+  --text: #1e293b;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --accent: #0f766e;
+  --accent-soft: #e6fffb;
+  --green-soft: #f0fdf4;
+  --amber-soft: #fffbeb;
+  --red-soft: #fff1f2;
+  --shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+  --radius: 8px;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-title: Georgia, "Times New Roman", serif;
+  --font-mono: "Cascadia Mono", Consolas, "Liberation Mono", monospace;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #121824;
+  --panel: #182233;
+  --panel-soft: #1f2a3d;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --border: #334155;
+  --accent: #5eead4;
+  --accent-soft: #12332f;
+  --green-soft: #132f22;
+  --amber-soft: #33280f;
+  --red-soft: #351923;
+  --shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #121824;
+    --panel: #182233;
+    --panel-soft: #1f2a3d;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --border: #334155;
+    --accent: #5eead4;
+    --accent-soft: #12332f;
+    --green-soft: #132f22;
+    --amber-soft: #33280f;
+    --red-soft: #351923;
+    --shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.75;
+}
+
+a {
+  color: var(--accent);
+}
+
+.reader-shell {
+  display: grid;
+  grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+.reader-toc {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  overflow: auto;
+  padding: 28px 18px;
+  border-right: 1px solid var(--border);
+  background: color-mix(in srgb, var(--panel) 86%, var(--bg));
+}
+
+.toc-header {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 18px;
+  line-height: 1.35;
+}
+
+.toc-kicker,
+.reader-title p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.toc-header strong {
+  font-size: 0.96rem;
+}
+
+.reader-toc nav {
+  display: grid;
+  gap: 2px;
+}
+
+.toc-link {
+  display: block;
+  padding: 7px 9px;
+  border-radius: 6px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.toc-level-2 {
+  padding-left: 20px;
+}
+
+.toc-level-3,
+.toc-level-4,
+.toc-level-5,
+.toc-level-6 {
+  padding-left: 32px;
+  font-size: 0.86rem;
+}
+
+.toc-link:hover,
+.toc-link.is-active {
+  background: var(--accent-soft);
+  color: var(--text);
+}
+
+.reader-main {
+  width: min(100%, 980px);
+  padding: 42px 44px 76px;
+}
+
+.reader-title {
+  max-width: 72ch;
+  margin-bottom: 32px;
+}
+
+.reader-title h1 {
+  margin: 4px 0 16px;
+  font-family: var(--font-title);
+  font-size: clamp(1.6rem, 4.5vw, 2.3rem);
+  line-height: 1.08;
+}
+
+.metadata-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+}
+
+.metadata-strip div {
+  min-width: 130px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--panel);
+}
+
+.metadata-strip dt {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.metadata-strip dd {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+}
+
+.reader-content {
+  max-width: 100%;
+}
+
+/* Giới hạn độ rộng của các phần tử section thông thường ở mức 72ch để tối ưu hóa trải nghiệm đọc văn bản */
+.reader-section {
+  max-width: 72ch;
+  margin: 30px 0;
+  padding: 22px 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+/* Riêng bảng so sánh (Comparison Table) được phép mở rộng 100% chiều rộng của reader-main để hiển thị đầy đủ thông tin trên desktop */
+.reader-section.section-comparison-table {
+  max-width: 100%;
+}
+
+.reader-section h1,
+.reader-section h2,
+.reader-section h3,
+.reader-content h1,
+.reader-content h2,
+.reader-content h3 {
+  scroll-margin-top: 24px;
+  line-height: 1.22;
+}
+
+.reader-section h1,
+.reader-content h1 {
+  margin: 24px 0 16px;
+  font-family: var(--font-title);
+  font-size: 1.25rem;
+}
+
+.reader-section h2,
+.reader-content h2 {
+  margin-top: 20px;
+  font-size: 1.08rem;
+}
+
+.reader-section h3,
+.reader-content h3 {
+  margin-top: 16px;
+  font-size: 0.98rem;
+}
+
+.heading-anchor {
+  margin-right: 8px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.section-big-picture {
+  background: var(--green-soft);
+}
+
+.section-practice-task {
+  border-left: 5px solid var(--accent);
+  background: var(--accent-soft);
+}
+
+.section-failure-modes {
+  background: var(--amber-soft);
+}
+
+.section-missing-context {
+  border-style: dashed;
+  background: var(--red-soft);
+}
+
+.section-source-trace {
+  padding-bottom: 14px;
+}
+
+.source-trace-toggle {
+  width: 100%;
+  margin: 0 0 10px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--panel-soft);
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.section-source-trace.is-collapsed > :not(h1):not(.source-trace-toggle) {
+  display: none;
+}
+
+p,
+ul,
+ol,
+pre,
+.table-wrap {
+  margin: 14px 0;
+}
+
+ul,
+ol {
+  padding-left: 1.35rem;
+}
+
+li + li {
+  margin-top: 6px;
+}
+
+code {
+  border-radius: 4px;
+  background: var(--panel-soft);
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  padding: 0.12em 0.28em;
+}
+
+pre {
+  overflow-x: auto;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--panel-soft);
+}
+
+pre code {
+  padding: 0;
+  background: transparent;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px;
+}
+
+th,
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: var(--panel-soft);
+}
+
+.progress-item {
+  display: inline-grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  align-items: start;
+  gap: 8px;
+}
+
+.progress-item input {
+  margin-top: 0.48em;
+  accent-color: var(--accent);
+}
+
+.reader-tools {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 20;
+}
+
+.icon-button {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--panel);
+  color: var(--text);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+
+@media (max-width: 860px) {
+  .reader-shell {
+    display: block;
+  }
+
+  .reader-toc {
+    position: static;
+    height: auto;
+    max-height: 34vh;
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .reader-main {
+    padding: 28px 18px 70px;
+  }
+
+  .reader-section {
+    padding: 18px 16px;
+  }
+
+  .reader-title h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Định dạng Obsidian Links */
+.obsidian-link {
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.obsidian-link code {
+  color: var(--accent) !important;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 600;
+}
+
+.obsidian-link:hover code {
+  background: var(--accent-soft) !important;
+  color: var(--text) !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 2px 8px rgba(15, 118, 110, 0.15);
+}
+
+
+    </style>
+    
   </head>
   <body>
     <div class="reader-shell">
       <aside class="reader-toc" aria-label="Table of contents">
         <div class="toc-header">
           <span class="toc-kicker">Learning Pack</span>
-          <strong>LEARNING_PACK_ARCH_TIS_Fast_Start</strong>
+          <strong>Thinking in Systems Reader</strong>
         </div>
         <nav>
           
-          <a class="toc-link toc-level-1" href="#big-picture">Big Picture</a>
+          <a class="toc-link toc-level-1" href="#concept_arch_tis_system">Hệ thống</a>
           
-          <a class="toc-link toc-level-1" href="#key-concepts">Key Concepts</a>
+          <a class="toc-link toc-level-1" href="#concept_arch_tis_system_structure">Cấu trúc hệ thống</a>
           
-          <a class="toc-link toc-level-1" href="#concept-map">Concept Map</a>
+          <a class="toc-link toc-level-1" href="#concept_arch_tis_event_behavior_structure">Sự kiện - Hành vi - Cấu trúc</a>
           
-          <a class="toc-link toc-level-1" href="#must-know-atoms">Must-Know Atoms</a>
+          <a class="toc-link toc-level-1" href="#concept_arch_tis_system_boundaries">Ranh giới hệ thống</a>
           
-          <a class="toc-link toc-level-1" href="#comparison-table">Comparison Table</a>
+          <a class="toc-link toc-level-1" href="#concept_arch_tis_hierarchy">Hệ thống phân cấp</a>
           
-          <a class="toc-link toc-level-1" href="#failure-modes">Failure Modes</a>
+          <a class="toc-link toc-level-1" href="#concept_arch_tis_stock">Kho chứa / Trữ lượng</a>
           
-          <a class="toc-link toc-level-1" href="#practice-task">Practice Task</a>
+          <a class="toc-link toc-level-1" href="#concept_arch_tis_flow">Dòng chảy</a>
           
-          <a class="toc-link toc-level-1" href="#review-questions">Review Questions</a>
+          <a class="toc-link toc-level-1" href="#concept_arch_tis_feedback_loop">Vòng lặp phản hồi</a>
           
-          <a class="toc-link toc-level-1" href="#related-projects">Related Projects</a>
+          <a class="toc-link toc-level-1" href="#concept_arch_tis_balancing_feedback">Phản hồi cân bằng</a>
           
-          <a class="toc-link toc-level-1" href="#source-trace">Source Trace</a>
+          <a class="toc-link toc-level-1" href="#concept_arch_tis_reinforcing_feedback">Phản hồi tăng cường</a>
           
-          <a class="toc-link toc-level-1" href="#missing-context">Missing Context</a>
+          <a class="toc-link toc-level-1" href="#concept_arch_tis_delay">Độ trễ</a>
           
-          <a class="toc-link toc-level-1" href="#next-action">Next Action</a>
+          <a class="toc-link toc-level-1" href="#concept_arch_tis_oscillation">Dao động</a>
+          
+          <a class="toc-link toc-level-1" href="#concept_arch_tis_system_traps">Cạm bẫy hệ thống</a>
+          
+          <a class="toc-link toc-level-1" href="#concept_arch_tis_tragedy_of_commons">Bi kịch tài sản chung</a>
+          
+          <a class="toc-link toc-level-1" href="#concept_arch_tis_escalation">Sự leo thang</a>
+          
+          <a class="toc-link toc-level-1" href="#concept_arch_tis_leverage_points">Điểm đòn bẩy</a>
+          
+          <a class="toc-link toc-level-1" href="#concept_arch_tis_resilience">Khả năng phục hồi</a>
+          
+          <a class="toc-link toc-level-1" href="#concept_arch_tis_self_organization">Tự tổ chức</a>
+          
+          <a class="toc-link toc-level-1" href="#concept_arch_tis_systems_wisdom">Triết lý Hệ thống</a>
+          
+          <a class="toc-link toc-level-1" href="#concept_arch_tis_bounded_rationality">Tính hợp lý hạn chế</a>
+          
+          <a class="toc-link toc-level-1" href="#concept_arch_tis_dynamic_equilibrium">Cân bằng động</a>
+          
+          <a class="toc-link toc-level-1" href="#concept_arch_tis_limiting_factor">Yếu tố giới hạn</a>
+          
+          <a class="toc-link toc-level-1" href="#concept_arch_tis_nonlinearities">Tính phi tuyến</a>
+          
+          <a class="toc-link toc-level-1" href="#concept_arch_tis_nonrenewable_resource_limit">Giới hạn tài nguyên không thể tái tạo</a>
+          
+          <a class="toc-link toc-level-1" href="#concept_arch_tis_overshoot_and_collapse">Vượt giới hạn và Sụp đổ</a>
+          
+          <a class="toc-link toc-level-1" href="#concept_arch_tis_renewable_resource_limit">Giới hạn tài nguyên có thể tái tạo</a>
+          
+          <a class="toc-link toc-level-1" href="#concept_arch_tis_shifting_dominance">Sự chuyển dịch ưu thế</a>
+          
+          <a class="toc-link toc-level-1" href="#concept_arch_tis_stock_flow_diagram">Sơ đồ Kho chứa-Dòng chảy</a>
+          
+          <a class="toc-link toc-level-1" href="#concept_arch_tis_system_paradigms">Mô thức hệ thống</a>
+          
+          <a class="toc-link toc-level-1" href="#entity_arch_tis_donella_meadows">Donella H. Meadows</a>
+          
+          <a class="toc-link toc-level-1" href="#entity_arch_tis_jay_forrester">Jay W. Forrester</a>
+          
+          <a class="toc-link toc-level-1" href="#entity_arch_tis_mit_sd_group">MIT System Dynamics Group</a>
           
         </nav>
       </aside>
@@ -46,7 +514,7 @@
       <main class="reader-main">
         <header class="reader-title">
           <p>Learning Pack</p>
-          <h1>LEARNING_PACK_ARCH_TIS_Fast_Start</h1>
+          <h1>Thinking in Systems Reader</h1>
           
           <dl class="metadata-strip">
             
@@ -56,15 +524,10 @@
             </div>
             
             
-            <div>
-              <dt>learning_pack_status</dt>
-              <dd>EXPLORATORY</dd>
-            </div>
-            
             
             <div>
               <dt>status</dt>
-              <dd>LEARNING_DRAFT</dd>
+              <dd>PUBLISHED</dd>
             </div>
             
           </dl>
@@ -72,91 +535,1374 @@
         </header>
 
         <article class="reader-content">
-          <section id="big-picture" class="reader-section section-big-picture"><h1><a class="heading-anchor" href="#big-picture">#</a>Big Picture</h1>
-<p><strong>EXPLORATORY Learning Pack</strong> vì các atom <code>ARCH_TIS</code> hiện đọc được đều đang <code>status: &quot;DRAFT&quot;</code>. Các claim dưới đây dùng atom có <code>source_ref</code> / <code>source_file</code>, nhưng chưa trình bày như synthesis đã chốt.</p>
-<p><code>Thinking in Systems</code> nên học theo một đường chính:</p>
-<pre><code class="language-text">System
--&gt; Structure creates behavior
--&gt; Stocks/Flows create state change
--&gt; Feedback loops create dynamics
--&gt; Delays create oscillation/overshoot
--&gt; Boundaries decide what you can see
--&gt; Traps reveal repeated failure patterns
--&gt; Leverage points show where to intervene
--&gt; Systems wisdom is the operating mindset</code></pre>
-<p>Mục tiêu 60-90 phút: không thuộc lòng toàn bộ concept, mà nắm được cách nhìn hệ thống để áp dụng vào một vấn đề thật.</p>
-</section>
-<section id="key-concepts" class="reader-section section-key-concepts"><h1><a class="heading-anchor" href="#key-concepts">#</a>Key Concepts</h1>
-<ol><li><strong>System</strong>: một tập hợp phần tử kết nối với nhau để tạo ra mục đích hoặc hành vi chung.</li><li><strong>System Structure</strong>: cấu trúc quan hệ, luồng, stock, feedback và rule là nguyên nhân sâu hơn của hành vi.</li><li><strong>Event / Behavior / Structure</strong>: sự kiện là bề mặt; pattern hành vi và cấu trúc mới là tầng cần phân tích.</li><li><strong>Stock</strong>: trạng thái tích lũy của hệ thống tại một thời điểm.</li><li><strong>Flow</strong>: dòng vào / dòng ra làm stock tăng hoặc giảm theo thời gian.</li><li><strong>Feedback Loop</strong>: vòng phản hồi khiến hành động hôm nay quay lại ảnh hưởng trạng thái tương lai.</li><li><strong>Balancing Feedback</strong>: vòng phản hồi kéo hệ về mục tiêu hoặc trạng thái cân bằng.</li><li><strong>Reinforcing Feedback</strong>: vòng phản hồi khuếch đại tăng trưởng hoặc suy giảm.</li><li><strong>Delay</strong>: độ trễ giữa hành động và kết quả, thường gây dao động hoặc overcorrection.</li><li><strong>System Boundaries</strong>: ranh giới quyết định cái gì được tính vào phân tích và cái gì bị bỏ ngoài.</li><li><strong>System Traps</strong>: mẫu lỗi lặp lại do cấu trúc hệ thống, không chỉ do con người ra quyết định kém.</li><li><strong>Leverage Points</strong>: điểm can thiệp có sức đổi hệ thống, từ tham số nông đến mục tiêu và mindset sâu.</li><li><strong>Resilience / Self-Organization / Hierarchy</strong>: năng lực hệ thống hấp thụ biến động, tự tái cấu trúc, và tổ chức nhiều tầng.</li><li><strong>Systems Wisdom</strong>: thái độ vận hành khi làm việc với hệ thống phức tạp: khiêm tốn, quan sát feedback, thử nhỏ, và học từ hành vi thật.</li></ol>
-</section>
-<section id="concept-map" class="reader-section section-concept-map"><h1><a class="heading-anchor" href="#concept-map">#</a>Concept Map</h1>
-<pre><code class="language-text"><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_System.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_System</a>
-├─ <a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_System_Structure.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_System_Structure</a>
-│  ├─ <a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Event_Behavior_Structure.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_Event_Behavior_Structure</a>
-│  ├─ <a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_System_Boundaries.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_System_Boundaries</a>
-│  └─ <a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Hierarchy.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_Hierarchy</a>
-├─ <a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Stock.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_Stock</a>
-│  └─ <a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Flow.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_Flow</a>
-├─ <a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Feedback_Loop.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_Feedback_Loop</a>
-│  ├─ <a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Balancing_Feedback.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_Balancing_Feedback</a>
-│  ├─ <a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Reinforcing_Feedback.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_Reinforcing_Feedback</a>
-│  ├─ <a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Delay.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_Delay</a>
-│  └─ <a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Oscillation.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_Oscillation</a>
-├─ <a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_System_Traps.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_System_Traps</a>
-│  ├─ <a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Tragedy_of_Commons.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_Tragedy_of_Commons</a>
-│  └─ <a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Escalation.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_Escalation</a>
-└─ <a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Leverage_Points.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_Leverage_Points</a>
-   ├─ <a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Resilience.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_Resilience</a>
-   ├─ <a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Self_Organization.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_Self_Organization</a>
-   └─ <a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Systems_Wisdom.md" class="obsidian-link" title="Mở trong Obsidian">CONCEPT_ARCH_TIS_Systems_Wisdom</a></code></pre>
-</section>
-<section id="must-know-atoms" class="reader-section section-must-know-atoms"><h1><a class="heading-anchor" href="#must-know-atoms">#</a>Must-Know Atoms</h1>
-<p>Học theo thứ tự này trong 60-90 phút:</p>
-<ol><li><label class="progress-item"><input type="checkbox" data-progress-key="b2da59cd3f6a"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/sources/SOURCE_ARCH_TIS_Thinking_in_Systems.md" class="obsidian-link" title="Mở trong Obsidian"><code>SOURCE_ARCH_TIS_Thinking_in_Systems</code></a></span></label></li><li><label class="progress-item"><input type="checkbox" data-progress-key="7bd46d876743"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_System.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_System</code></a></span></label></li><li><label class="progress-item"><input type="checkbox" data-progress-key="88c0b3c0378f"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_System_Structure.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_System_Structure</code></a></span></label></li><li><label class="progress-item"><input type="checkbox" data-progress-key="5cfaeadbb7f6"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Event_Behavior_Structure.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_Event_Behavior_Structure</code></a></span></label></li><li><label class="progress-item"><input type="checkbox" data-progress-key="38e430813b73"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Stock.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_Stock</code></a></span></label></li><li><label class="progress-item"><input type="checkbox" data-progress-key="cf37245febba"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Flow.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_Flow</code></a></span></label></li><li><label class="progress-item"><input type="checkbox" data-progress-key="f5be88bc9255"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Feedback_Loop.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_Feedback_Loop</code></a></span></label></li><li><label class="progress-item"><input type="checkbox" data-progress-key="871c38cf913d"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Balancing_Feedback.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_Balancing_Feedback</code></a></span></label></li><li><label class="progress-item"><input type="checkbox" data-progress-key="08f1a6946ca5"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Reinforcing_Feedback.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_Reinforcing_Feedback</code></a></span></label></li><li><label class="progress-item"><input type="checkbox" data-progress-key="6af0f2978f1f"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Delay.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_Delay</code></a></span></label></li><li><label class="progress-item"><input type="checkbox" data-progress-key="ca8c233115fc"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_System_Boundaries.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_System_Boundaries</code></a></span></label></li><li><label class="progress-item"><input type="checkbox" data-progress-key="7bd293a76c8b"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_System_Traps.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_System_Traps</code></a></span></label></li><li><label class="progress-item"><input type="checkbox" data-progress-key="ff19763d5562"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Leverage_Points.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_Leverage_Points</code></a></span></label></li><li><label class="progress-item"><input type="checkbox" data-progress-key="974576ddc910"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Systems_Wisdom.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_Systems_Wisdom</code></a></span></label></li></ol>
-<p>Optional extension nếu còn thời gian:</p>
-<ul><li><label class="progress-item"><input type="checkbox" data-progress-key="ed5d7cf6a6ca"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Oscillation.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_Oscillation</code></a></span></label></li><li><label class="progress-item"><input type="checkbox" data-progress-key="08c52cda8fa0"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Tragedy_of_Commons.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_Tragedy_of_Commons</code></a></span></label></li><li><label class="progress-item"><input type="checkbox" data-progress-key="5986dec81463"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Escalation.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_Escalation</code></a></span></label></li><li><label class="progress-item"><input type="checkbox" data-progress-key="f8ba524115e4"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Resilience.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_Resilience</code></a></span></label></li><li><label class="progress-item"><input type="checkbox" data-progress-key="ab4df2f7eda3"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Self_Organization.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_Self_Organization</code></a></span></label></li><li><label class="progress-item"><input type="checkbox" data-progress-key="995328aa9ad7"><span><a href="obsidian://open?vault=NoteBookLLM_Br&file=3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Hierarchy.md" class="obsidian-link" title="Mở trong Obsidian"><code>CONCEPT_ARCH_TIS_Hierarchy</code></a></span></label></li></ul>
-</section>
-<section id="comparison-table" class="reader-section section-comparison-table"><h1><a class="heading-anchor" href="#comparison-table">#</a>Comparison Table</h1>
-<div class="table-wrap"><table><thead><tr><th>Pair</th><th>Phân biệt nhanh</th><th>Câu hỏi kiểm tra</th></tr></thead><tbody><tr><td>Event vs Behavior vs Structure</td><td>Event là điều vừa xảy ra; behavior là pattern qua thời gian; structure là nguyên nhân tạo pattern.</td><td>Bạn đang sửa triệu chứng hay sửa cấu trúc?</td></tr><tr><td>Stock vs Flow</td><td>Stock là lượng tích lũy; flow là tốc độ vào / ra làm stock đổi.</td><td>Bạn đang đo trạng thái hay đo dòng thay đổi?</td></tr><tr><td>Balancing vs Reinforcing Feedback</td><td>Balancing ổn định / kéo về mục tiêu; reinforcing khuếch đại.</td><td>Feedback đang làm hệ tự ổn định hay tự tăng tốc?</td></tr><tr><td>Delay vs No Delay</td><td>Delay làm tác động đến muộn, dễ gây phản ứng quá tay.</td><td>Có khoảng trễ nào làm bạn hiểu sai kết quả không?</td></tr><tr><td>Boundary vs Whole System</td><td>Boundary quyết định scope phân tích; đổi boundary có thể đổi kết luận.</td><td>Ai / cái gì đang bị loại khỏi bản đồ hệ thống?</td></tr><tr><td>Trap vs Bad Decision</td><td>Trap là lỗi do cấu trúc lặp lại; bad decision là lỗi cục bộ.</td><td>Nếu thay người mà lỗi vẫn lặp lại, trap là gì?</td></tr><tr><td>Parameter vs Leverage Point sâu</td><td>Parameter thường dễ chỉnh nhưng ít đổi hệ; goal/mindset/rule sâu hơn.</td><td>Bạn đang chỉnh số hay đổi logic vận hành?</td></tr></tbody></table></div>
-</section>
-<section id="failure-modes" class="reader-section section-failure-modes"><h1><a class="heading-anchor" href="#failure-modes">#</a>Failure Modes</h1>
-<ol><li><strong>Chỉ nhìn event</strong>: thấy một lỗi đơn lẻ rồi sửa nhanh, nhưng bỏ qua pattern và cấu trúc.</li><li><strong>Nhầm stock với flow</strong>: dùng dữ liệu tốc độ để kết luận về trạng thái tích lũy, hoặc ngược lại.</li><li><strong>Bỏ qua delay</strong>: can thiệp quá sớm / quá mạnh vì chưa thấy kết quả đến.</li><li><strong>Tìm thủ phạm thay vì tìm cấu trúc</strong>: quy lỗi cho cá nhân trong khi incentive, boundary, rule hoặc feedback mới là nguyên nhân.</li><li><strong>Can thiệp ở điểm đòn bẩy nông</strong>: chỉnh tham số nhưng không chạm rule, goal, information flow, hoặc mindset.</li><li><strong>Vẽ boundary quá hẹp</strong>: tối ưu một phần khiến toàn hệ xấu hơn.</li><li><strong>Coi Learning Pack là synthesis cuối</strong>: pack này chỉ là learning artifact để học và thực hành, không phải kết luận đã duyệt.</li></ol>
-</section>
-<section id="practice-task" class="reader-section section-practice-task"><h1><a class="heading-anchor" href="#practice-task">#</a>Practice Task</h1>
-<p>Chọn một hệ thống thật trong vault hoặc công việc hiện tại, ví dụ:</p>
-<ul><li>pipeline ingest của <code>NoteBookLLM_Br</code></li><li>quy trình học một nguồn dài như <code>Thinking in Systems</code></li><li>workflow tạo atom -&gt; review -&gt; synthesis</li><li>một lớp học / chương trình đào tạo đang thiết kế</li></ul>
-<p>Làm trong 25-35 phút:</p>
-<ol><li>Ghi mục đích của hệ thống trong 1 câu.</li><li>Liệt kê 2-3 stock chính.</li><li>Liệt kê flow làm mỗi stock tăng / giảm.</li><li>Vẽ ít nhất một balancing loop và một reinforcing loop.</li><li>Chỉ ra một delay quan trọng.</li><li>Ghi boundary đang dùng và một boundary thay thế.</li><li>Chọn một system trap có thể đang xảy ra.</li><li>Đề xuất một leverage point sâu hơn chỉnh tham số.</li></ol>
-<p>Output mong muốn:</p>
-<pre><code class="language-md">## System Chosen
-## Purpose
-## Stocks
-## Flows
-## Feedback Loops
-## Delays
-## Boundary Choice
-## Likely Trap
-## Leverage Point
-## What I Would Test Next</code></pre>
-</section>
-<section id="review-questions" class="reader-section section-review-questions"><h1><a class="heading-anchor" href="#review-questions">#</a>Review Questions</h1>
-<ol><li>Nếu chỉ được nhớ một câu về system, bạn sẽ nói gì?</li><li>Vì sao structure quan trọng hơn event khi muốn sửa lỗi lặp lại?</li><li>Stock khác flow ở đâu? Cho một ví dụ trong vault.</li><li>Một reinforcing loop có thể tạo tăng trưởng tốt và suy giảm xấu như thế nào?</li><li>Balancing feedback có phải lúc nào cũng tốt không?</li><li>Delay gây oscillation bằng cách nào?</li><li>Khi đổi boundary, kết luận phân tích có thể đổi ra sao?</li><li>Dấu hiệu nào cho thấy vấn đề là system trap chứ không phải lỗi cá nhân?</li><li>Vì sao leverage point sâu thường khó dùng hơn leverage point nông?</li><li>Bạn sẽ áp dụng systems wisdom vào một quyết định tuần này như thế nào?</li></ol>
-</section>
-<section id="related-projects" class="reader-section section-related-projects"><h1><a class="heading-anchor" href="#related-projects">#</a>Related Projects</h1>
-<ul><li><code>ARCH_TIS</code>: học nhanh <code>Thinking in Systems</code> từ atom đã có.</li><li>Wiki ingest lifecycle: dùng event / behavior / structure để phân biệt lỗi local với blocker toàn pipeline.</li><li>Skill governance: dùng boundary để tách <code>wiki-learning-pack</code> khỏi <code>wiki-learning-audit</code>, <code>pedagogy</code>, ingest, và synthesis.</li><li>Learning UX layer: dùng pack này làm bước trước <code>wiki-review-drill</code> và <code>wiki-learning-audit</code>.</li></ul>
-</section>
-<section id="source-trace" class="reader-section section-source-trace"><h1><a class="heading-anchor" href="#source-trace">#</a>Source Trace</h1>
-<p>Pack này trace về các atom/source sau:</p>
-<ul><li><code>3-resources/wiki/sources/SOURCE_ARCH_TIS_Thinking_in_Systems.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_System.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_System_Structure.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Event_Behavior_Structure.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_System_Boundaries.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Stock.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Flow.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Feedback_Loop.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Balancing_Feedback.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Reinforcing_Feedback.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Delay.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Oscillation.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_System_Traps.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Tragedy_of_Commons.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Escalation.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Leverage_Points.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Resilience.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Self_Organization.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Hierarchy.md</code></li><li><code>3-resources/wiki/concepts/CONCEPT_ARCH_TIS_Systems_Wisdom.md</code></li></ul>
-</section>
-<section id="missing-context" class="reader-section section-missing-context"><h1><a class="heading-anchor" href="#missing-context">#</a>Missing Context</h1>
-<ul><li>Các atom <code>ARCH_TIS</code> đọc được trong bước chat-only test đang là <code>DRAFT</code>, nên artifact này giữ <code>learning_pack_status: &quot;EXPLORATORY&quot;</code> và <code>status: &quot;LEARNING_DRAFT&quot;</code>.</li><li>Source atom ghi “37 atoms”, nhưng filesystem query ở bước test thấy 33 file <code>ARCH_TIS</code>. Cần reconcile con số này trước khi coi pack là trạng thái ổn định dài hạn.</li><li>Chưa chạy <code>wiki-breakdown</code>, nên chưa xác nhận khái niệm nào còn thiếu để học nhanh.</li><li>Chưa chạy <code>wiki-learning-audit</code>, đúng boundary: pack này chỉ recommend audit, không tự chạy.</li></ul>
-</section>
-<section id="next-action" class="reader-section section-next-action"><h1><a class="heading-anchor" href="#next-action">#</a>Next Action</h1>
-<ol><li>Dùng pack này để học <code>ARCH_TIS</code> trong một phiên 60-90 phút.</li><li>Sau khi học, tạo <code>wiki-review-drill</code> nếu cần câu hỏi recall / transfer chuyên biệt.</li><li>Nếu muốn kiểm tra atom nào “đã đọc nhưng chưa thực hành”, chạy GO riêng:</li></ol>
-<pre><code class="language-text">AN GO - run wiki-learning-audit dry-run for ARCH_TIS</code></pre>
-<ol><li>Nếu muốn biến pack thành giáo án, slide, activity sheet, hoặc rubric, handoff sang <code>@designer</code> / <code>pedagogy</code>.</li></ol>
-</section>
+          <hr />
+<h2>title: &quot;Thinking in Systems Reader&quot;
+author: &quot;AN&quot;
+lang: &quot;vi&quot;</h2>
+<h1>Hệ thống {#concept_arch_tis_system}</h1>
+<div class="metadata-strip">
+<div><span class="metadata-label">ID:</span> CONCEPT_ARCH_TIS_System</div>
+<div><span class="metadata-label">Trạng thái:</span> DRAFT</div>
+</div>
+<h2>For future Claude (AI Preamble)</h2>
+<blockquote>
+<p>Một hệ thống là một tập hợp các yếu tố được kết nối với nhau một cách có tổ chức để đạt được một mục tiêu hoặc chức năng nhất định. Hệ thống không chỉ là tổng các phần tử cộng lại, mà là kết quả của sự tương tác giữa các phần tử đó (structure).</p>
+</blockquote>
+<h2>1. Định nghĩa</h2>
+<p>Một <strong>hệ thống (system)</strong> là một tập hợp các thành phần, yếu tố (elements) được kết nối chặt chẽ với nhau (interconnections) và được tổ chức một cách có mục đích nhằm thực hiện một chức năng hoặc đạt được một mục tiêu (function/purpose) nhất định. Một hệ thống không bao giờ chỉ là phép cộng đơn thuần của các phần tử; hành vi của nó sinh ra từ cấu trúc và sự tương tác phức tạp bên trong.</p>
+<h2>2. Nguyên lý / Cấu trúc</h2>
+<p>Bất kỳ hệ thống nào cũng bao gồm ba thành phần cơ bản:</p>
+<ol>
+<li><strong>Các yếu tố (Elements):</strong> Các phần tử có thể nhìn thấy, đo lường được (ví dụ: con người, máy móc, tế bào). Đôi khi là yếu tố vô hình (thương hiệu, kiến thức).</li>
+<li><strong>Sự kết nối (Interconnections):</strong> Các mối quan hệ liên kết các yếu tố lại với nhau. Đây có thể là các định luật vật lý, luồng thông tin, hoặc luật lệ xã hội. Nếu thay đổi các kết nối, hệ thống sẽ thay đổi đáng kể.</li>
+<li><strong>Mục đích / Chức năng (Purpose / Function):</strong> Trọng tâm của hệ thống. Đây là yếu tố ít nhìn thấy nhất nhưng quyết định hành vi của hệ thống mạnh nhất. Mục đích của một hệ thống được suy ra từ hành vi thực tế của nó (what it does), chứ không phải từ những gì nó tuyên bố.</li>
+</ol>
+<p><em>Nguyên lý cốt lõi:</em> Cấu trúc (Structure) của hệ thống là thứ sinh ra hành vi (Behavior) của hệ thống đó. Nếu một hệ thống cũ gặp vấn đề, việc thay đổi các yếu tố (thay người quản lý, thay linh kiện) thường ít tạo ra sự thay đổi dài hạn. Phải thay đổi sự kết nối hoặc mục đích mới thực sự làm thay đổi hệ thống.</p>
+<h2>3. Ví dụ đối chiếu (R18: Double Examples)</h2>
+<h3>Ví dụ từ sách (Original)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Hệ thống tiêu hóa của động vật, một đội bóng, hoặc một trường đại học.
+<strong>Ứng dụng</strong>: Đội bóng là một hệ thống vì nó có người chơi (yếu tố), luật lệ chơi bóng và giao tiếp (kết nối), với mục tiêu là giành chiến thắng (mục đích). Nếu bạn thay toàn bộ người chơi, nó vẫn là một đội bóng. Nhưng nếu bạn thay đổi luật lệ, nó có thể biến thành một trò chơi hoàn toàn khác.
+<strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — Chương 1 (CH01_SEC01_P028-028)</p>
+</blockquote>
+<h3>Ứng dụng sư phạm (Pedagogical Application)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Lớp học thực tế (EdTech / Classroom Management).
+<strong>Ứng dụng</strong>: Một lớp học là một hệ thống. Giáo viên, học sinh, sách vở là các <em>yếu tố</em>. Cách thức đánh giá, luật điểm danh, phương pháp giảng bài là sự <em>kết nối</em>. Việc truyền đạt kiến thức (hoặc thi đỗ) là <em>mục đích</em>. Nếu một lớp học có điểm số kém, thay vì chỉ trách mắng học sinh (đổi yếu tố), giáo viên (nhà thiết kế hệ thống) nên xem xét thay đổi phương pháp truyền đạt (kết nối) hoặc mục tiêu đánh giá (chức năng) để cải thiện hiệu suất của toàn hệ thống.</p>
+</blockquote>
+<h2>4. Phản tư sư phạm (4F)</h2>
+<ul>
+<li><strong>Facts</strong>: Hệ thống luôn bao gồm: Yếu tố + Kết nối + Mục đích.</li>
+<li><strong>Feelings</strong>: Khái niệm này mang tính nền tảng, giúp người học thoát khỏi tư duy đổ lỗi cho sự kiện (event-oriented) và chuyển sang tư duy cấu trúc (structure-oriented).</li>
+<li><strong>Findings</strong>: Thay đổi yếu tố (elements) là cách dễ nhất nhưng kém hiệu quả nhất để thay đổi hệ thống. Đích đến lớn nhất là thay đổi Mục đích (Purpose).</li>
+<li><strong>Future</strong>: Dùng làm khái niệm mở đầu cho mọi khóa học về Tư duy Hệ thống, quản lý dự án và thiết kế tổ chức.</li>
+</ul>
+<h2>5. Trích dẫn nguồn (R3)</h2>
+<ul>
+<li><strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — (RAW_2026-05-18_ARCH_Thinking_in_Systems_CH01_SEC01_P028-028.md)</li>
+<li><strong>Fact-check</strong>: Đã đối chiếu thành công định nghĩa hệ thống từ bản gốc do Donella Meadows định nghĩa.</li>
+</ul>
+<hr />
+<p><em>Phiên bản Template V3.1 (Audit Aligned).</em>
+<strong>Source PDF:</strong> <code>ARCH_Thinking_in_Systems.pdf</code></p>
+<div style="page-break-after: always;"></div>
+<h1>Cấu trúc hệ thống {#concept_arch_tis_system_structure}</h1>
+<div class="metadata-strip">
+<div><span class="metadata-label">ID:</span> CONCEPT_ARCH_TIS_System_Structure</div>
+<div><span class="metadata-label">Trạng thái:</span> DRAFT</div>
+</div>
+<h2>For future Claude (AI Preamble)</h2>
+<blockquote>
+<p>Cấu trúc hệ thống là cách thức các yếu tố bên trong hệ thống được sắp xếp và kết nối với nhau. Cấu trúc là nguyên nhân gốc rễ sinh ra hành vi của hệ thống theo thời gian.</p>
+</blockquote>
+<h2>1. Định nghĩa</h2>
+<p><strong>Cấu trúc hệ thống (System Structure)</strong> là sự sắp xếp có tổ chức và các mạng lưới liên kết (interconnections) vật lý hoặc phi vật lý giữa các thành phần (elements) bên trong một hệ thống.</p>
+<h2>2. Nguyên lý / Cấu trúc</h2>
+<p>Cấu trúc quyết định cách các yếu tố tương tác, dòng chảy của thông tin và năng lượng, từ đó định hình các vòng lặp phản hồi (feedback loops).</p>
+<ul>
+<li>Hành vi của hệ thống (như tăng trưởng, suy giảm, dao động) không xuất phát từ các yếu tố ngẫu nhiên bên ngoài mà từ chính cấu trúc bên trong của nó.</li>
+<li>Nếu cấu trúc hệ thống không thay đổi, việc đổi mới các yếu tố bên trong hiếm khi làm thay đổi hành vi dài hạn của hệ thống.</li>
+</ul>
+<h2>3. Ví dụ đối chiếu (R18: Double Examples)</h2>
+<h3>Ví dụ từ sách (Original)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Hệ thống lò xo Slinky.
+<strong>Ứng dụng</strong>: Cách cái lò xo Slinky nảy lên xuống khi thả từ bậc thang không phải do bàn tay đẩy nó (tác nhân bên ngoài), mà do chính cấu trúc vòng xoắn của nó (cấu trúc bên trong).
+<strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — Chương 1</p>
+</blockquote>
+<h3>Ứng dụng sư phạm (Pedagogical Application)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Thiết kế chương trình học (Curriculum Design).
+<strong>Ứng dụng</strong>: Nếu học sinh chỉ học để đối phó thi cử, nguyên nhân không hẳn do học sinh lười (yếu tố), mà do cấu trúc điểm số và cách đánh giá (cấu trúc) khuyến khích hành vi đó. Đổi giáo viên không giải quyết được vấn đề; phải thay đổi cấu trúc đánh giá.</p>
+</blockquote>
+<h2>4. Phản tư sư phạm (4F)</h2>
+<ul>
+<li><strong>Facts</strong>: Hành vi sinh ra từ cấu trúc.</li>
+<li><strong>Feelings</strong>: Quan điểm này giúp giảm thiểu việc &quot;đổ lỗi&quot; cho cá nhân.</li>
+<li><strong>Findings</strong>: Thay đổi cấu trúc là điểm đòn bẩy mạnh mẽ hơn thay đổi yếu tố.</li>
+<li><strong>Future</strong>: Ứng dụng phân tích cấu trúc trong quản trị lớp học.</li>
+</ul>
+<h2>5. Trích dẫn nguồn (R3)</h2>
+<ul>
+<li><strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — (RAW_2026-05-18_ARCH_Thinking_in_Systems_CH01_SEC01_P028-028.md)</li>
+<li><strong>Fact-check</strong>: Định nghĩa cơ bản từ Chương 1.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+<h1>Sự kiện - Hành vi - Cấu trúc {#concept_arch_tis_event_behavior_structure}</h1>
+<div class="metadata-strip">
+<div><span class="metadata-label">ID:</span> CONCEPT_ARCH_TIS_Event_Behavior_Structure</div>
+<div><span class="metadata-label">Trạng thái:</span> DRAFT</div>
+</div>
+<h2>For future Claude (AI Preamble)</h2>
+<blockquote>
+<p>Mô hình Tảng băng trôi giải thích 3 cấp độ nhận thức về thế giới: Sự kiện (phần nổi, những gì xảy ra), Hành vi (khuynh hướng qua thời gian), và Cấu trúc (phần chìm sâu, nguyên nhân gốc rễ sinh ra hành vi).</p>
+</blockquote>
+<h2>1. Định nghĩa</h2>
+<p>Thế giới có thể được nhìn nhận qua ba cấp độ:</p>
+<ul>
+<li><strong>Sự kiện (Events):</strong> Những gì xảy ra tại một thời điểm cụ thể (bề nổi của tảng băng).</li>
+<li><strong>Hành vi (Behavior over time):</strong> Chuỗi các sự kiện tạo thành xu hướng hoặc mô hình theo thời gian.</li>
+<li><strong>Cấu trúc (Structure):</strong> Mạng lưới các vòng lặp phản hồi và các kết nối vật lý/thông tin nằm sâu bên dưới, là nguyên nhân sinh ra các Hành vi.</li>
+</ul>
+<h2>2. Nguyên lý / Cấu trúc</h2>
+<ul>
+<li>Hầu hết con người (và tin tức truyền thông) phản ứng ở mức độ Sự kiện. Việc xử lý sự kiện chỉ mang tính chữa cháy, không giải quyết gốc rễ.</li>
+<li>Những người tinh tế hơn sẽ quan sát Hành vi (xu hướng) để đưa ra dự báo.</li>
+<li>Người tư duy hệ thống tập trung vào Cấu trúc. Chỉ khi can thiệp vào Cấu trúc (thiết kế lại hệ thống), chúng ta mới thực sự thay đổi được Hành vi, từ đó thay đổi các Sự kiện sẽ xảy ra trong tương lai.</li>
+</ul>
+<h2>3. Ví dụ đối chiếu (R18: Double Examples)</h2>
+<h3>Ví dụ từ sách (Original)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Tràn dầu trên biển.
+<strong>Ứng dụng</strong>: &quot;Hôm qua một tàu chở dầu bị tràn&quot; là Sự kiện -&gt; Cử đội đi dọn. &quot;Số vụ tràn dầu tăng 20% mỗi năm&quot; là Hành vi -&gt; Chuẩn bị sẵn nhiều thuyền cứu hộ hơn. &quot;Luật hàng hải lỏng lẻo khuyến khích tàu cũ hoạt động để tối ưu chi phí&quot; là Cấu trúc -&gt; Thay đổi luật, phạt nặng để loại bỏ nguyên nhân gốc rễ.
+<strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — Chương 4</p>
+</blockquote>
+<h3>Ứng dụng sư phạm (Pedagogical Application)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Học sinh đánh nhau trong trường.
+<strong>Ứng dụng</strong>:</p>
+<ul>
+<li><em>Sự kiện:</em> Em A đánh em B. (Giải pháp: Phạt đình chỉ em A).</li>
+<li><em>Hành vi:</em> Bạo lực học đường tăng cao vào tháng thi cử. (Giải pháp: Tăng cường bảo vệ vào tháng thi).</li>
+<li><em>Cấu trúc:</em> Áp lực thi cử quá lớn kết hợp với việc thiếu không gian hoạt động thể chất giải tỏa năng lượng. (Giải pháp: Tái cấu trúc lịch học, tăng thời gian thể thao).</li>
+</ul>
+</blockquote>
+<h2>4. Phản tư sư phạm (4F)</h2>
+<ul>
+<li><strong>Facts</strong>: Con người bẩm sinh phản ứng với sự kiện vì nó dễ thấy.</li>
+<li><strong>Feelings</strong>: Việc đào sâu xuống cấu trúc tốn não và mất thời gian, nhưng là cách duy nhất có hiệu quả lâu dài.</li>
+<li><strong>Findings</strong>: Trong giảng dạy, không nên chỉ sửa các &quot;lỗi sai&quot; (sự kiện) của học sinh, mà phải sửa &quot;cấu trúc tư duy&quot; gây ra lỗi đó.</li>
+<li><strong>Future</strong>: Dạy học sinh sử dụng mô hình tảng băng trôi để phân tích các tin tức thời sự.</li>
+</ul>
+<h2>5. Trích dẫn nguồn (R3)</h2>
+<ul>
+<li><strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — (RAW_2026-05-18_ARCH_Thinking_in_Systems_CH04_SEC01_P104-107.md)</li>
+<li><strong>Fact-check</strong>: Tương đương với Iceberg Model trong hệ thống giáo dục.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+<h1>Ranh giới hệ thống {#concept_arch_tis_system_boundaries}</h1>
+<div class="metadata-strip">
+<div><span class="metadata-label">ID:</span> CONCEPT_ARCH_TIS_System_Boundaries</div>
+<div><span class="metadata-label">Trạng thái:</span> DRAFT</div>
+</div>
+<h2>For future Claude (AI Preamble)</h2>
+<blockquote>
+<p>Không có hệ thống nào tồn tại độc lập trong vũ trụ. Mọi ranh giới hệ thống đều do con người tự vẽ ra để dễ quan sát và phân tích. Ranh giới quá hẹp sẽ bỏ sót nguyên nhân gốc rễ, ranh giới quá rộng sẽ gây quá tải thông tin.</p>
+</blockquote>
+<h2>1. Định nghĩa</h2>
+<p><strong>Ranh giới hệ thống (System Boundaries)</strong> là những giới hạn vật lý hoặc khái niệm do người quan sát thiết lập để phân định đâu là &quot;bên trong&quot; (các yếu tố cần quan tâm) và đâu là &quot;bên ngoài&quot; (môi trường). Trong thực tế, vũ trụ là một mạng lưới liên tục; ranh giới chỉ là công cụ tư duy (mental model).</p>
+<h2>2. Nguyên lý / Cấu trúc</h2>
+<ul>
+<li>Mây không kết thúc ở nơi cơn mưa bắt đầu, và quốc gia không thực sự bị cắt đứt ở đường biên giới hải quan.</li>
+<li>Ranh giới là giả tạo, nhưng cần thiết.</li>
+<li>Vấn đề lớn nhất xảy ra khi chúng ta <strong>đóng cứng ranh giới (boundary rigidity)</strong>. Một giải pháp tuyệt vời trong ranh giới hẹp có thể tạo ra thảm họa ở ranh giới rộng hơn (ví dụ: vứt rác &quot;ra ngoài&quot; nhà, nhưng thực chất là vứt vào &quot;bên trong&quot; hệ sinh thái chung).</li>
+</ul>
+<h2>3. Ví dụ đối chiếu (R18: Double Examples)</h2>
+<h3>Ví dụ từ sách (Original)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Vấn đề ô nhiễm khí thải.
+<strong>Ứng dụng</strong>: Nếu Mỹ vẽ ranh giới hệ thống chỉ bao gồm lãnh thổ Mỹ, họ có thể xây các ống khói thật cao để khí thải bay &quot;ra ngoài&quot; ranh giới quốc gia. Nhưng nếu vẽ ranh giới lớn hơn bao gồm cả Trái Đất, khí thải đó sẽ rơi xuống Canada hoặc Châu Âu dưới dạng mưa axit. Không có khái niệm &quot;vứt đi&quot; trong một hệ thống đóng.
+<strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — Chương 4</p>
+</blockquote>
+<h3>Ứng dụng sư phạm (Pedagogical Application)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Trách nhiệm giáo dục hành vi của học sinh.
+<strong>Ứng dụng</strong>: Nếu trường học vẽ ranh giới: &quot;Trách nhiệm của tôi chỉ nằm sau cánh cổng trường&quot;, họ sẽ đuổi học những học sinh hư hỏng để &quot;làm sạch&quot; hệ thống của mình. Nhưng nếu vẽ ranh giới là &quot;Toàn xã hội&quot;, học sinh bị đuổi đó sẽ trở thành tội phạm và quay lại làm hại xã hội (bao gồm cả trường học).</p>
+</blockquote>
+<h2>4. Phản tư sư phạm (4F)</h2>
+<ul>
+<li><strong>Facts</strong>: Ranh giới là công cụ phân tích, không phải rào cản vật lý tuyệt đối.</li>
+<li><strong>Feelings</strong>: Việc mở rộng ranh giới tư duy thường mang lại cảm giác choáng ngợp vì tính phức tạp tăng lên.</li>
+<li><strong>Findings</strong>: Không có ranh giới nào là &quot;đúng&quot; tuyệt đối. Ranh giới phải linh hoạt tùy thuộc vào vấn đề đang cố gắng giải quyết. Mở rộng ranh giới giúp nhìn thấy tác động phụ (side effects).</li>
+<li><strong>Future</strong>: Luyện tập tư duy &quot;Zoom out&quot; (Nhìn xa hơn) khi một giải pháp có vẻ quá hoàn hảo.</li>
+</ul>
+<h2>5. Trích dẫn nguồn (R3)</h2>
+<ul>
+<li><strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — (RAW_2026-05-18_ARCH_Thinking_in_Systems_CH04_SEC03_P112-116.md)</li>
+<li><strong>Fact-check</strong>: Khái niệm Ranh giới vô hình.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+<h1>Hệ thống phân cấp {#concept_arch_tis_hierarchy}</h1>
+<div class="metadata-strip">
+<div><span class="metadata-label">ID:</span> CONCEPT_ARCH_TIS_Hierarchy</div>
+<div><span class="metadata-label">Trạng thái:</span> DRAFT</div>
+</div>
+<h2>For future Claude (AI Preamble)</h2>
+<blockquote>
+<p>Hệ thống phân cấp là một sắp xếp trong đó các hệ thống con được lồng ghép bên trong các hệ thống lớn hơn. Mục đích của phân cấp là giúp hệ thống lớn xử lý thông tin hiệu quả và ổn định. Lỗi lớn nhất của phân cấp là &quot;Suboptimization&quot; (Tối ưu hóa cục bộ).</p>
+</blockquote>
+<h2>1. Định nghĩa</h2>
+<p><strong>Hệ thống phân cấp (Hierarchy)</strong> là cấu trúc mà các hệ thống nhỏ phức tạp liên kết với nhau để tạo thành một hệ thống lớn hơn, và hệ thống lớn đó lại là một phần của hệ thống lớn hơn nữa.</p>
+<h2>2. Nguyên lý / Cấu trúc</h2>
+<ul>
+<li>Hệ thống phân cấp giảm lượng thông tin cần thiết để điều khiển hệ thống. Mỗi phần tử chỉ cần chú ý đến các thông tin trong hệ thống con của nó, giảm thiểu tình trạng quá tải thông tin.</li>
+<li><strong>Mục đích cốt lõi:</strong> Lớp trên của hệ thống phân cấp sinh ra là để phục vụ và điều phối các hệ thống lớp dưới, chứ không phải để cai trị.</li>
+<li><strong>Suboptimization (Tối ưu cục bộ):</strong> Lỗi thường gặp nhất là khi một hệ thống con đặt mục tiêu riêng của nó lên trên mục tiêu của hệ thống toàn cục (ví dụ: một phòng ban cố làm đẹp số liệu bất chấp làm hại công ty).</li>
+<li><strong>Central Control (Kiểm soát trung tâm quá mức):</strong> Lỗi ngược lại, khi hệ thống lớp trên chiếm quyền kiểm soát vi mô các lớp dưới, làm tê liệt sự linh hoạt.</li>
+</ul>
+<h2>3. Ví dụ đối chiếu (R18: Double Examples)</h2>
+<h3>Ví dụ từ sách (Original)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Cơ thể con người.
+<strong>Ứng dụng</strong>: Tế bào (hệ thống nhỏ) tạo thành gan (hệ thống mô), gan nằm trong hệ tiêu hóa (hệ thống cơ quan), phục vụ cơ thể người. Khi một tế bào phá vỡ mục tiêu chung, tự nhân bản vô hạn để tối ưu cho chính nó, đó là bệnh ung thư (suboptimization).
+<strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — Chương 3</p>
+</blockquote>
+<h3>Ứng dụng sư phạm (Pedagogical Application)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Tổ chức trường học.
+<strong>Ứng dụng</strong>: Lớp học (hệ thống con) nằm trong Khối, Khối nằm trong Trường học. Mục đích của ban giám hiệu (lớp trên) là hỗ trợ giáo viên trên lớp làm tốt nhiệm vụ. Nếu ban giám hiệu áp đặt quá nhiều báo cáo hành chính (central control) khiến giáo viên không còn thời gian dạy, hệ thống phân cấp bị hỏng.</p>
+</blockquote>
+<h2>4. Phản tư sư phạm (4F)</h2>
+<ul>
+<li><strong>Facts</strong>: Lớp trên phục vụ lớp dưới, lớp dưới hòa hợp với lớp trên.</li>
+<li><strong>Feelings</strong>: Thường chúng ta hiểu sai &quot;phân cấp&quot; là quyền lực từ trên áp xuống.</li>
+<li><strong>Findings</strong>: Để hệ thống vận hành tốt, quyền tự chủ của các nhóm nhỏ (hệ thống con) phải được tôn trọng tối đa, miễn là chúng không phá hoại mục tiêu chung.</li>
+<li><strong>Future</strong>: Thay đổi cách giao việc trong tổ chức giáo dục theo hướng tự chủ.</li>
+</ul>
+<h2>5. Trích dẫn nguồn (R3)</h2>
+<ul>
+<li><strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — (RAW_2026-05-18_ARCH_Thinking_in_Systems_CH03_SEC03_P099-102.md)</li>
+<li><strong>Fact-check</strong>: Đặc tính cấu trúc thứ ba của hệ thống.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+<h1>Kho chứa / Trữ lượng {#concept_arch_tis_stock}</h1>
+<div class="metadata-strip">
+<div><span class="metadata-label">ID:</span> CONCEPT_ARCH_TIS_Stock</div>
+<div><span class="metadata-label">Trạng thái:</span> DRAFT</div>
+</div>
+<h2>For future Claude (AI Preamble)</h2>
+<blockquote>
+<p>Stock (Kho chứa/Trữ lượng) là các yếu tố có thể đo đếm được tại một thời điểm bất kỳ trong hệ thống. Nó đại diện cho bộ nhớ, trạng thái hiện tại và quán tính của hệ thống, thay đổi từ từ qua thời gian nhờ các Flow (Dòng chảy).</p>
+</blockquote>
+<h2>1. Định nghĩa</h2>
+<p><strong>Kho chứa (Stock)</strong> (còn gọi là trữ lượng, tài sản, trạng thái) là nền tảng của mọi hệ thống. Đó là các yếu tố trong hệ thống mà bạn có thể nhìn thấy, cảm nhận, đếm, hoặc đo lường tại một khoảng thời gian tĩnh bất kỳ. Stock không nhất thiết phải là vật chất; nó có thể là thông tin, sự tự tin, trí nhớ, hoặc uy tín.</p>
+<h2>2. Nguyên lý / Cấu trúc</h2>
+<ul>
+<li><strong>Tích lũy:</strong> Stock đóng vai trò như một bộ nhớ hoặc một sự tích lũy lịch sử của hệ thống. Nó thay đổi khi có sự chênh lệch giữa dòng chảy vào (inflow) và dòng chảy ra (outflow).</li>
+<li><strong>Quán tính (Inertia):</strong> Kho chứa không thể thay đổi đột ngột. Nó hoạt động như một bộ đệm (buffer) hoặc giảm xóc, tạo ra sự chậm trễ (delay) trong hệ thống, giúp hệ thống ổn định và có thời gian phản ứng.</li>
+<li><strong>Tách rời luồng:</strong> Stock cho phép dòng vào và dòng ra hoạt động không đồng bộ, tạo ra sự linh hoạt.</li>
+</ul>
+<h2>3. Ví dụ đối chiếu (R18: Double Examples)</h2>
+<h3>Ví dụ từ sách (Original)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Nước trong một bồn tắm.
+<strong>Ứng dụng</strong>: Nước trong bồn là một Stock. Mức nước không thể ngay lập tức đầy hay cạn, nó phải từ từ tăng lên hoặc giảm đi phụ thuộc vào vòi nước (inflow) và lỗ xả (outflow).
+<strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — Chương 1</p>
+</blockquote>
+<h3>Ứng dụng sư phạm (Pedagogical Application)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Tích lũy kiến thức học tập.
+<strong>Ứng dụng</strong>: &quot;Kiến thức của học sinh&quot; là một Stock. Học sinh không thể giỏi ngay lập tức chỉ sau một đêm thức trắng (inflow quá nhanh), vì khả năng tiếp thu (inflow rate) và sự quên lãng (outflow rate) quyết định mức độ tích lũy thực sự.</p>
+</blockquote>
+<h2>4. Phản tư sư phạm (4F)</h2>
+<ul>
+<li><strong>Facts</strong>: Stock tạo ra quán tính và độ trễ.</li>
+<li><strong>Feelings</strong>: Hiểu về Stock giúp giáo viên kiên nhẫn hơn với tiến độ học tập của học sinh.</li>
+<li><strong>Findings</strong>: Để tăng Stock, có thể tăng Inflow HOẶC giảm Outflow.</li>
+<li><strong>Future</strong>: Ứng dụng trong việc thiết kế lộ trình rèn luyện kỹ năng (giảm quên lãng để tăng trữ lượng).</li>
+</ul>
+<h2>5. Trích dẫn nguồn (R3)</h2>
+<ul>
+<li><strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — (RAW_2026-05-18_ARCH_Thinking_in_Systems_CH01_SEC03_P034-041.md)</li>
+<li><strong>Fact-check</strong>: Định nghĩa cơ bản về Stock.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+<h1>Dòng chảy {#concept_arch_tis_flow}</h1>
+<div class="metadata-strip">
+<div><span class="metadata-label">ID:</span> CONCEPT_ARCH_TIS_Flow</div>
+<div><span class="metadata-label">Trạng thái:</span> DRAFT</div>
+</div>
+<h2>For future Claude (AI Preamble)</h2>
+<blockquote>
+<p>Flow (Dòng chảy) là tốc độ thay đổi của Stock theo một khoảng thời gian nhất định. Nó bao gồm dòng chảy vào (inflow) và dòng chảy ra (outflow), là động lực trực tiếp làm thay đổi trạng thái của hệ thống.</p>
+</blockquote>
+<h2>1. Định nghĩa</h2>
+<p><strong>Dòng chảy (Flow)</strong> là tỷ lệ (rate) mà một Kho chứa (Stock) tăng lên hoặc giảm đi qua thời gian. Nó là hoạt động hoặc quá trình làm thay đổi độ lớn của Stock. Nếu Stock đại diện cho trạng thái, thì Flow đại diện cho sự thay đổi (hành động).</p>
+<h2>2. Nguyên lý / Cấu trúc</h2>
+<ul>
+<li>Có hai loại chính: <strong>Inflow</strong> (dòng vào, làm tăng Stock) và <strong>Outflow</strong> (dòng ra, làm giảm Stock).</li>
+<li>Mọi sự thay đổi trong hệ thống đều phải thông qua Flow. Bạn không thể điều chỉnh Stock trực tiếp mà chỉ có thể điều chỉnh Inflow hoặc Outflow.</li>
+<li>Flow được đo lường bằng một đơn vị cụ thể trên một đơn vị thời gian (ví dụ: lít/phút, số bài tập/tuần).</li>
+</ul>
+<h2>3. Ví dụ đối chiếu (R18: Double Examples)</h2>
+<h3>Ví dụ từ sách (Original)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Dân số của một quốc gia (Stock).
+<strong>Ứng dụng</strong>: Số trẻ sinh ra và số người nhập cư là Inflow. Số người chết và số người xuất cư là Outflow.
+<strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — Chương 1</p>
+</blockquote>
+<h3>Ứng dụng sư phạm (Pedagogical Application)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Quản lý sự chú ý của học sinh.
+<strong>Ứng dụng</strong>: Sự tập trung của học sinh (Stock) bị tiêu hao liên tục bởi dòng chảy ra (sự mệt mỏi, xao nhãng - Outflow). Để duy trì mức độ tập trung, giáo viên phải tạo ra các hoạt động kích thích sự hứng thú mới (Inflow) ở tốc độ tương đương hoặc lớn hơn tốc độ tiêu hao.</p>
+</blockquote>
+<h2>4. Phản tư sư phạm (4F)</h2>
+<ul>
+<li><strong>Facts</strong>: Chỉ có thể tác động vào hệ thống thông qua việc kiểm soát Flow.</li>
+<li><strong>Feelings</strong>: Việc tập trung vào Inflow (nhồi nhét kiến thức) đôi khi bị mù quáng, quên mất Outflow (quên lãng, mệt mỏi).</li>
+<li><strong>Findings</strong>: Giảm Outflow đôi khi dễ hơn và tiết kiệm năng lượng hơn việc cố gắng tăng Inflow.</li>
+<li><strong>Future</strong>: Ứng dụng vào chiến lược duy trì năng lượng và sự hứng thú trong lớp học.</li>
+</ul>
+<h2>5. Trích dẫn nguồn (R3)</h2>
+<ul>
+<li><strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — (RAW_2026-05-18_ARCH_Thinking_in_Systems_CH01_SEC03_P034-041.md)</li>
+<li><strong>Fact-check</strong>: Định nghĩa cơ bản về Flow.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+<h1>Vòng lặp phản hồi {#concept_arch_tis_feedback_loop}</h1>
+<div class="metadata-strip">
+<div><span class="metadata-label">ID:</span> CONCEPT_ARCH_TIS_Feedback_Loop</div>
+<div><span class="metadata-label">Trạng thái:</span> DRAFT</div>
+</div>
+<h2>For future Claude (AI Preamble)</h2>
+<blockquote>
+<p>Vòng lặp phản hồi là cơ chế mà thông tin về mức độ của Stock phản hồi lại để kiểm soát Inflow hoặc Outflow của chính Stock đó. Đây là cách các hệ thống tự điều chỉnh và tạo ra các hành vi phức tạp qua thời gian.</p>
+</blockquote>
+<h2>1. Định nghĩa</h2>
+<p><strong>Vòng lặp phản hồi (Feedback Loop)</strong> là một chuỗi khép kín các mối liên kết nhân quả, trong đó một sự thay đổi ở trạng thái của Kho chứa (Stock) sẽ truyền thông tin qua hệ thống để tác động lên Dòng chảy (Flow), từ đó tiếp tục làm thay đổi trạng thái của chính Kho chứa đó.</p>
+<h2>2. Nguyên lý / Cấu trúc</h2>
+<p>Hệ thống không chỉ vận hành theo chuỗi nguyên nhân - kết quả tuyến tính (A -&gt; B -&gt; C), mà thông qua các vòng lặp (A -&gt; B -&gt; C -&gt; A).</p>
+<ul>
+<li>Thông tin về trạng thái hiện tại luôn là đầu vào cho quyết định về dòng chảy trong tương lai.</li>
+<li>Vòng lặp phản hồi có thể duy trì sự cân bằng của hệ thống (Balancing) hoặc khuếch đại sự phát triển/suy thoái (Reinforcing).</li>
+<li>Vòng lặp phản hồi giải thích tại sao một hệ thống có khả năng tự vận hành, tự duy trì hoặc tự phá hủy từ bên trong mà không cần tác nhân can thiệp từ bên ngoài.</li>
+</ul>
+<h2>3. Ví dụ đối chiếu (R18: Double Examples)</h2>
+<h3>Ví dụ từ sách (Original)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Bộ điều nhiệt (Thermostat) điều khiển máy sưởi.
+<strong>Ứng dụng</strong>: Nhiệt độ phòng (Stock) giảm xuống -&gt; Bộ điều nhiệt nhận thông tin -&gt; Bật máy sưởi (Inflow) -&gt; Nhiệt độ tăng lên -&gt; Bộ điều nhiệt ngắt máy sưởi.
+<strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — Chương 1</p>
+</blockquote>
+<h3>Ứng dụng sư phạm (Pedagogical Application)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Vòng lặp nhận xét và làm bài.
+<strong>Ứng dụng</strong>: Học sinh nộp bài tập (Flow) -&gt; Điểm số và nhận xét (Thông tin về Stock) được gửi lại cho học sinh -&gt; Dựa vào điểm số, học sinh điều chỉnh cách học và nỗ lực (Flow mới). Quá trình này tạo ra một vòng lặp giúp năng lực của học sinh tự điều chỉnh.</p>
+</blockquote>
+<h2>4. Phản tư sư phạm (4F)</h2>
+<ul>
+<li><strong>Facts</strong>: Mọi hệ thống phức tạp đều tồn tại nhờ các vòng lặp phản hồi.</li>
+<li><strong>Feelings</strong>: Việc nhận diện được các vòng lặp ẩn giấu mang lại cảm giác làm chủ hệ thống sâu sắc.</li>
+<li><strong>Findings</strong>: Thiết kế một vòng lặp phản hồi thông tin (ví dụ: dashboard tiến độ học tập minh bạch) hiệu quả hơn việc ra lệnh.</li>
+<li><strong>Future</strong>: Xây dựng cơ chế phản hồi nhanh (rapid feedback loops) trong các sản phẩm công nghệ giáo dục.</li>
+</ul>
+<h2>5. Trích dẫn nguồn (R3)</h2>
+<ul>
+<li><strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — (RAW_2026-05-18_ARCH_Thinking_in_Systems_CH01_SEC04_P042-043.md)</li>
+<li><strong>Fact-check</strong>: Cơ chế vòng lặp phản hồi cốt lõi của System Dynamics.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+<h1>Phản hồi cân bằng {#concept_arch_tis_balancing_feedback}</h1>
+<div class="metadata-strip">
+<div><span class="metadata-label">ID:</span> CONCEPT_ARCH_TIS_Balancing_Feedback</div>
+<div><span class="metadata-label">Trạng thái:</span> DRAFT</div>
+</div>
+<h2>For future Claude (AI Preamble)</h2>
+<blockquote>
+<p>Phản hồi cân bằng (B) là cơ chế tìm kiếm mục tiêu (goal-seeking). Nó phát hiện khoảng cách giữa trạng thái hiện tại và mục tiêu mong muốn, từ đó kích hoạt hành động làm giảm khoảng cách đó, đưa hệ thống về trạng thái ổn định.</p>
+</blockquote>
+<h2>1. Định nghĩa</h2>
+<p><strong>Phản hồi cân bằng (Balancing Feedback Loop)</strong> là vòng lặp có chức năng giữ ổn định, chống lại sự thay đổi (resistance to change) và hướng tới một mục tiêu xác định (goal-seeking). Bất kỳ khi nào hệ thống bị chệch khỏi mục tiêu, vòng lặp này sẽ tạo ra một lực đẩy ngược lại để kéo hệ thống trở về trạng thái ban đầu.</p>
+<h2>2. Nguyên lý / Cấu trúc</h2>
+<ul>
+<li>Vòng lặp bao gồm: Trạng thái hiện tại -&gt; Phát hiện mức chênh lệch (Discrepancy) so với Mục tiêu -&gt; Kích hoạt hành động (Action/Flow) chống lại sự chênh lệch đó.</li>
+<li>Là nguồn gốc của sự ổn định, khả năng phục hồi (resilience) và tự chữa lành.</li>
+<li>Tuy nhiên, nó cũng là nguyên nhân khiến hệ thống chống lại những chính sách can thiệp mới từ bên ngoài (vì hệ thống coi mọi thay đổi là sự &quot;chệch khỏi mục tiêu&quot; cần triệt tiêu).</li>
+</ul>
+<h2>3. Ví dụ đối chiếu (R18: Double Examples)</h2>
+<h3>Ví dụ từ sách (Original)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Việc pha một ly cà phê nóng để trong phòng máy lạnh.
+<strong>Ứng dụng</strong>: Ly cà phê nguội dần. Nhiệt độ của ly (hiện tại) cao hơn nhiệt độ phòng (mục tiêu cân bằng của vật lý), tạo ra một dòng nhiệt thất thoát (flow). Cà phê càng nguội, tốc độ thất thoát nhiệt càng chậm, cho đến khi nó bằng đúng nhiệt độ phòng.
+<strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — Chương 1</p>
+</blockquote>
+<h3>Ứng dụng sư phạm (Pedagogical Application)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Quản lý kỷ luật trong lớp học.
+<strong>Ứng dụng</strong>: Mức độ ồn ào của lớp (Stock). Khi lớp quá ồn (vượt quá mục tiêu của giáo viên), giáo viên nhắc nhở (Flow). Lớp trật tự trở lại. Khi lớp trật tự, giáo viên giảm nhắc nhở. Đây là vòng lặp cân bằng giúp duy trì môi trường học tập.</p>
+</blockquote>
+<h2>4. Phản tư sư phạm (4F)</h2>
+<ul>
+<li><strong>Facts</strong>: Vòng lặp cân bằng luôn chống lại sự thay đổi.</li>
+<li><strong>Feelings</strong>: Hiểu được lý do tại sao mọi nỗ lực thay đổi thói quen xấu lại khó khăn đến vậy.</li>
+<li><strong>Findings</strong>: Nếu muốn thay đổi hệ thống có vòng lặp cân bằng mạnh, phải thay đổi &quot;Mục tiêu&quot; (Goal) của vòng lặp đó thay vì chỉ dùng lực đẩy.</li>
+<li><strong>Future</strong>: Nhận diện các vòng lặp kháng cự để thay đổi chiến lược quản trị giáo dục.</li>
+</ul>
+<h2>5. Trích dẫn nguồn (R3)</h2>
+<ul>
+<li><strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — (RAW_2026-05-18_ARCH_Thinking_in_Systems_CH01_SEC05_P044-046.md)</li>
+<li><strong>Fact-check</strong>: Cơ chế ổn định (Balancing/Negative Feedback) trong hệ thống.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+<h1>Phản hồi tăng cường {#concept_arch_tis_reinforcing_feedback}</h1>
+<div class="metadata-strip">
+<div><span class="metadata-label">ID:</span> CONCEPT_ARCH_TIS_Reinforcing_Feedback</div>
+<div><span class="metadata-label">Trạng thái:</span> DRAFT</div>
+</div>
+<h2>For future Claude (AI Preamble)</h2>
+<blockquote>
+<p>Phản hồi tăng cường (R) là cỗ máy tạo ra sự tăng trưởng hoặc sụp đổ lũy thừa. Khác với vòng lặp cân bằng, vòng lặp này lấy thành quả hiện có để sinh ra nhiều thành quả hơn, tạo ra vòng xoáy khuếch đại tự duy trì (hiệu ứng hòn tuyết lăn).</p>
+</blockquote>
+<h2>1. Định nghĩa</h2>
+<p><strong>Phản hồi tăng cường (Reinforcing Feedback Loop)</strong> là vòng lặp có tính chất khuếch đại (amplifying). Khi Kho chứa (Stock) thay đổi theo một hướng, nó cung cấp thông tin kích hoạt Dòng chảy (Flow) làm cho Kho chứa đó thay đổi <em>mạnh hơn</em> theo cùng một hướng đó. Nó tạo ra sự tăng trưởng hoặc sụp đổ theo hàm mũ (exponential growth/collapse).</p>
+<h2>2. Nguyên lý / Cấu trúc</h2>
+<ul>
+<li>Thành công tạo ra thành công (Success to the successful).</li>
+<li>Sự vận hành của vòng lặp này không thể kéo dài mãi mãi vì trong thực tế luôn có giới hạn vật lý. Nó luôn kết thúc bằng việc bị chặn lại bởi một vòng lặp cân bằng (sự kiệt quệ tài nguyên, giới hạn thị trường).</li>
+<li>Vòng lặp tăng cường là động lực của các chu kỳ bùng nổ kinh tế, dịch bệnh lây lan, hoặc vòng xoáy trầm cảm.</li>
+</ul>
+<h2>3. Ví dụ đối chiếu (R18: Double Examples)</h2>
+<h3>Ví dụ từ sách (Original)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Dân số thỏ hoặc Lãi suất kép.
+<strong>Ứng dụng</strong>: Số dư tài khoản ngân hàng (Stock) càng lớn -&gt; Tiền lãi sinh ra (Inflow) càng cao -&gt; Tiền lãi cộng vào gốc làm cho Stock lớn hơn nữa -&gt; Tiền lãi của kỳ sau lại cao hơn kỳ trước. (Hiệu ứng hòn tuyết lăn).
+<strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — Chương 1</p>
+</blockquote>
+<h3>Ứng dụng sư phạm (Pedagogical Application)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Động lực học tập và sự tự tin.
+<strong>Ứng dụng</strong>: Vòng xoáy thành công (Virtuous Cycle): Học sinh đạt điểm tốt (Stock thành tựu) -&gt; Được khen ngợi và tự tin hơn -&gt; Học tập hăng say hơn (Flow) -&gt; Đạt điểm cao hơn nữa. Ngược lại là vòng xoáy thất bại (Vicious Cycle): Kém hiểu bài -&gt; Chán nản -&gt; Ít nỗ lực -&gt; Điểm càng thấp.</p>
+</blockquote>
+<h2>4. Phản tư sư phạm (4F)</h2>
+<ul>
+<li><strong>Facts</strong>: Vòng lặp tăng cường dẫn đến kết quả lũy thừa.</li>
+<li><strong>Feelings</strong>: Đáng sợ vì một sai lầm nhỏ ban đầu có thể bị khuếch đại thành thảm họa (hoặc thành công lớn).</li>
+<li><strong>Findings</strong>: Trong giáo dục, điều quan trọng là tạo ra động năng ban đầu đủ lớn để học sinh bước vào vòng lặp tăng cường tích cực.</li>
+<li><strong>Future</strong>: Thiết kế cơ chế phần thưởng tích lũy (gamification) để tạo ra vòng lặp này trong các khóa học e-learning.</li>
+</ul>
+<h2>5. Trích dẫn nguồn (R3)</h2>
+<ul>
+<li><strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — (RAW_2026-05-18_ARCH_Thinking_in_Systems_CH01_SEC06_P047-051.md)</li>
+<li><strong>Fact-check</strong>: Cơ chế khuếch đại (Reinforcing/Positive Feedback) trong hệ thống.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+<h1>Độ trễ {#concept_arch_tis_delay}</h1>
+<div class="metadata-strip">
+<div><span class="metadata-label">ID:</span> CONCEPT_ARCH_TIS_Delay</div>
+<div><span class="metadata-label">Trạng thái:</span> DRAFT</div>
+</div>
+<h2>For future Claude (AI Preamble)</h2>
+<blockquote>
+<p>Độ trễ là khoảng thời gian giữa một hành động và hệ quả của nó trong hệ thống. Độ trễ có mặt ở khắp mọi nơi (nhận thức, phản ứng, vật lý) và là nguyên nhân chính gây ra sự dao động hoặc khủng hoảng.</p>
+</blockquote>
+<h2>1. Định nghĩa</h2>
+<p><strong>Độ trễ (Delay)</strong> là khoảng thời gian cản trở sự phản hồi ngay lập tức trong một hệ thống. Nó là sự đứt gãy về thời gian giữa việc một sự kiện xảy ra, việc thông tin về sự kiện đó được nhận thức, việc quyết định được đưa ra, và khi hành động bắt đầu có tác dụng thay đổi Kho chứa (Stock).</p>
+<h2>2. Nguyên lý / Cấu trúc</h2>
+<ul>
+<li>Độ trễ tồn tại trong hầu hết các vòng lặp phản hồi thực tế.</li>
+<li>Các loại độ trễ phổ biến:
+<ul>
+<li>Trễ nhận thức (Perception delay): Thời gian để nhận ra có vấn đề.</li>
+<li>Trễ phản ứng (Response delay): Thời gian để đưa ra quyết định hoặc thay đổi hành vi.</li>
+<li>Trễ phân phối/vật lý (Delivery delay): Thời gian để hành động thực sự tạo ra thay đổi (ví dụ: cây cần thời gian để lớn).</li>
+</ul>
+</li>
+<li>Nếu độ trễ trong vòng lặp cân bằng (Balancing loop) quá dài so với tốc độ thay đổi của hệ thống, hệ thống sẽ phản ứng thái quá (overshoot) và gây ra sự dao động (oscillation).</li>
+</ul>
+<h2>3. Ví dụ đối chiếu (R18: Double Examples)</h2>
+<h3>Ví dụ từ sách (Original)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Đại lý bán xe hơi điều chỉnh lượng hàng tồn kho.
+<strong>Ứng dụng</strong>: Cửa hàng bán được xe, nhưng mất 5 ngày để nhận ra xu hướng tăng (trễ nhận thức), mất 2 ngày để đặt hàng nhà máy (trễ quyết định), và nhà máy mất 10 ngày để sản xuất &amp; giao xe (trễ giao hàng). Khi xe về đến nơi, nhu cầu có thể đã giảm, dẫn đến dư thừa hoặc thiếu hụt tồn kho liên tục.
+<strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — Chương 2</p>
+</blockquote>
+<h3>Ứng dụng sư phạm (Pedagogical Application)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Cải cách giáo dục và phản hồi của học sinh.
+<strong>Ứng dụng</strong>: Khi áp dụng một phương pháp giảng dạy mới, mất vài tuần để học sinh làm quen (trễ nhận thức/phản ứng), và mất cả một học kỳ để điểm số thực sự phản ánh hiệu quả (trễ vật lý). Nếu giáo viên không kiên nhẫn và liên tục thay đổi phương pháp quá nhanh vì không thấy kết quả ngay, lớp học sẽ rơi vào trạng thái dao động và hỗn loạn.</p>
+</blockquote>
+<h2>4. Phản tư sư phạm (4F)</h2>
+<ul>
+<li><strong>Facts</strong>: Mọi hệ thống đều có độ trễ không thể triệt tiêu.</li>
+<li><strong>Feelings</strong>: Độ trễ gây ra sự mất kiên nhẫn và thôi thúc muốn &quot;can thiệp ngay lập tức&quot;.</li>
+<li><strong>Findings</strong>: Can thiệp quá mức và quá nhanh vào một hệ thống có độ trễ dài sẽ làm tình hình tồi tệ hơn (gây dao động mạnh). Đôi khi chiến lược tốt nhất là làm chậm lại tốc độ phản ứng.</li>
+<li><strong>Future</strong>: Áp dụng tính kiên nhẫn khi đánh giá hiệu quả của một chính sách giáo dục mới.</li>
+</ul>
+<h2>5. Trích dẫn nguồn (R3)</h2>
+<ul>
+<li><strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — (RAW_2026-05-18_ARCH_Thinking_in_Systems_CH02_SEC01_P02_P068-074.md)</li>
+<li><strong>Fact-check</strong>: Khái niệm Delay trong hệ thống tồn kho (Inventory).</li>
+</ul>
+<div style="page-break-after: always;"></div>
+<h1>Dao động {#concept_arch_tis_oscillation}</h1>
+<div class="metadata-strip">
+<div><span class="metadata-label">ID:</span> CONCEPT_ARCH_TIS_Oscillation</div>
+<div><span class="metadata-label">Trạng thái:</span> DRAFT</div>
+</div>
+<h2>For future Claude (AI Preamble)</h2>
+<blockquote>
+<p>Dao động là hành vi hệ thống lúc lên lúc xuống vượt qua mục tiêu cân bằng. Nó là kết quả trực tiếp của các vòng lặp phản hồi cân bằng (Balancing loops) có chứa độ trễ (Delays) đáng kể.</p>
+</blockquote>
+<h2>1. Định nghĩa</h2>
+<p><strong>Dao động (Oscillation)</strong> là một mẫu hành vi hệ thống trong đó trạng thái của Kho chứa (Stock) liên tục di chuyển lên trên rồi lại xuống dưới điểm cân bằng mục tiêu. Đây là dấu hiệu của việc hệ thống liên tục &quot;sửa sai quá đà&quot; (overshoot) do thiếu thông tin kịp thời.</p>
+<h2>2. Nguyên lý / Cấu trúc</h2>
+<ul>
+<li>Dao động không phải do một tác nhân ngẫu nhiên giật hệ thống lên xuống, mà sinh ra từ chính cấu trúc bên trong: một vòng lặp cân bằng cố gắng kéo hệ thống về đích, nhưng vì <strong>độ trễ</strong> (thông tin hoặc hành động đến chậm), nó tiếp tục dùng lực kéo ngay cả khi đã vượt qua đích.</li>
+<li>Chu kỳ dao động phụ thuộc vào độ dài của độ trễ. Trễ càng lâu, biên độ dao động càng lớn và có thể dẫn đến sự sụp đổ nếu vượt quá giới hạn chịu đựng.</li>
+<li>Việc cố gắng phản ứng nhanh hơn (rút ngắn thời gian phản ứng) trong một hệ thống có độ trễ giao hàng cố định thường sẽ làm cho sự dao động trở nên tồi tệ hơn (khuếch đại dao động).</li>
+</ul>
+<h2>3. Ví dụ đối chiếu (R18: Double Examples)</h2>
+<h3>Ví dụ từ sách (Original)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Chu kỳ sản xuất ô tô (hàng tồn kho).
+<strong>Ứng dụng</strong>: Do độ trễ từ lúc đặt hàng đến lúc xe về, đại lý thấy thiếu xe nên đặt liên tục (hành động quá mức). Khi lô xe đầu tiên về, kho bắt đầu đầy nhưng các lô xe sau vẫn tiếp tục về, gây thừa ứ. Đại lý hoảng sợ ngừng đặt hàng hoàn toàn cho đến khi bán hết sạch, lại quay về trạng thái thiếu xe nghiêm trọng.
+<strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — Chương 2</p>
+</blockquote>
+<h3>Ứng dụng sư phạm (Pedagogical Application)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Sự dao động trong việc ép học sinh học bài.
+<strong>Ứng dụng</strong>: Giáo viên thấy lớp điểm thấp -&gt; Ép học cực mạnh, giao nhiều bài (Trễ nhận thức/phản ứng). Điểm tăng cao nhưng học sinh kiệt sức (Overshoot). Giáo viên thấy học sinh quá mệt -&gt; Cho chơi thả ga không kiểm soát. Hệ quả là học sinh lại buông thả, điểm lại rớt thảm hại, và chu kỳ ép uổng - buông lỏng tiếp tục lặp lại.</p>
+</blockquote>
+<h2>4. Phản tư sư phạm (4F)</h2>
+<ul>
+<li><strong>Facts</strong>: Dao động xảy ra khi có trễ trong vòng lặp cân bằng.</li>
+<li><strong>Feelings</strong>: Việc sửa sai liên tục nhưng luôn trễ nhịp gây ra sự mệt mỏi và ức chế (burnout).</li>
+<li><strong>Findings</strong>: Không thể chống lại dao động bằng cách phản ứng mạnh hơn. Cách tốt nhất là dự báo dựa trên hàng đợi (những gì đang trên đường đến) hoặc làm chậm lại tốc độ phản ứng.</li>
+<li><strong>Future</strong>: Thay vì &quot;sốc điện&quot; vào phương pháp dạy, nên điều chỉnh nhẹ nhàng và chờ đợi kết quả tích lũy.</li>
+</ul>
+<h2>5. Trích dẫn nguồn (R3)</h2>
+<ul>
+<li><strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — (RAW_2026-05-18_ARCH_Thinking_in_Systems_CH02_SEC01_P02_P068-074.md)</li>
+<li><strong>Fact-check</strong>: Các phân tích về dao động của vòng lặp hàng tồn kho.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+<h1>Cạm bẫy hệ thống {#concept_arch_tis_system_traps}</h1>
+<div class="metadata-strip">
+<div><span class="metadata-label">ID:</span> CONCEPT_ARCH_TIS_System_Traps</div>
+<div><span class="metadata-label">Trạng thái:</span> DRAFT</div>
+</div>
+<h2>For future Claude (AI Preamble)</h2>
+<blockquote>
+<p>System Traps (Cạm bẫy hệ thống) là các cấu trúc lặp đi lặp lại thường xuyên trong tự nhiên và xã hội (archetypes) dẫn đến các hành vi gây hại kéo dài. Nhận diện được chúng giúp chúng ta tránh bẫy và tìm ra cơ hội thay đổi (Leverage points).</p>
+</blockquote>
+<h2>1. Định nghĩa</h2>
+<p><strong>Cạm bẫy hệ thống (System Traps)</strong>, còn được gọi là <em>Mẫu hình nguyên thủy (System Archetypes)</em>, là những cấu trúc hệ thống phổ biến sinh ra các hành vi có vấn đề. Các cấu trúc này luôn tạo ra cùng một kiểu khủng hoảng bất kể bối cảnh là môi trường, kinh tế hay giáo dục.</p>
+<h2>2. Nguyên lý / Cấu trúc</h2>
+<ul>
+<li>Mọi cạm bẫy hệ thống đều có thể được giải quyết bằng cách thay đổi cấu trúc, tức là vẽ lại các vòng lặp phản hồi, thêm luồng thông tin mới, hoặc định nghĩa lại mục tiêu của hệ thống.</li>
+<li>Các bẫy phổ biến bao gồm: Kháng cự chính sách (Policy Resistance), Bi kịch tài sản chung (Tragedy of the Commons), Chuyển dịch gánh nặng (Drift to Low Performance / Shifting the Burden), Leo thang (Escalation), v.v.</li>
+</ul>
+<h2>3. Ví dụ đối chiếu (R18: Double Examples)</h2>
+<h3>Ví dụ từ sách (Original)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Kháng cự chính sách (Policy Resistance).
+<strong>Ứng dụng</strong>: Chính phủ cấm ma túy để giảm tội phạm. Nhưng việc cấm làm giảm nguồn cung (Flow), khiến giá ma túy tăng vọt (Stock). Người nghiện phải đi ăn cướp nhiều hơn để có tiền mua ma túy giá cao. Tội phạm lại tăng lên (chống lại chính sách).
+<strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — Chương 5</p>
+</blockquote>
+<h3>Ứng dụng sư phạm (Pedagogical Application)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Chuyển dịch tiêu chuẩn xuống thấp (Drift to Low Performance).
+<strong>Ứng dụng</strong>: Một giáo viên đặt mục tiêu học sinh đạt điểm 8. Nhưng bài kiểm tra đầu tiên lớp chỉ đạt 5. Thay vì kiên trì cải thiện năng lực học sinh, giáo viên cảm thấy áp lực và cho đề dễ hơn ở lần sau để lớp đạt điểm 6 (hạ chuẩn). Vòng lặp này lặp lại khiến tiêu chuẩn của lớp càng ngày càng tụt dốc để duy trì sự thoải mái giả tạo.</p>
+</blockquote>
+<h2>4. Phản tư sư phạm (4F)</h2>
+<ul>
+<li><strong>Facts</strong>: Có những cấu trúc luôn dẫn đến kết quả xấu dù con người có tốt.</li>
+<li><strong>Feelings</strong>: Việc nhận ra mình đang kẹt trong một cạm bẫy hệ thống thường gây ra sự khủng hoảng nhẹ, nhưng sau đó là sự giải thoát.</li>
+<li><strong>Findings</strong>: Nhận diện tên của cạm bẫy là bước đầu tiên để thoát khỏi nó. Đừng chiến đấu với hiện tượng, hãy phá vỡ vòng lặp.</li>
+<li><strong>Future</strong>: Trang bị danh sách các Archetypes cho học sinh để làm công cụ phân tích tình huống xã hội.</li>
+</ul>
+<h2>5. Trích dẫn nguồn (R3)</h2>
+<ul>
+<li><strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — (CH05_SEC01)</li>
+<li><strong>Fact-check</strong>: Tổng quan về các Traps.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+<h1>Bi kịch tài sản chung {#concept_arch_tis_tragedy_of_commons}</h1>
+<div class="metadata-strip">
+<div><span class="metadata-label">ID:</span> CONCEPT_ARCH_TIS_Tragedy_of_Commons</div>
+<div><span class="metadata-label">Trạng thái:</span> DRAFT</div>
+</div>
+<h2>For future Claude (AI Preamble)</h2>
+<blockquote>
+<p>Bi kịch tài sản chung xảy ra khi nhiều cá nhân cùng khai thác một nguồn tài nguyên chung hữu hạn. Lợi ích của việc khai thác thuộc về cá nhân, nhưng cái giá phải trả (sự suy kiệt) lại chia đều cho mọi người. Hậu quả là tài nguyên bị khai thác đến mức sụp đổ.</p>
+</blockquote>
+<h2>1. Định nghĩa</h2>
+<p><strong>Bi kịch tài sản chung (Tragedy of the Commons)</strong> là một cạm bẫy hệ thống trong đó các cá nhân hành động dựa trên &quot;Tính hợp lý hạn chế&quot; (Bounded Rationality), liên tục gia tăng khai thác một tài nguyên công cộng. Vì lợi ích là tư hữu còn chi phí là công hữu, hệ thống đẩy nhanh sự suy thoái và cuối cùng phá hủy tài nguyên đó.</p>
+<h2>2. Nguyên lý / Cấu trúc</h2>
+<ul>
+<li>Xảy ra khi: Có tài nguyên chung không thể phân chia (cánh đồng cỏ, không khí, băng thông internet) + Có vòng lặp tăng cường sự khai thác.</li>
+<li>Vòng lặp mất kết nối: Người khai thác nhận 100% lợi ích từ việc thêm một con bò, nhưng chỉ chịu một phần rất nhỏ hậu quả của việc đồng cỏ bị ăn mòn.</li>
+<li>Cách thoát bẫy: (1) Giáo dục đạo đức (khó), (2) Tư nhân hóa (chia nhỏ tài nguyên), (3) Quản lý công cộng bằng luật pháp (gắn hậu quả trực tiếp vào người khai thác).</li>
+</ul>
+<h2>3. Ví dụ đối chiếu (R18: Double Examples)</h2>
+<h3>Ví dụ từ sách (Original)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Cánh đồng cỏ chăn thả chung.
+<strong>Ứng dụng</strong>: Mỗi người nông dân đều có động lực thả thêm một con bò để tăng thu nhập. Không ai muốn dừng lại vì nếu mình dừng, người khác cũng sẽ thả bò và ăn hết cỏ. Cuối cùng đồng cỏ bị ăn trụi, đàn bò của tất cả mọi người đều chết đói.
+<strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — Chương 5</p>
+</blockquote>
+<h3>Ứng dụng sư phạm (Pedagogical Application)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Không gian thảo luận (Diễn đàn/Nhóm lớp).
+<strong>Ứng dụng</strong>: &quot;Sự chú ý của nhóm&quot; là một tài nguyên chung. Một học sinh spam các câu hỏi linh tinh để gây sự chú ý (được lợi cá nhân). Nhưng điều này làm loãng thông tin, khiến toàn bộ học sinh khác bỏ lỡ tin quan trọng và chán nản rời nhóm (suy kiệt tài nguyên chung). Giải pháp là đặt luật lệ (quota) về số lượng bài đăng (Quản lý công cộng).</p>
+</blockquote>
+<h2>4. Phản tư sư phạm (4F)</h2>
+<ul>
+<li><strong>Facts</strong>: Bất cứ tài nguyên nào không được rào lại sẽ bị bòn rút.</li>
+<li><strong>Feelings</strong>: Cảm giác bất lực khi thấy một cộng đồng tốt bị phá hủy bởi hành vi của một số cá nhân theo đuổi lợi ích ngắn hạn.</li>
+<li><strong>Findings</strong>: Không thể trông chờ hoàn toàn vào sự tự giác; phải có cơ chế phản hồi (feedback) trừng phạt trực tiếp những hành vi làm hại tài sản chung.</li>
+<li><strong>Future</strong>: Thiết lập các &quot;luật chơi&quot; rõ ràng ngay từ ngày đầu tiên cho mọi không gian làm việc chung (như phòng lab, thư viện).</li>
+</ul>
+<h2>5. Trích dẫn nguồn (R3)</h2>
+<ul>
+<li><strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — (RAW_2026-05-18_ARCH_Thinking_in_Systems_CH05_SEC02_P133-137.md)</li>
+<li><strong>Fact-check</strong>: Ví dụ kinh điển từ hệ thống sinh thái.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+<h1>Sự leo thang {#concept_arch_tis_escalation}</h1>
+<div class="metadata-strip">
+<div><span class="metadata-label">ID:</span> CONCEPT_ARCH_TIS_Escalation</div>
+<div><span class="metadata-label">Trạng thái:</span> DRAFT</div>
+</div>
+<h2>For future Claude (AI Preamble)</h2>
+<blockquote>
+<p>Sự leo thang là cạm bẫy khi hai bên cạnh tranh tham gia vào một vòng lặp tăng cường dựa trên trạng thái của đối phương. Nó tạo ra một cuộc chạy đua vũ trang không có điểm dừng và kết thúc bằng sự kiệt quệ của cả hai.</p>
+</blockquote>
+<h2>1. Định nghĩa</h2>
+<p><strong>Sự leo thang (Escalation)</strong> là một mẫu hình hệ thống trong đó hành động (Flow) của một chủ thể được quyết định không phải bởi mục tiêu tuyệt đối của họ, mà bởi khoảng cách tương đối so với trạng thái của đối phương. Bên A cố vượt mặt bên B, khiến bên B phản ứng bằng cách cố vượt lại bên A, tạo ra một vòng lặp khuếch đại (Reinforcing loop).</p>
+<h2>2. Nguyên lý / Cấu trúc</h2>
+<ul>
+<li>Cấu trúc cốt lõi là hai vòng lặp cân bằng kết nối với nhau theo cách tạo ra một vòng lặp tăng cường duy nhất.</li>
+<li>Động lực duy trì là nỗi sợ hãi tụt hậu hoặc mong muốn thống trị.</li>
+<li>Cách thoát bẫy: (1) Một bên chủ động từ bỏ vũ trang (disarmament), từ chối tham gia chạy đua; (2) Có thỏa thuận kiểm soát hoặc luật lệ từ một quyền lực cao hơn (phá vỡ cấu trúc leo thang).</li>
+</ul>
+<h2>3. Ví dụ đối chiếu (R18: Double Examples)</h2>
+<h3>Ví dụ từ sách (Original)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Chiến tranh Lạnh (Chạy đua vũ trang).
+<strong>Ứng dụng</strong>: Mỹ sản xuất 100 quả bom hạt nhân. Liên Xô thấy vậy phải làm 120 quả để an toàn. Mỹ thấy 120 quả thì sợ, phải làm 150 quả. Vòng lặp tiếp diễn cho đến khi cả hai có hàng ngàn quả bom, tiêu tốn lượng tài nguyên khổng lồ mà an ninh quốc gia lại càng ngày càng bất ổn.
+<strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — Chương 5</p>
+</blockquote>
+<h3>Ứng dụng sư phạm (Pedagogical Application)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Cuộc chạy đua học thêm của học sinh.
+<strong>Ứng dụng</strong>: Vì sợ con thua kém bạn bè (khoảng cách tương đối), phụ huynh A cho con đi học thêm 2 buổi/tuần. Phụ huynh B thấy thế cho con học 3 buổi. Phụ huynh A lo lắng tăng lên 4 buổi. Cuối cùng, tất cả học sinh đều bị kiệt sức, điểm số trên lớp vẫn phân hóa như cũ, nhưng thời gian tuổi thơ đã bị tước đoạt (kiệt quệ tài nguyên).</p>
+</blockquote>
+<h2>4. Phản tư sư phạm (4F)</h2>
+<ul>
+<li><strong>Facts</strong>: Leo thang là một cuộc thi &quot;Ai có thể chịu đựng nỗi đau lâu hơn&quot;.</li>
+<li><strong>Feelings</strong>: Bị cuốn vào sự leo thang mang lại cảm giác mù quáng và kiêu hãnh độc hại.</li>
+<li><strong>Findings</strong>: Trong các thiết kế game hoặc cạnh tranh lớp học, tránh các thang đo tuyệt đối dạng &quot;Zero-sum game&quot; (kẻ thắng người thua) để ngăn chặn sự leo thang tiêu cực.</li>
+<li><strong>Future</strong>: Thay thế việc so sánh điểm số với người khác (relative) bằng việc so sánh sự tiến bộ với chính mình (absolute).</li>
+</ul>
+<h2>5. Trích dẫn nguồn (R3)</h2>
+<ul>
+<li><strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — (RAW_2026-05-18_ARCH_Thinking_in_Systems_CH05_SEC04_P141-142.md)</li>
+<li><strong>Fact-check</strong>: Mô hình chạy đua vũ trang.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+<h1>Điểm đòn bẩy {#concept_arch_tis_leverage_points}</h1>
+<div class="metadata-strip">
+<div><span class="metadata-label">ID:</span> CONCEPT_ARCH_TIS_Leverage_Points</div>
+<div><span class="metadata-label">Trạng thái:</span> DRAFT</div>
+</div>
+<h2>For future Claude (AI Preamble)</h2>
+<blockquote>
+<p>Điểm đòn bẩy là các vị trí trong một hệ thống phức tạp mà một sự can thiệp nhỏ có thể tạo ra sự thay đổi lớn và bền vững. Việc tìm ra đúng điểm đòn bẩy là nghệ thuật tối thượng của tư duy hệ thống.</p>
+</blockquote>
+<h2>1. Định nghĩa</h2>
+<p><strong>Điểm đòn bẩy (Leverage Points)</strong> là các điểm can thiệp (places to intervene) trong một hệ thống. Nếu tác động đúng vào các điểm này, một lực đẩy nhỏ có thể tạo ra sự thay đổi hệ thống khổng lồ (shifting the system). Ngược lại, tác động sai chỗ dù tốn rất nhiều sức lực cũng không mang lại kết quả dài hạn.</p>
+<h2>2. Nguyên lý / Cấu trúc</h2>
+<p>Donella Meadows đã chỉ ra 12 điểm đòn bẩy, xếp hạng từ kém hiệu quả nhất đến hiệu quả nhất.</p>
+<ul>
+<li><strong>Kém hiệu quả nhất (Tác động vật lý):</strong> Thay đổi hằng số (con số, thuế, trợ cấp), kích thước của kho chứa (buffers), cấu trúc vật lý của hệ thống.</li>
+<li><strong>Hiệu quả trung bình (Tác động luồng thông tin):</strong> Thay đổi độ dài của sự chậm trễ (delays), thêm hoặc bớt các vòng lặp phản hồi, thay đổi luồng thông tin (ai có quyền tiếp cận dữ liệu).</li>
+<li><strong>Hiệu quả cao nhất (Tác động tư duy/mục đích):</strong> Thay đổi luật chơi của hệ thống, thay đổi Mục đích (Goals) của hệ thống, và cao nhất là thay đổi Mô thức tư duy (Paradigm).</li>
+</ul>
+<h2>3. Ví dụ đối chiếu (R18: Double Examples)</h2>
+<h3>Ví dụ từ sách (Original)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Muốn giảm ô nhiễm môi trường.
+<strong>Ứng dụng</strong>:</p>
+<ul>
+<li>(Đòn bẩy yếu): Phạt thêm 1% thuế rác thải (thay đổi con số).</li>
+<li>(Đòn bẩy vừa): Bắt buộc công ty phải công khai chỉ số rác thải cho người dân khu vực đó xem (thay đổi luồng thông tin phản hồi).</li>
+<li>(Đòn bẩy cực mạnh): Thay đổi mục tiêu của nền kinh tế từ &quot;Tăng trưởng GDP bằng mọi giá&quot; sang &quot;Phát triển bền vững&quot;.
+<strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — Chương 6</li>
+</ul>
+</blockquote>
+<h3>Ứng dụng sư phạm (Pedagogical Application)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Cải thiện điểm số của một lớp học yếu kém.
+<strong>Ứng dụng</strong>:</p>
+<ul>
+<li>(Yếu): Bắt học sinh làm thêm 10 bài tập về nhà mỗi ngày (Thay đổi dòng chảy).</li>
+<li>(Vừa): Gửi thông báo kết quả bài thi nhỏ hàng ngày cho phụ huynh thay vì chờ cuối kỳ (Cải thiện luồng thông tin).</li>
+<li>(Mạnh): Thay đổi luật chơi: Cho phép học sinh thi lại nhiều lần và chỉ lấy điểm cao nhất (Thay đổi cấu trúc vòng lặp phản hồi để tạo tâm lý an toàn).</li>
+</ul>
+</blockquote>
+<h2>4. Phản tư sư phạm (4F)</h2>
+<ul>
+<li><strong>Facts</strong>: Chúng ta thường lãng phí 90% năng lượng vào các điểm đòn bẩy yếu nhất (như các con số).</li>
+<li><strong>Feelings</strong>: Việc thay đổi Mô thức (Paradigm) khó nhất nhưng lại có tác động vĩ đại nhất.</li>
+<li><strong>Findings</strong>: Bí quyết của một chuyên gia thiết kế (designer) giỏi là tìm ra điểm đòn bẩy thông tin và luật lệ (Rules of the system) thay vì lao vào sửa chữa cơ sở vật chất.</li>
+<li><strong>Future</strong>: Xem xét lại bộ KPI của tổ chức; chúng ta đang tác động vào điểm đòn bẩy cấp mấy?</li>
+</ul>
+<h2>5. Trích dẫn nguồn (R3)</h2>
+<ul>
+<li><strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — (RAW_2026-05-18_ARCH_Thinking_in_Systems_CH06_SEC01.md)</li>
+<li><strong>Fact-check</strong>: 12 Leverage points to intervene in a system.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+<h1>Khả năng phục hồi {#concept_arch_tis_resilience}</h1>
+<div class="metadata-strip">
+<div><span class="metadata-label">ID:</span> CONCEPT_ARCH_TIS_Resilience</div>
+<div><span class="metadata-label">Trạng thái:</span> DRAFT</div>
+</div>
+<h2>For future Claude (AI Preamble)</h2>
+<blockquote>
+<p>Khả năng phục hồi (Resilience) là năng lực của một hệ thống có thể tồn tại và phục hồi sau những cú sốc hoặc sự thay đổi của môi trường, nhờ vào hệ thống các vòng lặp phản hồi dự phòng phong phú.</p>
+</blockquote>
+<h2>1. Định nghĩa</h2>
+<p><strong>Khả năng phục hồi (Resilience)</strong> là đặc tính của một hệ thống cho phép nó chịu đựng những biến động mạnh, sống sót qua các môi trường khắc nghiệt, và phục hồi lại hình dáng hoặc chức năng ban đầu sau khi bị tổn thương. Resilience không đồng nghĩa với sự bất biến (static stability), mà là khả năng &quot;nảy&quot; trở lại (bounce back).</p>
+<h2>2. Nguyên lý / Cấu trúc</h2>
+<ul>
+<li>Khả năng phục hồi sinh ra từ sự phong phú (redundancy) của cấu trúc các vòng lặp phản hồi cân bằng (Balancing loops) có thể thay thế nhau hoạt động ở các điều kiện khác nhau.</li>
+<li>Hệ thống ưu tiên tối ưu hóa năng suất (như sản xuất tinh gọn) thường hy sinh khả năng phục hồi. Việc loại bỏ các thành phần &quot;dư thừa&quot; làm hệ thống giòn (brittle) và dễ sụp đổ khi môi trường thay đổi.</li>
+<li>Hệ thống càng linh hoạt, càng nhiều phương án dự phòng, thì càng có tính đàn hồi cao.</li>
+</ul>
+<h2>3. Ví dụ đối chiếu (R18: Double Examples)</h2>
+<h3>Ví dụ từ sách (Original)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Hệ thống miễn dịch của con người.
+<strong>Ứng dụng</strong>: Cơ thể người không được thiết kế để miễn nhiễm hoàn toàn (tĩnh), mà có một mạng lưới phức tạp gồm da, tế bào bạch cầu, kháng thể, và mồ hôi. Nếu da bị thủng, hệ thống viêm kích hoạt; nếu vi khuẩn vào máu, kháng thể sinh ra. Nhiều vòng lặp phản hồi dự phòng tạo nên khả năng phục hồi đáng kinh ngạc trước virus.
+<strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — Chương 3</p>
+</blockquote>
+<h3>Ứng dụng sư phạm (Pedagogical Application)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Tổ chức một kỳ thi trực tuyến.
+<strong>Ứng dụng</strong>: Một hệ thống &quot;tối ưu&quot; là chỉ có 1 server xử lý cực nhanh (ít tốn kém). Nhưng một hệ thống &quot;có khả năng phục hồi&quot; phải có server dự phòng, cơ chế phát đề bù giờ, đường dây hỗ trợ qua điện thoại. Khi đường truyền mạng quốc gia sập (cú sốc), hệ thống tối ưu sẽ sụp đổ, trong khi hệ thống phục hồi sẽ sống sót thông qua các cơ chế dự phòng.</p>
+</blockquote>
+<h2>4. Phản tư sư phạm (4F)</h2>
+<ul>
+<li><strong>Facts</strong>: Tối ưu hóa (Optimization) và Khả năng phục hồi (Resilience) thường mâu thuẫn nhau.</li>
+<li><strong>Feelings</strong>: Người quản lý thường ghét sự dư thừa, nhưng lại đánh giá thấp giá trị sống còn của nó trong khủng hoảng.</li>
+<li><strong>Findings</strong>: Trong thiết kế bài học, luôn phải có &quot;Kế hoạch B&quot; (redundancy) phòng khi công nghệ lỗi hoặc học sinh không hiểu.</li>
+<li><strong>Future</strong>: Cân bằng giữa việc xây dựng một quy trình trơn tru và một hệ thống đàn hồi.</li>
+</ul>
+<h2>5. Trích dẫn nguồn (R3)</h2>
+<ul>
+<li><strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — (RAW_2026-05-18_ARCH_Thinking_in_Systems_CH03_SEC01_P093-095.md)</li>
+<li><strong>Fact-check</strong>: Một trong ba đặc tính tuyệt vời của hệ thống.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+<h1>Tự tổ chức {#concept_arch_tis_self_organization}</h1>
+<div class="metadata-strip">
+<div><span class="metadata-label">ID:</span> CONCEPT_ARCH_TIS_Self_Organization</div>
+<div><span class="metadata-label">Trạng thái:</span> DRAFT</div>
+</div>
+<h2>For future Claude (AI Preamble)</h2>
+<blockquote>
+<p>Tự tổ chức là đặc tính tuyệt vời của hệ thống cho phép chúng học hỏi, tạo ra các cấu trúc mới, đa dạng hóa và tiến hóa thích nghi với môi trường mà không cần có một bộ não trung tâm kiểm soát từng chi tiết.</p>
+</blockquote>
+<h2>1. Định nghĩa</h2>
+<p><strong>Tự tổ chức (Self-Organization)</strong> là khả năng của một hệ thống có thể cấu trúc bản thân nó, tạo ra các cấu trúc mới, học hỏi, đa dạng hóa, và làm phức tạp hóa chính nó từ những quy tắc cơ bản ban đầu.</p>
+<h2>2. Nguyên lý / Cấu trúc</h2>
+<ul>
+<li>Hệ thống tự tổ chức có thể biến một hỗn hợp vô trật tự thành các mô hình có tổ chức cao (như sự hình thành của tinh thể tuyết, bộ não con người, hay một hệ sinh thái rừng).</li>
+<li>Đặc tính này sinh ra từ một số lượng nhỏ các quy tắc đơn giản và khả năng tiến hóa (thông qua đột biến, thử sai, và chọn lọc).</li>
+<li>Hệ thống tự tổ chức thường bị các nhà quản lý vi mô (micro-managers) ghét bỏ, vì chúng mang lại tính khó đoán và thách thức quyền lực kiểm soát.</li>
+</ul>
+<h2>3. Ví dụ đối chiếu (R18: Double Examples)</h2>
+<h3>Ví dụ từ sách (Original)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Sự hình thành của sự sống từ DNA.
+<strong>Ứng dụng</strong>: Từ một vài chất hóa học cơ bản và quy tắc lắp ráp của chuỗi DNA, sự sống tự tổ chức thành các tế bào phức tạp, động vật, và con người. Không có một bản thiết kế tập trung nào &quot;xây dựng&quot; một con người; nó tự phát triển từ bên trong.
+<strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — Chương 3</p>
+</blockquote>
+<h3>Ứng dụng sư phạm (Pedagogical Application)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Tổ chức lớp học theo phương pháp Kiến tạo (Constructivism).
+<strong>Ứng dụng</strong>: Nếu giáo viên đặt ra một bài toán mở và cung cấp một số công cụ cơ bản (quy tắc đơn giản), nhóm học sinh sẽ &quot;tự tổ chức&quot; thành các vai trò tự nhiên (người dẫn dắt, người ghi chép, người phản biện) để giải quyết vấn đề. Quá trình này sinh ra các ý tưởng sáng tạo mà giáo viên không thể đoán trước hoặc lên lịch trước.</p>
+</blockquote>
+<h2>4. Phản tư sư phạm (4F)</h2>
+<ul>
+<li><strong>Facts</strong>: Tự tổ chức cần tự do và quy tắc đơn giản.</li>
+<li><strong>Feelings</strong>: Yêu cầu sự dũng cảm buông bỏ quyền kiểm soát tuyệt đối từ phía người lãnh đạo.</li>
+<li><strong>Findings</strong>: Các hệ thống giáo dục bó buộc vào tiêu chuẩn cứng nhắc sẽ triệt tiêu khả năng tự tổ chức và sáng tạo của học sinh.</li>
+<li><strong>Future</strong>: Tích hợp các không gian &quot;Mở&quot; (Makerspace) để khuyến khích sự tự tổ chức.</li>
+</ul>
+<h2>5. Trích dẫn nguồn (R3)</h2>
+<ul>
+<li><strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — (RAW_2026-05-18_ARCH_Thinking_in_Systems_CH03_SEC02_P096-098.md)</li>
+<li><strong>Fact-check</strong>: Đặc tính thứ hai của các hệ thống phức tạp.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+<h1>Triết lý Hệ thống {#concept_arch_tis_systems_wisdom}</h1>
+<div class="metadata-strip">
+<div><span class="metadata-label">ID:</span> CONCEPT_ARCH_TIS_Systems_Wisdom</div>
+<div><span class="metadata-label">Trạng thái:</span> DRAFT</div>
+</div>
+<h2>For future Claude (AI Preamble)</h2>
+<blockquote>
+<p>Tư duy hệ thống không chỉ là một công cụ toán học hay kỹ thuật, mà là một lối sống. Nó đòi hỏi sự khiêm tốn, sự tôn trọng ranh giới tự nhiên, và việc khiêu vũ với hệ thống thay vì cố gắng áp đặt kiểm soát lên nó.</p>
+</blockquote>
+<h2>1. Định nghĩa</h2>
+<p><strong>Triết lý Hệ thống (Systems Wisdom)</strong> là bộ quy tắc ứng xử và tâm thế (mindset) của một người thực hành tư duy hệ thống. Nó khuyên chúng ta từ bỏ ảo tưởng về việc có thể kiểm soát hoàn toàn hoặc dự đoán chính xác tuyệt đối các hệ thống phức tạp, thay vào đó là sự quan sát, thích nghi và hòa hợp.</p>
+<h2>2. Nguyên lý / Cấu trúc</h2>
+<p>15 bài học trí tuệ hệ thống của Meadows bao gồm:</p>
+<ul>
+<li><strong>Lắng nghe nhịp đập của hệ thống:</strong> Đừng vội can thiệp, hãy quan sát cách nó vận hành.</li>
+<li><strong>Đừng bóp méo thông tin phản hồi:</strong> Bảo vệ sự thật và các chỉ số đo lường.</li>
+<li><strong>Mở rộng chân trời thời gian:</strong> Nhìn xa hơn cái trước mắt.</li>
+<li><strong>Giữ lại sự đa dạng:</strong> Đa dạng sinh ra khả năng phục hồi (Resilience).</li>
+<li><strong>Làm phong phú môi trường, không phải kiểm soát nó.</strong></li>
+<li><strong>Khiêu vũ cùng hệ thống (Dance with Systems):</strong> Chấp nhận sự bất định, linh hoạt thay đổi theo những gì hệ thống phản hồi.</li>
+</ul>
+<h2>3. Ví dụ đối chiếu (R18: Double Examples)</h2>
+<h3>Ví dụ từ sách (Original)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Quản lý một con sông.
+<strong>Ứng dụng</strong>: Con người thường cố đắp đê thật cao để &quot;kiểm soát&quot; lũ lụt (ảo tưởng kiểm soát). Nhưng nước luôn tìm ra cách vượt qua đê, tạo ra thảm họa lớn hơn. Triết lý hệ thống là &quot;khiêu vũ cùng con sông&quot;: để không gian cho lũ tràn tự nhiên vào các vùng bãi bồi, xây nhà trên cọc, thích nghi với nhịp điệu của nước thay vì đối đầu với nó.
+<strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — Chương 7</p>
+</blockquote>
+<h3>Ứng dụng sư phạm (Pedagogical Application)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Quản lý lớp học trong thời kỳ AI và công nghệ.
+<strong>Ứng dụng</strong>: Thay vì dùng mọi cách cấm đoán học sinh sử dụng ChatGPT hay điện thoại (cố gắng kiểm soát một hệ thống mở), một giáo viên mang &quot;triết lý hệ thống&quot; sẽ &quot;khiêu vũ&quot; với công nghệ. Họ thay đổi hình thức ra đề (tập trung vào phản biện thay vì ghi nhớ), hướng dẫn học sinh dùng AI như trợ lý, và nương theo dòng chảy của công nghệ để tạo ra giá trị mới.</p>
+</blockquote>
+<h2>4. Phản tư sư phạm (4F)</h2>
+<ul>
+<li><strong>Facts</strong>: Không có hệ thống phức tạp nào có thể bị kiểm soát hoàn toàn 100%.</li>
+<li><strong>Feelings</strong>: Việc &quot;buông bỏ&quot; sự kiểm soát và học cách &quot;khiêu vũ&quot; mang lại sự bình an nội tâm lớn lao cho người quản lý.</li>
+<li><strong>Findings</strong>: Trí tuệ cao nhất không phải là dự đoán tương lai, mà là xây dựng một hệ thống đủ khả năng phục hồi để sống sót dù tương lai có ra sao.</li>
+<li><strong>Future</strong>: Tích hợp các nguyên tắc &quot;Systems Wisdom&quot; làm giá trị cốt lõi cho văn hóa nhà trường hoặc tổ chức.</li>
+</ul>
+<h2>5. Trích dẫn nguồn (R3)</h2>
+<ul>
+<li><strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — (RAW_2026-05-18_ARCH_Thinking_in_Systems_CH07_SEC01.md)</li>
+<li><strong>Fact-check</strong>: Phần kết luận tinh hoa của cuốn sách (Living in a World of Systems).</li>
+</ul>
+<div style="page-break-after: always;"></div>
+<h1>Tính hợp lý hạn chế {#concept_arch_tis_bounded_rationality}</h1>
+<div class="metadata-strip">
+<div><span class="metadata-label">ID:</span> CONCEPT_ARCH_TIS_Bounded_Rationality</div>
+<div><span class="metadata-label">Trạng thái:</span> DRAFT</div>
+</div>
+<h2>For future Claude (AI Preamble)</h2>
+<blockquote>
+<p>Bounded Rationality giải thích rằng con người luôn cố gắng đưa ra quyết định hợp lý, nhưng sự &quot;hợp lý&quot; đó bị giới hạn bởi thông tin họ có, tầm nhìn cục bộ và năng lực nhận thức hữu hạn. Điều này sinh ra các hành vi gây hại cho hệ thống tổng thể dù không ai cố ý làm việc xấu.</p>
+</blockquote>
+<h2>1. Định nghĩa</h2>
+<p><strong>Tính hợp lý hạn chế (Bounded Rationality)</strong>, khái niệm do Herbert Simon đưa ra, chỉ ra rằng mọi cá nhân trong hệ thống đều đưa ra quyết định hợp lý nhất <em>dựa trên</em> luồng thông tin hạn hẹp mà họ có được từ vị trí cục bộ của mình. Họ không thể thấy toàn bộ bức tranh của hệ thống.</p>
+<h2>2. Nguyên lý / Cấu trúc</h2>
+<ul>
+<li>Con người không cố tình phá hoại hệ thống. Những quyết định tệ hại (dẫn đến Overshoot hay Tragedy of the Commons) xảy ra vì mỗi cá nhân đang tối ưu hóa phần lợi ích nhỏ bé của họ một cách &quot;hợp lý&quot;.</li>
+<li>Nếu muốn thay đổi hành vi của các cá nhân, không nên trách mắng đạo đức của họ, mà hãy thay đổi <em>luồng thông tin</em> (information flow) để họ nhìn thấy hậu quả của quyết định của mình.</li>
+</ul>
+<h2>3. Ví dụ đối chiếu (R18: Double Examples)</h2>
+<h3>Ví dụ từ sách (Original)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Việc mở rộng đường cao tốc để giảm kẹt xe.
+<strong>Ứng dụng</strong>: Kẹt xe (Sự kiện) -&gt; Nhà quản lý quyết định xây đường rộng hơn. Quyết định này &quot;hợp lý&quot; trong tầm nhìn ngắn hạn (Bounded Rationality). Nhưng đường rộng hơn sẽ khuyến khích nhiều người mua ô tô hơn và xây nhà xa hơn (thông tin mà nhà quản lý không tính đến). Sau 5 năm, đường lại kẹt cứng hơn trước.
+<strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — Chương 4</p>
+</blockquote>
+<h3>Ứng dụng sư phạm (Pedagogical Application)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Bệnh thành tích trong thi cử.
+<strong>Ứng dụng</strong>: Một giáo viên cho học sinh biết trước đề thi để trường có tỷ lệ đỗ cao. Trong &quot;tính hợp lý hạn chế&quot; của giáo viên đó (áp lực KPI từ cấp trên, muốn học sinh vui), quyết định đó là hợp lý. Nhưng nó phá hoại năng lực thực sự của quốc gia (hệ thống lớn). Nếu đổi luồng thông tin (thay KPI điểm số bằng KPI năng lực thực tế), sự &quot;hợp lý&quot; của giáo viên sẽ thay đổi.</p>
+</blockquote>
+<h2>4. Phản tư sư phạm (4F)</h2>
+<ul>
+<li><strong>Facts</strong>: Đừng quy kết các lỗi hệ thống là do sự xấu xa hoặc ngu ngốc của con người.</li>
+<li><strong>Feelings</strong>: Sự cảm thông (empathy): Hiểu rằng ai cũng đang làm tốt nhất trong cái giếng của họ.</li>
+<li><strong>Findings</strong>: Thay vì giáo huấn đạo đức, hãy tái thiết kế cấu trúc thưởng/phạt và thông tin để lợi ích cục bộ đồng hành cùng lợi ích tổng thể.</li>
+<li><strong>Future</strong>: Tái thiết kế các bảng đo lường (Dashboards) để mọi người thấy hậu quả xa của mình.</li>
+</ul>
+<h2>5. Trích dẫn nguồn (R3)</h2>
+<ul>
+<li><strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — (RAW_2026-05-18_ARCH_Thinking_in_Systems_CH04_SEC06_P122-127.md)</li>
+<li><strong>Fact-check</strong>: Khái niệm về Bounded Rationality của Herbert Simon.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+<h1>Cân bằng động {#concept_arch_tis_dynamic_equilibrium}</h1>
+<div class="metadata-strip">
+<div><span class="metadata-label">ID:</span> CONCEPT_ARCH_TIS_Dynamic_Equilibrium</div>
+<div><span class="metadata-label">Trạng thái:</span> DRAFT</div>
+</div>
+<h2>For future Claude (AI Preamble)</h2>
+<blockquote>
+<p>Cân bằng động là trạng thái của một hệ thống khi mức Stock không đổi do tốc độ Inflow chính xác bằng tốc độ Outflow. Hệ thống trông có vẻ tĩnh tại, nhưng thực chất bên trong là sự trao đổi năng lượng/tài nguyên liên tục.</p>
+</blockquote>
+<h2>1. Định nghĩa</h2>
+<p><strong>Cân bằng động (Dynamic Equilibrium)</strong> là trạng thái mà một Kho chứa (Stock) duy trì được sự ổn định theo thời gian, không tăng lên cũng không giảm xuống, mặc dù luôn có dòng chảy đi vào (inflow) và dòng chảy đi ra (outflow). Điều này xảy ra khi <strong>Tổng Inflow = Tổng Outflow</strong>.</p>
+<h2>2. Nguyên lý / Cấu trúc</h2>
+<ul>
+<li>Hệ thống không hề đứng yên. Nó là một sự cân bằng tinh tế của sự vận động liên tục.</li>
+<li>Một hệ thống ở trạng thái cân bằng động rất linh hoạt. Bất kỳ sự thay đổi nhỏ nào ở Inflow hoặc Outflow cũng sẽ phá vỡ sự cân bằng, làm cho Stock thay đổi cho đến khi hệ thống tìm được một điểm cân bằng động mới.</li>
+</ul>
+<h2>3. Ví dụ đối chiếu (R18: Double Examples)</h2>
+<h3>Ví dụ từ sách (Original)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Bồn tắm mở cả vòi nước và lỗ xả.
+<strong>Ứng dụng</strong>: Nếu nước chảy vào với tốc độ 5 lít/phút và chảy ra cũng với tốc độ 5 lít/phút, mức nước trong bồn sẽ đứng yên không đổi.
+<strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — Chương 1</p>
+</blockquote>
+<h3>Ứng dụng sư phạm (Pedagogical Application)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Trạng thái &quot;Flow&quot; (say sưa) trong học tập.
+<strong>Ứng dụng</strong>: Sự cân bằng động có thể được thấy khi mức độ khó của bài toán (Inflow gây căng thẳng) hoàn toàn khớp với kỹ năng hiện tại của học sinh (Outflow giải phóng sự căng thẳng bằng năng lực giải quyết). Học sinh duy trì được sự tập trung cao độ một cách ổn định, dù não bộ hoạt động liên tục.</p>
+</blockquote>
+<h2>4. Phản tư sư phạm (4F)</h2>
+<ul>
+<li><strong>Facts</strong>: Cân bằng động đòi hỏi năng lượng liên tục.</li>
+<li><strong>Feelings</strong>: Trạng thái ổn định không có nghĩa là &quot;không làm gì&quot;, mà là sự duy trì hoàn hảo của các động lực.</li>
+<li><strong>Findings</strong>: Nhận thức được hệ thống đang &quot;bề ngoài phẳng lặng nhưng bên trong sóng ngầm&quot;.</li>
+<li><strong>Future</strong>: Phân tích sự cân bằng của tổ chức hoặc của một nhóm làm việc.</li>
+</ul>
+<h2>5. Trích dẫn nguồn (R3)</h2>
+<ul>
+<li><strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — (RAW_2026-05-18_ARCH_Thinking_in_Systems_CH01_SEC03_P034-041.md)</li>
+<li><strong>Fact-check</strong>: Trạng thái cân bằng mô tả trong phần về Stock &amp; Flow.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+<h1>Yếu tố giới hạn {#concept_arch_tis_limiting_factor}</h1>
+<div class="metadata-strip">
+<div><span class="metadata-label">ID:</span> CONCEPT_ARCH_TIS_Limiting_Factor</div>
+<div><span class="metadata-label">Trạng thái:</span> DRAFT</div>
+</div>
+<h2>For future Claude (AI Preamble)</h2>
+<blockquote>
+<p>Định luật tối thiểu của Liebig chỉ ra rằng: Sự phát triển của một hệ thống không bị giới hạn bởi tổng lượng tài nguyên, mà bị giới hạn bởi yếu tố khan hiếm nhất. Khi yếu tố giới hạn này được giải quyết, một yếu tố khác sẽ lập tức trở thành giới hạn mới.</p>
+</blockquote>
+<h2>1. Định nghĩa</h2>
+<p><strong>Yếu tố giới hạn (Limiting Factor)</strong> là yếu tố đầu vào khan hiếm nhất trong số tất cả các yếu tố cần thiết cho sự phát triển của hệ thống. Dù bạn có gia tăng vô hạn các yếu tố khác, hệ thống vẫn không thể phát triển thêm nếu yếu tố giới hạn chưa được giải quyết. (Còn gọi là Định luật tối thiểu Liebig).</p>
+<h2>2. Nguyên lý / Cấu trúc</h2>
+<ul>
+<li>Hệ thống luôn đối mặt với giới hạn (vòng lặp cân bằng kìm hãm).</li>
+<li>Khi bạn phá vỡ một giới hạn, sự tăng trưởng tiếp tục, nhưng nó sẽ <strong>ngay lập tức</strong> va vào một yếu tố giới hạn tiếp theo.</li>
+<li>Hệ quả: Không có hệ thống nào tăng trưởng mãi mãi trong môi trường hữu hạn. Luôn có <em>một cái gì đó</em> ngăn cản nó.</li>
+</ul>
+<h2>3. Ví dụ đối chiếu (R18: Double Examples)</h2>
+<h3>Ví dụ từ sách (Original)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Nông nghiệp (Định luật Liebig).
+<strong>Ứng dụng</strong>: Để cây lớn cần Nitơ, Phốt pho, Kali, Nước và Ánh sáng. Nếu đất thiếu Phốt pho (yếu tố giới hạn), thì dù bạn có đổ thêm hàng tấn Nitơ và Nước, cây vẫn chết. Nếu bạn bổ sung đủ Phốt pho, cây sẽ lớn lên cho đến khi Nước trở thành yếu tố giới hạn mới.
+<strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — Chương 4</p>
+</blockquote>
+<h3>Ứng dụng sư phạm (Pedagogical Application)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Phát triển kỹ năng của học sinh.
+<strong>Ứng dụng</strong>: Để giải toán tốt cần: Tư duy logic, Kiến thức công thức, và Sự kiên nhẫn. Nếu học sinh rất thông minh (Logic dư thừa), thuộc lòng công thức, nhưng cực kỳ thiếu kiên nhẫn (Limiting factor), thì em đó vẫn sẽ trượt bài thi dài. Việc thầy cô tiếp tục nhồi nhét công thức (yếu tố không khan hiếm) sẽ vô dụng. Phải tập trung rèn luyện sự kiên nhẫn.</p>
+</blockquote>
+<h2>4. Phản tư sư phạm (4F)</h2>
+<ul>
+<li><strong>Facts</strong>: Tăng trưởng luôn bị cản bởi nút thắt cổ chai hẹp nhất.</li>
+<li><strong>Feelings</strong>: Con người thường thích làm những việc dễ (tăng yếu tố đã dư thừa) hơn là giải quyết điểm nghẽn (yếu tố khan hiếm).</li>
+<li><strong>Findings</strong>: Nhận diện đúng &quot;Limiting Factor&quot; tiết kiệm được 80% công sức vô ích.</li>
+<li><strong>Future</strong>: Thay vì hỏi &quot;Chúng ta có thể làm thêm gì?&quot;, hãy hỏi &quot;Đâu là yếu tố duy nhất đang giữ chúng ta lại?&quot;.</li>
+</ul>
+<h2>5. Trích dẫn nguồn (R3)</h2>
+<ul>
+<li><strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — (RAW_2026-05-18_ARCH_Thinking_in_Systems_CH04_SEC04_P117-119.md)</li>
+<li><strong>Fact-check</strong>: Ứng dụng của định luật Liebig vào hệ thống.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+<h1>Tính phi tuyến {#concept_arch_tis_nonlinearities}</h1>
+<div class="metadata-strip">
+<div><span class="metadata-label">ID:</span> CONCEPT_ARCH_TIS_Nonlinearities</div>
+<div><span class="metadata-label">Trạng thái:</span> DRAFT</div>
+</div>
+<h2>For future Claude (AI Preamble)</h2>
+<blockquote>
+<p>Tính phi tuyến là mối quan hệ mà nguyên nhân và kết quả không tỷ lệ thuận với nhau. Trong hệ thống, tính phi tuyến là nguyên nhân chính dẫn đến sự thay đổi sức mạnh của các vòng lặp (shifting dominance) và làm các mô hình dự báo tuyến tính bị sai lệch.</p>
+</blockquote>
+<h2>1. Định nghĩa</h2>
+<p><strong>Tính phi tuyến (Nonlinearities)</strong> mô tả mối quan hệ giữa hai yếu tố (A và B) trong đó thay đổi ở A không dẫn đến thay đổi tương xứng, cố định ở B. Mối quan hệ này có thể thay đổi đột ngột khi đi qua một ngưỡng nhất định (ví dụ: đang tăng chậm bỗng dưng tăng vọt, hoặc ngược lại).</p>
+<h2>2. Nguyên lý / Cấu trúc</h2>
+<ul>
+<li>Hầu hết tâm trí con người được &quot;lập trình&quot; để tư duy tuyến tính: &quot;Nếu tôi tưới lượng nước gấp đôi, cây sẽ lớn nhanh gấp đôi&quot;. Nhưng hệ thống thực tế phi tuyến tính: &quot;Nếu tưới nước gấp đôi, cây sẽ chết đuối&quot;.</li>
+<li>Tính phi tuyến thường được thể hiện qua các điểm uốn (tipping points) hoặc các giới hạn.</li>
+<li>Tính phi tuyến chính là cơ chế thay đổi sức mạnh của các vòng lặp phản hồi, dẫn đến <strong>Shifting Dominance</strong>.</li>
+</ul>
+<h2>3. Ví dụ đối chiếu (R18: Double Examples)</h2>
+<h3>Ví dụ từ sách (Original)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Mối quan hệ giữa phân bón và năng suất cây trồng.
+<strong>Ứng dụng</strong>: Ban đầu, bón thêm 1kg phân, năng suất tăng 10kg lúa (tuyến tính). Nhưng khi bón tới ngưỡng hấp thụ tối đa của đất, thêm 1kg phân năng suất không tăng nữa. Bón thêm nữa, năng suất giảm vì cây bị ngộ độc. Đường cong năng suất có hình cái chuông, không phải đường thẳng.
+<strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — Chương 4</p>
+</blockquote>
+<h3>Ứng dụng sư phạm (Pedagogical Application)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Thời gian học và kết quả bài thi.
+<strong>Ứng dụng</strong>: Nếu học sinh học 2 tiếng/ngày được 6 điểm. Theo tư duy tuyến tính, nếu bắt học 4 tiếng sẽ được 12 điểm (ảo tưởng). Thực tế, từ 2 lên 3 tiếng điểm có thể tăng lên 8. Nhưng từ 3 lên 4 tiếng, điểm có thể rớt xuống 7 do não bộ bão hòa và kiệt sức (mối quan hệ phi tuyến).</p>
+</blockquote>
+<h2>4. Phản tư sư phạm (4F)</h2>
+<ul>
+<li><strong>Facts</strong>: Thế giới tự nhiên và xã hội vận hành phi tuyến tính.</li>
+<li><strong>Feelings</strong>: Việc kỳ vọng kết quả tỷ lệ thuận với công sức (tuyến tính) thường mang lại sự thất vọng lớn.</li>
+<li><strong>Findings</strong>: Luôn phải đi tìm các điểm uốn (inflection points) và giới hạn bão hòa (saturation). &quot;Nhiều hơn chưa chắc đã tốt hơn&quot;.</li>
+<li><strong>Future</strong>: Dạy học sinh cách phát hiện các mô hình phi tuyến trong cuộc sống (như sự lan truyền của virus hay tin giả).</li>
+</ul>
+<h2>5. Trích dẫn nguồn (R3)</h2>
+<ul>
+<li><strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — (RAW_2026-05-18_ARCH_Thinking_in_Systems_CH04_SEC02_P108-111.md)</li>
+<li><strong>Fact-check</strong>: Khái niệm phi tuyến từ &quot;Why Systems Surprise Us&quot;.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+<h1>Giới hạn tài nguyên không thể tái tạo {#concept_arch_tis_nonrenewable_resource_limit}</h1>
+<div class="metadata-strip">
+<div><span class="metadata-label">ID:</span> CONCEPT_ARCH_TIS_Nonrenewable_Resource_Limit</div>
+<div><span class="metadata-label">Trạng thái:</span> DRAFT</div>
+</div>
+<h2>For future Claude (AI Preamble)</h2>
+<blockquote>
+<p>Hệ thống phụ thuộc vào tài nguyên không tái tạo (Stock-limited) có số phận được định đoạt bởi sự cạn kiệt. Nếu tốc độ khai thác tăng trưởng hàm mũ, việc tìm ra lượng tài nguyên lớn gấp đôi cũng chỉ kéo dài sự tồn tại của hệ thống thêm một thời gian cực ngắn.</p>
+</blockquote>
+<h2>1. Định nghĩa</h2>
+<p><strong>Giới hạn tài nguyên không thể tái tạo</strong> xảy ra khi một hệ thống khai thác một Kho chứa (Stock) tài nguyên mà không có (hoặc có cực kỳ ít) Dòng chảy vào (Inflow) để bù đắp. Hệ thống này bị giới hạn bởi tổng trữ lượng (Stock-limited).</p>
+<h2>2. Nguyên lý / Cấu trúc</h2>
+<ul>
+<li>Hệ thống này thường có cấu trúc: Một vòng lặp tăng cường (Reinforcing loop) phát triển nền kinh tế/vốn khai thác, đối đầu với một vòng lặp cân bằng (Balancing loop) của sự suy kiệt tài nguyên làm tăng chi phí khai thác.</li>
+<li>Sự tăng trưởng của vòng lặp tăng cường thường là hàm mũ (exponential). Do đó, sự cạn kiệt tài nguyên xảy ra vô cùng đột ngột vào phút chót.</li>
+<li>Việc công nghệ phát triển hoặc phát hiện ra mỏ tài nguyên mới lớn gấp đôi không thay đổi mô hình, nó chỉ trì hoãn sự sụp đổ thêm một lượng thời gian tương đương với vài chu kỳ nhân đôi (thường rất ngắn).</li>
+</ul>
+<h2>3. Ví dụ đối chiếu (R18: Double Examples)</h2>
+<h3>Ví dụ từ sách (Original)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Nền kinh tế dầu mỏ.
+<strong>Ứng dụng</strong>: Khi vốn đầu tư khai thác dầu tăng, lượng dầu lấy lên càng nhiều, làm cạn kiệt mỏ dầu. Khi mỏ cạn, chi phí khoan sâu hơn làm giảm lợi nhuận. Ngay cả khi trữ lượng dầu thực tế lớn gấp 4 lần dự đoán, do tốc độ tiêu thụ tăng hàm mũ, đỉnh khai thác cũng chỉ kéo dài thêm vài chục năm trước khi sụp đổ.
+<strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — Chương 2</p>
+</blockquote>
+<h3>Ứng dụng sư phạm (Pedagogical Application)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Sự nhiệt tình của người giáo viên mới (Burnout).
+<strong>Ứng dụng</strong>: &quot;Năng lượng cống hiến ban đầu&quot; của một giáo viên trẻ là một loại tài nguyên hữu hạn nếu không có cơ chế phục hồi (chăm sóc sức khỏe tâm thần, sự ghi nhận). Càng cố gắng làm nhiều dự án (tăng trưởng hàm mũ), năng lượng cạn kiệt càng nhanh. Dù người đó có mạnh mẽ gấp đôi người bình thường, họ cũng sẽ kiệt quệ đột ngột (Overshoot &amp; Collapse) nếu không biết giới hạn.</p>
+</blockquote>
+<h2>4. Phản tư sư phạm (4F)</h2>
+<ul>
+<li><strong>Facts</strong>: Tài nguyên không thể tái tạo cuối cùng cũng sẽ cạn kiệt nếu bị khai thác liên tục.</li>
+<li><strong>Feelings</strong>: Ảo tưởng về &quot;sự vô tận&quot; của tài nguyên (hoặc sức lực con người) thường dẫn đến bi kịch.</li>
+<li><strong>Findings</strong>: Chiến lược duy nhất cho các hệ thống phụ thuộc vào tài nguyên này là kiểm soát tốc độ tăng trưởng và chuyển đổi sang tài nguyên tái tạo trước khi chạm đáy.</li>
+<li><strong>Future</strong>: Nhận thức rõ về tài nguyên &quot;cảm xúc&quot; và &quot;thời gian&quot; là hữu hạn để thiết kế khối lượng công việc cân bằng.</li>
+</ul>
+<h2>5. Trích dẫn nguồn (R3)</h2>
+<ul>
+<li><strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — (RAW_2026-05-18_ARCH_Thinking_in_Systems_CH02_SEC02_P075-089.md)</li>
+<li><strong>Fact-check</strong>: Khái niệm hệ thống bị giới hạn bởi Stock.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+<h1>Vượt giới hạn và Sụp đổ {#concept_arch_tis_overshoot_and_collapse}</h1>
+<div class="metadata-strip">
+<div><span class="metadata-label">ID:</span> CONCEPT_ARCH_TIS_Overshoot_and_Collapse</div>
+<div><span class="metadata-label">Trạng thái:</span> DRAFT</div>
+</div>
+<h2>For future Claude (AI Preamble)</h2>
+<blockquote>
+<p>Khi hệ thống có sự tăng trưởng quá nhanh (được thúc đẩy bởi Reinforcing loop) kết hợp với phản hồi bị trễ (Delay) và giới hạn cứng của môi trường, nó sẽ &quot;bắn lố&quot; qua ranh giới an toàn, phá hủy nguồn lực hỗ trợ nó, dẫn đến sự sụp đổ thảm khốc không thể vãn hồi.</p>
+</blockquote>
+<h2>1. Định nghĩa</h2>
+<p><strong>Overshoot &amp; Collapse (Vượt lố và Sụp đổ)</strong> là hiện tượng thảm khốc của một hệ thống, trong đó nó tăng trưởng vượt quá khả năng chịu đựng của môi trường (carrying capacity). Do độ trễ trong nhận thức và sửa sai, hệ thống không dừng lại kịp thời, làm xói mòn và phá hủy nền tảng tài nguyên, cuối cùng dẫn đến sụp đổ toàn diện.</p>
+<h2>2. Nguyên lý / Cấu trúc</h2>
+<p>Cần 3 yếu tố để sinh ra hành vi này:</p>
+<ol>
+<li><strong>Tăng trưởng nhanh (Rapid Growth):</strong> Một vòng lặp tăng cường mạnh mẽ liên tục thúc đẩy hệ thống tiến lên.</li>
+<li><strong>Giới hạn môi trường (Carrying Capacity):</strong> Môi trường chỉ có thể hỗ trợ/tái tạo một lượng giới hạn.</li>
+<li><strong>Độ trễ (Delay):</strong> Tín hiệu cảnh báo &quot;đã hết tài nguyên&quot; đến quá chậm, hoặc quyết định phanh lại được đưa ra khi đã quá muộn.
+<em>Kết quả:</em> Hệ thống ăn mòn chính nền tảng sinh tồn của mình (erosion of carrying capacity), làm giới hạn bị thu hẹp lại, khiến sự sụp đổ diễn ra nhanh hơn và tàn khốc hơn.</li>
+</ol>
+<h2>3. Ví dụ đối chiếu (R18: Double Examples)</h2>
+<h3>Ví dụ từ sách (Original)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Sự sụp đổ của một khu rừng.
+<strong>Ứng dụng</strong>: Số công ty khai thác gỗ tăng vọt. Rừng bị đốn nhanh hơn tốc độ trồng lại. Vì giá gỗ tăng, các công ty tiếp tục vay vốn đầu tư máy móc (tăng trưởng bất chấp cảnh báo - delay). Chẳng mấy chốc rừng trơ trọi, lớp đất màu mỡ bị xói mòn không thể trồng cây lại. Cả rừng lẫn ngành công nghiệp khai thác đều chết.
+<strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — Chương 2</p>
+</blockquote>
+<h3>Ứng dụng sư phạm (Pedagogical Application)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Một học sinh theo đuổi thành tích cực đoan (Toxic Achievement).
+<strong>Ứng dụng</strong>: Học sinh cắt xén giấc ngủ để học cường độ cao (vượt qua giới hạn sức khỏe tự nhiên). Do &quot;độ trễ&quot;, lúc đầu học sinh vẫn thấy khỏe và điểm cao lên. Tin rằng mình bất khả chiến bại, học sinh tiếp tục ép bản thân. Tới khi hệ miễn dịch và sức chịu đựng tâm lý sụp đổ (trầm cảm, kiệt sức), học sinh không thể đi học được nữa (Collapse). Sức khỏe bị tổn thương đến mức dù có nghỉ ngơi bù cũng mất hàng năm để phục hồi.</p>
+</blockquote>
+<h2>4. Phản tư sư phạm (4F)</h2>
+<ul>
+<li><strong>Facts</strong>: Sụp đổ xảy ra do sự xói mòn khả năng phục hồi của hệ thống.</li>
+<li><strong>Feelings</strong>: Việc nhận diện được tín hiệu cảnh báo sớm thường khó khăn vì tính chất che giấu của độ trễ.</li>
+<li><strong>Findings</strong>: Không bao giờ đẩy một hệ thống đạt tới mức 100% công suất trong dài hạn; luôn phải chừa không gian đệm (buffer) để phòng ngừa sự trễ nhịp.</li>
+<li><strong>Future</strong>: Dạy học sinh kỹ năng quản lý giới hạn bản thân (boundary setting) thay vì chỉ khuyến khích &quot;vượt lên chính mình&quot; một cách mù quáng.</li>
+</ul>
+<h2>5. Trích dẫn nguồn (R3)</h2>
+<ul>
+<li><strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — (RAW_2026-05-18_ARCH_Thinking_in_Systems_CH02_SEC02_P075-089.md)</li>
+<li><strong>Fact-check</strong>: Mô hình sụp đổ tài nguyên trong &quot;Systems Zoo&quot;.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+<h1>Giới hạn tài nguyên có thể tái tạo {#concept_arch_tis_renewable_resource_limit}</h1>
+<div class="metadata-strip">
+<div><span class="metadata-label">ID:</span> CONCEPT_ARCH_TIS_Renewable_Resource_Limit</div>
+<div><span class="metadata-label">Trạng thái:</span> DRAFT</div>
+</div>
+<h2>For future Claude (AI Preamble)</h2>
+<blockquote>
+<p>Tài nguyên có thể tái tạo (Flow-limited) có thể bị khai thác vĩnh viễn miễn là tốc độ khai thác không vượt quá tốc độ phục hồi tự nhiên. Nếu khai thác quá ngưỡng tới hạn (critical threshold), khả năng tự phục hồi sẽ bị phá hủy.</p>
+</blockquote>
+<h2>1. Định nghĩa</h2>
+<p><strong>Giới hạn tài nguyên có thể tái tạo</strong> xảy ra trong các hệ thống dựa vào tài nguyên có vòng lặp tự sinh (như sinh sản của cá, sự phục hồi của đất đai). Hệ thống này bị giới hạn bởi Dòng chảy (Flow-limited) chứ không phải bởi Tổng trữ lượng.</p>
+<h2>2. Nguyên lý / Cấu trúc</h2>
+<ul>
+<li>Tài nguyên tái tạo có thể cung cấp đầu ra vô tận, miễn là <strong>Tốc độ khai thác &lt;= Tốc độ phục hồi (Regeneration rate)</strong>.</li>
+<li>Tuy nhiên, có một <strong>Ngưỡng tới hạn (Critical Threshold)</strong>: Nếu tài nguyên bị khai thác quá mức (vượt ngưỡng), khả năng tự phục hồi của chính nó bị phá vỡ (ví dụ: số cá còn lại quá ít không đủ để duy trì quần thể).</li>
+<li>Khi ngưỡng này bị phá vỡ, tài nguyên tái tạo biến thành tài nguyên không thể tái tạo và suy thoái dẫn đến tuyệt chủng.</li>
+</ul>
+<h2>3. Ví dụ đối chiếu (R18: Double Examples)</h2>
+<h3>Ví dụ từ sách (Original)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Đánh bắt cá.
+<strong>Ứng dụng</strong>: Cá đẻ trứng (Inflow tự nhiên) và bị đánh bắt (Outflow). Nếu dùng công nghệ hiện đại bắt quá nhiều cá, vượt qua khả năng sinh sản của bầy, trữ lượng cá giảm mạnh. Tệ hơn, nếu giảm quá mức tới hạn, quần thể cá không thể phục hồi dù có cấm đánh bắt hoàn toàn.
+<strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — Chương 2</p>
+</blockquote>
+<h3>Ứng dụng sư phạm (Pedagogical Application)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Sự hứng thú học tập và tò mò tự nhiên của trẻ em.
+<strong>Ứng dụng</strong>: Sự tò mò là một tài nguyên có thể tái tạo (trẻ luôn có những câu hỏi mới mỗi ngày). Tuy nhiên, nếu áp lực thi cử và việc bắt ép học thuộc lòng diễn ra quá khắc nghiệt (khai thác quá mức), nó sẽ vượt qua ngưỡng tới hạn, dập tắt hoàn toàn bản năng tò mò tự nhiên. Sự hứng thú học tập bị &quot;tuyệt chủng&quot; và không thể phục hồi dù sau đó có giảm áp lực.</p>
+</blockquote>
+<h2>4. Phản tư sư phạm (4F)</h2>
+<ul>
+<li><strong>Facts</strong>: Tài nguyên tái tạo rất dễ tổn thương nếu vượt ngưỡng giới hạn.</li>
+<li><strong>Feelings</strong>: Con người thường lầm tưởng rằng tài nguyên tái tạo là &quot;vô hạn&quot; mà bỏ qua tầm quan trọng của tốc độ dòng chảy.</li>
+<li><strong>Findings</strong>: Bảo vệ khả năng tự sinh (nguồn sống) quan trọng hơn việc gia tăng tối đa sản lượng khai thác tức thời.</li>
+<li><strong>Future</strong>: Ứng dụng trong việc thiết kế nhịp độ học tập bền vững (sustainable learning flow).</li>
+</ul>
+<h2>5. Trích dẫn nguồn (R3)</h2>
+<ul>
+<li><strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — (RAW_2026-05-18_ARCH_Thinking_in_Systems_CH02_SEC02_P075-089.md)</li>
+<li><strong>Fact-check</strong>: Khái niệm hệ thống bị giới hạn bởi Flow.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+<h1>Sự chuyển dịch ưu thế {#concept_arch_tis_shifting_dominance}</h1>
+<div class="metadata-strip">
+<div><span class="metadata-label">ID:</span> CONCEPT_ARCH_TIS_Shifting_Dominance</div>
+<div><span class="metadata-label">Trạng thái:</span> DRAFT</div>
+</div>
+<h2>For future Claude (AI Preamble)</h2>
+<blockquote>
+<p>Sự chuyển dịch ưu thế xảy ra khi quyền kiểm soát hệ thống (sự chi phối hành vi) chuyển từ một vòng lặp phản hồi này sang một vòng lặp phản hồi khác, dẫn đến một hành vi hệ thống hoàn toàn mới (ví dụ: từ tăng trưởng sang suy giảm).</p>
+</blockquote>
+<h2>1. Định nghĩa</h2>
+<p><strong>Sự chuyển dịch ưu thế (Shifting Dominance)</strong> là hiện tượng trong một hệ thống phức tạp khi vòng lặp phản hồi chi phối hành vi của hệ thống thay đổi theo thời gian hoặc điều kiện. Khi &quot;ưu thế&quot; (dominance) chuyển từ vòng lặp này sang vòng lặp khác, quỹ đạo và hành vi cốt lõi của hệ thống cũng thay đổi đột ngột.</p>
+<h2>2. Nguyên lý / Cấu trúc</h2>
+<ul>
+<li>Hầu hết các hệ thống thực tế có nhiều vòng lặp phản hồi (cân bằng và tăng cường) hoạt động đồng thời.</li>
+<li>Tại một thời điểm, thường chỉ có một hoặc hai vòng lặp mạnh nhất kiểm soát hành vi tổng thể (gọi là dominant loop).</li>
+<li>Khi các Kho chứa (Stock) đạt đến các ngưỡng (thresholds) nhất định, sức mạnh của các vòng lặp bị thay đổi, khiến quyền chi phối được chuyển giao.</li>
+<li>Ví dụ kinh điển: Chuyển từ vòng lặp tăng trưởng (Reinforcing) sang vòng lặp giới hạn (Balancing) khi tài nguyên cạn kiệt.</li>
+</ul>
+<h2>3. Ví dụ đối chiếu (R18: Double Examples)</h2>
+<h3>Ví dụ từ sách (Original)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Bộ điều nhiệt (Thermostat) và lò sưởi.
+<strong>Ứng dụng</strong>: Khi nhiệt độ phòng thấp, vòng lặp lò sưởi (sưởi ấm) chiếm ưu thế, làm nhiệt độ tăng lên. Khi nhiệt độ đạt mức cài đặt, bộ điều nhiệt ngắt, vòng lặp rò rỉ nhiệt (thất thoát ra ngoài trời) chiếm ưu thế, làm nhiệt độ giảm xuống. Sự chuyển dịch ưu thế liên tục tạo ra trạng thái dao động quanh điểm cân bằng.
+<strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — Chương 2</p>
+</blockquote>
+<h3>Ứng dụng sư phạm (Pedagogical Application)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Động lực học tập của học sinh vào cuối kỳ.
+<strong>Ứng dụng</strong>: Đầu học kỳ, vòng lặp &quot;Khám phá/Tò mò&quot; (Reinforcing) có thể chiếm ưu thế, học sinh học vì niềm vui. Gần đến ngày thi, sự mệt mỏi và áp lực tích tụ đến ngưỡng làm chuyển dịch ưu thế sang vòng lặp &quot;Tránh rớt môn&quot; (Balancing). Động lực cốt lõi thay đổi hoàn toàn từ chủ động sang phòng thủ.</p>
+</blockquote>
+<h2>4. Phản tư sư phạm (4F)</h2>
+<ul>
+<li><strong>Facts</strong>: Hệ thống hiếm khi bị chi phối bởi một vòng lặp duy nhất mãi mãi.</li>
+<li><strong>Feelings</strong>: Việc nhận diện được khi nào sự chuyển dịch xảy ra giúp dự đoán được các cú sốc.</li>
+<li><strong>Findings</strong>: Thay vì cố gắng chống lại vòng lặp mới, việc hiểu ngưỡng kích hoạt sự chuyển dịch giúp điều hướng hệ thống tốt hơn.</li>
+<li><strong>Future</strong>: Theo dõi các &quot;tiếng thở dài&quot; hoặc &quot;sự sụt giảm năng lượng&quot; của lớp học để dự đoán khi nào vòng lặp mệt mỏi sẽ chiếm ưu thế.</li>
+</ul>
+<h2>5. Trích dẫn nguồn (R3)</h2>
+<ul>
+<li><strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — (RAW_2026-05-18_ARCH_Thinking_in_Systems_CH02_SEC01_P01_P053-067.md)</li>
+<li><strong>Fact-check</strong>: Khái niệm Shifting Dominance từ &quot;Systems Zoo&quot; phần 1.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+<h1>Sơ đồ Kho chứa-Dòng chảy {#concept_arch_tis_stock_flow_diagram}</h1>
+<div class="metadata-strip">
+<div><span class="metadata-label">ID:</span> CONCEPT_ARCH_TIS_Stock_Flow_Diagram</div>
+<div><span class="metadata-label">Trạng thái:</span> DRAFT</div>
+</div>
+<h2>For future Claude (AI Preamble)</h2>
+<blockquote>
+<p>Stock-Flow Diagram (SFD) là ngôn ngữ trực quan chuẩn của System Dynamics dùng để biểu diễn hệ thống. Khác với sơ đồ luồng (flowchart) thông thường, SFD đặc biệt ở chỗ phân biệt rõ ràng giữa các &quot;bồn chứa&quot; (Stocks) và các &quot;vòi nước&quot; (Flows), đồng thời hiển thị các vòng lặp phản hồi.</p>
+</blockquote>
+<h2>1. Định nghĩa</h2>
+<p><strong>Sơ đồ Kho chứa-Dòng chảy (Stock-Flow Diagram - SFD)</strong> là công cụ biểu diễn trực quan chuẩn mực của System Dynamics, dùng để vẽ bản đồ cấu trúc của một hệ thống. Nó sử dụng một bộ ký hiệu đặc trưng để biểu diễn Stock, Flow, Feedback Loop, và các biến phụ.</p>
+<h2>2. Nguyên lý / Cấu trúc (Ký hiệu chuẩn)</h2>
+<ul>
+<li><strong>Hình chữ nhật (Rectangle):</strong> Biểu diễn <strong>Stock</strong> (Kho chứa/Trữ lượng) — những thứ có thể tích lũy.</li>
+<li><strong>Mũi tên đôi (Double arrow / Valve):</strong> Biểu diễn <strong>Flow</strong> (Dòng chảy) — tốc độ thay đổi của Stock. Các &quot;van&quot; điều chỉnh tốc độ của Flow.</li>
+<li><strong>Mũi tên thông tin (Information arrow):</strong> Biểu diễn liên kết thông tin phản hồi (Feedback link). Thường là mũi tên thường.</li>
+<li><strong>Hình mây (Cloud):</strong> Biểu diễn Nguồn (Source) hoặc Đích (Sink) của Flow nằm bên ngoài ranh giới hệ thống được mô hình hóa.</li>
+<li><strong>Chữ C hoặc R trên vòng lặp:</strong> Biểu diễn Balancing (Cân bằng) hoặc Reinforcing (Tăng cường) loop.</li>
+</ul>
+<h2>3. Ví dụ đối chiếu (R18: Double Examples)</h2>
+<h3>Ví dụ từ sách (Original)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Mô hình hóa hệ thống bồn nước của Meadows.
+<strong>Ứng dụng</strong>: Vẽ SFD cho bồn nước: <strong>[Mực nước]</strong> (Stock/Rectangle) được điều chỉnh bởi <strong>→[Vòi vào]→</strong> (Flow vào) và <strong>→[Vòi ra]→</strong> (Flow ra). Nhiệt kế báo mực nước (Information arrow) trở về van để điều chỉnh vòi ra. Vòng phản hồi này là Balancing loop (B) — hệ thống tự ổn định.
+<strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — Chương 1 (hệ thống bồn tắm)</p>
+</blockquote>
+<h3>Ứng dụng sư phạm (Pedagogical Application)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Mô hình hóa kiến thức học sinh.
+<strong>Ứng dụng</strong>: <strong>[Kiến thức trong đầu]</strong> (Stock) ← <strong>→[Học mới]→</strong> (Inflow: đọc sách, nghe giảng) và <strong>→[Quên]→</strong> (Outflow: theo thời gian). Giáo viên giỏi thiết kế Inflow đủ mạnh (ôn tập lặp lại - Spaced Repetition) để bù đắp Outflow (quên). SFD giúp trực quan hóa lý do vì sao ôn tập định kỳ quan trọng hơn học nhồi nhét.</p>
+</blockquote>
+<h2>4. Phản tư sư phạm (4F)</h2>
+<ul>
+<li><strong>Facts</strong>: SFD là ngôn ngữ trực quan; cùng một hệ thống có thể được diễn đạt bằng SFD hoặc bằng phương trình.</li>
+<li><strong>Feelings</strong>: Lần đầu nhìn vào SFD có thể bối rối, nhưng khi quen rồi nó trở thành một &quot;kính hiển vi&quot; để nhìn vào cấu trúc hệ thống.</li>
+<li><strong>Findings</strong>: SFD đặc biệt hữu ích khi cần giải thích tại sao một chính sách can thiệp không mang lại kết quả mong đợi — vẽ ra, bạn sẽ thấy vòng lặp đang đẩy ngược.</li>
+<li><strong>Future</strong>: Thử vẽ SFD cho một vấn đề giáo dục thực tế bằng phần mềm Vensim hoặc Stella.</li>
+</ul>
+<h2>5. Trích dẫn nguồn (R3)</h2>
+<ul>
+<li><strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — Chương 1 (<code>CH01_SEC03_P034-041</code>)</li>
+<li><strong>Công cụ thực hành</strong>: Vensim PLE (miễn phí), Insightmaker (web-based)</li>
+</ul>
+<div style="page-break-after: always;"></div>
+<h1>Mô thức hệ thống {#concept_arch_tis_system_paradigms}</h1>
+<div class="metadata-strip">
+<div><span class="metadata-label">ID:</span> CONCEPT_ARCH_TIS_System_Paradigms</div>
+<div><span class="metadata-label">Trạng thái:</span> DRAFT</div>
+</div>
+<h2>For future Claude (AI Preamble)</h2>
+<blockquote>
+<p>Paradigm (Mô thức) là hệ thống niềm tin vô thức sâu sắc nhất hình thành nên hệ thống. Thay đổi Paradigm là điểm đòn bẩy cao nhất. Cao hơn cả Paradigm là khả năng thoát khỏi nó hoàn toàn (Transcending Paradigms).</p>
+</blockquote>
+<h2>1. Định nghĩa</h2>
+<p><strong>Mô thức hệ thống (Paradigms)</strong> là tập hợp những niềm tin cốt lõi, những giả định ngầm định, và lăng kính vô hình mà qua đó một xã hội hoặc tổ chức nhìn nhận thực tại. Mô thức là cái sinh ra mục đích của hệ thống, luật lệ của hệ thống, và mọi luồng thông tin cấu trúc bên trong.</p>
+<h2>2. Nguyên lý / Cấu trúc</h2>
+<ul>
+<li>Mọi hệ thống đều được xây dựng trên một Mô thức. Ví dụ: &quot;Tăng trưởng liên tục là tốt&quot;, &quot;Con người bẩm sinh lười biếng nên cần bị kiểm soát&quot;.</li>
+<li>Thay đổi Mô thức (Leverage point số 2): Là việc người ta bất ngờ nhìn nhận thực tại theo một cách hoàn toàn mới (như việc chuyển từ thuyết Địa tâm sang Nhật tâm). Nó thay đổi toàn bộ hệ thống ngay lập tức.</li>
+<li>Vượt lên trên mọi Mô thức (Transcending Paradigms - Leverage point số 1): Là việc nhận ra rằng <em>không có Mô thức nào là chân lý tuyệt đối</em>. Khả năng linh hoạt sử dụng bất kỳ Mô thức nào phù hợp nhất để đạt mục đích là mức độ giải thoát cao nhất của tư duy.</li>
+</ul>
+<h2>3. Ví dụ đối chiếu (R18: Double Examples)</h2>
+<h3>Ví dụ từ sách (Original)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Tư duy về đất đai.
+<strong>Ứng dụng</strong>: Mô thức cũ: &quot;Đất đai là tài sản có thể mua bán để bóc lột&quot;. Nếu ta đổi sang Mô thức: &quot;Con người không sở hữu đất đai, mà thuộc về mạng lưới sinh thái của đất đai&quot;, thì toàn bộ các luật lệ, kinh tế và cách khai thác tài nguyên sẽ thay đổi hoàn toàn ngay lập tức.
+<strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — Chương 6</p>
+</blockquote>
+<h3>Ứng dụng sư phạm (Pedagogical Application)</h3>
+<blockquote>
+<p><strong>Bối cảnh</strong>: Mô thức giáo dục công nghiệp.
+<strong>Ứng dụng</strong>: Suốt thế kỷ 20, mô thức của trường học là: &quot;Học sinh là những sản phẩm cần được đúc ra giống hệt nhau trên dây chuyền nhà máy để cung cấp lao động chuẩn hóa&quot;. Nếu giáo dục chuyển sang mô thức mới: &quot;Học sinh là những hạt giống tự nhiên cần môi trường đất tốt để phát triển năng lực độc bản&quot;, thì toàn bộ luật thi cử, chương trình học, và vai trò của giáo viên sẽ sụp đổ và được tái cấu trúc hoàn toàn.</p>
+</blockquote>
+<h2>4. Phản tư sư phạm (4F)</h2>
+<ul>
+<li><strong>Facts</strong>: Mô thức là lớp học sâu nhất của hệ thống.</li>
+<li><strong>Feelings</strong>: Việc ai đó chỉ ra rằng &quot;sự thật&quot; hiển nhiên của bạn chỉ là một &quot;Mô thức&quot; thường gây ra sự chống cự dữ dội (sốc văn hóa).</li>
+<li><strong>Findings</strong>: Nếu bạn không thể giải quyết một vấn đề ở cấp độ cấu trúc, hãy thử lùi lại và hỏi: &quot;Giả định cơ bản nào đang điều khiển việc này?&quot;</li>
+<li><strong>Future</strong>: Tự vấn các niềm tin cốt lõi (Core assumptions) trước khi thiết kế bất kỳ chương trình giáo dục nào.</li>
+</ul>
+<h2>5. Trích dẫn nguồn (R3)</h2>
+<ul>
+<li><strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — (RAW_2026-05-18_ARCH_Thinking_in_Systems_CH06_SEC11.md)</li>
+<li><strong>Fact-check</strong>: Đòn bẩy cao nhất (Transcending Paradigms).</li>
+</ul>
+<div style="page-break-after: always;"></div>
+<h1>Donella H. Meadows {#entity_arch_tis_donella_meadows}</h1>
+<div class="metadata-strip">
+<div><span class="metadata-label">ID:</span> ENTITY_ARCH_TIS_Donella_Meadows</div>
+<div><span class="metadata-label">Trạng thái:</span> DRAFT</div>
+</div>
+<h2>For future Claude (AI Preamble)</h2>
+<blockquote>
+<p>Donella H. Meadows (1941-2001) là một nhà khoa học môi trường tiên phong, tác giả chính của báo cáo The Limits to Growth (1972) và là tác giả của cuốn sách Thinking in Systems: A Primer.</p>
+</blockquote>
+<h2>1. Vai trò / Định nghĩa</h2>
+<p>Donella H. &quot;Dana&quot; Meadows là nhà nghiên cứu hệ thống, giáo sư và nhà tư tưởng môi trường nổi tiếng. Bà là người đóng vai trò quan trọng trong việc truyền bá tư duy hệ thống (systems thinking) ra ngoài giới học thuật, giúp ứng dụng nó vào các vấn đề phát triển bền vững và quản lý tài nguyên.</p>
+<h2>2. Thông tin cốt lõi</h2>
+<ul>
+<li><strong>Tác phẩm tiêu biểu</strong>: <em>The Limits to Growth</em> (1972) – nghiên cứu mô hình hóa máy tính về sự phát triển dân số và kinh tế toàn cầu, <em>Thinking in Systems: A Primer</em> (2008).</li>
+<li><strong>Đóng góp</strong>: Bà giới thiệu mô hình &quot;World3&quot; (cùng với nhóm nghiên cứu MIT) và khái niệm về 12 Điểm Đòn Bẩy (Leverage Points) để can thiệp vào các hệ thống phức tạp.</li>
+</ul>
+<h2>3. Trích dẫn nguồn (R3)</h2>
+<ul>
+<li><strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️)</li>
+<li><strong>Fact-check</strong>: Tác giả cuốn sách.</li>
+</ul>
+<hr />
+<p><em>Phiên bản Template V3.1 (Audit Aligned).</em></p>
+<div style="page-break-after: always;"></div>
+<h1>Jay W. Forrester {#entity_arch_tis_jay_forrester}</h1>
+<div class="metadata-strip">
+<div><span class="metadata-label">ID:</span> ENTITY_ARCH_TIS_Jay_Forrester</div>
+<div><span class="metadata-label">Trạng thái:</span> DRAFT</div>
+</div>
+<h2>For future Claude (AI Preamble)</h2>
+<blockquote>
+<p>Jay W. Forrester là cha đẻ của System Dynamics — ngành học nghiên cứu hành vi của hệ thống phức tạp theo thời gian. Ông là người thầy của Donella Meadows tại MIT và người sáng lập của nhóm System Dynamics tại MIT.</p>
+</blockquote>
+<h2>1. Hồ sơ</h2>
+<ul>
+<li><strong>Đầy đủ tên:</strong> Jay Wright Forrester</li>
+<li><strong>Sinh năm:</strong> 1918, Nebraska, Mỹ</li>
+<li><strong>Mất:</strong> 2016</li>
+<li><strong>Chức danh chính:</strong> Professor Emeritus, MIT Sloan School of Management</li>
+<li><strong>Chuyên ngành:</strong> System Dynamics, Computer Engineering (ông phát minh ra bộ nhớ lõi từ tính cho máy tính)</li>
+</ul>
+<h2>2. Đóng góp chính</h2>
+<ul>
+<li>Phát triển <strong>System Dynamics</strong> (Động lực học Hệ thống) vào những năm 1950s như một phương pháp mô hình hóa hành vi của các hệ thống phức tạp.</li>
+<li>Tác giả các cuốn sách nền tảng: <em>Industrial Dynamics</em> (1961), <em>Urban Dynamics</em> (1969), <em>World Dynamics</em> (1971).</li>
+<li>Ông là <strong>người hướng dẫn</strong> trực tiếp của Donella Meadows tại MIT — người sau này viết cuốn <em>Thinking in Systems</em>.</li>
+<li>Người thành lập <strong>Nhóm System Dynamics tại MIT</strong>.</li>
+</ul>
+<h2>3. Liên kết với nguồn</h2>
+<ul>
+<li>Được đề cập trong lời cảm ơn và phần mở đầu của <em>Thinking in Systems</em>.</li>
+<li>Là gốc rễ tư tưởng của toàn bộ cuốn sách.</li>
+</ul>
+<h2>4. Phản tư sư phạm (4F)</h2>
+<ul>
+<li><strong>Facts</strong>: Trước khi có Meadows, đã có Forrester.</li>
+<li><strong>Feelings</strong>: Khoa học hệ thống không phải bỗng dưng xuất hiện — nó là sản phẩm của nhiều thế hệ trí tuệ.</li>
+<li><strong>Findings</strong>: Hiểu rõ nguồn gốc của một lý thuyết giúp hiểu sâu hơn về giới hạn và mục đích thiết kế của nó.</li>
+<li><strong>Future</strong>: Đọc <em>Industrial Dynamics</em> nếu muốn tiếp cận System Dynamics từ góc độ kỹ thuật/kỹ nghệ.</li>
+</ul>
+<h2>5. Trích dẫn nguồn (R3)</h2>
+<ul>
+<li><strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — Phần lời cảm ơn và Preface.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+<h1>MIT System Dynamics Group {#entity_arch_tis_mit_sd_group}</h1>
+<div class="metadata-strip">
+<div><span class="metadata-label">ID:</span> ENTITY_ARCH_TIS_MIT_SD_Group</div>
+<div><span class="metadata-label">Trạng thái:</span> DRAFT</div>
+</div>
+<h2>For future Claude (AI Preamble)</h2>
+<blockquote>
+<p>MIT System Dynamics Group là nhóm nghiên cứu tại MIT Sloan School of Management do Jay Forrester sáng lập, nơi khai sinh ra ngành System Dynamics và đào tạo thế hệ tiếp theo gồm Donella Meadows.</p>
+</blockquote>
+<h2>1. Hồ sơ Tổ chức</h2>
+<ul>
+<li><strong>Tên chính thức:</strong> System Dynamics Group, MIT Sloan School of Management</li>
+<li><strong>Thành lập:</strong> khoảng thập niên 1950s bởi Jay W. Forrester</li>
+<li><strong>Trụ sở:</strong> Massachusetts Institute of Technology (MIT), Cambridge, MA, Mỹ</li>
+<li><strong>Hiện tại:</strong> Vẫn hoạt động, đào tạo nghiên cứu sinh và xuất bản nghiên cứu.</li>
+</ul>
+<h2>2. Vai trò trong lịch sử tư duy hệ thống</h2>
+<ul>
+<li>Là <strong>cái nôi học thuật</strong> của ngành System Dynamics — phương pháp mô hình hóa hành vi hệ thống phức tạp theo thời gian.</li>
+<li>Nơi <strong>Donella Meadows</strong> hoàn thành luận án tiến sĩ và phát triển tư duy nền tảng cho cuốn <em>Thinking in Systems</em>.</li>
+<li>Đã xuất bản nhiều nghiên cứu mang tính đột phá về hệ thống đô thị, công nghiệp và môi trường.</li>
+<li>Hợp tác với Club of Rome để sản xuất <em>The Limits to Growth</em> (1972) — báo cáo nổi tiếng về giới hạn tăng trưởng toàn cầu.</li>
+</ul>
+<h2>3. Tài nguyên học tập</h2>
+<ul>
+<li>Website: <a href="https://www.systemdynamics.org/">System Dynamics Society</a></li>
+<li>Phần mềm mô hình hóa chuẩn ngành: <strong>Vensim</strong>, <strong>Stella</strong>.</li>
+</ul>
+<h2>4. Phản tư sư phạm (4F)</h2>
+<ul>
+<li><strong>Facts</strong>: System Dynamics Group là nguồn gốc thể chế của hầu hết các công cụ và ngôn ngữ của tư duy hệ thống.</li>
+<li><strong>Feelings</strong>: Thú vị khi biết rằng một cuốn sách &quot;phổ thông dễ đọc&quot; lại có nền tảng học thuật sâu sắc đến vậy.</li>
+<li><strong>Findings</strong>: Muốn học sâu hơn về System Dynamics, MIT SD Group là cộng đồng học thuật tốt nhất để theo dõi.</li>
+<li><strong>Future</strong>: Khám phá phần mềm Vensim/Stella để mô phỏng các mô hình trong sách (Stock-Flow Diagrams).</li>
+</ul>
+<h2>5. Trích dẫn nguồn (R3)</h2>
+<ul>
+<li><strong>Nguồn</strong>: SOURCE_ARCH_TIS_THINKING_IN_SYSTEMS (⚠️) — Phần lời cảm ơn và Preface.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+
         </article>
       </main>
 
@@ -167,6 +1913,78 @@
       </div>
     </div>
 
-    <script src="assets/learning-pack.js"></script>
+    
+    <script>
+      (function () {
+  const root = document.documentElement;
+  const storedTheme = localStorage.getItem("learning-pack-theme");
+  if (storedTheme) {
+    root.dataset.theme = storedTheme;
+  }
+
+  const themeButton = document.querySelector("[data-theme-toggle]");
+  if (themeButton) {
+    themeButton.addEventListener("click", () => {
+      const current = root.dataset.theme || "";
+      const next = current === "dark" ? "light" : "dark";
+      root.dataset.theme = next;
+      localStorage.setItem("learning-pack-theme", next);
+    });
+  }
+
+  const progressBoxes = document.querySelectorAll("[data-progress-key]");
+  progressBoxes.forEach((box) => {
+    const key = "learning-pack-progress:" + box.dataset.progressKey;
+    box.checked = localStorage.getItem(key) === "1";
+    box.addEventListener("change", () => {
+      if (box.checked) {
+        localStorage.setItem(key, "1");
+      } else {
+        localStorage.removeItem(key);
+      }
+    });
+  });
+
+  const sourceTrace = document.querySelector(".section-source-trace");
+  if (sourceTrace) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "source-trace-toggle";
+    button.textContent = "Toggle Source Trace";
+    button.setAttribute("aria-expanded", "true");
+    const heading = sourceTrace.querySelector("h1");
+    if (heading) {
+      heading.insertAdjacentElement("afterend", button);
+      button.addEventListener("click", () => {
+        const collapsed = sourceTrace.classList.toggle("is-collapsed");
+        button.setAttribute("aria-expanded", String(!collapsed));
+      });
+    }
+  }
+
+  const tocLinks = Array.from(document.querySelectorAll(".toc-link"));
+  const headings = tocLinks
+    .map((link) => document.getElementById(link.getAttribute("href").slice(1)))
+    .filter(Boolean);
+
+  if ("IntersectionObserver" in window && headings.length) {
+    const activeById = new Map();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => activeById.set(entry.target.id, entry.isIntersecting));
+        const active = headings.find((heading) => activeById.get(heading.id));
+        if (!active) return;
+        tocLinks.forEach((link) => {
+          link.classList.toggle("is-active", link.getAttribute("href") === "#" + active.id);
+        });
+      },
+      { rootMargin: "-10% 0px -75% 0px", threshold: 0.01 }
+    );
+    headings.forEach((heading) => observer.observe(heading));
+  }
+})();
+
+    </script>
+    
   </body>
 </html>

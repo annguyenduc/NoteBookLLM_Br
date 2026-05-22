@@ -4,9 +4,9 @@
 > File này chứa bảng theo dõi tiến độ thời gian thực (Mermaid + DataviewJS) và hàng đợi ôn tập thông minh (SM-2 Spaced Repetition).
 
 ## 📈 Tiến độ học tập theo Nguồn tri thức
-| Nguồn học tập | Tiến trình (%) | Lộ trình | Giao diện đọc Interactive HTML |
+| Nguồn học tập | Tiến trình (%) | Lộ trình | Giao diện đọc (HTML / EPUB) |
 | :--- | :--- | :--- | :--- |
-| **Thinking in Systems: A Primer** (SOURCE_ARCH_TIS_Thinking_in_Systems) | `░░░░░░░░░░` 3.4% | [📝 Mở Lộ trình](paths/LEARNING_PATH_SOURCE_ARCH_TIS_Thinking_in_Systems.md) | [🌐 Mở HTML Reader](file:///D:/NoteBookLLM_Br/5-learning/packs/html/LEARNING_PACK_SOURCE_ARCH_TIS_Thinking_in_Systems.html) |
+| **Thinking in Systems: A Primer** (SOURCE_ARCH_TIS_Thinking_in_Systems) | `░░░░░░░░░░` 3.4% | [📝 Mở Lộ trình](paths/LEARNING_PATH_SOURCE_ARCH_TIS_Thinking_in_Systems.md) | [🌐 HTML Reader](file:///D:/NoteBookLLM_Br/5-learning/packs/html/LEARNING_PACK_SOURCE_ARCH_TIS_Thinking_in_Systems.html) / [📚 Sách EPUB](file:///D:/NoteBookLLM_Br/5-learning/packs/epub/LEARNING_PACK_SOURCE_ARCH_TIS_Thinking_in_Systems.epub) |
 
 ### 📊 Biểu đồ so sánh Tiến độ các nguồn
 ```mermaid
