@@ -81,21 +81,17 @@ prepare-source -> audit-promote-source -> lock-ingest-input -> ingest -> ingest-
 
 ## Bộ MCP Mặc Định (Default MCP Profile)
 
-Default learning mode:
+Default workspace profile: `micro`
 
 ```text
 filesystem
-notebooklm-mcp-server
-sqlite
-tavily
 ```
 
 Vai trò:
 
 - `filesystem`: đọc/ghi file trong vault khi được phép.
-- `notebooklm-mcp-server`: hỏi đáp tài liệu dài, tạo bản đồ học (learning map).
-- `sqlite`: tra cứu chỉ mục vault, atom, metadata, quan hệ nguồn.
-- `tavily`: tìm kiếm web nhanh khi cần bối cảnh bên ngoài.
+
+Các MCP khác (sqlite, notebooklm, tavily, local-ai, wiki-ops, github, v.v.) bị tắt mặc định ở mức chạy nền và chuyển sang chế độ script theo yêu cầu (On-Demand One-Shot Script) để tiết kiệm tài nguyên RAM.
 
 Tắt mặc định nếu không cần:
 

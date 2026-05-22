@@ -2,40 +2,30 @@
 
 ## Current Objective
 
-Tái cấu trúc NoteBookLLM_Br theo hướng học trước (learning-first), giảm context mặc định, nhưng không làm vỡ scripts vận hành.
+Triển khai chính sách On-Demand Script Policy cho Agent (`SPEC_ON_DEMAND_SCRIPT_POLICY`) nhằm giảm RAM nền khi chạy MCP server, thay thế các tác vụ nặng bằng Python/PowerShell scripts chạy ngắn hạn chỉ khi cần thiết.
 
 ## Current State
 
-- Branch đang làm: `agent/20260522-routing-trace`
-- Worktree: `D:\_agent_worktrees\20260522_routing_trace`
-- Đang vá gap routing audit cho test case: `Tóm tắt PDF này để tôi học nhanh.`
-- Đã thêm `ROUTING_DECISION` vào root dispatch, `learning-first`, `knowledge-intake`, `process-raw-resource`, và overlay `learning/source-lab`.
-- Đã tách workspace selection ra registry chung `.agent/config/workspace-routing.yaml` để skill/workflow không hard-code topology.
-- `process-raw-resource` chỉ echo `ROUTING_DECISION` đã được dispatcher chọn; nếu thiếu route thì báo `selected_workspace: "NONE"` / `mode: "BLOCKED"`.
-
-## Validation Evidence
-
-- `git diff --check`: PASS
-- conflict/TODO/TBD scan: PASS
-- routing registry/ROUTING_DECISION presence scan: PASS
-- `synthesis_guard.py check AGENTS.md`: PASS
-- `test_ingest_lifecycle_check.py`: PASS
-- `test_md_auditor_outline.py`: PASS
+- Branch đang làm: `agent/20260522-on-demand-script-policy`
+- Worktree: `D:\_agent_worktrees\20260522_on_demand_script_policy`
+- Đã triển khai và kiểm thử thành công 8 script helper trong `scripts/tasks/` hoạt động on-demand tự thoát:
+  1. `check_ram_processes.py`: Đo đạc RAM nền của các tiến trình liên quan (~675 MB khi bật full).
+  2. `inspect_mcp_config.py`: Đọc file `mcp_config.json` của Antigravity client.
+  3. `git_status_report.py`: Báo cáo git status ngắn gọn.
+  4. `sqlite_query_once.py`: Truy vấn SQLite read-only dưới dạng Markdown table, chặn SQL sửa đổi cấu trúc/dữ liệu.
+  5. `query_wiki.py`: Tìm kiếm spine wiki nhanh bằng FTS5.
+  6. `tavily_search_once.py`: Tìm kiếm web nhanh qua Tavily API (không dùng MCP server nền).
+  7. `notebooklm_query_once.py`: Gửi truy vấn tới NotebookLM qua API client bằng token cached.
+  8. `lint_report.py`: Quét dry-run kiểm tra broken links và stale files trên các thư mục wiki thực tế.
+- Đã cập nhật file `AGENTS.md` trong worktree để chuyển Bộ MCP Mặc Định sang profile `micro` (chỉ bật `filesystem` MCP).
+- Đã chạy kiểm thử và đảm bảo cả 8 script in đúng cấu trúc báo cáo YAML `SCRIPT_RUN_REPORT`.
 
 ## Next Step For AN
 
-1. Review routing trace patch.
-2. Nếu ổn, GO merge branch `agent/20260522-routing-trace` vào `main`.
-3. Sau merge, chạy lại smoke test: `Tóm tắt PDF này để tôi học nhanh.`
-4. Expected first block:
-   ```yaml
-   ROUTING_DECISION:
-     selected_workspace: "workspaces/learning"
-     mode: "learning-first"
-     canonical_write: "NO"
-     ingest_lifecycle: "NO"
-   ```
+1. Kiểm tra các script helper trong `scripts/tasks/` trên worktree.
+2. Review và phê duyệt merge branch `agent/20260522-on-demand-script-policy` vào `main`.
+3. Kiểm tra báo cáo chi tiết trong `walkthrough.md`.
 
 ## Blockers
 
-- Main tại `D:\NoteBookLLM_Br` đang có thay đổi chưa liên quan trước khi tạo worktree: `.gitignore` modified và `00_Inbox/sources-pending/` untracked. Không chạm các thay đổi đó trong patch này.
+- Không có.

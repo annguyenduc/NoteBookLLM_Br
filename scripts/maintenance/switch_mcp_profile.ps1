@@ -21,6 +21,7 @@ function Resolve-ConfigPath {
     }
 
     $candidates = @(
+        "$env:USERPROFILE\.gemini\config\mcp_config.json",
         'D:\anngu\.gemini\antigravity\mcp_config.json',
         (Join-Path $env:APPDATA '.gemini\mcp.json')
     )
