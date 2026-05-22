@@ -1,0 +1,47 @@
+---
+id: skill-optimization-split-pattern
+trigger: "when a SKILL.md file exceeds 400 lines and needs to be reduced"
+confidence: 0.85
+domain: skill-structure
+scope: project
+project_id: NoteBookLLM_Br
+created: 2026-05-22
+updated: 2026-05-22
+---
+
+# Skill Split Pattern: SKILL.md + BASES_REFERENCE.md
+
+## Action
+
+When a SKILL.md exceeds 400 lines, split content into:
+
+**Keep in SKILL.md (auto-loaded in routing):**
+- Frontmatter (description <= 30 words)
+- Workflow steps
+- Schema / core syntax
+- Guardrails and common error patterns (Troubleshooting)
+- One minimal Quick Example
+- Links to reference files
+
+**Move to `references/<SKILL_NAME>_REFERENCE.md` (reference-only):**
+- Full property tables
+- Complete function reference
+- All view type examples
+- Summary formula tables
+- Full worked examples (3+ examples)
+- Embedding / integration guides
+
+The reference file MUST include a header note:
+```markdown
+> **Reference-only.** Load this file only when detailed syntax, examples, or
+> troubleshooting are needed. Not auto-loaded during normal skill routing.
+```
+
+Target: SKILL.md < 300 lines after split.
+
+## Evidence
+
+- 2026-05-22: obsidian-bases/SKILL.md — 498 lines → 164 lines after split.
+  BASES_REFERENCE.md created with all property tables, formula syntax, view types, examples.
+  overall_policy_result changed from FAIL (HIGH issue) to PASS_WITH_WARNING.
+  Token reduction: ~1,069 tokens from static budget.

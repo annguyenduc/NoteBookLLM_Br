@@ -1,0 +1,33 @@
+---
+id: nested-git-repo-sync-before-cleanup
+trigger: "when working with nested Git repositories (not submodules) and finishing a task in a worktree"
+confidence: 0.90
+domain: git-workflow
+scope: global
+created: 2026-05-22
+updated: 2026-05-22
+---
+
+# Sync Nested Git Repo Before Cleanup
+
+## Action
+
+Before removing a worktree that contains a nested Git repo (non-submodule), always:
+1. Verify the nested repo at the vault root already has the new commit (via `rev-parse HEAD`)
+2. Compare against parent gitlink (`git ls-tree HEAD <path>`) — two hashes must match
+3. Only then remove the worktree and delete the branch
+
+If the nested repo at vault root does NOT have the commit yet, fetch it first:
+```powershell
+git -C <nested-repo-at-root> fetch <path-to-worktree-nested-repo> main
+git -C <nested-repo-at-root> merge --ff-only FETCH_HEAD
+```
+
+## Evidence
+
+- 2026-05-22: skill-context-budget task — BASES_REFERENCE.md commit (7be41ab) existed only
+  in worktree's nested repo. If worktree had been deleted first, the parent gitlink would have
+  pointed to a dangling object. AN caught this risk before cleanup.
+- After server restart, worktree directory was automatically removed; at that point the nested
+  repo at vault root already had the commit (shared Git objects), so no data was lost.
+  But relying on implicit object sharing is not safe practice.
