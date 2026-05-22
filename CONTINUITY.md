@@ -6,36 +6,24 @@ Tái cấu trúc NoteBookLLM_Br theo hướng học trước (learning-first), g
 
 ## Current State
 
-- Branch đang làm: `agent/20260522-routing-trace`
-- Worktree: `D:\_agent_worktrees\20260522_routing_trace`
-- Đang vá gap routing audit cho test case: `Tóm tắt PDF này để tôi học nhanh.`
-- Đã thêm `ROUTING_DECISION` vào root dispatch, `learning-first`, `knowledge-intake`, `process-raw-resource`, và overlay `learning/source-lab`.
-- Đã tách workspace selection ra registry chung `.agent/config/workspace-routing.yaml` để skill/workflow không hard-code topology.
-- `process-raw-resource` chỉ echo `ROUTING_DECISION` đã được dispatcher chọn; nếu thiếu route thì báo `selected_workspace: "NONE"` / `mode: "BLOCKED"`.
+- Branch đang làm: `agent/20260522-layered-load-policy`
+- Worktree: `D:\_agent_worktrees\20260522_layered_load_policy`
+- Đang áp dụng Layered Load Policy cho `AGENTS.md` (Phase 1).
+- Đã sửa đổi phần `## Startup Profiles` trong `AGENTS.md` thành `STARTUP MINIMAL` và `ROOT REFERENCE LOAD POLICY` nhằm giảm dung lượng context khởi động.
+- Thiết lập này đã được User phê duyệt để tiến hành kiểm tra thực tế.
 
 ## Validation Evidence
 
-- `git diff --check`: PASS
-- conflict/TODO/TBD scan: PASS
-- routing registry/ROUTING_DECISION presence scan: PASS
-- `synthesis_guard.py check AGENTS.md`: PASS
-- `test_ingest_lifecycle_check.py`: PASS
-- `test_md_auditor_outline.py`: PASS
+- `git status; git diff`: PASS (chỉ có duy nhất thay đổi hợp lệ ở AGENTS.md, diff sạch sẽ).
+- Không có lỗi cú pháp markdown hoặc trùng lặp heading.
 
 ## Next Step For AN
 
-1. Review routing trace patch.
-2. Nếu ổn, GO merge branch `agent/20260522-routing-trace` vào `main`.
-3. Sau merge, chạy lại smoke test: `Tóm tắt PDF này để tôi học nhanh.`
-4. Expected first block:
-   ```yaml
-   ROUTING_DECISION:
-     selected_workspace: "workspaces/learning"
-     mode: "learning-first"
-     canonical_write: "NO"
-     ingest_lifecycle: "NO"
-   ```
+1. AN thực hiện merge nhánh `agent/20260522-layered-load-policy` vào `main` để kích hoạt chính sách tải theo tầng.
+2. Kiểm tra Agent chạy trong 1-2 phiên tiếp theo xem có tuân thủ việc không tự động bulk-load các tệp markdown ở root và chỉ tra cứu khi cần hay không.
+3. Sau khi chạy thử ổn định, đánh giá để thực hiện Phase 2 (hạ nhãn mandatory trong `WORKSPACE_OVERVIEW.md` hoặc SPEC).
 
 ## Blockers
 
-- Main tại `D:\NoteBookLLM_Br` đang có thay đổi chưa liên quan trước khi tạo worktree: `.gitignore` modified và `00_Inbox/sources-pending/` untracked. Không chạm các thay đổi đó trong patch này.
+- Các file chưa stage trên `main` (`.gitignore` và `00_Inbox/sources-pending/`) vẫn được giữ nguyên, không ảnh hưởng đến thay đổi này.
+
