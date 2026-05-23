@@ -2,34 +2,44 @@
 
 ## Current Objective
 
-Hoàn thiện và kiểm nghiệm tính năng xuất bản sách tự động đa định dạng (HTML & EPUB Reader) cho nguồn ARCH_TIS theo lộ trình học tập cá nhân hóa, đồng thời tinh giản mục lục và làm nhỏ tiêu đề phù hợp với thiết bị di động.
+Tinh giản triệt để bề mặt quy trình tiếp xúc người dùng (User-facing Surface), bảo toàn 6 cổng kiểm soát (Gates) Ingest dưới dạng **Bản Đặc tả Chắt lọc Tinh hoa (Condensed Stage Contracts)**, và cấu trúc lại quy trình học phi tuyến tính (Semantic Learning Map Mode) trong Vault.
 
 ## Current State
 
-- **Trạng thái**: Đã hoàn thành 100% việc lập trình, tối ưu CSS, tinh giản mục lục, biên dịch thành công và đóng gói tính năng thành Skill mới.
-- **Nhánh làm việc**: `agent/20260522-export-reader` tại Git worktree `D:\_agent_worktrees\20260522_export_reader`.
+- **Trạng thái**: Đã hoàn thành 100% việc tái cấu trúc, di chuyển, dọn dẹp hệ thống trong worktree an toàn và **chạy thành công 3 ca kiểm thử Canary với file thật** (kiểm thử learning-first cấm ghi 3-resources, định tuyến knowledge-intake, và ingest-lifecycle chống trùng lặp qua tệp contract mới).
+- **Nhánh làm việc**: `agent/20260523-workflow-cleanup` tại Git worktree `D:\_agent_worktrees\20260523_workflow_cleanup`.
 - **Thay đổi chính**:
-  1. Xây dựng script `export_epub.py` điều phối xuất bản đồng thời HTML và EPUB.
-  2. Sắp xếp các Atom theo đúng thứ tự logic trong lộ trình học tập cá nhân hóa tại `5-learning/paths/`.
-  3. Làm sạch mục lục (TOC) chỉ giữ tên Atom tiếng Việt tinh gọn, loại bỏ ID và chú thích tiếng Anh rườm rà.
-  4. Đổi `toc_depth` thành `1` cho EPUB để loại bỏ toàn bộ các H2 phụ (như `For future Claude (AI Preamble)`) ra khỏi mục lục của EPUB khi đọc trên Apple Books.
-  5. Khắc phục lỗi lặp tiêu đề H1 bằng cách loại bỏ tiêu đề H1 trong thân bài Atom nguồn.
-  6. Giảm kích thước font chữ tiêu đề (H1, H2, H3) trong CSS của cả EPUB và HTML (bổ sung `.reader-content` cho thân bài HTML Reader) để tối ưu hiển thị trên màn hình iPad/iPhone.
-  7. Nhúng trực tiếp toàn bộ CSS và JS vào HTML Reader giúp nó trở thành một file độc lập chạy offline mượt mà.
-  8. Đóng gói toàn bộ tính năng và quy trình biên dịch này thành một Skill chính thức: `wiki-export-reader` tại `.agent/skills/wiki-export-reader/`.
+  1. Tinh giản số lượng file quy trình trong `.agent/workflows/` từ **15 xuống còn đúng 7 file cốt lõi** thực sự có thể gọi trực tiếp bởi người dùng/Agent.
+  2. Gom toàn bộ 6 file stage gates con của Ingest Lifecycle vào một tệp đặc tả hợp đồng duy nhất: `.agent/contracts/ingest-stage-contracts.md` nằm ngoài thư mục workflows làm **Bản Đặc tả Chắt lọc Tinh hoa (Condensed Stage Contracts)**, trộn Frontmatter an toàn và bảo toàn 100% trường `description` gốc.
+  3. Cập nhật `ingest-lifecycle.md` để nó trỏ và điều phối trực tiếp thông qua tệp contract tổng mới.
+  4. Di chuyển 2 file tĩnh `setup-notebooklm-mcp.md` and `source-first-ingest.md` sang thư mục tài liệu tham chiếu `docs/`.
+  5. Bảo vệ và giữ nguyên `autonomous-dev-task.md` tại workflows để tránh gãy các liên kết hoạt động của `dev-lab`.
+  6. Tích hợp sâu sắc `Semantic Learning Map Mode` vào workflow mặc định `learning-first.md`, cấm ghi đè vào `3-resources/`.
+  7. Đồng bộ hóa Overlay `AGENTS.md` của 3 workspace con (`source-lab`, `learning`, `dev-lab`) để chuyển các stage files cũ thành quy chuẩn *"parent-only via ingest-lifecycle.md"*.
+  8. Cập nhật bản quy hoạch trong Vault: `workspaces/learning/NON_LINEAR_WORKFLOW_PLAN.md` và tạo báo cáo nghiệm thu `workspaces/learning/walkthrough.md` trực tiếp trong Vault.
+  9. Đã staged toàn bộ các tệp tin modified và new vào Git Index sạch sẽ và nhất quán.
 
 ## Next Step For AN
 
-1. **Nghiệm thu thủ công**:
-   - Mở file [LEARNING_PACK_SOURCE_ARCH_TIS_Thinking_in_Systems.html](file:///D:/_agent_worktrees/20260522_export_reader/5-learning/packs/html/LEARNING_PACK_SOURCE_ARCH_TIS_Thinking_in_Systems.html) bằng Safari/Chrome di động để xác nhận giao diện premium và mục lục tinh giản.
-   - Chuyển file [LEARNING_PACK_SOURCE_ARCH_TIS_Thinking_in_Systems.epub](file:///D:/_agent_worktrees/20260522_export_reader/5-learning/packs/epub/LEARNING_PACK_SOURCE_ARCH_TIS_Thinking_in_Systems.epub) sang ứng dụng Apple Books trên iPad/iPhone để kiểm tra giao diện đọc sách.
-2. **Merge nhánh vào main**: AN kiểm tra lại và merge nhánh `agent/20260522-export-reader` vào `main`.
-3. **Dọn dẹp worktree (Tùy chọn)**:
+1. **Nghiệm thu kiểm toán**:
+   - Mở tệp [walkthrough.md](file:///D:/_agent_worktrees/20260523_workflow_cleanup/workspaces/learning/walkthrough.md) trực tiếp trong Obsidian Vault để kiểm tra báo cáo nghiệm thu và `TASK_REPORT` mới nhất.
+   - Xác nhận thư mục `.agent/workflows/` trong worktree chỉ còn đúng 7 tệp hoạt động.
+   - Xác nhận tệp contract tổng [ingest-stage-contracts.md](file:///D:/_agent_worktrees/20260523_workflow_cleanup/.agent/contracts/ingest-stage-contracts.md) đã được staged.
+2. **Tiến hành Commit (Sau khi AN cấp GO)**:
+   - Agent hoặc AN thực hiện lệnh commit an toàn trong worktree:
+     ```bash
+     git commit -m "refactor: simplify workflows and consolidate stage gates to contracts"
+     ```
+3. **Merge nhánh vào main**:
+   - Sau khi commit thành công, chạy `git log main..HEAD` để xác nhận nhánh cục bộ đã có commit vượt trước `main`.
+   - Tiến hành merge nhánh `agent/20260523-workflow-cleanup` vào `main` tại repo chính.
+4. **Dọn dẹp worktree an toàn (Quy trình không force)**:
    ```bash
-   git worktree remove D:\_agent_worktrees\20260522_export_reader --force
-   git branch -D agent/20260522-export-reader
+   cd /d D:\NoteBookLLM_Br
+   git worktree remove D:\_agent_worktrees\20260523_workflow_cleanup
+   git branch -d agent/20260523-workflow-cleanup
    ```
 
 ## Blockers
 
-- Không có blockers.
+- **Không có blockers.** Mọi tệp tin đã được staged an toàn và kiểm thử Canary thành công rực rỡ!

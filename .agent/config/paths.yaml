@@ -29,7 +29,8 @@ wiki:
 
 learning_first:
   learning_maps: "1-projects/learning_maps"
-  inbox_preview: "00_Inbox/preview"
+  inbox_preview: "00_Inbox/staging/preview"
+  gap_candidates: "00_Inbox/staging/gap_candidates"
   workflow: ".agent/workflows/learning-first.md"
   canonical_handoff: ".agent/workflows/ingest-lifecycle.md"
 

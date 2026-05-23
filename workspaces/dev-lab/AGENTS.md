@@ -45,8 +45,7 @@ Escalation-only:
 
 ```text
 ../../.agent/workflows/ingest-lifecycle.md
-../../.agent/workflows/ingest-generate.md
-../../.agent/workflows/ingest-index-log.md
+../../.agent/contracts/ingest-stage-contracts.md (parent-only via ingest-lifecycle.md)
 ```
 
 Forbidden by default:

@@ -65,8 +65,7 @@ Forbidden by default:
 
 ```text
 ../../.agent/workflows/ingest-lifecycle.md
-../../.agent/workflows/audit-promote-source.md
-../../.agent/workflows/ingest-generate.md
+../../.agent/contracts/ingest-stage-contracts.md (parent-only via ingest-lifecycle.md)
 ../../3-resources/
 ```
 

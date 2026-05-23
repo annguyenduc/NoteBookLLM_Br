@@ -69,9 +69,7 @@ Escalation-only workflow:
 Forbidden by default:
 
 ```text
-../../.agent/workflows/audit-promote-source.md
-../../.agent/workflows/lock-ingest-input.md
-../../.agent/workflows/ingest-generate.md
+../../.agent/contracts/ingest-stage-contracts.md (parent-only via ingest-lifecycle.md)
 ../../3-resources/
 ```
 

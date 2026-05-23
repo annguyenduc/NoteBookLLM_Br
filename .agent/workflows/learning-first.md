@@ -21,6 +21,7 @@ Dùng workflow này khi AN nói:
 - đọc nhanh tài liệu này
 - tài liệu này có đáng học không
 - tạo bản đồ học (learning map)
+- thiết lập sơ đồ tri thức phi tuyến tính / bản đồ học ngữ nghĩa (Semantic Learning Map Mode)
 - tóm tắt để tra cứu nhanh
 - dùng NotebookLM để hỏi tài liệu dài
 - tôi cần giải quyết vấn đề này, tìm phần liên quan trong sách
@@ -70,12 +71,14 @@ ROUTING_DECISION:
     - "no ingest-lifecycle"
 ```
 
-### Bước 2: Learn Note
+### Bước 2: Learn Note & Semantic Learning Map
 
-Tạo câu trả lời ngắn hoặc learning note.
+Tạo câu trả lời ngắn, learning note, hoặc sơ đồ tri thức phi tuyến tính.
+
+#### A. Chế độ Ghi chú học nhanh (Learning Note Mode)
+Đầu ra mặc định là câu trả lời ngắn gọn trong chat hoặc tệp ghi chú tóm tắt.
 
 Output contract:
-
 ```yaml
 ROUTING_DECISION:
   cwd_context: "vault_root | workspace_child"
@@ -94,36 +97,36 @@ LEARNING NOTE:
 ```
 
 Template nội dung:
-
 ```md
 # Learning Map - [Title]
 
 ## Vấn đề đang giải quyết
-
 ## Câu trả lời ngắn
-
 ## Cấu trúc tài liệu
-
 ## Câu hỏi chính
-
 ## Phần đáng đọc trước
-
 ## Khái niệm cần nhớ
-
 ## Phần có thể bỏ qua
-
 ## Có đáng đưa vào wiki không?
 SKIP | KEEP_SUMMARY | PROMOTE
 ```
 
-Persisted learning notes, khi được phép ghi file, ưu tiên:
+#### B. Chế độ Bản đồ ngữ nghĩa phi tuyến (Semantic Learning Map Mode)
+Được kích hoạt khi người dùng yêu cầu lập sơ đồ tri thức, kết nối chéo giữa các Atoms để đọc phi tuyến tính.
 
+*   **Đầu ra:** Bản đồ đồ thị Mermaid Render mô tả mối quan hệ ngữ nghĩa giữa các nhóm Atoms và danh sách liên kết Obsidian dạng `[[CONCEPT_*]]` để điều hướng nhanh.
+*   **Vị trí lưu trữ bắt buộc (Non-canonical Preview):**
+    👉 **`1-projects/learning_maps/PATH_ARCH_TIS_[NAME].md`**
+*   **Ranh giới cấm ghi tuyệt đối (Guardrails):**
+    - Cấm ghi trực tiếp sơ đồ tri thức này vào thư mục tri thức chính thức `3-resources/` hoặc `3-resources/wiki/synthesis/`.
+    - Đối với việc tạo tệp sơ đồ ngữ nghĩa tổng vĩ mô chính thức (`SYNTHESIS_ARCH_TIS_Semantic_Graph.md` tại `3-resources/wiki/synthesis/`), đây là tác vụ **synthesis write** rủi ro cao, bắt buộc phải tách thành một task độc lập ở tương lai, được bảo vệ bằng `synthesis_guard.py` và cần có exact-path GO riêng từ AN.
+
+#### C. Quy tắc lưu trữ chung cho Workflow:
+Persisted learning notes / semantic paths khi được phép ghi file, ưu tiên:
 ```text
 1-projects/learning_maps/
 ```
-
-Không ghi learning note vào:
-
+Không ghi bất kỳ tệp tin nào của workflow này vào:
 ```text
 3-resources/
 3-resources/wiki/
@@ -180,7 +183,7 @@ sqlite
 tavily
 ```
 
-Nếu Tavily chưa được bật trong `codex mcp list`, báo thiếu MCP và tiếp tục bằng nguồn hiện có nếu task không bắt buộc Tavily.
+Nếu Tavily chưa được bật trong `codex mcp list` hoặc `antigravity mcp list`, báo thiếu MCP và tiếp tục bằng nguồn hiện có nếu task không bắt buộc Tavily.
 
 ---
 

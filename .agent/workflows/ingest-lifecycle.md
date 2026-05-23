@@ -11,11 +11,12 @@ description: Workflow cha duy nhất cho toàn bộ ingest lifecycle, điều ph
 
 User chỉ nên nghĩ theo một entrypoint này.
 
-Các workflow con vẫn tồn tại để:
-
+Các cổng kiểm soát nội bộ (Stage Gates) được quy chuẩn hóa và đặc tả chi tiết tại:
+👉 `.agent/contracts/ingest-stage-contracts.md`
+để:
 - giữ boundary rõ
 - giảm drift
-- cho phép resume chính xác theo artifact
+- cho phép resume chính xác theo artifact contract
 
 ---
 
@@ -329,9 +330,4 @@ Mục tiêu của pressure test là kiểm tra orchestration stability, không c
 
 ## 12. References
 
-- `.agent/workflows/prepare-source.md`
-- `.agent/workflows/audit-promote-source.md`
-- `.agent/workflows/lock-ingest-input.md`
-- `.agent/workflows/ingest.md`
-- `.agent/workflows/ingest-generate.md`
-- `.agent/workflows/ingest-index-log.md`
+- `.agent/contracts/ingest-stage-contracts.md`
