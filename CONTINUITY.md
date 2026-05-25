@@ -1,12 +1,17 @@
 # CONTINUITY.md
 
-```yaml
-current_state: "Đã hoàn thành xuất sắc 100% cuộc kiểm toán 'Superpowers Missing Skills & Tests Import Audit'. Toàn bộ 6 báo cáo đã được lưu tại runs/tests/20260525_superpowers_gap_import_audit/."
-next_step_for_AN: "Xem xét 05_port_decision_matrix.yaml và 06_import_backlog.md để chuẩn bị duyệt các SPEC riêng biệt (SPEC-SPG-*) cho từng kỹ năng cốt lõi trước khi thực hiện port/merge thực tế."
+current_state: "Hoàn thành tối ưu token cho skill prompt-master (Hướng A). Tách 298 dòng tool-specific routing ra file references/tool-routing.md riêng. SKILL.md giảm từ 31KB (~7,800 tokens) xuống còn 10.8KB (~2,773 tokens), tiết kiệm ~65% khi nạp startup. Ba file references/ (tool-routing, templates, patterns) đều chỉ nạp JIT theo nhu cầu. Cấu trúc 3-tier JIT hoàn chỉnh."
+next_step_for_AN: "Nếu muốn tiếp tục tối ưu hóa, có thể áp dụng cùng pattern Hướng A cho các skill khác còn nặng (cm-dockit, wiki-ingest). Hoặc đóng phiên — hệ thống đã ổn định."
 blockers: []
 verification:
-  - "6 file báo cáo tồn tại đầy đủ và chính xác dưới runs/tests/20260525_superpowers_gap_import_audit/."
-  - "Nguyên tắc Superpowers làm canonical standard cho core method skills được tuân thủ nghiêm ngặt."
-  - "Không có bất kỳ sự thay đổi ngoài ý muốn nào trên code gốc, AGENTS.md hay commit Git."
-```
+  - "SKILL.md hiện 207 dòng, 10.8 KB — đã kiểm tra bằng PowerShell"
+  - "references/tool-routing.md tồn tại, 19.9 KB, 25+ tool sections"
+  - "Cấu trúc 8 sections trong SKILL.md: Intent Extraction → Tool Routing (pointer) → Credential Safety → Input Sanitization → Diagnostic Checklist → Memory Block → Safe Techniques → Agentic Output Warning"
+
+learnings:
+  - scope: "prompt-master"
+    lesson: "SKILL.md nặng do nhúng trực tiếp routing hướng dẫn cho 25+ tool vào body. Pattern đúng: giữ pointer ngắn trong SKILL.md, tách nội dung tool-specific ra references/ để nạp JIT."
+    technique: "PowerShell array slicing ($lines[0..72] + $lines[366..end]) để xóa chính xác khoảng dòng khi replace_file_content không thể match uniquely."
+
+
 
