@@ -41,10 +41,13 @@ Nguồn mới, tài liệu dài, web scrape, transcript, hoặc file cần đọ
 Vị trí mặc định:
 
 ```text
-00_Inbox/                  # nguồn mới hoặc staging tạm
+00_Inbox/sources-pending/  # Nơi chứa các nguồn thô chờ học/ingest cách ly
 workspaces/                # xưởng phụ, non-canonical
 1-projects/learning_maps/  # learning note / learning map giữ lại để học
 ```
+
+- **Quy tắc Định danh (source_id Lock)**: Bắt kể ở luồng Learn hay Ingest, mọi tài liệu thô được nạp bắt buộc phải có `source_id`. 
+- Agent phải tra cứu `D:\NoteBookLLM_Br\1-projects\sources\source_registry.md` trước tiên. Nếu chưa có, AI tự động sinh `source_id` theo quy tắc `[LOẠI]_[VIẾT_TẮT]` và đăng ký vào bảng trước khi tiến hành bước tiếp theo. Không dùng giá trị "NONE" cho source_id.
 
 ### Bước 2: Ghi Chú Học Nhanh (Learn Note)
 
@@ -55,7 +58,7 @@ Learning note luôn là:
 ```yaml
 learning_status: "PREVIEW_ONLY"
 canonical_status: "NON_CANONICAL"
-source_id: "NONE"
+source_id: "REQUIRED" # Bắt buộc ghi nhận source_id đã đăng ký trong source_registry.md
 trust: "UNVERIFIED"
 ```
 
