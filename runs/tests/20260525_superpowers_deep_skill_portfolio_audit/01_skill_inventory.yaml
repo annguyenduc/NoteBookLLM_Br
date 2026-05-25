@@ -1,0 +1,439 @@
+- name: "brainstorming"
+  path: ".agent/skills/brainstorming"
+  category: "planning"
+  purpose: "Khám phá ý định, định hình giải pháp trước khi lập trình."
+  trigger_summary: "Kích hoạt ở đầu phiên khi task mới bắt đầu hoặc còn mơ hồ."
+  output_summary: "Các ý tưởng, spec nháp, thiết kế sơ bộ."
+  overlaps_with: ["cm-planning"]
+  proposed_status: "merge"
+  confidence: "high"
+
+- name: "cm-planning"
+  path: ".agent/skills/cm-planning"
+  category: "planning"
+  purpose: "Lập kế hoạch chiến lược: làm rõ mục tiêu, phân rã công việc, đánh giá rủi ro."
+  trigger_summary: "Phase 0 - Trước khi có spec chi tiết."
+  output_summary: "Kế hoạch phân rã chiến lược, phân tích rủi ro."
+  overlaps_with: ["brainstorming", "writing-plans"]
+  proposed_status: "keep"
+  confidence: "high"
+
+- name: "writing-plans"
+  path: ".agent/skills/writing-plans"
+  category: "planning"
+  purpose: "Viết implementation plan chi tiết để thực thi."
+  trigger_summary: "Phase 1 - Sau khi đã có spec và chốt mục tiêu."
+  output_summary: "implementation_plan.md"
+  overlaps_with: ["cm-planning"]
+  proposed_status: "keep"
+  confidence: "high"
+
+- name: "executing-plans"
+  path: ".agent/skills/executing-plans"
+  category: "planning"
+  purpose: "Thực thi tuần tự kế hoạch đã lập và checkpoint sau mỗi bước."
+  trigger_summary: "Khi bắt đầu triển khai code theo implementation plan."
+  output_summary: "Cập nhật task.md và thực hiện các bước code."
+  overlaps_with: []
+  proposed_status: "keep"
+  confidence: "high"
+
+- name: "verification-before-completion"
+  path: ".agent/skills/verification-before-completion"
+  category: "verification"
+  purpose: "Ràng buộc xác minh thực tế qua script/test trước khi hoàn thành."
+  trigger_summary: "Khi code xong và chuẩn bị báo cáo hoàn thành."
+  output_summary: "Kết quả test, bằng chứng verify (logs/outputs)."
+  overlaps_with: ["cm-quality-gate", "cm-tdd"]
+  proposed_status: "keep"
+  confidence: "high"
+
+- name: "cm-tdd"
+  path: ".agent/skills/cm-tdd"
+  category: "verification"
+  purpose: "Phát triển hướng kiểm thử và tự động sửa lỗi đệ quy."
+  trigger_summary: "Khi viết code kèm test case hồi quy."
+  output_summary: "Bộ test pass, code sạch."
+  overlaps_with: ["verification-before-completion"]
+  proposed_status: "merge"
+  confidence: "medium"
+
+- name: "cm-quality-gate"
+  path: ".agent/skills/cm-quality-gate"
+  category: "verification"
+  purpose: "Chốt chặn kiểm tra chất lượng cuối cùng trước khi xuất bản."
+  trigger_summary: "Trước khi bàn giao phiên làm việc."
+  output_summary: "Báo cáo chất lượng đạt."
+  overlaps_with: ["verification-before-completion"]
+  proposed_status: "convert_to_rule"
+  confidence: "high"
+
+- name: "wiki-ingest"
+  path: ".agent/skills/wiki-ingest"
+  category: "ingestion"
+  purpose: "Đăng ký file đã chuẩn bị vào Review Queue bằng hash + score."
+  trigger_summary: "Khi có file tri thức thô cần nạp chính thức."
+  output_summary: "Bản ghi ingest trong queue."
+  overlaps_with: ["process-raw-resource"]
+  proposed_status: "keep"
+  confidence: "high"
+
+- name: "process-raw-resource"
+  path: ".agent/skills/process-raw-resource"
+  category: "ingestion"
+  purpose: "Đọc nhanh nguồn, tạo learning map và đề xuất ingest."
+  trigger_summary: "Khi nhận nguồn tài liệu thô ban đầu cần học nhanh."
+  output_summary: "Learning map, preview notes."
+  overlaps_with: ["wiki-learning-pack"]
+  proposed_status: "keep"
+  confidence: "high"
+
+- name: "wiki-hd-convert"
+  path: ".agent/skills/wiki-hd-convert"
+  category: "ingestion"
+  purpose: "Trích xuất hình ảnh/biểu đồ độ phân giải cao từ PDF."
+  trigger_summary: "Khi PDF thô chứa hình ảnh/bảng quan trọng."
+  output_summary: "Assets hình ảnh được trích xuất sạch."
+  overlaps_with: []
+  proposed_status: "keep"
+  confidence: "high"
+
+- name: "wiki-md-auditor"
+  path: ".agent/skills/wiki-md-auditor"
+  category: "maintenance"
+  purpose: "Kiểm định chuẩn Markdown, sửa lỗi font chữ trước khi duyệt."
+  trigger_summary: "Trước khi promote file nháp sang raw_ingest."
+  output_summary: "Markdown đã chuẩn hóa không có Mojibake."
+  overlaps_with: []
+  proposed_status: "keep"
+  confidence: "high"
+
+- name: "wiki-rebuild"
+  path: ".agent/skills/wiki-rebuild"
+  category: "maintenance"
+  purpose: "Đồng bộ Database SQLite với Filesystem của vault."
+  trigger_summary: "Khi có thay đổi file vật lý hoặc lệch index."
+  output_summary: "Database SQLite được cập nhật đồng bộ."
+  overlaps_with: []
+  proposed_status: "convert_to_workflow"
+  confidence: "high"
+
+- name: "wiki-cleanup"
+  path: ".agent/skills/wiki-cleanup"
+  category: "maintenance"
+  purpose: "Quét tìm link gãy, file rác hoặc Atom stale."
+  trigger_summary: "Sau đợt ingest lớn hoặc chạy định kỳ tuần."
+  output_summary: "Báo cáo link gãy đã được fix."
+  overlaps_with: []
+  proposed_status: "convert_to_workflow"
+  confidence: "high"
+
+- name: "wiki-absorb"
+  path: ".agent/skills/wiki-absorb"
+  category: "governance"
+  purpose: "Hấp thụ Atom nháp vào hệ thống, tự gộp trùng lặp."
+  trigger_summary: "Khi Atom nháp được promote."
+  output_summary: "Atom mới được tích hợp vào Wiki Graph."
+  overlaps_with: []
+  proposed_status: "keep"
+  confidence: "high"
+
+- name: "wiki-council"
+  path: ".agent/skills/wiki-council"
+  category: "governance"
+  purpose: "Hội đồng Agent phân xử xung đột tri thức bằng đồng thuận weighted."
+  trigger_summary: "Khi phát hiện CONTRADICTS edge giữa các tri thức."
+  output_summary: "Quyết định giữ/giáng cấp tri thức."
+  overlaps_with: []
+  proposed_status: "keep"
+  confidence: "high"
+
+- name: "wiki-learning-pack"
+  path: ".agent/skills/wiki-learning-pack"
+  category: "learning"
+  purpose: "Tạo gói học nhanh 60-90 phút từ Atom có sẵn."
+  trigger_summary: "Khi người dùng yêu cầu lộ trình học tập."
+  output_summary: "Learning Pack Markdown."
+  overlaps_with: ["pedagogy"]
+  proposed_status: "keep"
+  confidence: "high"
+
+- name: "pedagogy"
+  path: ".agent/skills/pedagogy"
+  category: "learning"
+  purpose: "Chuyển tri thức thô thành giáo án hoặc Slide dựa trên mô hình sư phạm."
+  trigger_summary: "Khi cần tạo PPTX, slide, hoặc giáo án chính thức."
+  output_summary: "Giáo án, Slide Markdown."
+  overlaps_with: ["wiki-learning-pack", "wiki-to-deliverable"]
+  proposed_status: "keep"
+  confidence: "high"
+
+- name: "wiki-export-reader"
+  path: ".agent/skills/wiki-export-reader"
+  category: "learning"
+  purpose: "Xuất bản tài liệu học tập thành HTML Reader tự chứa và sách EPUB."
+  trigger_summary: "Khi hoàn tất Learning Pack và muốn đọc offline."
+  output_summary: "HTML Reader / EPUB file."
+  overlaps_with: []
+  proposed_status: "keep"
+  confidence: "high"
+
+- name: "cm-notebooklm"
+  path: ".agent/skills/cm-notebooklm"
+  category: "notebooklm"
+  purpose: "Đẩy kiến thức lên Google NotebookLM phục vụ đối chiếu ngữ nghĩa."
+  trigger_summary: "Khi cần đồng bộ tri thức liên phiên lên NotebookLM."
+  output_summary: "Bản ghi đồng bộ thành công."
+  overlaps_with: []
+  proposed_status: "keep"
+  confidence: "high"
+
+- name: "cm-context-budget"
+  path: ".agent/skills/cm-context-budget"
+  category: "core-method"
+  purpose: "Quản lý và tối ưu hóa ngân sách Token (Context Window)."
+  trigger_summary: "Kích hoạt tự động khi context vượt 60% ngưỡng."
+  output_summary: "Đề xuất cắt giảm hoặc giải phóng context."
+  overlaps_with: []
+  proposed_status: "keep"
+  confidence: "high"
+
+- name: "cm-continuity"
+  path: ".agent/skills/cm-continuity"
+  category: "core-method"
+  purpose: "Duy trì ngữ cảnh qua nhiều phiên làm việc bằng CONTINUITY.md."
+  trigger_summary: "Ở cuối phiên làm việc khi có thay đổi trạng thái."
+  output_summary: "Cập nhật CONTINUITY.md."
+  overlaps_with: []
+  proposed_status: "convert_to_rule"
+  confidence: "high"
+
+- name: "cm-core-edit-pro"
+  path: ".agent/skills/cm-core-edit-pro"
+  category: "core-method"
+  purpose: "Chỉnh sửa file code quy mô lớn an toàn bằng Dry-run."
+  trigger_summary: "Khi cần edit nhiều khối không liên tục trong file lớn."
+  output_summary: "Diff file code sạch sẽ."
+  overlaps_with: ["karpathy-core"]
+  proposed_status: "keep"
+  confidence: "medium"
+
+- name: "cm-core-grep"
+  path: ".agent/skills/cm-core-grep"
+  category: "core-method"
+  purpose: "Tìm kiếm hệ thống tốc độ cao kèm phân tích insight."
+  trigger_summary: "Khi cần tìm kiếm dấu vết tri thức quy mô rộng."
+  output_summary: "Báo cáo tìm kiếm kèm insight phân loại."
+  overlaps_with: []
+  proposed_status: "keep"
+  confidence: "high"
+
+- name: "cm-debugging"
+  path: ".agent/skills/cm-debugging"
+  category: "core-method"
+  purpose: "Phân tích nguyên nhân gốc rễ (RCA) và sửa lỗi đệ quy."
+  trigger_summary: "Khi gặp lỗi code, test crash."
+  output_summary: "RCA Report và code đã fix."
+  overlaps_with: ["systematic-debugging"]
+  proposed_status: "keep"
+  confidence: "high"
+
+- name: "systematic-debugging"
+  path: ".agent/skills/systematic-debugging"
+  category: "core-method"
+  purpose: "Hệ thống hóa phương pháp phân tích và khoanh vùng lỗi."
+  trigger_summary: "Khi gặp bug hoặc hành vi không mong đợi."
+  output_summary: "Tài liệu khoanh vùng bug."
+  overlaps_with: ["cm-debugging"]
+  proposed_status: "merge"
+  confidence: "high"
+
+- name: "cm-terminal"
+  path: ".agent/skills/cm-terminal"
+  category: "core-method"
+  purpose: "Resilient Terminal Orchestration (ghi log và tự phục hồi)."
+  trigger_summary: "Khi cần chạy nhiều lệnh shell phức tạp."
+  output_summary: "Terminal log và lệnh chạy sạch."
+  overlaps_with: []
+  proposed_status: "keep"
+  confidence: "high"
+
+- name: "cm-gateway-pro"
+  path: ".agent/skills/cm-gateway-pro"
+  category: "core-method"
+  purpose: "Bảo trì, chuẩn hóa và tối ưu hóa SmartProxyHub Gateway."
+  trigger_summary: "Khi thao tác với Gateway Port 4000."
+  output_summary: "Gateway được tối ưu hóa."
+  overlaps_with: []
+  proposed_status: "keep"
+  confidence: "high"
+
+- name: "cm-git-flow"
+  path: ".agent/skills/cm-git-flow"
+  category: "core-method"
+  purpose: "Quản lý phiên bản an toàn, tự phục hồi và bảo vệ main branch."
+  trigger_summary: "Khi cần commit, branch merge, resolve conflict."
+  output_summary: "Git tree sạch sẽ, no conflict."
+  overlaps_with: []
+  proposed_status: "keep"
+  confidence: "high"
+
+- name: "mcp-builder"
+  path: ".agent/skills/mcp-builder"
+  category: "automation"
+  purpose: "Xây dựng máy chủ MCP kết nối API bên ngoài."
+  trigger_summary: "Khi tích hợp dịch vụ mới cho AI Agent."
+  output_summary: "MCP server code."
+  overlaps_with: []
+  proposed_status: "keep"
+  confidence: "high"
+
+- name: "prompt-master"
+  path: ".agent/skills/prompt-master"
+  category: "automation"
+  purpose: "Biên dịch và tối ưu hóa Prompt cho các công cụ AI."
+  trigger_summary: "Khi thiết kế prompt cho LLM hoặc agent."
+  output_summary: "Prompt tối ưu hóa."
+  overlaps_with: []
+  proposed_status: "keep"
+  confidence: "high"
+
+- name: "subagent-driven-development"
+  path: ".agent/skills/subagent-driven-development"
+  category: "core-method"
+  purpose: "Phân bổ tác vụ cho các Subagent chạy song song trong phiên."
+  trigger_summary: "Khi task lớn cần nghiên cứu rộng và code độc lập."
+  output_summary: "Phân rã subagent và gộp code sau review."
+  overlaps_with: []
+  proposed_status: "keep"
+  confidence: "high"
+
+- name: "using-superpowers"
+  path: ".agent/skills/using-superpowers"
+  category: "core-method"
+  purpose: "Đọc hướng dẫn chọn và gọi đúng các skill ở đầu phiên."
+  trigger_summary: "Kích hoạt mặc định ở đầu mọi phiên làm việc."
+  output_summary: "Bootstrap định tuyến skill."
+  overlaps_with: []
+  proposed_status: "keep"
+  confidence: "high"
+
+- name: "wiki-breakdown"
+  path: ".agent/skills/wiki-breakdown"
+  category: "retrieval"
+  purpose: "Phân tích Atom để phát hiện các lỗ hổng kiến thức."
+  trigger_summary: "Khi chạy lệnh /breakdown hoặc phân tích tri thức."
+  output_summary: "Báo cáo khoảng trống kiến thức cần bù đắp."
+  overlaps_with: []
+  proposed_status: "keep"
+  confidence: "high"
+
+- name: "wiki-crawl-4ai"
+  path: ".agent/skills/wiki-crawl-4ai"
+  category: "ingestion"
+  purpose: "Cào web động bằng Playwright, chụp ảnh minh chứng R10."
+  trigger_summary: "Khi nguồn web động cần chụp screenshot."
+  output_summary: "Markdown sạch và screenshot trong 00_Inbox."
+  overlaps_with: ["wiki-web-scrape"]
+  proposed_status: "keep"
+  confidence: "high"
+
+- name: "wiki-web-scrape"
+  path: ".agent/skills/wiki-web-scrape"
+  category: "ingestion"
+  purpose: "Cào web tĩnh an toàn bằng Lightpanda."
+  trigger_summary: "Khi nguồn web tĩnh dễ phân tích."
+  output_summary: "Markdown sạch sẽ."
+  overlaps_with: ["wiki-crawl-4ai"]
+  proposed_status: "keep"
+  confidence: "high"
+
+- name: "wiki-query"
+  path: ".agent/skills/wiki-query"
+  category: "retrieval"
+  purpose: "Tìm kiếm chính xác bằng keyword và đồ thị Wiki Graph."
+  trigger_summary: "Khi cần truy vấn định nghĩa chính xác."
+  output_summary: "Atom định nghĩa và các liên kết graph."
+  overlaps_with: ["wiki-semantic-search"]
+  proposed_status: "keep"
+  confidence: "high"
+
+- name: "wiki-semantic-search"
+  path: ".agent/skills/wiki-semantic-search"
+  category: "retrieval"
+  purpose: "Tìm kiếm theo ngữ nghĩa (ý định) khi không nhớ từ khóa."
+  trigger_summary: "Khi tìm kiếm theo keyword trả về kết quả nghèo nàn."
+  output_summary: "Danh sách Atom có điểm tương đồng ngữ nghĩa cao."
+  overlaps_with: ["wiki-query"]
+  proposed_status: "keep"
+  confidence: "high"
+
+- name: "wiki-status"
+  path: ".agent/skills/wiki-status"
+  category: "retrieval"
+  purpose: "Báo cáo sức khỏe toàn Wiki (mật độ liên kết, tỷ lệ Verified)."
+  trigger_summary: "Trước khi bắt đầu ingest lớn hoặc chạy định kỳ."
+  output_summary: "Báo cáo số lượng Atom và chất lượng liên kết."
+  overlaps_with: []
+  proposed_status: "convert_to_workflow"
+  confidence: "high"
+
+- name: "wiki-to-deliverable"
+  path: ".agent/skills/wiki-to-deliverable"
+  category: "synthesis"
+  purpose: "Ghép nhiều Atom thành một bài báo cáo, tóm tắt hoàn chỉnh."
+  trigger_summary: "Khi cần xuất bản tài liệu tổng hợp từ Obsidian."
+  output_summary: "Tài liệu deliverable Markdown."
+  overlaps_with: ["pedagogy"]
+  proposed_status: "keep"
+  confidence: "high"
+
+- name: "write-skill"
+  path: ".agent/skills/write-skill"
+  category: "core-method"
+  purpose: "Tạo mới hoặc nâng cấp các Skill khác theo chuẩn."
+  trigger_summary: "Khi cần chỉnh sửa, bổ sung kỹ năng Agent."
+  output_summary: "Skill.md mới hoặc cập nhật."
+  overlaps_with: []
+  proposed_status: "keep"
+  confidence: "high"
+
+- name: "karpathy-core"
+  path: ".agent/skills/karpathy-core"
+  category: "core-method"
+  purpose: "Quy chuẩn Surgical Changes và tối giản hóa thiết kế code."
+  trigger_summary: "Luôn kích hoạt ngầm khi viết code hoặc sửa script."
+  output_summary: "Quy chuẩn Surgical Change sạch sẽ."
+  overlaps_with: ["cm-core-edit-pro"]
+  proposed_status: "keep"
+  confidence: "high"
+
+- name: "cm-code-review"
+  path: ".agent/skills/cm-code-review"
+  category: "core-method"
+  purpose: "Quy trình review mã nguồn toàn vòng đời."
+  trigger_summary: "Khi chuẩn bị merge branch hoặc submit PR."
+  output_summary: "Báo cáo review code đạt chuẩn."
+  overlaps_with: []
+  proposed_status: "keep"
+  confidence: "high"
+
+- name: "wiki-learning-audit"
+  path: ".agent/skills/wiki-learning-audit"
+  category: "learning"
+  purpose: "Đẩy các Atom nháp hoặc chưa verify vào review queue."
+  trigger_summary: "Khi chạy audit học tập tuần."
+  output_summary: "Review queue được bổ sung Atom học tập."
+  overlaps_with: []
+  proposed_status: "keep"
+  confidence: "high"
+
+- name: "cm-gateway-pro"
+  path: ".agent/skills/cm-gateway-pro"
+  category: "core-method"
+  purpose: "Tối ưu hóa và bảo trì kiến trúc SmartProxyHub Gateway."
+  trigger_summary: "Khi thao tác với Gateway Port 4000."
+  output_summary: "Gateway được tối ưu hóa."
+  overlaps_with: []
+  proposed_status: "keep"
+  confidence: "high"

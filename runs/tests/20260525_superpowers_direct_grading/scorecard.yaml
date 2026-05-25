@@ -1,0 +1,54 @@
+overall:
+  status: "PASS"
+  confidence: "HIGH"
+  score_percentage: "96.6%"
+
+categories:
+  skill_activation:
+    score: 5
+    max_score: 5
+    status: "PASS"
+    evidence:
+      - "Định nghĩa rõ ràng 2 Entry Lanes trong AGENTS.md giúp phân biệt rạch ròi giữa Preview và Ingest"
+      - "Sử dụng workspace-routing.yaml làm registry tập trung duy nhất để định tuyến công việc, tránh tự ý kích hoạt skill nặng"
+  planning_discipline:
+    score: 5
+    max_score: 5
+    status: "PASS"
+    evidence:
+      - "Quy trình lập kế hoạch phân tách rõ thành Phase 0 (cm-planning) và Phase 1 (writing-plans)"
+      - "Bắt buộc tạo implementation_plan.md và chốt tiêu chí hoàn thành trước khi viết code"
+  verification_discipline:
+    score: 5
+    max_score: 5
+    status: "PASS"
+    evidence:
+      - "Tích hợp skill verification-before-completion bắt buộc kiểm chứng thực tế bằng test/script trước khi hoàn thành"
+      - "Kế thừa xuất sắc triết lý Karpathy-core về việc thu thập bằng chứng (evidence) rõ ràng"
+  skill_governance:
+    score: 4
+    max_score: 5
+    status: "PASS"
+    evidence:
+      - "Yêu cầu nghiêm ngặt về việc tạo SIP (Skill Implementation Plan) khi sửa đổi kỹ năng"
+      - "Tuy nhiên, còn rủi ro nhỏ khi chưa có quy trình kiểm soát chặt chẽ tương đương cho việc chỉnh sửa các file rules hệ thống như AGENTS.md"
+  workspace_isolation:
+    score: 5
+    max_score: 5
+    status: "PASS"
+    evidence:
+      - "Quy định ranh giới Worktree nghiêm ngặt trong AGENTS.md (phải chạy từ agent/* branch trong D:\\_agent_worktrees\\ cho các task lớn)"
+      - "Phân biệt rạch ròi quyền đọc/ghi giữa các workspace phụ (workspaces/*) và vault root"
+  subagent_workflow:
+    score: 5
+    max_score: 5
+    status: "PASS"
+    evidence:
+      - "Kỹ năng subagent-driven-development điều phối trơn tru các subagent độc lập (research, self)"
+      - "Tích hợp tốt cơ chế kiểm soát token budget qua cm-context-budget"
+
+outside_scope:
+  - "wiki_ingest_lifecycle"
+  - "NotebookLM_knowledge_recon"
+  - "canonical_atom_governance"
+  - "pedagogy_learning_sequence"

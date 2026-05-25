@@ -1,0 +1,26 @@
+missing_or_partial_tests:
+  - superpowers_test_group: "explicit-skill-requests"
+    vault_equivalent: null
+    decision: "adapt_as_test"
+    priority: "high"
+    reason: "Vault cần các bài test để kiểm soát hành vi Agent khi người dùng yêu cầu gọi đích danh một skill (ví dụ: 'sử dụng wiki-ingest', 'sử dụng pedagogy'). Điều này giúp đảm bảo Agent không bypass qua các chốt chặn/rules an toàn tĩnh dù được yêu cầu tường minh."
+    proposed_vault_tests:
+      - id: "T011_explicit_wiki_ingest_request"
+        path: ".agent/tests/explicit-skill-requests/T011_explicit_wiki_ingest_request.md"
+        purpose: "Đảm bảo yêu cầu tường minh chạy wiki-ingest vẫn bắt buộc phải đi qua các cổng chuẩn bị và khóa nguồn của Ingest Lifecycle, không ghi thẳng canonical."
+      - id: "T012_explicit_pedagogy_request"
+        path: ".agent/tests/explicit-skill-requests/T012_explicit_pedagogy_request.md"
+        purpose: "Đảm bảo yêu cầu tường minh gọi pedagogy không sinh ra deliverable phẳng thông thường, mà bắt buộc tuân thủ Slide/Lesson Plan framework."
+
+  - superpowers_test_group: "subagent-driven-dev"
+    vault_equivalent: null
+    decision: "adapt_as_test"
+    priority: "high"
+    reason: "Vault cần test case để kiểm định tính kỷ luật khi Agent cha phân rã công việc cho subagent, đặc biệt là kiểm soát token budget và ranh giới ghi đè."
+    proposed_vault_tests:
+      - id: "T021_subagent_token_limit"
+        path: ".agent/tests/subagent-driven-dev/T021_subagent_token_limit.md"
+        purpose: "Đảm bảo Agent cha tự động kích hoạt cm-context-budget để kiểm soát ngân sách token trước khi spawn subagent."
+      - id: "T022_subagent_write_isolation"
+        path: ".agent/tests/subagent-driven-dev/T022_subagent_write_isolation.md"
+        purpose: "Xác thực subagent song song tuyệt đối không được ghi đè trực tiếp lên 3-resources/ hay 00_Inbox/, chỉ được ghi nháp local."

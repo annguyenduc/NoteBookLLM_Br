@@ -36,11 +36,13 @@
 
 !/workspaces/
 /workspaces/*
+/workspaces/refs/superpowers/
 !/workspaces/README.md
 !/workspaces/*/
 /workspaces/*/*
 !/workspaces/*/README.md
 !/workspaces/*/AGENTS.md
+!/workspaces/refs/superpowers.policy.yaml
 !/workspaces/*/*/
 /workspaces/*/*/*
 !/workspaces/*/*/.gitkeep

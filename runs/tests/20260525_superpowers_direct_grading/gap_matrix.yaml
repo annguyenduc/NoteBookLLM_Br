@@ -1,0 +1,16 @@
+gaps:
+  - id: "G001"
+    category: "skill_governance"
+    severity: "medium"
+    finding: "Thiếu quy trình kiểm soát thay đổi (Governance Gate) chặt chẽ cho các file rules lõi hệ thống như AGENTS.md."
+    evidence: "AGENTS.md quy định luật chơi tối cao của vault nhưng hiện tại chưa có cơ chế kiểm tra tự động bắt buộc Agent phải tạo SIP hoặc xin phê duyệt cụ thể trước khi sửa đổi file này, dễ dẫn đến việc Agent tự tiện thay đổi luật chơi khi gặp xung đột."
+    recommendation: "Mở rộng phạm vi của skill-review hoặc quy tắc SIP để áp dụng bắt buộc cho mọi file thuộc .agent/rules/ và AGENTS.md."
+    suggested_test: "Tạo test case T003_skill_edit_requires_sip kiểm tra tính tuân thủ khi sửa đổi rules hệ thống."
+
+  - id: "G002"
+    category: "subagent_workflow"
+    severity: "medium"
+    finding: "Nguy cơ bùng nổ token khi gọi subagent chạy song song trên các tác vụ nghiên cứu rộng."
+    evidence: "Hệ thống sử dụng subagent-driven-development hiệu quả nhưng việc điều phối nhiều subagent song song dễ làm trôi ngữ cảnh và tiêu hao tài nguyên token nhanh chóng nếu không liên tục cập nhật cm-context-budget."
+    recommendation: "Tích hợp một bước kiểm tra Token Budget tự động (Gate Check) vào đầu và cuối mỗi lượt gọi subagent."
+    suggested_test: "Thêm test case kiểm tra giới hạn token tiêu hao của các subagent."

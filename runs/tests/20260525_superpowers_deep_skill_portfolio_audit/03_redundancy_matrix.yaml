@@ -1,0 +1,103 @@
+keep_core:
+  - skill: "cm-planning"
+    reason: "Quy chuẩn lập kế hoạch Phase 0 tối thượng của vault."
+  - skill: "writing-plans"
+    reason: "Phase 1 - Thiết kế kỹ thuật chi tiết bằng implementation_plan.md."
+  - skill: "executing-plans"
+    reason: "Quản lý tiến độ thực thi tuần tự và checkpoint."
+  - skill: "verification-before-completion"
+    reason: "Ràng buộc bằng chứng (evidence) kiểm thử trước khi bàn giao."
+  - skill: "cm-context-budget"
+    reason: "Bảo vệ Token Budget của toàn bộ hệ thống Agent."
+
+keep_domain_specific:
+  - skill: "wiki-ingest"
+    reason: "Chịu trách nhiệm nạp tri thức DRAFT an toàn vào queue."
+  - skill: "process-raw-resource"
+    reason: "Cổng Preview Lane lọc nguồn thô."
+  - skill: "wiki-hd-convert"
+    reason: "Xử lý PDF chất lượng cao chứa sơ đồ/hình ảnh."
+  - skill: "wiki-md-auditor"
+    reason: "Kiểm định định dạng và sửa lỗi font."
+  - skill: "wiki-absorb"
+    reason: "Cơ chế hấp thụ tri thức tự động."
+  - skill: "wiki-council"
+    reason: "Weighted consensus phân xử xung đột tri thức."
+  - skill: "wiki-learning-pack"
+    reason: "Lộ trình Spaced Repetition."
+  - skill: "pedagogy"
+    reason: "Giáo án và slide Markdown sư phạm."
+  - skill: "cm-notebooklm"
+    reason: "Adapter đồng bộ liên phiên lên NotebookLM."
+  - skill: "wiki-breakdown"
+    reason: "Phân tích lỗ hổng tri thức của vault."
+
+merge:
+  - target_skill: "cm-planning"
+    source_skills: ["brainstorming"]
+    reason: "Brainstorming và cm-planning có trigger và mục tiêu trùng lặp ở Phase 0 (đều lên ý tưởng, spec nháp ở đầu phiên)."
+    risk_if_kept: "Agent kích hoạt đồng thời cả hai, gây phình ngữ cảnh khoảng 2,000 token vô ích và làm phân tán spec thiết kế."
+    risk_if_consolidated: "Quy trình lập kế hoạch Phase 0 có thể trở nên quá dài dòng nếu không cấu hình brainstorming thành các step tùy chọn (optional)."
+    rollback_condition: "Nếu người dùng cần một phiên lên ý tưởng mở rộng hoàn toàn độc lập, tách riêng brainstorming ra."
+    confidence: "high"
+
+  - target_skill: "verification-before-completion"
+    source_skills: ["cm-tdd"]
+    reason: "Cả hai đều yêu cầu Agent viết test case và tự sửa lỗi đệ quy để đạt trạng thái GREEN."
+    risk_if_kept: "Agent bị cuốn vào hai vòng lặp kiểm chứng độc lập, làm kéo dài phiên làm việc và tốn token."
+    risk_if_consolidated: "Quy trình verification-before-completion trở nên nặng nề hơn khi phải gánh thêm logic self-healing đệ quy."
+    rollback_condition: "Nếu phát hiện lỗi self-healing đệ quy của TDD làm hỏng kịch bản verification đơn giản."
+    confidence: "medium"
+
+  - target_skill: "cm-debugging"
+    source_skills: ["systematic-debugging"]
+    reason: "Sự chồng chéo 100% trong logic Root Cause Analysis (RCA) và khoanh vùng lỗi."
+    risk_if_kept: "Agent rối loạn khi gặp lỗi, nạp cả hai hướng dẫn debugging gây bloat context."
+    risk_if_consolidated: "Mất đi một số checklist khoanh vùng lỗi của systematic-debugging nếu không tích hợp kỹ."
+    rollback_condition: "Nếu quy trình RCA của cm-debugging quá phức tạp cho các lỗi cú pháp (syntax) đơn giản."
+    confidence: "high"
+
+archive:
+  - skill: "references"
+    reason: "Thư mục `.agent/skills/references` không chứa bất kỳ logic skill nào mà chỉ là nơi lưu tài liệu tham chiếu tĩnh. Việc đặt ở skills/ làm tăng gánh nặng index và làm Agent hiểu nhầm."
+    risk_if_kept: "Agent cố gắng nạp references như một skill active, gây lỗi parser hoặc bloat index."
+    risk_if_consolidated: "Mất đường dẫn truy cập nhanh nếu không di chuyển sang thư mục phù hợp."
+    rollback_condition: "Không có, việc di chuyển sang thư mục tài liệu là bắt buộc và hoàn toàn an toàn."
+    confidence: "high"
+
+convert_to_workflow:
+  - skill: "wiki-rebuild"
+    reason: "Thao tác đồng bộ SQLite với Filesystem thực chất là một chuỗi lệnh (workflow) vận hành cơ trị, không phải là một kỹ năng tư duy hành vi cần định hướng LLM."
+    risk_if_kept: "Agent tự ý chạy rebuild SQLite vô tội vạ khi thấy lệch index nhẹ, làm chậm hệ thống."
+    risk_if_consolidated: "Agent phải chuyển sang gọi workflow bằng slash command hoặc lệnh shell, đòi hỏi tài liệu hướng dẫn rõ ràng."
+    rollback_condition: "Nếu cơ sở dữ liệu SQLite bị hỏng thường xuyên và cần Agent liên tục tự động hồi phục qua skill."
+    confidence: "high"
+
+  - skill: "wiki-cleanup"
+    reason: "Tương tự rebuild, cleanup (dọn link gãy, file rác) là tác vụ bảo trì định kỳ dạng script/workflow."
+    risk_if_kept: "Agent tự chạy cleanup làm thay đổi cấu trúc file trong lúc đang thực hiện task phát triển khác, vi phạm ranh giới an toàn."
+    risk_if_consolidated: "Các link gãy không được phát hiện tự động trong phiên phát triển."
+    rollback_condition: "Nếu việc dọn dẹp link gãy cần logic lý luận phức tạp của Agent thay vì script regex tĩnh."
+    confidence: "high"
+
+  - skill: "wiki-status"
+    reason: "Đo lường mật độ liên kết và đếm Atom là hành động báo cáo (report/audit) tĩnh, nên được chuyển thành kịch bản test hoặc workflow."
+    risk_if_kept: "Hao phí ngữ cảnh khi Agent đọc file status chỉ để biết số lượng Atom."
+    risk_if_consolidated: "Thiếu baselines báo cáo nhanh cho người dùng."
+    rollback_condition: "Nếu người dùng yêu cầu Agent tự giải thích đồ thị liên kết trực quan trong chat."
+    confidence: "high"
+
+convert_to_rule:
+  - skill: "cm-continuity"
+    reason: "Việc cập nhật file CONTINUITY.md ở cuối phiên là một luật chơi bắt buộc (Rule) cho mọi Agent tại Session End, không cần phải là một skill định hướng hành vi kích hoạt ngầm."
+    risk_if_kept: "Agent quên ghi CONTINUITY.md vì skill không được trigger tự động hoặc trigger sai lúc."
+    risk_if_consolidated: "Rule tĩnh bị bỏ qua nếu không có công cụ nhắc nhở tự động ở cuối phiên."
+    rollback_condition: "Nếu việc cập nhật CONTINUITY.md cần logic phân tích sâu sắc hơn là ghi nhận trạng thái tĩnh."
+    confidence: "high"
+
+  - skill: "cm-quality-gate"
+    reason: "Kiểm tra chất lượng trước khi bàn giao là một chốt chặn luật tĩnh (Rule) bắt buộc tuân thủ ở Session End."
+    risk_if_kept: "Agent coi quality gate là tùy chọn và bỏ qua."
+    risk_if_consolidated: "Rule tĩnh không có logic tự động kiểm chứng đệ quy."
+    rollback_condition: "Nếu quy trình kiểm định chất lượng cần các heuristic thay đổi liên tục theo loại task."
+    confidence: "high"

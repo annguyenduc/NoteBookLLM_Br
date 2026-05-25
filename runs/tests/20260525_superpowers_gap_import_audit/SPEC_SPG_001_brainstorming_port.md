@@ -1,3 +1,56 @@
+# SPEC-SPG-001: Adopt Superpowers brainstorming as Phase 0 Core Skill
+
+> **Trạng thái:** DỰ THẢO (Chờ phê duyệt - Requires AN GO)
+> **Mã hiệu:** SPEC-SPG-001
+> **Giai đoạn:** Giai đoạn 2 — Core Phase 0 Adoption (Kích hoạt cổng chào)
+> **Mục tiêu:** Port và chuẩn hóa `brainstorming` của Superpowers làm Phase 0 chính thức của vault, gộp logic phân tích rủi ro của `cm-planning` cũ thành phần thích nghi (adaptation section).
+
+---
+
+## 1. Bối cảnh & Lý do
+Trong mô hình cũ, vault sử dụng `cm-planning` để lập kế hoạch triển khai. Tuy nhiên, để đồng bộ hóa với hệ thống kỹ năng Superpowers nâng cao, chúng ta chọn **Superpowers `brainstorming` làm chuẩn chính cho Phase 0** (khám phá ý định người dùng và phác thảo thiết kế nháp). 
+
+Logic phân tích rủi ro và các cảnh báo nguy hại (Red Flags) cực kỳ xuất sắc của `cm-planning` cũ sẽ không bị bỏ phí mà được tích hợp trực tiếp thành **lớp thích nghi cục bộ** (Adaptation Layer) ngay bên trong `brainstorming`.
+
+---
+
+## 2. Mã nguồn nguồn & Đích đến
+*   **Mã nguồn tham chiếu (Source):** `workspaces/refs/superpowers/skills/brainstorming/SKILL.md`
+*   **Tệp tin cũ gộp vào (Legacy Source):** `.agent/skills/cm-planning/SKILL.md`
+*   **Tệp tin đích (Target Destination):** `.agent/skills/brainstorming/SKILL.md`
+
+---
+
+## 3. Nội dung thiết kế kỹ thuật (Implementation Details)
+
+Tệp tin đích `.agent/skills/brainstorming/SKILL.md` sẽ lấy 100% triết lý và checklist 9 bước của Superpowers làm nền tảng, đồng thời gộp các phần thích nghi sau:
+
+### A. Triết lý gốc (Canonical Standard)
+- Kích hoạt trước bất kỳ công việc sáng tạo, phát triển hoặc refactor nào.
+- Đọc hiểu context dự án, đặt câu hỏi làm rõ **từng câu một (one question at a time)**.
+- Phác thảo 2-3 hướng đi kèm trade-offs và đề xuất của Agent.
+- Viết tài liệu thiết kế (Spec) ra tệp tin Markdown cục bộ trước khi chuyển sang kỹ năng tiếp theo (`writing-plans`).
+- **Cấm tuyệt đối** việc viết code logic hay chỉnh sửa file chính khi chưa được người dùng phê duyệt thiết kế nháp.
+
+### B. Phần thích nghi từ `cm-planning` (Adaptation Layer)
+Chúng ta tích hợp logic của `cm-planning` vào các phần tương ứng:
+1.  **Strategic Risk Assessment (Đánh giá rủi ro chiến lược)**:
+    - Trong bước đề xuất thiết kế, Agent bắt buộc phải bổ sung phần đánh giá rủi ro:
+        - **Impact Level** (Low/Med/High): Số lượng file và module bị ảnh hưởng.
+        - **Breaking Changes**: Liệu thay đổi có nguy cơ phá vỡ tính năng đang chạy bình thường không?
+        - **Security & Data Safety**: Rủi ro về rò rỉ dữ liệu hoặc lỗ hổng bảo mật.
+2.  **Two-Phase Execution Rule (Quy tắc thực thi hai pha)**:
+    - Đối với các dự án refactor hoặc di trú lớn, tài liệu thiết kế bắt buộc phải phân rã thành 2 luồng độc lập:
+        - **Track A (Stabilize):** Chỉ tập trung vào tính tương thích và kiểm thử an toàn.
+        - **Track B (Refactor):** Chứa các thay đổi có nguy cơ xung đột kèm bản đồ khôi phục (rollback map).
+3.  **NoteBookLLM_Br Domain Boundary Guard**:
+    - **Tuyệt đối cấm** kỹ năng brainstorming tự động tạo mới, thăng cấp (promote), hoặc ghi đè canonical atom lên `3-resources/`. Brainstorming chỉ dùng để thiết kế nháp trong chat và lưu spec cục bộ dưới dạng markdown. Mọi canonical atom bắt buộc phải qua ingest/absorb workflow chính quy và có AN GO.
+
+---
+
+## 4. Dự thảo nội dung tệp tin đích `.agent/skills/brainstorming/SKILL.md`
+
+```markdown
 ---
 name: brainstorming
 description: Dùng trước công việc sáng tạo (tính năng, component). Khám phá ý định người dùng, yêu cầu và thiết kế trước khi lập trình.
@@ -90,3 +143,17 @@ digraph brainstorming {
 - **User Review Gate:** Ask user to review the written spec. Wait for approval.
 - **Implementation:** Invoke the `writing-plans` skill to create a detailed implementation plan. Do NOT invoke any other skill.
 ```
+
+---
+
+## 5. Kế hoạch khôi phục (Rollback Plan)
+*   **Backup**: Trước khi ghi đè tệp tin đích `.agent/skills/brainstorming/SKILL.md`, Agent bắt buộc phải sao lưu tệp tin hiện tại sang:
+    `.agent/skills/brainstorming/SKILL.md.bak` bằng công cụ tạo file.
+*   **Restore**: Nếu Agent vận hành không ổn định hoặc gặp lỗi định tuyến, thực hiện khôi phục nguyên trạng tệp tin cũ bằng cách ghi đè nội dung từ `.agent/skills/brainstorming/SKILL.md.bak` quay lại `.agent/skills/brainstorming/SKILL.md` và xóa tệp tin backup.
+
+---
+
+## 6. Kế hoạch kiểm thử (Test Plan)
+Sau khi port thành công, Agent bắt buộc phải kiểm tra lại hệ thống định tuyến bằng cách:
+1.  Chạy/đọc kịch bản test case **`T001_planning_trigger.md`** dưới `.agent/tests/skill-triggering/` để xác nhận Agent tự động gọi `brainstorming` chuẩn Phase 0 khi nhận được yêu cầu phát triển mới.
+2.  Xác nhận Agent nạp chính xác các chốt chặn rủi ro và **tuyệt đối không kích hoạt bất kỳ canonical write nào** lên `3-resources/` hay tự động tạo Atom.

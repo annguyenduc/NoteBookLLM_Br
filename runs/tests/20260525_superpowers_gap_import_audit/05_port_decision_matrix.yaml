@@ -1,0 +1,191 @@
+port_decisions:
+  - item: "skill-triggering"
+    item_type: "test"
+    source_path: "workspaces/refs/superpowers/tests/skill-triggering"
+    vault_target: ".agent/tests/skill-triggering"
+    decision: "adapt_as_test"
+    priority: "high"
+    import_mode: "test_pattern_adaptation"
+    requires_new_spec: true
+    requires_user_GO: true
+    notes:
+      - "Giai đoạn 1: Móng kiểm thử an toàn."
+      - "Thích nghi các kịch bản kiểm thử định tuyến skill (T001 -> T005) để chạy tự động."
+      - "Bảo hiểm ranh giới định tuyến, ngăn chặn việc Agent bị loạn định tuyến khi thay đổi skill."
+
+  - item: "explicit-skill-requests"
+    item_type: "test"
+    source_path: "workspaces/refs/superpowers/tests/explicit-skill-requests"
+    vault_target: ".agent/tests/explicit-skill-requests"
+    decision: "adapt_as_test"
+    priority: "high"
+    import_mode: "test_pattern_adaptation"
+    requires_new_spec: true
+    requires_user_GO: true
+    notes:
+      - "Giai đoạn 1: Móng kiểm thử an toàn."
+      - "Xây dựng các kịch bản kiểm định T011_explicit_wiki_ingest_request và T012_explicit_pedagogy_request."
+      - "Đảm bảo Agent không bao giờ bypass các chốt chặn tĩnh ngay cả khi người dùng yêu cầu trực tiếp."
+
+  - item: "subagent-driven-dev"
+    item_type: "test"
+    source_path: "workspaces/refs/superpowers/tests/subagent-driven-dev"
+    vault_target: ".agent/tests/subagent-driven-dev"
+    decision: "adapt_as_test"
+    priority: "high"
+    import_mode: "test_pattern_adaptation"
+    requires_new_spec: true
+    requires_user_GO: true
+    notes:
+      - "Giai đoạn 1: Móng kiểm thử an toàn."
+      - "Xây dựng T021_subagent_token_limit và T022_subagent_write_isolation."
+      - "Kiểm soát ngân sách token và ngăn chặn subagent ghi đè trực tiếp lên core vault."
+
+  - item: "using-superpowers"
+    item_type: "skill"
+    source_path: "workspaces/refs/superpowers/skills/using-superpowers"
+    vault_target: ".agent/skills/using-superpowers"
+    decision: "port"
+    priority: "high"
+    import_mode: "vault_adapted_port"
+    requires_new_spec: true
+    requires_user_GO: true
+    notes:
+      - "Giai đoạn 2: Cổng chào Phase 0."
+      - "Chuẩn hóa làm bootstrap gateway chính thức cho Antigravity."
+      - "Thích nghi cơ chế nạp skill qua view_file và bắt buộc checklist thông báo '🔧 Using [skill] to [purpose]'."
+      - "Phụ thuộc: Phải thông qua bài test định tuyến của Giai đoạn 1."
+
+  - item: "brainstorming"
+    item_type: "skill"
+    source_path: "workspaces/refs/superpowers/skills/brainstorming"
+    vault_target: ".agent/skills/brainstorming"
+    decision: "port"
+    priority: "high"
+    import_mode: "vault_adapted_port"
+    requires_new_spec: true
+    requires_user_GO: true
+    notes:
+      - "Giai đoạn 2: Lấy Superpowers brainstorming làm chuẩn Phase 0 chính."
+      - "Hợp nhất logic planning và phân tích rủi ro của cm-planning cũ thành adaptation section."
+      - "Phụ thuộc: Chỉ archive cm-planning sau khi brainstorming mới pass 100% test T003/T004."
+
+  - item: "test-driven-development"
+    item_type: "skill"
+    source_path: "workspaces/refs/superpowers/skills/test-driven-development"
+    vault_target: ".agent/skills/test-driven-development"
+    decision: "port"
+    priority: "high"
+    import_mode: "vault_adapted_port"
+    requires_new_spec: true
+    requires_user_GO: true
+    notes:
+      - "Giai đoạn 3: Chuẩn hóa kiểm thử đệ quy."
+      - "Gom logic self-healing của cm-tdd cũ thành phần thích nghi (adaptation section)."
+      - "Phụ thuộc: Chỉ archive cm-tdd cũ sau khi test case TDD kiểm chứng đạt GREEN."
+
+  - item: "systematic-debugging"
+    item_type: "skill"
+    source_path: "workspaces/refs/superpowers/skills/systematic-debugging"
+    vault_target: ".agent/skills/systematic-debugging"
+    decision: "port"
+    priority: "high"
+    import_mode: "vault_adapted_port"
+    requires_new_spec: true
+    requires_user_GO: true
+    notes:
+      - "Giai đoạn 3: Chuẩn hóa debugging."
+      - "Gom các checklist RCA chẩn đoán lỗi đặc thù của cm-debugging cũ thành adaptation section."
+      - "Phụ thuộc: Chỉ archive cm-debugging cũ sau khi test case chẩn đoán pass."
+
+  - item: "requesting-code-review"
+    item_type: "skill"
+    source_path: "workspaces/refs/superpowers/skills/requesting-code-review"
+    vault_target: ".agent/skills/requesting-code-review"
+    decision: "port"
+    priority: "medium"
+    import_mode: "vault_adapted_port"
+    requires_new_spec: true
+    requires_user_GO: true
+    notes:
+      - "Giai đoạn 4: Chuẩn hóa review."
+      - "Loại bỏ hoàn toàn các giả định về việc tự động tạo GitHub PR, thích nghi trình diff sạch cho user."
+      - "Gom các checklist tĩnh của cm-code-review cũ làm nguồn adaptation."
+
+  - item: "receiving-code-review"
+    item_type: "skill"
+    source_path: "workspaces/refs/superpowers/skills/receiving-code-review"
+    vault_target: ".agent/skills/receiving-code-review"
+    decision: "port"
+    priority: "medium"
+    import_mode: "vault_adapted_port"
+    requires_new_spec: true
+    requires_user_GO: true
+    notes:
+      - "Giai đoạn 4: Chuẩn hóa nhận phản hồi."
+      - "Gom logic xử lý feedback của cm-code-review cũ làm nguồn adaptation."
+      - "Phụ thuộc: Chỉ archive cm-code-review cũ sau khi bộ đôi review mới pass test kiểm định."
+
+  - item: "writing-skills"
+    item_type: "skill"
+    source_path: "workspaces/refs/superpowers/skills/writing-skills"
+    vault_target: ".agent/skills/writing-skills"
+    decision: "port"
+    priority: "high"
+    import_mode: "vault_adapted_port"
+    requires_new_spec: true
+    requires_user_GO: true
+    notes:
+      - "Giai đoạn 4: Chuẩn hóa chỉnh sửa kỹ năng."
+      - "Gom logic write-skill cũ làm nguồn adaptation."
+      - "Bảo toàn quy trình bắt buộc phải có SIP/Rule-Review và test hồi quy local."
+
+  - item: "dispatching-parallel-agents"
+    item_type: "skill"
+    source_path: "workspaces/refs/superpowers/skills/dispatching-parallel-agents"
+    vault_target: ".agent/skills/dispatching-parallel-agents"
+    decision: "port"
+    priority: "high"
+    import_mode: "vault_adapted_port"
+    requires_new_spec: true
+    requires_user_GO: true
+    notes:
+      - "Giai đoạn 4: Điều phối tác nhân song song."
+      - "Phụ thuộc: Chỉ kích hoạt sau khi test case kiểm soát token budget qua cm-context-budget đạt GREEN."
+
+  - item: "using-git-worktrees"
+    item_type: "skill"
+    source_path: "workspaces/refs/superpowers/skills/using-git-worktrees"
+    vault_target: null
+    decision: "reference_only"
+    priority: "low"
+    import_mode: "none"
+    requires_new_spec: false
+    requires_user_GO: false
+    notes:
+      - "Quy tắc worktree đã đóng băng trong AGENTS.md, giữ làm tham chiếu tĩnh."
+
+  - item: "finishing-a-development-branch"
+    item_type: "skill"
+    source_path: "workspaces/refs/superpowers/skills/finishing-a-development-branch"
+    vault_target: null
+    decision: "reference_only"
+    priority: "low"
+    import_mode: "none"
+    requires_new_spec: false
+    requires_user_GO: false
+    notes:
+      - "Cấm commit/push tự động, giữ làm tham chiếu, không kích hoạt active skill."
+
+  - item: "codex-plugin-sync"
+    item_type: "test"
+    source_path: "workspaces/refs/superpowers/tests/codex-plugin-sync"
+    vault_target: null
+    decision: "reference_only"
+    priority: "low"
+    import_mode: "none"
+    requires_new_spec: false
+    requires_user_GO: false
+    notes:
+      - "Chỉ giữ làm reference cho cơ chế packaging plugin về sau."
+

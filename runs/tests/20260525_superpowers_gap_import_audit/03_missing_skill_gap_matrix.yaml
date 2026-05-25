@@ -1,0 +1,135 @@
+missing_or_partial_skills:
+  - superpowers_skill: "using-superpowers"
+    vault_equivalent: "using-superpowers"
+    gap_type: "partial"
+    category: "core_method"
+    should_import: true
+    decision: "port"
+    priority: "high"
+    reason: "Chuẩn hóa using-superpowers của Superpowers làm chuẩn bootstrap chính cho Antigravity, khắc phục việc quản lý trigger skill đầu phiên và giữ kỷ luật vận hành."
+    required_vault_adaptations:
+      - "Thích nghi các công cụ kích hoạt kỹ năng đặc thù của Antigravity (view_file trên SKILL.md file)."
+      - "Tích hợp checklist thông báo bắt buộc: '🔧 Using [skill] to [purpose]' ở đầu mỗi lượt phản hồi."
+      - "Bảo toàn các quy tắc override riêng của NoteBookLLM_Br (synthesis check, cấm tự động brainstorming để sinh Atom)."
+    risks_if_imported:
+      - "Có thể gây xung đột với các cơ chế bootstrap mặc định nếu phần tích hợp Antigravity không được cấu trúc tường minh."
+    risks_if_not_imported:
+      - "Thiếu kỷ luật bootstrap đầu phiên, khiến Antigravity dễ đi đường tắt mà bỏ qua việc nạp các kỹ năng phương pháp luận liên quan."
+    confidence: "high"
+
+  - superpowers_skill: "brainstorming"
+    vault_equivalent: "cm-planning"
+    gap_type: "partial"
+    category: "core_method"
+    should_import: true
+    decision: "port"
+    priority: "high"
+    reason: "Lấy Superpowers brainstorming làm chuẩn chính cho Phase 0 (khám phá ý định và Spec nháp), thay thế cm-planning cũ của vault."
+    required_vault_adaptations:
+      - "Tích hợp logic phân tích rủi ro và RCA lỗi của cm-planning cũ thành một Adaptation Section bổ trợ trong brainstorming standard."
+      - "Tuân thủ tuyệt đối quy định không tự ý sửa đổi code gốc hay rules hệ thống khi chưa được phê duyệt."
+    risks_if_imported:
+      - "Agent có thể lãng quên việc phân tích rủi ro RCA nếu tài liệu thích nghi không được cấu trúc rõ ràng."
+    risks_if_not_imported:
+      - "Gây Trigger Conflict nghiêm trọng ở đầu phiên khi cả cm-planning và brainstorming cùng kích hoạt."
+    confidence: "high"
+
+  - superpowers_skill: "test-driven-development"
+    vault_equivalent: "cm-tdd"
+    gap_type: "partial"
+    category: "core_method"
+    should_import: true
+    decision: "port"
+    priority: "high"
+    reason: "Lấy Superpowers TDD làm chuẩn chính cho quy trình kiểm thử và tự sửa lỗi đệ quy, thay thế cm-tdd cũ của vault."
+    required_vault_adaptations:
+      - "Tích hợp logic self-healing đệ quy của cm-tdd cũ thành Adaptation Section bổ trợ."
+      - "Bảo toàn quy định: Phải chạy test case tái hiện lỗi và chứng minh lỗi trước khi viết code sửa đổi."
+    risks_if_imported:
+      - "Tăng độ phức tạp của logic self-healing đệ quy nếu kịch bản test quá cồng kềnh."
+    risks_if_not_imported:
+      - "Quy trình kiểm thử thiếu sự thống nhất về mặt tên gọi và trigger so với chuẩn Superpowers."
+    confidence: "high"
+
+  - superpowers_skill: "systematic-debugging"
+    vault_equivalent: "cm-debugging"
+    gap_type: "partial"
+    category: "core_method"
+    should_import: true
+    decision: "port"
+    priority: "high"
+    reason: "Lấy Superpowers systematic-debugging làm chuẩn chính cho quy trình chẩn đoán lỗi, thay thế cm-debugging cũ."
+    required_vault_adaptations:
+      - "Tích hợp các checklist phân tích RCA chi tiết của cm-debugging cũ làm Adaptation Section."
+    risks_if_imported:
+      - "Mất các checklist khoanh vùng lỗi đặc thù của vault nếu không tích hợp kỹ."
+    risks_if_not_imported:
+      - "Hao tốn token do Agent nạp cả hai hướng dẫn chẩn đoán lỗi chồng chéo."
+    confidence: "high"
+
+  - superpowers_skill: "dispatching-parallel-agents"
+    vault_equivalent: null
+    gap_type: "missing"
+    category: "core_method"
+    should_import: true
+    decision: "port"
+    priority: "high"
+    reason: "Kỹ năng phương pháp luận lõi giúp AI Agent biết cách khởi tạo, điều phối và giám sát nhiều subagent chạy song song để giải quyết các task phức tạp quy mô lớn."
+    required_vault_adaptations:
+      - "Tích hợp cơ chế kiểm soát token budget qua cm-context-budget cho từng tác nhân song song."
+      - "Tuân thủ tuyệt đối ranh giới no-commit và no-canonical-write cho tất cả các subagent được gọi."
+      - "Các subagent song song chỉ được ghi kết quả nháp vào runs/ hoặc workspaces con được chỉ định."
+    risks_if_imported:
+      - "Dễ gây bùng nổ token tiêu thụ và phình context nếu Agent cha không giám sát chặt chẽ trạng thái của các subagent."
+    risks_if_not_imported:
+      - "Agent bị giới hạn trong việc giải quyết các task lớn đòi hỏi sự phân rã công việc chạy song song."
+    confidence: "high"
+
+  - superpowers_skill: "requesting-code-review"
+    vault_equivalent: "cm-code-review"
+    gap_type: "partial"
+    category: "core_method"
+    should_import: true
+    decision: "port"
+    priority: "medium"
+    reason: "Quy chuẩn của Superpowers hướng dẫn chi tiết cách Agent chuẩn bị và gửi yêu cầu review một cách bài bản trước khi chốt code."
+    required_vault_adaptations:
+      - "Loại bỏ hoàn toàn các giả định về việc tự động tạo GitHub PR."
+      - "Thích nghi sang việc trình bày diff sạch và yêu cầu người dùng duyệt trực tiếp trong chat."
+    risks_if_imported:
+      - "Có thể làm Agent hiểu lầm là có quyền push code lên remote repository."
+    risks_if_not_imported:
+      - "Agent có thể bỏ qua bước trình bày diff sạch trước khi báo hoàn thành."
+    confidence: "high"
+
+  - superpowers_skill: "using-git-worktrees"
+    vault_equivalent: "cm-git-flow"
+    gap_type: "partial"
+    category: "workflow_support"
+    should_import: false
+    decision: "reference_only"
+    priority: "low"
+    reason: "Kỹ năng hướng dẫn Agent cách tạo và dọn dẹp Git Worktree. Vault đã đóng băng ranh giới Worktree tĩnh rất cứng trong AGENTS.md nên Agent không cần tự suy lý logic này trong phiên chạy thường nhật."
+    required_vault_adaptations:
+      - "Không áp dụng cho runtime skill thường trực."
+    risks_if_imported:
+      - "Agent tự ý tạo thêm các worktrees vật lý trên ổ đĩa của người dùng gây lãng phí dung lượng và rác thư mục."
+    risks_if_not_imported:
+      - "Không có rủi ro đáng kể do ranh giới worktree của vault đã được thiết lập tĩnh."
+    confidence: "high"
+
+  - superpowers_skill: "finishing-a-development-branch"
+    vault_equivalent: null
+    gap_type: "missing"
+    category: "vault_irrelevant"
+    should_import: false
+    decision: "reference_only"
+    priority: "low"
+    reason: "Kỹ năng tự động dọn dẹp Git branch, merge PR và sync branch. Vault cấm tuyệt đối việc tự động commit, push hay merge Git nhằm bảo vệ an toàn mã nguồn."
+    required_vault_adaptations:
+      - "Không áp dụng."
+    risks_if_imported:
+      - "Agent tự ý dọn dẹp branch làm mất code đang sửa của người dùng hoặc phá vỡ cấu trúc Git."
+    risks_if_not_imported:
+      - "Không có, quy trình Git merge và dọn dẹp branch hoàn toàn do con người quản lý tĩnh."
+    confidence: "high"
