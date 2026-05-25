@@ -25,6 +25,27 @@ Read order:
 - tạo report kỹ thuật non-canonical trước khi sửa scripts chính.
 - giảm context cho các task code không cần ingest/wiki governance đầy đủ.
 
+## Physical Workspace Boundary
+
+Current compatibility path:
+
+```text
+../../scripts/
+```
+
+Future code-plane home:
+
+```text
+scripts/
+tools/
+libs/
+tests/
+sandbox/
+```
+
+Until `.agent/config/paths.yaml` migration and regression checks pass, production scripts stay at `../../scripts/`.
+New experiments, temporary tools, probes, and throwaway tests should be created inside this workspace, preferably under `sandbox/`, `experiments/`, or `reports/`.
+
 ## Active Workflow
 
 Default workflow:

@@ -1,0 +1,29 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.venv": true,
+    "**/.venv_virtualenv_failed": true,
+    "**/.pytest_cache": true,
+    "**/__pycache__": true,
+    "**/runs": true,
+    "**/scratch": true
+  },
+  "search.exclude": {
+    "**/.git": true,
+    "**/.venv": true,
+    "**/.venv_virtualenv_failed": true,
+    "**/.pytest_cache": true,
+    "**/__pycache__": true,
+    "**/runs": true,
+    "**/scratch": true
+  },
+  "files.watcherExclude": {
+    "**/.git/**": true,
+    "**/.venv/**": true,
+    "**/.venv_virtualenv_failed/**": true,
+    "**/.pytest_cache/**": true,
+    "**/__pycache__/**": true,
+    "**/runs/**": true,
+    "**/scratch/**": true
+  }
+}

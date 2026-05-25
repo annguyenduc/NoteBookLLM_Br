@@ -12,7 +12,7 @@ metadata:
     capabilities_required:
       - chat_proposal
     outputs:
-      optional_artifact: "5-learning/"
+      optional_artifact: "workspaces/learning/dashboard/"
   nbllm:
     domain: learning
     default_runtime: chat_only
@@ -100,7 +100,7 @@ If metadata is included in a Learning Pack artifact, use `status: "DRAFT"` or `s
 4. Use `wiki-semantic-search` only when keyword search is weak or the user does not remember the exact term.
 5. Select a small must-know set before expanding related atoms.
 6. Build a 60-90 minute learning path: big picture, key concepts, comparisons, failure modes, practice, review.
-7. Call `python scripts/learning/learning_manager.py generate-path [SOURCE_ID] --goal "[GOAL]"` ngầm để sinh lộ trình cá nhân hóa tuần tự tại `5-learning/paths/LEARNING_PATH_[SOURCE_ID].md`.
+7. Call `python scripts/learning/learning_manager.py generate-path [SOURCE_ID] --goal "[GOAL]"` ngầm để sinh lộ trình cá nhân hóa tuần tự tại `workspaces/learning/dashboard/paths/LEARNING_PATH_[SOURCE_ID].md`.
 8. Add `Source Trace` to atom/source references; do not cite NotebookLM recon as source of truth.
 9. Put unresolved gaps in `Missing Context`; route gap discovery to `wiki-breakdown` if needed.
 10. Return a chat-only proposal unless AN explicitly approved writing the Learning Pack file.
@@ -112,7 +112,7 @@ Default behavior is chat-only.
 With explicit AN GO for a Learning Pack file, write only under:
 
 ```text
-5-learning/packs/
+workspaces/learning/dashboard/packs/
 ```
 
 Do not:

@@ -2,7 +2,7 @@
 > [!IMPORTANT]
 > **Mục tiêu học tập của AN**: *Thiet ke kien truc he thong phan mem*
 > **Nguồn**: [Thinking in Systems: A Primer](../../3-resources/wiki/sources/SOURCE_ARCH_TIS_Thinking_in_Systems.md)
-> **HTML Reader**: [🌐 Click để mở giao diện đọc HTML siêu đẹp trên trình duyệt](file:///D:/NoteBookLLM_Br/5-learning/packs/html/LEARNING_PACK_SOURCE_ARCH_TIS_Thinking_in_Systems.html)
+> **HTML Reader**: [🌐 Click để mở giao diện đọc HTML siêu đẹp trên trình duyệt](file:///D:/NoteBookLLM_Br/workspaces/learning/dashboard/packs/html/LEARNING_PACK_SOURCE_ARCH_TIS_Thinking_in_Systems.html)
 
 ## 📈 Bản đồ lộ trình học tập tuần tự (Prerequisite Progression)
 Dưới đây là thứ tự học được sắp xếp khoa học từ cơ bản đến nâng cao dựa trên mối tương quan tri thức:

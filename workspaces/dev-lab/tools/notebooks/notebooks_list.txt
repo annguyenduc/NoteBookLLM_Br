@@ -1,0 +1,34 @@
+﻿Fetching notebooks...
+
+Found 6 notebooks:
+
+1. Bß║úng Tra Cß╗⌐u Chß╗ë Sß╗æ T─âng Tr╞░ß╗ƒng Sß║ún Phß║⌐m
+   ID: ceb8b6e6-9f47-4e32-b448-c1009613bffd
+   Sources: 79
+   URL: https://notebooklm.google.com/notebook/ceb8b6e6-9f47-4e32-b448-c1009613bffd
+
+2. Kh├│a hß╗ìc To├án diß╗çn Claude Code 2026
+   ID: 4361ac8e-1adc-40e1-9981-f75400acc239
+   Sources: 2
+   URL: https://notebooklm.google.com/notebook/4361ac8e-1adc-40e1-9981-f75400acc239
+
+3. Ph├ón t├¡ch dß╗» liß╗çu 
+   ID: 5d85b2ea-ab78-4b44-aa3e-89170dc4f2f2
+   Sources: 6
+   URL: https://notebooklm.google.com/notebook/5d85b2ea-ab78-4b44-aa3e-89170dc4f2f2
+
+4. Ph├ón T├¡ch Dß╗» Liß╗çu Hß╗Öi Thoß║íi
+   ID: f2c94d95-6efe-4ca9-8388-ca8fc3ab8a34
+   Sources: 6
+   URL: https://notebooklm.google.com/notebook/f2c94d95-6efe-4ca9-8388-ca8fc3ab8a34
+
+5. Chiß║┐n L╞░ß╗úc Kinh Doanh AI Bß╗ün Vß╗»ng V├á ─Éß╗Öt Ph├í
+   ID: 3a2eb5e8-9c93-4093-816a-1e779a037a13
+   Sources: 1
+   URL: https://notebooklm.google.com/notebook/3a2eb5e8-9c93-4093-816a-1e779a037a13
+
+6. Cß║⌐m Nang Thß╗▒c H├ánh AI v├á Hß╗ìc M├íy
+   ID: d3e26393-0678-481c-a7f9-5497b0c03fb6
+   Sources: 1
+   URL: https://notebooklm.google.com/notebook/d3e26393-0678-481c-a7f9-5497b0c03fb6
+

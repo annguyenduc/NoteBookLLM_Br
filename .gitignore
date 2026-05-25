@@ -9,6 +9,14 @@
 !/SOUL.md
 !/USER.md
 !/WORKSPACE_OVERVIEW.md
+!/notebook-learning.code-workspace
+!/notebook-dev.code-workspace
+!/notebook-source.code-workspace
+!/notebook-research.code-workspace
+
+# Compatibility shim only. Real libs live under workspaces/dev-lab/libs.
+!/libs/
+!/libs/__init__.py
 
 # 3. Core vault directories
 !/00_Inbox/
@@ -26,9 +34,6 @@
 !/3-resources/
 !/3-resources/**
 
-!/5-learning/
-!/5-learning/**
-
 !/workspaces/
 /workspaces/*
 !/workspaces/README.md
@@ -39,6 +44,18 @@
 !/workspaces/*/*/
 /workspaces/*/*/*
 !/workspaces/*/*/.gitkeep
+!/workspaces/*/.vscode/
+!/workspaces/*/.vscode/settings.json
+!/workspaces/dev-lab/scripts/
+!/workspaces/dev-lab/scripts/**
+!/workspaces/dev-lab/tools/
+!/workspaces/dev-lab/tools/**
+!/workspaces/dev-lab/libs/
+!/workspaces/dev-lab/libs/**
+!/workspaces/dev-lab/tests/
+!/workspaces/dev-lab/tests/**
+!/workspaces/learning/dashboard/
+!/workspaces/learning/dashboard/**
 
 # 4. Agent/runtime control files
 !/.agent/
@@ -65,3 +82,7 @@
 # 6. Python/cache
 **/__pycache__/
 **/*.pyc
+**/.env
+**/*.log
+**/cache/**
+**/output/**

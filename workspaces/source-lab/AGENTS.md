@@ -26,6 +26,20 @@ Read order:
 - hỏi NotebookLM để lập cấu trúc tài liệu.
 - chuẩn bị đề xuất có nên ingest chính thức không.
 
+## Physical Workspace Boundary
+
+Preview/source-lab runtime work belongs here:
+
+```text
+inbox/
+converted/
+runs/
+reports/
+```
+
+Root `../../runs/` remains reserved for official ingest runtime packages until the ingest lifecycle is migrated and tested against `.agent/config/paths.yaml`.
+Do not create new casual OCR/convert outputs in root `runs/` or root `scratch/`.
+
 ## Active Workflow
 
 Default workflow:

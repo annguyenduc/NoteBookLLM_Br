@@ -26,6 +26,32 @@ Read order:
 - tạo ghi chú học nhanh (learning note).
 - giúp AN quyết định `SKIP | KEEP_SUMMARY | PROMOTE`.
 
+## Physical Workspace Boundary
+
+Learning drafts and preview artifacts belong here:
+
+```text
+notes/
+flashcards/
+questions/
+outputs/
+preview/
+```
+
+Learning dashboard path:
+
+```text
+dashboard/
+```
+
+Learning output home:
+
+```text
+outputs/
+```
+
+The legacy root `../../5-learning/` has been migrated into this workspace. Do not recreate it at root.
+
 ## Active Workflow
 
 Default workflow:

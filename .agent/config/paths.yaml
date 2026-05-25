@@ -41,6 +41,27 @@ workspaces:
   research_lab: "workspaces/research-lab"
   dev_lab: "workspaces/dev-lab"
 
+code_plane:
+  current_scripts: "scripts"
+  compatibility_libs_shim: "libs/__init__.py"
+  future_scripts: "workspaces/dev-lab/scripts"
+  future_tools: "workspaces/dev-lab/tools"
+  future_libs: "workspaces/dev-lab/libs"
+  future_tests: "workspaces/dev-lab/tests"
+  migration_status: "DEV_LAB_IMPORTED_WITH_LIBS_SHIM"
+
+runtime_plane:
+  current_runs: "runs"
+  future_source_runs: "workspaces/source-lab/runs"
+  future_dev_sandbox: "workspaces/dev-lab/sandbox"
+  migration_status: "ROOT_RUNS_RETAINED_FOR_OFFICIAL_INGEST"
+
+learning_plane:
+  legacy_learning_root: "5-learning"
+  current_learning_root: "workspaces/learning/dashboard"
+  future_learning_outputs: "workspaces/learning/outputs"
+  migration_status: "MIGRATED_TO_WORKSPACE_DASHBOARD"
+
 compatibility:
   frozen_paths:
     - "00_Inbox"
@@ -51,3 +72,4 @@ compatibility:
     - ".agent"
     - "scripts"
   migration_rule: "Do not rename or move frozen paths until scripts are migrated to this registry and regression checks pass."
+  physical_workspace_plan: ".agent/docs/PLAN_PHYSICAL_WORKSPACE_MIGRATION.md"

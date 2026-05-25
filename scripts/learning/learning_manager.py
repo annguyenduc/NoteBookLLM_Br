@@ -27,7 +27,7 @@ ROOT_DIR = os.getenv(
 )
 WIKI_DIR = os.getenv("WIKI_ROOT_PATH", os.path.join(ROOT_DIR, "3-resources", "wiki"))
 DB_PATH  = os.getenv("WIKI_DB_PATH", os.path.join(WIKI_DIR, "wiki_brain.db"))
-LEARNING_DIR = os.path.join(ROOT_DIR, "5-learning")
+LEARNING_DIR = os.path.join(ROOT_DIR, "workspaces", "learning", "dashboard")
 
 def get_db_connection() -> sqlite3.Connection:
     return sqlite3.connect(DB_PATH)

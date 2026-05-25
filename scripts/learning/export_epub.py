@@ -284,21 +284,22 @@ def main():
         print("Lỗi: Không có Atom nào vượt qua bộ lọc chính sách trạng thái (status_policy).", file=sys.stderr)
         return 1
 
-    # Tìm kiếm file sắp xếp học tập (ưu tiên Learning Pack ở 5-learning/packs/, sau đó fallback sang 5-learning/paths/)
+    # Tìm kiếm file sắp xếp học tập (ưu tiên Learning Pack ở workspaces/learning/dashboard/packs/, sau đó fallback sang workspaces/learning/dashboard/paths/)
     learning_order = []
     learning_file = None
     
-    # 1. Tìm ở 5-learning/packs/
-    learning_pack_dir = repo_root / "5-learning" / "packs"
+    # 1. Tìm ở workspaces/learning/dashboard/packs/
+    learning_root = repo_root / "workspaces" / "learning" / "dashboard"
+    learning_pack_dir = learning_root / "packs"
     if learning_pack_dir.exists():
         pack_files = list(learning_pack_dir.glob(f"*{source_id}*.md"))
         if pack_files:
             learning_file = pack_files[0]
             print(f"Tìm thấy Learning Pack để sắp xếp: {learning_file.name}")
             
-    # 2. Fallback sang 5-learning/paths/
+    # 2. Fallback sang workspaces/learning/dashboard/paths/
     if not learning_file:
-        learning_path_dir = repo_root / "5-learning" / "paths"
+        learning_path_dir = learning_root / "paths"
         if learning_path_dir.exists():
             path_files = list(learning_path_dir.glob(f"*{source_id}*.md"))
             if path_files:
@@ -442,7 +443,7 @@ def main():
     
     # Đọc nội dung CSS và JS từ assets để nhúng trực tiếp vào file HTML tự chứa (self-contained)
     css_content = ""
-    html_css_path = repo_root / "5-learning" / "packs" / "html" / "assets" / "learning-pack.css"
+    html_css_path = repo_root / "workspaces" / "learning" / "dashboard" / "packs" / "html" / "assets" / "learning-pack.css"
     if html_css_path.exists():
         try:
             css_content = html_css_path.read_text(encoding="utf-8")
@@ -450,7 +451,7 @@ def main():
             print(f"Cảnh báo: Không thể đọc file CSS. Chi tiết: {e}")
 
     js_content = ""
-    html_js_path = repo_root / "5-learning" / "packs" / "html" / "assets" / "learning-pack.js"
+    html_js_path = repo_root / "workspaces" / "learning" / "dashboard" / "packs" / "html" / "assets" / "learning-pack.js"
     if html_js_path.exists():
         try:
             js_content = html_js_path.read_text(encoding="utf-8")

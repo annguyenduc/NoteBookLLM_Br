@@ -26,7 +26,7 @@ Do NOT use this skill for:
 
 1. **Pandoc CLI:** Ensure Pandoc is installed. A portable binary can be placed in `scripts/learning/bin/` or resolved from system PATH.
 2. **Manifest File:** A YAML manifest file must exist at `exports/reader/[source_id].reader.yml`.
-3. **Learning Pack:** A Gói học nhanh Markdown file must exist under `5-learning/packs/` (e.g., `LEARNING_PACK_SOURCE_[source_id]_*.md`) to define the chapter sequence.
+3. **Learning Pack:** A Gói học nhanh Markdown file must exist under `workspaces/learning/dashboard/packs/` (e.g., `LEARNING_PACK_SOURCE_[source_id]_*.md`) to define the chapter sequence.
 4. **Stylesheets & Templates:** Ensure `epub_style.css` and `learning_pack_reader.html` exist in `scripts/learning/templates/`.
 
 ## Input
@@ -38,8 +38,8 @@ Accepts:
 ## Output
 
 Generates:
-- **HTML Reader:** An offline, self-contained single-page HTML file under `5-learning/packs/html/` with CSS and JS embedded.
-- **EPUB Book:** A mobile-optimized EPUB book under `5-learning/packs/epub/` with simplified Table of Contents (TOC depth 1).
+- **HTML Reader:** An offline, self-contained single-page HTML file under `workspaces/learning/dashboard/packs/html/` with CSS and JS embedded.
+- **EPUB Book:** A mobile-optimized EPUB book under `workspaces/learning/dashboard/packs/epub/` with simplified Table of Contents (TOC depth 1).
 
 ## Workflow
 
@@ -48,12 +48,12 @@ Generates:
    - `include` patterns pointing to the raw markdown atoms.
    - `outputs` paths for HTML and EPUB.
    - `epub` settings (e.g., `toc: true`, `toc_depth: 1`, and `css` template path).
-2. **Check Learning Pack:** Locate `5-learning/packs/` for a file matching `*[source_id]*.md` and verify it contains `[[ATOM_ID]]` references representing the desired chapter sequence.
+2. **Check Learning Pack:** Locate `workspaces/learning/dashboard/packs/` for a file matching `*[source_id]*.md` and verify it contains `[[ATOM_ID]]` references representing the desired chapter sequence.
 3. **Compile Book:** Execute the export script:
    ```powershell
    python scripts/learning/export_epub.py --manifest exports/reader/[source_id].reader.yml
    ```
-4. **Update Dashboard:** Ensure `5-learning/LEARNING_DASHBOARD.md` is updated to include links to the newly generated `[🌐 HTML Reader]` and `[📚 Sách EPUB]`.
+4. **Update Dashboard:** Ensure `workspaces/learning/dashboard/LEARNING_DASHBOARD.md` is updated to include links to the newly generated `[🌐 HTML Reader]` and `[📚 Sách EPUB]`.
 5. **Verify Outputs:** Validate that:
    - Files are successfully created at the target paths.
    - File sizes are non-zero.
