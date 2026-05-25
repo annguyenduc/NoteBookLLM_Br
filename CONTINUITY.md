@@ -1,12 +1,11 @@
 # CONTINUITY.md
 
 ```yaml
-current_state: "Đã hoàn thành toàn bộ Root Slimming & Learning Isolation trên nhánh agent/multi-workspace-isolation tại D:\\_agent_worktrees\\agent-multi-workspace-isolation. Các thư mục root tools/, tests/, 5-learning/ đã được xóa sạch. Thư mục root libs/ đã được thay thế hoàn toàn bằng compatibility shim libs/__init__.py. Đã chạy thử nghiệm tương thích thành công trên các script learning_manager.py và export_epub.py bằng môi trường ảo .venv."
-next_step_for_AN: "Review danh sách commit-ready và tiến hành merge nhánh agent/multi-workspace-isolation vào main để hoàn tất chính thức đợt Root Slimming."
+current_state: "Đã khắc phục hoàn toàn lỗi Git push bị từ chối do file lớn pandoc.exe. Đã cập nhật .gitignore để bỏ qua thư mục scripts/learning/bin/ và chạy git filter-branch để dọn dẹp lịch sử local. File pandoc.exe vật lý vẫn được giữ lại offline cho việc biên dịch EPUB. Đã push thành công lên GitHub (origin/main)."
+next_step_for_AN: "Tiếp tục thực hiện các tác vụ phát triển khác. Hệ thống Git hiện đã hoạt động trơn tru."
 blockers: []
 verification:
-  - "Đã xác nhận sự vắng mặt của root tools/, tests/, 5-learning/."
-  - "Đã xác nhận sự hiện diện của dev-lab/libs, tools, tests và learning/dashboard."
-  - "Python tương thích tuyệt đối: python scripts/learning/learning_manager.py --help và export_epub.py --help chạy hoàn hảo qua .venv gốc."
-  - "Các file JSON settings.json tại các thư mục .vscode của mọi workspace con đều parse hợp lệ."
+  - "Lịch sử Git đã sạch (không còn track pandoc.exe)."
+  - "File pandoc.exe vật lý vẫn tồn tại cục bộ."
+  - "Lệnh git push origin main:main đã hoàn thành thành công."
 ```
