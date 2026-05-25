@@ -86,3 +86,7 @@
 **/*.log
 **/cache/**
 **/output/**
+
+# 7. Heavy/binary files
+/scripts/learning/bin/
+
