@@ -61,6 +61,10 @@
 !/.agent/
 !/.agent/**
 
+!/.codex/
+!/.codex/agents/
+!/.codex/agents/*.toml
+
 !/scripts/
 !/scripts/**
 

@@ -1,17 +1,11 @@
 # CONTINUITY.md
 
-current_state: "Hoàn thành tối ưu token cho skill prompt-master (Hướng A). Tách 298 dòng tool-specific routing ra file references/tool-routing.md riêng. SKILL.md giảm từ 31KB (~7,800 tokens) xuống còn 10.8KB (~2,773 tokens), tiết kiệm ~65% khi nạp startup. Ba file references/ (tool-routing, templates, patterns) đều chỉ nạp JIT theo nhu cầu. Cấu trúc 3-tier JIT hoàn chỉnh."
-next_step_for_AN: "Nếu muốn tiếp tục tối ưu hóa, có thể áp dụng cùng pattern Hướng A cho các skill khác còn nặng (cm-dockit, wiki-ingest). Hoặc đóng phiên — hệ thống đã ổn định."
+current_state: "Đã bổ sung E9 GENERATED TOOL MEDIA RULES cho @exam-designer và tạo thử media preview từ PRG AI Blocks. Đã thêm hướng dẫn tái lập đầy đủ tại .agent/runs/exam_designer_media_test/README_REPRODUCE_PRG_AI_BLOCKS_MEDIA.md để agent sau mở PRG AI Blocks, dùng Playwright + Blockly XML, chụp screenshot, lưu XML/source, viết manifest, và cleanup dependency probe mà không phải suy luận lại. Manifest prg_ai_blocks_sample_manifest.md đã trỏ về reproduction guide."
+next_step_for_AN: "Review rule E9, ảnh preview PRG AI Blocks, và README tái lập; nếu ổn thì chọn có stage cả .agent/runs/exam_designer_media_test/ làm evidence hay chỉ stage rule/agent files, sau đó commit và merge branch agent/20260610-exam-designer-agent vào main."
 blockers: []
 verification:
-  - "SKILL.md hiện 207 dòng, 10.8 KB — đã kiểm tra bằng PowerShell"
-  - "references/tool-routing.md tồn tại, 19.9 KB, 25+ tool sections"
-  - "Cấu trúc 8 sections trong SKILL.md: Intent Extraction → Tool Routing (pointer) → Credential Safety → Input Sanitization → Diagnostic Checklist → Memory Block → Safe Techniques → Agentic Output Warning"
-
-learnings:
-  - scope: "prompt-master"
-    lesson: "SKILL.md nặng do nhúng trực tiếp routing hướng dẫn cho 25+ tool vào body. Pattern đúng: giữ pointer ngắn trong SKILL.md, tách nội dung tool-specific ra references/ để nạp JIT."
-    technique: "PowerShell array slicing ($lines[0..72] + $lines[366..end]) để xóa chính xác khoảng dòng khi replace_file_content không thể match uniquely."
-
-
-
+  - "git diff --check: pass"
+  - "python tomllib parse .codex/agents/exam-designer.toml: TOML_OK exam-designer"
+  - "Select-String confirmed README includes PREVIEW_ONLY/NON_CANONICAL, window.Blockly.getMainWorkspace, npx.cmd, playwright install chromium, tool_api_generated manifest, and Known Failure Modes"
+  - "Select-String confirmed manifest has reproduction_guide: README_REPRODUCE_PRG_AI_BLOCKS_MEDIA.md"
+  - "git status shows expected branch agent/20260610-exam-designer-agent and expected changed/untracked files"

@@ -324,6 +324,7 @@ Agent role chỉ load khi task gọi role đó hoặc cần boundary rõ:
 | `@librarian` | `@librarian` | wiki graph, index, reconciliation, synthesis candidates | `.agent/rules/librarian.md` |
 | `@auditor` | `@auditor` | source tracing, audit, lint | `.agent/rules/auditor.md` |
 | `@designer` | `@designer` | learning sequence khi có Trainer Profile | `.agent/rules/designer.md` |
+| `@exam-designer` | `@exam-designer` | ra đề thi, quiz, đáp án, rubric từ kiến thức có sẵn | `.agent/rules/exam-designer.md` |
 | `@healer` | `@healer` | rollback, DLQ, recovery | `.agent/rules/healer.md` |
 
 Ma trận bàn giao chi tiết (handoff matrix) và lịch sử governance nằm trong `.agent/docs/GEMINI.md` khi cần tra cứu, không load mặc định.
