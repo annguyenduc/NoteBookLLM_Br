@@ -1,0 +1,43 @@
+{
+  "asset_id": "MEDIA_YOLOBIT_BLINK_Q01_001",
+  "title": "Yolo:Bit - Nhap nhay LED tim hieu",
+  "source_tool": "OhStem App",
+  "source_url": "https://app.ohstem.vn/",
+  "used_in": "Cau 01",
+  "purpose": "Preview media - Yolo:Bit nhap nhay LED khi nhan nut A",
+  "answer_leak_check": "NEEDS_REVIEW",
+  "review_status": "PREVIEW_ONLY",
+  "canvas": {
+    "width": 960,
+    "height": 580
+  },
+  "program": {
+    "device": "Yolo:Bit",
+    "blocks": [
+      {
+        "kind": "input",
+        "label": "Khi nut A duoc nhan"
+      },
+      {
+        "kind": "action",
+        "label": "Hien thi hinh anh trai tim"
+      },
+      {
+        "kind": "loop",
+        "label": "Tam dung 500 mili giay"
+      },
+      {
+        "kind": "action",
+        "label": "Xoa man hinh"
+      },
+      {
+        "kind": "loop",
+        "label": "Tam dung 500 mili giay"
+      }
+    ]
+  },
+  "question": {
+    "prompt": "Man hinh Yolo:Bit se hien thi gi khi nhan nut A?",
+    "alt_text": "So do khoi OhStem cho Yolo:Bit nhap nhay hinh trai tim."
+  }
+}

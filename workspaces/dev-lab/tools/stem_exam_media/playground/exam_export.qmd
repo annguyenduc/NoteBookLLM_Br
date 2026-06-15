@@ -1,0 +1,27 @@
+---
+title: "OhStem line follower checkpoint"
+lang: vi
+format:
+  html:
+    toc: false
+    embed-resources: true
+  docx:
+    reference-doc: null
+---
+
+::: {.callout-note}
+Status: `PREVIEW_ASSESSMENT`, `PREVIEW_ONLY`, `NON_CANONICAL`.
+:::
+
+## Media Prompt
+
+Quan sat chuong trinh va du doan hanh vi robot.
+
+![So do khoi OhStem dieu khien robot bam vach.](media_ohstem_q01_001.svg){fig-alt="So do khoi OhStem dieu khien robot bam vach."}
+
+## Export Commands
+
+```powershell
+quarto render exam_export.qmd --to html
+quarto render exam_export.qmd --to docx
+```

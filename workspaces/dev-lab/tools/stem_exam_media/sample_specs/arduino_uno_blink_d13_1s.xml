@@ -1,0 +1,46 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="arduino_uno.arduino_when_board_launch" id="arduino_start" x="40" y="40">
+    <next>
+      <block type="control_forever" id="forever_loop">
+        <statement name="SUBSTACK">
+          <block type="arduino_uno.setDigital" id="led_high">
+            <value name="PORT">
+              <shadow type="math_number">
+                <field name="NUM">13</field>
+              </shadow>
+            </value>
+            <field name="LEVEL">1</field>
+            <next>
+              <block type="control_wait" id="wait_high">
+                <value name="DURATION">
+                  <shadow type="math_number">
+                    <field name="NUM">1</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="arduino_uno.setDigital" id="led_low">
+                    <value name="PORT">
+                      <shadow type="math_number">
+                        <field name="NUM">13</field>
+                      </shadow>
+                    </value>
+                    <field name="LEVEL">0</field>
+                    <next>
+                      <block type="control_wait" id="wait_low">
+                        <value name="DURATION">
+                          <shadow type="math_number">
+                            <field name="NUM">1</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

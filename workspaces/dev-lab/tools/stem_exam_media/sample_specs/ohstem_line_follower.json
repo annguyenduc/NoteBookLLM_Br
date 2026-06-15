@@ -1,0 +1,39 @@
+{
+  "asset_id": "MEDIA_OHSTEM_Q01_001",
+  "title": "OhStem line follower checkpoint",
+  "source_tool": "OhStem App",
+  "source_url": "https://app.ohstem.vn/",
+  "used_in": "Cau 01",
+  "purpose": "Preview media for a STEM assessment question",
+  "answer_leak_check": "NEEDS_REVIEW",
+  "review_status": "PREVIEW_ONLY",
+  "canvas": {
+    "width": 960,
+    "height": 540
+  },
+  "program": {
+    "device": "Yolo:Bit",
+    "blocks": [
+      {
+        "kind": "robot",
+        "label": "Khi nut A duoc nhan"
+      },
+      {
+        "kind": "line",
+        "label": "Doc cam bien vach trai"
+      },
+      {
+        "kind": "line",
+        "label": "Neu cam bien trai < 40"
+      },
+      {
+        "kind": "motor",
+        "label": "Dieu chinh robot sang trai"
+      }
+    ]
+  },
+  "question": {
+    "prompt": "Quan sat chuong trinh va du doan hanh vi robot.",
+    "alt_text": "So do khoi OhStem dieu khien robot bam vach."
+  }
+}
