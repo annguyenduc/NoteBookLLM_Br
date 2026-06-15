@@ -1,11 +1,8 @@
 # CONTINUITY.md
 
-current_state: "Đã bổ sung E9 GENERATED TOOL MEDIA RULES cho @exam-designer và tạo thử media preview từ PRG AI Blocks. Đã thêm hướng dẫn tái lập đầy đủ tại .agent/runs/exam_designer_media_test/README_REPRODUCE_PRG_AI_BLOCKS_MEDIA.md để agent sau mở PRG AI Blocks, dùng Playwright + Blockly XML, chụp screenshot, lưu XML/source, viết manifest, và cleanup dependency probe mà không phải suy luận lại. Manifest prg_ai_blocks_sample_manifest.md đã trỏ về reproduction guide."
-next_step_for_AN: "Review rule E9, ảnh preview PRG AI Blocks, và README tái lập; nếu ổn thì chọn có stage cả .agent/runs/exam_designer_media_test/ làm evidence hay chỉ stage rule/agent files, sau đó commit và merge branch agent/20260610-exam-designer-agent vào main."
+current_state: "Đã di chuyển 2 file dư thừa ghi nhầm trên nhánh main (test_exam_workflow_validator.py và 2026-06-15_exam_workflow_spec.md) sang thư mục 4-archive/scratch/ để tuân thủ quy tắc Cấm xóa. Toàn bộ mã nguồn mới bao gồm đặc tả spec, validator, unit test và báo cáo kiểm chứng hiện đang được lưu trữ an toàn trong branch agent/20260615-exam-workflow-spec ở worktree D:/_agent_worktrees/20260615_exam_workflow_spec."
+next_step_for_AN: "Kiểm tra và review các file đặc tả, validator tại branch agent/20260615-exam-workflow-spec trong worktree."
 blockers: []
 verification:
-  - "git diff --check: pass"
-  - "python tomllib parse .codex/agents/exam-designer.toml: TOML_OK exam-designer"
-  - "Select-String confirmed README includes PREVIEW_ONLY/NON_CANONICAL, window.Blockly.getMainWorkspace, npx.cmd, playwright install chromium, tool_api_generated manifest, and Known Failure Modes"
-  - "Select-String confirmed manifest has reproduction_guide: README_REPRODUCE_PRG_AI_BLOCKS_MEDIA.md"
-  - "git status shows expected branch agent/20260610-exam-designer-agent and expected changed/untracked files"
+  - "git status shows clean status on main except expected untracked files"
+  - "test_exam_workflow_validator.py and 2026-06-15_exam_workflow_spec.md moved to 4-archive/scratch/"
