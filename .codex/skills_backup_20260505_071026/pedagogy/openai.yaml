@@ -1,0 +1,6 @@
+interface:
+  display_name: "Pedagogy"
+  short_description: "Use when designing lesson plans, converting Wiki Atoms to PPTX slides, or packaging for LMS/H5P. Requires Trainer Profile."
+  default_prompt: "$.pedagogy"
+policy:
+  allow_implicit_invocation: true

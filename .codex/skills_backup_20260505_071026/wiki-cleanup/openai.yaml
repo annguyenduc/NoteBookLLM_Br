@@ -1,0 +1,6 @@
+interface:
+  display_name: "Wiki Lint"
+  short_description: "Audit wiki health and source integrity"
+  default_prompt: "$.wiki-lint"
+policy:
+  allow_implicit_invocation: true

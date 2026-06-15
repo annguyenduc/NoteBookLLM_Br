@@ -1,0 +1,8 @@
+Hệ thống ingest của tôi đang bị crash với stack trace lỗi sau:
+```
+TypeError: Cannot read properties of undefined (reading 'split')
+    at SourceRegistry.register (src/services/registry.ts:54:32)
+    at IngestPipeline.execute (src/pipeline/ingest.ts:112:20)
+    at Object.<anonymous> (tests/ingest.test.ts:45:18)
+```
+Hãy tìm hiểu nguyên nhân và sửa triệt để lỗi này.
