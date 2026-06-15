@@ -1,0 +1,115 @@
+{
+  "asset_id": "MEDIA_XBOT_FORWARD_LEFT_Q01_001",
+  "title": "xBot - Đi thẳng 1 giây, quay trái 2 giây",
+  "source_tool": "OhStem App",
+  "source_url": "https://app.ohstem.vn/",
+  "used_in": "Câu 01",
+  "purpose": "Preview media - xBot đi thẳng 1 giây, quay trái 2 giây, tốc độ 50",
+  "answer_leak_check": "NEEDS_REVIEW",
+  "review_status": "PREVIEW_ONLY",
+  "canvas": {
+    "width": 980,
+    "height": 360
+  },
+  "program": {
+    "device": "xBot",
+    "blocks": [
+      {
+        "kind": "basic",
+        "shape": "statement",
+        "fill": "#5fa2f2",
+        "shadow": "#467dc0",
+        "segments": [
+          {
+            "type": "label",
+            "text": "bắt đầu"
+          }
+        ]
+      },
+      {
+        "kind": "xbot_move",
+        "shape": "statement",
+        "fill": "#18c8c0",
+        "shadow": "#12968f",
+        "segments": [
+          {
+            "type": "icon",
+            "name": "wheel"
+          },
+          {
+            "type": "label",
+            "text": "di chuyển"
+          },
+          {
+            "type": "dropdown",
+            "text": "up"
+          },
+          {
+            "type": "label",
+            "text": "với tốc độ"
+          },
+          {
+            "type": "number",
+            "text": "50"
+          },
+          {
+            "type": "label",
+            "text": "(0-100) trong"
+          },
+          {
+            "type": "number",
+            "text": "1"
+          },
+          {
+            "type": "label",
+            "text": "giây"
+          }
+        ]
+      },
+      {
+        "kind": "xbot_move",
+        "shape": "statement",
+        "fill": "#18c8c0",
+        "shadow": "#12968f",
+        "segments": [
+          {
+            "type": "icon",
+            "name": "wheel"
+          },
+          {
+            "type": "label",
+            "text": "di chuyển"
+          },
+          {
+            "type": "dropdown",
+            "text": "left"
+          },
+          {
+            "type": "label",
+            "text": "với tốc độ"
+          },
+          {
+            "type": "number",
+            "text": "50"
+          },
+          {
+            "type": "label",
+            "text": "(0-100) trong"
+          },
+          {
+            "type": "number",
+            "text": "2"
+          },
+          {
+            "type": "label",
+            "text": "giây"
+          }
+        ]
+      }
+    ]
+  },
+  "question": {
+    "prompt": "Lập trình cho xBot đi thẳng trong 1 giây, quay trái trong 2 giây, cùng tốc độ 50.",
+    "alt_text": "Khối lệnh preview cho xBot đi thẳng 1 giây rồi quay trái 2 giây với tốc độ 50."
+  }
+}

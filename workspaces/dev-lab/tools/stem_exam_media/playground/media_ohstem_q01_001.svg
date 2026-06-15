@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="960" height="540"
+     viewBox="0 0 960 540"
+     role="img" aria-labelledby="title desc">
+  <title id="title">OhStem line follower checkpoint</title>
+  <desc id="desc">So do khoi OhStem dieu khien robot bam vach.</desc>
+  <rect width="960" height="540" fill="#f9f9f9"/>
+
+  <!-- PREVIEW watermark -->
+  <text x="950" y="14" fill="#cccccc"
+        font-family="Arial, sans-serif" font-size="10"
+        text-anchor="end">PREVIEW_ONLY / NON_CANONICAL · Yolo:Bit</text>
+
+  <!-- Blocks -->
+  <g role="list">
+  <g role="listitem" aria-label="Khi nut A duoc nhan">
+    <path d="M 50 50 Q 40 50 40 62 V 96 H 90 L 75 106 L 65 106 L 60 96 H 336 Q 340 96 340 92 V 62 Q 340 50 330 50 Z" fill="#ff4ccd" stroke="#b73693" stroke-width="1"/>
+    <path d="M 50 91 H 336 Q 340 91 340 95 V 92 Q 340 96 336 96 H 90 L 75 106 L 65 106 L 60 96 H 44 Q 40 96 40 92 V 95 Q 40 91 44 91 Z" fill="#b73693" opacity="0.4"/>
+    <text x="52" y="78.0" fill="#ffffff"
+          font-family="Arial, sans-serif" font-size="13" font-weight="bold">Khi nut A duoc nhan</text>
+  </g>  <g role="listitem" aria-label="Doc cam bien vach trai">
+    <path d="M 44 96 H 60 L 65 106 L 75 106 L 90 96 H 336 Q 340 96 340 100 V 122 Q 340 126 336 126 H 90 L 75 136 L 65 136 L 60 126 H 44 Q 40 126 40 122 V 100 Q 40 96 44 96 Z" fill="#34ccf1" stroke="#2592ad" stroke-width="1"/>
+    <path d="M 44 121 H 336 Q 340 121 340 125 V 122 Q 340 126 336 126 H 90 L 75 136 L 65 136 L 60 126 H 44 Q 40 126 40 122 V 125 Q 40 121 44 121 Z" fill="#2592ad" opacity="0.4"/>
+    <text x="52" y="116.0" fill="#ffffff"
+          font-family="Arial, sans-serif" font-size="13" font-weight="bold">Doc cam bien vach trai</text>
+  </g>  <g role="listitem" aria-label="Neu cam bien trai &lt; 40">
+    <path d="M 44 126 H 60 L 65 136 L 75 136 L 90 126 H 336 Q 340 126 340 130 V 152 Q 340 156 336 156 H 90 L 75 166 L 65 166 L 60 156 H 44 Q 40 156 40 152 V 130 Q 40 126 44 126 Z" fill="#34ccf1" stroke="#2592ad" stroke-width="1"/>
+    <path d="M 44 151 H 336 Q 340 151 340 155 V 152 Q 340 156 336 156 H 90 L 75 166 L 65 166 L 60 156 H 44 Q 40 156 40 152 V 155 Q 40 151 44 151 Z" fill="#2592ad" opacity="0.4"/>
+    <text x="52" y="146.0" fill="#ffffff"
+          font-family="Arial, sans-serif" font-size="13" font-weight="bold">Neu cam bien trai &lt; 40</text>
+  </g>  <g role="listitem" aria-label="Dieu chinh robot sang trai">
+    <path d="M 44 156 H 60 L 65 166 L 75 166 L 90 156 H 336 Q 340 156 340 160 V 182 Q 340 186 336 186 H 90 L 75 196 L 65 196 L 60 186 H 44 Q 40 186 40 182 V 160 Q 40 156 44 156 Z" fill="#0090f5" stroke="#0067b0" stroke-width="1"/>
+    <path d="M 44 181 H 336 Q 340 181 340 185 V 182 Q 340 186 336 186 H 90 L 75 196 L 65 196 L 60 186 H 44 Q 40 186 40 182 V 185 Q 40 181 44 181 Z" fill="#0067b0" opacity="0.4"/>
+    <text x="52" y="176.0" fill="#ffffff"
+          font-family="Arial, sans-serif" font-size="13" font-weight="bold">Dieu chinh robot sang trai</text>
+  </g>
+  </g>
+
+  <!-- Question prompt box -->
+  <rect x="40" y="196" width="300" height="30"
+        rx="4" fill="#e8f4fd" stroke="#c0d8f0" stroke-width="1"/>
+  <text x="48" y="215" fill="#1a5276"
+        font-family="Arial, sans-serif" font-size="11">Quan sat chuong trinh va du doan hanh vi robot.</text>
+</svg>

@@ -24,6 +24,21 @@ This guide is not for:
 
 This file is the canonical operational guide for this workflow. Do not maintain a second SOP file with conflicting steps.
 
+## Future Agent Entry Point
+
+Before touching PRG AI Blocks media generation in this worktree, a future agent should read these files in order:
+
+1. [README.md](</D:/_agent_worktrees/20260612_stem_exam_media_phase1/workspaces/dev-lab/tools/stem_exam_media/README.md>)
+2. [README_REPRODUCE_PRG_AI_BLOCKS_MEDIA.md](</D:/_agent_worktrees/20260612_stem_exam_media_phase1/.agent/runs/exam_designer_media_test/README_REPRODUCE_PRG_AI_BLOCKS_MEDIA.md>)
+3. [prg_ai_blocks_sample.xml](</D:/_agent_worktrees/20260612_stem_exam_media_phase1/.agent/runs/exam_designer_media_test/prg_ai_blocks_sample.xml>)
+4. [prg_ai_blocks_sample_manifest.md](</D:/_agent_worktrees/20260612_stem_exam_media_phase1/.agent/runs/exam_designer_media_test/prg_ai_blocks_sample_manifest.md>)
+
+If the goal is only to inspect the already validated preview artifact, open these directly:
+
+- [prg_ai_blocks_sample.png](</D:/_agent_worktrees/20260612_stem_exam_media_phase1/.agent/runs/exam_designer_media_test/prg_ai_blocks_sample.png>)
+- [prg_ai_blocks_sample.xml](</D:/_agent_worktrees/20260612_stem_exam_media_phase1/.agent/runs/exam_designer_media_test/prg_ai_blocks_sample.xml>)
+- [prg_ai_blocks_sample_manifest.md](</D:/_agent_worktrees/20260612_stem_exam_media_phase1/.agent/runs/exam_designer_media_test/prg_ai_blocks_sample_manifest.md>)
+
 ## Required Output
 
 A successful run must produce all 3 files:

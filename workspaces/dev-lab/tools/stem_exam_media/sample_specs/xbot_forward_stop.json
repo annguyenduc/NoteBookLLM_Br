@@ -1,0 +1,47 @@
+{
+  "asset_id": "MEDIA_OHSTEM_XBOT_Q01_001",
+  "title": "XBot - Di chuyen va dung lai",
+  "source_tool": "OhStem App",
+  "source_url": "https://app.ohstem.vn/",
+  "used_in": "Cau 01",
+  "purpose": "Preview media - XBot di chuyen thang 2 giay roi dung lai",
+  "answer_leak_check": "NEEDS_REVIEW",
+  "review_status": "PREVIEW_ONLY",
+  "canvas": {
+    "width": 960,
+    "height": 600
+  },
+  "program": {
+    "device": "XBot",
+    "blocks": [
+      {
+        "kind": "event",
+        "label": "Khi bat dau"
+      },
+      {
+        "kind": "action",
+        "label": "Dong co trai: tien 80%"
+      },
+      {
+        "kind": "action",
+        "label": "Dong co phai: tien 80%"
+      },
+      {
+        "kind": "variable",
+        "label": "Cho 2000 mili giay"
+      },
+      {
+        "kind": "action",
+        "label": "Dong co trai: dung"
+      },
+      {
+        "kind": "action",
+        "label": "Dong co phai: dung"
+      }
+    ]
+  },
+  "question": {
+    "prompt": "XBot se lam gi khi chay chuong trinh tren?",
+    "alt_text": "So do khoi OhStem dieu khien XBot di tien roi dung lai."
+  }
+}
