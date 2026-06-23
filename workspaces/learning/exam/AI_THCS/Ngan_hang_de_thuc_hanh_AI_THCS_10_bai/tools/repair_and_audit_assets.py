@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import os
 import shutil
+import sys
 import tempfile
 import uuid
 import zipfile
@@ -334,8 +335,10 @@ def audit_project(item: int) -> list[str]:
 
 
 def main() -> int:
-    for item in range(1, 11):
-        repair_project(item)
+    audit_only = "--audit-only" in sys.argv
+    if not audit_only:
+        for item in range(1, 11):
+            repair_project(item)
     failures: list[str] = []
     for item in range(1, 11):
         failures.extend(audit_project(item))
