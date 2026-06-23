@@ -1,12 +1,19 @@
+from __future__ import annotations
+
 import pathlib
+import subprocess
 import sys
-import markdown
+
+try:
+    import markdown as markdown_lib
+except ModuleNotFoundError:
+    markdown_lib = None
 
 HTML_TEMPLATE = """<!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="utf-8">
-<title>Đề kiểm tra AI Trung Học</title>
+<title>Đề kiểm tra AI Trung học</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Arial:wght@400;700&display=swap');
 :root { --primary-color: #002060; --secondary-color: #0081bd; --bg-color: #f0f2f5; --paper-color: #ffffff; --text-color: #333333; }
@@ -37,24 +44,52 @@ hr { border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0,
 </html>
 """
 
-def main():
+PANDOC_PATH = (
+    pathlib.Path(__file__).resolve().parents[1]
+    / "learning"
+    / "bin"
+    / "pandoc-3.1.12.3"
+    / "pandoc.exe"
+)
+
+
+def render_markdown_to_html(md_text: str) -> str:
+    if markdown_lib is not None:
+        return markdown_lib.markdown(md_text, extensions=["tables", "fenced_code"])
+
+    if not PANDOC_PATH.exists():
+        raise RuntimeError("Missing both python-markdown and bundled pandoc.")
+
+    result = subprocess.run(
+        [str(PANDOC_PATH), "--from", "gfm", "--to", "html"],
+        input=md_text,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        check=True,
+    )
+    return result.stdout
+
+
+def main() -> int:
     if len(sys.argv) < 3:
         print("Usage: python generate_exam_html.py <input_md> <output_html>")
-        sys.exit(1)
+        return 1
 
     input_path = pathlib.Path(sys.argv[1])
     output_path = pathlib.Path(sys.argv[2])
 
     if not input_path.exists():
         print(f"Error: {input_path} does not exist.")
-        sys.exit(1)
+        return 1
 
-    md_text = input_path.read_text(encoding='utf-8')
-    html_content = markdown.markdown(md_text, extensions=['tables', 'fenced_code'])
-
+    md_text = input_path.read_text(encoding="utf-8")
+    html_content = render_markdown_to_html(md_text)
     full_html = HTML_TEMPLATE.replace("<!--CONTENT_PLACEHOLDER-->", html_content)
-    output_path.write_text(full_html, encoding='utf-8')
+    output_path.write_text(full_html, encoding="utf-8")
     print(f"Successfully generated HTML: {output_path}")
+    return 0
 
-if __name__ == '__main__':
-    main()
+
+if __name__ == "__main__":
+    raise SystemExit(main())
