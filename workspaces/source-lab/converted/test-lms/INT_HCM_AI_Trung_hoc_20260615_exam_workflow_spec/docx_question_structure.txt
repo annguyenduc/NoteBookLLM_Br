@@ -1,0 +1,220 @@
+DOCX Question Structure Analysis
+=================================
+
+Line 68: Câu 1  Nhớ TN 1 lựa chọn
+  [67] PHẦN TRẮC NGHIỆM
+  [69] Trong Dancing with AI, nhóm lệnh sự kiện có vai trò chính nào sau đây?
+  [70] A. Dùng để lưu dữ liệu vào danh sách
+  [71] B. Dùng làm điều kiện bắt đầu cho một chương trình hoặc một hành động
+  [72] C. Dùng để dịch văn bản sang ngôn ngữ khác
+
+Line 77: Câu 2   Nhớ Đúng/sai
+  [76] Trích dẫn: Module 2 - Sự kiện (Events)
+  [78] Một học viên muốn làm chương trình nhập từ tiếng Anh, hiển thị bản dịch trên màn hình và đồng thời đọc to kết quả. Cặp công cụ nào cần có?
+  [79] A. Translate và Text to Speech
+  [80] B. Translate và Face Sensing
+  [81] C. Text to Speech và Teachable Machine
+
+Line 86: Câu 3   Nhớ TN 1 lựa chọn
+  [85] Trích dẫn: Module 4 - Nhóm lệnh dịch ngôn ngữ - Extension Translate; Module 4 - Nhóm lệnh chuyển văn bản thành giọng nói - Extension Text to Speech
+  [87] Quan sát hình ảnh giao diện Dancing with AI dưới đây. Khu vực nằm ở trên cùng (chứa các nút chức năng đổi ngôn ngữ, đặt tên, lưu trữ dự án và kết nối Teachable Machine) được gọi là gì?
+  [88] A. Thanh công cụ (Toolbar)
+  [89] B. Bảng điều khiển camera (Camera Panel)
+  [90] C. Thư viện tiện ích mở rộng (Extension Library)
+
+Line 95: Câu 4   Nhớ Ghép nối
+  [94] Trích dẫn: Module 1: Giới thiệu trình duyệt lập trình Dancing with AI, Mục 2. Giao diện lập trình trên Dancing with AI.
+  [96] Quan sát 4 hình block/công cụ AI của PRG ở Cột A và ghép đúng với công dụng chính ở Cột B.
+  [97] File kiểm tra nguồn: cau_03_source_pack.sb3
+  [98] Cột A
+  [99] Cột B
+
+Line 107: Câu 5   Nhớ TN 1 lựa chọn
+  [106] Trích dẫn: Module 4 - Translate; Module 4 - Text to Speech; Module 5 - Nhóm lệnh nhận diện hình ảnh; Module 6 - Giới thiệu về trình duyệt "Teachable machine" và cách sử dụng
+  [108] Theo tài liệu hướng dẫn Dancing with AI, khái niệm "Chương trình tuần tự" được định nghĩa là gì?
+  [109] A. Chương trình chạy ngẫu nhiên các khối lệnh không phân biệt vị trí ghép nối
+  [110] B. Chương trình chạy lặp đi lặp lại một khối lệnh duy nhất cho đến khi tắt máy
+  [111] C. Chương trình thực hiện các câu lệnh lần lượt theo đúng thứ tự sắp xếp từ trên xuống dưới
+
+Line 116: Câu 6  Nhớ Điền số
+  [115] Trích dẫn: Module 1: Giới thiệu trình duyệt lập trình Dancing with AI, Mục 6. Lập trình là gì? Khái niệm chương trình tuần tự.
+  [117] Quan sát đoạn lệnh sau:
+  [118] Hãy điền tọa độ cuối cùng của nhân vật sau khi chạy chương trình:
+  [119] x = ____
+  [120] y = ____
+
+Line 125: Câu 7   Nhớ TN 1 lựa chọn
+  [124] Trích dẫn: Module 2 - Tìm hiểu về hệ trục tọa độ; Module 2 - Các câu lệnh về hệ trục tọa độ
+  [126] Trong nhóm lệnh "Các biến số" của Dancing with AI, một "Biến số" được định nghĩa dùng để làm gì?
+  [127] A. Lưu trữ một giá trị (như số hoặc chuỗi chữ) có thể thay đổi khi chương trình chạy
+  [128] B. Chứa một danh sách gồm nhiều hàng dữ liệu xếp theo thứ tự index
+  [129] C. Dùng để thay đổi hình dạng ngoại hình (trang phục) của nhân vật
+
+Line 134: Câu 8   Nhớ TN 1 lựa chọn
+  [133] Trích dẫn: Module 3: Xử lý dữ liệu trong lập trình kéo - thả, Mục 6. Nhóm lệnh Biến số.
+  [135] Những nhận định nào sau đây đúng về dữ liệu Boolean?
+  [136] A. Boolean chỉ có hai giá trị cơ bản là True và False
+  [137] B. Dữ liệu Boolean thường được biểu diễn bằng block hình lục giác
+  [138] C. Boolean thường được dùng kèm với điều kiện hoặc vòng lặp khi cần kiểm tra trạng thái liên tục
+
+Line 144: Câu 9  Nhớ TN nhiều lựa chọn
+  [143] .
+  [145] Trong chương trình có hai lệnh hỏi liên tiếp:
+  [146] What's your name?
+  [147] How old are you?
+  [148] Sau khi người dùng trả lời cả hai câu, biến Answer sẽ lưu nội dung nào?
+
+Line 157: Câu 10   Nhớ TN 1 lựa chọn
+  [156] Trích dẫn: Module 3 - Khối lệnh "Hỏi - Trả lời"
+  [158] Trong một dự án face filter, để phụ kiện luôn đi theo vị trí khuôn mặt khi người dùng di chuyển, cách đặt lệnh nào là cần thiết nhất?
+  [159] File kiểm tra nguồn: cau_08_source.sb3
+  [160] A. Đặt lệnh bám theo vị trí khuôn mặt hoặc landmark bên trong forever
+  [161] B. Đặt một lần lệnh bám theo landmark ngay dưới cờ xanh nhưng không lặp lại
+
+Line 167: Câu 11   Hiểu TN 1 lựa chọn
+  [166] Trích dẫn: Module 5 - Nhóm lệnh nhận diện hình ảnh; Module 5 - Tổng kết - Công cụ nhận diện khuôn mặt của Dancing with AI
+  [168] Quan sát hai đoạn chương trình mẫu bên dưới. Một đoạn thể hiện luồng hỏi -> dịch -> đọc bản dịch, đoạn còn lại thể hiện luồng hỏi -> đọc ngay câu trả lời gốc -> hỏi tiếp. Trong dự án “từ điển nói”, nếu yêu cầu là phải đọc xong bản dịch rồi mới hiện câu hỏi tiếp theo, cách thiết kế nào phù hợp nhất?
+  [169] File kiểm tra nguồn: cau_11_source_pack.sb3
+  [170] A. Hỏi từ cần dịch -> dịch từ -> đọc xong bản dịch -> mới hỏi từ tiếp theo
+  [171] B. Hỏi từ cần dịch -> đọc ngay từ gốc -> hỏi từ tiếp theo -> cuối cùng mới dịch
+
+Line 177: Câu 12   Hiểu TN nhiều lựa chọn
+  [176] Trích dẫn: Module 4 - Nhóm lệnh chuyển văn bản thành giọng nói - Extension Text to Speech
+  [178] Quan sát 4 phương án media 12.1-12.4. Chọn tất cả phương án thể hiện đúng bài toán: người dùng nhập từ tiếng Anh, chương trình dịch sang ngôn ngữ đích rồi đọc to chính phần văn bản đã dịch.
+  [179] File kiểm tra nguồn: cau_12_source_pack.sb3
+  [180] A.
+  [181] B.
+
+Line 187: Câu 13   Hiểu TN 1 lựa chọn
+  [186] Trích dẫn: Module 4 - Nhóm lệnh dịch ngôn ngữ - Extension Translate; Module 4 - Nhóm lệnh chuyển văn bản thành giọng nói - Extension Text to Speech
+  [188] Trong một bảng điểm lớp học, khi nào nên dùng danh sách thay vì chỉ dùng một biến số?
+  [189] A. Khi chỉ cần lưu trữ một giá trị số điểm được cập nhật liên tục
+  [190] B. Khi cần lưu trữ nhiều giá trị (như tên học sinh, lịch sử cảm xúc) theo thứ tự index
+  [191] C. Khi cần lưu trữ giá trị logic Đúng/Sai của camera cảm biến
+
+Line 196: Câu 14   Hiểu TN 1 lựa chọn
+  [195] Trích dẫn: Module 3: Xử lý dữ liệu trong lập trình kéo - thả, Mục 7. Khối lệnh về Danh sách - List.
+  [197] Quan sát hai đoạn chương trình trong dự án face filter:
+  [198] 14.1: bật camera rồi liên tục dùng change y by ...
+  [199] 14.2: bật camera rồi dùng block bám theo nose bridge trong forever
+  [200] Giải thích nào đúng nhất?
+
+Line 209: Câu 15   Hiểu TN nhiều lựa chọn
+  [208] Trích dẫn: Module 5 - Nhóm lệnh nhận diện hình ảnh; Module 5 - Tổng kết - Công cụ nhận diện khuôn mặt của Dancing with AI
+  [210] Một chương trình lần lượt hỏi người dùng tên, tuổi và màu yêu thích. Muốn lưu được cả ba câu trả lời để dùng về sau, các nhận định nào sau đây là đúng?
+  [211] A. Cần gán từng giá trị của Answer sang các biến riêng hoặc cấu trúc lưu trữ phù hợp
+  [212] B. Chỉ cần đọc biến Answer ở cuối chương trình là đủ
+  [213] C. Nếu không lưu lại trung gian, Answer chỉ giữ câu trả lời cuối cùng
+
+Line 218: Câu 16   Hiểu TN 1 lựa chọn
+  [217] Trích dẫn: Module 3 - Khối lệnh "Hỏi - Trả lời"; Module 3 - Nhóm lệnh Biến số; Module 3 - Khối lệnh về Danh sách - List
+  [219] Điểm khác biệt quan trọng giữa Face Detection và Face Recognition là gì?
+  [220] A. Face Detection dùng để phát hiện chuyển động cơ thể, còn Face Recognition dùng để phát hiện biểu cảm khuôn mặt
+  [221] B. Face Detection phát hiện và định vị khuôn mặt, Face Recognition dùng để đối chiếu nhận ra một người cụ thể
+  [222] C. Face Detection chỉ hoạt động khi có kết nối Internet, còn Face Recognition hoạt động hoàn toàn offline
+
+Line 227: Câu 17   Hiểu TN 1 lựa chọn
+  [226] Trích dẫn: Module 5: Công cụ nhận diện khuôn mặt của Dancing with AI, Mục 2. Khái niệm về nhận diện hình ảnh.
+  [228] Quan sát kịch bản Face Sensing dưới đây. Nhân vật trợ lý sẽ nói "Xin chào!" trong trường hợp nào?A. Ngay khi camera vừa được bật, dù người dùng không biểu cảm gì
+  [229] B. Khi Face Sensing nhận diện người dùng đang cười trước camera
+  [230] C. Khi người dùng nhắm mắt hoàn toàn
+  [231] D. Khi người dùng rời khỏi khung hình camera
+
+Line 235: Câu 18   Hiểu TN 1 lựa chọn
+  [234] Trích dẫn: Module 5: Công cụ nhận diện khuôn mặt của Dancing with AI, Mục 3. Nhóm lệnh nhận diện hình ảnh.
+  [236] Danh sách hiện có: Lan, Minh, Huy, An. Nếu xóa phần tử ở vị trí của Huy, điều gì xảy ra?
+  [237] A. Các phần tử phía sau giữ nguyên vị trí tuyệt đối
+  [238] B. An sẽ được dồn lên một vị trí
+  [239] C. Toàn bộ danh sách bị xóa
+
+Line 244: Câu 19   Hiểu TN 1 lựa chọn
+  [243] Trích dẫn: Module 3 - Khối lệnh về Danh sách - List
+  [245] Trong một dự án có hai nhân vật, nhân vật A đếm ngược xong mới gửi tín hiệu để nhân vật B bắt đầu nói. Cách giải thích nào đúng nhất về việc dùng broadcast và when I receive?
+  [246] A. Broadcast giúp A gửi tín hiệu đúng thời điểm để B bắt đầu hành động khi nhận được thông điệp
+  [247] B. Broadcast khiến B chỉ được chạy sau khi mọi script khác của A trong toàn dự án kết thúc hẳn
+  [248] C. When I receive chỉ dùng được nếu A và B nằm trong cùng một sprite
+
+Line 253: Câu 20  Hiểu TN 1 lựa chọn
+  [252] Trích dẫn: Module 3 - Khối lệnh Broadcast - Receive message
+  [254] Trong quy trình học máy (Machine Learning) với Teachable Machine, bước "Huấn luyện mô hình" (Train Model) đóng vai trò gì?
+  [255] A. Lập trình các thuật toán rẽ nhánh điều khiển nhân vật di chuyển
+  [256] B. Phân tích dữ liệu mẫu để máy tính tự động tìm ra các đặc trưng phân biệt giữa các lớp đối tượng
+  [257] C. Truyền trực tiếp dữ liệu hình ảnh từ camera sang vùng làm việc của Dancing with AI
+
+Line 262: Câu 21  Hiểu TN 1 lựa chọn
+  [261] Trích dẫn: Module 6: Công cụ “máy học” của Dancing With AI, Mục 5. Huấn luyện mô hình.
+  [263] Trong lớp học Teachable Machine (Module 6), một học sinh thắc mắc: "Tại sao em đã chụp rất nhiều ảnh khuôn mặt của em (hơn 100 ảnh) để máy nhận diện, nhưng khi em nghiêng đầu hoặc đứng xa camera ra một chút thì máy lại nhận diện sai?". Dựa trên nguyên lý máy học được học ở Module 6, giáo viên nên giải thích nguyên nhân và đưa ra hướng khắc phục nào cho học sinh?
+  [264] A. Do hệ thống nhận dạng của Teachable Machine cần các khối kịch bản rẽ nhánh if - then bổ sung cho từng góc nghiêng đầu; khắc phục bằng cách lập trình thêm các điều kiện rẽ nhánh logic này trong Dancing with AI.
+  [265] B. Do số lượng hình ảnh thu thập ở góc thẳng mặt chưa đủ để mô hình ghi nhớ đặc trưng; khắc phục bằng cách tiếp tục bấm giữ nút chụp để thu thập thêm khoảng 1.000 ảnh ở nguyên góc chụp cũ đó.
+  [266] C. Do cơ sở dữ liệu mẫu thu thập tuy nhiều nhưng thiếu tính phong phú (chỉ chụp ở một góc độ, một khoảng cách); khắc phục bằng cách chụp thêm các ảnh mẫu với nhiều góc nghiêng, khoảng cách và ánh sáng khác nhau.
+
+Line 271: Câu 22  Vận dụng TN 1 lựa chọn
+  [270] Trích dẫn: Module 6: Công cụ “máy học” của Dancing With AI, Mục 2. Khái niệm Machine Learning và Deep Learning.
+  [272] Giáo viên muốn học viên làm một hướng dẫn viên bảo tàng đa ngôn ngữ: khách nhập tên hiện vật bằng tiếng Anh, chương trình dịch sang tiếng Việt rồi đọc to chính phần mô tả vừa dịch. Chương trình mẫu nào dưới đây là hợp lý nhất?
+  [273] File kiểm tra nguồn: cau_22_a.sb3 | cau_22_b.sb3 | cau_22_c.sb3 | cau_22_d.sb3
+  [274] A. when green flag clicked -> ask [English word?] and wait -> set [ban_dich] to (translate (answer) to [Vietnamese]) -> speak (ban_dich)
+  [275] B. when green flag clicked -> ask [English word?] and wait -> speak (answer) -> set [ban_dich] to (translate [hello] to [Vietnamese])
+
+Line 281: Câu 23  Vận dụng TN nhiều lựa chọn
+  [280] Trích dẫn: Module 3 - Khối lệnh "Hỏi - Trả lời"; Module 4 - Nhóm lệnh dịch ngôn ngữ - Extension Translate; Module 4 - Nhóm lệnh chuyển văn bản thành giọng nói - Extension Text to speech.
+  [282] Giáo viên muốn học viên ghép các đoạn chương trình trong 23.1-23.4 để tạo bảng thông báo đa ngôn ngữ cho lớp học: nhập câu tiếng Anh, chọn ngôn ngữ đích, dịch kết quả rồi đọc to bản dịch. Chọn tất cả các đoạn cần ghép vào chương trình.
+  [283] File kiểm tra nguồn: cau_23_a.sb3 | cau_23_b.sb3 | cau_23_c.sb3 | cau_23_d.sb3
+  [284] A. Đoạn nhập từ tiếng Anh và hỏi người dùng chọn ngôn ngữ đích
+  [285] B. Đoạn lưu lựa chọn ngôn ngữ đích vào biến hoặc danh sách để dùng lại
+
+Line 291: Câu 24  Vận dụng TN nhiều lựa chọn
+  [290] Trích dẫn: Module 3 - Khối lệnh "Hỏi - Trả lời"; Module 4 - Translate; Module 4 - Text to Speech
+  [292] Quan sát 4 đoạn thành phần trong 24.1-24.4. Chọn tất cả thành phần phù hợp để ghép vào gian chụp ảnh lễ hội trường có mũ, khuyên tai và cho phép đổi phụ kiện khi nhấn phím space.
+  [293] File kiểm tra nguồn: cau_24_a.sb3 | cau_24_b.sb3 | cau_24_c.sb3 | cau_24_d.sb3
+  [294] A. Thành phần lặp liên tục để phụ kiện bám theo landmark khuôn mặt
+  [295] B. Thành phần sự kiện nhấn phím space để đổi costume
+
+Line 301: Câu 25  Vận dụng TN nhiều lựa chọn
+  [300] Trích dẫn: Module 2 - Sự kiện (Events); Module 5 - Nhóm lệnh nhận diện hình ảnh; Module 7 - Bài tập thực hành - AI TrH
+  [302] Quan sát 4 đoạn thành phần trong 25.1-25.4. Muốn xây dựng tủ đồ thông minh mở bằng Face ID để nhận đúng người dùng đã huấn luyện trước đó, những thành phần nào cần có?
+  [303] File kiểm tra nguồn: cau_25_a.sb3 | cau_25_b.sb3 | cau_25_c.sb3 | cau_25_d.sb3
+  [304] A. Thành phần bật camera khi bắt đầu nhận diện
+  [305] B. Thành phần nạp model đã huấn luyện vào chương trình
+
+Line 311: Câu 26  Vận dụng TN 1 lựa chọn
+  [310] Trích dẫn: Module 6 - Giới thiệu về trình duyệt "Teachable machine" và cách sử dụng
+  [312] Quan sát media 26.1: một khối lệnh trong dự án đội vương miện theo khuôn mặt đã bị che. Dự án này chỉ dùng công cụ Face Sensing. Để vương miện luôn bám đúng vùng nose bridge mỗi lần chương trình lặp, nên điền khối nào vào vị trí đang che?
+  [313] File kiểm tra nguồn: cau_26_source.sb3 | cau_26_a.sb3 | cau_26_b.sb3 | cau_26_c.sb3 | cau_26_d.sb3
+  [314] Câu 26 - 26.1
+  [315] A. Khối bám landmark ở vùng nose bridge
+
+Line 314: Câu 26 - 26.1
+  [313] File kiểm tra nguồn: cau_26_source.sb3 | cau_26_a.sb3 | cau_26_b.sb3 | cau_26_c.sb3 | cau_26_d.sb3
+  [315] A. Khối bám landmark ở vùng nose bridge
+  [316] B. Khối bám landmark ở vùng nose tip
+  [317] C. Khối bám landmark ở vùng mí mắt trái phía trên
+  [318] D. Khối bám landmark ở vùng mí mắt phải phía trên
+
+Line 322: Câu 27  Vận dụng TN nhiều lựa chọn
+  [321] Trích dẫn: Module 5 - Nhóm lệnh nhận diện hình ảnh; Module 5 - Tổng kết - Công cụ nhận diện khuôn mặt của Dancing with AI
+  [323] Lớp học cần một gương cảm xúc thông minh chỉ dùng Face Sensing để nhận diện cảm xúc trên khuôn mặt, hiển thị cảm xúc cơ bản của người dùng và đổi phụ kiện phù hợp với cảm xúc đó. Chọn các chương trình mẫu đúng.
+  [324] File kiểm tra nguồn: cau_27_a.sb3 | cau_27_b.sb3 | cau_27_c.sb3 | cau_27_d.sb3
+  [325] A. when green flag clicked -> turn video on -> forever -> if <feeling joyful> then say [vui] -> switch costume to [hoa]
+  [326] B. when green flag clicked -> turn video on -> forever -> if <feeling joyful> then say [vui]
+
+Line 332: Câu 28  Vận dụng TN 1 lựa chọn
+  [331] Trích dẫn: Module 5 - Nhóm lệnh nhận diện hình ảnh; Module 7 - Bài tập thực hành - AI TrH
+  [333] Trong một face filter nâng cao, người dùng có thể:
+  [334] đổi costume của từng phụ kiện,
+  [335] quay lại costume nguyên mẫu,
+  [336] bật cùng lúc 2 hoặc 3 phụ kiện.
+
+Line 346: Câu 29  Vận dụng TN 1 lựa chọn
+  [345] Trích dẫn: Module 2 - Sự kiện (Events); Module 3 - Biến số; Module 5 - Nhóm lệnh nhận diện hình ảnh; Module 7 - Bài tập thực hành - AI TrH
+  [347] Giả sử giáo viên yêu cầu một quầy check-in triển lãm khoa học phải:
+  [348] mở camera đúng lúc,
+  [349] nhận diện khách mời bằng model AI,
+  [350] lưu danh sách khách đã check-in,
+
+Line 362: Câu 30  Vận dụng TN nhiều lựa chọn
+  [361] Trích dẫn: Module 3 - Khối lệnh về Danh sách - List; Module 6 - Giới thiệu về trình duyệt "Teachable machine" và cách sử dụng; Module 7 - Bài tập thực hành - AI TrH
+  [363] Giả sử đề bài cuối khóa là:
+  [364] Thiết kế một góc trải nghiệm bảo tàng AI: khách nhập từ khóa tiếng Anh để nghe bản dịch, sau đó có thêm một phần tương tác khuôn mặt hoặc model AI để đổi hiệu ứng hiển thị, phát lời chào hoặc mở nội dung phù hợp.
+  [365] Những cách tổ chức chương trình hoặc luồng song song nào dưới đây là phù hợp?
+  [366] File kiểm tra nguồn: cau_30_a.sb3 | cau_30_b.sb3 | cau_30_c.sb3 | cau_30_d.sb3
+

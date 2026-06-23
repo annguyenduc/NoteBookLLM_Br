@@ -1,0 +1,25 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+      <block type="event_whenflagclicked" id="q25_start" x="40" y="40">
+        <next>
+          <block type="poseFace_videoToggle" id="q25_video">
+            <value name="VIDEO_STATE">
+              <shadow type="poseFace_menu_VIDEO_STATE"><field name="VIDEO_STATE">on-flipped</field></shadow>
+            </value>
+            <next>
+              <block type="control_forever" id="q25_forever">
+                <statement name="SUBSTACK">
+                  <block type="poseFace_affdexGoToPart" id="q25_goto">
+                    <field name="AFFDEX_POINT">11</field>
+                    <next>
+                      <block type="motion_changeyby" id="q25_changey">
+                        <value name="DY"><shadow type="math_number"><field name="NUM">120</field></shadow></value>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </xml>

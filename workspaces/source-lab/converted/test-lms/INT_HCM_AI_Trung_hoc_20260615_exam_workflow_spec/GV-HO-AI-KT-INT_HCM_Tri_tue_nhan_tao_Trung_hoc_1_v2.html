@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Đề kiểm tra AI Trung Học</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Arial:wght@400;700&display=swap');
+:root { --primary-color: #002060; --secondary-color: #0081bd; --bg-color: #f0f2f5; --paper-color: #ffffff; --text-color: #333333; }
+body { font-family: 'Arial', sans-serif; background-color: var(--bg-color); color: var(--text-color); margin: 0; padding: 40px 20px; line-height: 1.6; }
+.a4-container { max-width: 210mm; margin: 0 auto; background-color: var(--paper-color); padding: 25mm; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); border-radius: 4px; text-align: justify; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; color: var(--primary-color); margin-top: 1.5em; margin-bottom: 0.5em; }
+h1 { text-align: center; font-size: 24pt; text-transform: uppercase; border-bottom: 2px solid var(--secondary-color); padding-bottom: 10px; margin-bottom: 30px; }
+h2 { font-size: 16pt; border-bottom: 1px solid #eeeeee; padding-bottom: 5px; }
+ul { list-style-type: none; padding-left: 20px; margin-top: 10px; margin-bottom: 10px; }
+ul li { margin-bottom: 8px; position: relative; display: block; }
+ul li::before { content: "○"; color: var(--secondary-color); position: absolute; left: -20px; font-weight: bold; }
+ul li:has(strong:contains("Đáp án đúng:")), ul li:has(strong:contains("Giải thích:")), ul li:has(strong:contains("Trích dẫn:")) { list-style-type: none; }
+ul li:has(strong:contains("Đáp án đúng:"))::before, ul li:has(strong:contains("Giải thích:"))::before, ul li:has(strong:contains("Trích dẫn:"))::before { content: "►"; color: var(--primary-color); }
+img { max-width: 80%; height: auto; display: block; margin: 20px auto; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
+table { border-collapse: collapse; width: 100%; margin: 25px 0; font-size: 11pt; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+th, td { border: 1px solid #dddddd; padding: 12px 15px; }
+th { background-color: var(--primary-color); color: white; font-family: 'Montserrat', sans-serif; font-weight: 600; text-align: center; }
+td { vertical-align: top; }
+tr:nth-child(even) { background-color: #f9f9f9; }
+hr { border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 32, 96, 0.75), rgba(0, 0, 0, 0)); margin: 40px 0; }
+</style>
+</head>
+<body>
+    <div class="a4-container">
+        <h1><strong>BÀI KIỂM TRA CUỐI KHÓA</strong></h1>
+<h1><strong>MÔN: TRÍ TUỆ NHÂN TẠO TRUNG HỌC (AI_Trung_Hoc)</strong></h1>
+<h2><strong>1.1. THÔNG TIN</strong></h2>
+<ul>
+<li>Tổng thời gian: <strong>90 phút</strong></li>
+<li>Nội dung bài kiểm tra gồm 2 phần:</li>
+<li>Phần trắc nghiệm (30%): gồm <strong>30 câu hỏi</strong> thực hiện trong thời gian <strong>45 phút</strong> trên e-Learning</li>
+<li>Phần thực hành (70%): gồm <strong>3 bài tập</strong> thực hiện trong thời gian <strong>45 phút</strong></li>
+</ul>
+<h2><strong>1.2. VẬT TƯ THIẾT BỊ</strong></h2>
+<p>Để phục vụ cho bài kiểm tra, học viên cần chuẩn bị dụng cụ sau:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tên thiết bị</th>
+<th style="text-align: left;">Yêu cầu</th>
+<th style="text-align: center;">Hình ảnh</th>
+<th style="text-align: center;">Số lượng</th>
+<th style="text-align: center;">Đơn vị</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Máy tính xách tay hoặc máy tính bảng</td>
+<td style="text-align: left;">Kết nối Internet ổn định, có webcam và micro hoạt động tốt</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Cái</td>
+</tr>
+<tr>
+<td style="text-align: left;">Trình duyệt web</td>
+<td style="text-align: left;">Chrome, Edge hoặc Cốc Cốc phiên bản mới</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Cái</td>
+</tr>
+<tr>
+<td style="text-align: left;">Tài khoản học tập</td>
+<td style="text-align: left;">Đăng nhập được vào Dancing with AI và Teachable Machine</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Cái</td>
+</tr>
+</tbody>
+</table>
+<h2><strong>1.3. MA TRẬN ĐỀ THI KIỂM TRA CUỐI KHÓA</strong></h2>
+<p>Ma trận kiến thức</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Điểm kiến thức</th>
+<th style="text-align: center;">Mức độ cốt lõi <em>(từ 1-5)</em></th>
+<th style="text-align: left;">Câu</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Giao diện và thao tác cơ bản trên Dancing with AI</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">1, 2, 3, 11</td>
+</tr>
+<tr>
+<td style="text-align: left;">Lập trình kéo thả, tọa độ, điều khiển tuần tự</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">4, 5, 6, 12, 22</td>
+</tr>
+<tr>
+<td style="text-align: left;">Biến số, dữ liệu, biểu thức logic</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">7, 13, 14, 23, 28, 29</td>
+</tr>
+<tr>
+<td style="text-align: left;">Translate và Text to Speech</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">8, 9, 15, 24</td>
+</tr>
+<tr>
+<td style="text-align: left;">Công cụ nhận diện khuôn mặt (Face Sensing)</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">16, 17, 18, 19, 25, 26, 30</td>
+</tr>
+<tr>
+<td style="text-align: left;">Teachable Machine và nguyên lý máy học</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">10, 20, 21, 27</td>
+</tr>
+</tbody>
+</table>
+<p>Phân bố về độ khó và mức độ nhận thức</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center;">Nhớ</th>
+<th style="text-align: center;">Hiểu</th>
+<th style="text-align: center;">Vận dụng</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Số câu</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">9</td>
+</tr>
+<tr>
+<td>Câu</td>
+<td style="text-align: center;">1-10</td>
+<td style="text-align: center;">11-21</td>
+<td style="text-align: center;">22-30</td>
+</tr>
+<tr>
+<td>Tổng</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">9</td>
+</tr>
+<tr>
+<td>Tỉ lệ</td>
+<td style="text-align: center;">33%</td>
+<td style="text-align: center;">37%</td>
+<td style="text-align: center;">30%</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1><strong>PHẦN I: ĐỀ THI TRẮC NGHIỆM</strong></h1>
+<h2><strong>Câu 01</strong> [Nhớ] [Chọn 1 đáp án đúng]</h2>
+<p>Trong Dancing with AI, nhóm lệnh sự kiện có vai trò chính nào sau đây?</p>
+<ul>
+<li>A. Dùng để lưu dữ liệu vào danh sách</li>
+<li>B. Dùng làm điều kiện bắt đầu cho một chương trình hoặc một hành động</li>
+<li>C. Dùng để dịch văn bản sang ngôn ngữ khác</li>
+<li>
+<p>D. Dùng để huấn luyện mô hình Teachable Machine</p>
+</li>
+<li>
+<p><strong>Đáp án đúng:</strong> B</p>
+</li>
+<li><strong>Giải thích:</strong> Nhóm lệnh Events được dùng như điều kiện bắt đầu để chương trình hoặc nhân vật thực hiện các lệnh nối tiếp phía dưới, ví dụ khi bấm cờ xanh hoặc khi nhấn một phím.</li>
+<li><strong>Trích dẫn:</strong> Module 2 - Sự kiện (Events)</li>
+</ul>
+<h2><strong>Câu 02</strong> [Nhớ] [Chọn 1 đáp án đúng]</h2>
+<p>Một học viên muốn làm chương trình nhập từ tiếng Anh, hiển thị bản dịch trên màn hình và đồng thời đọc to kết quả. Cặp công cụ nào cần có?</p>
+<ul>
+<li>Media tham chiếu: <code>2.1</code>, <code>2.2</code>, <code>2.3</code>, <code>2.4</code> tại <code>PHẦN IV</code></li>
+<li>File kiểm tra nguồn: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_02_a.sb3">cau_02_a.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_02_b.sb3">cau_02_b.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_02_c.sb3">cau_02_c.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_02_d.sb3">cau_02_d.sb3</a></li>
+<li>
+<p>Xem nhanh trong đề:
+<img alt="Câu 02 - A" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_02_a.png" />
+<img alt="Câu 02 - B" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_02_b.png" />
+<img alt="Câu 02 - C" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_02_c.png" />
+<img alt="Câu 02 - D" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_02_d.png" /></p>
+</li>
+<li>
+<p>A. <code>Translate</code> và <code>Text to Speech</code></p>
+</li>
+<li>B. <code>Translate</code> và <code>Face Sensing</code></li>
+<li>C. <code>Text to Speech</code> và <code>Teachable Machine</code></li>
+<li>
+<p>D. <code>Translate</code> và <code>Broadcast</code></p>
+</li>
+<li>
+<p><strong>Đáp án đúng:</strong> A</p>
+</li>
+<li><strong>Giải thích:</strong> <code>Translate</code> dùng để chuyển đổi ngôn ngữ, còn <code>Text to Speech</code> dùng để đọc văn bản thành tiếng. Muốn vừa hiện bản dịch vừa phát âm thì cần kết hợp hai công cụ này.</li>
+<li><strong>Trích dẫn:</strong> Module 4 - Nhóm lệnh dịch ngôn ngữ - Extension Translate; Module 4 - Nhóm lệnh chuyển văn bản thành giọng nói - Extension Text to Speech</li>
+</ul>
+<h2><strong>Câu 03</strong> [Nhớ] [Ghép nối]</h2>
+<p>Quan sát 4 hình block/công cụ AI của PRG ở Cột A và ghép đúng với công dụng chính ở Cột B.</p>
+<ul>
+<li>Media tham chiếu: <code>3.1</code>, <code>3.2</code>, <code>3.3</code>, <code>3.4</code> tại <code>PHẦN IV</code></li>
+<li>File kiểm tra nguồn: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_03_source_pack.sb3">cau_03_source_pack.sb3</a></li>
+<li>Xem nhanh trong đề:
+<img alt="Câu 03 - 3.1" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_03_1.png" />
+<img alt="Câu 03 - 3.2" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_03_2.png" />
+<img alt="Câu 03 - 3.3" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_03_3.png" />
+<img alt="Câu 03 - 3.4" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_03_4.png" /></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Cột A</th>
+<th style="text-align: left;">Cột B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1. <code>Translate</code></td>
+<td style="text-align: left;">a. Dán đường link model đã tạo để máy nhận diện đối tượng</td>
+</tr>
+<tr>
+<td style="text-align: left;">2. <code>Speak</code></td>
+<td style="text-align: left;">b. Đưa nhân vật hoặc phụ kiện bám theo một vị trí trên khuôn mặt</td>
+</tr>
+<tr>
+<td style="text-align: left;">3. <code>go to face landmark</code></td>
+<td style="text-align: left;">c. Chuyển văn bản từ ngôn ngữ này sang ngôn ngữ khác</td>
+</tr>
+<tr>
+<td style="text-align: left;">4. <code>use model</code></td>
+<td style="text-align: left;">d. Đọc nội dung văn bản thành giọng nói</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Đáp án đúng:</strong> <code>1-c, 2-d, 3-b, 4-a</code></li>
+<li><strong>Giải thích:</strong> Đây là bốn công cụ AI cốt lõi của các module 4, 5, 6: dịch ngôn ngữ, đọc văn bản, bám theo mốc khuôn mặt, và sử dụng mô hình học máy.</li>
+<li><strong>Trích dẫn:</strong> Module 4 - Translate; Module 4 - Text to Speech; Module 5 - Nhóm lệnh nhận diện hình ảnh; Module 6 - Giới thiệu về trình duyệt "Teachable machine" và cách sử dụng</li>
+</ul>
+<h2><strong>Câu 04</strong> [Nhớ] [Điền số]</h2>
+<p>Quan sát đoạn lệnh sau:</p>
+<p><code>go to x: 10 y: -5</code></p>
+<p><code>change x by 8</code></p>
+<p><code>change y by 12</code></p>
+<p>Hãy điền tọa độ cuối cùng của nhân vật sau khi chạy chương trình:</p>
+<ul>
+<li><code>x = ____</code></li>
+<li>
+<p><code>y = ____</code></p>
+</li>
+<li>
+<p>Media tham chiếu: <code>4.1</code> tại <code>PHẦN IV</code></p>
+</li>
+<li>File kiểm tra nguồn: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_04_source.sb3">cau_04_source.sb3</a></li>
+<li>
+<p>Xem nhanh trong đề:
+<img alt="Câu 04 - 4.1" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_04_1.png" /></p>
+</li>
+<li>
+<p><strong>Đáp án đúng:</strong> <code>x = 18</code>, <code>y = 7</code></p>
+</li>
+<li><strong>Giải thích:</strong> Nhân vật bắt đầu ở <code>(10, -5)</code>, sau đó tăng <code>x</code> thêm <code>8</code> thành <code>18</code>, và tăng <code>y</code> thêm <code>12</code> thành <code>7</code>.</li>
+<li><strong>Trích dẫn:</strong> Module 2 - Tìm hiểu về hệ trục tọa độ; Module 2 - Các câu lệnh về hệ trục tọa độ</li>
+</ul>
+<h2><strong>Câu 05</strong> [Nhớ] [Chọn nhiều đáp án đúng]</h2>
+<p>Những nhận định nào sau đây đúng về dữ liệu Boolean?</p>
+<ul>
+<li>A. Boolean chỉ có hai giá trị cơ bản là <code>True</code> và <code>False</code></li>
+<li>B. Dữ liệu Boolean thường được biểu diễn bằng block hình lục giác</li>
+<li>C. Boolean thường được dùng kèm với điều kiện hoặc vòng lặp khi cần kiểm tra trạng thái liên tục</li>
+<li>
+<p>D. Boolean là công cụ chuyên dùng để phát âm văn bản thành tiếng</p>
+</li>
+<li>
+<p><strong>Đáp án đúng:</strong> <code>A, B, C</code></p>
+</li>
+<li><strong>Giải thích:</strong> Boolean là dữ liệu logic đúng/sai, có dạng block lục giác và thường xuất hiện trong các lệnh điều kiện, lặp, hoặc kiểm tra trạng thái.</li>
+<li><strong>Trích dẫn:</strong> Module 3 - Các kiểu dữ liệu trong lập trình kéo - thả; Module 3 - Tổng kết - Xử lý dữ liệu trong lập trình kéo - thả</li>
+</ul>
+<h2><strong>Câu 06</strong> [Nhớ] [Chọn 1 đáp án đúng]</h2>
+<p>Trong chương trình có hai lệnh hỏi liên tiếp:</p>
+<ol>
+<li><code>What's your name?</code></li>
+<li><code>How old are you?</code></li>
+</ol>
+<p>Sau khi người dùng trả lời cả hai câu, biến <code>Answer</code> sẽ lưu nội dung nào?</p>
+<ul>
+<li>Media tham chiếu: <code>6.1</code> tại <code>PHẦN IV</code></li>
+<li>File kiểm tra nguồn: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_06_source.sb3">cau_06_source.sb3</a></li>
+<li>
+<p>Xem nhanh trong đề:
+<img alt="Câu 06 - 6.1" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_06_1.png" /></p>
+</li>
+<li>
+<p>A. Lưu đồng thời cả tên và tuổi</p>
+</li>
+<li>B. Chỉ lưu câu trả lời của câu hỏi thứ nhất</li>
+<li>C. Chỉ lưu câu trả lời của câu hỏi cuối cùng</li>
+<li>
+<p>D. Không lưu gì cả</p>
+</li>
+<li>
+<p><strong>Đáp án đúng:</strong> <code>C</code></p>
+</li>
+<li><strong>Giải thích:</strong> Theo tài liệu, nếu có nhiều câu hỏi liên tiếp thì biến <code>Answer</code> chỉ giữ lại dữ liệu của câu trả lời cuối cùng.</li>
+<li><strong>Trích dẫn:</strong> Module 3 - Khối lệnh "Hỏi - Trả lời"</li>
+</ul>
+<h2><strong>Câu 07</strong> [Nhớ] [Chọn nhiều đáp án đúng]</h2>
+<p>Để một chương trình dịch từ rồi đọc kết quả thành tiếng hoạt động đúng, cần thêm những công cụ, thư viện hoặc extension nào sau đây?</p>
+<ul>
+<li>Media tham chiếu: <code>7.1</code>, <code>7.2</code>, <code>7.3</code>, <code>7.4</code> tại <code>PHẦN IV</code></li>
+<li>File kiểm tra nguồn: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_07_a.sb3">cau_07_a.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_07_b.sb3">cau_07_b.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_07_c.sb3">cau_07_c.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_07_d.sb3">cau_07_d.sb3</a></li>
+<li>
+<p>Xem nhanh trong đề:
+<img alt="Câu 07 - A" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_07_a.png" />
+<img alt="Câu 07 - B" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_07_b.png" />
+<img alt="Câu 07 - C" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_07_c.png" />
+<img alt="Câu 07 - D" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_07_d.png" /></p>
+</li>
+<li>
+<p>A. Extension <code>Translate</code></p>
+</li>
+<li>B. Extension <code>Text to Speech</code></li>
+<li>C. Công cụ <code>Face Sensing</code></li>
+<li>
+<p>D. Công cụ <code>Teachable Machine</code></p>
+</li>
+<li>
+<p><strong>Đáp án đúng:</strong> <code>A, B</code></p>
+</li>
+<li><strong>Giải thích:</strong> Bài toán này cần extension dịch ngôn ngữ và extension chuyển văn bản thành giọng nói. <code>Face Sensing</code> và <code>Teachable Machine</code> là công cụ AI khác, không phải thành phần bắt buộc cho chức năng này.</li>
+<li><strong>Trích dẫn:</strong> Module 4 - Nhóm lệnh dịch ngôn ngữ - Extension Translate; Module 4 - Nhóm lệnh chuyển văn bản thành giọng nói - Extension Text to Speech</li>
+</ul>
+<h2><strong>Câu 08</strong> [Nhớ] [Chọn 1 đáp án đúng]</h2>
+<p>Trong một dự án face filter, để phụ kiện luôn đi theo vị trí khuôn mặt khi người dùng di chuyển, cách đặt lệnh nào là cần thiết nhất?</p>
+<ul>
+<li>Media tham chiếu: <code>8.1</code> tại <code>PHẦN IV</code></li>
+<li>File kiểm tra nguồn: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_08_source.sb3">cau_08_source.sb3</a></li>
+<li>
+<p>Xem nhanh trong đề:
+<img alt="Câu 08 - 8.1" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_08_1.png" /></p>
+</li>
+<li>
+<p>A. Đặt lệnh bám theo vị trí khuôn mặt hoặc landmark bên trong <code>forever</code></p>
+</li>
+<li>B. Đặt một lần lệnh bám theo landmark ngay dưới cờ xanh nhưng không lặp lại</li>
+<li>C. Dùng <code>change x by ...</code> và <code>change y by ...</code> liên tục mà không lấy dữ liệu từ khuôn mặt</li>
+<li>
+<p>D. Đặt phụ kiện ở một vị trí cố định rồi chỉ đổi costume của phụ kiện</p>
+</li>
+<li>
+<p><strong>Đáp án đúng:</strong> <code>A</code></p>
+</li>
+<li><strong>Giải thích:</strong> Tài liệu nêu rõ các lệnh đi theo khuôn mặt thường được dùng với <code>forever</code> để nhân vật hoặc phụ kiện bám theo chuyển động liên tục của người dùng trong khung hình.</li>
+<li><strong>Trích dẫn:</strong> Module 5 - Nhóm lệnh nhận diện hình ảnh; Module 5 - Tổng kết - Công cụ nhận diện khuôn mặt của Dancing with AI</li>
+</ul>
+<h2><strong>Câu 09</strong> [Nhớ] [Chọn 1 đáp án đúng]</h2>
+<p>Để khối <code>use model ...</code> hoạt động đúng trong Dancing with AI, người dùng cần dán nội dung nào sau đây?</p>
+<ul>
+<li>Media tham chiếu: <code>9.1</code> tại <code>PHẦN IV</code></li>
+<li>File kiểm tra nguồn: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_09_source.sb3">cau_09_source.sb3</a></li>
+<li>
+<p>Xem nhanh trong đề:
+<img alt="Câu 09 - 9.1" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_09_1.png" /></p>
+</li>
+<li>
+<p>A. Tên của lớp học</p>
+</li>
+<li>B. Đường link model đã tạo trên Teachable Machine</li>
+<li>C. Ảnh chân dung của học viên</li>
+<li>
+<p>D. Tệp âm thanh đã ghi âm</p>
+</li>
+<li>
+<p><strong>Đáp án đúng:</strong> <code>B</code></p>
+</li>
+<li><strong>Giải thích:</strong> Khối <code>use model</code> dùng để dán đường link model đã tạo. Khi khối này được chạy, máy tính mới có thể sử dụng mô hình đã học để nhận diện đối tượng hoặc người dùng.</li>
+<li><strong>Trích dẫn:</strong> Module 6 - Giới thiệu về trình duyệt "Teachable machine" và cách sử dụng</li>
+</ul>
+<h2><strong>Câu 10</strong> [Nhớ] [Chọn nhiều đáp án đúng]</h2>
+<p>Khi dùng Teachable Machine trong Dancing with AI, những thao tác nào sau đây là đúng?</p>
+<ul>
+<li>Media tham chiếu: <code>10.1</code> tại <code>PHẦN IV</code></li>
+<li>File kiểm tra nguồn: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_10_source.sb3">cau_10_source.sb3</a></li>
+<li>
+<p>Xem nhanh trong đề:
+<img alt="Câu 10 - 10.1" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_10_1.png" /></p>
+</li>
+<li>
+<p>A. Bật camera bằng khối <code>turn video on</code> khi cần nhận diện</p>
+</li>
+<li>B. Cấp quyền camera cho trình duyệt nếu hệ thống yêu cầu</li>
+<li>C. Dán đúng link model vào khối <code>use model</code></li>
+<li>
+<p>D. Giữ đồng thời nhiều tab cùng dùng camera để mô hình nhận diện ổn định hơn</p>
+</li>
+<li>
+<p><strong>Đáp án đúng:</strong> <code>A, B, C</code></p>
+</li>
+<li><strong>Giải thích:</strong> Khi dùng Teachable Machine, cần bật camera, cấp quyền camera và dán đúng link model. Việc giữ đồng thời nhiều tab cùng dùng camera không phải thao tác đúng vì dễ gây xung đột camera.</li>
+<li><strong>Trích dẫn:</strong> Module 6 - Giới thiệu về trình duyệt "Teachable machine" và cách sử dụng; Module 8 - Những lưu ý khi dạy</li>
+</ul>
+<h2><strong>Câu 11</strong> [Hiểu] [Chọn 1 đáp án đúng]</h2>
+<p>Trong một dự án “từ điển nói”, sau khi học viên nhập từ tiếng Anh, chương trình phải đọc xong bản dịch rồi mới hiện câu hỏi tiếp theo. Cách thiết kế nào phù hợp nhất?</p>
+<ul>
+<li>Media tham chiếu: <code>11.1</code>, <code>11.2</code> tại <code>PHẦN IV</code></li>
+<li>File kiểm tra nguồn: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_11_source_pack.sb3">cau_11_source_pack.sb3</a></li>
+<li>
+<p>Xem nhanh trong đề:
+<img alt="Câu 11 - 11.1" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_11_1.png" />
+<img alt="Câu 11 - 11.2" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_11_2.png" /></p>
+</li>
+<li>
+<p>A. Hỏi từ cần dịch -&gt; dịch từ -&gt; đọc xong bản dịch -&gt; mới hỏi từ tiếp theo</p>
+</li>
+<li>B. Hỏi từ cần dịch -&gt; đọc ngay từ gốc -&gt; hỏi từ tiếp theo -&gt; cuối cùng mới dịch</li>
+<li>C. Hỏi từ cần dịch -&gt; dịch từ -&gt; hỏi từ tiếp theo ngay lập tức -&gt; phần đọc chạy trễ phía sau</li>
+<li>
+<p>D. Hỏi từ cần dịch -&gt; phát âm thanh bất kỳ -&gt; dịch từ -&gt; dừng chương trình</p>
+</li>
+<li>
+<p><strong>Đáp án đúng:</strong> <code>A</code></p>
+</li>
+<li><strong>Giải thích:</strong> Nếu yêu cầu là chương trình phải đọc xong rồi mới sang bước tiếp theo, cần dùng luồng tuần tự rõ ràng: hỏi, dịch, đọc kết quả, rồi mới hỏi tiếp.</li>
+<li><strong>Trích dẫn:</strong> Module 4 - Nhóm lệnh chuyển văn bản thành giọng nói - Extension Text to Speech</li>
+</ul>
+<h2><strong>Câu 12</strong> [Hiểu] [Chọn nhiều đáp án đúng]</h2>
+<p>Chọn tất cả nhận định đúng về <code>Translate</code>, extension <code>Text to Speech</code> và block <code>Speak</code> trong Dancing with AI.</p>
+<ul>
+<li>Media tham chiếu: <code>12.1</code>, <code>12.2</code> tại <code>PHẦN IV</code></li>
+<li>File kiểm tra nguồn: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_12_source_pack.sb3">cau_12_source_pack.sb3</a></li>
+<li>
+<p>Xem nhanh trong đề:
+<img alt="Câu 12 - 12.1" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_12_1.png" />
+<img alt="Câu 12 - 12.2" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_12_2.png" /></p>
+</li>
+<li>
+<p>A. <code>Translate</code> trả về nội dung văn bản đã được chuyển sang ngôn ngữ đích</p>
+</li>
+<li>B. Muốn đọc văn bản thành tiếng, cần thêm extension <code>Text to Speech</code> để dùng được block <code>Speak</code></li>
+<li>C. Nếu muốn vừa dịch vừa phát âm, có thể đưa kết quả của <code>Translate</code> vào đầu vào của block <code>Speak</code></li>
+<li>
+<p>D. <code>Translate</code> tự động bật camera để nhận diện khuôn mặt</p>
+</li>
+<li>
+<p><strong>Đáp án đúng:</strong> <code>A, B, C</code></p>
+</li>
+<li><strong>Giải thích:</strong> <code>Translate</code> tạo ra văn bản đã dịch. Extension <code>Text to Speech</code> cung cấp block <code>Speak</code> để đọc văn bản thành tiếng. Muốn vừa dịch vừa đọc thì phải lấy đầu ra đã dịch đưa sang block đọc.</li>
+<li><strong>Trích dẫn:</strong> Module 4 - Nhóm lệnh dịch ngôn ngữ - Extension Translate; Module 4 - Nhóm lệnh chuyển văn bản thành giọng nói - Extension Text to Speech</li>
+</ul>
+<h2><strong>Câu 13</strong> [Hiểu] [Ghép nối]</h2>
+<p>Ghép đúng công cụ AI với đầu ra hoặc tác dụng chính của nó.</p>
+<ul>
+<li>Media tham chiếu: <code>13.1</code>, <code>13.2</code>, <code>13.3</code>, <code>13.4</code> tại <code>PHẦN IV</code></li>
+<li>File kiểm tra nguồn: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_13_source_pack.sb3">cau_13_source_pack.sb3</a></li>
+<li>Xem nhanh trong đề:
+<img alt="Câu 13 - 13.1" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_13_1.png" />
+<img alt="Câu 13 - 13.2" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_13_2.png" />
+<img alt="Câu 13 - 13.3" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_13_3.png" />
+<img alt="Câu 13 - 13.4" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_13_4.png" /></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Cột A</th>
+<th style="text-align: left;">Cột B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1. <code>Translate</code></td>
+<td style="text-align: left;">a. Phân loại hoặc nhận diện theo model đã dạy</td>
+</tr>
+<tr>
+<td style="text-align: left;">2. <code>Text to Speech</code></td>
+<td style="text-align: left;">b. Trả về nội dung văn bản đã được dịch</td>
+</tr>
+<tr>
+<td style="text-align: left;">3. <code>Face sensing</code></td>
+<td style="text-align: left;">c. Đọc văn bản thành giọng nói</td>
+</tr>
+<tr>
+<td style="text-align: left;">4. <code>Teachable Machine</code></td>
+<td style="text-align: left;">d. Theo dõi vị trí hoặc trạng thái khuôn mặt</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Đáp án đúng:</strong> <code>1-b, 2-c, 3-d, 4-a</code></li>
+<li><strong>Giải thích:</strong> Mỗi công cụ AI trong khóa học có một kiểu đầu ra chính khác nhau, nên cần hiểu đúng để ghép vào dự án phù hợp.</li>
+<li><strong>Trích dẫn:</strong> Module 4; Module 5; Module 6</li>
+</ul>
+<h2><strong>Câu 14</strong> [Hiểu] [Chọn 1 đáp án đúng]</h2>
+<p>Quan sát hai đoạn chương trình trong dự án face filter:</p>
+<ul>
+<li><code>14.1</code>: bật camera rồi liên tục dùng <code>change y by ...</code></li>
+<li><code>14.2</code>: bật camera rồi dùng block bám theo <code>nose bridge</code> trong <code>forever</code></li>
+</ul>
+<p>Giải thích nào đúng nhất?</p>
+<ul>
+<li>Media tham chiếu: <code>14.1</code>, <code>14.2</code> tại <code>PHẦN IV</code></li>
+<li>File kiểm tra nguồn: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_14_source_pack.sb3">cau_14_source_pack.sb3</a></li>
+<li>
+<p>Xem nhanh trong đề:
+<img alt="Câu 14 - 14.1" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_14_1.png" />
+<img alt="Câu 14 - 14.2" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_14_2.png" /></p>
+</li>
+<li>
+<p>A. Cả hai cách luôn cho kết quả giống hệt nhau</p>
+</li>
+<li>B. Cách 1 có thể làm phụ kiện trôi liên tục ra khỏi vị trí mong muốn, còn cách 2 bám theo vị trí khuôn mặt ổn định hơn</li>
+<li>C. Cách 1 chỉ dùng cho Teachable Machine, cách 2 chỉ dùng cho List</li>
+<li>
+<p>D. Cách 2 không cần camera</p>
+</li>
+<li>
+<p><strong>Đáp án đúng:</strong> <code>B</code></p>
+</li>
+<li><strong>Giải thích:</strong> Ở <code>14.1</code>, chương trình chỉ thay đổi tọa độ theo một quy luật cố định nên phụ kiện sẽ trôi dần, không thực sự bám theo khuôn mặt. Ở <code>14.2</code>, block landmark lấy dữ liệu khuôn mặt thật nên vị trí ổn định hơn.</li>
+<li><strong>Trích dẫn:</strong> Module 5 - Nhóm lệnh nhận diện hình ảnh; Module 5 - Tổng kết - Công cụ nhận diện khuôn mặt của Dancing with AI</li>
+</ul>
+<h2><strong>Câu 15</strong> [Hiểu] [Chọn nhiều đáp án đúng]</h2>
+<p>Một chương trình lần lượt hỏi người dùng tên, tuổi và màu yêu thích. Muốn lưu được cả ba câu trả lời để dùng về sau, các nhận định nào sau đây là đúng?</p>
+<ul>
+<li>A. Cần gán từng giá trị của <code>Answer</code> sang các biến riêng hoặc cấu trúc lưu trữ phù hợp</li>
+<li>B. Chỉ cần đọc biến <code>Answer</code> ở cuối chương trình là đủ</li>
+<li>C. Nếu không lưu lại trung gian, <code>Answer</code> chỉ giữ câu trả lời cuối cùng</li>
+<li>
+<p>D. Có thể dùng biến hoặc danh sách tùy nhu cầu thiết kế chương trình</p>
+</li>
+<li>
+<p><strong>Đáp án đúng:</strong> <code>A, C, D</code></p>
+</li>
+<li><strong>Giải thích:</strong> <code>Answer</code> chỉ giữ câu trả lời cuối cùng, nên nếu muốn giữ nhiều dữ liệu thì phải chuyển chúng sang biến riêng hoặc cấu trúc lưu trữ khác như danh sách.</li>
+<li><strong>Trích dẫn:</strong> Module 3 - Khối lệnh "Hỏi - Trả lời"; Module 3 - Nhóm lệnh Biến số; Module 3 - Khối lệnh về Danh sách - List</li>
+</ul>
+<h2><strong>Câu 16</strong> [Hiểu] [Chọn 1 đáp án đúng]</h2>
+<p>Danh sách hiện có: <code>Lan, Minh, Huy, An</code>. Nếu xóa phần tử ở vị trí của <code>Huy</code>, điều gì xảy ra?</p>
+<ul>
+<li>A. Các phần tử phía sau giữ nguyên vị trí tuyệt đối</li>
+<li>B. <code>An</code> sẽ được dồn lên một vị trí</li>
+<li>C. Toàn bộ danh sách bị xóa</li>
+<li>
+<p>D. Chỉ có thể xóa phần tử cuối cùng</p>
+</li>
+<li>
+<p><strong>Đáp án đúng:</strong> <code>B</code></p>
+</li>
+<li><strong>Giải thích:</strong> Khi xóa một phần tử ở giữa danh sách, các phần tử phía sau sẽ được dồn lên một bậc.</li>
+<li><strong>Trích dẫn:</strong> Module 3 - Khối lệnh về Danh sách - List</li>
+</ul>
+<h2><strong>Câu 17</strong> [Hiểu] [Chọn 1 đáp án đúng]</h2>
+<p>Trong một dự án có hai nhân vật, nhân vật A đếm ngược xong mới gửi tín hiệu để nhân vật B bắt đầu nói. Cách giải thích nào đúng nhất về việc dùng <code>broadcast</code> và <code>when I receive</code>?</p>
+<ul>
+<li>A. <code>Broadcast</code> giúp A gửi tín hiệu đúng thời điểm để B bắt đầu hành động khi nhận được thông điệp</li>
+<li>B. <code>Broadcast</code> khiến B chỉ được chạy sau khi mọi script khác của A trong toàn dự án kết thúc hẳn</li>
+<li>C. <code>When I receive</code> chỉ dùng được nếu A và B nằm trong cùng một sprite</li>
+<li>
+<p>D. <code>Broadcast</code> tự chuyển luôn giá trị biến của A sang cho B nên không cần <code>when I receive</code></p>
+</li>
+<li>
+<p><strong>Đáp án đúng:</strong> <code>A</code></p>
+</li>
+<li><strong>Giải thích:</strong> <code>Broadcast</code> là cơ chế gửi thông điệp giữa các sprite hoặc các luồng khác nhau. Sprite B chỉ bắt đầu hành động khi có script <code>when I receive</code> nghe đúng thông điệp đó.</li>
+<li><strong>Trích dẫn:</strong> Module 3 - Khối lệnh Broadcast - Receive message</li>
+</ul>
+<h2><strong>Câu 18</strong> [Hiểu] [Chọn 1 đáp án đúng]</h2>
+<p>Một nhóm học viên làm ứng dụng hỗ trợ học từ vựng: nhập từ tiếng Anh, chọn ngôn ngữ đích, hiển thị bản dịch rồi đọc to đúng nội dung vừa dịch. Luồng nào hợp lý nhất?</p>
+<ul>
+<li>A. Nhập từ cần dịch -&gt; chọn ngôn ngữ đích -&gt; dịch kết quả -&gt; đọc đúng phần văn bản vừa dịch</li>
+<li>B. Nhập từ cần dịch -&gt; đọc ngay từ gốc -&gt; chọn ngôn ngữ đích -&gt; bỏ qua bước dịch</li>
+<li>C. Bật <code>use model</code> -&gt; nhận diện khuôn mặt -&gt; dịch bản dịch có sẵn -&gt; đọc ngẫu nhiên một từ khác</li>
+<li>
+<p>D. Chọn ngôn ngữ đích -&gt; xóa danh sách -&gt; đọc một câu mẫu -&gt; mới cho người dùng nhập từ</p>
+</li>
+<li>
+<p><strong>Đáp án đúng:</strong> <code>A</code></p>
+</li>
+<li><strong>Giải thích:</strong> Đây là chuỗi thao tác logic và đúng với chức năng của công cụ Translate và Text to Speech.</li>
+<li><strong>Trích dẫn:</strong> Module 4 - Translate; Module 4 - Text to Speech</li>
+</ul>
+<h2><strong>Câu 19</strong> [Hiểu] [Chọn nhiều đáp án đúng]</h2>
+<p>Trong một dự án face filter, những cách làm nào sau đây giúp hệ thống hoạt động ổn định và dễ quan sát hơn?</p>
+<ul>
+<li>Media tham chiếu: <code>19.1</code> tại <code>PHẦN IV</code></li>
+<li>File kiểm tra nguồn: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_19_source.sb3">cau_19_source.sb3</a></li>
+<li>
+<p>Xem nhanh trong đề:
+<img alt="Câu 19 - 19.1" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_19_1.png" /></p>
+</li>
+<li>
+<p>A. Cấp quyền camera cho trình duyệt trước khi chạy dự án</p>
+</li>
+<li>B. Đặt lệnh bám theo khuôn mặt hoặc landmark bên trong <code>forever</code></li>
+<li>C. Chỉnh độ trong suốt của camera khi cần để nhìn rõ phụ kiện và nhân vật</li>
+<li>
+<p>D. Đặt lệnh bám theo landmark một lần dưới cờ xanh rồi giữ nguyên vị trí để giảm lag</p>
+</li>
+<li>
+<p><strong>Đáp án đúng:</strong> <code>A, B, C</code></p>
+</li>
+<li><strong>Giải thích:</strong> Dự án face filter cần camera hoạt động đúng, cần cập nhật vị trí liên tục trong vòng lặp và có thể chỉnh độ trong suốt để dễ quan sát. Nếu chỉ đặt landmark một lần thì phụ kiện không bám theo chuyển động khuôn mặt.</li>
+<li><strong>Trích dẫn:</strong> Module 5 - Nhóm lệnh nhận diện hình ảnh; Module 5 - Tổng kết - Công cụ nhận diện khuôn mặt của Dancing with AI</li>
+</ul>
+<h2><strong>Câu 20</strong> [Hiểu] [Chọn 1 đáp án đúng]</h2>
+<p>Một nhóm muốn làm dự án “Từ điển selfie biết nói”: khi người dùng nhập từ tiếng Anh, nhân vật dịch và đọc to kết quả; đồng thời một phụ kiện trên khuôn mặt người dùng bám theo chuyển động khuôn mặt. Tổ hợp công cụ nào phù hợp nhất?</p>
+<ul>
+<li>A. <code>Translate</code> + <code>Text to Speech</code> + <code>Face sensing</code></li>
+<li>B. <code>Translate</code> + <code>Face sensing</code></li>
+<li>C. <code>Text to Speech</code> + <code>Face sensing</code></li>
+<li>
+<p>D. <code>Translate</code> + <code>List</code> + <code>Broadcast</code></p>
+</li>
+<li>
+<p><strong>Đáp án đúng:</strong> <code>A</code></p>
+</li>
+<li><strong>Giải thích:</strong> Dự án cần đủ ba phần: dịch ngôn ngữ, đọc bản dịch thành tiếng và bám phụ kiện theo khuôn mặt. Thiếu một trong ba phần thì chưa đáp ứng đúng yêu cầu.</li>
+<li><strong>Trích dẫn:</strong> Module 4; Module 5</li>
+</ul>
+<h2><strong>Câu 21</strong> [Hiểu] [Chọn nhiều đáp án đúng]</h2>
+<p>Trong dự án “Mở khóa bằng Face ID”, học viên nhấn phím <code>B</code> để mở camera và nhận diện đúng người đã huấn luyện trước đó. Nếu dự án không chạy đúng, những lỗi hoặc bước xử lý nào sau đây là phù hợp?</p>
+<ul>
+<li>Media tham chiếu: <code>21.1</code>, <code>21.2</code>, <code>21.3</code> tại <code>PHẦN IV</code></li>
+<li>File kiểm tra nguồn: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_21_source_pack.sb3">cau_21_source_pack.sb3</a></li>
+<li>
+<p>Xem nhanh trong đề:
+<img alt="Câu 21 - 21.1" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_21_1.png" />
+<img alt="Câu 21 - 21.2" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_21_2.png" />
+<img alt="Câu 21 - 21.3" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_21_3.png" /></p>
+</li>
+<li>
+<p>A. Quên bật <code>turn video on</code> nên camera chưa mở khi nhấn <code>B</code></p>
+</li>
+<li>B. Chưa cấp quyền camera cho trình duyệt nên hình camera không hiện</li>
+<li>C. Camera chuyển sang màn hình xám sau khi vừa dùng Teachable Machine ở tab khác, cần đóng tab xung đột hoặc cấp lại quyền camera</li>
+<li>
+<p>D. Chỉ cần copy link model ở Teachable Machine, không cần dán vào khối <code>use model</code></p>
+</li>
+<li>
+<p><strong>Đáp án đúng:</strong> <code>A, B, C</code></p>
+</li>
+<li><strong>Giải thích:</strong> Đây đều là các lỗi hoặc tình huống thực tế thường gặp khi dùng camera và Teachable Machine. Riêng việc chỉ copy link model mà không dán vào khối <code>use model</code> thì dự án vẫn không thể chạy đúng.</li>
+<li><strong>Trích dẫn:</strong> Module 6 - Giới thiệu về trình duyệt "Teachable machine" và cách sử dụng; Module 8 - Những lưu ý khi dạy</li>
+</ul>
+<h2><strong>Câu 22</strong> [Vận dụng] [Chọn 1 đáp án đúng]</h2>
+<p>Giáo viên muốn học viên làm một ứng dụng nhập từ tiếng Anh, dịch sang tiếng Việt rồi đọc to đúng kết quả vừa dịch. Chương trình mẫu nào dưới đây là hợp lý nhất?</p>
+<ul>
+<li>Media tham chiếu: <code>22.1</code>, <code>22.2</code>, <code>22.3</code>, <code>22.4</code> tại <code>PHẦN IV</code></li>
+<li>File kiểm tra nguồn: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_22_a.sb3">cau_22_a.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_22_b.sb3">cau_22_b.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_22_c.sb3">cau_22_c.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_22_d.sb3">cau_22_d.sb3</a></li>
+<li>
+<p>Xem nhanh trong đề:
+<img alt="Câu 22 - A" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_22_a.png" />
+<img alt="Câu 22 - B" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_22_b.png" />
+<img alt="Câu 22 - C" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_22_c.png" />
+<img alt="Câu 22 - D" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_22_d.png" /></p>
+</li>
+<li>
+<p>A. <code>when green flag clicked -&gt; ask [English word?] and wait -&gt; set [ban_dich] to (translate (answer) to [Vietnamese]) -&gt; speak (ban_dich)</code></p>
+</li>
+<li>B. <code>when green flag clicked -&gt; ask [English word?] and wait -&gt; speak (answer) -&gt; set [ban_dich] to (translate [hello] to [Vietnamese])</code></li>
+<li>C. <code>when green flag clicked -&gt; ask [English word?] and wait -&gt; set [ban_dich] to (translate (answer) to [Vietnamese]) -&gt; speak (answer)</code></li>
+<li>
+<p>D. <code>when green flag clicked -&gt; use model [...] -&gt; when model detects [Class 1] -&gt; speak [ban_dich]</code></p>
+</li>
+<li>
+<p><strong>Đáp án đúng:</strong> <code>A</code></p>
+</li>
+<li><strong>Giải thích:</strong> Bài toán yêu cầu nhập từ, dịch ngôn ngữ rồi đọc đúng phần đã dịch. Phương án A dùng đúng chuỗi <code>ask -&gt; translate(answer) -&gt; speak(ban_dich)</code>, còn các phương án khác hoặc đọc sai dữ liệu, hoặc bỏ qua bước dịch phù hợp.</li>
+<li><strong>Trích dẫn:</strong> Module 3 - Khối lệnh "Hỏi - Trả lời"; Module 4 - Nhóm lệnh dịch ngôn ngữ - Extension Translate; Module 4 - Nhóm lệnh chuyển văn bản thành giọng nói - Extension Text to speech</li>
+</ul>
+<h2><strong>Câu 23</strong> [Vận dụng] [Chọn nhiều đáp án đúng]</h2>
+<p>Giáo viên muốn học viên ghép các đoạn chương trình trong <code>23.1</code>-<code>23.4</code> để tạo ứng dụng: nhập từ tiếng Anh, chọn ngôn ngữ đích, dịch kết quả rồi đọc to bản dịch. Chọn tất cả các đoạn cần ghép vào chương trình.</p>
+<ul>
+<li>Media tham chiếu: <code>23.1</code>, <code>23.2</code>, <code>23.3</code>, <code>23.4</code> tại <code>PHẦN IV</code></li>
+<li>File kiểm tra nguồn: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_23_a.sb3">cau_23_a.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_23_b.sb3">cau_23_b.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_23_c.sb3">cau_23_c.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_23_d.sb3">cau_23_d.sb3</a></li>
+<li>
+<p>Xem nhanh trong đề:
+<img alt="Câu 23 - A" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_23_a.png" />
+<img alt="Câu 23 - B" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_23_b.png" />
+<img alt="Câu 23 - C" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_23_c.png" />
+<img alt="Câu 23 - D" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_23_d.png" /></p>
+</li>
+<li>
+<p>A. Đoạn nhập từ tiếng Anh và hỏi người dùng chọn ngôn ngữ đích</p>
+</li>
+<li>B. Đoạn lưu lựa chọn ngôn ngữ đích vào biến hoặc danh sách để dùng lại</li>
+<li>C. Đoạn dịch kết quả rồi đọc to đúng phần văn bản đã dịch</li>
+<li>
+<p>D. Đoạn bám landmark khuôn mặt để chọn ngôn ngữ bằng camera</p>
+</li>
+<li>
+<p><strong>Đáp án đúng:</strong> <code>A, B, C</code></p>
+</li>
+<li><strong>Giải thích:</strong> Ứng dụng này cần đủ ba phần: nhận dữ liệu đầu vào, lưu lựa chọn ngôn ngữ khi cần, rồi dịch và đọc bản dịch. Đoạn face sensing không giải quyết bài toán từ vựng này.</li>
+<li><strong>Trích dẫn:</strong> Module 3 - Khối lệnh "Hỏi - Trả lời"; Module 4 - Translate; Module 4 - Text to Speech</li>
+</ul>
+<h2><strong>Câu 24</strong> [Vận dụng] [Chọn nhiều đáp án đúng]</h2>
+<p>Quan sát 4 đoạn thành phần trong <code>24.1</code>-<code>24.4</code>. Chọn tất cả thành phần phù hợp để ghép vào dự án face filter có mũ, khuyên tai và cho phép đổi phụ kiện khi nhấn phím <code>space</code>.</p>
+<ul>
+<li>Media tham chiếu: <code>24.1</code>, <code>24.2</code>, <code>24.3</code>, <code>24.4</code> tại <code>PHẦN IV</code></li>
+<li>File kiểm tra nguồn: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_24_a.sb3">cau_24_a.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_24_b.sb3">cau_24_b.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_24_c.sb3">cau_24_c.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_24_d.sb3">cau_24_d.sb3</a></li>
+<li>
+<p>Xem nhanh trong đề:
+<img alt="Câu 24 - A" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_24_a.png" />
+<img alt="Câu 24 - B" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_24_b.png" />
+<img alt="Câu 24 - C" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_24_c.png" />
+<img alt="Câu 24 - D" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_24_d.png" /></p>
+</li>
+<li>
+<p>A. Thành phần lặp liên tục để phụ kiện bám theo landmark khuôn mặt</p>
+</li>
+<li>B. Thành phần sự kiện nhấn phím <code>space</code> để đổi costume</li>
+<li>C. Thành phần đặt phụ kiện cố định bằng <code>go to x: y:</code> không theo khuôn mặt</li>
+<li>
+<p>D. Thành phần chọn landmark phù hợp cho từng phụ kiện, ví dụ vùng tai hoặc vùng sống mũi</p>
+</li>
+<li>
+<p><strong>Đáp án đúng:</strong> <code>A, B, D</code></p>
+</li>
+<li><strong>Giải thích:</strong> Dự án face filter cần thành phần bám landmark liên tục, thành phần đổi costume theo phím và chọn đúng landmark cho từng loại phụ kiện. Đặt cố định theo <code>x, y</code> không phù hợp khi người dùng di chuyển.</li>
+<li><strong>Trích dẫn:</strong> Module 2 - Sự kiện (Events); Module 5 - Nhóm lệnh nhận diện hình ảnh; Module 7 - Bài tập thực hành - AI TrH</li>
+</ul>
+<h2><strong>Câu 25</strong> [Vận dụng] [Chọn nhiều đáp án đúng]</h2>
+<p>Quan sát 4 đoạn thành phần trong <code>25.1</code>-<code>25.4</code>. Muốn xây dựng ứng dụng điểm danh bằng AI để nhận đúng người đã học trước đó, những thành phần nào cần có?</p>
+<ul>
+<li>Media tham chiếu: <code>25.1</code>, <code>25.2</code>, <code>25.3</code>, <code>25.4</code> tại <code>PHẦN IV</code></li>
+<li>File kiểm tra nguồn: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_25_a.sb3">cau_25_a.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_25_b.sb3">cau_25_b.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_25_c.sb3">cau_25_c.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_25_d.sb3">cau_25_d.sb3</a></li>
+<li>
+<p>Xem nhanh trong đề:
+<img alt="Câu 25 - A" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_25_a.png" />
+<img alt="Câu 25 - B" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_25_b.png" />
+<img alt="Câu 25 - C" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_25_c.png" />
+<img alt="Câu 25 - D" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_25_d.png" /></p>
+</li>
+<li>
+<p>A. Thành phần bật camera khi bắt đầu điểm danh</p>
+</li>
+<li>B. Thành phần nạp model đã huấn luyện vào chương trình</li>
+<li>C. Thành phần xử lý khi model nhận đúng người và ghi nhận vào danh sách hoặc thông báo</li>
+<li>
+<p>D. Thành phần dùng nhận diện cảm xúc để suy ra danh tính người điểm danh</p>
+</li>
+<li>
+<p><strong>Đáp án đúng:</strong> <code>A, B, C</code></p>
+</li>
+<li><strong>Giải thích:</strong> Điểm danh bằng AI cần camera, model đã huấn luyện và luồng xử lý khi model nhận đúng người. Nhận diện cảm xúc không thay thế được bài toán nhận diện danh tính.</li>
+<li><strong>Trích dẫn:</strong> Module 6 - Giới thiệu về trình duyệt "Teachable machine" và cách sử dụng</li>
+</ul>
+<h2><strong>Câu 26</strong> [Vận dụng] [Chọn 1 đáp án đúng]</h2>
+<p>Quan sát media <code>26.1</code>: một khối lệnh trong chương trình điểm danh đã bị che. Để chương trình chỉ thêm tên học viên khi tên đó chưa có trong danh sách <code>co_mat</code>, nên điền khối nào vào vị trí đang che?</p>
+<ul>
+<li>Media tham chiếu: <code>26.1</code> tại <code>PHẦN IV</code></li>
+<li>File kiểm tra nguồn: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_26_source.sb3">cau_26_source.sb3</a></li>
+<li>
+<p>Xem nhanh trong đề:
+<img alt="Câu 26 - 26.1" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_26_1.png" /></p>
+</li>
+<li>
+<p>A. <code>add [An] to [co_mat]</code></p>
+</li>
+<li>B. <code>replace item (1) of [co_mat] with [An]</code></li>
+<li>C. <code>delete all of [co_mat]</code></li>
+<li>
+<p>D. <code>say [An]</code></p>
+</li>
+<li>
+<p><strong>Đáp án đúng:</strong> <code>A</code></p>
+</li>
+<li><strong>Giải thích:</strong> Khi điều kiện đã kiểm tra tên <code>An</code> chưa có trong danh sách <code>co_mat</code>, khối đúng để điền vào là khối thêm phần tử vào danh sách. Các lựa chọn còn lại không thực hiện đúng hành vi cần thiết.</li>
+<li><strong>Trích dẫn:</strong> Module 3 - Khối lệnh về Danh sách - List; Module 7 - Bài tập thực hành - AI TrH</li>
+</ul>
+<h2><strong>Câu 27</strong> [Vận dụng] [Chọn nhiều đáp án đúng]</h2>
+<p>Lớp học cần một ứng dụng có các chức năng sau: điểm danh đầu giờ, lưu danh sách học viên đã có mặt và hiển thị trạng thái cảm xúc cơ bản của học viên khi được nhận diện. Chọn các chương trình mẫu đúng.</p>
+<ul>
+<li>Media tham chiếu: <code>27.1</code>, <code>27.2</code>, <code>27.3</code>, <code>27.4</code> tại <code>PHẦN IV</code></li>
+<li>File kiểm tra nguồn: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_27_a.sb3">cau_27_a.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_27_b.sb3">cau_27_b.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_27_c.sb3">cau_27_c.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_27_d.sb3">cau_27_d.sb3</a></li>
+<li>
+<p>Xem nhanh trong đề:
+<img alt="Câu 27 - A" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_27_a.png" />
+<img alt="Câu 27 - B" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_27_b.png" />
+<img alt="Câu 27 - C" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_27_c.png" />
+<img alt="Câu 27 - D" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_27_d.png" /></p>
+</li>
+<li>
+<p>A. <code>turn video on -&gt; use model -&gt; if detect [An] and [An] not in [co_mat] then add [An] to [co_mat] -&gt; if face is [happy] then show [vui]</code></p>
+</li>
+<li>B. <code>turn video on -&gt; forever add (detected name) to [co_mat]</code> mà không kiểm tra trùng lặp -&gt; đổi màu nền mỗi vòng</li>
+<li>C. <code>when green flag clicked -&gt; clear [co_mat] -&gt; turn video on -&gt; dùng model để nhận diện người -&gt; dùng face sensing để kiểm tra biểu cảm -&gt; chỉ thêm tên khi chưa có trong danh sách</code></li>
+<li>
+<p>D. <code>when green flag clicked -&gt; clear [co_mat] -&gt; turn video on -&gt; use model -&gt; nếu nhận đúng [An] thì thêm [An] vào [co_mat] -&gt; nếu khuôn mặt [happy] thì thêm [vui] vào [co_mat]</code></p>
+</li>
+<li>
+<p><strong>Đáp án đúng:</strong> <code>A, C</code></p>
+</li>
+<li><strong>Giải thích:</strong> Hai chương trình đúng đều có đủ ba phần: nhận diện, kiểm tra trùng trước khi thêm vào danh sách và xử lý hiển thị cảm xúc. Phương án B sai vì thêm trùng liên tục, còn D sai vì trộn dữ liệu cảm xúc vào danh sách điểm danh.</li>
+<li><strong>Trích dẫn:</strong> Module 3 - Khối lệnh về Danh sách - List; Module 5 - Nhóm lệnh nhận diện hình ảnh; Module 6 - Giới thiệu về trình duyệt "Teachable machine" và cách sử dụng</li>
+</ul>
+<h2><strong>Câu 28</strong> [Vận dụng] [Chọn 1 đáp án đúng]</h2>
+<p>Trong một face filter nâng cao, người dùng có thể:</p>
+<ul>
+<li>đổi costume của từng phụ kiện,</li>
+<li>quay lại costume nguyên mẫu,</li>
+<li>bật cùng lúc 2 hoặc 3 phụ kiện.</li>
+</ul>
+<p>Cách tổ chức nào hợp lý nhất?</p>
+<ul>
+<li>Media tham chiếu: <code>28.1</code>, <code>28.2</code>, <code>28.3</code>, <code>28.4</code> tại <code>PHẦN IV</code></li>
+<li>File kiểm tra nguồn: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_28_a.sb3">cau_28_a.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_28_b.sb3">cau_28_b.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_28_c.sb3">cau_28_c.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_28_d.sb3">cau_28_d.sb3</a></li>
+<li>
+<p>Xem nhanh trong đề:
+<img alt="Câu 28 - A" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_28_a.png" />
+<img alt="Câu 28 - B" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_28_b.png" />
+<img alt="Câu 28 - C" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_28_c.png" />
+<img alt="Câu 28 - D" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_28_d.png" /></p>
+</li>
+<li>
+<p>A. <code>khi nhấn 1 -&gt; bật/tắt mũ; khi nhấn 2 -&gt; bật/tắt kính; khi nhấn R -&gt; tất cả quay về costume gốc; mỗi phụ kiện có biến trạng thái riêng</code></p>
+</li>
+<li>B. <code>khi nhấn 1 -&gt; bật/tắt mũ; khi nhấn 2 -&gt; bật/tắt kính; khi nhấn R -&gt; chỉ đưa costume hiện tại về mẫu gốc nhưng không reset đủ trạng thái các phụ kiện</code></li>
+<li>C. <code>mỗi phụ kiện đều có thể đổi costume, nhưng tất cả cùng dùng chung một biến trạng thái [phu_kien_on]</code></li>
+<li>
+<p>D. <code>có biến riêng cho từng phụ kiện và có phím reset, nhưng phím reset chỉ đổi costume về mẫu gốc mà không đặt lại trạng thái về 0</code></p>
+</li>
+<li>
+<p><strong>Đáp án đúng:</strong> <code>A</code></p>
+</li>
+<li><strong>Giải thích:</strong> Cách tổ chức đúng phải cho phép từng phụ kiện có trạng thái riêng và có cơ chế reset đồng bộ cả costume lẫn trạng thái. Các phương án sai đều chỉ hỏng một phần nhỏ của cơ chế đó nên dễ gây lỗi khi dùng tiếp.</li>
+<li><strong>Trích dẫn:</strong> Module 2 - Sự kiện (Events); Module 3 - Biến số; Module 5 - Nhóm lệnh nhận diện hình ảnh; Module 7 - Bài tập thực hành - AI TrH</li>
+</ul>
+<h2><strong>Câu 29</strong> [Vận dụng] [Chọn 1 đáp án đúng]</h2>
+<p>Giả sử giáo viên yêu cầu ứng dụng chấm công cuối giờ phải:</p>
+<ul>
+<li>mở camera đúng lúc,</li>
+<li>nhận diện học viên bằng model AI,</li>
+<li>lưu danh sách học viên đã có mặt,</li>
+<li>chỉ bật camera khi thực sự cần điểm danh và nếu không có người trong một khoảng thời gian thì tự tắt để tiết kiệm năng lượng,</li>
+<li>và cuối giờ thông báo ai vắng.</li>
+</ul>
+<p>Phương án thuật toán nào hợp lý nhất?</p>
+<ul>
+<li>Media tham chiếu: <code>29.1</code>, <code>29.2</code>, <code>29.3</code>, <code>29.4</code> tại <code>PHẦN IV</code></li>
+<li>File kiểm tra nguồn: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_29_a.sb3">cau_29_a.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_29_b.sb3">cau_29_b.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_29_c.sb3">cau_29_c.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_29_d.sb3">cau_29_d.sb3</a></li>
+<li>
+<p>Xem nhanh trong đề:
+<img alt="Câu 29 - A" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_29_a.png" />
+<img alt="Câu 29 - B" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_29_b.png" />
+<img alt="Câu 29 - C" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_29_c.png" />
+<img alt="Câu 29 - D" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_29_d.png" /></p>
+</li>
+<li>
+<p>A. <code>khi bắt đầu điểm danh -&gt; reset timer -&gt; turn video on -&gt; dùng model nhận diện -&gt; nếu tên chưa có thì thêm vào list -&gt; mỗi lần phát hiện người thì reset timer -&gt; nếu 10 giây không phát hiện ai thì turn video off -&gt; cuối giờ so sánh list có mặt với danh sách lớp</code></p>
+</li>
+<li>B. <code>khi bắt đầu điểm danh -&gt; reset timer -&gt; turn video on -&gt; dùng model nhận diện -&gt; mỗi lần phát hiện người thì thêm luôn vào list và reset timer -&gt; nếu 10 giây không phát hiện ai thì turn video off</code></li>
+<li>C. <code>khi bắt đầu điểm danh -&gt; reset timer -&gt; turn video on -&gt; dùng model nhận diện -&gt; nếu tên chưa có thì thêm vào list -&gt; mỗi lần phát hiện người thì reset timer</code>, nhưng không có đoạn tự tắt camera</li>
+<li>
+<p>D. <code>khi bắt đầu điểm danh -&gt; reset timer -&gt; turn video on -&gt; dùng model nhận diện -&gt; nếu tên chưa có thì thêm vào list -&gt; nếu 10 giây không phát hiện ai thì turn video off</code>, nhưng không reset lại timer khi phát hiện người mới</p>
+</li>
+<li>
+<p><strong>Đáp án đúng:</strong> <code>A</code></p>
+</li>
+<li><strong>Giải thích:</strong> Phương án A có đủ các bước cần thiết: mở camera đúng lúc, dùng model, tránh trùng danh sách, reset lại bộ đếm khi có người và tự tắt camera sau 10 giây không phát hiện ai. Các phương án còn lại chỉ thiếu một mắt xích nhỏ nhưng sẽ gây lỗi trong vận hành thực tế.</li>
+<li><strong>Trích dẫn:</strong> Module 3 - Khối lệnh về Danh sách - List; Module 6 - Giới thiệu về trình duyệt "Teachable machine" và cách sử dụng; Module 7 - Bài tập thực hành - AI TrH</li>
+</ul>
+<h2><strong>Câu 30</strong> [Vận dụng] [Chọn nhiều đáp án đúng]</h2>
+<p>Giả sử đề bài cuối khóa là:</p>
+<p><code>Thiết kế một ứng dụng lớp học dùng AI để học viên nhập từ tiếng Anh, chương trình dịch và đọc to kết quả; sau đó có thêm một phần nhận diện khuôn mặt hoặc model AI để tạo tương tác trực quan.</code></p>
+<p>Những cách tổ chức chương trình hoặc luồng song song nào dưới đây là phù hợp?</p>
+<ul>
+<li>Media tham chiếu: <code>30.1</code>, <code>30.2</code>, <code>30.3</code>, <code>30.4</code> tại <code>PHẦN IV</code></li>
+<li>File kiểm tra nguồn: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_30_a.sb3">cau_30_a.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_30_b.sb3">cau_30_b.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_30_c.sb3">cau_30_c.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_30_d.sb3">cau_30_d.sb3</a></li>
+<li>
+<p>Xem nhanh trong đề:
+<img alt="Câu 30 - A" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_30_a.png" />
+<img alt="Câu 30 - B" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_30_b.png" />
+<img alt="Câu 30 - C" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_30_c.png" />
+<img alt="Câu 30 - D" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_30_d.png" /></p>
+</li>
+<li>
+<p>A. Một luồng xử lý nhập từ -&gt; dịch -&gt; đọc kết quả; một luồng khác chờ tín hiệu để bật phần face sensing hoặc model AI khi cần tương tác</p>
+</li>
+<li>B. Camera có cơ chế tự tắt sau 10 giây không có người, giúp tiết kiệm năng lượng khi không còn tương tác</li>
+<li>C. Một luồng xử lý nhập từ -&gt; dịch -&gt; đọc kết quả; đồng thời một luồng AI khác bật camera và dùng model ngay từ khi bấm cờ xanh, không chờ tín hiệu từ luồng học từ vựng</li>
+<li>
+<p>D. Dùng <code>broadcast</code> để đồng bộ giữa luồng học từ vựng và luồng tương tác khuôn mặt hoặc model AI</p>
+</li>
+<li>
+<p><strong>Đáp án đúng:</strong> <code>A, B, D</code></p>
+</li>
+<li><strong>Giải thích:</strong> Phương án đúng cần có luồng xử lý rõ ràng, bật camera đúng lúc để tiết kiệm tài nguyên và có cơ chế đồng bộ giữa các phần của dự án. Phương án C gần đúng về mặt cấu trúc hai luồng nhưng bật camera và model quá sớm nên không phù hợp với yêu cầu vận hành.</li>
+<li><strong>Trích dẫn:</strong> TEMPLATE_HUONG_DAN_DU_AN.md - Phần trắc nghiệm và yêu cầu biên soạn; Module 7 - Bài tập thực hành - AI TrH; Module 8 - Vận hành giảng dạy</li>
+</ul>
+<hr />
+<h2><strong>PHẦN II: ĐỀ THI THỰC HÀNH</strong></h2>
+<h2><strong>Bài tập 1: Trợ lý điểm danh thông minh bằng khuôn mặt</strong></h2>
+<h3>1. Nội dung đề bài</h3>
+<p>Thiết kế một dự án trên Dancing with AI mô phỏng trợ lý điểm danh đầu giờ:
+- Khi bật chương trình, camera hoạt động và nhân vật trợ lý chào lớp.
+- Nếu phát hiện có khuôn mặt, trợ lý hiển thị thông báo "Đã sẵn sàng điểm danh".
+- Nếu người dùng nháy mắt hoặc giơ tay xác nhận, trợ lý phát âm thanh ngắn và đọc câu "Điểm danh thành công".
+- Nếu sau 5 giây chưa có khuôn mặt, chương trình nhắc người dùng đứng vào khung hình.</p>
+<h3>2. Yêu cầu kỹ thuật chi tiết</h3>
+<ul>
+<li>Công cụ bắt buộc: <code>Face Sensing</code> và <code>Text to Speech</code>.</li>
+<li>Có ít nhất 2 trạng thái hiển thị của nhân vật: chờ và xác nhận.</li>
+<li>Sử dụng ít nhất 1 biến để đếm số lượt điểm danh thành công.</li>
+<li>Có khối điều kiện <code>if - then - else</code> để tách rõ 2 trạng thái: phát hiện / chưa phát hiện khuôn mặt.</li>
+</ul>
+<h3>3. Sản phẩm yêu cầu bàn giao</h3>
+<ul>
+<li>1 file dự án <code>.sb3</code>.</li>
+<li>1 video demo dưới 2 phút, thể hiện đủ 3 tình huống: chưa có khuôn mặt, có khuôn mặt, xác nhận thành công.</li>
+</ul>
+<h3>4. Đáp án gợi ý (Kịch bản khối lệnh logic)</h3>
+<ul>
+<li>Khi bấm cờ xanh: bật camera, đặt biến <code>[SoLanDiemDanh]</code> = 0, cho trợ lý nói lời chào.</li>
+<li>Trong vòng lặp <code>forever</code>:</li>
+<li>Nếu phát hiện khuôn mặt: hiện thông báo sẵn sàng.</li>
+<li>Nếu phát hiện thêm hành động xác nhận: phát âm thanh, đọc câu xác nhận, tăng biến điểm danh lên 1.</li>
+<li>Nếu không phát hiện khuôn mặt trong một khoảng thời gian: nhắc người dùng đứng vào khung hình.</li>
+</ul>
+<h3>5. Tiêu chí chấm điểm (Rubric định lượng)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">STT</th>
+<th style="text-align: left;">Tiêu chí đánh giá</th>
+<th style="text-align: left;">Mức độ mô tả chất lượng đạt yêu cầu</th>
+<th style="text-align: center;">Điểm tối đa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>1</strong></td>
+<td style="text-align: left;">Cấu tạo &amp; Thiết lập</td>
+<td style="text-align: left;">Bật camera đúng, có nhân vật trợ lý và tối thiểu 2 trạng thái hiển thị rõ ràng</td>
+<td style="text-align: center;"><strong>20đ</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>2</strong></td>
+<td style="text-align: left;">Logic nhận diện</td>
+<td style="text-align: left;">Phân biệt đúng trường hợp có/không có khuôn mặt, phản hồi đúng ngữ cảnh</td>
+<td style="text-align: center;"><strong>30đ</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>3</strong></td>
+<td style="text-align: left;">Tương tác âm thanh</td>
+<td style="text-align: left;">Có âm thanh xác nhận và Text to Speech rõ ràng, đúng nội dung</td>
+<td style="text-align: center;"><strong>20đ</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>4</strong></td>
+<td style="text-align: left;">Biến số &amp; điều khiển</td>
+<td style="text-align: left;">Đếm đúng số lượt xác nhận thành công, không tăng sai khi không có xác nhận</td>
+<td style="text-align: center;"><strong>20đ</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>5</strong></td>
+<td style="text-align: left;">Bàn giao</td>
+<td style="text-align: left;">File <code>.sb3</code> mở được và video đúng thời lượng, hình ảnh rõ</td>
+<td style="text-align: center;"><strong>10đ</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><strong>TỔNG CỘNG</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"><strong>100đ</strong></td>
+</tr>
+</tbody>
+</table>
+<h2><strong>Bài tập 2: Bảng dịch câu lệnh lớp học đa ngôn ngữ</strong></h2>
+<h3>1. Nội dung đề bài</h3>
+<p>Xây dựng một trợ lý lớp học có thể:
+- Nhận một câu tiếng Việt từ bàn phím.
+- Cho người dùng chọn một trong ba ngôn ngữ đích: Anh, Pháp, Nhật.
+- Hiển thị bản dịch trên sân khấu và đọc to bản dịch bằng đúng ngôn ngữ đã chọn.
+- Có thông báo lỗi nếu người dùng nhập lựa chọn ngoài 1, 2, 3.</p>
+<h3>2. Yêu cầu kỹ thuật chi tiết</h3>
+<ul>
+<li>Công cụ bắt buộc: <code>Translate</code> và <code>Text to Speech</code>.</li>
+<li>Dùng <code>ask and wait</code> để lấy câu gốc và lựa chọn ngôn ngữ.</li>
+<li>Dùng cấu trúc rẽ nhánh nhiều trường hợp để xử lý các lựa chọn.</li>
+<li>Biến bắt buộc: <code>[CauGoc]</code>, <code>[NgonNgu]</code>, <code>[BanDich]</code>.</li>
+</ul>
+<h3>3. Sản phẩm yêu cầu bàn giao</h3>
+<ul>
+<li>1 file dự án <code>.sb3</code>.</li>
+<li>1 video demo dưới 2 phút, thể hiện ít nhất 2 ngôn ngữ đích khác nhau và 1 lần nhập sai lựa chọn.</li>
+</ul>
+<h3>4. Đáp án gợi ý (Kịch bản khối lệnh logic)</h3>
+<ul>
+<li>Khi bấm cờ xanh: nhân vật chào người dùng và yêu cầu nhập câu gốc.</li>
+<li>Lưu dữ liệu vào biến <code>[CauGoc]</code>.</li>
+<li>Hỏi lựa chọn ngôn ngữ và lưu vào biến <code>[NgonNgu]</code>.</li>
+<li>Rẽ nhánh:</li>
+<li>Nếu <code>1</code>: dịch sang English, đọc bằng English.</li>
+<li>Nếu <code>2</code>: dịch sang French, đọc bằng French.</li>
+<li>Nếu <code>3</code>: dịch sang Japanese, đọc bằng Japanese.</li>
+<li>Ngược lại: hiển thị thông báo nhập sai.</li>
+</ul>
+<h3>5. Tiêu chí chấm điểm (Rubric định lượng)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">STT</th>
+<th style="text-align: left;">Tiêu chí đánh giá</th>
+<th style="text-align: left;">Mức độ mô tả chất lượng đạt yêu cầu</th>
+<th style="text-align: center;">Điểm tối đa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>1</strong></td>
+<td style="text-align: left;">Nhập liệu</td>
+<td style="text-align: left;">Nhận đúng câu gốc và lựa chọn ngôn ngữ từ bàn phím</td>
+<td style="text-align: center;"><strong>15đ</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>2</strong></td>
+<td style="text-align: left;">Rẽ nhánh xử lý</td>
+<td style="text-align: left;">Phân luồng đúng cho 3 lựa chọn và có xử lý lựa chọn sai</td>
+<td style="text-align: center;"><strong>25đ</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>3</strong></td>
+<td style="text-align: left;">Dịch thuật</td>
+<td style="text-align: left;">Dịch được sang ít nhất 3 ngôn ngữ theo yêu cầu</td>
+<td style="text-align: center;"><strong>25đ</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>4</strong></td>
+<td style="text-align: left;">Text to Speech</td>
+<td style="text-align: left;">Đọc đúng ngôn ngữ tương ứng với bản dịch</td>
+<td style="text-align: center;"><strong>25đ</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>5</strong></td>
+<td style="text-align: left;">Bàn giao</td>
+<td style="text-align: left;">File và video đủ yêu cầu, thao tác demo rõ ràng</td>
+<td style="text-align: center;"><strong>10đ</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><strong>TỔNG CỘNG</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"><strong>100đ</strong></td>
+</tr>
+</tbody>
+</table>
+<h2><strong>Bài tập 3: Trò chơi chạm mục tiêu bằng cử động tay</strong></h2>
+<h3>1. Nội dung đề bài</h3>
+<p>Thiết kế một trò chơi đơn giản trong đó:
+- Một mục tiêu xuất hiện ở các vị trí khác nhau trên sân khấu.
+- Người chơi dùng cổ tay phải hoặc cổ tay trái để điều khiển nhân vật "con trỏ".
+- Khi con trỏ chạm mục tiêu, điểm tăng 1 và mục tiêu xuất hiện lại ở vị trí mới.
+- Trò chơi kéo dài 30 giây, sau đó dừng và hiển thị tổng điểm.</p>
+<h3>2. Yêu cầu kỹ thuật chi tiết</h3>
+<ul>
+<li>Công cụ bắt buộc: <code>Body Sensing</code>.</li>
+<li>Có 1 biến điểm và 1 biến thời gian.</li>
+<li>Nhân vật điều khiển phải cập nhật tọa độ liên tục theo điểm khớp cơ thể.</li>
+<li>Mục tiêu phải xuất hiện lại ở vị trí ngẫu nhiên sau mỗi lần chạm.</li>
+</ul>
+<h3>3. Sản phẩm yêu cầu bàn giao</h3>
+<ul>
+<li>1 file dự án <code>.sb3</code>.</li>
+<li>1 video demo dưới 2 phút, thể hiện đủ: bắt đầu trò chơi, tăng điểm khi chạm, kết thúc sau 30 giây.</li>
+</ul>
+<h3>4. Đáp án gợi ý (Kịch bản khối lệnh logic)</h3>
+<ul>
+<li>Khi bấm cờ xanh: đặt <code>[Diem]</code> = 0, <code>[ThoiGian]</code> = 30, bật camera.</li>
+<li>Luồng 1: trong vòng lặp <code>forever</code>, cho nhân vật con trỏ đi tới tọa độ cổ tay.</li>
+<li>Luồng 2: nếu chạm mục tiêu thì tăng điểm và đổi vị trí mục tiêu ngẫu nhiên.</li>
+<li>Luồng 3: đếm ngược thời gian; khi về 0 thì dừng trò chơi và hiển thị điểm.</li>
+</ul>
+<h3>5. Tiêu chí chấm điểm (Rubric định lượng)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">STT</th>
+<th style="text-align: left;">Tiêu chí đánh giá</th>
+<th style="text-align: left;">Mức độ mô tả chất lượng đạt yêu cầu</th>
+<th style="text-align: center;">Điểm tối đa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>1</strong></td>
+<td style="text-align: left;">Thiết lập giao diện</td>
+<td style="text-align: left;">Có camera, nhân vật con trỏ và mục tiêu hiển thị rõ ràng</td>
+<td style="text-align: center;"><strong>15đ</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>2</strong></td>
+<td style="text-align: left;">Điều khiển bằng cơ thể</td>
+<td style="text-align: left;">Nhân vật bám theo cổ tay ổn định, quan sát được trong video</td>
+<td style="text-align: center;"><strong>30đ</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>3</strong></td>
+<td style="text-align: left;">Logic trò chơi</td>
+<td style="text-align: left;">Chạm mục tiêu tăng điểm đúng, mục tiêu đổi vị trí hợp lý</td>
+<td style="text-align: center;"><strong>25đ</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>4</strong></td>
+<td style="text-align: left;">Quản lý thời gian</td>
+<td style="text-align: left;">Đếm ngược đủ 30 giây và dừng đúng khi hết giờ</td>
+<td style="text-align: center;"><strong>20đ</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>5</strong></td>
+<td style="text-align: left;">Bàn giao</td>
+<td style="text-align: left;">File mở được, video rõ thao tác và đúng thời lượng</td>
+<td style="text-align: center;"><strong>10đ</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><strong>TỔNG CỘNG</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"><strong>100đ</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2><strong>PHẦN III: MANIFEST CỦA CÁC HÌNH ẢNH MINH HỌA (GENERATED MEDIA ASSETS)</strong></h2>
+<p>Phan nay da duoc cap nhat theo file nguon su that:</p>
+<ul>
+<li><code>GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_media_manifest.csv</code></li>
+</ul>
+<p>Quy uoc:</p>
+<ul>
+<li><code>produced</code>: da co du file PNG va <code>.sb3</code>/source pack dung ten</li>
+<li><code>deferred</code>: chua san xuat, chi lam khi human yeu cau</li>
+<li><code>skip</code>: khong can media cho cau do</li>
+</ul>
+<p>Chi tiet hinh that va link <code>.sb3</code> de human load check duoc dat tai <code>PHAN IV</code>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Câu</th>
+<th style="text-align: center;">Mức độ</th>
+<th style="text-align: left;">Batch</th>
+<th style="text-align: left;">PNG</th>
+<th style="text-align: left;">Source</th>
+<th style="text-align: center;">Trạng thái</th>
+<th style="text-align: left;">Ghi chú review</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">02</td>
+<td style="text-align: center;">Nhớ</td>
+<td style="text-align: left;"><code>deferred</code></td>
+<td style="text-align: left;"><code>cau_02_a.png</code> -&gt; <code>cau_02_d.png</code></td>
+<td style="text-align: left;"><code>cau_02_a.sb3</code> -&gt; <code>cau_02_d.sb3</code></td>
+<td style="text-align: center;"><code>produced</code></td>
+<td style="text-align: left;">Full review media: cặp công cụ đúng/sai gần nhau để human đối chiếu</td>
+</tr>
+<tr>
+<td style="text-align: center;">03</td>
+<td style="text-align: center;">Nhớ</td>
+<td style="text-align: left;"><code>batch_1_required</code></td>
+<td style="text-align: left;"><code>cau_03_1.png</code> -&gt; <code>cau_03_4.png</code></td>
+<td style="text-align: left;"><code>cau_03_source_pack.sb3</code></td>
+<td style="text-align: center;"><code>produced</code></td>
+<td style="text-align: left;">Bộ block thật: Translate, Speak, go to face landmark, use model</td>
+</tr>
+<tr>
+<td style="text-align: center;">04</td>
+<td style="text-align: center;">Nhớ</td>
+<td style="text-align: left;"><code>batch_1_required</code></td>
+<td style="text-align: left;"><code>cau_04_1.png</code></td>
+<td style="text-align: left;"><code>cau_04_source.sb3</code></td>
+<td style="text-align: center;"><code>produced</code></td>
+<td style="text-align: left;">Đoạn code tọa độ phải đọc rõ x/y</td>
+</tr>
+<tr>
+<td style="text-align: center;">06</td>
+<td style="text-align: center;">Nhớ</td>
+<td style="text-align: left;"><code>batch_2_recommended</code></td>
+<td style="text-align: left;"><code>cau_06_1.png</code></td>
+<td style="text-align: left;"><code>cau_06_source.sb3</code></td>
+<td style="text-align: center;"><code>produced</code></td>
+<td style="text-align: left;">Minh họa Answer bị ghi đè khi hỏi liên tiếp</td>
+</tr>
+<tr>
+<td style="text-align: center;">07</td>
+<td style="text-align: center;">Nhớ</td>
+<td style="text-align: left;"><code>deferred</code></td>
+<td style="text-align: left;"><code>cau_07_a.png</code> -&gt; <code>cau_07_d.png</code></td>
+<td style="text-align: left;"><code>cau_07_a.sb3</code> -&gt; <code>cau_07_d.sb3</code></td>
+<td style="text-align: center;"><code>produced</code></td>
+<td style="text-align: left;">Full review media: mỗi đáp án là một extension/công cụ riêng</td>
+</tr>
+<tr>
+<td style="text-align: center;">08</td>
+<td style="text-align: center;">Nhớ</td>
+<td style="text-align: left;"><code>batch_2_recommended</code></td>
+<td style="text-align: left;"><code>cau_08_1.png</code></td>
+<td style="text-align: left;"><code>cau_08_source.sb3</code></td>
+<td style="text-align: center;"><code>produced</code></td>
+<td style="text-align: left;">Landmark phải nằm trong <code>forever</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">09</td>
+<td style="text-align: center;">Nhớ</td>
+<td style="text-align: left;"><code>batch_2_recommended</code></td>
+<td style="text-align: left;"><code>cau_09_1.png</code></td>
+<td style="text-align: left;"><code>cau_09_source.sb3</code></td>
+<td style="text-align: center;"><code>produced</code></td>
+<td style="text-align: left;">Kiểm tra đúng vùng dán model</td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">Nhớ</td>
+<td style="text-align: left;"><code>batch_2_recommended</code></td>
+<td style="text-align: left;"><code>cau_10_1.png</code></td>
+<td style="text-align: left;"><code>cau_10_source.sb3</code></td>
+<td style="text-align: center;"><code>produced</code></td>
+<td style="text-align: left;">Cần thấy <code>turn video on</code> và <code>use model</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">Hiểu</td>
+<td style="text-align: left;"><code>batch_2_recommended</code></td>
+<td style="text-align: left;"><code>cau_11_1.png</code>, <code>cau_11_2.png</code></td>
+<td style="text-align: left;"><code>cau_11_source_pack.sb3</code></td>
+<td style="text-align: center;"><code>produced</code></td>
+<td style="text-align: left;">So sánh luồng đúng và luồng sai</td>
+</tr>
+<tr>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">Hiểu</td>
+<td style="text-align: left;"><code>batch_2_recommended</code></td>
+<td style="text-align: left;"><code>cau_12_1.png</code>, <code>cau_12_2.png</code></td>
+<td style="text-align: left;"><code>cau_12_source_pack.sb3</code></td>
+<td style="text-align: center;"><code>produced</code></td>
+<td style="text-align: left;">Translate so với Speak/Text to Speech</td>
+</tr>
+<tr>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">Hiểu</td>
+<td style="text-align: left;"><code>batch_2_recommended</code></td>
+<td style="text-align: left;"><code>cau_13_1.png</code> -&gt; <code>cau_13_4.png</code></td>
+<td style="text-align: left;"><code>cau_13_source_pack.sb3</code></td>
+<td style="text-align: center;"><code>produced</code></td>
+<td style="text-align: left;">Mỗi ảnh ứng với một công cụ AI</td>
+</tr>
+<tr>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">Hiểu</td>
+<td style="text-align: left;"><code>batch_1_required</code></td>
+<td style="text-align: left;"><code>cau_14_1.png</code>, <code>cau_14_2.png</code></td>
+<td style="text-align: left;"><code>cau_14_source_pack.sb3</code></td>
+<td style="text-align: center;"><code>produced</code></td>
+<td style="text-align: left;">So sánh <code>change y by</code> với bám <code>nose bridge</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">19</td>
+<td style="text-align: center;">Hiểu</td>
+<td style="text-align: left;"><code>batch_2_recommended</code></td>
+<td style="text-align: left;"><code>cau_19_1.png</code></td>
+<td style="text-align: left;"><code>cau_19_source.sb3</code></td>
+<td style="text-align: center;"><code>produced</code></td>
+<td style="text-align: left;">Camera và face sensing chạy liên tục</td>
+</tr>
+<tr>
+<td style="text-align: center;">21</td>
+<td style="text-align: center;">Hiểu</td>
+<td style="text-align: left;"><code>batch_2_recommended</code></td>
+<td style="text-align: left;"><code>cau_21_1.png</code> -&gt; <code>cau_21_3.png</code></td>
+<td style="text-align: left;"><code>cau_21_source_pack.sb3</code></td>
+<td style="text-align: center;"><code>produced</code></td>
+<td style="text-align: left;">Kiểm tra <code>turn video on</code>, <code>use model</code>, camera xám</td>
+</tr>
+<tr>
+<td style="text-align: center;">22</td>
+<td style="text-align: center;">Vận dụng</td>
+<td style="text-align: left;"><code>batch_1_required</code></td>
+<td style="text-align: left;"><code>cau_22_a.png</code> -&gt; <code>cau_22_d.png</code></td>
+<td style="text-align: left;"><code>cau_22_a.sb3</code> -&gt; <code>cau_22_d.sb3</code></td>
+<td style="text-align: center;"><code>produced</code></td>
+<td style="text-align: left;">Mỗi đáp án là một chương trình mẫu riêng</td>
+</tr>
+<tr>
+<td style="text-align: center;">23</td>
+<td style="text-align: center;">Vận dụng</td>
+<td style="text-align: left;"><code>deferred</code></td>
+<td style="text-align: left;"><code>cau_23_a.png</code> -&gt; <code>cau_23_d.png</code></td>
+<td style="text-align: left;"><code>cau_23_a.sb3</code> -&gt; <code>cau_23_d.sb3</code></td>
+<td style="text-align: center;"><code>produced</code></td>
+<td style="text-align: left;">Full review media: nhập dữ liệu, lưu lựa chọn, dịch/đọc, và nhiễu AI sai</td>
+</tr>
+<tr>
+<td style="text-align: center;">24</td>
+<td style="text-align: center;">Vận dụng</td>
+<td style="text-align: left;"><code>batch_1_required</code></td>
+<td style="text-align: left;"><code>cau_24_a.png</code> -&gt; <code>cau_24_d.png</code></td>
+<td style="text-align: left;"><code>cau_24_a.sb3</code> -&gt; <code>cau_24_d.sb3</code></td>
+<td style="text-align: center;"><code>produced</code></td>
+<td style="text-align: left;">Phân biệt <code>forever</code>, event, landmark, fixed x/y</td>
+</tr>
+<tr>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">Vận dụng</td>
+<td style="text-align: left;"><code>batch_2_recommended</code></td>
+<td style="text-align: left;"><code>cau_25_a.png</code> -&gt; <code>cau_25_d.png</code></td>
+<td style="text-align: left;"><code>cau_25_a.sb3</code> -&gt; <code>cau_25_d.sb3</code></td>
+<td style="text-align: center;"><code>produced</code></td>
+<td style="text-align: left;">Kiểm tra use model, camera và detect-trigger logic</td>
+</tr>
+<tr>
+<td style="text-align: center;">26</td>
+<td style="text-align: center;">Vận dụng</td>
+<td style="text-align: left;"><code>batch_2_recommended</code></td>
+<td style="text-align: left;"><code>cau_26_1.png</code></td>
+<td style="text-align: left;"><code>cau_26_source.sb3</code></td>
+<td style="text-align: center;"><code>produced</code></td>
+<td style="text-align: left;">Minh họa dùng List cho điểm danh</td>
+</tr>
+<tr>
+<td style="text-align: center;">27</td>
+<td style="text-align: center;">Vận dụng</td>
+<td style="text-align: left;"><code>batch_1_required</code></td>
+<td style="text-align: left;"><code>cau_27_a.png</code> -&gt; <code>cau_27_d.png</code></td>
+<td style="text-align: left;"><code>cau_27_a.sb3</code> -&gt; <code>cau_27_d.sb3</code></td>
+<td style="text-align: center;"><code>produced</code></td>
+<td style="text-align: left;">Điểm danh + list + emotion</td>
+</tr>
+<tr>
+<td style="text-align: center;">28</td>
+<td style="text-align: center;">Vận dụng</td>
+<td style="text-align: left;"><code>batch_1_required</code></td>
+<td style="text-align: left;"><code>cau_28_a.png</code> -&gt; <code>cau_28_d.png</code></td>
+<td style="text-align: left;"><code>cau_28_a.sb3</code> -&gt; <code>cau_28_d.sb3</code></td>
+<td style="text-align: center;"><code>produced</code></td>
+<td style="text-align: left;">Reset costume gốc và bật nhiều phụ kiện</td>
+</tr>
+<tr>
+<td style="text-align: center;">29</td>
+<td style="text-align: center;">Vận dụng</td>
+<td style="text-align: left;"><code>batch_1_required</code></td>
+<td style="text-align: left;"><code>cau_29_a.png</code> -&gt; <code>cau_29_d.png</code></td>
+<td style="text-align: left;"><code>cau_29_a.sb3</code> -&gt; <code>cau_29_d.sb3</code></td>
+<td style="text-align: center;"><code>produced</code></td>
+<td style="text-align: left;">Phương án A phải có tự tắt camera sau 10 giây</td>
+</tr>
+<tr>
+<td style="text-align: center;">30</td>
+<td style="text-align: center;">Vận dụng</td>
+<td style="text-align: left;"><code>batch_1_required</code></td>
+<td style="text-align: left;"><code>cau_30_a.png</code> -&gt; <code>cau_30_d.png</code></td>
+<td style="text-align: left;"><code>cau_30_a.sb3</code> -&gt; <code>cau_30_d.sb3</code></td>
+<td style="text-align: center;"><code>produced</code></td>
+<td style="text-align: left;">Broadcast, camera bật đúng lúc, luồng song song</td>
+</tr>
+</tbody>
+</table>
+<p>Khong con muc <code>deferred</code> cho vong review hien tai. Toan bo media dang co trong thu muc media va da du file <code>.sb3</code> de human load check.</p>
+<hr />
+<h2><strong>Thông tin tài liệu soạn đề</strong></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Được soạn ngày:</th>
+<th style="text-align: left;">2026-06-10</th>
+<th style="text-align: left;">Bởi:</th>
+<th style="text-align: left;"><strong>@exam-designer</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Được review ngày:</td>
+<td style="text-align: left;">2026-06-10</td>
+<td style="text-align: left;">Bởi:</td>
+<td style="text-align: left;"><strong>Codex</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Được hiệu chỉnh ngày:</td>
+<td style="text-align: left;">2026-06-10</td>
+<td style="text-align: left;">Bởi:</td>
+<td style="text-align: left;"><strong>Codex</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2><strong>PHẦN IV: MEDIA REVIEW INDEX ĐỒNG BỘ TỪ MANIFEST MỚI</strong></h2>
+<p>Phan nay la bo review media moi nhat de human kiem tra nhanh trong HTML/Markdown.</p>
+<ul>
+<li>Nguon su that cho trang thai file: <code>GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_media_manifest.csv</code></li>
+<li>Thu muc media: <code>GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media</code></li>
+<li>Pham vi duoc materialize: <code>batch_1_required</code>, <code>batch_2_recommended</code>, va <code>Q02/Q07/Q23</code> da render bo full review</li>
+</ul>
+<h3><strong>Câu 02</strong></h3>
+<ul>
+<li><code>2.1</code>
+<img alt="Câu 02 - A" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_02_a.png" /></li>
+<li><code>2.2</code>
+<img alt="Câu 02 - B" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_02_b.png" /></li>
+<li><code>2.3</code>
+<img alt="Câu 02 - C" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_02_c.png" /></li>
+<li><code>2.4</code>
+<img alt="Câu 02 - D" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_02_d.png" /></li>
+<li>File check: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_02_a.sb3">cau_02_a.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_02_b.sb3">cau_02_b.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_02_c.sb3">cau_02_c.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_02_d.sb3">cau_02_d.sb3</a></li>
+</ul>
+<h3><strong>Câu 03</strong></h3>
+<ul>
+<li><code>3.1</code>
+<img alt="Câu 03 - 3.1" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_03_1.png" /></li>
+<li><code>3.2</code>
+<img alt="Câu 03 - 3.2" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_03_2.png" /></li>
+<li><code>3.3</code>
+<img alt="Câu 03 - 3.3" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_03_3.png" /></li>
+<li><code>3.4</code>
+<img alt="Câu 03 - 3.4" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_03_4.png" /></li>
+<li>File check: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_03_source_pack.sb3">cau_03_source_pack.sb3</a></li>
+</ul>
+<h3><strong>Câu 04</strong></h3>
+<ul>
+<li><code>4.1</code>
+<img alt="Câu 04 - 4.1" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_04_1.png" /></li>
+<li>File check: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_04_source.sb3">cau_04_source.sb3</a></li>
+</ul>
+<h3><strong>Câu 06</strong></h3>
+<ul>
+<li><code>6.1</code>
+<img alt="Câu 06 - 6.1" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_06_1.png" /></li>
+<li>File check: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_06_source.sb3">cau_06_source.sb3</a></li>
+</ul>
+<h3><strong>Câu 07</strong></h3>
+<ul>
+<li><code>7.1</code>
+<img alt="Câu 07 - A" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_07_a.png" /></li>
+<li><code>7.2</code>
+<img alt="Câu 07 - B" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_07_b.png" /></li>
+<li><code>7.3</code>
+<img alt="Câu 07 - C" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_07_c.png" /></li>
+<li><code>7.4</code>
+<img alt="Câu 07 - D" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_07_d.png" /></li>
+<li>File check: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_07_a.sb3">cau_07_a.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_07_b.sb3">cau_07_b.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_07_c.sb3">cau_07_c.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_07_d.sb3">cau_07_d.sb3</a></li>
+</ul>
+<h3><strong>Câu 08</strong></h3>
+<ul>
+<li><code>8.1</code>
+<img alt="Câu 08 - 8.1" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_08_1.png" /></li>
+<li>File check: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_08_source.sb3">cau_08_source.sb3</a></li>
+</ul>
+<h3><strong>Câu 09</strong></h3>
+<ul>
+<li><code>9.1</code>
+<img alt="Câu 09 - 9.1" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_09_1.png" /></li>
+<li>File check: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_09_source.sb3">cau_09_source.sb3</a></li>
+</ul>
+<h3><strong>Câu 10</strong></h3>
+<ul>
+<li><code>10.1</code>
+<img alt="Câu 10 - 10.1" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_10_1.png" /></li>
+<li>File check: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_10_source.sb3">cau_10_source.sb3</a></li>
+</ul>
+<h3><strong>Câu 11</strong></h3>
+<ul>
+<li><code>11.1</code>
+<img alt="Câu 11 - 11.1" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_11_1.png" /></li>
+<li><code>11.2</code>
+<img alt="Câu 11 - 11.2" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_11_2.png" /></li>
+<li>File check: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_11_source_pack.sb3">cau_11_source_pack.sb3</a></li>
+</ul>
+<h3><strong>Câu 12</strong></h3>
+<ul>
+<li><code>12.1</code>
+<img alt="Câu 12 - 12.1" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_12_1.png" /></li>
+<li><code>12.2</code>
+<img alt="Câu 12 - 12.2" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_12_2.png" /></li>
+<li>File check: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_12_source_pack.sb3">cau_12_source_pack.sb3</a></li>
+</ul>
+<h3><strong>Câu 13</strong></h3>
+<ul>
+<li><code>13.1</code>
+<img alt="Câu 13 - 13.1" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_13_1.png" /></li>
+<li><code>13.2</code>
+<img alt="Câu 13 - 13.2" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_13_2.png" /></li>
+<li><code>13.3</code>
+<img alt="Câu 13 - 13.3" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_13_3.png" /></li>
+<li><code>13.4</code>
+<img alt="Câu 13 - 13.4" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_13_4.png" /></li>
+<li>File check: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_13_source_pack.sb3">cau_13_source_pack.sb3</a></li>
+</ul>
+<h3><strong>Câu 14</strong></h3>
+<ul>
+<li><code>14.1</code>
+<img alt="Câu 14 - 14.1" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_14_1.png" /></li>
+<li><code>14.2</code>
+<img alt="Câu 14 - 14.2" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_14_2.png" /></li>
+<li>File check: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_14_source_pack.sb3">cau_14_source_pack.sb3</a></li>
+</ul>
+<h3><strong>Câu 19</strong></h3>
+<ul>
+<li><code>19.1</code>
+<img alt="Câu 19 - 19.1" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_19_1.png" /></li>
+<li>File check: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_19_source.sb3">cau_19_source.sb3</a></li>
+</ul>
+<h3><strong>Câu 21</strong></h3>
+<ul>
+<li><code>21.1</code>
+<img alt="Câu 21 - 21.1" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_21_1.png" /></li>
+<li><code>21.2</code>
+<img alt="Câu 21 - 21.2" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_21_2.png" /></li>
+<li><code>21.3</code>
+<img alt="Câu 21 - 21.3" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_21_3.png" /></li>
+<li>File check: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_21_source_pack.sb3">cau_21_source_pack.sb3</a></li>
+</ul>
+<h3><strong>Câu 22</strong></h3>
+<ul>
+<li><code>22.1</code>
+<img alt="Câu 22 - A" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_22_a.png" /></li>
+<li><code>22.2</code>
+<img alt="Câu 22 - B" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_22_b.png" /></li>
+<li><code>22.3</code>
+<img alt="Câu 22 - C" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_22_c.png" /></li>
+<li><code>22.4</code>
+<img alt="Câu 22 - D" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_22_d.png" /></li>
+<li>File check: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_22_a.sb3">cau_22_a.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_22_b.sb3">cau_22_b.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_22_c.sb3">cau_22_c.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_22_d.sb3">cau_22_d.sb3</a></li>
+</ul>
+<h3><strong>Câu 23</strong></h3>
+<ul>
+<li><code>23.1</code>
+<img alt="Câu 23 - A" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_23_a.png" /></li>
+<li><code>23.2</code>
+<img alt="Câu 23 - B" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_23_b.png" /></li>
+<li><code>23.3</code>
+<img alt="Câu 23 - C" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_23_c.png" /></li>
+<li><code>23.4</code>
+<img alt="Câu 23 - D" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_23_d.png" /></li>
+<li>File check: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_23_a.sb3">cau_23_a.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_23_b.sb3">cau_23_b.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_23_c.sb3">cau_23_c.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_23_d.sb3">cau_23_d.sb3</a></li>
+</ul>
+<h3><strong>Câu 24</strong></h3>
+<ul>
+<li><code>24.1</code>
+<img alt="Câu 24 - A" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_24_a.png" /></li>
+<li><code>24.2</code>
+<img alt="Câu 24 - B" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_24_b.png" /></li>
+<li><code>24.3</code>
+<img alt="Câu 24 - C" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_24_c.png" /></li>
+<li><code>24.4</code>
+<img alt="Câu 24 - D" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_24_d.png" /></li>
+<li>File check: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_24_a.sb3">cau_24_a.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_24_b.sb3">cau_24_b.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_24_c.sb3">cau_24_c.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_24_d.sb3">cau_24_d.sb3</a></li>
+</ul>
+<h3><strong>Câu 25</strong></h3>
+<ul>
+<li><code>25.1</code>
+<img alt="Câu 25 - A" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_25_a.png" /></li>
+<li><code>25.2</code>
+<img alt="Câu 25 - B" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_25_b.png" /></li>
+<li><code>25.3</code>
+<img alt="Câu 25 - C" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_25_c.png" /></li>
+<li><code>25.4</code>
+<img alt="Câu 25 - D" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_25_d.png" /></li>
+<li>File check: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_25_a.sb3">cau_25_a.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_25_b.sb3">cau_25_b.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_25_c.sb3">cau_25_c.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_25_d.sb3">cau_25_d.sb3</a></li>
+</ul>
+<h3><strong>Câu 26</strong></h3>
+<ul>
+<li><code>26.1</code>
+<img alt="Câu 26 - 26.1" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_26_1.png" /></li>
+<li>File check: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_26_source.sb3">cau_26_source.sb3</a></li>
+</ul>
+<h3><strong>Câu 27</strong></h3>
+<ul>
+<li><code>27.1</code>
+<img alt="Câu 27 - A" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_27_a.png" /></li>
+<li><code>27.2</code>
+<img alt="Câu 27 - B" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_27_b.png" /></li>
+<li><code>27.3</code>
+<img alt="Câu 27 - C" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_27_c.png" /></li>
+<li><code>27.4</code>
+<img alt="Câu 27 - D" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_27_d.png" /></li>
+<li>File check: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_27_a.sb3">cau_27_a.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_27_b.sb3">cau_27_b.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_27_c.sb3">cau_27_c.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_27_d.sb3">cau_27_d.sb3</a></li>
+</ul>
+<h3><strong>Câu 28</strong></h3>
+<ul>
+<li><code>28.1</code>
+<img alt="Câu 28 - A" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_28_a.png" /></li>
+<li><code>28.2</code>
+<img alt="Câu 28 - B" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_28_b.png" /></li>
+<li><code>28.3</code>
+<img alt="Câu 28 - C" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_28_c.png" /></li>
+<li><code>28.4</code>
+<img alt="Câu 28 - D" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_28_d.png" /></li>
+<li>File check: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_28_a.sb3">cau_28_a.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_28_b.sb3">cau_28_b.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_28_c.sb3">cau_28_c.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_28_d.sb3">cau_28_d.sb3</a></li>
+</ul>
+<h3><strong>Câu 29</strong></h3>
+<ul>
+<li><code>29.1</code>
+<img alt="Câu 29 - A" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_29_a.png" /></li>
+<li><code>29.2</code>
+<img alt="Câu 29 - B" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_29_b.png" /></li>
+<li><code>29.3</code>
+<img alt="Câu 29 - C" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_29_c.png" /></li>
+<li><code>29.4</code>
+<img alt="Câu 29 - D" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_29_d.png" /></li>
+<li>File check: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_29_a.sb3">cau_29_a.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_29_b.sb3">cau_29_b.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_29_c.sb3">cau_29_c.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_29_d.sb3">cau_29_d.sb3</a></li>
+</ul>
+<h3><strong>Câu 30</strong></h3>
+<ul>
+<li><code>30.1</code>
+<img alt="Câu 30 - A" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_30_a.png" /></li>
+<li><code>30.2</code>
+<img alt="Câu 30 - B" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_30_b.png" /></li>
+<li><code>30.3</code>
+<img alt="Câu 30 - C" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_30_c.png" /></li>
+<li><code>30.4</code>
+<img alt="Câu 30 - D" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_30_d.png" /></li>
+<li>File check: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_30_a.sb3">cau_30_a.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_30_b.sb3">cau_30_b.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_30_c.sb3">cau_30_c.sb3</a> | <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_30_d.sb3">cau_30_d.sb3</a></li>
+</ul>
+    </div>
+</body>
+</html>

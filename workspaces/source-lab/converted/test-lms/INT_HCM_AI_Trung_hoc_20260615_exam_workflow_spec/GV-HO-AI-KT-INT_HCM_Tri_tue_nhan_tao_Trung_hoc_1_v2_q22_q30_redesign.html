@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Đề kiểm tra AI Trung học</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Arial:wght@400;700&display=swap');
+:root { --primary-color: #002060; --secondary-color: #0081bd; --bg-color: #f0f2f5; --paper-color: #ffffff; --text-color: #333333; }
+body { font-family: 'Arial', sans-serif; background-color: var(--bg-color); color: var(--text-color); margin: 0; padding: 40px 20px; line-height: 1.6; }
+.a4-container { max-width: 210mm; margin: 0 auto; background-color: var(--paper-color); padding: 25mm; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); border-radius: 4px; text-align: justify; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; color: var(--primary-color); margin-top: 1.5em; margin-bottom: 0.5em; }
+h1 { text-align: center; font-size: 24pt; text-transform: uppercase; border-bottom: 2px solid var(--secondary-color); padding-bottom: 10px; margin-bottom: 30px; }
+h2 { font-size: 16pt; border-bottom: 1px solid #eeeeee; padding-bottom: 5px; }
+ul { list-style-type: none; padding-left: 20px; margin-top: 10px; margin-bottom: 10px; }
+ul li { margin-bottom: 8px; position: relative; display: block; }
+ul li::before { content: "○"; color: var(--secondary-color); position: absolute; left: -20px; font-weight: bold; }
+ul li:has(strong:contains("Đáp án đúng:")), ul li:has(strong:contains("Giải thích:")), ul li:has(strong:contains("Trích dẫn:")) { list-style-type: none; }
+ul li:has(strong:contains("Đáp án đúng:"))::before, ul li:has(strong:contains("Giải thích:"))::before, ul li:has(strong:contains("Trích dẫn:"))::before { content: "►"; color: var(--primary-color); }
+img { max-width: 80%; height: auto; display: block; margin: 20px auto; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
+table { border-collapse: collapse; width: 100%; margin: 25px 0; font-size: 11pt; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+th, td { border: 1px solid #dddddd; padding: 12px 15px; }
+th { background-color: var(--primary-color); color: white; font-family: 'Montserrat', sans-serif; font-weight: 600; text-align: center; }
+td { vertical-align: top; }
+tr:nth-child(even) { background-color: #f9f9f9; }
+hr { border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 32, 96, 0.75), rgba(0, 0, 0, 0)); margin: 40px 0; }
+</style>
+</head>
+<body>
+    <div class="a4-container">
+        <h1><strong>BẢN DUYỆT RIÊNG CÂU 22-30</strong></h1>
+<h2><strong>Môn: Trí tuệ nhân tạo Trung học</strong></h2>
+<p>Tài liệu này dùng để duyệt lại cụm <code>Câu 22-30</code> theo nguyên tắc:
+- Mỗi câu có <code>dàn ý thiết kế</code> trước khi viết câu hỏi hoàn chỉnh.
+- Độ khó tăng dần từ <code>Câu 22</code> đến <code>Câu 30</code>.
+- Câu khó được tạo bằng cách <code>tổ hợp nhiều kiến thức đơn giản</code> của các câu trước.
+- Mỗi câu có sẵn <code>ảnh review</code> và <code>file .sb3</code> để human mở trên playground kiểm tra.</p>
+<p>Mẫu comment:</p>
+<pre><code class="language-md">### Comment của AN
+- Quyết định: Giữ / Sửa nhẹ / Viết lại
+- Độ khó:
+- Kiến thức dùng:
+- Tình huống:
+- Đáp án / bẫy sai:
+- Ghi chú thêm:
+</code></pre>
+<hr />
+<h2><strong>Câu 22</strong> [Hiểu - Vận dụng nhẹ]</h2>
+<h3>1. Dàn ý thiết kế</h3>
+<ul>
+<li><strong>Mục tiêu kiến thức:</strong></li>
+<li>Hiểu vai trò của vòng lặp <code>forever</code>.</li>
+<li>Hiểu cơ chế bám đuổi vị trí khuôn mặt bằng Face Sensing.</li>
+<li><strong>Tổ hợp kiến thức:</strong></li>
+<li>1 ý về cảm biến khuôn mặt.</li>
+<li>1 ý về vòng lặp liên tục.</li>
+<li><strong>Lý do độ khó:</strong></li>
+<li>Đây là câu mở đầu của cụm 22-30, chỉ kiểm tra học sinh có hiểu vì sao hiệu ứng bám mặt phải chạy liên tục hay không.</li>
+<li><strong>Bẫy sai cần tạo:</strong></li>
+<li>Nhầm <code>forever</code> với tối ưu camera.</li>
+<li>Nhầm <code>forever</code> với xoay nhân vật.</li>
+</ul>
+<h3>2. Review Media</h3>
+<p><img alt="Câu 22" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_22.png" /></p>
+<ul>
+<li>File dự án để load trên playground: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_22.sb3">cau_22.sb3</a></li>
+</ul>
+<h3>3. Câu hỏi hoàn chỉnh</h3>
+<p>Trong dự án Face Filter, học sinh muốn một sticker vương miện chỉ xuất hiện khi người chơi đang cười và luôn bám theo khuôn mặt theo thời gian thực. Vì sao phần kiểm tra biểu cảm và cập nhật vị trí sticker nên được đặt trong vòng lặp <code>forever</code>?</p>
+<ul>
+<li>A. Vì chương trình cần liên tục kiểm tra người chơi còn đang cười hay không và liên tục cập nhật lại vị trí sticker; nếu không, hiệu ứng chỉ chạy một lần rồi dừng.</li>
+<li>B. Vì đặt trong <code>forever</code> sẽ làm camera tự tăng độ phân giải để nhận diện nụ cười tốt hơn.</li>
+<li>C. Vì chỉ khi đặt trong <code>forever</code> thì sticker mới tự quay theo góc nghiêng của đầu.</li>
+<li>
+<p>D. Vì <code>forever</code> làm giảm dung lượng bộ nhớ mà dự án sử dụng khi bật camera lâu.</p>
+</li>
+<li>
+<p><strong>Đáp án đúng:</strong> A</p>
+</li>
+<li><strong>Giải thích ngắn:</strong> Biểu cảm khuôn mặt và vị trí các điểm nhận diện thay đổi liên tục. Nếu không đặt trong <code>forever</code>, chương trình chỉ kiểm tra hoặc cập nhật một lần nên sticker không thể hiện/ẩn và bám đuổi mượt theo thời gian thực.</li>
+</ul>
+<h3>Comment của AN</h3>
+<ul>
+<li>Quyết định:</li>
+<li>Độ khó:</li>
+<li>Kiến thức dùng:</li>
+<li>Tình huống:</li>
+<li>Đáp án / bẫy sai:</li>
+<li>Ghi chú thêm:</li>
+</ul>
+<hr />
+<h2><strong>Câu 23</strong> [Vận dụng]</h2>
+<h3>1. Dàn ý thiết kế</h3>
+<ul>
+<li><strong>Mục tiêu kiến thức:</strong></li>
+<li>Biến số đếm.</li>
+<li>Vòng lặp <code>forever</code>.</li>
+<li>Chống cộng dồn bằng <code>wait until</code>.</li>
+<li><strong>Tổ hợp kiến thức:</strong></li>
+<li>1 ý về cảm biến biểu cảm.</li>
+<li>1 ý về biến số.</li>
+<li>1 ý về chốt trạng thái trong vòng lặp.</li>
+<li><strong>Lý do độ khó:</strong></li>
+<li>Câu này bắt đầu yêu cầu học sinh so sánh hai lời giải, không chỉ nhận diện một block riêng lẻ.</li>
+<li><strong>Bẫy sai cần tạo:</strong></li>
+<li>Nghĩ rằng <code>wait 1 giây</code> là đủ chính xác cho mọi tình huống.</li>
+<li>Nghĩ khối <code>not</code> làm điều kiện sai hoàn toàn.</li>
+</ul>
+<h3>2. Review Media</h3>
+<p><img alt="Câu 23A" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_23_a.png" />
+<img alt="Câu 23B" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_23_b.png" /></p>
+<ul>
+<li>File dự án khớp với ảnh A: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_23_a.sb3">cau_23_a.sb3</a></li>
+<li>File dự án khớp với ảnh B: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_23_b.sb3">cau_23_b.sb3</a></li>
+<li>File dự án tổng quát của câu: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_23.sb3">cau_23.sb3</a></li>
+</ul>
+<h3>3. Câu hỏi hoàn chỉnh</h3>
+<p>Trong ứng dụng đếm số lần cười bằng Face Sensing, học sinh muốn tránh lỗi vòng lặp <code>forever</code> chạy quá nhanh làm biến <code>Số lần cười</code> bị cộng nhiều lần trong khi người dùng chỉ cười một lần kéo dài. Hai học sinh đề xuất:</p>
+<ul>
+<li>Học sinh A: Sau khi tăng biến, chèn <code>đợi 1 giây</code>.</li>
+<li>Học sinh B: Sau khi tăng biến, chèn <code>đợi đến khi &lt;không còn cười&gt;</code>.</li>
+</ul>
+<p>Nhận định nào đúng nhất?</p>
+<ul>
+<li>A. Giải pháp của học sinh A tối ưu hơn vì làm camera quét chậm lại, giảm nhiễu tốt hơn.</li>
+<li>B. Cả hai giải pháp đều sai vì khối nhận diện biểu cảm không thể đi cùng khối <code>đợi</code>.</li>
+<li>C. Giải pháp của học sinh A chỉ tạm thời và có thể vẫn cộng sai hoặc bỏ sót; giải pháp của học sinh B tối ưu hơn vì chốt đúng theo trạng thái cười thực tế.</li>
+<li>
+<p>D. Giải pháp của học sinh B sai vì dùng <code>không phải</code> sẽ làm điều kiện luôn sai.</p>
+</li>
+<li>
+<p><strong>Đáp án đúng:</strong> C</p>
+</li>
+<li><strong>Giải thích ngắn:</strong> <code>wait 1 giây</code> chỉ là khoảng trễ cố định, không bám theo thời gian cười thực tế. <code>wait until &lt;not smiling&gt;</code> mới thật sự khóa lượt đếm hiện tại cho đến khi người dùng dừng cười.</li>
+</ul>
+<h3>Comment của AN</h3>
+<ul>
+<li>Quyết định:</li>
+<li>Độ khó:</li>
+<li>Kiến thức dùng:</li>
+<li>Tình huống:</li>
+<li>Đáp án / bẫy sai:</li>
+<li>Ghi chú thêm:</li>
+</ul>
+<hr />
+<h2><strong>Câu 24</strong> [Vận dụng]</h2>
+<h3>1. Dàn ý thiết kế</h3>
+<ul>
+<li><strong>Mục tiêu kiến thức:</strong></li>
+<li>Biến số lưu lựa chọn.</li>
+<li>Dữ liệu chuỗi.</li>
+<li>Hàm <code>độ dài</code>.</li>
+<li>Rẽ nhánh lồng nhau.</li>
+<li><strong>Tổ hợp kiến thức:</strong></li>
+<li>1 ý về nhập dữ liệu.</li>
+<li>1 ý về kiểm tra độ dài chuỗi.</li>
+<li>1 ý về cấu trúc <code>if</code> lồng nhau.</li>
+<li><strong>Lý do độ khó:</strong></li>
+<li>Học sinh phải mô phỏng luồng chạy cụ thể của chương trình chứ không chỉ giải thích khái niệm.</li>
+<li><strong>Bẫy sai cần tạo:</strong></li>
+<li>Chỉ nhìn lựa chọn ngôn ngữ mà quên điều kiện độ dài.</li>
+<li>Nhầm sang nhánh tiếng Pháp.</li>
+</ul>
+<h3>2. Review Media</h3>
+<p><img alt="Câu 24" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_24.png" /></p>
+<ul>
+<li>File dự án để load trên playground: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_24.sb3">cau_24.sb3</a></li>
+</ul>
+<h3>3. Câu hỏi hoàn chỉnh</h3>
+<p>Học sinh lập trình ứng dụng dịch thuật đa ngôn ngữ như sau:</p>
+<ul>
+<li>Nếu <code>Lựa chọn = 1</code> thì:</li>
+<li>Nếu <code>độ dài của (Câu gốc) &gt; 10</code> thì nói <code>"Too long"</code>.</li>
+<li>Ngược lại thì nói bản dịch tiếng Anh.</li>
+<li>Nếu không phải <code>1</code> thì nói bản dịch tiếng Pháp.</li>
+</ul>
+<p>Người dùng nhập <code>Lựa chọn = 1</code> và nhập câu <code>"Chào Việt Nam"</code>. Kết quả nào đúng?</p>
+<ul>
+<li>A. Chương trình nói bản dịch tiếng Anh <code>"Hello Vietnam"</code>.</li>
+<li>B. Chương trình nói <code>"Too long"</code>.</li>
+<li>C. Chương trình nói bản dịch tiếng Pháp.</li>
+<li>
+<p>D. Chương trình không nói gì vì logic bị xung đột.</p>
+</li>
+<li>
+<p><strong>Đáp án đúng:</strong> B</p>
+</li>
+<li><strong>Giải thích ngắn:</strong> <code>"Chào Việt Nam"</code> dài hơn 10 ký tự nên chương trình vào nhánh con báo <code>"Too long"</code> và không đi đến phần dịch tiếng Anh.</li>
+</ul>
+<h3>Comment của AN</h3>
+<ul>
+<li>Quyết định:</li>
+<li>Độ khó:</li>
+<li>Kiến thức dùng:</li>
+<li>Tình huống:</li>
+<li>Đáp án / bẫy sai:</li>
+<li>Ghi chú thêm:</li>
+</ul>
+<hr />
+<h2><strong>Câu 25</strong> [Vận dụng]</h2>
+<h3>1. Dàn ý thiết kế</h3>
+<ul>
+<li><strong>Mục tiêu kiến thức:</strong></li>
+<li>Bám theo điểm khuôn mặt.</li>
+<li>Thay đổi tọa độ <code>x/y</code>.</li>
+<li>Phân tích lỗi hành vi trong <code>forever</code>.</li>
+<li><strong>Tổ hợp kiến thức:</strong></li>
+<li>1 ý về Face Sensing.</li>
+<li>1 ý về hệ tọa độ.</li>
+<li>1 ý về drift do cộng dồn trong vòng lặp.</li>
+<li><strong>Lý do độ khó:</strong></li>
+<li>Học sinh phải phát hiện lỗi logic động, không chỉ nhận diện ý tưởng “bù tọa độ”.</li>
+<li><strong>Bẫy sai cần tạo:</strong></li>
+<li>Tưởng chỉ cần thấy <code>nose bridge</code> + <code>change y</code> là đúng.</li>
+<li>Đổ lỗi cho <code>on-flipped</code>.</li>
+</ul>
+<h3>2. Review Media</h3>
+<p><img alt="Câu 25" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_25.png" /></p>
+<ul>
+<li>File dự án để load trên playground: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_25.sb3">cau_25.sb3</a></li>
+</ul>
+<h3>3. Câu hỏi hoàn chỉnh</h3>
+<p>Trong dự án Face Filter, học sinh muốn đặt sticker mũ cao hơn đầu người chơi nên dùng kịch bản: bám <code>nose bridge</code>, sau đó <code>change y by 120</code> bên trong vòng lặp <code>forever</code>. Phân tích nào đúng nhất?</p>
+<ul>
+<li>A. Kịch bản có nguy cơ làm sticker liên tục bị cộng dồn theo trục <code>y</code>; nếu việc bám lại điểm mặt không ổn định, sticker có thể trôi dần và biến mất khỏi màn hình.</li>
+<li>B. Kịch bản sai vì <code>nose bridge</code> không bao giờ được dùng làm điểm mốc trong Face Sensing.</li>
+<li>C. Kịch bản sai vì chế độ <code>on-flipped</code> làm Face Sensing không còn hoạt động.</li>
+<li>
+<p>D. Kịch bản hoàn toàn chuẩn, đây là cách tối ưu để giữ sticker cố định trên đầu.</p>
+</li>
+<li>
+<p><strong>Đáp án đúng:</strong> A</p>
+</li>
+<li><strong>Giải thích ngắn:</strong> <code>change y by 120</code> trong <code>forever</code> là lệnh cộng dồn lặp lại. Nếu vị trí nền không được reset ổn định mỗi chu kỳ, sticker có thể bị đẩy trôi dần theo thời gian.</li>
+</ul>
+<h3>Comment của AN</h3>
+<ul>
+<li>Quyết định:</li>
+<li>Độ khó:</li>
+<li>Kiến thức dùng:</li>
+<li>Tình huống:</li>
+<li>Đáp án / bẫy sai:</li>
+<li>Ghi chú thêm:</li>
+</ul>
+<hr />
+<h2><strong>Câu 26</strong> [Vận dụng cao]</h2>
+<h3>1. Dàn ý thiết kế</h3>
+<ul>
+<li><strong>Mục tiêu kiến thức:</strong></li>
+<li>Bám đuổi khuôn mặt.</li>
+<li>Sự kiện nhắm mắt.</li>
+<li>Âm thanh <code>play sound until done</code>.</li>
+<li>Tách script để tránh nghẽn.</li>
+<li><strong>Tổ hợp kiến thức:</strong></li>
+<li>1 ý về Face Sensing theo vị trí.</li>
+<li>1 ý về cảm biến biểu cảm.</li>
+<li>1 ý về âm thanh chặn luồng.</li>
+<li>1 ý về đa luồng trong Scratch.</li>
+<li><strong>Lý do độ khó:</strong></li>
+<li>Đây là câu tổ hợp đầu tiên có thêm yếu tố hiệu năng và cấu trúc chương trình.</li>
+<li><strong>Bẫy sai cần tạo:</strong></li>
+<li>Chèn <code>wait 0.1 giây</code>.</li>
+<li>Đổi loại cảm biến.</li>
+<li>Đổi chế độ camera.</li>
+</ul>
+<h3>2. Review Media</h3>
+<p><img alt="Câu 26" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_26.png" /></p>
+<ul>
+<li>File dự án để load trên playground: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_26.sb3">cau_26.sb3</a></li>
+</ul>
+<h3>3. Câu hỏi hoàn chỉnh</h3>
+<p>Học sinh lập trình sticker kính mát bám theo khuôn mặt bằng Face Sensing. Đồng thời, khi người chơi nhắm mắt, chương trình phát <code>sound pop</code> và tăng điểm. Học sinh ghép toàn bộ vào một vòng lặp <code>forever</code> duy nhất, làm sticker bám rất giật và chậm. Giải pháp nào tối ưu nhất?</p>
+<ul>
+<li>A. Đổi điều kiện nhắm mắt thành điều kiện cười để camera xử lý nhanh hơn.</li>
+<li>B. Tách thành hai script song song: một script chỉ bám vị trí khuôn mặt, một script xử lý nhắm mắt, âm thanh và điểm số.</li>
+<li>C. Chèn <code>đợi 0.1 giây</code> vào cuối vòng lặp chung để máy đỡ quá tải.</li>
+<li>
+<p>D. Tắt <code>on-flipped</code> và chuyển sang <code>on</code>.</p>
+</li>
+<li>
+<p><strong>Đáp án đúng:</strong> B</p>
+</li>
+<li><strong>Giải thích ngắn:</strong> Phần âm thanh kiểu <code>until done</code> có thể chặn vòng lặp nếu ghép chung với phần bám vị trí. Tách script giúp phần bám mặt chạy liên tục, còn phần xử lý sự kiện chạy riêng.</li>
+</ul>
+<h3>Comment của AN</h3>
+<ul>
+<li>Quyết định:</li>
+<li>Độ khó:</li>
+<li>Kiến thức dùng:</li>
+<li>Tình huống:</li>
+<li>Đáp án / bẫy sai:</li>
+<li>Ghi chú thêm:</li>
+</ul>
+<hr />
+<h2><strong>Câu 27</strong> [Vận dụng cao]</h2>
+<h3>1. Dàn ý thiết kế</h3>
+<ul>
+<li><strong>Mục tiêu kiến thức:</strong></li>
+<li>Boolean biểu cảm.</li>
+<li>Giá trị số của cường độ biểu cảm.</li>
+<li>So sánh ngưỡng.</li>
+<li>Kiểm soát nhiễu.</li>
+<li><strong>Tổ hợp kiến thức:</strong></li>
+<li>1 ý về Face Sensing Boolean.</li>
+<li>1 ý về dữ liệu số 0-100.</li>
+<li>1 ý về logic ngưỡng.</li>
+<li>1 ý về chất lượng trải nghiệm người dùng.</li>
+<li><strong>Lý do độ khó:</strong></li>
+<li>Câu này buộc học sinh chọn đúng loại dữ liệu cảm biến, không chỉ đúng cú pháp.</li>
+<li><strong>Bẫy sai cần tạo:</strong></li>
+<li>Dùng <code>đang cười?</code> thay cho đo cường độ.</li>
+<li>Dùng <code>wait</code>.</li>
+<li>Dùng camera mode như một cách sửa logic.</li>
+</ul>
+<h3>2. Review Media</h3>
+<p>Không bắt buộc có ảnh riêng cho câu này. Nếu cần thêm media sau, nên render block giá trị <code>[mức độ biểu cảm [smile]]</code>.</p>
+<h3>3. Câu hỏi hoàn chỉnh</h3>
+<p>Trong dự án nhận diện cảm xúc, học sinh muốn đổi phông nền sang <code>"Vui vẻ"</code> chỉ khi người dùng cười thật tươi. Nếu dùng khối Boolean <code>[đang cười [smile]?]</code>, phông nền bị đổi ngay cả khi người dùng chỉ cười nhẹ. Cách sửa nào tối ưu nhất?</p>
+<ul>
+<li>A. Dùng khối giá trị <code>[mức độ biểu cảm [smile]]</code> và so sánh với một ngưỡng cao, ví dụ <code>&gt; 80</code>.</li>
+<li>B. Dùng khối <code>[không phải [đang cười [smile]?]]</code> để lọc nhiễu.</li>
+<li>C. Chèn <code>đợi 5 giây</code> sau khi phát hiện cười.</li>
+<li>
+<p>D. Chuyển camera sang chế độ không lật gương.</p>
+</li>
+<li>
+<p><strong>Đáp án đúng:</strong> A</p>
+</li>
+<li><strong>Giải thích ngắn:</strong> Khối Boolean chỉ cho biết có/không có cười. Muốn phân biệt cười nhẹ và cười rõ, phải dùng giá trị số cường độ biểu cảm rồi so với ngưỡng.</li>
+</ul>
+<h3>Comment của AN</h3>
+<ul>
+<li>Quyết định:</li>
+<li>Độ khó:</li>
+<li>Kiến thức dùng:</li>
+<li>Tình huống:</li>
+<li>Đáp án / bẫy sai:</li>
+<li>Ghi chú thêm:</li>
+</ul>
+<hr />
+<h2><strong>Câu 28</strong> [Vận dụng cao]</h2>
+<h3>1. Dàn ý thiết kế</h3>
+<ul>
+<li><strong>Mục tiêu kiến thức:</strong></li>
+<li>Nhận diện nụ cười.</li>
+<li>Biến số đếm.</li>
+<li>Danh sách lưu lịch sử.</li>
+<li>Lỗi cộng dồn trong <code>forever</code>.</li>
+<li>Chốt trạng thái bằng <code>wait until</code>.</li>
+<li><strong>Tổ hợp kiến thức:</strong></li>
+<li>1 ý về cảm biến biểu cảm.</li>
+<li>1 ý về biến số.</li>
+<li>1 ý về danh sách.</li>
+<li>1 ý về debounce/chống lặp.</li>
+<li>1 ý về phân tích lỗi dữ liệu.</li>
+<li><strong>Lý do độ khó:</strong></li>
+<li>Đây là câu đầu tiên buộc học sinh nhìn một lỗi đồng thời làm sai cả <code>biến số</code> lẫn <code>danh sách</code>.</li>
+<li><strong>Bẫy sai cần tạo:</strong></li>
+<li>Tưởng lỗi do chưa xóa danh sách lúc đầu.</li>
+<li>Tưởng lỗi do khai báo trùng tên biến.</li>
+</ul>
+<h3>2. Review Media</h3>
+<p><img alt="Câu 28 block" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_28_block.png" />
+<img alt="Câu 28 main" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_28.png" /></p>
+<ul>
+<li>File dự án khớp với ảnh block: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_28_block.sb3">cau_28_block.sb3</a></li>
+<li>File dự án khớp với ảnh chính: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_28.sb3">cau_28.sb3</a></li>
+</ul>
+<h3>3. Câu hỏi hoàn chỉnh</h3>
+<p>Trong dự án “App nhận biết cảm xúc người học online”, mỗi khi phát hiện người dùng cười, hệ thống tăng biến <code>Số lần cười</code> thêm 1 và thêm chữ <code>"Vui vẻ"</code> vào danh sách <code>Nhật ký cảm xúc</code>. Khi chạy thử, học sinh chỉ cười một lần nhưng danh sách bị ghi lặp hàng chục lần và biến đếm tăng vọt. Giải thích nào đúng nhất?</p>
+<ul>
+<li>A. Do danh sách chưa được xóa trước khi bắt đầu, nên toàn bộ dữ liệu cũ bị lặp lại.</li>
+<li>B. Do điều kiện cười vẫn liên tục đúng trong <code>forever</code>; cần chèn <code>đợi đến khi không còn cười</code> để chặn ghi lặp trong cùng một lượt cười.</li>
+<li>C. Do biến đếm bị trùng tên với một biến khác nên tự tăng nhiều lần.</li>
+<li>
+<p>D. Do camera phản hồi chậm nên phải tăng tốc xử lý video trong cài đặt.</p>
+</li>
+<li>
+<p><strong>Đáp án đúng:</strong> B</p>
+</li>
+<li><strong>Giải thích ngắn:</strong> Một nụ cười có thể kéo dài 1-2 giây, trong khi <code>forever</code> chạy rất nhanh. Nếu không có chốt trạng thái, chương trình sẽ coi một lượt cười là rất nhiều lần cười liên tiếp.</li>
+</ul>
+<h3>Comment của AN</h3>
+<ul>
+<li>Quyết định:</li>
+<li>Độ khó:</li>
+<li>Kiến thức dùng:</li>
+<li>Tình huống:</li>
+<li>Đáp án / bẫy sai:</li>
+<li>Ghi chú thêm:</li>
+</ul>
+<hr />
+<h2><strong>Câu 29</strong> [Vận dụng cao]</h2>
+<h3>1. Dàn ý thiết kế</h3>
+<ul>
+<li><strong>Mục tiêu kiến thức:</strong></li>
+<li><code>ask and wait</code>.</li>
+<li>Biến hệ thống <code>answer</code>.</li>
+<li>Biến trung gian tự tạo.</li>
+<li>Rẽ nhánh theo lựa chọn.</li>
+<li>Translate/Text to Speech.</li>
+<li><strong>Tổ hợp kiến thức:</strong></li>
+<li>1 ý về nhập dữ liệu nhiều bước.</li>
+<li>1 ý về ghi đè dữ liệu hệ thống.</li>
+<li>1 ý về lưu trạng thái trung gian.</li>
+<li>1 ý về ứng dụng dịch thuật.</li>
+<li>1 ý về hậu quả logic sai.</li>
+<li><strong>Lý do độ khó:</strong></li>
+<li>Câu này yêu cầu hiểu chuỗi sự kiện theo thời gian và hiểu biến hệ thống có thể bị ghi đè.</li>
+<li><strong>Bẫy sai cần tạo:</strong></li>
+<li>Đổ lỗi cho Translate/TTS.</li>
+<li>Đổ lỗi cho so sánh chuỗi.</li>
+<li>Đổ lỗi cho “chưa nạp từ điển”.</li>
+</ul>
+<h3>2. Review Media</h3>
+<p><img alt="Câu 29" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_29.png" /></p>
+<ul>
+<li>File dự án để load trên playground: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_29.sb3">cau_29.sb3</a></li>
+</ul>
+<h3>3. Câu hỏi hoàn chỉnh</h3>
+<p>Học sinh lập trình ứng dụng dịch thuật: đầu tiên hỏi người dùng chọn ngôn ngữ đích (<code>1-Anh</code>, <code>2-Pháp</code>), sau đó hỏi tiếp câu cần dịch. Cuối chương trình, học sinh dùng trực tiếp khối <code>answer</code> để kiểm tra xem người dùng đã chọn <code>1</code> hay <code>2</code>. Khi chạy thử, dù người dùng chọn <code>1</code>, chương trình vẫn đi vào nhánh tiếng Pháp. Giải thích nào đúng nhất?</p>
+<ul>
+<li>A. Do <code>answer</code> luôn bị cập nhật theo câu hỏi mới nhất; cần lưu kết quả câu hỏi thứ nhất vào một biến trung gian ngay sau khi hỏi.</li>
+<li>B. Do Scratch không hỗ trợ so sánh bằng với dữ liệu kiểu chuỗi.</li>
+<li>C. Do Translate và Text to Speech xung đột khi dùng trong cùng một script.</li>
+<li>
+<p>D. Do thư viện dịch thuật chưa nạp đủ dữ liệu ngôn ngữ.</p>
+</li>
+<li>
+<p><strong>Đáp án đúng:</strong> A</p>
+</li>
+<li><strong>Giải thích ngắn:</strong> Sau câu hỏi thứ hai, <code>answer</code> không còn chứa lựa chọn ngôn ngữ nữa mà chứa nội dung câu cần dịch. Nếu không lưu lựa chọn đầu tiên vào biến riêng, phần rẽ nhánh cuối sẽ kiểm tra sai dữ liệu.</li>
+</ul>
+<h3>Comment của AN</h3>
+<ul>
+<li>Quyết định:</li>
+<li>Độ khó:</li>
+<li>Kiến thức dùng:</li>
+<li>Tình huống:</li>
+<li>Đáp án / bẫy sai:</li>
+<li>Ghi chú thêm:</li>
+</ul>
+<hr />
+<h2><strong>Câu 30</strong> [Vận dụng cao - tổ hợp mạnh]</h2>
+<h3>1. Dàn ý thiết kế</h3>
+<ul>
+<li><strong>Mục tiêu kiến thức:</strong></li>
+<li>Phát hiện nhắm mắt.</li>
+<li>Phát âm thanh.</li>
+<li>Tăng biến đếm.</li>
+<li>Tắt video.</li>
+<li>Hiểu camera để lại ảnh tĩnh.</li>
+<li>Dùng <code>stop this script</code> để chặn lặp vô hạn.</li>
+<li><strong>Tổ hợp kiến thức:</strong></li>
+<li>1 ý về cảm biến nhắm mắt.</li>
+<li>1 ý về vòng lặp <code>forever</code>.</li>
+<li>1 ý về âm thanh + biến số.</li>
+<li>1 ý về trạng thái video off.</li>
+<li>1 ý về ảnh tĩnh vẫn bị nhận diện.</li>
+<li>1 ý về lệnh dừng script.</li>
+<li><strong>Lý do độ khó:</strong></li>
+<li>Đây là câu cuối nên phải là câu tổ hợp của nhiều lỗi nhỏ:<ul>
+<li>điều kiện cảm biến,</li>
+<li>biến số,</li>
+<li>âm thanh,</li>
+<li>vòng lặp,</li>
+<li>video off,</li>
+<li>dừng luồng.</li>
+</ul>
+</li>
+<li><strong>Bẫy sai cần tạo:</strong></li>
+<li>Đổ lỗi cho xung đột âm thanh và camera.</li>
+<li>Chỉ reset biến số.</li>
+<li>Chèn <code>wait</code> thay vì dừng script.</li>
+</ul>
+<h3>2. Review Media</h3>
+<p><img alt="Câu 30" src="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_30.png" /></p>
+<ul>
+<li>File dự án để load trên playground: <a href="GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2-Media/cau_30.sb3">cau_30.sb3</a></li>
+</ul>
+<h3>3. Câu hỏi hoàn chỉnh</h3>
+<p>Trong dự án “Trò chơi chụp ảnh tự động bằng nháy mắt”, học sinh lập trình như sau: nếu phát hiện khuôn mặt và người chơi nhắm mắt thì chương trình phát <code>sound pop</code>, tăng biến <code>Số ảnh chụp</code> thêm 1, rồi <code>tắt camera</code>. Khi chạy thử, camera tắt đúng nhưng âm thanh vẫn tiếp tục phát lặp lại và biến số tăng liên tục làm treo chương trình. Nguyên nhân và cách sửa đúng nhất là gì?</p>
+<ul>
+<li>A. Do âm thanh và camera xung đột tiến trình; cần tách thành hai script song song.</li>
+<li>B. Do Face Sensing vẫn tiếp tục nhận diện trạng thái nhắm mắt trên ảnh tĩnh cuối cùng sau khi tắt camera; cần thêm <code>stop this script</code> ngay sau khi <code>video off</code>.</li>
+<li>C. Do biến <code>Số ảnh chụp</code> chưa được đặt lại về 0; chỉ cần reset biến là đủ.</li>
+<li>
+<p>D. Do cần chèn <code>đợi 1 giây</code> trước khi <code>video off</code> để camera tắt ổn định hơn.</p>
+</li>
+<li>
+<p><strong>Đáp án đúng:</strong> B</p>
+</li>
+<li><strong>Giải thích ngắn:</strong> <code>video off</code> không xóa ngay hình cuối cùng khỏi sân khấu. Nếu script vẫn tiếp tục chạy trong <code>forever</code>, bộ nhận diện có thể vẫn thấy trạng thái nhắm mắt trên ảnh tĩnh đó và tiếp tục kích hoạt điều kiện. Phải dừng hẳn script sau khi tắt video.</li>
+</ul>
+<h3>Comment của AN</h3>
+<ul>
+<li>Quyết định:</li>
+<li>Độ khó:</li>
+<li>Kiến thức dùng:</li>
+<li>Tình huống:</li>
+<li>Đáp án / bẫy sai:</li>
+<li>Ghi chú thêm:</li>
+</ul>
+<hr />
+<h2><strong>Nhận xét tổng thể về độ khó</strong></h2>
+<ul>
+<li><code>Câu 22-24</code>: kiểm tra 2-3 mảnh kiến thức, chủ yếu là hiểu và mô phỏng luồng chạy.</li>
+<li><code>Câu 25-27</code>: chuyển sang phân tích lỗi hành vi động, bắt đầu có tư duy sửa lỗi và chọn đúng loại dữ liệu/loại block.</li>
+<li><code>Câu 28-30</code>: là nhóm tổ hợp mạnh, mỗi câu ghép 4-6 mảnh kiến thức đơn giản thành một lỗi thực tế hơn.</li>
+<li><code>Câu 30</code> là câu khó nhất vì học sinh phải đồng thời hiểu cảm biến, vòng lặp, biến số, âm thanh, trạng thái video, và lệnh dừng script.</li>
+</ul>
+<h2><strong>Comment tổng thể của AN</strong></h2>
+<ul>
+<li>Nhịp tăng độ khó từ 22 -&gt; 30:</li>
+<li>Câu nào còn quá dễ:</li>
+<li>Câu nào còn chưa đủ tổ hợp kiến thức:</li>
+<li>Câu nào nên viết lại hoàn toàn:</li>
+<li>Ghi chú chung:</li>
+</ul>
+    </div>
+</body>
+</html>

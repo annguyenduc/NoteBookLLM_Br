@@ -1,0 +1,7 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+      <block type="poseFace_affdexIsExpression" id="q28_block" x="40" y="40">
+        <value name="EXPRESSION">
+          <shadow type="poseFace_menu_EXPRESSION"><field name="EXPRESSION">smile</field></shadow>
+        </value>
+      </block>
+    </xml>

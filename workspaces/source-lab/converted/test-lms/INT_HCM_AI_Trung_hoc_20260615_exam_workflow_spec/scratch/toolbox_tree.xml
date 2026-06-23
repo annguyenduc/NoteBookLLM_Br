@@ -1,0 +1,633 @@
+<xml style="display: none">
+
+    <category name="%{BKY_CATEGORY_MOTION}" id="motion" colour="#4C97FF" secondaryColour="#3373CC">
+        
+        <block type="motion_movesteps">
+            <value name="STEPS">
+                <shadow type="math_number">
+                    <field name="NUM">10</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="motion_turnright">
+            <value name="DEGREES">
+                <shadow type="math_number">
+                    <field name="NUM">15</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="motion_turnleft">
+            <value name="DEGREES">
+                <shadow type="math_number">
+                    <field name="NUM">15</field>
+                </shadow>
+            </value>
+        </block>
+        <sep gap="36"/>
+        <block type="motion_goto">
+            <value name="TO">
+                <shadow type="motion_goto_menu">
+                </shadow>
+            </value>
+        </block>
+        <block type="motion_gotoxy">
+            <value name="X">
+                <shadow id="movex" type="math_number">
+                    <field name="NUM">0</field>
+                </shadow>
+            </value>
+            <value name="Y">
+                <shadow id="movey" type="math_number">
+                    <field name="NUM">0</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="motion_glideto" id="motion_glideto">
+            <value name="SECS">
+                <shadow type="math_number">
+                    <field name="NUM">1</field>
+                </shadow>
+            </value>
+            <value name="TO">
+                <shadow type="motion_glideto_menu">
+                </shadow>
+            </value>
+        </block>
+        <block type="motion_glidesecstoxy">
+            <value name="SECS">
+                <shadow type="math_number">
+                    <field name="NUM">1</field>
+                </shadow>
+            </value>
+            <value name="X">
+                <shadow id="glidex" type="math_number">
+                    <field name="NUM">0</field>
+                </shadow>
+            </value>
+            <value name="Y">
+                <shadow id="glidey" type="math_number">
+                    <field name="NUM">0</field>
+                </shadow>
+            </value>
+        </block>
+        <sep gap="36"/>
+        <block type="motion_pointindirection">
+            <value name="DIRECTION">
+                <shadow type="math_angle">
+                    <field name="NUM">90</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="motion_pointtowards">
+            <value name="TOWARDS">
+                <shadow type="motion_pointtowards_menu">
+                </shadow>
+            </value>
+        </block>
+        <sep gap="36"/>
+        <block type="motion_changexby">
+            <value name="DX">
+                <shadow type="math_number">
+                    <field name="NUM">10</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="motion_setx">
+            <value name="X">
+                <shadow id="setx" type="math_number">
+                    <field name="NUM">0</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="motion_changeyby">
+            <value name="DY">
+                <shadow type="math_number">
+                    <field name="NUM">10</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="motion_sety">
+            <value name="Y">
+                <shadow id="sety" type="math_number">
+                    <field name="NUM">0</field>
+                </shadow>
+            </value>
+        </block>
+        <sep gap="36"/>
+        <block type="motion_ifonedgebounce"/>
+        <sep gap="36"/>
+        <block type="motion_setrotationstyle"/>
+        <sep gap="36"/>
+        <block id="Sa:o;g4cWI_O7s_d0|f`_xposition" type="motion_xposition"/>
+        <block id="Sa:o;g4cWI_O7s_d0|f`_yposition" type="motion_yposition"/>
+        <block id="Sa:o;g4cWI_O7s_d0|f`_direction" type="motion_direction"/>
+        <sep gap="36"/>
+    </category>
+    
+<sep gap="36"/>
+
+    <category name="%{BKY_CATEGORY_LOOKS}" id="looks" colour="#9966FF" secondaryColour="#774DCB">
+        
+        <block type="looks_sayforsecs">
+            <value name="MESSAGE">
+                <shadow type="text">
+                    <field name="TEXT">Hello!</field>
+                </shadow>
+            </value>
+            <value name="SECS">
+                <shadow type="math_number">
+                    <field name="NUM">2</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="looks_say">
+            <value name="MESSAGE">
+                <shadow type="text">
+                    <field name="TEXT">Hello!</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="looks_thinkforsecs">
+            <value name="MESSAGE">
+                <shadow type="text">
+                    <field name="TEXT">Hmm...</field>
+                </shadow>
+            </value>
+            <value name="SECS">
+                <shadow type="math_number">
+                    <field name="NUM">2</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="looks_think">
+            <value name="MESSAGE">
+                <shadow type="text">
+                    <field name="TEXT">Hmm...</field>
+                </shadow>
+            </value>
+        </block>
+        <sep gap="36"/>
+        
+        
+            <block id="Sa:o;g4cWI_O7s_d0|f`_switchcostumeto" type="looks_switchcostumeto">
+                <value name="COSTUME">
+                    <shadow type="looks_costume">
+                        <field name="COSTUME">angry</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="looks_nextcostume"/>
+            <block type="looks_switchbackdropto">
+                <value name="BACKDROP">
+                    <shadow type="looks_backdrops">
+                        <field name="BACKDROP">backdrop1</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="looks_nextbackdrop"/>
+            <sep gap="36"/>
+            <block type="looks_changesizeby">
+                <value name="CHANGE">
+                    <shadow type="math_number">
+                        <field name="NUM">10</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="looks_setsizeto">
+                <value name="SIZE">
+                    <shadow type="math_number">
+                        <field name="NUM">100</field>
+                    </shadow>
+                </value>
+            </block>
+        
+        <sep gap="36"/>
+        <block type="looks_changeeffectby">
+            <value name="CHANGE">
+                <shadow type="math_number">
+                    <field name="NUM">25</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="looks_seteffectto">
+            <value name="VALUE">
+                <shadow type="math_number">
+                    <field name="NUM">0</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="looks_cleargraphiceffects"/>
+        <sep gap="36"/>
+        
+            <block type="looks_show"/>
+            <block type="looks_hide"/>
+        <sep gap="36"/>
+            <block type="looks_gotofrontback"/>
+            <block type="looks_goforwardbackwardlayers">
+                <value name="NUM">
+                    <shadow type="math_integer">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+            </block>
+        
+        
+            <block id="Sa:o;g4cWI_O7s_d0|f`_costumenumbername" type="looks_costumenumbername"/>
+            <block id="backdropnumbername" type="looks_backdropnumbername"/>
+            <block id="Sa:o;g4cWI_O7s_d0|f`_size" type="looks_size"/>
+        
+        <sep gap="36"/>
+    </category>
+    
+<sep gap="36"/>
+
+    <category name="%{BKY_CATEGORY_SOUND}" id="sound" colour="#D65CD6" secondaryColour="#BD42BD">
+        <block id="Sa:o;g4cWI_O7s_d0|f`_sound_playuntildone" type="sound_playuntildone">
+            <value name="SOUND_MENU">
+                <shadow type="sound_sounds_menu">
+                    <field name="SOUND_MENU">pop</field>
+                </shadow>
+            </value>
+        </block>
+        <block id="Sa:o;g4cWI_O7s_d0|f`_sound_play" type="sound_play">
+            <value name="SOUND_MENU">
+                <shadow type="sound_sounds_menu">
+                    <field name="SOUND_MENU">pop</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="sound_stopallsounds"/>
+        <sep gap="36"/>
+        <block type="sound_changeeffectby">
+            <value name="VALUE">
+                <shadow type="math_number">
+                    <field name="NUM">10</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="sound_seteffectto">
+            <value name="VALUE">
+                <shadow type="math_number">
+                    <field name="NUM">100</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="sound_cleareffects"/>
+        <sep gap="36"/>
+        <block type="sound_changevolumeby">
+            <value name="VOLUME">
+                <shadow type="math_number">
+                    <field name="NUM">-10</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="sound_setvolumeto">
+            <value name="VOLUME">
+                <shadow type="math_number">
+                    <field name="NUM">100</field>
+                </shadow>
+            </value>
+        </block>
+        <block id="Sa:o;g4cWI_O7s_d0|f`_volume" type="sound_volume"/>
+        <sep gap="36"/>
+    </category>
+    
+<sep gap="36"/>
+
+    <category name="%{BKY_CATEGORY_EVENTS}" id="events" colour="#FFD500" secondaryColour="#CC9900">
+        <block type="event_whenflagclicked"/>
+        <block type="event_whenkeypressed">
+        </block>
+        
+            <block type="event_whenthisspriteclicked"/>
+        
+        <block type="event_whenbackdropswitchesto">
+        </block>
+        <sep gap="36"/>
+        <block type="event_whengreaterthan">
+            <value name="VALUE">
+                <shadow type="math_number">
+                    <field name="NUM">10</field>
+                </shadow>
+            </value>
+        </block>
+        <sep gap="36"/>
+        <block type="event_whenbroadcastreceived">
+        </block>
+        <block type="event_broadcast">
+            <value name="BROADCAST_INPUT">
+                <shadow type="event_broadcast_menu"/>
+            </value>
+        </block>
+        <block type="event_broadcastandwait">
+            <value name="BROADCAST_INPUT">
+              <shadow type="event_broadcast_menu"/>
+            </value>
+        </block>
+        <sep gap="36"/>
+    </category>
+    
+<sep gap="36"/>
+
+    <category name="%{BKY_CATEGORY_CONTROL}" id="control" colour="#FFAB19" secondaryColour="#CF8B17">
+        <block type="control_wait">
+            <value name="DURATION">
+                <shadow type="math_positive_number">
+                    <field name="NUM">1</field>
+                </shadow>
+            </value>
+        </block>
+        <sep gap="36"/>
+        <block type="control_repeat">
+            <value name="TIMES">
+                <shadow type="math_whole_number">
+                    <field name="NUM">10</field>
+                </shadow>
+            </value>
+        </block>
+        <block id="forever" type="control_forever"/>
+        <sep gap="36"/>
+        <block type="control_if"/>
+        <block type="control_if_else"/>
+        <block id="wait_until" type="control_wait_until"/>
+        <block id="repeat_until" type="control_repeat_until"/>
+        <sep gap="36"/>
+        <block type="control_stop"/>
+        <sep gap="36"/>
+        
+            <block type="control_start_as_clone"/>
+            <block type="control_create_clone_of">
+                <value name="CLONE_OPTION">
+                    <shadow type="control_create_clone_of_menu"/>
+                </value>
+            </block>
+            <block type="control_delete_this_clone"/>
+        
+        <sep gap="36"/>
+    </category>
+    
+<sep gap="36"/>
+
+    <category name="%{BKY_CATEGORY_SENSING}" id="sensing" colour="#4CBFE6" secondaryColour="#2E8EB8">
+        
+            <block type="sensing_touchingobject">
+                <value name="TOUCHINGOBJECTMENU">
+                    <shadow type="sensing_touchingobjectmenu"/>
+                </value>
+            </block>
+            <block type="sensing_touchingcolor">
+                <value name="COLOR">
+                    <shadow type="colour_picker"/>
+                </value>
+            </block>
+            <block type="sensing_coloristouchingcolor">
+                <value name="COLOR">
+                    <shadow type="colour_picker"/>
+                </value>
+                <value name="COLOR2">
+                    <shadow type="colour_picker"/>
+                </value>
+            </block>
+            <block type="sensing_distanceto">
+                <value name="DISTANCETOMENU">
+                    <shadow type="sensing_distancetomenu"/>
+                </value>
+            </block>
+            <sep gap="36"/>
+        
+        <block id="askandwait" type="sensing_askandwait">
+            <value name="QUESTION">
+                <shadow type="text">
+                    <field name="TEXT">What's your name?</field>
+                </shadow>
+            </value>
+        </block>
+        <block id="answer" type="sensing_answer"/>
+        <sep gap="36"/>
+        <block type="sensing_keypressed">
+            <value name="KEY_OPTION">
+                <shadow type="sensing_keyoptions"/>
+            </value>
+        </block>
+        <block type="sensing_mousedown"/>
+        <block type="sensing_mousex"/>
+        <block type="sensing_mousey"/>
+        
+            <sep gap="36"/>
+            '<block type="sensing_setdragmode" id="sensing_setdragmode"/>'+
+            <sep gap="36"/>
+        
+        <sep gap="36"/>
+        <block id="loudness" type="sensing_loudness"/>
+        <sep gap="36"/>
+        <block id="timer" type="sensing_timer"/>
+        <block type="sensing_resettimer"/>
+        <sep gap="36"/>
+        <block id="of" type="sensing_of">
+            <value name="OBJECT">
+                <shadow id="sensing_of_object_menu" type="sensing_of_object_menu"/>
+            </value>
+        </block>
+        <sep gap="36"/>
+        <block id="current" type="sensing_current"/>
+        <block type="sensing_dayssince2000"/>
+        <sep gap="36"/>
+        <block type="sensing_username"/>
+        <sep gap="36"/>
+    </category>
+    
+<sep gap="36"/>
+
+    <category name="%{BKY_CATEGORY_OPERATORS}" id="operators" colour="#40BF4A" secondaryColour="#389438">
+        <block type="operator_add">
+            <value name="NUM1">
+                <shadow type="math_number">
+                    <field name="NUM"/>
+                </shadow>
+            </value>
+            <value name="NUM2">
+                <shadow type="math_number">
+                    <field name="NUM"/>
+                </shadow>
+            </value>
+        </block>
+        <block type="operator_subtract">
+            <value name="NUM1">
+                <shadow type="math_number">
+                    <field name="NUM"/>
+                </shadow>
+            </value>
+            <value name="NUM2">
+                <shadow type="math_number">
+                    <field name="NUM"/>
+                </shadow>
+            </value>
+        </block>
+        <block type="operator_multiply">
+            <value name="NUM1">
+                <shadow type="math_number">
+                    <field name="NUM"/>
+                </shadow>
+            </value>
+            <value name="NUM2">
+                <shadow type="math_number">
+                    <field name="NUM"/>
+                </shadow>
+            </value>
+        </block>
+        <block type="operator_divide">
+            <value name="NUM1">
+                <shadow type="math_number">
+                    <field name="NUM"/>
+                </shadow>
+            </value>
+            <value name="NUM2">
+                <shadow type="math_number">
+                    <field name="NUM"/>
+                </shadow>
+            </value>
+        </block>
+        <sep gap="36"/>
+        <block type="operator_random">
+            <value name="FROM">
+                <shadow type="math_number">
+                    <field name="NUM">1</field>
+                </shadow>
+            </value>
+            <value name="TO">
+                <shadow type="math_number">
+                    <field name="NUM">10</field>
+                </shadow>
+            </value>
+        </block>
+        <sep gap="36"/>
+        <block type="operator_gt">
+            <value name="OPERAND1">
+                <shadow type="text">
+                    <field name="TEXT"/>
+                </shadow>
+            </value>
+            <value name="OPERAND2">
+                <shadow type="text">
+                    <field name="TEXT">50</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="operator_lt">
+            <value name="OPERAND1">
+                <shadow type="text">
+                    <field name="TEXT"/>
+                </shadow>
+            </value>
+            <value name="OPERAND2">
+                <shadow type="text">
+                    <field name="TEXT">50</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="operator_equals">
+            <value name="OPERAND1">
+                <shadow type="text">
+                    <field name="TEXT"/>
+                </shadow>
+            </value>
+            <value name="OPERAND2">
+                <shadow type="text">
+                    <field name="TEXT">50</field>
+                </shadow>
+            </value>
+        </block>
+        <sep gap="36"/>
+        <block type="operator_and"/>
+        <block type="operator_or"/>
+        <block type="operator_not"/>
+        <sep gap="36"/>
+        <block type="operator_join">
+            <value name="STRING1">
+                <shadow type="text">
+                    <field name="TEXT">apple </field>
+                </shadow>
+            </value>
+            <value name="STRING2">
+                <shadow type="text">
+                    <field name="TEXT">banana</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="operator_letter_of">
+            <value name="LETTER">
+                <shadow type="math_whole_number">
+                    <field name="NUM">1</field>
+                </shadow>
+            </value>
+            <value name="STRING">
+                <shadow type="text">
+                    <field name="TEXT">apple</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="operator_length">
+            <value name="STRING">
+                <shadow type="text">
+                    <field name="TEXT">apple</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="operator_contains" id="operator_contains">
+          <value name="STRING1">
+            <shadow type="text">
+              <field name="TEXT">apple</field>
+            </shadow>
+          </value>
+          <value name="STRING2">
+            <shadow type="text">
+              <field name="TEXT">a</field>
+            </shadow>
+          </value>
+        </block>
+        <sep gap="36"/>
+        <block type="operator_mod">
+            <value name="NUM1">
+                <shadow type="math_number">
+                    <field name="NUM"/>
+                </shadow>
+            </value>
+            <value name="NUM2">
+                <shadow type="math_number">
+                    <field name="NUM"/>
+                </shadow>
+            </value>
+        </block>
+        <block type="operator_round">
+            <value name="NUM">
+                <shadow type="math_number">
+                    <field name="NUM"/>
+                </shadow>
+            </value>
+        </block>
+        <sep gap="36"/>
+        <block type="operator_mathop">
+            <value name="NUM">
+                <shadow type="math_number">
+                    <field name="NUM"/>
+                </shadow>
+            </value>
+        </block>
+        <sep gap="36"/>
+    </category>
+    
+<sep gap="36"/>
+
+    <category name="%{BKY_CATEGORY_VARIABLES}" id="variables" colour="#FF8C1A" secondaryColour="#DB6E00" custom="VARIABLE">
+    </category>
+    
+<sep gap="36"/>
+
+    <category name="%{BKY_CATEGORY_MYBLOCKS}" id="myBlocks" colour="#FF6680" secondaryColour="#FF4D6A" custom="PROCEDURE">
+    </category>
+    
+<sep gap="36"/>
+<category name="Translate" id="translate" colour="#0FBD8C" secondaryColour="#0DA57A" iconURI="data:image/png;base64,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"><block type="translate_getTranslate"><value name="WORDS"><shadow type="text"><field name="TEXT">hello</field></shadow></value><value name="LANGUAGE"><shadow type="translate_menu_languages"><field name="languages">et</field></shadow></value></block><block type="translate_getViewerLanguage"/></category>
+<sep gap="36"/>
+<category name="Text to Speech" id="text2speech" colour="#0FBD8C" secondaryColour="#0DA57A" iconURI="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDUyLjIgKDY3MTQ1KSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5FeHRlbnNpb25zL1NvZnR3YXJlL1RleHQtdG8tU3BlZWNoLU1lbnU8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZyBpZD0iRXh0ZW5zaW9ucy9Tb2Z0d2FyZS9UZXh0LXRvLVNwZWVjaC1NZW51IiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0idGV4dDJzcGVlY2giIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIuMDAwMDAwLCAyLjAwMDAwMCkiIGZpbGwtcnVsZT0ibm9uemVybyI+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik01Ljc1LDguODM0NjcxNzMgQzUuNzUsOC4zMjY5NjM0NCA1LjAwMzAwNzI3LDguMDQyMjEzNzEgNC41NTYyODAxMiw4LjQ0NDE0OTk5IEwzLjIwNjI4MDEyLDkuNTI1MzU3MDIgQzIuNjk2NzMzNzgsOS45MzM0NDk2OCAyLjAzNzQ4Njc1LDEwLjE2NTg3ODggMS4zNSwxMC4xNjU4Nzg4IEwxLjE1LDEwLjE2NTg3ODggQzAuNjMyNTk2MTY1LDEwLjE2NTg3ODggMC4yNSwxMC41MTA2MDAyIDAuMjUsMTAuOTUyMDM1NSBMMC4yNSwxMy4wNjkzOTkzIEMwLjI1LDEzLjUxMDgzNDYgMC42MzI1OTYxNjUsMTMuODU1NTU2IDEuMTUsMTMuODU1NTU2IEwxLjM1LDEzLjg1NTU1NiBDMi4wNzg3Nzg0MSwxMy44NTU1NTYgMi43MjY4NjE2MSwxNC4wNjY3NjM2IDMuMjU5ODYwNDksMTQuNDk5IEw0LjU1OTIwMTQ3LDE1LjU3OTY2MDggQzUuMDEzMDkyNzYsMTUuOTU0NTM5NiA1Ljc1LDE1LjY3MzYzNDQgNS43NSwxNS4xNDE3MTI4IEw1Ljc1LDguODM0NjcxNzMgWiIgaWQ9InNwZWFrZXIiIHN0cm9rZS1vcGFjaXR5PSIwLjE1IiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iMC41IiBmaWxsPSIjNEQ0RDREIj48L3BhdGg+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0xMC43MDQ4MzEzLDggQzkuNzkwNjc0NjgsOS4xMzExNDg0NyA4LjMwNjYxODQsOS43MTQyODU3MSA3LjgzMzMzMzMzLDkuNzE0Mjg1NzEgQzcuODMzMzMzMzMsOS43MTQyODU3MSA3LjUsOS43MTQyODU3MSA3LjUsOS4zODA5NTIzOCBDNy41LDkuMDg1MjI2ODQgOC4wNjIyMDE2OCw4LjkwMTk0MTY0IDguMTg5MDYwNjcsNy41Njc1NDA1OCBDNi44ODk5Njk5MSw2LjkwNjc5MDA1IDYsNS41NTczMjY4MyA2LDQgQzYsMS43OTA4NjEgNy43OTA4NjEsNC4wNTgxMjI1MWUtMTYgMTAsMCBMMTIsMCBDMTQuMjA5MTM5LC00LjA1ODEyMjUxZS0xNiAxNiwxLjc5MDg2MSAxNiw0IEMxNiw2LjIwOTEzOSAxNC4yMDkxMzksOCAxMiw4IEwxMC43MDQ4MzEzLDggWiIgaWQ9InNwZWVjaCIgZmlsbD0iIzBFQkQ4QyI+PC9wYXRoPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+"><block type="text2speech_speakAndWait"><value name="WORDS"><shadow type="text"><field name="TEXT">hello</field></shadow></value></block><block type="text2speech_setVoice"><value name="VOICE"><shadow type="text2speech_menu_voices"><field name="voices">ALTO</field></shadow></value></block><block type="text2speech_setLanguage"><value name="LANGUAGE"><shadow type="text2speech_menu_languages"><field name="languages">en</field></shadow></value></block></category>
+</xml>

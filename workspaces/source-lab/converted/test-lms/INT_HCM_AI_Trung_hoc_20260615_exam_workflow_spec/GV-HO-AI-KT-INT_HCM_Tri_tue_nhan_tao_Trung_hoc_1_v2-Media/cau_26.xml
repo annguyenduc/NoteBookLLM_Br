@@ -1,0 +1,57 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+    <variables>
+      <variable type="" id="q26_var_score">Điểm</variable>
+    </variables>
+    <block type="event_whenflagclicked" id="q26_start" x="150" y="150">
+      <next>
+        <block type="poseFace_videoToggle" id="q26_video">
+          <value name="VIDEO_STATE">
+            <shadow type="poseFace_menu_VIDEO_STATE" id="video_val_26">
+              <field name="VIDEO_STATE">on</field>
+            </shadow>
+          </value>
+          <next>
+            <block type="control_forever" id="q26_forever">
+              <statement name="SUBSTACK">
+                <block type="poseFace_affdexGoToPart" id="q26_goto">
+                  <field name="AFFDEX_POINT">11</field>
+                  <next>
+                    <block type="control_if" id="q26_if">
+                      <value name="CONDITION">
+                        <block type="poseFace_affdexIsExpression" id="q26_wink">
+                          <value name="EXPRESSION">
+                            <shadow type="poseFace_menu_EXPRESSION" id="expr_val_26">
+                              <field name="EXPRESSION">eyeClosure</field>
+                            </shadow>
+                          </value>
+                        </block>
+                      </value>
+                      <statement name="SUBSTACK">
+                        <block type="data_changevariableby" id="q26_change">
+                          <field name="VARIABLE" id="q26_var_score">Điểm</field>
+                          <value name="VALUE">
+                            <shadow type="math_number" id="num_val_26">
+                              <field name="NUM">1</field>
+                            </shadow>
+                          </value>
+                          <next>
+                            <block type="sound_playuntildone" id="q26_sound">
+                              <value name="SOUND_MENU">
+                                <shadow type="sound_sounds_menu" id="sound_val_26">
+                                  <field name="SOUND_MENU">pop</field>
+                                </shadow>
+                              </value>
+                            </block>
+                          </next>
+                        </block>
+                      </statement>
+                    </block>
+                  </next>
+                </block>
+              </statement>
+            </block>
+          </next>
+        </block>
+      </next>
+    </block>
+  </xml>

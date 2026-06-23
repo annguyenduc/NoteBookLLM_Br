@@ -1,0 +1,42 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+      <block type="event_whenflagclicked" id="q22_start" x="40" y="40">
+        <next>
+          <block type="poseFace_videoToggle" id="q22_video">
+            <value name="VIDEO_STATE">
+              <shadow type="poseFace_menu_VIDEO_STATE">
+                <field name="VIDEO_STATE">on-flipped</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="control_forever" id="q22_forever">
+                <statement name="SUBSTACK">
+                  <block type="control_if_else" id="q22_if">
+                    <value name="CONDITION">
+                      <block type="poseFace_affdexIsExpression" id="q22_smile">
+                        <value name="EXPRESSION">
+                          <shadow type="poseFace_menu_EXPRESSION">
+                            <field name="EXPRESSION">smile</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="SUBSTACK">
+                      <block type="looks_show" id="q22_show">
+                        <next>
+                          <block type="poseFace_affdexGoToPart" id="q22_goto">
+                            <field name="AFFDEX_POINT">11</field>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                    <statement name="SUBSTACK2">
+                      <block type="looks_hide" id="q22_hide"></block>
+                    </statement>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </xml>
