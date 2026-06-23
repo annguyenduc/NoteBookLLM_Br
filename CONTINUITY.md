@@ -1,9 +1,10 @@
 # CONTINUITY.md
 
-current_state: "Đã khắc phục lỗi lộ đáp án Câu 14 (xóa bỏ text tiếng Việt chứa đáp án trong hình ảnh), sửa lỗi logic bám sống mũi/đầu mũi ở Câu 17 (đổi các tùy chọn đáp án sang hình ảnh khối lệnh Scratch trực quan), và thêm hình ảnh thiết lập camera cho Câu 19. Đồng thời viết thêm công cụ generate_exam_html.py để kết xuất tự động sang HTML và cập nhật cả tệp .md và .html của bộ đề thi v2."
-next_step_for_AN: "Kiểm tra và đọc hiển thị của đề thi v2 định dạng HTML tại workspaces/source-lab/converted/test-lms/INT_HCM_AI_Trung_hoc/GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2.html."
+current_state: "Đã khắc phục triệt để sự cố nạp khối lệnh Scratch bị rỗng (Blocks count = 0) cho BT2 bằng cách tăng thời gian chờ đồng bộ trong generate_bt2.js (chờ 3.5s sau setEditingTarget và 3s sau domToWorkspace). Số lượng blocks của Rabbit đạt 66 blocks. Ghi hình lại video demo bt2_demo.webm chạy thực tế Stage Full Screen dài 48s hoàn tất. Copy đầy đủ 20 file code đáp án và 1 video demo sang converted/."
+next_step_for_AN: "Kiểm tra video demo 'bt2_demo.webm' trong thư mục converted/ và đề thi HTML 'Bai_kiem_tra_thuc_hanh_AI_THCS.html' đã được cập nhật."
 blockers: []
 verification:
-  - "python scripts/maintenance/test_exam_workflow_validator.py: OK"
-  - "python scripts/maintenance/exam_workflow_validator.py: PASS"
-  - "GV-HO-AI-KT-INT_HCM_Tri_tue_nhan_tao_Trung_hoc_1_v2.html successfully generated and synced"
+  - "node generate_bt2.js: SUCCESS (Rabbit target blocks: 66)"
+  - "node record_bt2_video.js: SUCCESS (bt2_demo.webm generated and saved to converted/)"
+  - "python scripts/maintenance/exam_workflow_validator.py: PASS (10 exercises, 20 code files, 1 video)"
+  - "python scripts/maintenance/generate_exam_html.py: HTML compiled successfully"
