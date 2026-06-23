@@ -140,6 +140,20 @@ Accepted physical source examples:
 - `.js`
 - equivalent tool-native project/source files
 
+### 8.1.1 Human-Check Load File Rule
+
+If a code sample image is meant for human review, the media package must include a tool-loadable program file in addition to any intermediate source export such as `.xml`.
+
+Platform-specific rule:
+- PRG AI Blocks: require a same-scenario `.sb3`
+- mBlock / Scratch-like block tools: require a same-scenario `.sb3`
+- OhStem: require a same-scenario `.json`
+
+This means:
+- image + `.xml` only is not enough for human check
+- the reviewer must be able to load the actual program into the target tool
+- if one code image represents one concrete sample program, that sample should have its own loadable project file
+
 ### 8.2 Demo Video Rule
 
 If a demo video is included as sample media or evidence for a code-based scenario, there must also be a physical code or project file behind that demo.
@@ -202,6 +216,7 @@ Before handoff, verify:
 - each practical exercise contains deliverables and rubric
 - media references resolve to real files when required
 - code sample screenshots are backed by physical source files
+- code sample screenshots intended for PRG / mBlock / OhStem human review are backed by loadable project files (`.sb3` or `.json` as appropriate)
 - demo videos are backed by physical source files
 
 ## 13. AI THCS Test Requirement
