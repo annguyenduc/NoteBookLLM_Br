@@ -55,6 +55,9 @@
 !/workspaces/dev-lab/libs/**
 !/workspaces/dev-lab/tests/
 !/workspaces/dev-lab/tests/**
+!/workspaces/dev-lab/sandbox/
+/workspaces/dev-lab/sandbox/*
+!/workspaces/dev-lab/sandbox/.gitkeep
 !/workspaces/learning/dashboard/
 !/workspaces/learning/dashboard/**
 
