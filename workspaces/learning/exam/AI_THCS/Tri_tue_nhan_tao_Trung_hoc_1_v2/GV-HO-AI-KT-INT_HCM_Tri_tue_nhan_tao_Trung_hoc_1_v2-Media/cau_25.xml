@@ -1,0 +1,1 @@
+<xml xmlns="http://www.w3.org/1999/xhtml"><variables></variables><block type="event_whenflagclicked" id="q25_start" x="40" y="40"><next><block type="control_forever" id="q25_forever"><statement name="SUBSTACK"><block type="poseFace_affdexGoToPart" id="q25_goto"><field name="AFFDEX_POINT">30</field></block></statement></block></next></block></xml>

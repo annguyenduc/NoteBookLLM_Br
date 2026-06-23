@@ -1,0 +1,128 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+    <variables>
+      <variable type="" id="q24_var_opt" islocal="false" iscloud="false">Lựa chọn</variable>
+      <variable type="" id="q24_var_orig" islocal="false" iscloud="false">Câu gốc</variable>
+    </variables>
+    <block type="event_whenflagclicked" id="q24_start" x="150" y="150">
+      <next>
+        <block type="data_setvariableto" id="q24_set_lang">
+          <field name="VARIABLE" id="q24_var_opt" variabletype="">Lựa chọn</field>
+          <value name="VALUE">
+            <shadow type="text" id="val_opt_1">
+              <field name="TEXT">1</field>
+            </shadow>
+          </value>
+          <next>
+            <block type="data_setvariableto" id="q24_set_text">
+              <field name="VARIABLE" id="q24_var_orig" variabletype="">Câu gốc</field>
+              <value name="VALUE">
+                <shadow type="text" id="val_orig_1">
+                  <field name="TEXT">Chào Việt Nam</field>
+                </shadow>
+              </value>
+              <next>
+                <block type="control_if_else" id="q24_if_opt">
+                  <value name="CONDITION">
+                    <block type="operator_equals" id="q24_eq_opt">
+                      <value name="OPERAND1">
+                        <block type="data_variable" id="q24_var_opt_val">
+                          <field name="VARIABLE" id="q24_var_opt" variabletype="">Lựa chọn</field>
+                        </block>
+                      </value>
+                      <value name="OPERAND2">
+                        <shadow type="text" id="opt_val_1">
+                          <field name="TEXT">1</field>
+                        </shadow>
+                      </value>
+                    </block>
+                  </value>
+                  <statement name="SUBSTACK">
+                    <block type="control_if_else" id="q24_if_len">
+                      <value name="CONDITION">
+                        <block type="operator_gt" id="q24_gt_len">
+                          <value name="OPERAND1">
+                            <block type="operator_length" id="q24_len_orig">
+                              <value name="VALUE">
+                                <block type="data_variable" id="q24_var_orig_val1">
+                                  <field name="VARIABLE" id="q24_var_orig" variabletype="">Câu gốc</field>
+                                </block>
+                              </value>
+                            </block>
+                          </value>
+                          <value name="OPERAND2">
+                            <shadow type="math_number" id="len_threshold">
+                              <field name="NUM">10</field>
+                            </shadow>
+                          </value>
+                        </block>
+                      </value>
+                      <statement name="SUBSTACK">
+                        <block type="looks_sayforsecs" id="q24_say_too_long">
+                          <value name="MESSAGE">
+                            <shadow type="text" id="msg_too_long">
+                              <field name="TEXT">Too long</field>
+                            </shadow>
+                          </value>
+                          <value name="SECS">
+                            <shadow type="math_number" id="secs_too_long">
+                              <field name="NUM">2</field>
+                            </shadow>
+                          </value>
+                        </block>
+                      </statement>
+                      <statement name="SUBSTACK2">
+                        <block type="looks_sayforsecs" id="q24_say_en">
+                          <value name="MESSAGE">
+                            <block type="translate_getTranslate" id="q24_trans_en">
+                              <value name="WORDS">
+                                <block type="data_variable" id="q24_var_orig_val2">
+                                  <field name="VARIABLE" id="q24_var_orig" variabletype="">Câu gốc</field>
+                                </block>
+                              </value>
+                              <value name="LANGUAGE">
+                                <shadow type="translate_menu_languages" id="lang_en">
+                                  <field name="languages">en</field>
+                                </shadow>
+                              </value>
+                            </block>
+                          </value>
+                          <value name="SECS">
+                            <shadow type="math_number" id="secs_en">
+                              <field name="NUM">2</field>
+                            </shadow>
+                          </value>
+                        </block>
+                      </statement>
+                    </block>
+                  </statement>
+                  <statement name="SUBSTACK2">
+                    <block type="looks_sayforsecs" id="q24_say_fr">
+                      <value name="MESSAGE">
+                        <block type="translate_getTranslate" id="q24_trans_fr">
+                          <value name="WORDS">
+                            <block type="data_variable" id="q24_var_orig_val3">
+                              <field name="VARIABLE" id="q24_var_orig" variabletype="">Câu gốc</field>
+                            </block>
+                          </value>
+                          <value name="LANGUAGE">
+                            <shadow type="translate_menu_languages" id="lang_fr">
+                              <field name="languages">fr</field>
+                            </shadow>
+                          </value>
+                        </block>
+                      </value>
+                      <value name="SECS">
+                        <shadow type="math_number" id="secs_fr">
+                          <field name="NUM">2</field>
+                        </shadow>
+                      </value>
+                    </block>
+                  </statement>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </next>
+    </block>
+  </xml>

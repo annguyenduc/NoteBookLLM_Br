@@ -1,0 +1,22 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+    <block type="event_whenflagclicked" id="q22_start" x="150" y="150">
+      <next>
+        <block type="poseFace_videoToggle" id="q22_video_on">
+          <value name="VIDEO_STATE">
+            <shadow type="poseFace_menu_VIDEO_STATE" id="oMIv/?VhB(f$8v=Ls84K">
+              <field name="VIDEO_STATE">on-flipped</field>
+            </shadow>
+          </value>
+          <next>
+            <block type="control_forever" id="q22_forever">
+              <statement name="SUBSTACK">
+                <block type="poseFace_affdexGoToPart" id="q22_goto">
+                  <field name="AFFDEX_POINT">11</field>
+                </block>
+              </statement>
+            </block>
+          </next>
+        </block>
+      </next>
+    </block>
+  </xml>

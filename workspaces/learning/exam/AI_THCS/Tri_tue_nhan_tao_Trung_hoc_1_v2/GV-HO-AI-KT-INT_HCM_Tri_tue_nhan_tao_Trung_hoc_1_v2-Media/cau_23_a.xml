@@ -1,0 +1,62 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+    <variables>
+      <variable type="" id="q23_var_smile" islocal="false" iscloud="false">Số lần cười</variable>
+    </variables>
+    <block type="event_whenflagclicked" id="q23_a_start" x="150" y="150">
+      <next>
+        <block type="data_setvariableto" id="q23_a_init">
+          <field name="VARIABLE" id="q23_var_smile" variabletype="">Số lần cười</field>
+          <value name="VALUE">
+            <shadow type="text" id="init_val_a">
+              <field name="TEXT">0</field>
+            </shadow>
+          </value>
+          <next>
+            <block type="poseFace_videoToggle" id="q23_a_video">
+              <value name="VIDEO_STATE">
+                <shadow type="poseFace_menu_VIDEO_STATE" id="video_val_a">
+                  <field name="VIDEO_STATE">on</field>
+                </shadow>
+              </value>
+              <next>
+                <block type="control_forever" id="q23_a_forever">
+                  <statement name="SUBSTACK">
+                    <block type="control_if" id="q23_a_if">
+                      <value name="CONDITION">
+                        <block type="poseFace_affdexIsExpression" id="q23_a_smile">
+                          <value name="EXPRESSION">
+                            <shadow type="poseFace_menu_EXPRESSION" id="expr_val_a">
+                              <field name="EXPRESSION">smile</field>
+                            </shadow>
+                          </value>
+                        </block>
+                      </value>
+                      <statement name="SUBSTACK">
+                        <block type="data_changevariableby" id="q23_a_change">
+                          <field name="VARIABLE" id="q23_var_smile" variabletype="">Số lần cười</field>
+                          <value name="VALUE">
+                            <shadow type="math_number" id="change_val_a">
+                              <field name="NUM">1</field>
+                            </shadow>
+                          </value>
+                          <next>
+                            <block type="control_wait" id="q23_a_wait">
+                              <value name="DURATION">
+                                <shadow type="math_positive_number" id="wait_val_a">
+                                  <field name="NUM">1</field>
+                                </shadow>
+                              </value>
+                            </block>
+                          </next>
+                        </block>
+                      </statement>
+                    </block>
+                  </statement>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </next>
+    </block>
+  </xml>
