@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="760" height="420"
+     viewBox="0 0 760 420"
+     role="img" aria-labelledby="title desc">
+  <title id="title">xBot - Di thang 1 giay, quay trai 2 giay</title>
+  <desc id="desc">So do khoi OhStem preview cho xBot di thang 1 giay roi quay trai 2 giay voi toc do 50.</desc>
+  <rect width="760" height="420" fill="#f9f9f9"/>
+
+  <!-- PREVIEW watermark -->
+  <text x="750" y="14" fill="#cccccc"
+        font-family="Arial, sans-serif" font-size="10"
+        text-anchor="end">PREVIEW_ONLY / NON_CANONICAL · xBot</text>
+
+  <!-- Blocks -->
+  <g role="list">
+  <g role="listitem" aria-label="bat dau">
+    <path d="M 50 50 Q 40 50 40 62 V 96 H 90 L 75 106 L 65 106 L 60 96 H 336 Q 340 96 340 92 V 62 Q 340 50 330 50 Z" fill="#4C97FF" stroke="#366cb7" stroke-width="1"/>
+    <path d="M 50 91 H 336 Q 340 91 340 95 V 92 Q 340 96 336 96 H 90 L 75 106 L 65 106 L 60 96 H 44 Q 40 96 40 92 V 95 Q 40 91 44 91 Z" fill="#366cb7" opacity="0.4"/>
+    <text x="52" y="78.0" fill="#ffffff"
+          font-family="Arial, sans-serif" font-size="13" font-weight="bold">bat dau</text>
+  </g>  <g role="listitem" aria-label="di chuyen tien voi toc do 50">
+    <path d="M 44 96 H 60 L 65 106 L 75 106 L 90 96 H 336 Q 340 96 340 100 V 122 Q 340 126 336 126 H 90 L 75 136 L 65 136 L 60 126 H 44 Q 40 126 40 122 V 100 Q 40 96 44 96 Z" fill="#cb2026" stroke="#92171b" stroke-width="1"/>
+    <path d="M 44 121 H 336 Q 340 121 340 125 V 122 Q 340 126 336 126 H 90 L 75 136 L 65 136 L 60 126 H 44 Q 40 126 40 122 V 125 Q 40 121 44 121 Z" fill="#92171b" opacity="0.4"/>
+    <text x="52" y="116.0" fill="#ffffff"
+          font-family="Arial, sans-serif" font-size="13" font-weight="bold">di chuyen tien voi toc do 50</text>
+  </g>  <g role="listitem" aria-label="tam dung 1000 mili giay">
+    <path d="M 44 126 H 60 L 65 136 L 75 136 L 90 126 H 336 Q 340 126 340 130 V 152 Q 340 156 336 156 H 90 L 75 166 L 65 166 L 60 156 H 44 Q 40 156 40 152 V 130 Q 40 126 44 126 Z" fill="#4C97FF" stroke="#366cb7" stroke-width="1"/>
+    <path d="M 44 151 H 336 Q 340 151 340 155 V 152 Q 340 156 336 156 H 90 L 75 166 L 65 166 L 60 156 H 44 Q 40 156 40 152 V 155 Q 40 151 44 151 Z" fill="#366cb7" opacity="0.4"/>
+    <text x="52" y="146.0" fill="#ffffff"
+          font-family="Arial, sans-serif" font-size="13" font-weight="bold">tam dung 1000 mili giay</text>
+  </g>  <g role="listitem" aria-label="quay trai voi toc do 50">
+    <path d="M 44 156 H 60 L 65 166 L 75 166 L 90 156 H 336 Q 340 156 340 160 V 182 Q 340 186 336 186 H 90 L 75 196 L 65 196 L 60 186 H 44 Q 40 186 40 182 V 160 Q 40 156 44 156 Z" fill="#cb2026" stroke="#92171b" stroke-width="1"/>
+    <path d="M 44 181 H 336 Q 340 181 340 185 V 182 Q 340 186 336 186 H 90 L 75 196 L 65 196 L 60 186 H 44 Q 40 186 40 182 V 185 Q 40 181 44 181 Z" fill="#92171b" opacity="0.4"/>
+    <text x="52" y="176.0" fill="#ffffff"
+          font-family="Arial, sans-serif" font-size="13" font-weight="bold">quay trai voi toc do 50</text>
+  </g>  <g role="listitem" aria-label="tam dung 2000 mili giay">
+    <path d="M 44 186 H 60 L 65 196 L 75 196 L 90 186 H 336 Q 340 186 340 190 V 212 Q 340 216 336 216 H 90 L 75 226 L 65 226 L 60 216 H 44 Q 40 216 40 212 V 190 Q 40 186 44 186 Z" fill="#4C97FF" stroke="#366cb7" stroke-width="1"/>
+    <path d="M 44 211 H 336 Q 340 211 340 215 V 212 Q 340 216 336 216 H 90 L 75 226 L 65 226 L 60 216 H 44 Q 40 216 40 212 V 215 Q 40 211 44 211 Z" fill="#366cb7" opacity="0.4"/>
+    <text x="52" y="206.0" fill="#ffffff"
+          font-family="Arial, sans-serif" font-size="13" font-weight="bold">tam dung 2000 mili giay</text>
+  </g>  <g role="listitem" aria-label="dung di chuyen">
+    <path d="M 44 216 H 60 L 65 226 L 75 226 L 90 216 H 336 Q 340 216 340 220 V 242 Q 340 246 336 246 H 90 L 75 256 L 65 256 L 60 246 H 44 Q 40 246 40 242 V 220 Q 40 216 44 216 Z" fill="#cb2026" stroke="#92171b" stroke-width="1"/>
+    <path d="M 44 241 H 336 Q 340 241 340 245 V 242 Q 340 246 336 246 H 90 L 75 256 L 65 256 L 60 246 H 44 Q 40 246 40 242 V 245 Q 40 241 44 241 Z" fill="#92171b" opacity="0.4"/>
+    <text x="52" y="236.0" fill="#ffffff"
+          font-family="Arial, sans-serif" font-size="13" font-weight="bold">dung di chuyen</text>
+  </g>
+  </g>
+
+  <!-- Question prompt box -->
+  <rect x="40" y="256" width="300" height="30"
+        rx="4" fill="#e8f4fd" stroke="#c0d8f0" stroke-width="1"/>
+  <text x="48" y="275" fill="#1a5276"
+        font-family="Arial, sans-serif" font-size="11">Lap trinh cho xBot di thang 1 giay, quay trai 2 giay, cung toc do 50.</text>
+</svg>

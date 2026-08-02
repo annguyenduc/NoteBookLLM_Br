@@ -1,0 +1,5 @@
+Tôi cần bạn viết một hàm tiện ích bằng TypeScript/JavaScript để chuẩn hóa tiêu đề và định dạng của `source_id`. Hàm này phải:
+1. Nhận vào chuỗi thô bất kỳ (ví dụ: "Roger Greenaway 4Fs").
+2. Chuyển đổi thành viết hoa, không dấu, thay khoảng trắng bằng dấu gạch dưới và prepend tiền tố loại (ví dụ: "REF_ROGER_GREENAWAY_4FS").
+3. Loại bỏ hoàn toàn các ký tự đặc biệt.
+Hãy triển khai logic này cho tôi.

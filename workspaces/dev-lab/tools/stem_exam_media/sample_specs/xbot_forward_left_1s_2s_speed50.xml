@@ -1,0 +1,54 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="xbot_led_onboard_clear" id="xbot_safe_led_off" x="40" y="40">
+    <next>
+      <block type="xbot_move_stop" id="xbot_safe_stop">
+        <next>
+          <block type="block_wait_until" id="xbot_safe_wait_press">
+            <value name="condition">
+              <block type="xbot_button_onboard_read_digital" id="xbot_safe_button_pressed"></block>
+            </value>
+            <next>
+              <block type="block_control_sleep" id="xbot_safe_sleep_1s">
+                <value name="duration">
+                  <shadow type="math_number">
+                    <field name="NUM">1</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="xbot_move_move_delay" id="xbot_move_forward_1s">
+                    <field name="direction">forward</field>
+                    <value name="speed">
+                      <shadow type="math_number">
+                        <field name="NUM">50</field>
+                      </shadow>
+                    </value>
+                    <value name="time">
+                      <shadow type="math_number">
+                        <field name="NUM">1</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="xbot_move_move_delay" id="xbot_turn_left_2s">
+                        <field name="direction">turn_left</field>
+                        <value name="speed">
+                          <shadow type="math_number">
+                            <field name="NUM">50</field>
+                          </shadow>
+                        </value>
+                        <value name="time">
+                          <shadow type="math_number">
+                            <field name="NUM">2</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

@@ -1,0 +1,164 @@
+/* Stylesheet for NoteBookLLM EPUB Readers */
+
+@page {
+  margin: 1.5em 1em;
+}
+
+body {
+  font-family: "Georgia", "Times New Roman", serif;
+  line-height: 1.6;
+  font-size: 100%;
+  color: #111111;
+  background-color: transparent; /* Allows Apple Books background settings */
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", "Helvetica Neue", "Arial", sans-serif;
+  color: #1b365d; /* Sleek Dark Navy */
+  font-weight: bold;
+  page-break-after: avoid;
+  margin-top: 1.2em;
+  margin-bottom: 0.6em;
+}
+
+h1 {
+  font-size: 1.25em;
+  border-bottom: 1px solid #e1e8ed;
+  padding-bottom: 0.3em;
+  margin-top: 1.4em;
+}
+
+h2 {
+  font-size: 1.08em;
+  border-bottom: 1px dashed #e1e8ed;
+  padding-bottom: 0.2em;
+}
+
+h3 {
+  font-size: 0.98em;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1em;
+  text-align: justify;
+}
+
+/* Hyperlinks */
+a {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+a:hover, a:active {
+  color: #003d80;
+}
+
+/* Lists */
+ul, ol {
+  margin-top: 0;
+  margin-bottom: 1em;
+  padding-left: 2em;
+}
+
+li {
+  margin-bottom: 0.5em;
+}
+
+/* Code Blocks */
+pre, code {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.9em;
+  background-color: #f4f6f8;
+  color: #333333;
+}
+
+code {
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  background-color: #f1f3f5;
+  border: 1px solid #e1e4e6;
+}
+
+pre {
+  display: block;
+  padding: 1em;
+  margin: 1em 0;
+  overflow-x: auto;
+  border: 1px solid #e1e4e6;
+  border-radius: 4px;
+  background-color: #f8f9fa;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+pre code {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-size: 0.95em;
+}
+
+th, td {
+  padding: 0.6em 0.8em;
+  border: 1px solid #dcdfe3;
+  text-align: left;
+}
+
+th {
+  background-color: #1b365d;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+/* Missing links warning styling */
+.missing-link {
+  color: #c92a2a; /* Soft warning red */
+  background-color: #ffe3e3;
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+  font-size: 0.95em;
+  border: 1px dashed #ffa8a8;
+  font-style: italic;
+}
+
+/* Custom styling for Metadata sections */
+.metadata-strip {
+  display: block;
+  font-size: 0.85em;
+  color: #666666;
+  margin-bottom: 1.5em;
+  border-left: 3px solid #1b365d;
+  padding-left: 1em;
+}
+
+.metadata-strip div {
+  margin-bottom: 0.3em;
+}
+
+.metadata-strip dt {
+  font-weight: bold;
+  display: inline;
+}
+
+.metadata-strip dt::after {
+  content: ": ";
+}
+
+.metadata-strip dd {
+  display: inline;
+  margin: 0;
+}

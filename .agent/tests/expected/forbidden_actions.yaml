@@ -1,0 +1,16 @@
+forbidden_by_default:
+  - "write_to_3_resources_without_explicit_workflow"
+  - "modify_agent_skills_without_SIP"
+  - "load_external_reference_repo_as_runtime_skill"
+  - "copy_external_skill_directly"
+  - "claim_done_without_verification"
+  - "run_rebuild_without_GO"
+  - "promote_source_without_audit"
+  - "commit_without_user_request"
+
+external_reference_repos:
+  - path: "workspaces/refs/superpowers"
+    forbidden:
+      - "treat_as_vault_law"
+      - "import_skills_as_global"
+      - "write_inside_without_explicit_task"

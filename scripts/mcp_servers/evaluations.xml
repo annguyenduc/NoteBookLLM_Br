@@ -1,0 +1,64 @@
+<evaluations>
+  <!-- Nhóm 1: Wiki Operations (Wiki-Ops-MCP) -->
+  <test_case id="1">
+    <prompt>Kiểm tra trạng thái sức khỏe của Wiki hiện tại.</prompt>
+    <expected_tool>wiki_status</expected_tool>
+    <description>Kiểm tra Agent có biết dùng wiki_status để lấy dashboard không.</description>
+  </test_case>
+
+  <test_case id="2">
+    <prompt>Tìm định nghĩa của khái niệm "Privileged Instructions" trong vault.</prompt>
+    <expected_tool>query_wiki</expected_tool>
+    <description>Kiểm tra khả năng truy vấn kiến thức nguyên tử.</description>
+  </test_case>
+
+  <test_case id="3">
+    <prompt>Nạp file d:\NoteBookLLM_Br\00_Inbox\test.md vào Wiki.</prompt>
+    <expected_tool>wiki_ingest</expected_tool>
+    <description>Kiểm tra quy trình nạp dữ liệu (R22/R23).</description>
+  </test_case>
+
+  <!-- Nhóm 2: Local AI (Local-AI-MCP) -->
+  <test_case id="4">
+    <prompt>Hỏi mô hình gemma3 về sự khác biệt giữa User Mode và Kernel Mode.</prompt>
+    <expected_tool>ollama_chat</expected_tool>
+    <description>Kiểm tra kết nối tới AI nội bộ.</description>
+  </test_case>
+
+  <test_case id="5">
+    <prompt>Chạy phân tích gap tri thức cho Atom 'CONCEPT_ARCH_Dual_Mode'.</prompt>
+    <expected_tool>gap_check</expected_tool>
+    <description>Kiểm tra tích hợp phân tích lỗ hổng (R24).</description>
+  </test_case>
+
+  <test_case id="6">
+    <prompt>Tôi cần chạy một tác vụ nặng về AI, hãy kích hoạt VRAM Guard.</prompt>
+    <expected_tool>vram_guard_run</expected_tool>
+    <description>Kiểm tra bảo vệ tài nguyên phần cứng.</description>
+  </test_case>
+
+  <!-- Nhóm 3: Phối hợp & Xử lý lỗi -->
+  <test_case id="7">
+    <prompt>Nếu Ollama đang offline, hãy báo cáo trạng thái Wiki thay thế.</prompt>
+    <expected_flow>ollama_chat (fail) -> wiki_status</expected_flow>
+    <description>Kiểm tra luật R25 (Non-blocking AI).</description>
+  </test_case>
+
+  <test_case id="8">
+    <prompt>Tìm các Atom liên quan đến 'Virtualization' và tóm tắt chúng bằng AI.</prompt>
+    <expected_flow>query_wiki -> ollama_chat</expected_flow>
+    <description>Kiểm tra chuỗi công cụ (Chaining).</description>
+  </test_case>
+
+  <test_case id="9">
+    <prompt>Audit toàn bộ file trong raw_ingest và cập nhật status.</prompt>
+    <expected_tool>wiki_status</expected_tool>
+    <description>Kiểm tra xem Agent có chọn đúng tool quản trị không.</description>
+  </test_case>
+
+  <test_case id="10">
+    <prompt>Tổng hợp tri thức từ 3 nguồn khác nhau về 'Memory Management'.</prompt>
+    <expected_flow>query_wiki (multiple) -> ollama_chat</expected_flow>
+    <description>Kiểm tra khả năng tổng hợp (Synthesis).</description>
+  </test_case>
+</evaluations>

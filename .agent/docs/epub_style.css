@@ -1,0 +1,103 @@
+/* Custom Stylesheet for EPUB Exports - Optimized for iPad/iPhone Reading */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap');
+
+body {
+    font-family: 'Open Sans', 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #1a202c; /* Slate dark color for soft contrast */
+    margin: 2%;
+    padding: 0;
+    text-align: justify; /* Justified text as requested */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    color: #0f172a; /* Deep Navy slate for premium feel */
+    font-weight: 700;
+    page-break-after: avoid;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-size: 1.8em;
+    border-bottom: 2px solid #1e3a8a; /* Deep Blue underline */
+    padding-bottom: 0.3em;
+    page-break-before: always; /* New chapter on new page */
+}
+
+h2 {
+    font-size: 1.4em;
+    border-bottom: 1px solid #cbd5e1;
+    padding-bottom: 0.2em;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1em;
+    text-indent: 0; /* Standard block paragraphs */
+}
+
+a {
+    color: #2563eb; /* Royal Blue for readable links */
+    text-decoration: underline;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f1f5f9;
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+pre {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1em;
+    overflow-x: auto;
+    margin-bottom: 1.5em;
+}
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+}
+
+blockquote {
+    border-left: 4px solid #1e3a8a; /* Navy accent bar */
+    background-color: #f8fafc;
+    margin: 1.5em 0;
+    padding: 0.8em 1.2em;
+    color: #475569;
+    font-style: italic;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5em;
+}
+
+th, td {
+    border: 1px solid #cbd5e1;
+    padding: 0.6em;
+    text-align: left;
+}
+
+th {
+    background-color: #f1f5f9;
+    font-weight: bold;
+}
+
+/* Page break helper classes */
+.page-break {
+    page-break-before: always;
+}

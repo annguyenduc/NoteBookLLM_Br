@@ -1,0 +1,54 @@
+version: 1
+
+servers:
+  filesystem:
+    command: "C:/Program Files/nodejs/npx.cmd"
+    args:
+      - "-y"
+      - "@modelcontextprotocol/server-filesystem"
+      - "D:/"
+      - "C:/Users/anngu"
+
+  sqlite:
+    command: "C:/Users/anngu/AppData/Local/Programs/Python/Python311/Scripts/uvx.exe"
+    args:
+      - "mcp-server-sqlite"
+      - "--db-path"
+      - "D:/NoteBookLLM_Br/3-resources/wiki/wiki_brain.db"
+
+  notebooklm-mcp-server:
+    command: "D:/NoteBookLLM_Br/.venv/Scripts/python.exe"
+    args:
+      - "-u"
+      - "-W"
+      - "ignore"
+      - "D:/NoteBookLLM_Br/scripts/mcp_servers/run_mcp.py"
+    env:
+      PYTHONUNBUFFERED: "1"
+      PYTHONWARNINGS: "ignore"
+
+  tavily:
+    url: "https://mcp.tavily.com/mcp/"
+
+  git:
+    command: "C:/Users/anngu/AppData/Local/Programs/Python/Python311/Scripts/uvx.exe"
+    args:
+      - "mcp-server-git"
+      - "--repository"
+      - "D:/NoteBookLLM_Br"
+
+  github-mcp-server:
+    command: "C:/Program Files/nodejs/npx.cmd"
+    args:
+      - "-y"
+      - "@modelcontextprotocol/server-github"
+
+  local-ai:
+    command: "D:/NoteBookLLM_Br/.venv/Scripts/python.exe"
+    args:
+      - "D:/NoteBookLLM_Br/scripts/mcp_servers/local_ai.py"
+
+  wiki-ops:
+    command: "D:/NoteBookLLM_Br/.venv/Scripts/python.exe"
+    args:
+      - "D:/NoteBookLLM_Br/scripts/mcp_servers/wiki_ops.py"

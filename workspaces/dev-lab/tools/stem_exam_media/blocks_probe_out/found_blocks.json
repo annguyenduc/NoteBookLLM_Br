@@ -1,0 +1,307 @@
+[
+  {
+    "type": "yolobit_pin_servo_write_angle",
+    "labelText": "quay servo chân P0 đến góc (0-180 độ)",
+    "python": "from yolobit import *\nbutton_a.on_pressed = None\nbutton_b.on_pressed = None\nbutton_a.on_pressed_ab = button_b.on_pressed_ab = -1\n\n\npin0.servo_write()\n"
+  },
+  {
+    "type": "yolobit_pin_servo270_write_angle",
+    "labelText": "quay servo 270° chân P0 đến góc (0-270 độ)",
+    "python": "from yolobit import *\nbutton_a.on_pressed = None\nbutton_b.on_pressed = None\nbutton_a.on_pressed_ab = button_b.on_pressed_ab = -1\n\n\npin0.servo_write(, max=270)\n"
+  },
+  {
+    "type": "yolobit_pin_servo360_write",
+    "labelText": "quay servo 360 chân P0 với tốc độ (-100 đến 100)",
+    "python": "from yolobit import *\nbutton_a.on_pressed = None\nbutton_b.on_pressed = None\nbutton_a.on_pressed_ab = button_b.on_pressed_ab = -1\n\n\npin0.servo360_write()\n"
+  },
+  {
+    "type": "block_move_move",
+    "labelText": "di chuyển * với tốc độ (0-100)",
+    "python": "motor.move(90, )\n"
+  },
+  {
+    "type": "block_move_motor",
+    "labelText": "* động cơ M1 với tốc độ (-100 đến 100)",
+    "python": "motor.speed(0, )\n"
+  },
+  {
+    "type": "block_move_stop",
+    "labelText": "* dừng di chuyển",
+    "python": "motor.move(0, 0)\n"
+  },
+  {
+    "type": "block_move_servo",
+    "labelText": "* servo S1 xoay góc (0-180)",
+    "python": "servo.position(0, )\n"
+  },
+  {
+    "type": "block_move_servo270",
+    "labelText": "* servo (270°) S1 xoay góc (0-270)",
+    "python": "servo.position(0, , max_degree=270)\n"
+  },
+  {
+    "type": "block_move_servo360",
+    "labelText": "* servo (360°) S1 xoay tới tốc độ (0-100)",
+    "python": "servo.spin(0, 0, )\n"
+  },
+  {
+    "type": "block_move_servo360_xbot",
+    "labelText": "* servo (360°) S1 xoay với tốc độ (-100 đến 100)",
+    "python": "servo.spin(0, )\n"
+  },
+  {
+    "type": "block_move_servo_rotate",
+    "labelText": "* servo S1 xoay độ tốc độ (ms) giới hạn góc độ",
+    "python": "servo.rotate(0, , , )\n"
+  },
+  {
+    "type": "block_move_servo270_rotate",
+    "labelText": "* servo (270°) S1 xoay độ tốc độ (ms) giới hạn góc độ",
+    "python": "servo.rotate(0, , , , max_degree=270)\n"
+  },
+  {
+    "type": "block_move_servo_read_position",
+    "labelText": "* servo S1 lấy vị trí hiện tại",
+    "python": "servo.position(0)\n"
+  },
+  {
+    "type": "block_input_ultrasonic_read",
+    "labelText": "* đọc cảm biến khoảng cách",
+    "python": "usonic.distance_cm()\n"
+  },
+  {
+    "type": "block_input_linesensor_read",
+    "labelText": "* cảm biến dò line phát hiện trái",
+    "python": "line_finder.read() == 0\n"
+  },
+  {
+    "type": "yolobit_music_set_tempo",
+    "labelText": "chỉnh tốc độ phát nhạc: 1 nhịp là tick, 1 phút là nhịp",
+    "python": "import music\n\n\nmusic.set_tempo(, )\n"
+  },
+  {
+    "type": "yolobit_music_get_tempo",
+    "labelText": "lấy tốc độ phát nhạc hiện tại",
+    "python": "import music\n\n\nmusic.get_tempo()\n"
+  },
+  {
+    "type": "block_move_forward",
+    "labelText": "*",
+    "python": "f()\n"
+  },
+  {
+    "type": "block_move_right",
+    "labelText": "*",
+    "python": "r()\n"
+  },
+  {
+    "type": "block_move_back",
+    "labelText": "*",
+    "python": "b()\n"
+  },
+  {
+    "type": "block_move_left",
+    "labelText": "*",
+    "python": "l()\n"
+  },
+  {
+    "type": "block_move_potpet_stop",
+    "labelText": "*",
+    "python": "s()\n"
+  },
+  {
+    "type": "block_spiderbot_step",
+    "labelText": "di chuyển * 1 bước với tốc độ (0-100)",
+    "python": "sb.step(90, )\n"
+  },
+  {
+    "type": "block_spiderbot_stop",
+    "labelText": "* dừng di chuyển",
+    "python": "sb.step(0, 0)\n"
+  },
+  {
+    "type": "block_spiderbot_wave",
+    "labelText": "* vẫy chào với tốc độ (1-100)",
+    "python": "sb.wave()\n"
+  },
+  {
+    "type": "block_spiderbot_pushup",
+    "labelText": "* hít đất với tốc độ (1-100)",
+    "python": "sb.push_up()\n"
+  },
+  {
+    "type": "block_spiderbot_dance",
+    "labelText": "* nhảy với tốc độ (1-100)",
+    "python": "sb.dance()\n"
+  },
+  {
+    "type": "robotics_motori2c_init",
+    "labelText": "tạo motor1 cổng M1 Control Hub đảo chiều quay false",
+    "python": "from motor import *\nfrom mdv2 import *\n"
+  },
+  {
+    "type": "robotics_motor_run",
+    "labelText": "motor1 quay tốc độ",
+    "python": "motor1.run()\n"
+  },
+  {
+    "type": "robotics_motor_brake",
+    "labelText": "motor1 dừng lại",
+    "python": "motor1.stop()\n"
+  },
+  {
+    "type": "robotics_motor_set_encoder",
+    "labelText": "motor1 bật encoder rpm ppr tỉ số truyền",
+    "python": "motor1.set_encoder(rpm=, ppr=, gears=)\n"
+  },
+  {
+    "type": "robotics_motor_run_wait",
+    "labelText": "motor1 quay tốc độ giây",
+    "python": "await motor1.run_time(speed=, time=*1000, then=STOP)\n"
+  },
+  {
+    "type": "robotics_motor_run_stalled",
+    "labelText": "motor1 quay tốc độ đến khi kẹt",
+    "python": "await motor1.run_until_stalled(, then=STOP)\n"
+  },
+  {
+    "type": "robotics_motor_get",
+    "labelText": "motor1 góc xoay",
+    "python": "motor1.angle()\n"
+  },
+  {
+    "type": "robotics_motor_reset_angle",
+    "labelText": "motor1 reset encoder ticks",
+    "python": "motor1.reset_angle()\n"
+  },
+  {
+    "type": "robotics_servo_angle",
+    "labelText": "servo1 xoay góc tốc độ",
+    "python": "await servo1.run_angle(angle=, speed=)\n"
+  },
+  {
+    "type": "robotics_servo_spin",
+    "labelText": "servo1 quay tốc độ",
+    "python": "servo1.spin()\n"
+  },
+  {
+    "type": "robotics_robot_move",
+    "labelText": "robot *",
+    "python": "robot.forward()\n"
+  },
+  {
+    "type": "robotics_robot_move_delay",
+    "labelText": "robot * trong giây rồi dừng lại",
+    "python": "await robot.forward_for(, unit=SECOND, then=STOP)\n"
+  },
+  {
+    "type": "robotics_robot_set_speed",
+    "labelText": "robot tốc độ tối thiểu tối đa",
+    "python": "robot.speed(, min_speed=)\n"
+  },
+  {
+    "type": "robotics_robot_use_gyro",
+    "labelText": "robot di chuyển chính xác dùng encoder",
+    "python": "robot.use_gyro(False)\n"
+  },
+  {
+    "type": "robotics_robot_set_pid",
+    "labelText": "robot cài đặt PID di chuyển P I D",
+    "python": "robot.pid(Kp=, Ki=, Kd=)\n"
+  },
+  {
+    "type": "robotics_robot_set_speed_ratio",
+    "labelText": "robot cài đặt tỉ lệ tốc độ trái phải",
+    "python": "robot.speed_ratio(left=, right=)\n"
+  },
+  {
+    "type": "robotics_robot_remote_control_read_joystick",
+    "labelText": "đọc joystick phím điều hướng góc quay",
+    "python": "gamepad.dpad(\"angle\")\n"
+  },
+  {
+    "type": "robotics_robot_remote_control_side_move",
+    "labelText": "di chuyển ngang (mecanum) dùng phím điều hướng",
+    "python": "gamepad.side_move_mode(\"dpad\")\n"
+  },
+  {
+    "type": "robotics_angle_sensor_init",
+    "labelText": "tạo cảm biến góc MPU6050 calib ban đầu mẫu",
+    "python": "from angle_sensor import *\n\n\nawait angle_sensor.calibrate()\n"
+  },
+  {
+    "type": "robotics_angle_sensor_config",
+    "labelText": "chọn hướng đặt ORC Hub / cảm biến góc flat",
+    "python": "angle_sensor.set_direction(\"FLAT\")\n"
+  },
+  {
+    "type": "robotics_angle_sensor_calib",
+    "labelText": "calib cảm biến góc mẫu",
+    "python": "await angle_sensor.calibrate()\n"
+  },
+  {
+    "type": "robotics_angle_sensor_read",
+    "labelText": "đọc góc xoay cảm biến góc",
+    "python": "angle_sensor.heading()\n"
+  },
+  {
+    "type": "robotics_angle_sensor_get_imu",
+    "labelText": "đọc gyro trục x",
+    "python": "angle_sensor.get_gyro('x')\n"
+  },
+  {
+    "type": "robotics_angle_sensor_reset",
+    "labelText": "reset cảm biến góc",
+    "python": "angle_sensor.reset()\n"
+  },
+  {
+    "type": "robotics_line_sensor_init",
+    "labelText": "bật cảm biến line 4 mắt",
+    "python": "from line_sensor import *\n"
+  },
+  {
+    "type": "robotics_line_sensor_i2c_init",
+    "labelText": "bật cảm biến line 4 mắt",
+    "python": "from line_sensor import *\n"
+  },
+  {
+    "type": "robotics_digital_line_sensor_init",
+    "labelText": "bật cảm biến line loại digital S1 D2 S2 D2 S3 D2",
+    "python": "from line_sensor import *\n"
+  },
+  {
+    "type": "robotics_line_read_all",
+    "labelText": "cảm biến line S1 s1 S2 s2 S3 s3 S4 s4",
+    "python": "s1, s2, s3, s4 = line.read()\n"
+  },
+  {
+    "type": "robotics_line_sensor_read",
+    "labelText": "cảm biến line đọc S1",
+    "python": "line.read()[0]\n"
+  },
+  {
+    "type": "robotics_follow_line_until_cross",
+    "labelText": "dò line đến vạch ngang rồi dừng lại",
+    "python": "await robot.follow_line_until_cross(then=STOP)\n"
+  },
+  {
+    "type": "robotics_follow_end_line",
+    "labelText": "dò line đến cuối vạch đen rồi dừng lại",
+    "python": "await robot.follow_line_until_end(then=STOP)\n"
+  },
+  {
+    "type": "robotics_turn_until_line",
+    "labelText": "quay trái đến vạch đen rồi dừng lại",
+    "python": "await robot.turn_until_line_detected(steering=-100, then=STOP)\n"
+  },
+  {
+    "type": "robotics_follow_line_by_time",
+    "labelText": "dò line trong giây rồi dừng lại",
+    "python": "await robot.follow_line_by_time(, then=STOP)\n"
+  },
+  {
+    "type": "robotics_follow_line_until",
+    "labelText": "dò line cho đến khi rồi dừng lại",
+    "python": "await robot.follow_line_until(lambda: False, then=STOP)\n"
+  }
+]

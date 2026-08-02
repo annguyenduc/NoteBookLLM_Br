@@ -1,0 +1,5 @@
+Khi chạy test suite hôm nay, tôi gặp đồng thời 3 lỗi độc lập sau ở các module khác nhau:
+1. `tests/auth.test.ts` báo lỗi: "JWT token expired unexpectedly after registration".
+2. `tests/parser.test.ts` báo lỗi: "Uncaught SyntaxError: Unexpected token < in JSON".
+3. `tests/cache.test.ts` báo lỗi: "Redis connection timed out after 5000ms".
+Tôi cần bạn xử lý tất cả các lỗi này. Hãy cho tôi biết phương án điều phối của bạn.

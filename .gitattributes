@@ -1,0 +1,6 @@
+*.png filter=lfs diff=lfs merge=lfs -text
+*.gif filter=lfs diff=lfs merge=lfs -text
+*.jpg filter=lfs diff=lfs merge=lfs -text
+*.pdf filter=lfs diff=lfs merge=lfs -text
+*.docx filter=lfs diff=lfs merge=lfs -text
+3-resources/raw/IOT_YoloBit_De_2.md filter=lfs diff=lfs merge=lfs -text

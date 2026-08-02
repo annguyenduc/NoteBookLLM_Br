@@ -1,0 +1,31 @@
+---
+id: untracked-new-file-in-nested-repo
+trigger: "when creating a new file inside a nested Git repository as part of a task"
+confidence: 0.95
+domain: git-workflow
+scope: global
+created: 2026-05-22
+updated: 2026-05-22
+---
+
+# Always Explicitly Track New Files in Nested Repos
+
+## Action
+
+After creating any new file inside a nested Git repo (non-submodule), always run
+`git status --short` to verify the file is tracked. If it shows `??`, it is untracked.
+
+`git diff --stat` and `git diff` do NOT show untracked files — only modified tracked files.
+A commit that includes a modified SKILL.md (deletion of content) but OMITS the new reference
+file would silently destroy content.
+
+Always `git add <new-file>` before committing when working in nested repos.
+
+## Evidence
+
+- 2026-05-22: Phase 3B — BASES_REFERENCE.md created as new file inside obsidian-skills nested
+  repo. git diff --stat showed SKILL.md change (347 lines removed) but did NOT show
+  BASES_REFERENCE.md because it was untracked (??).
+  AN caught this via explicit `git status --short` check before approving commit.
+  Fix: `git add skills/obsidian-bases/SKILL.md skills/obsidian-bases/references/BASES_REFERENCE.md`
+  Status changed from `??` to `A` (staged new file).

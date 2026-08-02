@@ -1,0 +1,348 @@
+{
+  "checks": [],
+  "items": [
+    {
+      "id": "cm-frappe-agent",
+      "path": "D:\\anngu\\.codex\\skills\\cm-frappe-agent\\SKILL.md",
+      "backup_path": "D:\\NoteBookLLM_Br\\.agent\\skill_reviews\\backups\\SIP_20260519_003_pre_patch\\cm-frappe-agent.SKILL.md",
+      "frontmatter_preserved": true,
+      "description_preserved": true,
+      "only_body_changed": true,
+      "body_line_count": 42,
+      "body_line_count_lte_120": true,
+      "contains_when_to_load_references": true,
+      "current_sha256": "60d547675e9bec6a684d02544063201dda4c0d68bb3647cacd709ea1ae272612",
+      "backup_sha256": "8b8d413d2071e272cf73c1d95f610501e352090948ac2742e04a626d953c0c92",
+      "referenced_paths": [
+        {
+          "ref": "references/legacy_body.vi.md",
+          "exists": true
+        },
+        {
+          "ref": "resources/7-layer-architecture.md",
+          "exists": true
+        },
+        {
+          "ref": "resources/code-patterns-guide.md",
+          "exists": true
+        },
+        {
+          "ref": "resources/common_pitfalls.md",
+          "exists": true
+        },
+        {
+          "ref": "skills/bench-commands",
+          "exists": true
+        },
+        {
+          "ref": "skills/client-scripts",
+          "exists": true
+        },
+        {
+          "ref": "skills/doctype-patterns",
+          "exists": true
+        },
+        {
+          "ref": "skills/frappe-api",
+          "exists": true
+        },
+        {
+          "ref": "skills/remote-operations",
+          "exists": true
+        },
+        {
+          "ref": "skills/server-scripts",
+          "exists": true
+        },
+        {
+          "ref": "skills/web-forms",
+          "exists": true
+        }
+      ],
+      "missing_referenced_paths": []
+    },
+    {
+      "id": "bench-commands",
+      "path": "D:\\anngu\\.codex\\skills\\cm-frappe-agent\\skills\\bench-commands\\SKILL.md",
+      "backup_path": "D:\\NoteBookLLM_Br\\.agent\\skill_reviews\\backups\\SIP_20260519_003_pre_patch\\bench-commands.SKILL.md",
+      "frontmatter_preserved": true,
+      "description_preserved": true,
+      "only_body_changed": true,
+      "body_line_count": 36,
+      "body_line_count_lte_120": true,
+      "contains_when_to_load_references": true,
+      "current_sha256": "79980a8170b1e5a0fd96f222b648fa2af1abb001d3ebd5011dc2330d73a0b2d4",
+      "backup_sha256": "d9dcbd81354b7be8991201d56f65407934380d8c891b7e7083051b9959a46bdb",
+      "referenced_paths": [
+        {
+          "ref": "../../resources/bench_commands.md",
+          "exists": true
+        },
+        {
+          "ref": "../../resources/common_pitfalls.md",
+          "exists": true
+        },
+        {
+          "ref": "../../resources/installation-guide.md",
+          "exists": true
+        },
+        {
+          "ref": "references/legacy_body.vi.md",
+          "exists": true
+        }
+      ],
+      "missing_referenced_paths": []
+    },
+    {
+      "id": "client-scripts",
+      "path": "D:\\anngu\\.codex\\skills\\cm-frappe-agent\\skills\\client-scripts\\SKILL.md",
+      "backup_path": "D:\\NoteBookLLM_Br\\.agent\\skill_reviews\\backups\\SIP_20260519_003_pre_patch\\client-scripts.SKILL.md",
+      "frontmatter_preserved": true,
+      "description_preserved": true,
+      "only_body_changed": true,
+      "body_line_count": 30,
+      "body_line_count_lte_120": true,
+      "contains_when_to_load_references": true,
+      "current_sha256": "0cfccd0c80af9437410161fc9ce9c693be35a97202ef281fe0e497c23cec3ed1",
+      "backup_sha256": "fc2d4284674140847eca3dca7514c1400f0bcb8828672b7bc25d69eee8b5dc41",
+      "referenced_paths": [
+        {
+          "ref": "../../resources/code-patterns-guide.md",
+          "exists": true
+        },
+        {
+          "ref": "../frappe-api",
+          "exists": true
+        },
+        {
+          "ref": "../frappe-api/references/legacy_body.vi.md",
+          "exists": true
+        },
+        {
+          "ref": "../server-scripts",
+          "exists": true
+        },
+        {
+          "ref": "references/legacy_body.vi.md",
+          "exists": true
+        }
+      ],
+      "missing_referenced_paths": []
+    },
+    {
+      "id": "doctype-patterns",
+      "path": "D:\\anngu\\.codex\\skills\\cm-frappe-agent\\skills\\doctype-patterns\\SKILL.md",
+      "backup_path": "D:\\NoteBookLLM_Br\\.agent\\skill_reviews\\backups\\SIP_20260519_003_pre_patch\\doctype-patterns.SKILL.md",
+      "frontmatter_preserved": true,
+      "description_preserved": true,
+      "only_body_changed": true,
+      "body_line_count": 34,
+      "body_line_count_lte_120": true,
+      "contains_when_to_load_references": true,
+      "current_sha256": "70f3caecdd42a4cc2162e7dbd6fbc97cda075e695efd66e5fd80e2c7d71cc23f",
+      "backup_sha256": "9c2bae20705453380bdc32f4321a3f6dd7e4b946f00ac24644d60a4795256b2f",
+      "referenced_paths": [
+        {
+          "ref": "../../resources/code-patterns-guide.md",
+          "exists": true
+        },
+        {
+          "ref": "../../resources/doctype-registry.md",
+          "exists": true
+        },
+        {
+          "ref": "../../resources/scaffold_checklist.md",
+          "exists": true
+        },
+        {
+          "ref": "references/legacy_body.vi.md",
+          "exists": true
+        }
+      ],
+      "missing_referenced_paths": [],
+      "has_non_ascii_gate": true
+    },
+    {
+      "id": "frappe-api",
+      "path": "D:\\anngu\\.codex\\skills\\cm-frappe-agent\\skills\\frappe-api\\SKILL.md",
+      "backup_path": "D:\\NoteBookLLM_Br\\.agent\\skill_reviews\\backups\\SIP_20260519_003_pre_patch\\frappe-api.SKILL.md",
+      "frontmatter_preserved": true,
+      "description_preserved": true,
+      "only_body_changed": true,
+      "body_line_count": 29,
+      "body_line_count_lte_120": true,
+      "contains_when_to_load_references": true,
+      "current_sha256": "14a39b854a8a3a50ba04a8f0ba8b78364dcad848657175d6b9bbea1baa6e371f",
+      "backup_sha256": "f02bf270959ee8eca294434352bb21a27fa9ce1e02ea25b8034cd30643195810",
+      "referenced_paths": [
+        {
+          "ref": "../../resources/common_pitfalls.md",
+          "exists": true
+        },
+        {
+          "ref": "../../resources/rest-api-patterns.md",
+          "exists": true
+        },
+        {
+          "ref": "../server-scripts/references/legacy_body.vi.md",
+          "exists": true
+        },
+        {
+          "ref": "references/legacy_body.vi.md",
+          "exists": true
+        }
+      ],
+      "missing_referenced_paths": []
+    },
+    {
+      "id": "remote-operations",
+      "path": "D:\\anngu\\.codex\\skills\\cm-frappe-agent\\skills\\remote-operations\\SKILL.md",
+      "backup_path": "D:\\NoteBookLLM_Br\\.agent\\skill_reviews\\backups\\SIP_20260519_003_pre_patch\\remote-operations.SKILL.md",
+      "frontmatter_preserved": true,
+      "description_preserved": true,
+      "only_body_changed": true,
+      "body_line_count": 30,
+      "body_line_count_lte_120": true,
+      "contains_when_to_load_references": true,
+      "current_sha256": "9e61734e6fc30faa52a8d4843a074eea7c43f8e04b69d7698b704d11aba64e40",
+      "backup_sha256": "96c4ca260b6896285ae782556bb80a70f90dc52f079cc476e121999d360e5528",
+      "referenced_paths": [
+        {
+          "ref": "../../resources/common_pitfalls.md",
+          "exists": true
+        },
+        {
+          "ref": "../../resources/rest-api-patterns.md",
+          "exists": true
+        },
+        {
+          "ref": "../frappe-api/references/legacy_body.vi.md",
+          "exists": true
+        },
+        {
+          "ref": "references/legacy_body.vi.md",
+          "exists": true
+        }
+      ],
+      "missing_referenced_paths": [],
+      "has_remote_safety_classification": true
+    },
+    {
+      "id": "server-scripts",
+      "path": "D:\\anngu\\.codex\\skills\\cm-frappe-agent\\skills\\server-scripts\\SKILL.md",
+      "backup_path": "D:\\NoteBookLLM_Br\\.agent\\skill_reviews\\backups\\SIP_20260519_003_pre_patch\\server-scripts.SKILL.md",
+      "frontmatter_preserved": true,
+      "description_preserved": true,
+      "only_body_changed": true,
+      "body_line_count": 30,
+      "body_line_count_lte_120": true,
+      "contains_when_to_load_references": true,
+      "current_sha256": "4a1370cefc93a258e177ebf2010c991db2edbc0d69c565e2ae8a6a3bc87ca3ee",
+      "backup_sha256": "363c590750e6689f403afe967d156b695dd3e4b7e2e9962daa76d7389870334b",
+      "referenced_paths": [
+        {
+          "ref": "../../resources/code-patterns-guide.md",
+          "exists": true
+        },
+        {
+          "ref": "../../resources/upgrade_patterns.md",
+          "exists": true
+        },
+        {
+          "ref": "../frappe-api/references/legacy_body.vi.md",
+          "exists": true
+        },
+        {
+          "ref": "references/legacy_body.vi.md",
+          "exists": true
+        }
+      ],
+      "missing_referenced_paths": []
+    },
+    {
+      "id": "web-forms",
+      "path": "D:\\anngu\\.codex\\skills\\cm-frappe-agent\\skills\\web-forms\\SKILL.md",
+      "backup_path": "D:\\NoteBookLLM_Br\\.agent\\skill_reviews\\backups\\SIP_20260519_003_pre_patch\\web-forms.SKILL.md",
+      "frontmatter_preserved": true,
+      "description_preserved": true,
+      "only_body_changed": true,
+      "body_line_count": 30,
+      "body_line_count_lte_120": true,
+      "contains_when_to_load_references": true,
+      "current_sha256": "2923f9b1d4329924b5e73ed92e89d4b3934c86571a8608f209239f9a3aa79e58",
+      "backup_sha256": "a72c4f74ab029c7a41b08da449c3251537bf4d14a04ce061e240fb4e2e2792ef",
+      "referenced_paths": [
+        {
+          "ref": "../../resources/web-form-patterns.md",
+          "exists": true
+        },
+        {
+          "ref": "../client-scripts/references/legacy_body.vi.md",
+          "exists": true
+        },
+        {
+          "ref": "../server-scripts/references/legacy_body.vi.md",
+          "exists": true
+        },
+        {
+          "ref": "references/legacy_body.vi.md",
+          "exists": true
+        }
+      ],
+      "missing_referenced_paths": [],
+      "has_web_form_guest_risk": true
+    }
+  ],
+  "legacy_reference_files": [
+    {
+      "path": "D:\\anngu\\.codex\\skills\\cm-frappe-agent\\references\\legacy_body.vi.md",
+      "exists": true,
+      "last_write_time_ns": 1775207879135778400,
+      "sha256": "5135990056e0a3c2f3c4ba80e45448507b055ee77011b61dee65d91c394a088e"
+    },
+    {
+      "path": "D:\\anngu\\.codex\\skills\\cm-frappe-agent\\skills\\bench-commands\\references\\legacy_body.vi.md",
+      "exists": true,
+      "last_write_time_ns": 1775207879140761900,
+      "sha256": "491057e5ca7cff69f7bfa0091b06588447357a3445dcbdf349fda8d8c9e5ddd9"
+    },
+    {
+      "path": "D:\\anngu\\.codex\\skills\\cm-frappe-agent\\skills\\client-scripts\\references\\legacy_body.vi.md",
+      "exists": true,
+      "last_write_time_ns": 1775207879143772100,
+      "sha256": "e8028ddfc5b75e438e4b33c504bfd52a6222205bd6adbbe99b5b9a5432bb4cc1"
+    },
+    {
+      "path": "D:\\anngu\\.codex\\skills\\cm-frappe-agent\\skills\\doctype-patterns\\references\\legacy_body.vi.md",
+      "exists": true,
+      "last_write_time_ns": 1775207879148274500,
+      "sha256": "b3100b279de0e826056f6d256ad8b3a44417a1087336f0b556e9e566c99c2084"
+    },
+    {
+      "path": "D:\\anngu\\.codex\\skills\\cm-frappe-agent\\skills\\frappe-api\\references\\legacy_body.vi.md",
+      "exists": true,
+      "last_write_time_ns": 1775207879152863800,
+      "sha256": "2b8603b4014a56176d2eb4d68167d669de7581db18beb4835930bb0ba1c188a3"
+    },
+    {
+      "path": "D:\\anngu\\.codex\\skills\\cm-frappe-agent\\skills\\remote-operations\\references\\legacy_body.vi.md",
+      "exists": true,
+      "last_write_time_ns": 1775207879156519300,
+      "sha256": "5410357bdee73d5fbb4ac9a756f98ed3d03b25724d9a73f8ebf06411a2e4a1ff"
+    },
+    {
+      "path": "D:\\anngu\\.codex\\skills\\cm-frappe-agent\\skills\\server-scripts\\references\\legacy_body.vi.md",
+      "exists": true,
+      "last_write_time_ns": 1775207879158588400,
+      "sha256": "726c6b49a53a633f5ea9d16e159eadb50d13b878a36e43f73862b82ca39fba53"
+    },
+    {
+      "path": "D:\\anngu\\.codex\\skills\\cm-frappe-agent\\skills\\web-forms\\references\\legacy_body.vi.md",
+      "exists": true,
+      "last_write_time_ns": 1775207879165473300,
+      "sha256": "762c3b7ffd9d76a9442e4bd909c2fe9c5ccd8a964e00e5111a19c0359b93bf5d"
+    }
+  ],
+  "passed": true,
+  "failures": []
+}

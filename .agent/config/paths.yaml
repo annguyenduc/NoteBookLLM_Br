@@ -1,0 +1,75 @@
+# NoteBookLLM_Br path registry.
+# Phase 1 rule: this file documents stable paths first. Existing scripts keep
+# their current hard-coded paths until each script is migrated and tested.
+
+canonical:
+  inbox: "00_Inbox"
+  projects: "1-projects"
+  areas: "2-areas"
+  resources: "3-resources"
+  archive: "4-archive"
+  scripts: "scripts"
+  agent: ".agent"
+
+raw:
+  sources: "3-resources/raw_sources"
+  ingest: "3-resources/raw_ingest"
+  assets: "3-resources/raw_assets"
+
+wiki:
+  root: "3-resources/wiki"
+  concepts: "3-resources/wiki/concepts"
+  entities: "3-resources/wiki/entities"
+  sources: "3-resources/wiki/sources"
+  comparisons: "3-resources/wiki/comparisons"
+  synthesis: "3-resources/wiki/synthesis"
+  review_queue: "3-resources/wiki/review_queue"
+  logs: "3-resources/wiki/logs"
+  db: "3-resources/wiki/wiki_brain.db"
+
+learning_first:
+  learning_maps: "1-projects/learning_maps"
+  inbox_preview: "00_Inbox/staging/preview"
+  gap_candidates: "00_Inbox/staging/gap_candidates"
+  workflow: ".agent/workflows/learning-first.md"
+  canonical_handoff: ".agent/workflows/ingest-lifecycle.md"
+
+workspaces:
+  root: "workspaces"
+  learning: "workspaces/learning"
+  source_lab: "workspaces/source-lab"
+  research_lab: "workspaces/research-lab"
+  dev_lab: "workspaces/dev-lab"
+
+code_plane:
+  current_scripts: "scripts"
+  compatibility_libs_shim: "libs/__init__.py"
+  future_scripts: "workspaces/dev-lab/scripts"
+  future_tools: "workspaces/dev-lab/tools"
+  future_libs: "workspaces/dev-lab/libs"
+  future_tests: "workspaces/dev-lab/tests"
+  migration_status: "DEV_LAB_IMPORTED_WITH_LIBS_SHIM"
+
+runtime_plane:
+  current_runs: "runs"
+  future_source_runs: "workspaces/source-lab/runs"
+  future_dev_sandbox: "workspaces/dev-lab/sandbox"
+  migration_status: "ROOT_RUNS_RETAINED_FOR_OFFICIAL_INGEST"
+
+learning_plane:
+  legacy_learning_root: "5-learning"
+  current_learning_root: "workspaces/learning/dashboard"
+  future_learning_outputs: "workspaces/learning/outputs"
+  migration_status: "MIGRATED_TO_WORKSPACE_DASHBOARD"
+
+compatibility:
+  frozen_paths:
+    - "00_Inbox"
+    - "1-projects"
+    - "2-areas"
+    - "3-resources"
+    - "4-archive"
+    - ".agent"
+    - "scripts"
+  migration_rule: "Do not rename or move frozen paths until scripts are migrated to this registry and regression checks pass."
+  physical_workspace_plan: ".agent/docs/PLAN_PHYSICAL_WORKSPACE_MIGRATION.md"

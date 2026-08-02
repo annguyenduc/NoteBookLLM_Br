@@ -1,0 +1,38 @@
+---
+id: yaml-regex-preserve-blank-line-after-frontmatter
+trigger: "when writing a script to modify YAML frontmatter fields using regex"
+confidence: 0.90
+domain: scripting
+scope: global
+created: 2026-05-22
+updated: 2026-05-22
+---
+
+# Regex: Use [ \t]* Not \s* After Frontmatter Delimiter
+
+## Action
+
+When parsing YAML frontmatter with regex, use `[ \t]*` (space/tab only) instead of `\s*`
+after the closing `---` delimiter.
+
+**Correct:**
+```python
+match = re.match(r'^---[ \t]*\n(.*?)\n---[ \t]*\n', content, re.DOTALL)
+```
+
+**Wrong:**
+```python
+match = re.match(r'^---\s*\n(.*?)\n---\s*\n', content, re.DOTALL)
+```
+
+`\s*` is greedy and matches newlines, so it consumes the blank line between `---` and the
+first heading `# ...`. When the file is reconstructed, that blank line disappears.
+Result: `git diff` shows an extra `-` deletion line (blank line removed) alongside the
+intended description change — violating surgical change policy.
+
+## Evidence
+
+- 2026-05-22: Phase 3A optimize_skills_fm.py initial run — all 21 files showed `3 +--` in
+  diff stat (3 lines changed: 1 description + 1 blank line removed + 1 insertion).
+  After fix to `[ \t]*`, each file correctly shows `2 +-` (exactly 1 description line changed).
+  AN flagged this as a surgical change violation; fix was applied before Phase 3A was approved.

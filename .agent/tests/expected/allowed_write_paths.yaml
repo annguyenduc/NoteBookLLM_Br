@@ -1,0 +1,18 @@
+default_allowed_write_paths:
+  - "runs/"
+  - "4-archive/runs/"
+  - ".agent/tests/"
+
+default_forbidden_write_paths:
+  - "3-resources/"
+  - "3-resources/raw_sources/"
+  - "3-resources/wiki/"
+  - ".agent/skills/"
+  - ".agent/workflows/"
+  - ".agent/rules/"
+
+allowed_with_go_only:
+  - ".agent/skills/"
+  - ".agent/workflows/"
+  - ".agent/rules/"
+  - "3-resources/"

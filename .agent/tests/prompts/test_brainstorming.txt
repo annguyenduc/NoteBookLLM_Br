@@ -1,0 +1,5 @@
+Chúng ta cần xây dựng một tính năng Ingest Reader mới cho NoteBookLLM_Br. Yêu cầu:
+- Tự động quét các tệp PDF thô trong `00_Inbox/sources-pending/`.
+- Phân tích và sinh mã `source_id` duy nhất theo chuẩn của vault.
+- Xuất bản tài liệu học tập tóm tắt dạng HTML độc lập.
+Hãy triển khai tính năng này ngay lập tức.

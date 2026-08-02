@@ -1,0 +1,220 @@
+{
+  "block_input_linesensor_read": {
+    "fields": [
+      {
+        "name": "status",
+        "value": "0"
+      }
+    ],
+    "inputs": [
+      {
+        "name": "",
+        "type": 5,
+        "fieldNames": [
+          "status"
+        ]
+      }
+    ]
+  },
+  "robotics_line_sensor_init": {
+    "fields": [],
+    "inputs": [
+      {
+        "name": "",
+        "type": 5,
+        "fieldNames": []
+      }
+    ]
+  },
+  "robotics_line_sensor_i2c_init": {
+    "fields": [],
+    "inputs": [
+      {
+        "name": "",
+        "type": 5,
+        "fieldNames": []
+      }
+    ]
+  },
+  "robotics_digital_line_sensor_init": {
+    "fields": [
+      {
+        "name": "s1",
+        "value": "D2"
+      },
+      {
+        "name": "s2",
+        "value": "D2"
+      },
+      {
+        "name": "s3",
+        "value": "D2"
+      }
+    ],
+    "inputs": [
+      {
+        "name": "",
+        "type": 5,
+        "fieldNames": []
+      },
+      {
+        "name": "",
+        "type": 5,
+        "fieldNames": [
+          "s1",
+          "s2",
+          "s3"
+        ]
+      }
+    ]
+  },
+  "robotics_line_sensor_read": {
+    "fields": [
+      {
+        "name": "sensor",
+        "value": "0"
+      }
+    ],
+    "inputs": [
+      {
+        "name": "",
+        "type": 5,
+        "fieldNames": [
+          "sensor"
+        ]
+      }
+    ]
+  },
+  "robotics_line_read_all": {
+    "fields": [
+      {
+        "name": "S1",
+        "value": "{[ijrKsy:T?3i9]NA[lC"
+      },
+      {
+        "name": "S2",
+        "value": "3|lsjO:.$Bc?#%eu:?(b"
+      },
+      {
+        "name": "S3",
+        "value": "/ra(S(=RM2$yrQg#P4Ns"
+      },
+      {
+        "name": "S4",
+        "value": "F`mwtv;9r{-fsXR]DNCD"
+      }
+    ],
+    "inputs": [
+      {
+        "name": "",
+        "type": 5,
+        "fieldNames": [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ]
+      }
+    ]
+  },
+  "robotics_follow_line_until_cross": {
+    "fields": [
+      {
+        "name": "then",
+        "value": "STOP"
+      }
+    ],
+    "inputs": [
+      {
+        "name": "",
+        "type": 5,
+        "fieldNames": [
+          "then"
+        ]
+      }
+    ]
+  },
+  "robotics_follow_end_line": {
+    "fields": [
+      {
+        "name": "then",
+        "value": "STOP"
+      }
+    ],
+    "inputs": [
+      {
+        "name": "",
+        "type": 5,
+        "fieldNames": [
+          "then"
+        ]
+      }
+    ]
+  },
+  "robotics_turn_until_line": {
+    "fields": [
+      {
+        "name": "direction",
+        "value": "turn_left"
+      },
+      {
+        "name": "then",
+        "value": "STOP"
+      }
+    ],
+    "inputs": [
+      {
+        "name": "",
+        "type": 5,
+        "fieldNames": [
+          "direction",
+          "then"
+        ]
+      }
+    ]
+  },
+  "robotics_follow_line_by_time": {
+    "fields": [
+      {
+        "name": "then",
+        "value": "STOP"
+      }
+    ],
+    "inputs": [
+      {
+        "name": "time",
+        "type": 1,
+        "fieldNames": []
+      },
+      {
+        "name": "",
+        "type": 5,
+        "fieldNames": [
+          "then"
+        ]
+      }
+    ]
+  },
+  "robotics_follow_line_until": {
+    "fields": [
+      {
+        "name": "then",
+        "value": "STOP"
+      }
+    ],
+    "inputs": [
+      {
+        "name": "condition",
+        "type": 1,
+        "fieldNames": []
+      },
+      {
+        "name": "",
+        "type": 5,
+        "fieldNames": [
+          "then"
+        ]
+      }
+    ]
+  }
+}

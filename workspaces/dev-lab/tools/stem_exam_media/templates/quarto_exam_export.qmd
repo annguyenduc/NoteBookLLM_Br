@@ -1,0 +1,28 @@
+---
+title: "STEM Exam Media Export"
+lang: vi
+format:
+  html:
+    toc: false
+    embed-resources: true
+  docx:
+    reference-doc: null
+---
+
+::: {.callout-note}
+Status: `PREVIEW_ASSESSMENT`, `PREVIEW_ONLY`, `NON_CANONICAL`.
+:::
+
+## Media Prompt
+
+Replace this prompt with the assessment question stem.
+
+![Replace with concise alt text](media_ohstem_qxx_001.svg){fig-alt="Replace with concise alt text"}
+
+## Export Commands
+
+```powershell
+quarto render exam_export.qmd --to html
+quarto render exam_export.qmd --to docx
+```
+

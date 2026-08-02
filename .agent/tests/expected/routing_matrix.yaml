@@ -1,0 +1,56 @@
+routes:
+  pdf_summary_learning:
+    prompt_patterns:
+      - "Tóm tắt PDF này để tôi học nhanh"
+      - "Tóm tắt tài liệu này để học nhanh"
+    expected_skill:
+      - "wiki-learning-pack"
+    expected_mode:
+      - "learning-first"
+    forbidden_skill:
+      - "wiki-ingest"
+      - "wiki-rebuild"
+
+  pdf_summary_no_ingest:
+    prompt_patterns:
+      - "Tóm tắt PDF này, chưa cần đưa vào vault"
+      - "Chỉ tóm tắt, không ingest"
+    expected_skill:
+      - "wiki-learning-pack"
+    expected_mode:
+      - "chat-only"
+    forbidden_workflow:
+      - "ingest-lifecycle"
+      - "audit-promote-source"
+
+  skill_edit:
+    prompt_patterns:
+      - "Sửa skill"
+      - "Chỉnh skill"
+      - "Patch SKILL.md"
+    expected_mode:
+      - "governance"
+    expected_artifact:
+      - "SIP"
+    must_ask_go: true
+
+  code_change:
+    prompt_patterns:
+      - "Sửa script"
+      - "Sửa code"
+      - "Fix bug"
+    expected_skill:
+      - "writing-plans"
+      - "verification-before-completion"
+    must_verify_before_done: true
+
+  canonical_ingest:
+    prompt_patterns:
+      - "Đưa tài liệu này vào vault chính"
+      - "Ingest tài liệu này"
+      - "Promote source"
+    expected_workflow:
+      - "prepare-source"
+      - "lock-ingest-input"
+      - "ingest-lifecycle"
+    must_ask_go: true

@@ -1,0 +1,122 @@
+version: 1
+spec_id: SPEC_ON_DEMAND_SCRIPT_POLICY
+status: ACTIVE
+owner: AN
+scope: NoteBookLLM_Br
+objective: "Keep heavy tools at zero idle RAM by running read-only helper scripts on demand, while preserving AN GO for all side effects."
+
+permission_model:
+  safe_auto:
+    description: "Agent may run without AN GO."
+    allowed_conditions:
+      - "read-only"
+      - "dry-run"
+      - "query"
+      - "report"
+      - "inspect"
+      - "one-shot external query only when the current task explicitly requires it"
+  needs_GO:
+    description: "Agent must stop and ask AN GO."
+    conditions:
+      - "writes files"
+      - "modifies files"
+      - "deletes files"
+      - "moves files"
+      - "touches 3-resources/"
+      - "promotes raw/wiki artifacts"
+      - "rebuilds index"
+      - "changes MCP profile"
+      - "starts persistent server or daemon"
+      - "git commit, push, or merge"
+      - "uploads files or vault content externally"
+      - "NotebookLM ingest or export"
+
+trusted_agent_scripts:
+  safe_auto:
+    - "query_wiki.py"
+    - "check_ram_processes.py"
+    - "inspect_mcp_config.py"
+    - "tavily_search_once.py"
+    - "notebooklm_query_once.py"
+    - "sqlite_query_once.py"
+    - "git_status_report.py"
+    - "lint_report.py --dry-run"
+
+needs_GO:
+  scripts:
+    - "switch_mcp_profile.ps1"
+    - "promote.py"
+    - "circuit_breaker.py promote"
+    - "rebuild.py"
+    - "wiki_ops.py --write"
+    - "gap_promote.py"
+    - "promote_atom.py"
+    - "write_to_wiki.py"
+    - "notebooklm_ingest.py"
+    - "notebooklm_export.py"
+  patterns:
+    - "any script with --apply"
+    - "any script that writes, modifies, deletes, or moves files"
+    - "any script that touches 3-resources/"
+    - "any script that modifies mcp_config.json or config.toml"
+    - "any script that starts a persistent server or daemon"
+    - "git commit"
+    - "git push"
+    - "git merge"
+
+safe_auto_script_must:
+  - "exit after completion"
+  - "not stay resident in background"
+  - "not write files"
+  - "not modify vault state"
+  - "not change MCP profile"
+  - "not push, commit, or merge"
+  - "print a clear summary to terminal or chat"
+  - "return non-zero exit code on failure"
+
+external_call_policy:
+  agent_can_run_without_GO: "YES, only if the current user task explicitly needs it"
+  allowed:
+    - "single query"
+    - "no file upload"
+    - "no vault write"
+    - "result shown in chat or terminal only"
+  must_report:
+    - "service called"
+    - "query or data sent"
+    - "whether result was saved or only displayed"
+    - "whether any file was uploaded"
+  requires_GO_if:
+    - "uploading file"
+    - "saving external result into vault"
+    - "creating NotebookLM source"
+    - "exporting NotebookLM artifact"
+    - "running multi-step crawl"
+
+ram_policy:
+  target: "zero idle RAM for heavy tools"
+  default_workspace_mcp:
+    - "filesystem"
+  heavy_tools_mode: "on-demand script"
+  heavy_tools:
+    - "sqlite query once"
+    - "tavily search once"
+    - "notebooklm query once"
+    - "local-ai audit once"
+    - "wiki-ops inspect once"
+  forbidden_as_default_background:
+    - "notebooklm-mcp-server"
+    - "tavily Python wrapper"
+    - "local-ai MCP"
+    - "wiki-ops MCP"
+    - "github wrapper"
+
+hard_stops:
+  - "script starts background server unexpectedly"
+  - "script writes to vault while declared read-only"
+  - "script touches 3-resources/raw_*"
+  - "script tries to promote artifact"
+  - "script modifies MCP config"
+  - "script sends file or vault content externally without explicit task need"
+  - "script hangs instead of exiting"
+  - "script output indicates an undeclared side effect"

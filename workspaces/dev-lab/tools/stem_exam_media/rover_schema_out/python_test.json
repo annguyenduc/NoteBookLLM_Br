@@ -1,0 +1,3 @@
+{
+  "_Python": "await robot.follow_line_until_cross(then=STOP)\n"
+}

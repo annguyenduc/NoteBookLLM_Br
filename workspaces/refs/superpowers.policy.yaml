@@ -1,0 +1,55 @@
+workspace:
+  path: "workspaces/refs/superpowers"
+  type: "external_reference_workspace"
+  role: "direct_grader"
+  active_scope: "audit_session_only"
+
+load_policy:
+  default_load: false
+  load_on_demand_only: true
+  allowed_use_cases:
+    - "directly_grade_vault_skills"
+    - "directly_grade_vault_workflows"
+    - "directly_grade_agent_tests"
+    - "audit_skill_triggering"
+    - "audit_planning_discipline"
+    - "audit_verification_discipline"
+    - "audit_skill_governance"
+
+permissions:
+  may_read_superpowers: true
+  may_read_vault_agent_files: true
+  may_create_grading_reports: true
+  may_run_superpowers_own_tests: true
+  may_modify_superpowers_repo: false
+  may_modify_vault_skills: false
+  may_modify_vault_workflows: false
+  may_modify_vault_rules: false
+  may_import_skills_as_runtime: false
+  may_copy_skills_directly: false
+
+forbidden_actions:
+  - "Do not add workspaces/refs/superpowers/skills to global skill path"
+  - "Do not copy Superpowers skills into .agent/skills"
+  - "Do not treat Superpowers CLAUDE.md as vault root law"
+  - "Do not write to 3-resources"
+  - "Do not write to 00_Inbox"
+  - "Do not run ingest"
+  - "Do not run rebuild"
+  - "Do not promote source"
+  - "Do not commit git"
+
+grading_boundary:
+  superpowers_may_grade:
+    - "skill activation"
+    - "planning discipline"
+    - "verification discipline"
+    - "skill governance"
+    - "workspace isolation"
+    - "subagent workflow"
+  superpowers_must_mark_outside_scope:
+    - "wiki ingest semantics"
+    - "NotebookLM recon semantics"
+    - "canonical atom policy"
+    - "raw_sources governance"
+    - "pedagogy-specific workflow"
