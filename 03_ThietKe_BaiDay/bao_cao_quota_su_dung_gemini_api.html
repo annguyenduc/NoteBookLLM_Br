@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo cáo hạn mức & sử dụng Gemini API</title>
+    <!-- Google Fonts: Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0B2545; /* Navy Blue */
+            --secondary-color: #134074;
+            --bg-color: #EEF4F8;
+            --text-color: #1D2A3A;
+            --card-bg: #FFFFFF;
+            --border-color: #D0DBE5;
+            --accent-color: #0077B6;
+            --highlight-bg: #FFF3CD;
+            --danger-color: #D90429;
+            --success-color: #2EC4B6;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.7;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 50px 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(11, 37, 69, 0.1);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-color);
+            margin-top: 1.8em;
+            margin-bottom: 0.6em;
+            font-weight: 700;
+        }
+
+        h1 {
+            border-bottom: 4px solid var(--primary-color);
+            padding-bottom: 15px;
+            font-size: 2.2rem;
+            text-align: center;
+            line-height: 1.3;
+            margin-top: 0;
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            color: var(--secondary-color);
+        }
+
+        p {
+            text-align: justify;
+            margin-bottom: 1.2rem;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .meta-info {
+            background-color: #F0F4F8;
+            border-left: 4px solid var(--secondary-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 35px;
+            font-size: 0.95rem;
+        }
+
+        .meta-info ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .meta-info li {
+            margin-bottom: 5px;
+            list-style-type: square;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.95rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 14px 16px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #F8FAFC;
+        }
+
+        tr:hover {
+            background-color: #EDF2F7;
+            transition: background-color 0.2s ease;
+        }
+
+        code {
+            background-color: #E2E8F0;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            color: #C71585;
+            font-weight: 600;
+        }
+
+        pre {
+            background-color: #1A202C;
+            color: #EDF2F7;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Courier New', Courier, monospace;
+            border-left: 4px solid var(--accent-color);
+            margin: 20px 0;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        pre code {
+            background-color: transparent;
+            padding: 0;
+            color: inherit;
+            font-size: 0.95em;
+            font-weight: normal;
+        }
+
+        blockquote {
+            border-left: 5px solid var(--accent-color);
+            background-color: #F7FAFC;
+            margin: 25px 0;
+            padding: 15px 25px;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        ul, ol {
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            text-align: justify;
+        }
+
+        .highlight-box {
+            background-color: #FFFDF5;
+            border: 1px solid #FFE0B2;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .highlight-box h3 {
+            margin-top: 0;
+            color: #E65100;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer {
+            margin-top: 50px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+            font-size: 0.85rem;
+            color: #718096;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 BÁO CÁO CHI TIẾT HẠN MỨC, MÃ MODEL ID GỌI API, UNG DỤNG GỢI Ý & PHÂN LOẠI FREE TIER - GEMINI API</h1>
+
+        <div class="meta-info">
+            <ul>
+                <li><strong>Thời gian cập nhật:</strong> 21/07/2026 (11:14:00 +07:00)</li>
+                <li><strong>Nguồn dữ liệu:</strong> Google AI Studio Dashboard</li>
+                <li><strong>Phạm vi áp dụng:</strong> Khóa học <em>"Phát triển sản phẩm AI cho Giáo viên STEM"</em> & Lập trình API / Build Mode</li>
+            </ul>
+        </div>
+
+        <h2>🟢 PHẦN 1: BẢNG MÔ HÌNH HOẠT ĐỘNG TRÊN FREE TIER (KÈM MÃ API MODEL ID & ỨNG DỤNG GỢI Ý)</h2>
+        <p>Đây là các mô hình sẵn có hạn mức trên gói <strong>Free Tier</strong>. Dưới đây là <strong>Mã Model ID chính xác để điền vào Code / API Call / Secret Config</strong> cùng với <strong>Ứng dụng gợi ý</strong>:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 15%;">Tên mô hình (Model Name)</th>
+                    <th style="width: 25%;">Mã Model ID gọi API (API Model String)</th>
+                    <th style="width: 20%;">Quota Thực tế (RPM / TPM / RPD)</th>
+                    <th style="width: 25%;">Ứng dụng gợi ý cho Giáo viên & Học sinh (Suggested Use-Cases)</th>
+                    <th style="width: 15%;">Đánh giá & Lưu ý vận hành</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Gemini 3.5 Flash</strong></td>
+                    <td><code>gemini-3.5-flash</code> <br><em>(hoặc <code>gemini-3.5-flash-latest</code>)</em></td>
+                    <td>2 / 5 RPM <br> 3.08K / 250K TPM <br> 8 / 20 RPD</td>
+                    <td>💻 <strong>Vibe Coding trong AI Studio Build Mode</strong>, Xây dựng Web App full-stack React/Node, Phân tích đa phương thức (Ảnh lá cây), Viết tài liệu Spec & Plan.</td>
+                    <td>🔥 <strong>Mô hình thông minh nhất trên Free Tier.</strong> Cho chất lượng code và giao diện mượt nhất. Hạn mức <strong>20 yêu cầu/ngày</strong>, thích hợp cho Giảng viên Demo.</td>
+                </tr>
+                <tr>
+                    <td><strong>Gemini 3.1 Flash Lite</strong></td>
+                    <td><code>gemini-3.1-flash-lite</code> <br><em>(hoặc <code>gemini-3.1-flash-lite-latest</code>)</em></td>
+                    <td>4 / 15 RPM <br> 457 / 250K TPM <br> 5 / 500 RPD</td>
+                    <td>⚡ <strong>Chatbot tư vấn học tập, Trắc nghiệm tự động, Phân loại lá cây/động vật siêu nhanh, Chấm điểm bài tập ngắn.</strong></td>
+                    <td>🚀 <strong>Tốt nhất cho lớp học đông.</strong> Hạn mức ngày khổng lồ (<strong>500 yêu cầu/ngày</strong>), tần suất 15 RPM giúp cả lớp 30 học sinh thực hành không lo bị ngắt.</td>
+                </tr>
+                <tr>
+                    <td><strong>Gemma 4 31B</strong></td>
+                    <td><code>gemma-4-31b-it</code> <br><em>(hoặc <code>gemma-4-31b</code>)</em></td>
+                    <td>4 / 30 RPM <br> 612 / 16K TPM <br> 7 / 14.4K RPD</td>
+                    <td>📚 <strong>Xử lý hàng loạt tài liệu (Batch processing), Tóm tắt giáo án dài, Trích xuất dữ liệu thô, Chạy prompt dạng mã nguồn mở.</strong></td>
+                    <td>📦 Mô hình nguồn mở với hạn mức ngày cực lớn (<strong>14,400 RPD</strong>), tốc độ 30 RPM cao nhất.</td>
+                </tr>
+                <tr>
+                    <td><strong>Gemini 2.5 Flash</strong></td>
+                    <td><code>gemini-2.5-flash</code></td>
+                    <td>3 / 5 RPM <br> 452 / 250K TPM <br> 3 / 20 RPD</td>
+                    <td>🔍 Tra cứu kiến thức tiêu chuẩn, Hỏi đáp giáo án STEM cơ bản, Đọc file PDF/Hình ảnh đơn giản.</td>
+                    <td>⚙️ Mô hình tiêu chuẩn thế hệ 2.5, hoạt động ổn định cho tác vụ thường nhật.</td>
+                </tr>
+                <tr>
+                    <td><strong>Gemini 2.5 Flash Lite</strong></td>
+                    <td><code>gemini-2.5-flash-lite</code></td>
+                    <td>1 / 10 RPM <br> 1 / 250K TPM <br> 1 / 20 RPD</td>
+                    <td>🧪 Trích xuất JSON siêu nhẹ, Phân loại từ khóa, Kiểm tra lỗi cú pháp prompt.</td>
+                    <td>⚡ Tốc độ phản hồi cực nhanh, làm helper function cho ứng dụng.</td>
+                </tr>
+                <tr>
+                    <td><strong>Gemini 3.1 Flash TTS</strong></td>
+                    <td><code>gemini-3.1-flash-tts</code></td>
+                    <td>0 / 3 RPM <br> 0 / 10K TPM <br> 0 / 10 RPD</td>
+                    <td>🔊 <strong>Chuyển bài giảng/Tên cây Latinh thành giọng nói (Text-to-Speech)</strong> cho app Tiếng Anh/Sinh học.</td>
+                    <td>🎵 Hỗ trợ 10 lượt phát âm giọng nói/ngày trên gói miễn phí.</td>
+                </tr>
+                <tr>
+                    <td><strong>Imagen 4 Generate</strong></td>
+                    <td><code>imagen-3.0-generate-002</code> <br><em>(hoặc <code>imagen-4-generate</code>)</em></td>
+                    <td>0 / 25 RPD</td>
+                    <td>🎨 <strong>Tạo ảnh minh họa linh vật STEM, Ảnh nền bài giảng, Sáng tạo hình ảnh học tập chất lượng cao.</strong></td>
+                    <td>🖼️ Cho phép tạo 25 hình ảnh AI độ phân giải cao mỗi ngày bằng hàm <code>generateImages</code>.</td>
+                </tr>
+                <tr>
+                    <td><strong>Gemini Robotics ER 1.6</strong></td>
+                    <td><code>gemini-robotics-er-1.6-preview</code></td>
+                    <td>0 / 5 RPM <br> 0 / 250K TPM <br> 0 / 20 RPD</td>
+                    <td>🤖 <strong>Lập trình điều khiển Robot STEM, Cảm biến Arduino/Raspberry Pi, Nhận diện không gian học tập.</strong></td>
+                    <td>🦾 Mô hình AI chuyên dụng cho các dự án phần cứng STEM.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>🔴 PHẦN 2: BẢNG CÁC MÔ HÌNH BỊ KHÓA TRÊN FREE TIER (<code>0 / 0</code>) & LÝ DO CHI TIẾT</h2>
+        <p>Dưới đây là danh sách các mô hình hiển thị chỉ số <strong><code>0 / 0</code></strong> (Không có hạn mức) trên gói Free Tier:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 15%;">Tên mô hình (Model Name)</th>
+                    <th style="width: 25%;">Mã Model ID gọi API (API Model String)</th>
+                    <th style="width: 15%;">Phân loại</th>
+                    <th style="width: 25%;">Ứng dụng gợi ý nếu được kích hoạt</th>
+                    <th style="width: 20%;">Lý do không sử dụng được trên Free Tier hiện tại</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Gemini 2.5 Pro</strong> & <strong>3.1 Pro</strong></td>
+                    <td><code>gemini-2.5-pro</code> <br> <code>gemini-3.1-pro</code></td>
+                    <td>Pro Text-out</td>
+                    <td>🧩 Giải các bài toán STEM chuyên sâu phức tạp, Refactor dự án code lớn, Viết sách/tài liệu khoa học.</td>
+                    <td>⛔ <strong>Yêu cầu Tài khoản Trả phí (Paid Tier / Pay-as-you-go).</strong> Các dòng <strong>Pro</strong> tốn tài nguyên tính toán cao nên Google không cấp quota miễn phí mặc định.</td>
+                </tr>
+                <tr>
+                    <td><strong>Nano Banana Series</strong> <br><em>(Gemini Flash Image)</em></td>
+                    <td><code>gemini-2.5-flash-image</code> <br> <code>nano-banana-2-gemini-3.1-flash-image</code></td>
+                    <td>Multi-modal Image</td>
+                    <td>🖼️ Sửa ảnh thông minh, Chèn vật thể AI trực tiếp trên màn hình Live Preview của App.</td>
+                    <td>⛔ <strong>Tài khoản Free Tier bị khóa Quotas (0/0 RPD).</strong> Gọi mã <code>gemini-2.5-flash-image</code> bằng API sẽ bị lỗi HTTP 403/404 (<code>QuotaExceeded</code> hoặc <code>Model Not Found</code>).</td>
+                </tr>
+                <tr>
+                    <td><strong>Deep Research Pro Preview</strong></td>
+                    <td><code>deep-research-pro-preview</code></td>
+                    <td>Agent Tool</td>
+                    <td>🔬 Tự động thu thập, tổng hợp và viết báo cáo nghiên cứu từ hàng ngàn tài liệu web.</td>
+                    <td>⛔ <strong>Tính năng Enterprise / Paid Agent.</strong> Chỉ dành cho tài khoản nâng cao có liên kết thẻ thanh toán (Billing Enabled).</td>
+                </tr>
+                <tr>
+                    <td><strong>Computer Use Preview</strong></td>
+                    <td><code>computer-use-preview</code></td>
+                    <td>Agent Tool</td>
+                    <td>🖥️ AI tự động điều khiển chuột, bàn phím và thao tác ứng dụng trên máy tính.</td>
+                    <td>⛔ <strong>Tính năng Preview Giới Hạn (Gated Preview).</strong> Yêu cầu đăng ký danh sách chờ (Waitlist) & đăng ký Billing dự án Google Cloud.</td>
+                </tr>
+                <tr>
+                    <td><strong>Veo 3 Series</strong> <br><em>(Generate)</em></td>
+                    <td><code>veo-3-generate</code> <br><em>(Fast: <code>veo-3-fast-generate</code>)</em></td>
+                    <td>Video Generation</td>
+                    <td>🎬 Tạo video hoạt hình minh họa bài giảng STEM, Video thí nghiệm khoa học mô phỏng.</td>
+                    <td>⛔ <strong>Mô hình Video AI chi phí cao.</strong> Chỉ hỗ trợ qua dự án Google Cloud Vertex AI (Paid Project) hoặc dự án có cấu hình Billing riêng.</td>
+                </tr>
+                <tr>
+                    <td><strong>Lyria 3 Clip</strong></td>
+                    <td><code>lyria-3-clip</code></td>
+                    <td>Audio/Music</td>
+                    <td>🎼 Sáng tác nhạc nền cho trò chơi học tập STEM, Hiệu ứng âm thanh giáo dục.</td>
+                    <td>⛔ <strong>Mô hình Thử nghiệm Đối tác (Partner Preview).</strong> Chưa mở rộng công khai trên Free Tier API.</td>
+                </tr>
+                <tr>
+                    <td><strong>Gemini 3.5 Live Translate</strong></td>
+                    <td><code>gemini-3.5-live-translate</code></td>
+                    <td>Live API</td>
+                    <td>🎙️ Phiên dịch trực tiếp thời gian thực cuộc gọi thoại/video song ngữ trên App.</td>
+                    <td>⛔ <strong>Yêu cầu kênh kết nối WebSocket/Streaming trả phí.</strong> Gói Free Tier không mở băng thông Live Stream thời gian thực.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>❓ PHẦN 3: GIẢI MÃ LỖI — VÌ SAO THAY <code>imagen-4-generate</code> BẰNG <code>gemini-2.5-flash-image</code> KHÔNG TẠO ĐƯỢC ẢNH?</h2>
+        <p>Khi anh thay chuỗi <code>imagen-4-generate</code> bằng <code>gemini-2.5-flash-image</code> (hoặc các mô hình thuộc dòng Nano Banana Image) trong code và chạy thử, chương trình báo lỗi hoặc không sinh ra ảnh. Dưới đây là <strong>3 nguyên nhân kỹ thuật chính</strong>:</p>
+
+        <h3>1. Nguyên nhân 1: Free Tier không được cấp Quota cho <code>gemini-2.5-flash-image</code></h3>
+        <ul>
+            <li>Hãy nhìn vào bảng Dashboard của anh: Mô hình <strong><code>Nano Banana (Gemini 2.5 Flash Preview Image)</code></strong> hiển thị chỉ số <strong><code>0 / 0</code></strong> (0 RPM, 0 TPM, 0 RPD).</li>
+            <li>Google khóa toàn bộ endpoint này đối với API Key miễn phí. Khi gọi qua API, Google Server lập tức trả về lỗi: <code>403 Quota Exceeded</code> hoặc <code>404 Model Not Found</code>.</li>
+            <li>Ngược lại, <strong><code>Imagen 4 Generate</code></strong> (<code>imagen-3.0-generate-002</code>) được cấp <strong>25 RPD/ngày miễn phí</strong>.</li>
+        </ul>
+
+        <h3>2. Nguyên nhân 2: Khác biệt về Phương thức trong SDK (<code>generateImages</code> vs <code>generateContent</code>)</h3>
+        <ul>
+            <li><strong>Imagen 4</strong> là mô hình chuyên sinh ảnh thuần túy, phải gọi bằng phương thức:
+                <pre><code class="language-typescript">// Node.js SDK
+const result = await ai.models.generateImages({
+  model: "imagen-3.0-generate-002", // hoặc imagen-4-generate
+  prompt: "A cute green plant mascot",
+  config: { numberOfImages: 1, outputMimeType: "image/png" }
+});</code></pre>
+            </li>
+            <li><strong>Gemini Flash Image</strong> là mô hình ngôn ngữ hỗ trợ xuất ảnh đa phương thức, phải gọi bằng <code>generateContent</code> kèm cấu hình <code>responseMimeType</code>:
+                <pre><code class="language-typescript">// Nếu dùng Gemini Flash Image (Chỉ chạy được trên Paid Tier)
+const result = await ai.models.generateContent({
+  model: "gemini-2.5-flash-image", // Bị khóa trên Free Tier!
+  contents: ["Generate an image of a cute green plant mascot"],
+  config: { responseMimeType: "image/png" }
+});</code></pre>
+                Nếu anh dùng hàm <code>generateImages</code> mà truyền vào <code>gemini-2.5-flash-image</code>, SDK sẽ báo lỗi không khớp phương thức.
+            </li>
+        </ul>
+
+        <h2>💡 HƯỚNG DẪN XỬ LÝ CHO GIÁO VIÊN & LẬP TRÌNH VIÊN (RECOMMENDED SOLUTIONS)</h2>
+
+        <h3>🛠️ CÁCH 1: Dùng đúng Imagen 4 / Imagen 3 trên Free Tier (25 ảnh/ngày)</h3>
+        <p>Sử dụng chuẩn Model ID <code>imagen-3.0-generate-002</code> hoặc <code>imagen-4-generate</code> với hàm <code>generateImages</code>:</p>
+        <ul>
+            <li><strong>Mẫu Code Python:</strong>
+                <pre><code class="language-python">from google import genai
+
+client = genai.Client(api_key="YOUR_GEMINI_API_KEY")
+
+result = client.models.generate_images(
+    model="imagen-3.0-generate-002",
+    prompt="A cute green plant mascot illustration for STEM biology class",
+    config=dict(number_of_images=1, aspect_ratio="1:1")
+)
+
+# Lấy ảnh
+for generated_image in result.generated_images:
+    image_bytes = generated_image.image.image_bytes</code></pre>
+            </li>
+        </ul>
+
+        <h3>🎨 CÁCH 2: Dùng <code>gemini-3.5-flash</code> Sinh Code SVG / Canvas (0đ - Không tốn Quota Imagen)</h3>
+        <p>Trong AI Studio Build Mode, để tạo hình ảnh/icon minh họa cho Web App mà không tốn 25 lượt/ngày của Imagen, ta có thể yêu cầu <strong><code>gemini-3.5-flash</code></strong> vẽ trực tiếp bằng code SVG:</p>
+        <ul>
+            <li><strong>Prompt cho AI Studio:</strong>
+                <pre><code>Create a React component for a cute plant mascot rendered purely using SVG code.
+Do not call external image APIs.</code></pre>
+            </li>
+            <li><strong>Ưu điểm:</strong> Chạy 100% miễn phí, đẹp mắt, tự động co giãn (responsive), không bao giờ bị lỗi API Key hay hết Quota ảnh!</li>
+        </ul>
+
+        <div class="footer">
+            <p><em>Báo cáo giải mã lỗi API được cập nhật trực tiếp vào tài liệu.</em></p>
+            <p>Đường dẫn tệp gốc: <a href="file:///d:/NoteBookLLM_Br/workspaces/learning/outputs/bao_cao_quota_su_dung_gemini_api.md">bao_cao_quota_su_dung_gemini_api.md</a></p>
+        </div>
+    </div>
+</body>
+</html>

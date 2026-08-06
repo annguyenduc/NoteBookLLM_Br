@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kỹ năng: Spec Writer (Trình Viết Đặc Tả)</title>
+    <!-- Google Fonts: Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0B2545; /* Navy Blue */
+            --secondary-color: #134074;
+            --bg-color: #EEF4F8;
+            --text-color: #1D2A3A;
+            --card-bg: #FFFFFF;
+            --border-color: #D0DBE5;
+            --accent-color: #0077B6;
+            --highlight-bg: #FFFDF5;
+            --danger-color: #D90429;
+            --success-color: #2EC4B6;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.7;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 50px 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(11, 37, 69, 0.1);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-color);
+            margin-top: 1.8em;
+            margin-bottom: 0.6em;
+            font-weight: 700;
+        }
+
+        h1 {
+            border-bottom: 4px solid var(--primary-color);
+            padding-bottom: 15px;
+            font-size: 2.2rem;
+            text-align: center;
+            line-height: 1.3;
+            margin-top: 0;
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+        }
+
+        p {
+            text-align: justify;
+            margin-bottom: 1.2rem;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Frontmatter Box */
+        .frontmatter-box {
+            background-color: #F0F4F8;
+            border-left: 5px solid var(--primary-color);
+            padding: 20px 25px;
+            border-radius: 0 12px 12px 0;
+            margin-bottom: 35px;
+            font-size: 0.95rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        .frontmatter-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .frontmatter-desc {
+            font-style: italic;
+            color: #4A5568;
+            text-align: justify;
+        }
+
+        ul, ol {
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        .alert-box {
+            border-left: 4px solid var(--danger-color);
+            background-color: #FFF5F5;
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+
+        .alert-box h3 {
+            margin-top: 0;
+            color: var(--danger-color);
+        }
+
+        .success-box {
+            border-left: 4px solid var(--success-color);
+            background-color: #F6FFFD;
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+
+        .success-box h3 {
+            margin-top: 0;
+            color: #1B9AAA;
+        }
+
+        code {
+            background-color: #E2E8F0;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            color: #C71585;
+            font-weight: 600;
+        }
+
+        .footer {
+            margin-top: 60px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+            font-size: 0.85rem;
+            color: #718096;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Kỹ năng: Spec Writer (Trình Viết Đặc Tả)</h1>
+
+        <div class="frontmatter-box">
+            <div class="frontmatter-title">⚙️ Metadata / Frontmatter</div>
+            <p><strong>Tên kỹ năng (Name):</strong> <code>spec-writer</code></p>
+            <div class="frontmatter-desc">
+                <strong>Mô tả (Description):</strong> Sử dụng khi tác vụ trong learning-vault cần một thư mục tác vụ mới theo chuẩn spec-first, một file SPEC.md mới, hoặc viết lại các tài liệu đặc tả (spec artifacts) cho các thay đổi gồm nhiều bước. Cũng được sử dụng khi không có kỹ năng (skill) nào khớp hiện có trong agent/skills/. KHÔNG sử dụng cho các câu hỏi đọc-ghi đơn giản, triển khai trực tiếp sau khi được duyệt, hoặc tác vụ đã được hỗ trợ bởi một kỹ năng chuẩn hóa hiện có.
+            </div>
+        </div>
+
+        <h2>📖 Tổng Quan (Overview)</h2>
+        <p>Kỹ năng này giúp tạo và duy trì các tài liệu tác vụ theo quy trình <strong>spec-first</strong> cho <code>learning-vault</code>.</p>
+        <p>Quy tắc cốt lõi rất đơn giản: <strong>Đánh giá quản trị nội bộ trước (local governance) ➔ Tạo tài liệu đặc tả (spec artifacts) ➔ Phê duyệt (approval) ➔ Thực hiện các bước tiếp theo (downstream work)</strong>.</p>
+
+        <h2>🎯 Khi Nào Cần Sử Dụng (When to Use)</h2>
+        <p>Sử dụng kỹ năng này khi:</p>
+        <ul>
+            <li>Một tác vụ sẽ làm thay đổi các file, quy trình (workflows), kỹ năng (skills), quy tắc (rules), cấu trúc (structure), hoặc tri thức chuẩn hóa (canonical knowledge).</li>
+            <li>Một tác vụ yêu cầu tạo mới <code>agent/specs/YYYY-MM-DD_task-name/SPEC.md</code>.</li>
+            <li>Một tác vụ yêu cầu dọn dẹp hoặc viết lại các tài liệu đặc tả trước khi triển khai.</li>
+            <li>Không có kỹ năng chuẩn hóa nào khớp hiện có trong thư mục <code>agent/skills/</code>.</li>
+        </ul>
+        <p><strong>Không sử dụng kỹ năng này khi:</strong></p>
+        <ul>
+            <li>Tác vụ chỉ là câu hỏi đọc đơn giản hoặc tóm tắt ngắn gọn.</li>
+            <li>Người dùng muốn triển khai trực tiếp một tác vụ đã được phê duyệt và kỹ năng/quy trình hiện tại đã hỗ trợ đầy đủ.</li>
+            <li>Một kỹ năng chuẩn hóa hiện có tại <code>agent/skills/&lt;skill-name&gt;/SKILL.md</code> là công cụ phù hợp nhất cho tác vụ.</li>
+        </ul>
+
+        <div class="alert-box">
+            <h3>🚫 Các Trường Hợp Không Kích Hoạt (Anti-Triggers)</h3>
+            <ul>
+                <li><strong>KHÔNG</strong> sử dụng cho câu trả lời một dòng, dịch thuật, hoặc định dạng đơn giản.</li>
+                <li><strong>KHÔNG</strong> sử dụng để bỏ qua các kỹ năng chuẩn hóa hiện có.</li>
+                <li><strong>KHÔNG</strong> sử dụng để tạo các file <code>SKILL.md</code> ngoài đường dẫn được phê duyệt.</li>
+                <li><strong>KHÔNG</strong> sử dụng để triển khai mã nguồn trước khi tài liệu đặc tả được phê duyệt.</li>
+            </ul>
+        </div>
+
+        <h2>🔝 Thứ Tự Ưu Tiên Nguồn (Source Priority)</h2>
+        <p>Áp dụng chính xác thứ tự ưu tiên sau:</p>
+        <ol>
+            <li><code>AGENTS.md</code></li>
+            <li><code>VAULT_CONSTITUTION.md</code></li>
+            <li><code>agent/constitution/</code></li>
+            <li><code>agent/rules/</code></li>
+            <li><code>agent/templates/</code></li>
+            <li>Các tài liệu tác vụ hiện tại trong thư mục <code>agent/specs/&lt;spec-id&gt;/</code></li>
+            <li>Các tài liệu tham khảo cấp trên như Superpowers, Spec Kit, Kiro Specs, BMAD, và các quy ước chung về <code>SKILL.md</code>.</li>
+        </ol>
+        <p><em>Nếu có bất kỳ khung tham chiếu bên ngoài nào xung đột với quy định quản trị nội bộ, hãy từ chối quy tắc bên ngoài và tuân thủ tuyệt đối quy định quản trị nội bộ.</em></p>
+
+        <h2>🔄 Quy Trình Thực Hiện (Workflow)</h2>
+
+        <h3>1. Kiểm tra quản trị nội bộ trước (Check local governance first)</h3>
+        <p>Trước khi viết bất kỳ nội dung nào, chỉ đọc những file nội bộ cần thiết cho tác vụ, bắt đầu từ:</p>
+        <ul>
+            <li><code>AGENTS.md</code></li>
+            <li><code>VAULT_CONSTITUTION.md</code></li>
+            <li><code>agent/constitution/README.md</code> và các file liên quan trong thư mục <code>agent/constitution/</code></li>
+            <li>Các file liên quan trong thư mục <code>agent/rules/</code></li>
+        </ul>
+
+        <h3>2. Kiểm tra các kỹ năng chuẩn hóa hiện có (Check existing canonical skills)</h3>
+        <p>Kiểm tra thư mục <code>agent/skills/</code> xem có kỹ năng nào khớp trước khi mở một spec track mới.</p>
+        <ul>
+            <li><strong>Nếu tồn tại một kỹ năng chuẩn hóa khớp:</strong> Dừng luồng tạo kỹ năng này; Sử dụng kỹ năng hiện có đó thay thế; Chỉ tiếp tục với spec-writer nếu người dùng yêu cầu rõ ràng việc làm việc với tài liệu đặc tả.</li>
+            <li><strong>Nếu không có kỹ năng nào khớp:</strong> Tiếp tục với quy trình spec-first bên dưới.</li>
+        </ul>
+
+        <h3>3. Tạo tài liệu kiểm soát đầu tiên (Create the first controlled artifact)</h3>
+        <p>Tài liệu kiểm soát đầu tiên luôn luôn là: <code>agent/specs/YYYY-MM-DD_task-name/SPEC.md</code></p>
+        <p>Hãy tạo mới hoặc chỉnh sửa file <code>SPEC.md</code> trước tiên. Không tạo các file phụ trợ dạng nháp như <code>CHECKLIST.md</code>, <code>PLAN.md</code>, <code>TASKS.md</code>, hoặc <code>REPORT.md</code> trước khi <code>SPEC.md</code> được phê duyệt, trừ khi người dùng cho phép rõ ràng.</p>
+
+        <h3>4. Xây dựng tài liệu đặc tả chính xác (Build the spec correctly)</h3>
+        <p>Mỗi file <code>SPEC.md</code> cần xác định rõ:</p>
+        <ul>
+            <li>Mục tiêu (objective)</li>
+            <li>Phạm vi (scope)</li>
+            <li>Tài liệu tham chiếu (references) - <em>Cần phân tách rõ ràng quy định nội bộ, khung bên ngoài, tài liệu cấp trên, và các tài liệu bị từ chối/không áp dụng.</em></li>
+            <li>Thứ tự ưu tiên nguồn (source priority)</li>
+            <li>Các cổng phê duyệt (approval gates)</li>
+            <li>Các hành động bị cấm (forbidden actions)</li>
+            <li>Các giai đoạn dự kiến trong tương lai (expected future phases)</li>
+        </ul>
+
+        <h3>5. Yêu cầu phê duyệt trước khi tạo tài liệu hạ nguồn (Require approval before downstream artifacts)</h3>
+        <p>Không triển khai mã nguồn trước khi được phê duyệt. Sau khi <code>SPEC.md</code> được duyệt, tạo các tài liệu hạ nguồn theo nhu cầu thực tế và theo đúng thứ tự sau:</p>
+        <ol>
+            <li><code>CHECKLIST.md</code></li>
+            <li><code>PLAN.md</code></li>
+            <li><code>TASKS.md</code></li>
+            <li><code>REPORT.md</code> (chỉ tạo trong các giai đoạn xác minh/báo cáo sau đó)</li>
+        </ol>
+
+        <h3>6. Bảo toàn ranh giới nội bộ (Preserve local boundaries)</h3>
+        <p>Chỉ sử dụng Superpowers như tài liệu tham khảo cấp trên. Tuyệt đối không sao chép trực tiếp Superpowers vào <code>agent/skills/</code>. Mọi hành vi bắt nguồn từ Superpowers phải được viết lại để phù hợp với đường dẫn nội bộ, quyền nội bộ, và các cổng phê duyệt nội bộ.</p>
+
+        <div class="success-box">
+            <h3>🛡️ Rào Chắn Bảo Vệ (Guardrails)</h3>
+            <ul>
+                <li>Giữ tất cả công việc liên quan đến gói kỹ năng này trong thư mục <code>agent/skills/spec-writer/SKILL.md</code>.</li>
+                <li>Không sử dụng <code>agent/skills/skill_&lt;name&gt;/</code> cho spec track này.</li>
+                <li><strong>Không chỉnh sửa:</strong> <code>AGENTS.md</code>, <code>VAULT_CONSTITUTION.md</code>, hoặc các file trong <code>agent/constitution/</code> hay <code>agent/rules/</code> nếu không được phê duyệt rõ ràng.</li>
+                <li>Không đưa nội dung thử nghiệm (lab content) lên các phân vùng chính thức (canonical zones) khi chưa được phê duyệt rõ ràng.</li>
+                <li>Không xóa hoặc di chuyển file, không commit hoặc push khi chưa được phê duyệt rõ ràng.</li>
+                <li>Không nhúng mã nguồn thực thi trực tiếp vào kỹ năng này.</li>
+            </ul>
+        </div>
+
+        <h2>⚡ Tham Khảo Nhanh (Quick Reference)</h2>
+        <ul>
+            <li><strong>File đầu tiên:</strong> <code>agent/specs/YYYY-MM-DD_task-name/SPEC.md</code></li>
+            <li><strong>Quyết định đầu tiên:</strong> Kiểm tra xem có kỹ năng chuẩn hóa hiện có nào phù hợp hay không.</li>
+            <li><strong>Cổng thứ nhất:</strong> Đánh giá quản trị nội bộ.</li>
+            <li><strong>Cổng thứ hai:</strong> Phê duyệt <code>SPEC.md</code>.</li>
+            <li><strong>Các tài liệu hạ nguồn sau phê duyệt:</strong> <code>CHECKLIST.md</code>, <code>PLAN.md</code>, <code>TASKS.md</code>.</li>
+            <li><strong>Phương pháp bên ngoài:</strong> Chỉ dùng làm tài liệu tham khảo, tuyệt đối không có quyền cao hơn quy định quản trị nội bộ.</li>
+        </ul>
+
+        <h2>⚠️ Lỗi Thường Gặp (Common Mistakes)</h2>
+        <ul>
+            <li>Tạo <code>PLAN.md</code> hoặc <code>TASKS.md</code> trước khi <code>SPEC.md</code> được phê duyệt.</li>
+            <li>Coi Superpowers là nội dung chuẩn hóa nội bộ.</li>
+            <li>Sử dụng trường <code>description</code> để tóm tắt quy trình (workflow) thay vì mô tả các điều kiện kích hoạt (trigger conditions).</li>
+            <li>Bỏ qua việc kiểm tra kỹ năng chuẩn hóa hiện có.</li>
+            <li>Coi các mẫu bên ngoài là lý do để phớt lờ quy định quản trị nội bộ.</li>
+        </ul>
+
+        <div class="footer">
+            <p><em>Tài liệu hướng dẫn kỹ năng Spec Writer — NoteBookLLM_Br</em></p>
+            <p>Đường dẫn tệp gốc: <a href="file:///d:/NoteBookLLM_Br/workspaces/learning/outputs/spec-writer.md">spec-writer.md</a></p>
+        </div>
+    </div>
+</body>
+</html>

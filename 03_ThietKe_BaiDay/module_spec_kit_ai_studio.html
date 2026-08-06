@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiết Kế Module Chi Tiết — Spec-First Product Development</title>
+    <!-- Google Fonts: Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- MathJax for LaTeX Rendering -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #0B2545; /* Navy Blue */
+            --secondary-color: #134074;
+            --bg-color: #EEF4F8;
+            --text-color: #1D2A3A;
+            --card-bg: #FFFFFF;
+            --border-color: #D0DBE5;
+            --accent-color: #0077B6;
+            --highlight-bg: #FFFDF5;
+            --danger-color: #D90429;
+            --success-color: #2EC4B6;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.7;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 50px 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(11, 37, 69, 0.1);
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-color);
+            margin-top: 1.8em;
+            margin-bottom: 0.6em;
+            font-weight: 700;
+        }
+
+        h1 {
+            border-bottom: 4px solid var(--primary-color);
+            padding-bottom: 15px;
+            font-size: 2.2rem;
+            text-align: center;
+            line-height: 1.3;
+            margin-top: 0;
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            color: var(--secondary-color);
+            border-left: 4px solid var(--accent-color);
+            padding-left: 10px;
+        }
+
+        p {
+            text-align: justify;
+            margin-bottom: 1.2rem;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .philosophy-box {
+            background-color: #F0F4F8;
+            border-left: 5px solid var(--primary-color);
+            padding: 20px 25px;
+            border-radius: 0 12px 12px 0;
+            margin-bottom: 35px;
+            font-style: normal;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        .philosophy-box p {
+            margin: 8px 0;
+        }
+
+        .toc-box {
+            background-color: #F8FAFC;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .toc-box h3 {
+            margin-top: 0;
+            border-left: none;
+            padding-left: 0;
+            color: var(--primary-color);
+        }
+
+        .toc-box ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .toc-box li {
+            margin-bottom: 8px;
+        }
+
+        .toc-box li ul {
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+
+        .flow-chart {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #F0F4F8;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+            gap: 10px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .flow-step {
+            flex: 1;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            border-top: 4px solid var(--primary-color);
+            min-width: 150px;
+            transition: transform 0.2s ease;
+        }
+
+        .flow-step:hover {
+            transform: translateY(-3px);
+        }
+
+        .step-title {
+            font-weight: bold;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+        }
+
+        .step-desc {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        .step-sub {
+            font-size: 0.8rem;
+            color: #718096;
+            margin-top: 5px;
+        }
+
+        .flow-arrow {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.95rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 14px 16px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #F8FAFC;
+        }
+
+        tr:hover {
+            background-color: #EDF2F7;
+            transition: background-color 0.2s ease;
+        }
+
+        code {
+            background-color: #E2E8F0;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            color: #C71585;
+            font-weight: 600;
+        }
+
+        pre {
+            background-color: #1A202C;
+            color: #EDF2F7;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Courier New', Courier, monospace;
+            border-left: 4px solid var(--accent-color);
+            margin: 20px 0;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        pre code {
+            background-color: transparent;
+            padding: 0;
+            color: inherit;
+            font-size: 0.95em;
+            font-weight: normal;
+        }
+
+        blockquote {
+            border-left: 5px solid var(--accent-color);
+            background-color: #F7FAFC;
+            margin: 25px 0;
+            padding: 15px 25px;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        ul, ol {
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            text-align: justify;
+        }
+
+        /* Checkbox lists */
+        .task-list {
+            list-style: none;
+            padding-left: 5px;
+        }
+
+        .task-list-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        .task-list-item input[type="checkbox"] {
+            display: none;
+        }
+
+        .custom-checkbox {
+            position: absolute;
+            left: 0;
+            top: 3px;
+            width: 18px;
+            height: 18px;
+            border: 2px solid var(--secondary-color);
+            border-radius: 4px;
+            background: white;
+            display: inline-block;
+        }
+
+        .task-list-item.checked .custom-checkbox {
+            background-color: var(--success-color);
+            border-color: var(--success-color);
+        }
+
+        .task-list-item.checked .custom-checkbox::after {
+            content: "✓";
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            position: absolute;
+            top: -2px;
+            left: 3px;
+        }
+
+        .task-list-item.unchecked .custom-checkbox {
+            border-color: #A0AEC0;
+        }
+
+        .footer {
+            margin-top: 60px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+            font-size: 0.85rem;
+            color: #718096;
+            text-align: center;
+        }
+
+        .badge {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+
+        .sub-badge {
+            font-size: 0.9rem;
+            color: #718096;
+            font-weight: normal;
+            display: block;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .flow-chart {
+                flex-direction: column;
+            }
+            .flow-arrow {
+                transform: rotate(90deg);
+                margin: 5px 0;
+            }
+            .container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Thiết Kế Module Chi Tiết<br><span style="font-size: 1.5rem; font-weight: normal; color: var(--secondary-color);">Phiên Bản v2.5 — Spec-First Product Development for STEM Educators</span></h1>
+        <h2 style="justify-content: center; font-size: 1.3rem; border: none; padding: 0; margin-top: 10px; color: var(--secondary-color);">Khóa Học: Phát Triển Sản Phẩm AI Cho Giáo Viên STEM Bằng Google AI Studio</h2>
+
+        <div class="philosophy-box">
+            <p><strong>Triết lý cốt lõi:</strong> Khóa học không dạy mẹo gõ prompt vụn vặt (<em>Prompt-first</em>), mà dạy <strong>tư duy phát triển sản phẩm AI có hệ thống (<em>Spec-first</em>)</strong>:</p>
+            <div style="font-size: 1.1rem; text-align: center; margin: 15px 0; font-weight: bold; color: var(--primary-color);">
+                $$\text{Bài toán } \rightarrow \text{Yêu cầu } \rightarrow \text{Đặc tả } \rightarrow \text{Khởi tạo với AI } \rightarrow \text{Đánh giá \& Cải tiến } \rightarrow \text{Triển khai}$$
+            </div>
+            <p>Học viên không học lập trình. Học viên thực thi trực tiếp bằng ngôn ngữ tự nhiên trên Google AI Studio Build Mode và chuyển giao thành tiến trình bài dạy STEM theo quy trình EDP cho học sinh.</p>
+            <p style="margin-top: 15px; font-size: 0.9rem; color: #4A5568;"><strong>Phiên bản:</strong> 2.5 (Chuẩn hóa quy trình Spec-first) | <strong>Ngày:</strong> 2026-07-22</p>
+        </div>
+
+        <div class="toc-box">
+            <h3>📑 MỤC LỤC TÀI LIỆU</h3>
+            <ul>
+                <li>1. <a href="#pre-session-checklist">Pre-session Checklist (Gửi trước khi bắt đầu)</a></li>
+                <li>2. <a href="#course-map">Bản Đồ Khóa Học & Chuỗi Sản Phẩm (Deliverables)</a></li>
+                <li>3. <a href="#general-info">Thông Tin Chung & Hồ Sơ Dự Án</a></li>
+                <li>4. <a href="#course-outline">Outline Tổng Quan Khóa Học</a></li>
+                <li>5. <a href="#detailed-content">Nội Dung Chi Tiết 4 Module</a>
+                    <ul>
+                        <li><a href="#module-1">Module 1: Lập Kế Hoạch Phát Triển Sản Phẩm AI</a></li>
+                        <li><a href="#module-2">Module 2: Xây Dựng Ứng Dụng Với Google AI Studio Build Mode</a></li>
+                        <li><a href="#module-3">Module 3: Kiểm Thử, Cải Tiến & Hoàn Thiện Ứng Dụng AI</a></li>
+                        <li><a href="#module-4">Module 4: Triển Khai Ứng Dụng AI Vào Giảng Dạy</a></li>
+                    </ul>
+                </li>
+                <li>6. <a href="#appendix-a">Phụ Lục A: Mẫu "Hồ Sơ Dự Án" Đã Điền Sẵn Complete (Plant ID)</a></li>
+                <li>7. <a href="#appendix-b">Phụ Lục B: Rubric Đánh Giá Demo Day</a></li>
+                <li>8. <a href="#appendix-c">Phụ Lục C: Bảng Xử Lý Lỗi Thường Gặp & Lưu Ý Quota</a></li>
+                <li>9. <a href="#appendix-d">Phụ Lục D: Glossary 1 Trang (Giải Nghĩa Thuật Ngữ)</a></li>
+            </ul>
+        </div>
+
+        <h2 id="pre-session-checklist">📋 PRE-SESSION CHECKLIST (Gửi Trước 2 Ngày)</h2>
+        <ul class="task-list">
+            <li class="task-list-item unchecked">
+                <span class="custom-checkbox"></span>
+                <strong>Tài khoản Google:</strong> Có sẵn tài khoản <strong>Gmail cá nhân (<code>@gmail.com</code>)</strong>. <em>(Lưu ý: KHÔNG dùng email trường học <code>@edu</code> hay <code>@kdi.edu.vn</code> vì bị khóa quyền deploy và gặp lỗi API)</em>.
+            </li>
+            <li class="task-list-item unchecked">
+                <span class="custom-checkbox"></span>
+                <strong>Trình duyệt:</strong> Cài đặt Chrome phiên bản mới nhất trên máy tính.
+            </li>
+            <li class="task-list-item unchecked">
+                <span class="custom-checkbox"></span>
+                <strong>Cấu hình Chrome:</strong> Đã cho phép cookies cho domain <code>ai.google.dev</code> trong Settings.
+            </li>
+            <li class="task-list-item unchecked">
+                <span class="custom-checkbox"></span>
+                <strong>Truy cập thử:</strong> Mở thành công trang <code>https://aistudio.google.com/apps</code>.
+            </li>
+            <li class="task-list-item unchecked">
+                <span class="custom-checkbox"></span>
+                <strong>Chuẩn bị ý tưởng:</strong> Suy nghĩ sẵn 1 bài toán thực tế trong giảng dạy STEM mà bạn ước AI có thể giúp giải quyết.
+            </li>
+        </ul>
+
+        <h2 id="course-map">🗺️ BẢN ĐỒ KHÓA HỌC & CHUỖI SẢN PHẨM (DELIVERABLES)</h2>
+        
+        <div class="flow-chart">
+            <div class="flow-step">
+                <div class="step-title">Module 1: PLAN</div>
+                <div class="step-desc">Lập Kế Hoạch</div>
+                <div class="step-sub">(Brief & Spec)</div>
+            </div>
+            <div class="flow-arrow">➔</div>
+            <div class="flow-step">
+                <div class="step-title">Module 2: BUILD</div>
+                <div class="step-desc">Xây Dựng</div>
+                <div class="step-sub">(Prototype V1)</div>
+            </div>
+            <div class="flow-arrow">➔</div>
+            <div class="flow-step">
+                <div class="step-title">Module 3: VALIDATE</div>
+                <div class="step-desc">Kiểm Thử & Hoàn Thiện</div>
+                <div class="step-sub">(Release Candidate)</div>
+            </div>
+            <div class="flow-arrow">➔</div>
+            <div class="flow-step">
+                <div class="step-title">Module 4: DEPLOY</div>
+                <div class="step-desc">Triển Khai Giảng Dạy</div>
+                <div class="step-sub">(Public App & Lesson Plan)</div>
+            </div>
+        </div>
+
+        <h3>🎯 Chuỗi Sản Phẩm Học Viên Thu Được Sau Mỗi Module:</h3>
+        <ol>
+            <li><strong>Sau Module 1:</strong> Product Brief + Product Specification + Wireframe giao diện (Hoàn thành <strong>Phần 1</strong> Hồ sơ dự án).</li>
+            <li><strong>Sau Module 2:</strong> Prototype Version 1 + Task List (Hoàn thành <strong>Phần 2</strong> Hồ sơ dự án).</li>
+            <li><strong>Sau Module 3:</strong> Release Candidate + Checklist kiểm thử và Đạo đức AI (Hoàn thành <strong>Phần 3</strong> Hồ sơ dự án).</li>
+            <li><strong>Sau Module 4:</strong> Ứng dụng AI hoàn chỉnh (URL public) + Hồ sơ dự án hoàn chỉnh + Kế hoạch triển khai dạy học STEM.</li>
+        </ol>
+
+        <h2 id="general-info">🎯 THÔNG TIN CHUNG & HỒ SƠ DỰ ÁN</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 30%;">Hạng mục</th>
+                    <th style="width: 70%;">Chi tiết</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Đối tượng</strong></td>
+                    <td>Giáo viên STEM THCS – THPT</td>
+                </tr>
+                <tr>
+                    <td><strong>Thời lượng</strong></td>
+                    <td>4 Module × 90 phút (Project-based)</td>
+                </tr>
+                <tr>
+                    <td><strong>Hình thức nộp bài</strong></td>
+                    <td><strong>1 Google Doc duy nhất duy trì xuyên suốt 4 Module</strong> tên là <code>"Hồ sơ dự án: [Tên App]"</code></td>
+                </tr>
+                <tr>
+                    <td><strong>Công cụ thực thi</strong></td>
+                    <td>Google AI Studio Build Mode (<code>+ New app</code>)</td>
+                </tr>
+                <tr>
+                    <td><strong>Sản phẩm đầu ra</strong></td>
+                    <td>URL Web App public chạy thật dạng <code>https://[ten-app].ai.studio</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 id="course-outline">📅 OUTLINE TỔNG QUAN KHÓA HỌC</h2>
+        
+        <h3>MODULE 1. LẬP KẾ HOẠCH PHÁT TRIỂN SẢN PHẨM AI</h3>
+        <ul>
+            <li><strong>1.1. AI trong giáo dục & Xác định bài toán:</strong> Vai trò của AI trong dạy học, các mô hình AI hiện nay, Ai gặp vấn đề? Vấn đề là gì? Dùng AI có phù hợp không?, So sánh Demo A (prompt ngắn) vs. Demo B (có đặc tả).</li>
+            <li><strong>1.2. Xác định yêu cầu (Requirements):</strong> Phân tích 5 yếu tố cốt lõi: Người dùng, Input, Output, Chức năng chính, Ràng buộc (Constraints - VD: không lưu dữ liệu học sinh, dung lượng ảnh < 5MB).</li>
+            <li><strong>1.3. Thiết kế sản phẩm AI (Design):</strong> Thiết kế luồng hoạt động (Data Flow), Wireframe giao diện (UI), Trải nghiệm người dùng (UX 4 tiêu chí Microsoft).</li>
+            <li><strong>1.4. Viết đặc tả sản phẩm (Specification):</strong> Mô tả sản phẩm, Phạm vi (Scope), Tiêu chí hoàn thành (Acceptance Criteria).</li>
+            <li><strong>Sản phẩm sau Module:</strong> Product Brief + Product Specification + Wireframe giao diện.</li>
+        </ul>
+
+        <h3>MODULE 2. XÂY DỰNG ỨNG DỤNG VỚI GOOGLE AI STUDIO BUILD MODE</h3>
+        <ul>
+            <li><strong>2.1. Khởi tạo dự án:</strong> Giao diện Build Mode, Thiết lập AI Chips ban đầu, Quy trình chuyển hóa từ Đặc tả sang mã nguồn.</li>
+            <li><strong>2.2. Sinh phiên bản đầu tiên (Generate Prototype V1):</strong> Chuyển Product Specification thành Master Prompt (Hướng dẫn viết prompt: Intent-Based vs Implementation-Constrained, Cấu trúc prompt 5 thành phần), Sinh nguyên mẫu Prototype V1 trên Live Preview.</li>
+            <li><strong>2.3. Đánh giá kết quả (Review):</strong> Quan sát màn hình Live Preview, so sánh giữa sản phẩm AI vừa sinh ra và bản Product Specification ban đầu để nhận biết cái gì đúng, cái gì lệch.</li>
+            <li><strong>2.4. Cải tiến theo vòng lặp (Refine):</strong> Phân rã yêu cầu thành Task List 4 Phase, làm việc với Chat Panel, dùng bút vẽ (Annotation Mode ✏️) để sửa giao diện trực quan.</li>
+            <li><strong>2.5. Quản lý phiên bản:</strong> Checkpoint, Restore, Quản lý các phiên bản ứng dụng, những lưu ý khi phát triển.</li>
+            <li><strong>Sản phẩm sau Module:</strong> Prototype Version 1 + Task List 4 Phase.</li>
+        </ul>
+
+        <h3>MODULE 3. KIỂM THỬ, CẢI TIẾN & HOÀN THIỆN ỨNG DỤNG AI</h3>
+        <ul>
+            <li><strong>3.1. Kiểm thử ứng dụng:</strong> Kiểm thử chức năng (Happy Path, Edge Cases), Kiểm thử giao diện di động, Kiểm thử phản hồi AI (AI Behavior & Fabrication Guard), Ghi nhận danh sách lỗi.</li>
+            <li><strong>3.2. Cải tiến ứng dụng sau kiểm thử:</strong> Sửa lỗi xử lý AI (Fix AI Behavior/Fabrication), Sửa lỗi giao diện bằng Bút vẽ (Annotation Mode ✏️), Tối ưu UX sau kiểm thử.</li>
+            <li><strong>3.3. Đánh giá chất lượng:</strong> Đánh giá độ ổn định và độ chính xác theo Product Specification & Tiêu chí hoàn thành (Acceptance Criteria).</li>
+            <li><strong>3.4. Đạo đức AI trong giáo dục:</strong> Hallucination, Kiểm chứng thông tin, Quyền riêng tư & Dữ liệu, Sử dụng AI có trách nhiệm (Khung phân tích 3 Vai).</li>
+            <li><strong>Sản phẩm sau Module:</strong> Release Candidate (Phiên bản sẵn sàng triển khai) + Checklist kiểm thử & Đạo đức AI.</li>
+        </ul>
+
+        <h3>MODULE 4. TRIỂN KHAI ỨNG DỤNG AI VÀO GIẢNG DẠY</h3>
+        <ul>
+            <li><strong>4.1. Xuất bản và chia sẻ ứng dụng:</strong> Publish ứng dụng (Starter Tier Public URL 1-click), Chia sẻ cho người dùng (URL/QR Code), Quản lý phiên bản xuất bản.</li>
+            <li><strong>4.2. Thiết kế hoạt động dạy học:</strong> Tích hợp ứng dụng AI vào tiến trình dạy học (chuyển đổi thành Quy trình EDP 6 bước cho học sinh STEM), Chuẩn bị học liệu.</li>
+            <li><strong>4.3. Đánh giá và cải tiến sau triển khai:</strong> Thu thập phản hồi, Cải tiến nâng cấp, Demo Day & Đánh giá chéo theo Rubric 4 tiêu chí.</li>
+            <li><strong>Sản phẩm sau Module:</strong> Ứng dụng AI công khai + Hồ sơ dự án hoàn chỉnh + Kế hoạch triển khai trong dạy học STEM.</li>
+        </ul>
+
+        <div style="margin: 40px 0; border-bottom: 2px dashed var(--border-color);"></div>
+
+        <h1 id="detailed-content">Nội Dung Chi Tiết Các Module</h1>
+
+        <h2 id="module-1">MODULE 1: Lập Kế Hoạch Phát Triển Sản Phẩm AI <span class="badge">90 PHÚT</span><span class="sub-badge">Mục tiêu: Xác định bài toán, yêu cầu và hoàn thành đặc tả sản phẩm | Đầu ra: Product Brief, Spec, Wireframe</span></h2>
+        
+        <h3>1.1. AI Trong Giáo Dục & Xác Định Bài Toán (20 phút)</h3>
+        <ul>
+            <li><strong>Năng lực AI hiện đại trong dạy học:</strong> Tổng quan vai trò của AI, các mô hình ngôn ngữ (LLM) và thị giác máy tính (Multimodal Vision) làm trợ lý học tập cho học sinh.</li>
+            <li><strong>Xác định bài toán thực tế:</strong>
+                <ul>
+                    <li><em>Ai gặp vấn đề?</em> (VD: Học sinh lớp 6 khi đi học thực địa Sinh học ngoài sân trường).</li>
+                    <li><em>Vấn đề là gì?</em> (Không nhớ tên cây, không mang sách giáo khoa, dễ nhầm lẫn các loài thực vật).</li>
+                    <li><em>Dùng AI có phù hợp không?</em> (Rất phù hợp vì AI Vision nhận diện ảnh tức thì ngay ngoài sân trường).</li>
+                </ul>
+            </li>
+            <li><strong>Live Demo So Sánh (Cú hích nhận thức):</strong>
+                <ul>
+                    <li><em>Demo A (Gõ prompt vụn vặt tự phát — <code>nhận-diện-cây-xanh.zip</code>):</em> Cho học viên thấy gõ prompt 6 từ mơ hồ sẽ làm AI tự sinh app cẩm nang chăm sóc cây cảnh rườm rà, lạc đề.</li>
+                    <li><em>Demo B (Phát triển có Kế hoạch & Đặc tả — <code>plant-identifier.zip</code>):</em> Cho học viên thấy khi có Kế hoạch và Đặc tả chuẩn, ta kiểm soát AI thu gọn app lại đúng 5 trường chuẩn bài học Sinh học.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>1.2. Xác Định Yêu Cầu Sản Phẩm (Requirements) (25 phút)</h3>
+        <blockquote>
+            💡 <strong>Lưu ý sư phạm:</strong> Một câu nói như <em>"Tôi muốn AI chấm bài"</em> KHÔNG PHẢI là yêu cầu. Hướng dẫn học viên bóc tách bài toán thành 5 thành phần yêu cầu rõ ràng:
+        </blockquote>
+        <ul>
+            <li><strong>1. Người dùng (Target User):</strong> Học sinh lớp 6 THCS.</li>
+            <li><strong>2. Đầu vào (Input):</strong> Ảnh chụp lá cây/toàn cây từ camera điện thoại.</li>
+            <li><strong>3. Đầu ra (Output):</strong> Tên tiếng Việt, tên khoa học (Latin), mô tả đặc điểm 2 câu, mức độ tin cậy.</li>
+            <li><strong>4. Chức năng chính (Core Features):</strong> Khung xem ảnh chụp, nút "Phân Tích", thẻ hiển thị kết quả, nút chụp lại.</li>
+            <li><strong>5. Ràng buộc (Constraints):</strong> KHÔNG lưu trữ dữ liệu cá nhân học sinh, KHÔNG yêu cầu đăng nhập, giới hạn dung lượng ảnh &lt; 5MB.</li>
+        </ul>
+
+        <h3>1.3. Thiết Kế Sản Phẩm AI (Design) (25 phút)</h3>
+        <ul>
+            <li><strong>Thiết kế luồng hoạt động (Data Flow):</strong> Vẽ sơ đồ luồng di chuyển dữ liệu (<code>Chụp ảnh ➔ Hiện trạng thái Loading ➔ Gemini Vision API ➔ Hiển thị thẻ kết quả</code>).</li>
+            <li><strong>Thiết kế giao diện (UI Wireframe):</strong> Phác thảo giao diện 1 màn hình đơn giản trên giấy hoặc slide.</li>
+            <li><strong>Thiết kế trải nghiệm người dùng (UX):</strong> Áp dụng 4 tiêu chí UX của Microsoft:
+                <ul>
+                    <li><em>Useful (Có ích):</em> Giải quyết đúng nhu cầu làm bài thu hoạch thực địa.</li>
+                    <li><em>Reliable (Đáng tin):</em> Hiển thị mác <em>"Mức độ tin cậy: Thấp"</em> kèm lời khuyên hỏi giáo viên khi ảnh mờ.</li>
+                    <li><em>Accessible (Dễ dùng):</em> Nút chụp to rõ ở trung tâm màn hình, không cần đăng nhập.</li>
+                    <li><em>Pleasant (Dễ chịu):</em> Tông màu xanh lá cây mát mắt, font chữ to rõ dễ đọc ngoài trời.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>1.4. Viết Product Specification (Specification) (20 phút)</h3>
+        <ul>
+            <li>Tổng hợp Bài toán + Yêu cầu + Thiết kế thành bản <strong>Product Specification</strong> hoàn chỉnh trong Hồ sơ dự án Google Doc Phần 1.</li>
+            <li>Xác định rõ phạm vi sản phẩm (Scope v1) và những gì KHÔNG làm ở v1 (Out of scope).</li>
+            <li>Xác định <strong>Tiêu chí hoàn thành (Acceptance Criteria)</strong> để kiểm thử ở Module 3.</li>
+        </ul>
+
+        <h2 id="module-2">MODULE 2: Xây Dựng Ứng Dụng Với Google AI Studio Build Mode <span class="badge">90 PHÚT</span><span class="sub-badge">Mục tiêu: Chuyển đặc tả thành nguyên mẫu Prototype V1 | Đầu ra: Prototype V1, Task List</span></h2>
+        
+        <h3>2.1. Khởi Tạo Dự Án (15 phút)</h3>
+        <ul>
+            <li>Mở Google AI Studio Build Mode (<code>https://aistudio.google.com/apps</code>) ➔ Click <strong>+ New app</strong>.</li>
+            <li><strong>Thiết lập AI Chips ban đầu:</strong> Tích chọn bật trước các AI Chips cần thiết (VD: <em>Google Search</em>, <em>Image Gen</em>) ngay ở màn hình khởi tạo để AI thiết lập đúng cấu trúc ban đầu.</li>
+            <li>Tổng quan quy trình chuyển hóa từ Đặc tả (Product Specification) sang mã nguồn.</li>
+        </ul>
+
+        <h3>2.2. Sinh Phiên Bản Đầu Tiên (Generate Prototype V1) (25 phút)</h3>
+        <ul>
+            <li><strong>Hướng dẫn viết prompt (Chuyển Product Spec thành yêu cầu cho AI):</strong>
+                <ul>
+                    <li><em>Mô tả mục tiêu (Intent-Based Prompting):</em> Nói AI biết mình muốn đạt kết quả gì (để AI tự lựa chọn công nghệ).</li>
+                    <li><em>Chỉ định cách thực hiện (Implementation-Constrained Prompting):</em> Yêu cầu AI phải dùng công nghệ, thư viện hoặc kiến trúc cụ thể (VD: <em>"Use MediaPipe for hand gesture"</em>).</li>
+                </ul>
+            </li>
+            <li><strong>Cấu trúc prompt gồm 5 thành phần:</strong>
+                <ol>
+                    <li>Build a [Loại app] for [Người dùng].</li>
+                    <li>Allow users to [Đầu vào].</li>
+                    <li>Call Gemini to return: [Kết quả trả về].</li>
+                    <li>If confidence is low, return "Unknown" with Low confidence.</li>
+                    <li>Use a clean design with [Màu sắc / Phong cách].</li>
+                </ol>
+            </li>
+            <li><strong>Sinh Prototype V1:</strong> Bấm <strong>Build (Ctrl+Enter)</strong> ➔ Quan sát khung ứng dụng sơ khởi xuất hiện trên Live Preview bên phải.</li>
+        </ul>
+
+        <h3>2.3. Đánh Giá Kết Quả (Review) (15 phút)</h3>
+        <blockquote>
+            💡 <strong>Lý do cần bước Review:</strong> AI là mô hình xác suất. Khi Prototype V1 xuất hiện, học viên cần đối chiếu trực tiếp giữa <strong>Cái mong muốn (Spec)</strong> và <strong>Cái AI vừa làm ra (Prototype V1)</strong> để phát hiện cái gì đúng, cái gì còn thiếu/lệch trước khi ra lệnh cải tiến.
+        </blockquote>
+        <ul>
+            <li>Học viên quan sát giao diện Live Preview và đánh giá:
+                <ul>
+                    <li>AI đã dựng đúng bộ khung upload ảnh chưa?</li>
+                    <li>Màu sắc và cỡ chữ đã phù hợp chưa?</li>
+                    <li>Đã có thông báo trạng thái chờ (loading) và hiển thị mác tin cậy chưa?</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>2.4. Cải Tiến Theo Vòng Lập (Refine) (25 phút)</h3>
+        <ul>
+            <li><strong>Phân rã yêu cầu thành Task List 4 Phase:</strong>
+                <ul>
+                    <li><em>Phase 1 (Giao diện):</em> Điều chỉnh màu sắc header, cỡ chữ, nút bấm.</li>
+                    <li><em>Phase 2 (Xử lý AI):</em> Tinh chỉnh câu lệnh Gemini trả về kết quả tiếng Việt chuẩn.</li>
+                    <li><em>Phase 3 (Hiệu ứng):</em> Thêm spinner loading khi đang phân tích.</li>
+                    <li><em>Phase 4 (Báo lỗi):</em> Thông báo khi dung lượng ảnh &gt; 5MB.</li>
+                </ul>
+            </li>
+            <li><strong>Làm việc với Chat Panel:</strong> Nhập từng câu lệnh từ Task List vào ô chat để cải tiến từng bước.</li>
+            <li><strong>Sử dụng Bút vẽ (Annotation Mode ✏️):</strong> Bật bút vẽ ➔ Khoanh trực tiếp quanh vùng bị lệch trên Live Preview ➔ Ra lệnh cho AI sửa chính xác vùng đã khoanh.</li>
+        </ul>
+
+        <h3>2.5. Quản Lý Phiên Bản (Checkpoint & Restore) (10 phút)</h3>
+        <ul>
+            <li><strong>Sử dụng Checkpoint & Restore:</strong> Khi AI làm hỏng giao diện, cuộn Chat Panel lên và bấm <strong>Restore</strong> để quay về phiên bản ổn định trước đó.</li>
+            <li>Những lưu ý quan trọng để giữ mã nguồn ứng dụng sạch sẽ, không bị phồng to.</li>
+        </ul>
+
+        <h2 id="module-3">MODULE 3: Kiểm Thử, Cải Tiến & Hoàn Thiện Ứng Dụng AI <span class="badge">90 PHÚT</span><span class="sub-badge">Mục tiêu: Hoàn thiện ứng dụng trước khi triển khai | Đầu ra: Release Candidate, Checklist kiểm thử & Đạo đức AI</span></h2>
+        
+        <h3>3.1. Kiểm Thử Ứng Dụng (25 phút)</h3>
+        <ul>
+            <li><strong>Kiểm thử chức năng (Happy Path & Edge Cases):</strong> Test trường hợp ảnh chụp lý tưởng (lá bàng rõ nét) vs. ảnh mờ, ảnh tối, ảnh mặt người.</li>
+            <li><strong>Kiểm thử giao diện di động:</strong> Kiểm tra tính responsive và bố cục hiển thị trên màn hình điện thoại.</li>
+            <li><strong>Kiểm thử phản hồi AI (AI Behavior & Fabrication Guard):</strong> Kiểm tra xem AI có bị bịa đặt thông tin (<strong>Fabrication</strong>) khi thiếu dữ liệu không, có trả về nhãn <em>"Unknown"</em> hoặc <em>"Độ tin cậy: Thấp"</em> đúng như đặc tả không.</li>
+            <li><strong>Ghi nhận danh sách lỗi:</strong> Liệt kê các lỗi thực tế cần khắc phục.</li>
+        </ul>
+
+        <h3>3.2. Cải Tiến Ứng Dụng Sau Kiểm Thử (25 phút)</h3>
+        <blockquote>
+            💡 <strong>Sự khác biệt với Cải tiến ở Module 2:</strong> Cải tiến ở Module 2 là làm theo Task List kế hoạch để dựng khung V1. Cải tiến ở Module 3 là <strong>sửa lỗi thực tế phát sinh sau khi test (Bug-Driven Optimization)</strong> để đưa app đạt chuẩn xuất bản công khai.
+        </blockquote>
+        <ul>
+            <li><strong>Sửa lỗi xử lý AI (Fix AI Behavior & Fabrication Bugs):</strong> Tinh chỉnh câu lệnh Gemini trong Chat Panel để khắc phục các lỗi phát hiện từ bước 3.1 (VD: Ép Gemini bắt buộc trả về "Unknown" khi gặp ảnh mờ/tối).</li>
+            <li><strong>Sửa lỗi giao diện phát sinh bằng Bút vẽ (Annotation Mode ✏️):</strong> Bật bút vẽ ✏️ ➔ Khoanh quanh các vùng bị vỡ/lệch giao diện trên Live Preview di động ➔ Ra lệnh cho AI sửa đúng vị trí.</li>
+            <li><strong>Tối ưu trải nghiệm người dùng sau kiểm thử (Post-Testing UX Refinement):</strong> Bổ sung nhãn cảnh báo an toàn và chuẩn hóa giao diện dựa trên 4 tiêu chí UX (Useful, Reliable, Accessible, Pleasant).</li>
+        </ul>
+
+        <h3>3.3. Đánh Giá Chất Lượng (20 phút)</h3>
+        <ul>
+            <li>Đánh giá độ ổn định và độ chính xác của ứng dụng dựa trên bản <strong>Product Specification</strong> và các <strong>Tiêu chí hoàn thành (Acceptance Criteria)</strong> đã lập ở Module 1.</li>
+            <li>Xác nhận ứng dụng đã đạt trạng thái <strong>Release Candidate (Sẵn sàng triển khai)</strong>.</li>
+        </ul>
+
+        <h3>3.4. Đạo Đức AI Trong Giáo Dục (20 phút)</h3>
+        <ul>
+            <li><strong>Phân tích rủi ro AI:</strong> Hiện tượng ảo giác (Hallucination), nguy cơ ngộ nhận kiến thức, bảo mật quyền riêng tư dữ liệu học sinh.</li>
+            <li><strong>Khung phân tích Đạo đức AI theo Mô hình 3 Vai:</strong>
+                <ul>
+                    <li><em>Vai 1 — Người dùng (Học sinh):</em> Rủi ro khi tin tuyệt đối vào AI.</li>
+                    <li><em>Vai 2 — Nhà phát triển (Giáo viên):</em> Trách nhiệm ghi nhãn cảnh báo an toàn trên app.</li>
+                    <li><em>Vai 3 — Hệ thống AI:</em> Cấu hình prompt kèm thang đánh giá độ tin cậy.</li>
+                </ul>
+            </li>
+            <li>Hoàn thành <strong>Checklist kiểm thử & Đạo đức AI</strong> trong Hồ sơ dự án Google Doc.</li>
+        </ul>
+
+        <h2 id="module-4">MODULE 4: Triển Khai Ứng Dụng AI Vào Giảng Dạy <span class="badge">90 PHÚT</span><span class="sub-badge">Mục tiêu: Đưa ứng dụng vào hoạt động và lập kế hoạch giảng dạy | Đầu ra: Ứng dụng công khai, Giáo án EDP</span></h2>
+        
+        <h3>4.1. Xuất Bản Và Chia Sẻ Ứng Dụng (20 phút)</h3>
+        <ul>
+            <li><strong>Publish ứng dụng 1-Click:</strong> Click nút <strong>Publish</strong> màu xanh lá ➔ Chọn Starter Tier ➔ Nhập tên URL ➔ Bấm <strong>Publish App</strong> để nhận link công khai <code>https://[ten-app].ai.studio</code> và mã QR Code.</li>
+            <li><strong>Chia sẻ cho người dùng:</strong> Gửi link URL/mã QR cho học sinh mở trực tiếp trên thiết bị di động.</li>
+            <li><strong>Quản lý các phiên bản xuất bản.</strong></li>
+        </ul>
+
+        <h3>4.2. Thiết Kế Hoạt Động Dạy Học (35 phút)</h3>
+        <ul>
+            <li><strong>Xác định mục tiêu bài học STEM:</strong> Tích hợp sản phẩm AI vào chương trình môn học.</li>
+            <li><strong>Thiết kế hoạt động học tập (Chuyển đổi thành Quy trình EDP 6 bước cho học sinh):</strong>
+                <ol>
+                    <li><em>Bước 1: Xác định vấn đề</em> ➔ Học sinh mô tả nhu cầu thực tế.</li>
+                    <li><em>Bước 2: Nghiên cứu kiến thức nền</em> ➔ Học sinh trải nghiệm thử demo công nghệ AI.</li>
+                    <li><em>Bước 3: Đề xuất & Lựa chọn giải pháp</em> ➔ Học sinh phác thảo ý tưởng ứng dụng.</li>
+                    <li><em>Bước 4: Chế tạo mẫu</em> ➔ Học sinh dùng AI Studio Build Mode tạo app.</li>
+                    <li><em>Bước 5: Thử nghiệm & Đánh giá</em> ➔ Chạy checklist kiểm thử và sửa giao diện.</li>
+                    <li><em>Bước 6: Chia sẻ & Thảo luận</em> ➔ Thuyết trình sản phẩm và thảo luận Đạo đức AI.</li>
+                </ol>
+            </li>
+            <li><strong>Chuẩn bị học liệu & Kế hoạch triển khai lớp học.</strong></li>
+        </ul>
+
+        <h3>4.3. Đánh Giá Và Cải Tiến Sau Triển Khai (35 phút)</h3>
+        <ul>
+            <li><strong>Thu thập phản hồi & Cải tiến:</strong> Lập kênh tiếp nhận phản hồi của học sinh để định hướng nâng cấp phiên bản tiếp theo.</li>
+            <li><strong>Demo Day & Đánh giá chéo:</strong> Học viên thuyết trình 3 phút về ứng dụng và kế hoạch bài dạy của mình dựa trên <strong>Rubric 4 tiêu chí (Phụ lục B)</strong>:
+                <ol>
+                    <li>Bài toán rõ ràng.</li>
+                    <li>Sản phẩm chạy thực tế trên URL.</li>
+                    <li>Tư duy phát triển có quy trình.</li>
+                    <li>Kế hoạch triển khai bài dạy EDP hiệu quả.</li>
+                </ol>
+            </li>
+        </ul>
+
+        <div style="margin: 45px 0; border-bottom: 2px dashed var(--border-color);"></div>
+
+        <h2 id="appendix-a">📎 PHỤ LỤC A: MẪU "HỒ SƠ DỰ ÁN" ĐÃ ĐIỀN SẴN (PLANT IDENTIFIER)</h2>
+        <pre><code>HỒ SƠ DỰ ÁN: App Nhận Diện Cây Trồng Thực Địa (Plant ID)
+Họ và tên GV: Nguyễn Văn A | Trường: THCS... | Môn giảng dạy: Sinh học THCS
+
+==================================================
+PHẦN 1: BÀI TOÁN, YÊU CẦU & ĐẶC TẢ SẢN PHẨM (SPEC)
+(Chuyển hóa từ spec-template.md — Hoàn thành ở Module 1)
+==================================================
+1. Bài toán thực tế (Problem & Context):
+   - Đối tượng sử dụng: Học sinh lớp 6 khi tham gia học thực địa Sinh học ngoài sân trường.
+   - Vấn đề gặp phải: Học sinh không nhớ tên cây, không mang sách giáo khoa, dễ tra cứu nhầm lẫn.
+   - Giải pháp AI: App nhận diện cây qua ảnh chụp camera điện thoại giúp học sinh tra cứu tức thì.
+
+2. Bóc tách yêu cầu (Requirements):
+   - Đầu vào (Input): Ảnh chụp lá cây/toàn cây từ camera điện thoại.
+   - Đầu ra (Output): Tên tiếng Việt, tên khoa học (Latin), họ thực vật, mô tả 2 câu, thang độ tin cậy.
+   - Chức năng cốt lõi: Khung xem ảnh, nút Phân Tích, thẻ hiển thị kết quả, nút Chụp lại.
+   - Ràng buộc & Giới hạn: KHÔNG lưu trữ dữ liệu cá nhân học sinh, KHÔNG yêu cầu đăng nhập, file ảnh &lt; 5MB.
+
+3. Thiết kế sản phẩm & UI/UX (Design):
+   - Luồng hoạt động: Upload/Capture ➔ Gemini Vision API ➔ Result Card Display.
+   - 4 Tiêu chí UX (Microsoft):
+     * Useful: Phục vụ trực tiếp việc ghi bài thu hoạch thực địa.
+     * Reliable: Hiện "Mức độ tin cậy: Thấp" kèm lời khuyên hỏi giáo viên nếu ảnh mờ/tối.
+     * Accessible: Nút chụp to, giao diện 1 màn hình duy nhất.
+     * Pleasant: Tông màu xanh lá thực vật thân thiện.
+
+4. Tiêu chí hoàn thành (Acceptance Criteria):
+   - [ ] Nhận diện đúng ít nhất 4 loài cây phổ biến trong sân trường (Cây Bàng, Phượng, Bằng Lăng, Sứ).
+   - [ ] Giao diện hiển thị tốt trên điện thoại di động (Responsive UI).
+   - [ ] Trả về nhãn "Không xác định" khi ảnh mờ hoặc không chứa cây trồng.
+
+==================================================
+PHẦN 2: DANH SÁCH VIỆC CẦN LÀM - TASK LIST FOR AI
+(Chuyển hóa từ plan-template.md & tasks-template.md — Hoàn thành ở Module 2)
+==================================================
+- [x] Phase 1 (UI Framework): Master Prompt tạo khung app và vùng upload dropzone (Prototype V1).
+- [x] Phase 2 (AI Logic): Cài đặt Gemini Vision nhận diện tên cây và trả kết quả JSON tiếng Việt.
+- [x] Phase 3 (UX & Effects): Thêm spinner loading "Đang phân tích hình ảnh..." và footer disclaimer.
+- [x] Phase 4 (Error Handling): Thêm thông báo nếu file upload &gt; 5MB.
+
+==================================================
+PHẦN 3: CHECKLIST KIỂM THỬ & ĐẠO ĐỨC AI
+(Chuyển hóa từ report-template.md — Hoàn thành ở Module 3)
+==================================================
+1. Bảng kết quả kiểm thử thực tế (Verification Matrix):
+   - [x] Happy Path: Upload ảnh lá bàng ➔ Hiện đúng tên Cây Bàng, mác "Độ tin cậy: Cao".
+   - [x] Edge Case: Upload ảnh mặt người/ảnh mờ ➔ Hiện "Không xác định", không bị crash app.
+   - [x] Chống bịa đặt dữ liệu (AI Fabrication Guard): AI không tự bịa tên cây khi ảnh thiếu chi tiết.
+   - [x] Responsive UI: Nút bấm và thẻ kết quả hiển thị vừa vặn trên Chrome di động.
+
+2. Khung phân tích Đạo đức AI (3-Role Responsible AI Framework):
+   - Người dùng (Học sinh): Nguy cơ ngộ nhận ➔ Yêu cầu học sinh đối chiếu kết quả với mẫu lá thật.
+   - Nhà phát triển (Giáo viên): Trách nhiệm cảnh báo ➔ Dán rõ nhãn miễn trừ trách nhiệm ở chân trang.
+   - Hệ thống AI: Kiểm soát ảo giác AI ➔ Cấu hình Gemini Temperature = 0.1 và yêu cầu độ tin cậy.</code></pre>
+
+        <h2 id="appendix-b">📊 PHỤ LỤC B: RUBRIC ĐÁNH GIÁ DEMO DAY (MODULE 4)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 25%;">Tiêu chí</th>
+                    <th style="width: 25%;">Chưa Đạt (1đ)</th>
+                    <th style="width: 25%;">Đạt (2đ)</th>
+                    <th style="width: 25%;">Tốt (3đ)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1. Bài toán & Yêu cầu</strong></td>
+                    <td>Không nêu được người dùng/vấn đề</td>
+                    <td>Nêu được bài toán chung chung</td>
+                    <td>Nêu rõ người dùng + bài toán + bóc tách 5 yếu tố yêu cầu cụ thể</td>
+                </tr>
+                <tr>
+                    <td><strong>2. Sản phẩm chạy thực tế</strong></td>
+                    <td>Link URL không mở được</td>
+                    <td>Link URL mở được, còn 1-2 lỗi nhỏ</td>
+                    <td>App chạy mượt trên điện thoại, xử lý tốt các trường hợp biên</td>
+                </tr>
+                <tr>
+                    <td><strong>3. Tư duy phát triển</strong></td>
+                    <td>Không giải thích được cách làm</td>
+                    <td>Mô tả được các bước ra lệnh cho AI</td>
+                    <td>Giải thích rõ tiến trình Spec-first từ Yêu cầu ➔ Spec ➔ Review ➔ Refine</td>
+                </tr>
+                <tr>
+                    <td><strong>4. Kế hoạch giảng dạy</strong></td>
+                    <td>Không hình dung được cách dạy lại cho học sinh</td>
+                    <td>Mô tả được ý tưởng dạy chung chung</td>
+                    <td>Trình bày được Kế hoạch bài dạy EDP 6 bước áp dụng ngay vào tiết dạy STEM</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 id="appendix-c">🛠️ PHỤ LỤC C: BẢNG XỬ LÝ LỖI THƯỜNG GẶP</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 30%;">Lỗi gặp phải</th>
+                    <th style="width: 35%;">Nguyên nhân</th>
+                    <th style="width: 35%;">Cách khắc phục ngay</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>"An internal error occurred"</code></td>
+                    <td>Dùng email trường (<code>@edu</code>)</td>
+                    <td><strong>Chuyển sang dùng Gmail cá nhân (<code>@gmail.com</code>)</strong></td>
+                </tr>
+                <tr>
+                    <td>Preview bị màn hình đen</td>
+                    <td>Trình duyệt chặn cookies</td>
+                    <td>Mở Chrome Settings → Allow cookies <code>ai.google.dev</code></td>
+                </tr>
+                <tr>
+                    <td>AI sửa hỏng giao diện</td>
+                    <td>AI sinh code nhầm</td>
+                    <td>Tìm điểm lưu trong Chat panel → Click <strong>Restore</strong></td>
+                </tr>
+                <tr>
+                    <td>Không bấm nút Publish được</td>
+                    <td>Đã publish 2 apps trước đó</td>
+                    <td>Vào Dashboard → Unpublish 1 app cũ</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 id="appendix-d">📖 PHỤ LỤC D: GLOSSARY 1 TRANG (GIẢI NGHĨA THUẬT NGỮ)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 30%;">Thuật ngữ</th>
+                    <th style="width: 70%;">Giải thích đơn giản</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Yêu cầu (Requirements)</strong></td>
+                    <td>Bóc tách bài toán thành người dùng, input, output, chức năng và ràng buộc.</td>
+                </tr>
+                <tr>
+                    <td><strong>Đặc tả sản phẩm (Product Spec)</strong></td>
+                    <td>Tài liệu tổng hợp mô tả "cần làm gì và tại sao" trước khi bắt tay xây dựng.</td>
+                </tr>
+                <tr>
+                    <td><strong>Build Mode</strong></td>
+                    <td>Chế độ tạo ứng dụng trực tiếp bằng câu lệnh ngôn ngữ tự nhiên trong Google AI Studio.</td>
+                </tr>
+                <tr>
+                    <td><strong>Live Preview</strong></td>
+                    <td>Màn hình bên phải xem trực tiếp ứng dụng thật đang hoạt động.</td>
+                </tr>
+                <tr>
+                    <td><strong>Annotation Mode (✏️)</strong></td>
+                    <td>Công cụ dùng bút vẽ khoanh tròn lên màn hình để bảo AI sửa giao diện.</td>
+                </tr>
+                <tr>
+                    <td><strong>Checkpoint & Restore</strong></td>
+                    <td>Điểm tự động lưu lịch sử — giúp quay về bản cũ nếu AI làm hỏng app.</td>
+                </tr>
+                <tr>
+                    <td><strong>AI Chips</strong></td>
+                    <td>Các nút bấm tích hợp nhanh tính năng nâng cao (bản đồ, tìm kiếm, tạo ảnh).</td>
+                </tr>
+                <tr>
+                    <td><strong>Publish / Deploy</strong></td>
+                    <td>Xuất bản ứng dụng thành đường link công khai trên Internet để ai cũng mở được.</td>
+                </tr>
+                <tr>
+                    <td><strong>Fabrication (Bịa đặt dữ liệu)</strong></td>
+                    <td>Khái niệm kiểm thử: AI tự "sáng tạo" thêm thông tin không tồn tại khi thiếu ràng buộc.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="footer">
+            <p><em>Tài liệu thiết kế chi tiết khóa học — Phiên bản 2.5 (Spec-First Product Development)</em></p>
+            <p>Đường dẫn tệp gốc: <a href="file:///d:/NoteBookLLM_Br/workspaces/learning/outputs/module_spec_kit_ai_studio.md">module_spec_kit_ai_studio.md</a></p>
+        </div>
+    </div>
+</body>
+</html>

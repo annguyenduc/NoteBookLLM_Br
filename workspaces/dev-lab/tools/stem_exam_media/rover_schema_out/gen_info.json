@@ -1,7 +1,0 @@
-{
-  "hasPython": true,
-  "hasMicroPython": false,
-  "generatorKeys": [],
-  "sampleGenExists": true,
-  "sampleGenStr": "function(o){return\"await robot.follow_line_until_cross(then=\"+o.getFieldValue(\"then\")+\")\\n\"}"
-}
